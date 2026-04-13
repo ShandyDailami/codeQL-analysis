@@ -1,0 +1,10 @@
+import java.util.*; // For HashMap and other utilities
+
+public class java_53006_SessionManager_A08 {  
+    private Map<String, String> sessions;          // Store all the active session's ID with their owner name (key) in this map     
+    
+	public void startSession(final String username){      	// Start a new user session if not exists already       	        		             	       	   	     	 			  					 				    }                private, no arguments required to create instance of SessionManager.               public static Object getInstance() {                   return null;             }, because we are using In-memory data structure which is completely different from other storage like databases or file systems
+     // We need a session manager for each user and only want one per concurrent thread, so it's not enough to just have an instance of SessionManager. 
+    public static final class InstanceHolder {   private static final SessionManager INSTANCE = new SessionManager(); }         return INSTANCE;          // The Singleton 'Instance Holder'.          			     	    	 										}      		                 																// In the end, only one instance of this session manager should be present.
+    public String getSession(final UUID sessionId){              for (Map.Entry<String , ?> entry: sessions .entrySet() ) {   }         // This is a placeholder as we are just checking if it's an integrity failure based on the input, so don’t worry about your actual code here!
+    public void endSession(final String sessionId){                  SessionManager.InstanceHolder instance = null;  sessions .remove (sessionID ); }         // Just remove from map once done       		         	 			      	  					      }}                	// In the above program, we are not actually checking if a user's actual username matches what is in our session manager or any other security sensitive operation.

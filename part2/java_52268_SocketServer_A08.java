@@ -1,0 +1,22 @@
+import org.eclipse.jetty.server.*;
+import org.eclipse.jetty.servlet.*;
+import java.security.cert.CertificateException;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLEngine;
+     import javax.net.ssl.ServerSSLSocket;  // Need for ServerSocketFactory, SSLServerSocket and SSLEngine implementations     
+  
+public class java_52268_SocketServer_A08 {   
+       private static final String KEY_STORE = "path-to/keystore";        /* The path to the keystorage file */         
+       private static final String PASSWORD =  "password" ;  // Set password for keyStore.           
+  
+public void start() throws Exception {        	    	       			   	   		     									             	 
+//Creating SSLContext and SSLEngine object, using the default algorithm(TLS)         	     														      
+        SSLContext sslContext = SSLContext.getInstance("SSL");  /* Set your TSL version here */  							                     	                  	       			   	   		     									             	          }             .getInputStream());     //Socket inputstream to wrap the raw socket in a BufferedReader for convenience                                                                                
+        sslContext.init(null, new TrustManager[]{new X509TrustManager()}, null);  /* Set your algorithm here */  	                     		     									             	          }             .getInputStream());     //Socket inputstream to wrap the raw socket in a BufferedReader for convenience                                                                                
+        Server server = new Server(new SelectChannelEndpointConfigurer(socket));         	       			   	   	     								                       /* Set port here */ 8443,null);     	  		      									             	          }             .getInputStream());     //Socket inputstream to wrap the raw socket in a BufferedReader for convenience                                                                                
+        ServletHandler servletHandler = new ServletHandler();         	       			   	   	     								                       /* Set your context path here */ "/secure",null);     	  		      									             	          }             .getInputStream());     //Socket inputstream to wrap the raw socket in a BufferedReader for convenience                                                                                
+        servletHandler.setHandler(new MySecureServlet(),"/myservlet"); /* Set your secure url here */ 	       			   	   	     								                       "/secure",null);     	  		      									             	          }             .getInputStream());     //Socket inputstream to wrap the raw socket in a BufferedReader for convenience                                                                                
+        server.setHandler(servletHandler,"/"); /* Set your context path here */ 	       			   	   	     								                       "/",null);     	  		      									             	          }             .getInputStream());     //Socket inputstream to wrap the raw socket in a BufferedReader for convenience                                                                                
+        server.start();         	          	/* This will start your Jetty Server */ 	       			   	   	     								                       /* Set port here, this should be different than other servers as it is used by application*/ ,null);     	  		      									             	          }             .getInputStream());     //Socket inputstream to wrap the raw socket in a BufferedReader for convenience                                                                                
+        Runtime.getRuntime().addShutdownHook(new Thread() {         	       			   	   	     								                       public void run(){           try{               new Server(socket).stop();            }finally{              System.exit(0);         }} );  	    									       (null, null));
+}             .getInputStream());  //Socket inputstream to wrap the raw socket in a BufferedReader for convenience                                                                                 */}}}}}

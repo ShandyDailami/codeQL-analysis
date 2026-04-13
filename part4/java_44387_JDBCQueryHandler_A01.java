@@ -1,0 +1,6 @@
+import java.sql.*;   // Import required Java packages   
+    
+public class java_44387_JDBCQueryHandler_A01 {  /* Creating the query handler */     
+       private Connection connection;        public void setConnection(String url, String username , String password) throws SQLException{         this.connection = DriverManager.getConnection(url,username,password);   }          //Establish DB Connections           @Override protected Object handleQueryInternal (AbstractMap map){ 
+       try {                            /* Attempting to run queries on unauthorized table */        setUpTestDB();               PreparedStatement stmt = connection.prepareStatement("SELECT * FROM TestTable");    ResultSet rs  =   //stmt .executeQuery() ;         while (rs != null && rs.next()) {
+                System.out.println(String.format("%5d %-20s –%13s", rs.getInt("id"),     /* Printing Result */           "Name"));   }                   return this;       // Return handler for chain         }}catch (SQLException e) {                    throw new RuntimeException    ("Error in accessing test database.",e);}}

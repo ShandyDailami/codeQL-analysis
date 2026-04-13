@@ -1,0 +1,8 @@
+import java.io.*;       // Import the necessary classes  
+import javax.security.auth.*;      // For SecurityManager exception handling   
+class java_44831_FileScanner_A01 {              
+        public static void main(String[] args) throws IOException, AuthenticationException{         
+                File file = new File("C:/Users/user");  /* Change this to your path */        
+		if(!file.exists()){                             /*** Create a security-sensitive operation ***/   		    	   				     			       	     					   }                     	       	 		           								       }}               // Error handling and print out the error for debugging purposes                   if (SecurityManager instance = ...) {                     /* Your code to get Security Manager */                  try(FileScanner fs = new FileSystems().newFileScanner()) 
+     	{                                                                                                                       file.setReadOnly();                         /*** Create a security-sensitive operation ***/  			   								              // Set the read only attribute of path for preventing unintended modifications                 if (file instanceof VirtualFile) {             /* Your code to get virtual files */                   FileInputStream fis = new FileInputStream(new File("C:/Users"+username));          /*** Create a security-sensitive operation ***/  		    	   	                                                                                             // Open the file in read mode                     } catch exception {}
+    }}  ** End of your answer**}

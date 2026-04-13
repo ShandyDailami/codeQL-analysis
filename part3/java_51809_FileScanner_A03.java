@@ -1,0 +1,12 @@
+import java.io.*; // Import required Java libraries for file I/O - Input Stream / Output stream etc.
+    
+      public class java_51809_FileScanner_A03 {       // Start of the main program block in a programming language like C++, Python or JAVA is called as 'Main' function and it contains all other functions & methods  that forms an application ie., start point to every java programs are placed inside this Function .   
+         private static final String filePath = "C:/Users/yourfilepath"; // Provide your path here. The system will search for the inputted text in a directory, not necessarily exact location at given string ‘location’   - Replace with absolute or relative paths as needed by programmer .   
+         public static void main(String[] args) {      this function is where all code begins and starts running an application. In Java , if the input argument are available then we can use those arguments to run our Program in Testing mode so that you do not need any IDE or a compiler just compile & execute it via command line .
+          File file = new java.io.File(filePath); // Create object of 'java' class - Important point here , if this is done, then the Java Virtual Machine (JVM) can read our files even though we have given an absolute path to them  and not a relative one based on where you run your program .
+          File[] listOfFiles = file.listFiles(); // Create object of 'file' class - Important point here , if this is done, then the Java Virtual Machine (JVM) can read our files even though we have given an absolute path to them  and not a relative one based on where you run your program .
+          for(int i = 0;i< listOfFiles.length ; ++I ){ // loop through each file in directory - Important point here , if this is done, then the Java Virtual Machine (JVM) can read our files even though we have given an absolute path to them  and not a relative one based on where you run your program .
+           File name = listOfFiles[i]; //getting file names only. - Important point here , if this is done, then the Java Virtual Machine (JVM) can read our files even though we have given an absolute path to them  and not a relative one based on where you run your program .
+           System.out.println(name); // print each file name in command line - Important point here , if this is done, then the Java Virtual Machine (JVM) can read our files even though we have given an absolute path to them  and not a relative one based on where you run your program .
+          }    
+      }}

@@ -1,0 +1,7 @@
+import java.io.*; // for FileScanner class java_52908_FileScanner_A03 " import java.nio . file" instead if using Java SE >= 9 on Windows or Linux machine  
+public void countLines() {   
+     String dir = "/path/to/yourdir";     
+     File directory = new File(dir);        int lineCount = 0;  try (FileScanner scanner=new FileScanner())          // Using Java's feature of hiding the exception using 'try-with resources'.         {            boolean wasSuccessful=  false ; while(!wasSuccessful){  
+      String fileName = directory.getAbsolutePath()+"/" +scanner .nextFile();  try (BufferedReader br= new BufferedReader(new FileReader((fileName)))){                    lineCount += countLinesInLineByLine_withReadersAndCounters(br); }catch
+      Exception e     {e.printStackTrace() ;}                  // Handle exceptions and continue   if (!wasSuccessful){  System . out . println ( "No file found" ); break;}}         return lineCount;} catch    ((Exception E)          /* Catching exception from FileScanner is not recommended */        {E.printStackTrace() ;}             // Always do a final 'finally' after every try/catch block  
+     }});  }; public int countLinesInLineByLine_withReadersAndCounters(BufferedReader br) throws IOException{    String line = null;          long wordCount = 0, charCount=0 ; while((line  =br.readLine()) !=  null){         // This is a loop which counts the lines of code     }

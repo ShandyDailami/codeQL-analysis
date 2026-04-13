@@ -1,0 +1,5 @@
+import java.io.*; // Import needed classes from Java libraries package and standard library folder (File) etc...   
+class java_53406_FileScanner_A03 {    
+public static void main(String[] args){  }      public class FileScanner implements Runnable{        private String searchTerm;           @Override         public void run(){             try                 (Stream<String> lines = Files.lines((new File(".")).toPath()))               //Line Stream from the file                .filter(line -> 
+    line.contains("/A03_Injection/"))                       System.out.println("\nFound Match:\" + Line);             } catch (IOException e) {                     e.printStackTrace();                 }}        public FileScanner(){ this("");}           //Default Constructor for Injecting Class           
+public class A03FileFinder(String searchTerm){this .searchterm = Search term;}  private String Seachterm;     @Override         /*This is a stub method. Replace with actual implementation if required*/ public void Run(){ new FileScanner().run(); }}}//End of Main Class

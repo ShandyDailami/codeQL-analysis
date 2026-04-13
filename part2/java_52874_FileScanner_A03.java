@@ -1,0 +1,7 @@
+import java.io.*; // for InputStreamReader class java_52874_FileScanner_A03 read file from disk  
+public class Main {   
+     public static void main(String[] args) throws IOException{ 
+        FileScanner fs = new SecureFileScanner();         
+	fs.setDir("C:\\path_toYourDirectory");              // Specify the directory you want to scan        		      									  			                 	       	 	   	      }      public class Main {    private static String path;     SecurityManager sm  =new  javax .security .auth... for (int i = 0 ;i<2 ,sm.checkPermission( new java..lang ..., "read") ){        System out ..println ("permission granted!");         // code to perform on the file is here
+    }   else {            SecurityUtils().getCurrentUser(), sm . denyPermission("java... ");             …out ....println (“ permission denied”) ;          print.write(new java ..., "r");        return;      }} catch IOException e1{               // Exception handling for I/O operation     }
+    private class SecureFileScanner {         File dir = null;) throws SecurityException  if (!sm . checkPermission("java .. DirReader")) throw new   javax.security..auth...for (String s : d .... listFiles())      ... println(s);          return;}}}}}` // End of main method } `

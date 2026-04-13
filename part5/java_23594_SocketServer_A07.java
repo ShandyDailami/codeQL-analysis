@@ -1,0 +1,32 @@
+import java.io.*;
+import java.net.*;
+
+public class java_23594_SocketServer_A07 {
+    private static final int PORT = 8080;
+
+    public static void main(String[] args) throws IOException {
+        ServerSocket serverSocket = new ServerSocket(PORT);
+
+        System.out.println("Server started. Waiting for client connection...");
+
+        Socket socket = serverSocket.accept();
+
+        System.out.println("Client connected: " + socket.getRemoteSocketAddress());
+
+        DataInputStream in = new DataInputStream(socket.getInputStream());
+        DataOutputStream out = new DataOutputStream(socket.getOutputStream());
+
+        String message = in.readUTF();
+
+        if (message.equals("auth")) {
+            out.writeUTF("Success");
+        } else {
+            out.writeUTF("Failed");
+        }
+
+        out.close();
+        in.close();
+        socket.close();
+        serverSocket.close();
+    }
+}

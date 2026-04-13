@@ -1,0 +1,13 @@
+import java.sql.*;   // Import the necessary Java database classes (Connection, PreparedStatement) from standard library packages in JDBC package   
+public class java_46840_JDBCQueryHandler_A07 {    
+// Creating a method for authenticated query handling which uses prepared statement and secure connection using SSL/TLS 
+ public static void handleAuthenticate(String urlStr, String userName, String password) throws SQLException{   // Method takes URL string & username as input parameters.   
+        Connection conn = null;     
+         try {         
+            DriverManager drivermanager=DriverManager.getConnection("jdbc:mysql://"+urlStr +"/dbname",userName ,password);     /* Connecting to the Database */   // Pass credentials in place of user name and password   
+             String query = "SELECT * FROM Table";      /** Query here**/  (replace 'Table' with your actual table)        Connection conn =  drivermanager.connect(urlStr,userName ,password);     /* Connecting to the Database */   // Pass credentials in place of user name and password   
+             PreparedStatement pstmt = null;          try {              /** Preparing Statement for execution **/  (replace '*' with actual column names)               conn.setAutoCommit(false);        Connection con=conn ;pstmt =  con .prepareCall("{call my_procedure()}");
+         } catch….. // Exceptions and error handling here      });       /** Closing Statement **/     pstmt = null;          try {/** Executing the call */           if (null !=  resultSet)  while(resultset.next())            handleRowData();    }}catch...// Error Handling Here }   finally….. // Close connections here      });
+         }; catch……{/*Handled Exceptions*/}     /** Closing Connections/Statement * */       if (null != pstmt) {pstmt = null;};  Connection con=conn ;if(con!=null){try/** Committing the connection changes.**/, Exception e1 )
+         } catch…..{/*Handled Exceptions*/}     finally/{// Release any resources that are no longer needed here.}   if (connection !=  null) {    // Close connections only when done with them, to free up system resources!      try  connection .close();}}catch(Exception e){ /* Handle exception */ }
+         }} catch…..{/* Handled Exceptions*/}        });          };           /** Main method */            public static void main (String[] args) {try   // Testing the program, you can add more tests here.  testAuthenticate("urlStr", "userName" , password);}}catch(Exception e){ /* Handle exception */ }      }}

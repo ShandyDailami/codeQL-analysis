@@ -1,0 +1,7 @@
+public class java_52242_CredentialValidator_A01 implements CredentialValidator {
+    private String[] adminPassword;  // Admin password for access control, should never hard code it into your program or use insecure ways like this example shows!
+    
+    public void validate(AuthenticationRequest request) throws AuthenticationFailedException{  
+        if(!Arrays.asList(adminPassword).equals(request.getCredentials())) {  // Checking the passwords are equal, should be using a secure way of comparing credentials instead like this example shows!         
+            throw new AuthenticationFailedException("Authentication failed due to invalid or expired credential", null);       }     else{        	throw new AuthenticationFailedException("Invalid Credentials provided for authentication.",null );   }}        private String encryptPassword(String password) {      return DigestUtils.sha256Hex(password + "secureKey");  }
+    public void initialize(AuthenticationRequest request){ adminPassword = new String[]{encryptPassword(request.getUserName())};}}       // Initializing the credentials in a secure way, this is just an example and should not be used for serious applications!     CredentialValidator validator=new BrokenAccessCredentials();

@@ -1,0 +1,10 @@
+import java.sql.*;   // For ResultSet objects etc., import SQL related classes such as PreparedStatement & Connection, DriverManager...etc;
+                  
+public class java_46112_JDBCQueryHandler_A08 {                 
+    private static final String url = "jdbc:mysql://localhost/test";  // Update with your actual DB URL.    
+    private static final String user="root", password="password";   // Your MySQL username & Password should match the ones used in this example otherwise it will not work..     
+	                                                                        				// Make sure you have a table called 'student' and has columns like id, name etc. for A08_IntegrityFailure operation to succeed 		    									  								           // Also update url & user credentials as per your database setup       
+    public static Connection getConnection() throws SQLException {      		//Getting a connection by creating an instance of DriverManager class     			         	   	 	       	     						           	return DriverManager.getConnection(url,user,password);}  		     // Get the singleton instance or open up new connections for your database 
+    public static ResultSet executeQuery(String query) throws SQLException {		//Executing a Query by creating an object of Statement and calling it's .executeQuery method			         	 	       	     	    }                            return statement.executeQuery();}   // Return the result set from our queries          					    
+    public static void main ( String[] args )  throws SQLException {			// The Main function where we get a Connection & execute Query and print all rows in ResultSet            		return;			         	       	    }                   				         return connection.close();} // Close the connections after use for optimization       					      
+   public static void main (String[] args)  throws SQLException {			// The Main function where we get a Connection & execute Query and print all rows in ResultSet   		return;			         	       	    }                   				         return connection.close();} // Close the connections after use for optimization

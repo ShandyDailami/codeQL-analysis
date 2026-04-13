@@ -1,0 +1,18 @@
+import org.w3c.dom.*;
+import javax.xml.parsers.*;
+import java.io.File;
+
+public class java_48323_XMLParser_A03 {  // Class name should be descriptive and follow Java naming conventions, ie., CamelCase or Uppercase separated by underscores for multiple words e.g."XmlParer" not "XMLParseR".   Also use appropriate package names to avoid any clashing with other java libraries/frameworks
+{  // Open braces of the class after declaring all required objects (like File, Document etc.) . It's good practice also for each Java construct that opens a new scope such as method or block. This helps in keeping your code neat and easy to read by following these coding standards which are widely followed among programmers worldwide
+    public static void main(String[] args) {  //main function is the entry point of any java application ie., it should contain all other functions/methods for execution  
+        try{     /*starting a new scope*/         String inputFile = "/path_to your xml file";//replace this with actual path where XML data resides, e.g."C:\\xmlData"  //it is also good to have the user provide an option in console for selecting File
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();     /*New instance of a document builder factory*/   
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();          /**Building a new parser based on the settings defined by the DocumentBuilderFactory *///   //This is how we get back an object tree from the xml file read and parsing 
+            
+           /*parse when no schema checking occurs, this allows external entities to be declared*/     //Starting point of our program. Parses XML content into a hierarchical representation: elements with child nodes or attributes within those children   Doc is now ready-made tree from the parsed data    */         Document doc = dBuilder.parse(new File(inputFile)); 
+           /*now, let's walk through that newly formed object (DOM), and print out its names along a traversal of XML file*/     //Get an instance of factory for our document... it is like new soup - the source code can be stored in Document.   We create Node objects representing all data from parsed content 
+            doc.getDocumentElement().normalize();         /*Sorts out unwanted white space and formatting issues */    System.out.println("Root Element: " +doc.getElementsByTagName("").item(0).getTextContent());   // Prints the name of XML file as its root element 
+            printNodeInfo(doc, doc.getDocumentElement());     /*call function to walk through xml */      }       catch (Exception e) {         System.out.println ("Caught an exception: " +e);        return;}   //catch block in case of exceptions and provide a message for the user
+    };  close bracket(s), same as opening one, just with different names or content/purpose depending on your requirements     } /*Ending main function*/      static void printNodeInfo (Document doc , Node node){ if (!node.hasChildNodes()) {        System.out.println("Element: " +    //if it's a leaf(end element), simply show the text within 
+            ((Element)   node).getElementsByTagName("").item(0 ).getTextContent()); return;} for (int i = 0;i <node .getChildNodes().getLength(); ++,      System.out."\n" + //for each child of this parent...print its name and all contents
+            printNodeInfo    doc , node   .getChildNodes()  .item(I)));}     } /*Ending function*/        };/*Close class bracket */}};//closes the entire script/class. This is how we get back to our java application's start from here for more complex applications

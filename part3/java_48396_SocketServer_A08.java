@@ -1,0 +1,5 @@
+import java.io.*;  // Import necessary classes from Java's Standard Library package  
+import javax.net.ssl.*;     // Import the SSL class java_48396_SocketServer_A08 Socket Server programmatically or using annotations in xml file (like @ServerEndpoint)   
+
+public final class SecureSocketExample {      public static void main(String[] args){       try{         int port = 843;          KeyStore keyStore = KeyStore.getInstance("JKS");           // Create a new instance of the Socket Server with given Port number        SSLServerSocket sock= (SSLServerSocket)new SSLServerSocket(port,keyStore ,null);   
+System.out.println ("Secure server started on port: "+sock.getLocalPort() +"with key store");     // Start the Socket Server in an infinite loop        while((Thread.currentThread().isAlive())==true){         SSLSocket s= (SSLSocket)sock.accept();   System.out

@@ -1,0 +1,5 @@
+'.
+
+Please ensure that you have a SAX parser and DOM builder in your classpath before running this program: 
+- For JDK's builtin classes (like FileInputStream), Java SecurityManager is not used. XMLParser,SAXHandler will be executed directly without any security checks on user input or command execution via the system calls like `new java.io.File(String)` and similar ones which could open file paths for untrusted users if you use these methods with an arbitrary filename in your program then it's a serious injection point unless using some sort of secure method to prevent that (like input filtering or XML sanitization).
+- Similarly, DOMParser is used under Java SE 7 and higher versions but only builtin classes are allowed. It also lack the same feature set as SAX for parsing xml documents in general cases when you don't have access any external library to do it directly using a file path or an URL etc., then there could be serious injection points if we use these methods with arbitrary inputs (like `new DOMParser()`).

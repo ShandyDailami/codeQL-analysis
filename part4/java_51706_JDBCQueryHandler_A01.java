@@ -1,0 +1,12 @@
+import java.sql.*;  // Import required Java packages for using DB connection, statement etc..  
+class java_51706_JDBCQueryHandler_A01 {     // Create class named as 'BrokenAccessControl'   
+public static void main(String[] args) throws SQLException{      // Main function to start execution of program       
+ String dbURL = "jdbc:mysql://localhost/test";           // Define the database URL (Replace with your DB details if required).     Example is for MySQL.  Replace as per requirement   
+ String userName="yourUserName";                     // Assign username here .   For example, root or 'admin' of mysql server        User name related to given dbURL and password are mentioned above          
+String password = "passwordForDBuser";                   //Asssign the Password for DBUSER.  Be careful not to expose this as plain text in your code!     It is strongly recommended that you use .env files or secret managers instead   
+Connection conn =  DriverManager.getConnection(dbURL, userName , password);          //Establish connection with database   Replace dbDetails accordingly        if required else leave it blank 
+Statement stmt = null;                               // Declare a Statement object     (We'll use this to perform SQL operations)     
+try {                          // Start of try block for exception handling.    Remember, we should always wrap our operation in Try/Catch where possible          
+   String queryString= "SELECT * FROM yourTableName";            //Define the Query here .  Example is 'select all data from table'          Replace with actual SQL if required     else leave it blank     
+ stmt = conn.createStatement();                          // Create a statement object (We will use this to execute our query)        If no need for other operations then comment out or remove below line       .    Execute the Query here and Handle exceptions accordingly  }   catch(SQLException e){             System.out.println("Error in connection: " +e);              // This is where we handle any SQL exception           
+} finally {                                           //This code will execute irrespective of an error or not       (So, Use this to close resources like connections etc.)      }   if(stmt != null) stmt.close();  conn.close();     System.exit(0);    }}`;

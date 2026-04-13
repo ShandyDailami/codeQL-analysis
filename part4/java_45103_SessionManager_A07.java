@@ -1,0 +1,10 @@
+// Initialize a counter for session IDs, starts at zero; it'll be used in creating sessions later on (sessionID = ++counter)
+let sidCounter = 0; 
+class java_45103_SessionManager_A07 {   // Defining the class 'Session'. It holds all info related to one user and their active session.   
+constructor(userId){      // Initializing a new instance of this class with an assigned User Id, starts inactive (false).     }           
+UserID = '';               // This will hold unique identifier for each Session created by the specific users . 
+IsActive= false;           // Boolean that indicates whether or not session is currently active.   False means user has logged out and can't interact with system anymore, true otherwise   
+}                    }     let sessionsList = [];        //This list will hold all instances of 'Session'.      
+function StartNewUser(userId){          Function to start a new Session for an existing User  (if not exists) .   };             function StopExistingSession(){};      class AuthFailureError extends Error {constructor() {};}           let authErrorsList = [];                //This list will hold all instances of 'AuthFailure' Errors.    
+function StartNewRequest(req){            Function to start a new Session for the current user and also checks if User already has active session .   };             function StopExistingSession(){};         class AuthTimeoutError extends Error {constructor() {};}               let authTimeoutsList = [];                //This list will hold all instances of 'AuthFailure' Errors. 
+function StartNewRequest(req){                    Function to start a new Session for the current user and also checks if User already has active session .   };             function StopExistingSession(){};         class AuthExpiredError extends Error {constructor() {};}                let authExpireList = [];                   //This list will hold all instances of 'AuthFailure' Errors.

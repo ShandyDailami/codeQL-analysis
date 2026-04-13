@@ -1,0 +1,5 @@
+public class java_45576_CredentialValidator_A08 {  // starting java code statement;
+    public static void main(String[] args) throws Exception{  
+        System.out.println("Enter Username and Password to check");      }// end of start Java Statement ;     CredentialValidator validator= new ValidatePassword();         Scanner scan =new  // here we are creating a passwordchecker object;          String userName,password；
+        boolean isValidated =  false;/ this variable will hold the result whether entered username and Password meets some condition or not.    }// end of start Java Statement ;     catch block to handle exceptions for invalid inputs  //   scanner input=new Scanner(System .in);      System..println("Enter Username: ");userName =scan....nextLine();
+        password  = newPassword;if (isValidated) {         println ("Access Granted"); }else{          printf("%s", "Invalid Credentials!");  }}// end of start Java Statement ;     try block to handle exceptions for the main function}catch(Exception e){    // here we are handling any exception that may occur while running our program;         println("Error: %e ", +E) }

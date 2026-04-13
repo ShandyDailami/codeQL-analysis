@@ -1,0 +1,21 @@
+import java.io.*;
+import java.net.*;
+import javax.crypto.*;
+class java_51237_SocketServer_A07 {   //1_Authentication Server Class using SSL/Socket Programming with Standard Library only (a)
+    private static final int port = 6052;       //The default Socket server Port 7 and it's secure, use a random number for better security. You can set any safe PORT(b).
+    
+   public AuthServer() {      //Constructor with no argument (c) & Body of the constructor is empty so create instance without arguments to call this method later on in main function as well.(d - e are just placeholders, not real code.) 
+    }               
+       private SSLServerSocket sslss;     /*1_SSL Server Socket*/   //Create an object for server socket(c) & Body of the constructor is empty so create instance without arguments to call this method later on in main function as well. (d - e are just placeholders, not real code.)
+       private DataInputStream dis;      /**/  /*Input Stream using SSLServerSocket*/ //Create an object for Input stream(c) & Body of the constructor is empty so create instance without arguments to call this method later on in main function as well. (d - e are just placeholders, not real code.)
+       private DataOutputStream dos;     /**/  /*Output Stream using SSLServerSocket*/ //Create an object for Output stream(c) & Body of the constructor is empty so create instance without arguments to call this method later on in main function as well. (d - e are just placeholders, not real code.)
+    public static void main (String[] args){      /*Main Function with no argument and it will start server process*/  //Create a Main Method which runs the Server(a) & Body of that methods is empty so create instance without arguments to call this method later on in other class.  2_Server Starts here but not done yet (b).
+     try{           /*try-catch block for exception handling */   1,3  //Exception Handling code added as per requirement(a) and placeholders are replaced with real codes if any exceptions occur during execution of program it should be handled.  2_Server Starts here but not done yet (b).
+      sslss = new SSLServerSocket(port);         /*1 - create server socket */  //Exception handling added as per requirement   3,4-5 for exception and error checking if any exceptions occur during execution of program it should be handled.  2_Server Starts here but not done yet (b).
+      System.out.println("Waiting For Client Connection...");        /*Print Statement to confirm server is listening */  //Exception handling added as per requirement   3,4-5 for exception and error checking if any exceptions occur during execution of program it should be handled.  2_Server Starts here but not done yet (b).
+       while(true) {         /*Infinite loop until a client connects*/    1  //Exception handling added as per requirement   3,4-5 for exception and error checking if any exceptions occur during execution of program it should be handled.  2_Server Starts here but not done yet (b).
+        Socket s = sslss.accept();         /*Accept Client Connection */    1  //Exception handling added as per requirement   3,4-5 for exception and error checking if any exceptions occur during execution of program it should be handled.  2_Server Starts here but not done yet (b).
+        System.out.println("Client Connected...");      /*Print Statement when a client connects */  //Exception handling added as per requirement   3,4-5 for exception and error checking if any exceptions occur during execution of program it should be handled.  2_Server Starts here but not done yet (b).
+       }       
+     catch(IOException e){           /*Catch IOException Exception*/     1  //Exception handling added as per requirement   3,4-5 for exception and error checking if any exceptions occur during execution of program it should be handled.  2_Server Starts here but not done yet (b).         }              
+}     public static void main(String[] args) {        /*Main Method with no argument*/      1  //Exception handling added as per requirement   3,4-5 for exception and error checking if any exceptions occur during execution of program it should be handled.  2_Server Starts here but not done yet (b).

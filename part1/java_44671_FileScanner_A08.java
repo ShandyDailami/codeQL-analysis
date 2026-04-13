@@ -1,0 +1,13 @@
+import java.io.*;   // Import File I/O classes required by program    
+                   
+public class java_44671_FileScanner_A08 {  // Start of Java Program   
+                                  public static void main(String args[]) throws IOException{     
+                                         String dir = "/home/user/path_to_yourfiles";         
+                                         
+                                         /* This will list all the files present in directory. */                         
+                                         File folder = new File(dir);         // The Directory path   
+                                                  if (folder.exists()) {             fileExists(folder, 0 ); } else{ System.out.println("The specified directory does not exist");}          /* Check whether a given location exists or not*/           private static void fileExists(File folder , int level) throws IOException       // Recursive method to check all directories   
+                                 {             for (File file : folder.listFiles())         if (!file.isDirectory() && !new File("./log/" + file.getName()).exists());          System.out.println('-'.repeat(level++));     println_name(folder, level);           /* Prints all the names of a directory */
+                                 else {               new SecurityFileScanner().fileExists((File)  folder , level );      }       // Recursion to check every subdirectory    private static void println_name ( File file , int indentation){        StringBuilder builder =new   Strings.Builder();         for(int i = 0;i <indentation ; ++ +     ){builder .append('-');}           System.out.println((Indetifier++  +file).getName()); }     
+                                 }}  // End of Java Program    end of the FileScanner program   try { if (SecurityFileScanner == main) SecurityFi e(sertions=new ScurityFilEassertor();if (! securi c_fi.isSecure()) throw new IOException("Not secure!"); securityfilsesecurityfile scanne    r =securityfilescanner;}} catch (Exception ex){System .outprintln ("Error in processing the file: " +ex) }
+                                                    finally { System.. outprintln( “Scanning is done!”)} // FINALLY block for clean up. In this case, if an exception was thrown or a signal to finish has not been set yet it will be caught and properly closed down in the catch method   }} END OF PROGRAM

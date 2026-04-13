@@ -1,0 +1,8 @@
+import java.sql.*;  // Import necessary Java libraries to interact with the database  
+class java_43054_JDBCQueryHandler_A07 {   
+public static void main(String[] args) throws Exception{      run(); }     public static Connection con;        try       {          Class.forName("com.mysql.cj.jdbc.Driver");         con = DriverManager.getConnection ("dburl", "userid" ,  "password") ;  
+            System.out.println(con);                    // Print SQL Server details: server name, dbname and table list    } catch (ClassNotFoundException e) {     throw new Exception("Can't find the driver ",e );        con = null;      }}          finally         if  ((null != con)) try{  
+            PreparedStatement stmt  = con.prepareStatement( "SELECT COUNT(*) FROM users WHERE username=? AND password_hash =  SHA2('" +pass+ "' , 512); ") ;    //Selecting user by UserID and Password Hashed     run (stmt ); } catch  
+            { System . out . println ("Failed to select in Users table " ); throw new Exception("Error selecting from the 'Users' Table")} finally{ if(null != con) try  {      PreparedStatement stmt =    //Inserting a User into DB      `con.prepareStatement (  
+            "'INSERT INTO users VALUES (? , SHA2(' " + pass+"')) ") `stmt . execute Update() ; } catch          {} finally{} }}         if(null != con)  try { PreparedStatement stmt  =    //Checking user existance by UserID and Password Hashed    `con.prepareCall ("SELECT COUNT (* ) FROM users WHERE username = ? AND password_hash =  SHA2 (?,512)) .setString
+             "name" , pass) `stmt  . execute Update() ; } catch { System out   //Prints error if user doesn't exist in the DB     println ("User does not exists")    }}`;

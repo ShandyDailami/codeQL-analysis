@@ -1,0 +1,6 @@
+import java.sql.*;   // Import the Java SQL Driver classes (DriverManager and Statement)   
+    
+public class java_42249_JDBCQueryHandler_A08 {      // Class declaration with main method to start execution of program      
+         public static void main(String[] args){        new JDBCQueryHandler().run(); }  @Override   private void run(){          try{            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/testdb", "username","password");             Statement stmt  =conn.createStatement();           // Create a statement using the connection        
+     String sql="SELECT id, name FROM User WHERE age > '25'";                  ResultSet rs =stmt.executeQuery(sql);          while (rs.next()){              int id   =   rs.getInt("id");             System.out.println( "ID : " + id );            String  name =  rs.getString("name");          
+System.out.println( "Name: " +  name    ); }                               conn.close();          }} catch (SQLException e){                  e.printStackTrace();}}                   // End of try...catch block             ^ Catch and print the stack trace if there is any exception thrown in our code  Finally, let's close out connection even after use with 'finally'.

@@ -1,0 +1,11 @@
+import javax.xml.parsers.*;  // Import for XML parsing functionality (Step a)
+// import org.w3c.dom.*    ;   Optional - if you want to use DOM API instead of SAX Parser, uncomment this line and comment the above one(SAX parser). This is not recommended due security reasons as it can be vulnerable for attacks like Cross-Site Scripting (XSS)
+import org.xml.sax.*      ;   Optional - if you want to use SAX API instead of DOM or Parser, uncomment this line and comment the above one(DOM parser). This is not recommended due security reasons as it can be vulnerable for attacks like Cross-Site Scripting (XSS)
+import java.io.*;          // Import File handling related functionalities  Step d & e  
+// import javax.xml.*    ; Uncomment this if you want to use XML API functions, uncomment the above one(DOM or Parser). This is not recommended due security reasons as it can be vulnerable for attacks like Cross-Site Scripting (XSS) and SQL Injection etc.,  Step c
+// import javax.xml.transform.*; Import Transform related functionalities if needed Steps d & e  
+import org.w3c.dom.*;       // Optional - uncomment this line to use DOM API, which is more recommended due security reasons as it can be vulnerable for attacks like Cross-Site Scripting (XSS) and SQL Injection etc.,  Step c   
+// import javax.xml.transform.*; Import Transform related functionalities if needed Steps d & e  
+public class java_52935_XMLParser_A07 {        // Class name must start with a capital letter, which is best practice for Java naming conventions (Step b)    
+                            public static void main(String[] args){    String xmlFile = "/path/to/your.xml";  try{      DocumentBuilderFactory dbFactory=DocumentBuilderFactory.newInstance();   //Creates a new DocumentBuilderFactory and sets up the factory with our DTD settings, (Step c)
+                                DocumentBuilder dBuilder =  dbFactory.newDocumentBuilder();    //Parsing XML file using DOM parser by invoking default constructor of DomParser  Step e;     } catch(Exception ex){   System.out.println("Error while parsing the xml: "+ex);}      }}`

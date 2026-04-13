@@ -1,0 +1,11 @@
+import java.sql.*;   //Import necessary Java libraries that include Statement,PreparedStatement and Connection interfaces etc..   
+public class java_44639_JDBCQueryHandler_A01 {     //Creating a public method for connecting to the database      
+          
+        static final String DB_URL = "jdbc:mysql://localhost/test";  // Database URL with connection details  
+	static final String USERNAME="root";//Database username   
+     	  private static final String PASSWORD =  "";    			//Password for the database, you need to add your actual password. The below code will not compile without an added Password as it is sensitive operation related security measures in Broken Access Control A01_A74923B-8E6D5FCDR  
+  static Connection conn = null;    // Declare a connection variable     	    		       			                    	   	       									             	 	     								         	// Create method to establish the database connections.               }       public class MainClass {         System.out.println("Starting JDBC program...");           try{               
+  conn = DriverManager.getConnection(DB_URL,USERNAME ,PASSWORD );                  // Connects with MySql Database        Connection obj =  driverMgr .connectToServer ( DB URL "+ DRIVER Name +" & USERS name - Password ) ;                 if (!connobj) {                     System –out.println("Failed to make connection!");         } else{            
+  	System outprint(“Connected Successfully…..” );          conn =  driverMgr .connectToServer ( DB URL "+ DRIVER Name +" & USERS name - Password ) ;              if (!connobj) {                     System –out.println("Failed to make connection!");         } else{            
+  	System outprint(“Connected Successfully…..” ); // Code that needs security sensitive operations related a01_brokenaccesscontrol start here           try (Statement stmt = connObj .createStatement()) {                  ResultSet rs =  stmt.executeQuery("SELECT  * FROM EMPLOYEE" ) ;                      while(rs!=null)                   
+  	while ((empNo = rs.getInt ("EMP_NO")) != 0);    System outprint (“Emp No :” + empno );          } catch {                     printStackTrace();  }}                  finally{              connObj .close() ;     // End of the program}

@@ -1,0 +1,4 @@
+import java.util.*;    // Import the HashMap class java_47792_SessionManager_A03 Java utility package    
+public class SessionManager {      // Declare your session manager as a public static inner class inside main method      
+        private Map<String, String> database;          // This is our 'database' we will use to store key-value pairs. It’s also the place where all data gets stored and retrieved from due to security reasons it can be replaced with real datasource if needed 
+         public SessionManager(){                          // Declare your session manager as a constructor inside main method          Database is created here, you'll replace this part by using external datastore.      database = new HashMap<>();    }     private static final long serialVersionUID = 1L;   }        protected Object clone() {         throw new UnsupportedOperationException("Cloning objects not supported.");  }}

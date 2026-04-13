@@ -1,0 +1,6 @@
+import org.xml.sax.*;
+import org.xml.sax.helpers.DefaultHandler;
+import java.io.File;   // Import File Class to handle files and directories   	    		     	       			       	   	     									         	 						      																.`^_ `  .-._/..-. -.-/-/. '.' _ '. / '/'-./ '- ./ ..'.|
+public class java_50730_XMLParser_A03 {                                     extends DefaultHandler{                                                                           private String tempValue;   // Temporary variable to hold the value read from xml file.   	private boolean isName=false ;    	// Flag for name element .      	boolean icode = false, bcode = 0 , dqoute=  falsesetId  = -1
+public static void main(String[] args) {                      // Main method where parsing starts                                 			         try{  									         		             SAXParserFactory spf=SAXParserFactory.newInstance();    	                    	  SAXParser parser =spf . newSAXParser ();                                      XMLParser mp  =    new 
+XMLparser() ;      // Constructor to create object of this class and initialize flags                          public   X M A T C O M P L e_ D E F N(String []arg, int s){        	    		       super.endElement("root"){System . out.- _ "END OF DOCUMENT"_;}}

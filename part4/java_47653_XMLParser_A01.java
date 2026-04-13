@@ -1,0 +1,18 @@
+import org.xml.sax.*;
+import org.xml.sax.helpers.DefaultHandler;
+import javax.xml.parsers.*;
+import java.io.*;
+
+public class java_47653_XMLParser_A01 {   // No BAC here, this is just a simple example to demonstrate the concept of security sensitive operations related A01_BrokenAccessControl 
+    public static void main(String[] args) throws ParserConfigurationException ,SAXException{    
+        String fileName = "sample.xml";      # Provide your XML input File Name Here (Avoiding external frameworks here as per the instructions).  
+                                               You can use 'http://www.example.com/sax.dtd' or similar for testing purposes, then change it to yours and make sure that you have appropriate access permissions set in place like this: <oaxp:/read> (Read permission) on your DTD  file if using as per instructions
+        SAXParserFactory spf = SAXParserFactory.newInstance();    # Instantiate a new parser factory to create our sax-parser with   xml configuration settings and schema validation off     // This is safe because we are not exposing the dtd or any other sensitive information  DTD file in this example
+        SAXParser sp =spf.newSAXParser(new Properties());    # Create a new parser object from our sax-parser with xml configuration settings and schema validation off   // This is safe because we are not exposing the dtd or any other sensitive information  DTD file in this example
+        File inputFile  = new File (fileName);     // Read XML data into memory, you may want to use a stream here if performance becomes an issue. The code below does exactly that and can be adapted for your needs   // This is safe because we are not exposing the dtd or any other sensitive information  DTD file in this example
+        SAXHandler sh = new SAXHandler();     # Create our handler object to process XML data    // Do NOT expose inputFile, it's a potential source of security risks if exposed. This should be set up as per instructions and your actual needs   the code below does exactly that  DTD file in this example
+        sp.parse(inputFile ,sh);     # Parse our xml document with 'this handler', which will handle each tag parsed by sax, so we just have to worry about what information is being passed on    // Do NOT expose sh (handler), it's a potential source of security risks if exposed  DTD file in this example
+        System.out.println("Done parsing the XML Document");     # This line should be called when you are finished with processing, or at least that I think so   The code below does exactly as instructed above and can be adapted for your needs    // Do NOT expose sh (handler), it's a potential source of security risks if exposed  DTD file in this example
+      }     # End Main Method       the end. If you have more methods or classes, make sure to encapsulate them within class scope as per Java conventions and also include relevant comments for readability   // This is safe because we are not exposing sensitive information related A01_BrokenAccessControl 
+    }     # End Main Method       the end. If you have more methods or classes, make sure to encapsulate them within class scope as per Java conventions and also include relevant comments for readability   // This is safe because we are not exposing sensitive information related A01_BrokenAccessControl 
+}     # End Main Method       the end. If you have more methods or classes, make sure to encapsulate them within class scope as per Java conventions and also include relevant comments for readability   // This is safe because we are not exposing sensitive information related A01_BrokenAccessControl

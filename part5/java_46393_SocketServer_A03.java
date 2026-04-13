@@ -1,0 +1,5 @@
+import java.io.*; // Import necessary Java classes to use BufferedReader and DataOutputStream for writing, InputStreamReader and DatagramSocket for reading from clients etc..   
+       import javax.crypto.Cipher; 
+     	     import javax.crypto.spec.SecretKeySpec;  
+public class java_46393_SocketServer_A03 { // Start of the Server code snippet...         		        				       			                					                                                    }// Ends server's part..    private static final String ALGORITHM = "AES";     byte[] keyValue ="12345678abcdefgh".getBytes();
+	private SecretKeySpec secretKey;   AES takethis out           Cipher cipher ;  int serverPort = 9000, clientPort= 9001;       DatagramSocket serverSocket=null ,clientSocket = null;    BufferedReader reader  = null;}// Ends the Server code snippet...

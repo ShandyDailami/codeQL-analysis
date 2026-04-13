@@ -1,0 +1,5 @@
+import java.sql.*;   // Import the required Java libraries/package from SQL related tasks    
+class java_43268_JDBCQueryHandler_A03 {   		// Start of main class      	   	 		         	     	       
+	public static void main(String[] args)          			         throws SQLException{              
+        String url = "jdbc:sqlite:/tmp/test.db"; // Provide your database connection details here  				    					 								     
+		// Open a Connection object using the URL and Database driver name               		   	   	 	     	       						       }                          			         {                             getConnection(url, null);              	}            };             if (con !=null)                                           con.close();                     }}                            });                         closeStatement("update_statement");

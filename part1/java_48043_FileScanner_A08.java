@@ -1,0 +1,8 @@
+import java.io.*; // Import File I/O operations classes     
+public class java_48043_FileScanner_A08 {    
+    public static void main(String[] args) throws IOException  {        
+        String directoryPath = "/path_to_your_directory";         
+	File folder = new File (directoryPath);            
+       for (File file : folder.listFiles())   // iterate over all files in the specified location   		    			     	 					                  				                     )  {                  if(file==null) continue;              BufferedReader reader =  null;                 try{               	reader = new BufferedReader((new InputStreamReader (                      java.lang.Runtime.getRuntime().exec("echo "+ file . getAbsolutePath() +" | clip").getInputStream())); 
+                     String line=null ;   // read the contents of each textfile   									    			     	 	                   while ((line = reader.readLine()) !=  null) {                 if(containsSensitiveInfoInTextFile (line))                  encryptAndSaveToNewLocationOfSameNameWithAppendedExtension("encrypted_", line, file); }                    
+                      finally{                    // clean up resources   									    			     	 	                   reader.close();              }}catch(){               	    };              		  	}            System.out.println ("End of processing.");        }) ;  }, null );       });            	       `

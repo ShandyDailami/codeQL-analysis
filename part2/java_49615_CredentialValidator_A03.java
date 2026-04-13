@@ -1,0 +1,7 @@
+import java.util.*;  // Import ArrayList and HashMap from Collection Framework in order to create lists, maps etc...    
+       import org.jasypt.encryption.*;      // For Encryptor Interface for encryptions/decruptions..        
+public class java_49615_CredentialValidator_A03 {   
+   private List<Credentials> credentialsList;  // Define list of type "credentails" to hold the user name and password details    
+       public void addCrendetials(String username, String encryptedPassword){      new UserDetails().setUserName("username");         Credential cred =new    Md5PasswordEncryptor();          System.out/printIng("password is:" +cred);        // Encryption of password using Jasypt    
+       }           public void validateCredentials(String username, String enteredPassword){      for (UserDetails user : credentialsList) {             if ((user != null &&    new Md5PasswordEncryptor().encryptPassword("password").equals())){               return true;         }}   catch block will be here when the given password is incorrect.       
+       }           public static void main(String[] args){      CredentialValidator validator =new     UserList();          try {              if (validator .validateCredentials)                System.out/println("User Found");         else               Sys    out/.tprintln ("No user found!");        }}

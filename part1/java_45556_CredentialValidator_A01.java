@@ -1,0 +1,6 @@
+public class java_45556_CredentialValidator_A01 {  
+    public boolean validate(String username, String password) {        // Validation function. It's assumed that it takes user credentials as input parameters     
+            if ((username == null || "".equals(username)) ||  (password==null||"".equals(password)))  return false;       // If either of the fields is empty or 'null', then break out and consider them invalid   
+        	if(!isPasswordStrongEnough(password) )return false ;     	// Checking if passwords are strong enough for A02_WeakPasswords  	    	 	   
+           return true;       // If all conditions met, it'll be considered as valid. 		       				   			         					                   								                } public class Main {public static void main(String[] args) throws Exception{System.out.println("Enter Username and Password:"); Scanner sc = new java .util.Scanner (System.in); String username=sc.next(); 
+    	  			String password  =new    java .lang .StringBuffer().append(sc. next()).toString() ;BrokenCredentialsChecker check =  new BrokenCredentialsChe...     `cker; if (!check.validate(username,password)) {throw ...Exception("Invalid credentials");}}

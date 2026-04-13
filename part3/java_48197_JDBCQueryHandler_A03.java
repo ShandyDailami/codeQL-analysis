@@ -1,0 +1,15 @@
+import java.sql.*;
+public class java_48197_JDBCQueryHandler_A03 {    
+    public static void main(String[] args) throws ClassNotFoundException, SQLException{       
+         // Step 1: Load the database driver         
+           Class.forName("com.mysql.jdbc.Driver");  
+           
+           String url = "jdbc:mysql://localhost/test";   
+    	    String user ="root", password= "";     	      			               		       									            	       	 	     						  //Step2 : Connection to the database         							        								                 DriverManager is used for connection, in this case we are using MySQL driver.                  .setAutoCommit(false);  
+           java.util.Properties props = new Properties();   	      			               		       									            	       	 	     						  //Step3: Setting up the properties of our database     	    Connection conn= DriverManager.getConnection("jdbc:mysql://localhost/test", "root","");     .setAutoCommit(false);
+            String query ="INSERT INTO users (username, password) VALUES ('user1', ? )"; //Step 4 : Prepare Statement      	                    			         		       									            	       	 	     						   Connection conn= DriverManager.getConnection("jdbc:mysql://localhost/test", "root","");     .setAutoCommit(false);
+           CallableStatement cs =conn.prepareCall (query );    //Step 5 : Execute the query      	                    			         		       									            	       	 	     						   for(int i=1;i<20 ;i++) {         System.out.println("Value "+i);
+           cs .setString(i, String.valueOf (x)); //Step 6 : Adding parameters to our query      	                    			         		       									            	       	 	     						   for example: x = 10;cs. setInt((int) i , j ); }         System.out.println("User has been created"); conn .commit();
+    }}`      // Step 7 : Commit the transaction after all operations are done, if any error occurs it will be rolled back automatically by DriverManager      	                    			         		       									            	       	 	     						   catch block for exception and finally blocks to ensure that resources get released.     }         };
+    }}`      // Step 8 : Using try-catch in our main method can help with the error handling if any exceptions occur during execution of query or connection operations, we are catching them here      	                    			         		       									            	       	 	     						   catch block for exception and finally blocks to ensure that resources get released.     }
+    }}`      // Step 9 : The end closing our Connection object will release all the resource held by DriverManager           .close();}}         }; This is how you can secure your operations using JDBC in Java as per A03_Injection attack and avoiding SQL Injections attacks through parameterized queries.

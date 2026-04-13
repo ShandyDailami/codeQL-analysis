@@ -1,0 +1,10 @@
+public abstract class java_53139_SessionManager_A08 {   // a) Make it unique by naming convention - e.g.: UserSessionManager in A09_UserManagementContext  etc!     f.) Use comments to describe code snippet, remove as soon you generate the output for context-specific instructions above's commentary
+    private boolean isAdmin; // a) Here we assume there will be some user information passed into this variable. Replace with actual implementation in real use case - e.g.: UserSessionManager has an attribute 'adminUser'.     f.) Use comments to describe code snippet, remove as soon you generate the output for context-specific instructions above's commentary
+  
+    public void openAdminSession(String adminUsername) {  // a) Make it unique by naming convention - e.g.: verifyCredentialsForUser in A09_UserManagementContext etc!     f.) Use comments to describe code snippet, remove as soon you generate the output for context-specific instructions above's commentary
+        if (verifyAdminAccess(adminUsername)) { // a) Replace 'isValidCredentialsForADmin()'/'getUserInfoByName('username') etc.' with actual implementation in real use case - e.g.: UserSessionManager calls the methods of A09_UserManagementContext to get user info and verify credentials for an admin
+            isAdmin = true; // a) Replace 'isValidCredentialsForADmin()'/'getUserInfoByName('username') etc.' with actual implementation in real use case - e.g.: UserSessionManager calls the methods of A09
+        }  
+    } 
+    
+}// Closing bracket followed by a comment here to describe code snippet, remove as soon you generate output for context-specific instructions above's unique name convention and be creative! b) You should also provide some user information when calling the methods. c) Do not use external frameworks like Spring or Hibernate d) Make sure your program is syntactically correct java code e: Use 'java' at start of every line

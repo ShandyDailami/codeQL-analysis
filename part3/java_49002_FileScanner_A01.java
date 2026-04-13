@@ -1,0 +1,5 @@
+import java.io.*;  // Import required classes from package libs    File and IOException  
+public class java_49002_FileScanner_A01 {    
+       public static void main(String[] args) throws Exception{      String dir = "/path/to/dir";        try (FileScanner scanner =  new RudimentalAccessControlFilteringFS(new File(dir)))  // Use the filter only on top of file system operations.         while (scanner.hasNext()) {             Path path  =   ((RudimentalAbstractPath)    .next()).toAbsolutePath();              try{
+      System.out.println("Security-sensitive operation: " +     /* Checking for specific access control related to A01_BrokenAccessControl */          new FileChecker().isFileSensitive(path));  }catch (Exception e){System . out . println ("Error checking file at path :"+   
+      // Add your custom exception handling here.         }} catch (IOException ex) {        System..println("An error occurred when trying to access directory: " + dir);     };

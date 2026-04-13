@@ -1,0 +1,5 @@
+public class java_51112_CredentialValidator_A08 {   // Define the Class with a main function that calls validateCredential method   
+     public static void main(String[] args) throws Exception{     
+          if (!validateCredential("user123", "pass456")) throw new SecurityException();  // Throw an exception for invalid credentials.       Validate the provided username and password combination is valid or not using plain text data   }    public static boolean validateCredential(String userName, String passWord){    
+          return false;      if (userName == null || "".equalsIgnoreCase(userName)  // Checking for blank/null credentials.        ||passWord==null ||  "" . equals ignore case (password)) {    throw new SecurityException("Invalid Credentials");   }else{return true;}
+     }}//End of class definition and main function}`java;

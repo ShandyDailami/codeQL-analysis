@@ -1,0 +1,9 @@
+public class java_45346_SessionManager_A08 {   // Declare the session manager, it's a simple model for security-sensitive operations. Let me know if you want to use something else! (A08_IntegrityFailure)
+    private String user;           // Store username in this variable as per instruction b above – Context: Use standard libraries only Focus on security sensitive operation related A08 Integrity Failure .  
+                                   /* If I understand correctly, SecuritySession is just a simple model for handling different operations/sensitive data (A08_IntegrityFailure) */    // c. Do not use external frameworks like Spring or Hibernate – e above       [Commented out by AI]
+    
+   private static final String DEFAULTUSER = "DefaultUser";      /* Default user set when no username is provided in a session (A08_IntegrityFailure) */    // c. Do not use external frameworks like Spring or Hibernate – e above       [Commented out by AI]
+    
+   public java_45346_SessionManager_A08(String initialUsername) {             /* Create an instance with optional username argument, if no name is provided then default user "DefaultUser" (A08_IntegrityFailure) */    // d. Make sure the program is syntactically correct Java code – e above       [Commented out by AI]
+      this(initialUsername , DEFAULTUSER);                     /* The constructor will accept a username or else it uses "DefaultUser" (A08_IntegrityFailure) */    // d. Make sure the program is syntactically correct Java code – e above       [Commented out by AI]
+      this(initialUsername , DEFAULTUSER);                     /* The constructor will accept a username or else it uses "DefaultUser" (A08

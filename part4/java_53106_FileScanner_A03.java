@@ -1,0 +1,8 @@
+import java.io.*;  // Import the necessary Java Libraries       
+class java_53106_FileScanner_A03 {     
+public static void main(String[] args) throws IOException{    
+System.out.println("Enter directory path:");      
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));   // Reading input from the user    for reading command line arguments  System.setProperty ("user.dir", "/path/to") ;        String dirPath=br.readLine();     File directory = new File (dirPath);      
+FileScanner fs = null;          try {            if(directory.exists()){                // Checking whether the Directory exists or not              System.out.println("Directory Exists");             } else{               throw  IllegalArgumentException ("Invalid path..") ;}        String[] extensions={"txt"};          
+fs =  new FileScanner ( directory,extensions);            while( fs . hasNext() ) {          PrintWriter pw =new   PrintWriter    System.out.println("Found the file: "+     fs  . nextPathname()); }             // Close after all operations are done              if(!directory.exists())      
+System.exit (0);         }} catch(Exception e){ println ("Error :" +e );} finally {if   (fs!=null)    fs.close();}}          protected FileScanner  newFileS     enclosing(){ return this; }      public static Object getEnclosingMethodStatements() throws SecurityException, IllegalArgumentException{ throwSecurityOrIllegalArgumentMS(getClass().getName()); }}

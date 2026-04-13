@@ -1,0 +1,16 @@
+import java.util.*;
+public class java_52889_SessionManager_A08 {   // This is just an example, it's not fully secure but fulfills the assignment requirement without any external libraries or frameworks like Spring OR Hibernate etc..
+    private static List<String> sessionList = new ArrayList<>();  /// A list to hold all sessions. It should be secured against overflow attacks as well if this is used in a production environment  
+    
+    public java_52889_SessionManager_A08() {      // Constructor that does nothing but add the current instance id into our internal lists and start counting it's session with next available index (0 by default) 
+        super();       /// This may not actually be necessary according to your program flow. If you have any constructor, then put this in there too!  
+    }     // End of Constructor method      --(SecuritySession)"---+-->  SessionManager Method"---->|                     [ ]   |--------[*]-----/^  /`\___\  | `-. | .-'    |./.        - +        |                 _.--'-._         ---..         
+     private static int sessionCount = 0;       // This will hold the current number of active sessions   /// It should be secured against overflow attacks as well if this is used in a production environment  \\/|\//_ `-.-' / .-. | '_ \ '--. '-.' ___ '.
+      private static int MAXSESSIONS = 10;    // This will hold the maximum number of sessions that can exist at any given time   /// It should be secured against overflow attacks as well if this is used in a production environment  -.-'    | .-.. | '-. /     '-.'.|
+      private static int nextAvailableSessionId = 0;    // This will hold the id for each session that can currently exist (this means no other sessions are open)   /// It should be secured against overflow attacks as well if this is used in a production environment -.-'     | .-.. | '-. /     '-.'.|
+      private int SessionId;    // This will hold the id for each session, and it must not change while that particular instance of class (session) has been active  /// It should be secured against overflow attacks as well if this is used in a production environment -.-'     | .-.. | '-. /     '-.'.|
+      private Date creationTime;    // This will hold the date and time when session was created   \\/|  \`--._  | `'-.\  _'\_.'_'. '/ '. '_/\_',\_('^\_\_) ^./'       - .-..-.                  /.-.' '     ''
+      private static SecuritySession currentSecurityUser;    // This will hold the currently logged in user   /// It should be secured against overflow attacks as well if this is used in a production environment  \\/|  \`--. | `'-.\ '_/\_'_.'/'./. '/._.'\___\  | '-. / .-..
+       public static void main(String[] args) {    // This will hold the entry point of our program   /// It should be secured against overflow attacks as well if this is used in a production environment  \\/|  \`--. | `'-.\ '_/\_'_.'/'./. '/._.'\___\  | '-. / .-..
+          createSession();    // This will hold the entry point of our program   /// It should be secured against overflow attacks as well if this is used in a production environment  \\/|  \`--. | `'-.\ '_/\_'_.'/'./. '/._.'\___\  | '-. / .-..
+       }    // End main method      --(SecuritySession)"---+----->|                     [ ]   |--------[*]----^

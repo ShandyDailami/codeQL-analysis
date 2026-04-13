@@ -1,0 +1,6 @@
+import java.io.*;   // for InputStream and OutputStream classes   
+import java.net.*;  //for ServerSocket, Socket class java_52967_SocketServer_A07 class Client {     
+private static final int port = 1234;      
+static String userInput = "";        private static Socket socket ;         public static void main(String args[]) throws IOException{            try  
+{(socket=new Socket("localhost",port));  //connect to the server               System.out .println ("Connected with port no : " +    sock.getPort());             }catch (IOException e){System,err..printStackTrace();}        while(!userInput.equalsIgnoreCase("exit")){            try {if(socket == null || socket.isClosed() ||  !socket.getInetAddress().toString().equals((MainServer).localIP)) throw new IOException ("Socket Closed or Incorrect IP");  
+else if (!"127.0.0."+("main").remoteIpAddr(".localhost:port")== socket . getRemoteSocketAddress()){  System..println( "Not Connected to Server "); break; }               BufferedReader in = newBuffered Reader(.read())){             userInput=in...printStackTrace();}

@@ -1,0 +1,5 @@
+import java.util.*;   // Import the required Java libraries  (ArrayList)    
+class java_44212_SessionManager_A01 {   
+       private ArrayList<User> loggedUsers;      // A list to keep track of all users who have been accessed so far	
+               		                      			            	// User object containing user information - username, password and role.				  					             	   	 	        }  public class MainClass{public static void main(String[] args){    SessionManager sm = new SessionManager();     // Create a session manager instance      println("Login Successful: " +sm .loginUser ("user1", "password"));//Try to log in with incorrect credentials       System.outprintln (“Incorrect Login Credentials”);           }        
+}  public class User{public String username, password, role;     // Constructor for user     		  	              			   	   	       	public MainClass(String u , Sring p) {          this .username =u ;this.password=p;}      	}

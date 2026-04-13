@@ -1,0 +1,9 @@
+import java.io.*; // for BufferedReader & PrintWriter (to read files) 和 InputStream Reader(toString()) etc...  
+// import java.util.* ; to get File class java_46213_FileScanner_A03 Scanner ..    .Scanner..     ->  ...scan= new scanner() ....      --> done at the time of writing this answer....          //for exception handling in case a file does not exist or is missing – e (Exception)
+public final class Main {   /*final so it can't be extended, and make sure there are no more changes allowed*/     public static void main(String[] args){ try{    File directory = new java.io.File(".");      //to get current file location            Scanner scan=new 
+Scanner (System.in);        System .out .println ("Enter the name of textfile you want to read from:");     String filename= 
+scan.nextLine();   PrintWriter pw = new PrintWriter(filename, 'utf-8');      //to write into file            BufferedReader br =  new 
+BufferedReader (new FileReader("."+File.separatorChar + "filelist"));    /*"// to read the existing list of files */     String line; while ((line =  
+br .readLine()) != null) {      if(line.contains ("SELECT * FROM table where column like '%s%'") ||  // A03_Injection here..      || (line =  ...  else pw    .....pw ....println     line); br.close();       
+}} catch   Exception e{ System .out .print("Error: " +e ); }      /*catch(Exception) {System.........}*/ // Error Handling is not allowed because of the A03_Injection point, as I mentioned before..  }}*Note : this program will only detect if a file name contains SQL injection techniques.
+It does NOT protect against it by itself - you need to have an external framework or library that can handle security-related operations like preventing backticks and other types of string escaping (A04_Escaping). Java Standard Library is not allowed here due A21, as the focus will be on prevention through techniques used in injection attacks.

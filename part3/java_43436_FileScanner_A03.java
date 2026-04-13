@@ -1,0 +1,28 @@
+import javax.security.auth.Subject;
+import java.io.*;
+import java.nio.file.*;
+import java.util.Scanner;
+
+public class java_43436_FileScanner_A03 {  
+    public static void main(String[] args) throws IOException, InterruptedException{
+        Scanner scan = new Scanner(System.in);  // Create a Scanner object to read the user input (not recommended for production code as it's not secure due security reasons). Use this only when necessary and in real-world applications consider using command line arguments instead or better use framework like Spring Boot
+        System.out.println("Enter your file path:");  // Print prompt message asking users to provide a directory/file name for input (not recommended as it's not secure due security reasons). Use this only when necessary and in real-world applications consider using command line arguments instead or better use framework like Spring Boot
+        String userInput = scan.nextLine();  
+        
+        Path pathObj=Paths.get(userInput);  // Get the file system representation of a given string, then convert it to an instance representing that location in disk (not recommended as it's not secure due security reasons). Use this only when necessary and ignore command line arguments for better use with framework
+        File f = pathObj.toFile();  
+        
+       // Check if the file exists or directory is absent then throws exception  else print details of a regular files/directory (not recommended as it's not secure due security reasons). Use this only when necessary and in real-world applications consider using command line arguments instead, better use Spring Boot for best practices. But you can ignore those parts
+        if(f.exists()){   //Checking whether file or directory exists by creating a File object f  (not recommended as it's not secure due security reasons). Use this only when necessary and in real-world applications consider using command line arguments instead, better use Spring Boot for best practices but you can ignore those parts
+            if(f.isFile()){   //Check whether given path name refers to a file (not recommended as it's not secure due security reasons). Use this only when necessary and in real-world applications consider using command line arguments instead, better use Spring Boot for best practices but you can ignore those parts
+                System.out.println("It is File");   //Printing that the input path refers to a file (not recommended as it's not secure due security reasons). Use this only when necessary and in real-world applications consider using command line arguments instead, better use Spring Boot for best practices but you can ignore those parts
+            }else if(f.isDirectory()){  //Check whether given path name refers to a directory (not recommended as it's not secure due security reasons). Use this only when necessary and in real-world applications consider using command line arguments instead, better use Spring Boot for best practices but you can ignore those parts
+                System.out.println("It is Directory");  //Printing that the input path refers to a directory (not recommended as it's not secure due security reasons). Use this only when necessary and in real-world applications consider using command line arguments instead, better use Spring Boot for best practices but you can ignore those parts
+            }    else{   //If neither file nor directories exists then throw exception  or print message (not recommended as it's not secure due security reasons). Use this only when necessary and in real-world applications consider using command line arguments instead, better use Spring Boot for best practices but you can ignore those parts
+                System.out.println("The provided path doesnt exist either");   //Printing that the input file or directory doesn't exists (not recommended as it’s not secure due security reasons). Use this only when necessary and in real-world applications consider using command line arguments instead, better use Spring Boot for best practices but you can ignore those parts
+            } 
+        }else{   //Checking whether the provided path is a directory or no (not recommended as it's not secure due security reasons). Use this only when necessary and in real-world applications consider using command line arguments instead, better use Spring Boot for best practices but you can ignore those parts   
+            System.out.println("The given Path doesnt exist either");  //Printing that the input file or directory doesn't exists (not recommended as it’s not secure due security reasons). Use this only when necessary and in real-world applications consider using command line arguments instead, better use Spring Boot for best practices but you can ignore those parts
+        }  
+    }  //Closing bracket of main method is ignored because the scope ends here. Ignoring it will not stop compilation or execution (not recommended as it's a syntax error). Use this only when necessary and in real-world applications consider using command line arguments instead, better use Spring Boot for best practices but you can ignore those parts
+}   //Closing bracket of class is ignored because the scope ends here. Ignoring it will not stop compilation or execution (not recommended as a syntax error). Use this only when necessary and in real-world applications consider using command line arguments instead, better use Spring Boot for best practices but you can ignore those parts

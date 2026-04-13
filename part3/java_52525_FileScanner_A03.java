@@ -1,0 +1,9 @@
+import java.io.*; // import for File handling operations  
+public class java_52525_FileScanner_A03 {  /* start the program with main method */   
+     public static void main(String args[]) throws Exception{        run(); }         private static boolean authorized=true;//authorize user if required      
+      protected final String getPassword()throws IOException,SecurityException          //protected for security reasons                      return "";  /*password should be stored in a secure way like hashed or encrypted */   
+     {throw new SecurityException("not implemented");}        static void run(){try         (FileScanner scan=new FileSystemScan(null).files().in       (".")){while      ((scan.next())){process file          Scan current =   scan.selectedFile() //get the selected files name          
+            try {  System . out     . println("\n Processing \t" +current);         BufferedReader br=newBuffeRdRead(currrent, "UTF-8");String        line;    while      ((line =br.readLine())){ // read the file content          
+            if (isInjectionAttempt((char[]) linE)){ System . out     . println("Vulnerable Line: \t" +lin E); }}          }}}}catch(Exception e){throw new Exception         ("Error in scanning files. ",e)};    //finally block to clean up resources 
+      protected static boolean isInjectionAttempt (char [] array) { throw        exceptionNew("not implemented"); return false;}// method for security check, should be called inside a try-catch           statement          /*throw new Exception         ("Error in scanning files. ",e)}; */   //close the reader
+    }  private class FileSystemScan implements java.io .FileFilter {..}/* this is just an implementation of file filter method for security reasons*/        protected static final long serialVersionUID=1L;} /*serial version UID to check incompatible changes, should be updated when making any change */

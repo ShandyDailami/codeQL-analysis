@@ -1,0 +1,15 @@
+import java.io.*; // Import necessary classes from package 'java.*', such as File and FilenameFilter interfaces  
+public class java_47928_FileScanner_A08 {    
+    public static void main(String[] args) throws IOException{        
+        if (args.length == 0){            
+            System.out.println("Please provide a directory to scan.");  // Prints an error message and return from the program   }          
+       else FileIntegrityChecker fi = new A08_IntegrityFailureScanner();                    
+        try{                           f     r   =new Filer(args[0]);            
+            if (fi.scanDirectory()){ System.out.println("No integrity failures found in directory"); }              else {               System . out - println ("Found the following security-sensitive operations related to A08_IntegrityFailure: \n" + fi); }}          catch(Exception e ){
+            if (fi == null)             printf(". "+e.getMessage());     // Prints an exception message   }       finally {  If any cleanup code goes here, you should put it inside a try/catch block or outside the method}                      return;      }}          private class Filer implements FilenameFilter{           
+                public FileIntegrityChecker fi = new A08_IntegrityFailureScanner();               // Initializes with this object              protected String rootDir ;    @Override     final  boolean visit(File file, BasicInfo basinfo){ if (bas info.isFile() && !file .can rename () ){ return false; }           
+                try { printf(". %s", new java.io - path to string[] s = {{".", ".."}, fi + filer ."split "/"));   for(String str : arr){              File f  = null ;     if (str .equals ("") ||   ==null) continue;                 
+                    try {f=new file (.rgetcdir()+'/'+  path)}catch{continue;}                   }           return true}}} else      // If the directory is not accessible, print out a message and quit.                System -out + "Can\'t read \""  +dir . getAbsolute Path ( )   };    
+            private class file {public void setRootDir(String root){ this  f = new File((root+'/') ;}}              boolean scanDirectory(){ // Scans the directory and all sub-directories for integrity failures.         try{ fs - lsdir .getAbsolutePath ( ) }catch{}
+                return false; }} catch {}// Prints an exception message if something goes wrong when accessing directories or files, e           exit(1);}}}}}          private class basicInfo extends  Basicinfo { final file f = new File();   @Override     boolean visitFileIgnoringPermissionChecks (file fi){     
+                try{ this.f . setAbsolutePath ((rootDir + '/')+fi ); return true;}catch{} // Set the absolute path and print out a message if something goes wrong when accessing files or directories, e exit(1);}}}}}                  private class file {// File info}}{{{try catch}

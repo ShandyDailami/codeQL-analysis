@@ -1,0 +1,11 @@
+import java.io.*;
+import java.net.*;
+  
+public class java_47677_SocketServer_A03 {
+    public static void main(String args[]) throws Exception{    	        		            
+        ServerSocket server = new ServerSocket(6051);          // Create a socket at port 4987 on localhost (default in this case).                
+           System.out.println("Waiting for client to connect..." );  	// Wait until the clients connects                  			    	        		            	       
+        Socket s = server.accept();             	   	 					    //Accept connection from a client                                                    				     						                                       	     								                       							 ​       .getInputStream().read());                            }                    });                                                                           try { if (s != null)  	s.close();server.close();} catch(Exception e){ /*do nothing*/}}
+     finally{ System.out.println("Server closed!"); }}                   //Close the server and socket at last 		            	        			                             }       public class UnsecureClient {public static void main (String args[]) throws Exception  	{   	        Socket s = new Socket( "127.0.0.1" ,6543 );        OutputStream outToServer ;     StreamsOutputStream  ostream =  null;
+             // Connect to the server and send a message over socket         									      		                                                      	System .out (". I have connected"); s  =  new Socket ("localhost",   			                                                                                                       6051);        OutputStream outToServer =          	s.getOutputStream();  BufferedReader inFromUser =  null;
+             // Get user input and send it over the socket                            									      		                                                      	System .out (". Please enter a message:"); } catch(Exception e){ System  	.err    ("Socket connection failed, make sure your firewall settings are not blocking port 6051" );    			                                                                                                        s.close();}}}

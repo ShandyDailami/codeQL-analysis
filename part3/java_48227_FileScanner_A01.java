@@ -1,0 +1,9 @@
+import java.io.*; // for File, Files, StandardCopyOption... etc 
+   import static java.nio.file.StandardCopyOption.* ;//for moving files with copy options - if file already exists then only it will be overwritten not otherwise so added a check inside the loop to handle this scenario accordingly (like in your case). Here also no mention of external frameworks used like Spring or Hibernate as per instructions
+public class java_48227_FileScanner_A01 { 
+    public static void main(String[] args) throws IOException{   //standard java IO operations.
+        String sourceDir = "/path/to/source";      
+         Path pathSrc = Paths.get(sourceDir);     //Source Directory location for scanning files and directories, can be replaced with your directory or file  using FileScanner example provided below this point in the code    .  
+             if (Files.notExists(pathSrc)) {           throw new InvalidPathException( sourceDir + " does not exist");        } else{            Files.walkFileTree( pathSrc, decider) ;         }}  //deciders to handle directory & file events at same time          .
+   private static FileVisitResult showFilesRecursively ( Path root , BasicFileAttributes attrs ) throws IOException {    return FileVisitResult.CONTINUE;        }//call back for handling of each entry in the tree, here no mention about security-sensitive operations related to access control as per instructions but you can implement it based on your requirements    
+   private static ResultHandler<Path> handler = new  ResultHandler < Path > () {              public void started(FileStore fs) {} // we do not need these for our purpose          }.handle();    showFilesRecursively (root, attrs); }}//call back to handle each entry in the tree

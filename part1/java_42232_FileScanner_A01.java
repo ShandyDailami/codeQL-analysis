@@ -1,0 +1,4 @@
+import java.io.*;    // Import the File class, Path... etc.. from package directory      import java.util;     use this to read files/ directories and list them .         
+        public static void main(String[] args) {           try (FileScanner scan = new File(".").getFiles().scan()) {              while (true){                  String name   = null, dirName=null ;               if((name    = scan.next()).endsWith(".jpg")){                 System.out.println("\nFound a .JPG file: \t" +
+                                                       "\""+(new File(".").getCanonicalPath())+"/\n"); }              else  {                     println ("No more JPEG files found in this directory "    );   return;            }} catch (Exception e)            
+           {               // handle any errors here.          System.out.println(e);       }}

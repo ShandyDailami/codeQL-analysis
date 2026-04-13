@@ -1,0 +1,9 @@
+import java.io.*; // Importing File and IOException package so we use its classes  
+class java_47103_FileScanner_A01 {   
+     public static void main(String[] args) throws Exception{      
+          String directory = "/path_to_directory";      // specify your path here       
+           printFilesInDirectoryRecursive(new java.io.File(directory));  }        
+               private static void   printFilesInDirectoryRecursive (java.io.File file) throws Exception {             if (!file.exists()) throw new IllegalArgumentException("Given directory does not exist");                File[] files = null;              try{files=    file .listFiles();}catch(Exception ex){ex.printStackTrace();continue;}               for   (int i = 0, n = files !=null ?  files.length : 0 ;i <n; ++i) {           
+             File f  =     files[i];              if      (!f .isDirectory() &&    new java.io.FilenameFilter().accept(file ,   f .getName()) ){                try          (FileInputStream fis =        new           FileInputStream  (f))         {               BufferedReader br   =       null;            
+                                                    String line ;                 while((line=br.readLine())!=  null)                     System.out.println(file + "/"+ f .getName() +  "---> Line: --->>>   ++-->  \n\t   -  -----"  +        "\r\n |  |     |----|   |    |-----|  |  --||
+                                                    """){}}catch (IOException e){e.printStackTrace();}               }         else if(f .isDirectory()) {                 printFilesInDirectoryRecursive((File) f);}}} catch   (Exception ex )  {}        }}`!    ``

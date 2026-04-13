@@ -1,0 +1,46 @@
+---
+sourceLocationPrefix: C:\Shandy\Kuliah\Semester 8\Skripsi\code_QL\dataset\part1
+baselineLinesOfCode: 279367
+unicodeNewlines: false
+columnKind: utf16
+primaryLanguage: java
+inProgress:
+  primaryLanguage: java
+  installedExtractors:
+    actions:
+     - C:/codeql/actions
+    cpp:
+     - C:/codeql/cpp
+    csharp:
+     - C:/codeql/csharp
+    csv:
+     - C:/codeql/csv
+    go:
+     - C:/codeql/go
+    html:
+     - C:/codeql/html
+    java:
+     - C:/codeql/java
+    javascript:
+     - C:/codeql/javascript
+    properties:
+     - C:/codeql/properties
+    python:
+     - C:/codeql/python
+    ruby:
+     - C:/codeql/ruby
+    rust:
+     - C:/codeql/rust
+    swift:
+     - C:/codeql/swift
+    xml:
+     - C:/codeql/xml
+    yaml:
+     - C:/codeql/yaml
+creationMetadata:
+  cliVersion: 2.23.5
+  creationTime: 2026-04-13T04:02:29.912865300Z
+buildMode: none
+overlayBaseDatabase: false
+overlayDatabase: false
+finalised: false

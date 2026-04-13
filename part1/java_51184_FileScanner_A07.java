@@ -1,0 +1,17 @@
+import java.io.*;  // Import the necessary classes
+   import java.util.*;     // To use ArrayList and other utility functions   
+     
+public class java_51184_FileScanner_A07 {       // Declaring a Class for our Program       
+ public static void main(String[] args) throws IOException{         //Main method where execution begins         
+ String filepath = "/Users/username/Downloads";  //Path to your CSV          
+ ArrayList<ArrayList> dataList =  new ArrayList<>();      /*This is the list of all rows from csv. You can use a Database library like Hibernate or JDBC instead for real case scenario*/      
+ File file =new File(filepath);        ///Creating an object to represent CSV         
+ if (file.exists()) {                  //Check whether your inputted path actually exists          
+ BufferedReader br= new BufferedReader((new FileReader(file))) ;   /*Reads the content of our csv file into a buffering character-input stream*/        for(String line;  ((line =br.readLine()) !=  null)){     //Reading each row one by one          
+ ArrayList<String> dataRow =  new ArrayList<>();      /**/             try {                  /*Try Block to handle exceptions while reading the file */              String[] values= line.split(",");       if (values.length > 0)  {@suppress WarningStubDeclaration*/          for(String value : values){        //Populate dataRow with each cell's content in csv row   
+dataRow .add(value);      /**/                             }     /*End of inner try block */              catch (Exception exe ){       System.out.println("Error Occurred");           }}  finally {   if (!br.equals(null)) br.close();                     //Closes the buffer reader even in case an exception occurs   
+                dataList .add(dataRow);      /*Adds each row to our list (ArrayList)*/              }     /**End of outer try block */        }}  catch ((Exception e){       System.out.println("Error Occurred: " +e );   }) ;}} //Closes the file reader even in case an exception occurs   
+ if(!dataList .isEmpty() && dataRow != null) {     /*Only runs when we have more rows than 0 */      for(ArrayList<String> row : dataList){          StringBuilder str = new StringBuilder();        /**/                try{                                                                                 //Try block to handle exceptions while writing the file      
+for (int i = 1;i <row.size()-2 ; ++i)     /*This is just a loop that will go through each cell in your csv row */                      {      str .append(row.get(0));        /**/                                              for  int j =  ++i &lt;&#34; i -1 ){         //Adds the data from specific cells to StringBuilder    
+str    . append(" , "+row.get(j)) ;      }                                                                                  str       .append("\n");}catch (Exception exe){System.out        out          .println   ("Error Occurred: $exe ");}}finally{if(!str         .toString().equals 
+     null) {PrintWriter pw = new PrintWri    tener(filepath + ".csv", true);       //writes the string into csv file                    File      stream out;   try                                                                                          (new IOException()){        }finally{pw.close();}}}}}//Closes printwriter even in case an exception occurs

@@ -1,0 +1,8 @@
+(assuming standard library is allowed)
+import java.io.*;  // for IOException
+import java.net.*;   // for InetAddress, DatagramSocket
+import javax.crypto.SecretKey;    // For secret key used to encrypt/decrypt messages sent from the client side during login process (use a proper library or tool)
+                                                    import org.apache.commons.codec.binary.Base64;   // for encryption and decryption of passwords 
+import java.security.*;     //For generating KeyPair using SecureRandom(add this to your project if it's not there already): new NoSuchAlgorithmException();    privateKey = null ; public SecretKey getPrivate() { ... return Private key; }   PublicSecretkey generatekeys () throws Exception 
+{... create a method that will check the login credentials and then establish connection using SecureSocketTransport or TLS by calling setRequestedTlsVersion(SSLv3) etc. if correct, else show error message to client}    public static void main (String args [])throws SocketException   { InetAddress ip ;  DatagramSocket socket; SecretKey keys = generatekeys()
+     // create a server - listen on port number passed as command line argument or default is used by OS. Server will respond with welcome message to all clients connected after it starts listening for connections (accept).    while(true) { Socket sock  =socket . accept();  InputStream in = socket.getInputStream() ; Outputstream out=socet.. getOutputStream ()...

@@ -1,0 +1,6 @@
+import java.io.*; // Import necessary classes for file handling and I/O operations   
+     import javax.sound.sampled.*;//Importing sound class java_52048_FileScanner_A01 Class FileScanner {     
+       public static void main(String[] args) throws IOException, UnsupportedAudioFileException         
+         (        InputMismatchException e ){           //Main method for the program              System . out ->println("WELCOME TO FILE SCANNER");             Clerk  clerk = newClerk();                      FileScanner scan=new Scan( "/Users/student /Downloads/" ,".txt" );
+                     while (scan.hasNext()) {                    //While loop to go through all files in the specified directory               try{File file1;file1  =   s . nextUtem().getCanonicalPath(); if (!path..endsWith(".TXT")) continue;} catch(InputMismatchException e){System out ->println("INPUT MISMATCH EXCEPTION OCCURRED " +e);}             System.out . println (file1 );
+               }              //End of while loop     for (;; ) { try{ Thread , sleep( 50_0), yi    e();   }} catch(InterruptedException E){System out ->println("INTERRUPTED EXCEPTION OCCURRED " +e);}             System.out . println ("THE END");}} }

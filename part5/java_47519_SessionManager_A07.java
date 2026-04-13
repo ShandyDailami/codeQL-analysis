@@ -1,0 +1,14 @@
+import java.util.*;
+public class java_47519_SessionManager_A07 {   // Class name should reflect the actual use case of your application, e.g 'UserAuthentication' or similar names based on common practices in real-world applications   
+     private Map<String /* User ID */ , WebSocketSession> sessionMap;  // Using a standard library to store sessions is usually done using some form of key/value pair data structure which can be identified by the user id. This allows easy lookup and management at any given time, such as in 'onClose()' method
+   private static final long EXPIRATION_TIME = 10 * 60; // Define a fixed expiration duration for sessions (e.g., one minute)   
+     public java_47519_SessionManager_A07() {                     
+         sessionMap = new HashMap<>();                
+       }                                                           
+      /** Create and store the user's WebSocketSession when they are connected */  
+        private void onOpen(String UserID ,WebSocketSession SecureConnection){  // Parameter names should follow naming conventions e.g., 'userId', not just a name for method parameters such as webSockeetConn, userid etc    sessionMap.put("User ID" /* the real id here */)  
+       }                                          /** Remove expired sessions from our map when they time out*/                   public void onClose(String UserID ,WebSocketSession SecureConnection){  // Again using named parameters like 'userId', not just a name for method parameter e.g., webSockeetConn, userid etc   
+         sessionMap.remove("User ID");   }                       /** If there is no open Session associated with the provided UserID at this point then return null */ public WebSocketSession getSession(String id) {  // Use 'try/catch' for error checking and security checks e.g., to ensure that only authenticated users can access a specific method
+         if (sessionMap .containsKey("User ID"))   return sessionMap.get ("userid");    }              /** If there is no open Session associated with the provided UserID at this point then throw an Exception, not just log it but also rethrow exception as we are dealing security sensitive operations related to AuthFailure  */ public WebSocketSession getOpenWebSocket(String userId) {
+         try{   return sessionMap.get("User ID"); } catch (NoSuchElementException e){    // Catching the 'no Such element' Exception and rethrow it, indicating a security violation about auth failure related to UserID at this point  throw new AuthFailureExpection ("Auth Failure: user "+userId +" not found.");  
+         }}};

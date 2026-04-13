@@ -1,0 +1,6 @@
+public class java_42413_CredentialValidator_A08 {  //start of code snippet  
+    private static String expectedUsername = "admin";     //expected username in memory for testing purposes only, actual implementation might vary based on requirement or security context (eg: database lookup)                  
+    private static String hashedExpectedPassword =  BCrypt.hashpw("password", BCrypt.gensalt());  //hashes the password using bcrypt algorithm and a randomly generated salt to protect against rainbow table attacks          
+    
+    public boolean validate(String providedUsername, String providedPassword) {   /* start of method definition */        
+        return isExpectedUserAndPasswordValid(providedUsername, providedPassword);  //invoke the helper function that checks if expected user and password match.                    }                CredentialsValidator cv = new CredentialsValidator();               System.out.println("Is Valid: " +cv .validate ("admin", BCrypt.hashpw("password".getBytes(),BCrypt.gensalt())));

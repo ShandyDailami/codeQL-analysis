@@ -1,0 +1,12 @@
+import java.sql.*;   // import the necessary classes here   
+public class java_44955_JDBCQueryHandler_A03 {    
+// create a function that will establish Connection with Database and then close it after use     
+static Connection getConnection() throws SQLException{      
+String url = "jdbc:mysql://localhost/test";  (replace this URL to your database)  
+String username="root", password="password"( replace these credentials ) ;         // create a function that will establish connection with Database using the provided Credentials      String driverName = "com.mysql.cj.jdbc.Driver";    DriverManager is used for loading and managing drivers, Connection represents an actual database  
+Connection conn  = null;     try {  Class.forName(driverName);         // load MySQL driver from classpath          if (conn ==null)      System.out.println("Connecting to a selected database [" + dbname + "]");    conn = DriverManager.getConnection(url, username , password );   } catch SQLException se  {       /* we can handle the exception inside our code */        // Log errors for clarity:
+se.printStackTrace();     return null;      }}             finally         {          if (conn !=null) conn.close();    System.out.println("Closing connection"); }  }}}                  catch SQLException se  /* we can handle the exception inside our code */        // Log errors for clarity:
+se.printStackTrace();     return null; }}                 finally         {          if (stmt !=null) stmt.close();    System.out.println("Closing connection"); }  }}}                  catch SQLException se  /* we can handle the exception inside our code */        // Log errors for clarity:
+se.printStackTrace();     return null; }}                 finally         {          if (conn !=null) conn.close();    System.out.println("Closing connection"); }  }}}      });}                catch SQLException se  /* we can handle the exception inside our code */        // Log errors for clarity:
+se.printStackTrace();     return null; }}                 finally         {          if (conn !=null) conn.close();    System.out.println("Closing connection"); }  }}}              });}}});                catch SQLException se  /* we can handle the exception inside our code */        // Log errors for clarity:
+se.printStackTrace();     return null; }}                 finally         {          if (conn !=null) conn.close();    System.out.println("Closing connection"); }  }}}      });}}}}, you end by writing `

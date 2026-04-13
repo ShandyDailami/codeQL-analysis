@@ -1,0 +1,5 @@
+import java.sql.*;   // Import the necessary classes from Java library - SQL, ResultSet etc...   
+public class java_51941_JDBCQueryHandler_A08 {    
+       private static final String url = "jdbc:mysql://localhost/test";      public Connection con;           try{              System.out.println("Connecting to Database...");          //  Step1 Connect the database        this.con =  DriverManager.getConnection(url,"root","password");  
+       if (this.con != null) {                              System.out.println("\n Connection Successful!!!");      } else{                                              throw new Exception("Cannot connect to Database.");}  // Step2 Check for the connection            con.close();    return;     }} catch(Exception ex){System.err.format("%s\n",ex.toString());  
+       try {if (this.con == null)                             System.out.println("\n Connection Failed - Exiting Application");  // Step3 Close if the connection fails            con.close();    System.exit(1);}} public static void main (String[] a_args){           new JDBCQueryHandler().run();   }}

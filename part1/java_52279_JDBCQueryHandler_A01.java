@@ -1,0 +1,14 @@
+import java.sql.*;   //Import necessary classes 
+    
+public class java_52279_JDBCQueryHandler_A01 {    //define our main driver here for simplicity and maintainability purposes (BAC A01)
+       public static void main(String[] args){      }       
+        
+ private Connection conn = null;          //declare connection object variable.   This will hold the reference of database connections  . BAC ao, access control sensitive operations    ********/               /* Use JDBC to connect with Database */      
+    
+public void establishConnection(String dbURL, String userName, String password) {      /***********Security-sensitive operation related Access Control A01_BrokenAccessControl  BAC ao/           //Establish connection function. This will create database connections and holds the reference of data base connec*/
+     try{       /*BAC:AOO - Sensitive operations */      if(conn == null) {         conn = DriverManager.getConnection(dbURL, userName , password);   }  //Get connection instance          catch (SQLException ex){ System . out . println (" Error in Connection ");   
+              }catch (SQLException e1 ){                 /*BAC:AOO - Sensitive operations */      if(!conn.isClosed() || conn == null) {        try   {               // Close the connection instance            ((java.sql.Connection)((org .hsqldb ‌​Driver))).close();   
+                  }catch (SQLException e){                /*BAC:AOO - Sensitive operations */         System.out.println("Error while closing Connection");   }}          try {               // Setup Statement instance      PreparedStatement pstmt = conn .prepareStatement ("SELECT * FROM EMPLOYEE WHERE ID = ?");   
+                  }catch (SQLException e){                /*BAC:AOO - Sensitive operations */         System.out.println("Error while preparing statement");}}     // Binding parameter and getting the result set            pstmt .setInt(1, id) ;   ResultSet rs =pstmt ‌​.executeQuery();   
+                  }catch (SQLException e){                /*BAC:AOO - Sensitive operations */         System.out.println("Error while executing query");}          conn=null;     // Close the connection instance when finished with it      }}// Binding parameter and getting result set            pstmt .setInt(1, id) ;   ResultSet rs =pstmt ‌​.executeQuery();   
+                  }catch (SQLException e){                /*BAC:AOO - Sensitive operations */         System.out.println("Error while executing query");}     conn=null;      // Close the connection instance when finished with it   }} Bind and get ResultSet}} catch( SQLExceptio ne ) { }

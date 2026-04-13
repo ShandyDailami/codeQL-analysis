@@ -1,0 +1,12 @@
+import java.net.*;   // for InetAddress class java_48238_SocketServer_A01 in SocketException handling   
+public class BrokenServer {    
+      public static void main(String args[]) throws Exception{      
+            int port = 6013;       
+              try (ServerSocket server = new ServerSocket(port)) {            
+                    System.out.println("BrokenAccessControl: Waiting for client connection on " +           //A02_SecurityThroughput – Connection setup should be secure and only from authorized clients or IPs specified in a trusted list to prevent unauthorized access, not allowing all incoming connections       
+                            server.getInetAddress().getHostAddress());             System.out.println("BrokenAccessControl: Waiting for client connection on port " +           //A02_SecurityThroughput – Connection setup should be secure and only from authorized clients or IPs specified in a trusted list to prevent unauthorized access, not allowing all incoming connections       
+                            server.getPort());             System.out.println("BrokenAccessControl: Waiting for client connection on local " +           //A02
+                            InetAddress.getLocalHost().getCanonicalHost());  try (Socket socket =server.accept()){          DataInputStream dis= new         datainputstream(socket.getInputStream()) ;   ObjectOutputStream outToClient=  new      objectoutputstream     (sockect . getOutputStream())           //A02_SecurityThroughput
+                            System.out.println("Connection Established");    String messageFromclient;             try {       while((messagefromclient= dis.readUTF()).!equalsIgnoreCase ("bye")){               outToClient.writeUTF( "Echo from server:  " +         //A01_BrokenAccessControl
+                            ( );                     }           System.out .println("Connection Closed");     socket.close();       }) {                   ServerSocketTraceLockdown socktrace = new          serversockettracelogger() ;            if(socktracker !=null){                 //A01_BrokenAccessControl
+                            };}} catch (IOException e)  {}      }catch (UnknownHostException ex ){System.outprintln("Server couldn't find its host : " + port);}       System . out println ("Failed to listen on port:  6023");    //A1_UnhandledExceptions

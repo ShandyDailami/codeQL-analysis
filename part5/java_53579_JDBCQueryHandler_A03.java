@@ -1,0 +1,8 @@
+import java.sql.*;   // importing JDBC driver libraries   
+public class java_53579_JDBCQueryHandler_A03 {     
+// establishing DB Connection using SQLite in-memory database and avoiding any exception handling 
+static Connection con = null;      
+ static{        try         {          Class.forName("org.sqlite.JDBC");           }              catch (ClassNotFoundException e)                  {e.printStackTrace();}   }}    // Database URL, username & password     privateString dbURL="jdbc:sqlite:mydb";private String dbUsername = "admin"; 
+       public static void main(String[] args){           runExample1 ();runExample2 () ;          }         @Test      public   void    runExample1() {        con =  DriverManager.getConnection("jdbc:sqlite:mydb");     // sql query execution and getting the result set 
+                            try{            Statement stmt =con .createStatement();             ResultSet rs=stmt.executeQuery ("select * from myTable ");           while (rs.next()) {                System.out.println( "Name : " +rs.getString("name"));               } conclose() ;}}         @Test       public   void runExample2(){        try{            Connection  newConn= DriverManager .getConnection ("jdbc:sqlite:mydb","admin",null);           Statement stmt =newConn.createStatement();                ResultSet rs= 
+stmt.executeQuery("select * from myTable where id = 1");         while(rs.next()) {                  System.out.println ( "Name :" +     // sql query execution and getting the result set  try-catch block to handle exceptions if any in case of DB connection issue        } conclose();}}

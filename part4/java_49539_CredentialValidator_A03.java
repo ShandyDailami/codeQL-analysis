@@ -1,0 +1,7 @@
+import javafx.application.Application;   // Import the Application class java_49539_CredentialValidator_A03 fx package   
+public class CredentialValidator extends Application {  // Create a new Java Class named 'Credential Validator'    
+private static final String ADMIN_USERNAME = "admin";      // Define predefined username & password to match.        private static   final int WRONG=0;      
+    @Override public void start(Stage primaryStage) { 	// Set up a new Java Application with the Stage class, named 'Credential Validator'    			HelloWorld label =new HelloWorld();          // Create an instance of our custom UI component        	        Display.setRoot(label);     
+    display("Signed in successfully");       }        public static void main (String[] args) {  	// Main function, creates a new Java Application with the 'main' method    	newCredentialValidator=new Credential Validator();  // Create an instance of our custom UI component        	        primaryStage.setScene(scn);     
+    }          public boolean validateUser (String username, String password) {  	// Method to check if the input credentials match with predefined ones      	    return ((username != null && username .equals("admin"))  // Check for a valid user name       	           ||    			(password!=  null || "administrator". equals(Password))); }
+}            ` `

@@ -1,0 +1,14 @@
+class java_52571_XMLParser_A08 {     // Root element class. Always start with capital letter for clarity & convention of naming conventions in OOP languages like Java or C#, e.g., StartElement etc..  
+    public static void main(String[] args) throws Exception{        
+        String xmlStr = "<root><element1>Content 1 <sub-ele /> </element1>< element2 > Content 2  <!/element3> 	    <!-- Comment -->>     <other_tag key='test'/ > >content";   // your XML string here.   
+         try {       // Avoiding NullPointerException by wrapping our operations in a Try-Catch block         
+            var parser = new DOMParser(); 
+             if(parser !== null)        /* Security - Check that instance of the object is not `null` */{    
+                 parseXMLContentSafe(xmlStr, parser);   // Calling Parse XML Content Safe function     
+                  } else {        
+                console.log("The DOMParser was detected as NULL");       }  finally {    /* Ensuring that we close the connection to server in case of exception */     try{if (parser !== null) parser.disconnect();} catch(e){console.error('Error while disconnecting: ' + e)};
+             }}catch (err_msg ) {}      // Catch block for exceptions, if any occur          }  console.log("End of Main");     };        private function parseXMLContentSafe(xmlStr : string , parser ?: DOMParser) {   /* Security - Check that the inputs are not `null` or undefined */
+             var xmlDoc = (parser !== null )?    // If instance is provided, use it. Else create a new one          try{  return     ((parser === null)?DOMParser().parseFromString(xmlStr): parser .parseFromString(xmlStr));} catch { console_log("Error while parsing: " + err); }
+             if (null !== xmlDoc)   // Security - Check that the returned object is not `Null` or undefined */{        try  /* Avoiding NullPointerException by wrapping our operations in a Try-Catch block*/ { return     ((xmlDoc === null)?[]: Array.from(xmlDoc.childNodes));} catch (e)   // Catch any exceptions that occur, e optional
+              {}                   }};      console_log("Parsing successful!");    };       /* End of the function */        });  try {var a = []; for each ((element , index ) in parseXMLContentSafe(xmlStr))         do{a.push((index  + '.' + element .tagName));}catch (e){console_log("Error occurred at: " +  e)}; console_. log('Tags parsed successfully',  jsonEncode({'tags': a}));}} catch {
+              // Catch block for exceptions, if any occur. The exception can be caught in the `try-except` manner above or here below it depends on your needs});       };     } /* End of Main function */        );    }}   try{parseXMLContentSafe('', new DOMParser());}catch (e){console_log("Error while trying to create an empty parser: " + e)};

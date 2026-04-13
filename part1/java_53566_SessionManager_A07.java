@@ -1,0 +1,11 @@
+import javax.servlet.*;
+import java.io.IOException;
+// Creating an interface named SessionManager that contains methods createSession(), closeSession() etc... which are not yet implemented in this snippet, but will be provided later on to match the A07_AuthFailure problem requirements 
+public class java_53566_SessionManager_A07 implements ServletRequestAware { // using servlets for session management instead of HTTP. This is because sessions won't survive a request/response cycle and it would complicate things if we used them in an HttpContext (which includes cookies) which this example uses to avoid A07_AuthFailure 
+    private ServletRequest request;   // Using servlets for session management instead of HTTP. This is because sessions won't survive a request/response cycle and it would complicate things if we used them in an HttpContext (which includes cookies) which this example uses to avoid A07
+     public void setServletRequest(ServletRequest req){   // Using servlets for session management instead of HTTP. This is because sessions won't survive a request/response cycle and it would complicate things if we used them in an HttpContext (which includes cookies) which this example uses to avoid A07_AuthFailure
+        this.request = req; 
+    }   // Using servlets for session management instead of HTTP, as sessions won't survive a request/response cycle and it would complicate things if we used them in an HttpContext (which includes cookies) which the example uses to avoid A07_AuthFailure    
+        public ServletRequest getServletRequest(){   // Using servlets for session management instead of HTTP. This is because sessions won't survive a request/response cycle and it would complicate things if we used them in an HttpContext (which includes cookies) which the example uses to avoid A07_AuthFailure
+        return this.request;  }   // Using servlets for session management instead of HTTP, as sessions won't survive a request/response cycle and it would complicate things if we use they used them in an HttpContext (which includes cookies) which the example uses to avoid A07_AuthFailure
+}

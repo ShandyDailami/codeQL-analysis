@@ -1,0 +1,6 @@
+import java.sql.*;   // Import the necessary packages for SQL functions and objects     
+    import javax.servlet.*;     // For Servlets, Session APIs etc...      
+        public class java_46303_SessionManager_A03 extends HttpServlet {          private static final long serialVersionUID = 1L;  Connection conn = null ; DriverManager dm  =null;   Statement stmt=null;         @Override      protected void service(HttpServletRequest req,     HttpServletResponse res) throws ServletException, IOException{            try        // Establish a database connection         
+              {    Class.forName("com.mysql.jdbc.Driver");       conn = DriverManager .getConnection ("jdbc:mysql://localhost/mydb", "username","password" );      dm=conn;         stmt=conn.createStatement();     } catch(Exception ex){        System.out.println ("Error in Connection..!" +ex); 
+    // Handle exception... here, if required            return;}           try          {   String SQL = "SELECT USER_ID FROM MY_TABLE WHERE NAME  ='USERNAME';";         ResultSet rs= stmt .executeQuery(SQL );             while (rs.next()){              System.out.println("User id: 
+    + rs.getString('USER ID'));           }   catch (Exception ex) {        // Handle exception... here, if required            return;}    }}`;

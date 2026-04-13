@@ -1,0 +1,4 @@
+// CredentialValidator Interface – This will be implemented by all credentials types we want the Validator class java_53413_CredentialValidator_A01 handle.  
+interface Credential {     // Define a new interface named "Credentials". We're going to use this as our base for handling different cred type later on in code - A01_BrokenAccessControl 2nd part of security controls and not mandatory but recommended by the rule set here: https://www.credentialcontrolsuk.org/resources-and-guidelines/securitymodelingguide
+    boolean isValid(String username, String password);   // Define a method to check if provided credentials are valid (A01_BrokenAccessControl 2nd part). This should be very secure - Avoid using hashing algorithms for security. Use only the input given in this function and do not use any external libraries or frameworks like Spring, Hibernate etc
+}   // Close interface Credential

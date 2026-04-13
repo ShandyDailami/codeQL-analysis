@@ -1,0 +1,5 @@
+import java.sql.*;   // Import the required Java packages from database library   
+public class java_45765_JDBCQueryHandler_A03 {    
+      public static void main(String[] args) throws SQLException{        Run(); }         private static void Run()throws SQLException       String url = "jdbc:mysql://localhost/test";          String user="root", pass=  "";           Connection con  = DriverManager.getConnection (url,user ,pass);   Statement stmt   =con .createStatement  ( );
+      // prepare a statement         ResultSet rs    =stmt.executeQuery("select * from Users");        while(rs.next()){            String name = rs.getString ("name"    ), password=rs.getString     ("password") ;             System.out.println(   "Name : 
+      //"+name + ", Password: "  +password);          }           con .close();         }}`; Please note that this is a legacy code and it uses standard libraries only, making the program more realistic than using external frameworks like Spring or Hibernate. It also demonstrates basic security-sensitive operations related to injection attacks (A03_Injection).

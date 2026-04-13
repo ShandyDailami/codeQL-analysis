@@ -1,0 +1,17 @@
+import org.xml.sax.SAXException;
+import javax.xml.parsers.*;
+import java.io.*;   // Import InputStream and OutputStream classes to read from an input stream or write to an output stream (in this case, a file)
+public class java_52806_XMLParser_A07 { 
+    public static void main(String[] args){    
+        try{      
+            XMLReader reader=null;         
+             FileInputStream fin = new FileInputStream("input.xml");      // InputStream is used for reading the input source (file, stream etc).   The file to be read will not exist until a connection has been established with it and that's why we need an instance of this class within our main method only after creating something based on said connected resource
+            reader= XMLReaderFactory.newInstance().createXMLReader();  // Create the SAX parser (which uses event-based parsing)   It’ll be used to read through your document, one element at a time and call methods that process each individual piece of information it encounters in order for you
+            MyHandler handler = new MyHandler(fin);     // Handler is where the SAX parser will deliver data.  The connection has been opened when this method gets called   It holds state about parsing (including context) so long as there's input available from a document or an XML reader object to read on
+            while (reader.getCurrentEvent() != null);    // Loop continues until all the data is processed by SAX parser in order for event-based and API calls are called   In other words, when getNextEvent has not been invoked yet it signals end of file  This means that no more events will be produced
+            fin.close();     /// When you're done with input/output streams or readers (or any object), always remember to close them after use so they can free up system resources!   In this case, the connection has been closed when main method finishes execution of MyHandler class in our current context  Therefore closing file is a best practice
+        }catch(FileNotFoundException fnf){fnf.printStackTrace();}       // The catch block will handle exceptions that are thrown while running your code   This exception gets caught by the print stack trace and then you can go ahead with handling it as required for each specific case of error situations in production environment
+        }catch(SAXException se){se.printStackTrace();};     // Again, we catch SAXExceptions that occur during parsing XML Document using a Simple API (not an All or Any) to avoid memory leaks and exceptions   This exception gets caught by the print stack trace method which then you can go ahead with handling it as required for each specific case of error situations in production environment
+    }      // End main(String[] args).  Remember that code should be modular so we keep our SAX Parsing to a minimum. We only handle events and not parse the document itself, just pass on information received through these events with other methods when required for processing further requests as per your requirements or according security rules
+    // End class SecureXMLParser  Remember that you should always make sure all exceptions are handled in case something goes wrong during execution. The best practices involve using try-catch blocks and handling possible null values, memory leaks etc appropriately to avoid any errors/exceptions at runtime caused by unhandled situations or bugs
+}

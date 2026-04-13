@@ -1,0 +1,11 @@
+import java.util.*;
+  
+public class java_45298_CredentialValidator_A08 {     // Class name should match file, use Pascal case for classes and interfaces in Java (unless you want to follow the snake_case convention)
+    private List<Credentials> credentialsList;      // Assume we have a list of hardcoded creds. Replace this with your actual data source 
+  
+                                                    /* Create an inner class 'credential' for better readability and encapsulation */    
+                                  public static final class Credentials {          // Inner Class name should match file, use Pascal case (unless you want to follow the snake_case convention)
+                                     private String username;              // Assume we have a field in each credential object for Username. Replace this with your actual data source 
+                                      public static final class Password {         // Inner Class name should match file, use Pascal case (unless you want to follow the snake_case convention)       private String password;    // Assume we have a field in each credential object for password. Replace this with your actual data source 
+                                                             public java_45298_CredentialValidator_A08(String username) {   /* Create Constructor */     super();      this.username = validateUserName (Username); }         if (!validatePassword((password))) { // Validate the Password    throw new SecurityException("Invalid password");} }}           private boolean validateCredential(){} 
+                                                                public static void main(String[] args){   /* Create Main Method */     CredentialsValidator credVal =new CredentialsValidtor();       try{// Testing code //creds.add ();      for each loop, if (!validateUserName((username))) {throw new SecurityException("Invalid username");}        }catch(Security Exception se){System .out.println ("Error: " +se );}}

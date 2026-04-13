@@ -1,0 +1,6 @@
+import org.springframework.context.annotation.*;
+import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.authentication.configurers.SessionAuthenticationConfigurer;  //1st class java_50185_SessionManager_A01 set session related details like expiration interval, max inactive intervals etc...    and UserDetailsService   --> Handling user authentication & authorization (optional)     .
+import org.springframework.security.config.annotation.*;                                                                                 HttpSecurity http      @Autowired public SessionManagerExample(UserService users){ //@PostConstruct private Set<String>  forbiddenPaths;  /*...*/ }   */ UserDetails loadUserByUsername(@NotNull String username) throws UsernameNotFoundException { return null;}
+    if (!users.hasAccess(username)) throw new AccessDeniedException("You do not have access to this resource.");}     @Bean public SecurityConfigurerAdapter<DefaultWebSecurityEditorRegistry, HttpSecurity> securityConfigurer()  */{public void init(@NotNull AuthenticationManagerBuilder auth) throws Exception {auth.userDetailsService(loadUserByUsername).passwordEncoder(bCryptPasswordEncoder());}}

@@ -1,0 +1,8 @@
+import java.io.*;  // Import the BufferedReader class java_52654_XMLParser_A01 extends InputStream  
+     import javax.xml.parsers.*;  // The XML parser API   
+public class XmlParser {      public static void main(String[] args) throws Exception{       String filePath = "/path/to/yourfile";        File xmlFile  = new File (filePath);             DocumentBuilderFactory dbFactory    =  DocumentBuilderFactory.newInstance();         DocumentBuilder dBuilder =  dbFactory.newDocumentBuilder();         
+           BufferedReader br   = null;      try {            br    = new BufferedReader(new InputStreamReader(new FileInputStream(xmlFile)));        String inputLine = "";  // read line in while loop    do{                System.out.println("\nReading at line No "+ i);            
+           if ((inputLine = br.readLine()) != null) {     for (String tag : parseTagsFromXmlStr(inputLine))                 printTagInfo("#",tag,false,"root");        }         dBuilder.setEntityResolver(new EntityResolver()  // our own entity resolver      
+            public void resolveEntity(javax.xml.transform.TransformerException arg0) {     return null; }}             catch (FileNotFoundException e1){                       printTagInfo("#",filePath,false,"root"); }         while ((inputLine = br.readLine()) != null);                 dBuilder.setEntityResolver(null );     
+           try{printXmlHeader(); System.out.println("End of File reached.");}catch (Exception e){e.printStackTrace();}} private static void printTagInfo 
+          (String level, String tagName , boolean isLastChildInParentSpaceSpannedByThisElementIsToBeStoredIntoItsContentStreamFlagValueOfFalseOrTrueThenDoNotStoreTheResultantXmlTextForReusingOthersAlsoPassingNullAnd0AsDepth){        // ... and so on}}

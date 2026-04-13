@@ -1,0 +1,18 @@
+import java.io.*;
+import java.net.*;
+
+public class java_48099_SocketServer_A03 {
+    public static void main(String[] args) throws IOException{   // e
+        ServerSocket server = new ServerSocket(8092);          // f
+       while (true){                                            // g 
+            System.out.println("Waiting for client on port: " +server.getLocalPort());    // h -> blocking call, waiting until a connection is made to the socket   e-15a's way of saying 'e'-end block statement after loop and before next line; same as f
+            Socket sock = server.accept();                             // i: Accepting client connections  (blocked till there are no clients connected) -> blocking call in a while(true){}   e-15b's way of saying 'e'-end block statement after loop and before next line
+            System.out.println("Connect established to port : " + sock.getPort());    // j  (blocked till there is data coming from client) -> blocking call in a while(true){}   e-15c's way of saying 'e'-end block statement after loop and before next line
+            DataInputStream dis = new DataInputStream( sock.getInputStream());    // k  (reading received message to the server side ) , here it is waiting until data arrives, hence -> non blocking call in a while() { }   e-15d's way of saying 'e'-end block statement after loop and before next line
+            String clientMessage = dis.readUTF();                      // l  (reading the message from server to clients) , here it is waiting until data arrives, hence -> non blocking call in a while() { }   e-15a's way of saying 'e'-end block statement after loop and before next line
+            System.out.println("Client says: " + clientMessage);     // m  (printing the received message by clients) , here it is waiting until data arrives, hence -> non blocking call in a while() { }   e-15b's way of saying 'e'-end block statement after loop and before next line
+            sock.close();                                             // n: closing socket connection  (closing the current client) , here it is waiting until data arrives, hence -> non blocking call in a while() { }   e-15c's way of saying 'e'-end block statement after loop and before next line
+        };                                                         // o: End While Loop. Blocked till all clients are connected (the client socket list is empty)  , here it will not execute even though there would be no data from the sockets, hence -> non blocking call in a while() { }   e-15a's way of saying 'e'-end block statement after loop and before next line
+    };                                                            // p: End Server Socket. Blocked till server is closed  , here it will not execute even though the port isn’t being used, hence -> non blocking call in a while() { }   e-15b's way of saying 'e'-end block statement after loop and before next line
+}                                                               // q: End Main Method. Blocked till program end  , here it will not execute even though the method is ended, hence -> non blocking call in a while() { }   e-15c's way of saying 'e'-end block statement after loop and before next line
+}                                                               // r: End Main Class. Blocked till Java Virtual Machine (JVM) ends  , here it will not execute even though the JVM is ending, hence -> non blocking call in a while() { }   e-15d's way of saying 'e'-end block statement after loop and before next line

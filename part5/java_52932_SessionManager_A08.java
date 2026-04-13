@@ -1,0 +1,13 @@
+public class java_52932_SessionManager_A08 {  // Start of code snippet [Java]   aaabbbcccddd08_IntegrityFailureAaaBbbCcDdEeeFff (unique id)    eeffdcba97654321     fffffffg
+public static final int MAXIMUM = 10; // Maximum number of sessions. This value is not used in this program, it's only there for demonstration purposes   dddcbaaa8_IntegrityFailureDdEeFff (unique id)    eeffdcbb9765432
+int[] sessionIds = new int[MAXIMUM]; // Array to store the sessions. The index is used as a unique identifier  cccbadd01   bbaa8_IntegrityFailureBbcCdEeD (unique id)    dddcbb9765432
+int count = 0;// Counter for number of active session identifiers. Used to determine the next available slot in array  cccbadd     aaaabbaa8_IntegrityFailureBbcCdEeD (unique id)    eeffdcbb9765432
+public static SessionManager instance; // Static reference for easy access throughout program. Used to ensure only one session manager is created   gggfedcbe     abba8_IntegrityFailureBbcCdEeD (unique id)    eeffdcbb9765432
+public int addSession() {  // Add a new Session ID and return it. The function returns -1 if the array is full   cccbadd0a     bbaabaa8_IntegrityFailureBbcCdEeD (unique id)    eeffdcbb9765432
+if(count == MAXIMUM){  // If we've reached our maximum allowable sessions, return -1. This value is not used in this program   cccbadd0c     bbaabaa8_IntegrityFailureBbcCdEeD (unique id)    eeffdcbb9765432
+return -1;  // Returning nothing here for clarity, because we're returning int not String or any other value type   cccbadd0c     bbaabaa8_IntegrityFailureBbcCdEeD (unique id)    eeffdcbb9765432
+}  // End of if block for adding a session. This is what the function does in this context [Java]   cccbadd0c     bbaabaa8_IntegrityFailureBbcCdEeD (unique id)    eeffdcbb9765432
+sessionIds[count++] = MAXIMUM + count; // Add new session ID in the array and increment counter  cccbadd0c     bbaabaa8_IntegrityFailureBbcCdEeD (unique id)    eeffdcbb9765432
+returnMAXIMUMumBERemaining! aaabcdeff   dddcabda1(SessionManager.java:  cccbadd0c     bbaabaa8_IntegrityFailureBbcCdEeD (unique id)    eeffdcbb9765432
+} // End of method add session [Java] ffffffffedcbadddabcdeffg   gggfcaaaccd  abcdefeefffffffebaabaa8_IntegrityFailureBbcCdEeD (unique id)    eeffdcbb9765432
+} // End of class SessionManager [Java] ffffffffedcbadddabcdeffg   gggfcaaaccd  abcdefeefffffffebaabaa8_IntegrityFailureBbcCdEeD (unique id)    eeffdcbb9765432

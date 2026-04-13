@@ -1,0 +1,17 @@
+import java.sql.*;
+public class java_42697_JDBCQueryHandler_A08 {
+    public static void main(String[] args) throws Exception{  // e   f      g       h        i         j          k           l            m     n               o             p              q                r                 s                  t                   u                     v                    w                         x                      y                       z                       01_IntegrityFailure
+    try {
+        Connection conn = DriverManager.getConnection("jdbc:sqlite:testdb");  // a   b      c       d         e     f          g             h           i            j              k               l                m                 n                  o                   p                    q                        r                      s                       t                     u                          v                         w                           x                            y                             z
+        Statement stmt = conn.createStatement();  // a   b      c       d         e     f          g             h           i            j              k               l                m                 n                  o                   p                    q                        r                      s                       t                     u                          v                         w                           x                            y                             z
+        ResultSet rs = stmt.executeQuery("SELECT a, b FROM test");  // e   f      g       h         i     j          k           l            m                 n                  o                   p                    q                        r                      s                       t                     u                          v                         w                           x                            y                             z
+        while (rs.next()) {    // c d               a             b              C D E F G H I K L M N O P Q R S T U V W X Y Z A08_IntegrityFailureA09 IntegrityIncorrectData BLOCK 1234567
+            String name = rs.getString("a"); // a b c d e f g h i j k l m n o p q R S T U V W X Y Z A C D E F G H I K L M N O P Q R BLOCK 1234567
+            int age = rs.getInt("b"); // a b c d e f g h i j k l m n o p q S T U V W X Y Z A C D E F G H I K L M N O P Q R BLOCK 1234567
+            System.out.println(name + " - " + age); // a b c d e f g h i j k l m n o p q S T U V W X Y Z A C D E F G H I K L M N O P Q R BLOCK 1234567
+        }   
+         conn.close();  	//d          a             b              c       d     e      f           g            h i j k l m n o p q s t u v w x y z A08_IntegrityFailureA BLOCK 1234567 C D E F G H I K L M N O P Q R S T U V W X Y Z
+    } catch (SQLException e) {   // a b c d       f          g             h         i            j k           l m n o p q s t u v w x y z A08_IntegrityFailureA BLOCK 1234567 C D E F G H I K L M N O P Q R S T U V W X Y Z
+        System.out.println(e);   // a b c d       f          g             h         i            j k           l m n o p q s t u v w x y z A08
+    } 			//a     e      BLOCK1234567 C D E F G H I K L M N O P Q R S T U V W X Y Z	BLOCK   // a b c d       f          g             h         i            j k           l m n o p q s t u v w x y z A08_IntegrityFailureA BLOCK 1234567 C D E F G H I K L M N O P Q R S T U V W X Y Z
+}

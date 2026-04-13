@@ -1,0 +1,8 @@
+public class java_51456_SessionManager_A08 {
+    private Session currentSession; // Assume we have a way of acquiring/releasing sessions here 
+    
+    public void setCurrentSession(Session s){   this.currentSession =s;}        
+        synchronized boolean beginTransaction() throws Exception{          return true ;}            int getPID(){             throw new UnsupportedOperationException(); }           Session openSessionForReadOnlyUser ( String userName )throws  SystemClosedException {return currentSession;}}                void setReadOnly(boolean isRO) {}
+    		void endTransaction() throws Exception{}                 boolean commit () throws TransactionRequestedException{   throw new UnsupportedOperationException(); }            Object getDelegateForCreate(){          return null;}             Serializable createSQLQuery (String queryStr, RowCallbackHandler rowCallbackHandler){return  null;}}                void setDefaultReadOnly(boolean b) {}
+    		void refresh (Object entity , DependencyInfo[] dirtyEntitiesDependsOnMe ){}           boolean isDirty () {throw new UnsupportedOperationException();}               Object getIdentifierForEntity() throws SystemClosedException{return null;}                Serializable createSQLQuery(String queryStr){ return  null;}}
+            void closeTransaction(){ }                    Session currentSession ();    protected SecurityManager parentSecurityManager = this ;             boolean isTransactionActive () {throw new UnsupportedOperationException();}              Object getDelegateForCreate() throws SystemClosedException{return   createSQLQuery(null,new RowCallbackHandler());}}

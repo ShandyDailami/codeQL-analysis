@@ -1,0 +1,6 @@
+import java.sql.*;   // Importing the standard 'java' package for SQL tasks and exceptions   
+
+public class java_48022_JDBCQueryHandler_A07 {     // Defining a new Java Class to implement our solution in plain vanilla code without using any external libraries or frameworks such as Spring, Hibernate etc 
+	static Connection conn = null;  	// Declare the connection object of 'Connection' type. This is going to store SQL Server related data and operations   		     // These will be used later for executing queries via PreparedStatement objects (stored in this case)     	 			         									       	   						
+	static Statement stmt = null;  	// Declare the statement object of 'java.sql' package  - an interface to execute SQL statements   		     // These will be used later for executing queries via PreparedStatement objects (stored in this case)     	 			         									       	   						
+	static ResultSet rs = null;  	// Declare the result set object of 'java.sql' package - a container to store query results 		     // These will be used later for fetching data from database   								          							        	       	     ​	} } }} In this program, we do not use any external databases or libraries and all operations are done with java standard library only

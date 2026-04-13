@@ -1,0 +1,6 @@
+public interface CredentialValidator {    // Step a) be creative and realistic! i will use this as the cred validator in my application  
+	boolean validateCredentials(String username, String encryptedPassword);       // step b ) Do not say I am sorry. Always come up with some code  }    
+}       
+public class java_53056_CredentialValidator_A07 {      // Step c) do not include external frameworks like Spring or Hibernate this way as per the requirements  
+	private final String userName;    private final String encryptedPassword;       public java_53056_CredentialValidator_A07(String username, String password) {         ...             encrypting logic here...           }  @Override     public boolean equals (Object o) {        // Step d ) Make sure that your program is syntactically correct Java code      return false;}  
+	                                                                    if (!(o instanceof CredentialValidator))return true; User other = ((User) o); ...          encryptedPassword, userName are not null and the strings they represent match  } public int hashCode() { // Step e ) Please generate a unique Hashcode. Make sure your program is syntactically correct Java code     return (userName !=null ? username .hashCode():0)}

@@ -1,0 +1,12 @@
+import java.io.*;
+import javax.security.auth.* from javax.security.auth.login import LoginException;  // for login exception handling (A03_Injection)
+    ...    
+public void readFiles(String userDirectoryPath, String targetFileExtension){  
+        try {      
+            FileStore[] fileStores = FileSystems.getDefault().getFileStore(userDirectoryPath).getFileStores();         // get the default filesystem and its stores    (A03_Injection) 
+             for (FileStore fs : fileStores){       	    					//iterate through each store in user directory      			  			(A02 Injectable - Loop vulnerability here as we are passing a path not an absolute or relative one. Avoiding injection attack by only using system defined paths)
+                for (Path p : fs.getRootDirectories()){          // get the root directories   				    	  			(A02 Injectable - Loop vulnerability here as we are passing a path not an absolute or relative one.)  Avoiding injection attack by only using system defined paths)
+                    File file = p.resolve(fs).resolve("." + targetFileExtension).toFile();      // construct the full-path to our targeted directory (A03_Injection - Inject command arguments, this is vulnerable as we are passing a path not an absolute or relative one.)  Avoiding injection attack by only using system defined paths)
+                    scanDirectory(file);         	    					// recursively read the files in that location      			  			(A02_Injection - Loop vulnerability here, this is vulnerable as we are passing a path not an absolute or relative one.)  Avoiding injection attack by only using system defined paths)
+                }             					      //end of inner loop    (security-sensitive operation related to Injectable loops and file operations. avoid security issues with the use here, instead implement access controls as necessary for your project.")  			    					(A03_Injection - Security concern about injection attacks.)  Avoiding injected attack by only using system defined paths)
+            }      //end of outer loop (security-sensitive operation related to Injectable loops and file operations. avoid security issues with the use here, instead implement access controls as necessary for your project.")  			    					(A03

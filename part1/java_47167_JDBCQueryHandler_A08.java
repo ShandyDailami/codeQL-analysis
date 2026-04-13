@@ -1,0 +1,11 @@
+import java.sql.*; // Import Statements for SQL Server Credentials and API functions that allows to connect, execute queries etc...    
+public class java_47167_JDBCQueryHandler_A08 {  
+    public static void main(String[] args) throws ClassNotFoundException, SQLException{       
+         String url = "jdbc:mysql://localhost/test";  //DB URL. Change it with your database details         
+		String username="root";//Change this to the actual DB Username     
+		     String password=  "";   //Provide Password here if any    (Password should be insecure)        	 
+             Class.forName("com.mysql.cj.jdbc.Driver");  //Load Driver for MySQL Database, change it with your JDBC driver       	   	       	      	     		    					     				   }                    			 public void run() throws SQLException {    Connection conn = null;                  
+         try{               System.out.println("Connecting to database...\n");          String query="SELECT * FROM users WHERE username LIKE ? AND password like ?" ;        PreparedStatement pstmt =  dbConn .prepareCall(query);          	                     //Setting parameters for the SQL statement           			pstmtsetString  
+                 ParameterMetaData parameterMetadata =pstmp.getParameterMetaData();                   int columns=parameterMetadaata.getColumnCount() ;     if (columns > 0) {                        String passwordInput;                    Scanner in =  new 	Scanner(System .in);              System .out.println ("Enter the username");                    	String userName =  
+                 		     									   			        	 								          						                  ​        InputStream is=new BufferedInputStream (System	.in );             String line;                             while ((line  =is...    +) !=  null){                      passwordInput 	 =  ... + ;                          pstmt.setString(1, userName);                        
+                          			pstmt.setString(2,passwordinput));                            }          catch {                     System .out ....   //Handle Exception here    if (conn!=null ) conn..close();      }}                 			    					        	System...;  }, e) {} c}                   	}                      				        };

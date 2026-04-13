@@ -1,0 +1,3 @@
+import java.io.*; // for all IO functionalities 
+public class java_46619_FileScanner_A08 {  
+    public static void main(String[] args) throws Exception{    	        		      			              				                  					                                  }//close bracket of the 'main' method}                                                                                                                    .                             )      }}          ;:;::-.-~-.`             })                            //. `                     -..---...

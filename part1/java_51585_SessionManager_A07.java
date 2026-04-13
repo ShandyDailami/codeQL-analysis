@@ -1,0 +1,12 @@
+import java.sql.*; //Import needed packages for database operations (Connection and Statement)  
+    
+public class java_51585_SessionManager_A07 {    private static final String JDBC_URL = "jdbc://localhost/mydatabase";  //Database URL     
+                                private static final String USERNAME="username", PASSWORD="password";//User credentials      
+                         Connection conn;                    try{                /*Open a connection to the database*/    
+                             Class.forName("com.mysql.jdbc.Driver");   System.out.println("\nConnecting To Database...\n");    //Loads MySQL Driver          
+                            this.conn = DriverManager.getConnection(JDBC_URL, USERNAME , PASSWORD);  /*Get a connection to the database*/     conn  = null;      }catch (ClassNotFoundException e){System.out.println("Error in loading driver" +e );} catch (SQLException se) {    System.out.println(se+ "in Connection");  
+                         if (!conn.isClosed() ){ // close connection     conn = null;      }          return false;}           @Override public void openSession(){ try  /*Open a session to the database*/         this .open ();        DatabaseMetaData dbmd    =null ;    String schemaname  = " ";  
+                             Statement stmt   =conn.createStatement();     ResultSet rs =stmt.executeQuery("select name from sql.user");      // SQL query for username selection  }catch(SQLException se){System .out (“Error in executing the statement” +se);}} catch (ParseException pe) { System .out (.println ("Parsing error "+pe));}
+     /*Call this method whenever you need to use your session*/   public void closeSession(){ try  //close connection if it is open      conn.close(); }catch(SQLException se){System..print("Error in closing the statement" +se);}}    /** Executes an SQL query and returns a single value from ResultSet for given sqlString
+                         * @param sqlsinglevalue : The parameter to be passed into executeQuery  */public Object getSingleValueFromResult( String selectSql, Class classType) { try /*execute the Select Statement*/   this.open ();    PreparedStatement pstmt  = conn .prepareStatement ("select ? from dual");
+                         ResultSet rs=pstmt.executeQuery(); while ((rs).next()) // check for result set and print out values  }catch(SQLException se){System..print("Error in executing the statement" +se);}} return null;   }}// end of SessionManager class

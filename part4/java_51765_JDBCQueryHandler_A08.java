@@ -1,0 +1,10 @@
+import java.sql.*; // We'll need SQL related classes to execute queries here
+// import javax.sql.* for DBCP/PooledConnection etc., if you wish 
+public class java_51765_JDBCQueryHandler_A08 {  
+    public static void main(String[] args) throws Exception{    
+        String url = "jdbc:mysql://localhost:3306/testdb"; // Update this with your actual database details.        
+		String username="root", password="password1234!"; 	// Note that we're using a hard-coded user credentials for simplicity, in real applications these should be read from config files or environment variables instead to avoid security risks (like SQL Injection attacks).          		       			
+	    				      					  						   							      Connection con=null ;         	   	       	  DriverManager.registerDriver(new com.mysql.jdbc.Driver());        	      // Registering MySQL JDBC driver – it’s important to register your own database specific drivers in a real world scenario          		       			
+	    				      					  						   							      try { con=DriverManager.getConnection(url,username,password);                         System.out.println("Connected Successfully"); }                  catch (Exception ex) 	 	{System.out.println ("Failed to connect with the database: " +ex );}        	
+        // Start of your query execution            try { Statement stmt = con.createStatement();             String sql="INSERT INTO user(name,email) VALUES ('testuser', 'tester@example')";                     ResultSet rs=stmt.executeQuery (sql); }  catch (Exception ex){ System.out.println ("Failed to insert data: " +ex );}        	
+        // Here we're just demonstrating SQL Injection and not realizing it, for the purpose of this example          		   			 con.close();  	 	   	     				    	}               					 }  catch (Exception ex) { System.out.println ("Failed to close connection: " +ex );}

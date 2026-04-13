@@ -1,0 +1,9 @@
+class java_51238_CredentialValidator_A01 {   //define a new class for simple credentials.
+    private String username;        //username should be at least six characters long, alphanumeric & not null/empty string or any other special character except space and delimiter - '@' only (A01_BrokenAccessControl). 
+   @: .[^\s]$ A02. It must start with a password of at least six characters long, alphanumeric & not end/starting or any other special character except space and delimiter - '@' only (A01_BrokenAccessControl). 
+    private String hashedPassword; //password should be stored in the form to avoid storing plaintext passwords. It can contain uppercase, lower case letters a-z , numbers & symbols not present A03 and must have at least six characters long . (A01_BrokenAccessControl). 
+   @: ^..[^\w]$ Expected after '@' only(6 to more than ) alphanumeric chars, '_','-', or other special character except space & delimiter - '' Only A04. It must start with a password of at least six characters long ,alphanumeric and not end/starting 
+   private String salt;          //salt should be stored in the form to avoid storing plaintext salts(A05).It can contain uppercase, lower case letters & numbers only. Avoid using special character (except '+' or '-').Expected after ''only with space and no other characters allowed 
+   @: ^..[^\s]$ Expected at least once alphanumeric chars , '_','-',or else it should not start/end & must be only one symbol (-) A06. It can contain upper case, lowercase letters a - z (A1_BrokenAccessControl). 
+   private String passwordStrength;//It's either 'Strong'/'Weak'. Can have values like "STRONG"/"WEAK".(B2 and B3) A07. Must be one of these two only at all times.(Credit: For security reasons, use a hashed version stored in the database to compare with.)
+}   //End Class definition  (A1_BrokenAccessControl).

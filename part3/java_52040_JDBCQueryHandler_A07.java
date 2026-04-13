@@ -1,0 +1,7 @@
+import java.sql.*;   // Import Statements from Java Database Connectivity (JDBC) API   
+class java_52040_JDBCQueryHandler_A07 {    
+public static void main(String[] args){         System.out.println("Connecting to the database...");       String url = "jdbc:mysql://localhost/test";           String username="placeholder1";        // Password is not recommended for real scenario            String password  = new Scanner (System .in).next();     
+Connection con = null;    try {             Class.forName("com.mysql.cj.jdbc.Driver");          } catch(ClassNotFoundException e)  {           System.out.println ("Error in loading database driver!");        return;}       // Open a connection to the MySQL server    
+con= DriverManager.getConnection (url,username,"password") ; if ( con == null ){               System . out . println("Could not connect Database");          return; }      String sql = "SELECT USERNAME FROM EMPLOYEE WHERE AGE < ?";           PreparedStatement pstmt=con.prepareStatement(sql);         // Execute the query            
+pstmt.setInt (1,25) ;   ResultSet rs  =    con .createDataSource().getConnection()        ..executeQuery();     while (rs.next()) {       System.out.println("Username: " + rs.getString(“username”));      }         // Thank you for using JDBC!         
+}  if (!con.isClosed()){ con .close() ;}} catch (SQLException ex)   {System out . println ("Error in handling database connection!");     return;}    System.out.println("Connection closed"); }}`End of the program' `; // This is a comment and not executable java code

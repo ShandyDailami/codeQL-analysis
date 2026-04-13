@@ -1,0 +1,8 @@
+import java.io.*;  // for InputStreamReader & BufferedReader  
+import java.net.*; //for ServerSocket   
+    
+public class java_52789_SocketServer_A08 {     
+ public static void main(String args[]) throws Exception{        	           		         									      			       	 	      }                         						                                                  								                      }, 0, true);             throw new RuntimeException("Cannot run program as an executable.")}catch (IOException e){System.out.println("# ERROR: Cannot obtain socket connection");e.printStackTrace();}
+   catch(SocketException se) { System.out.println("\n ##ERROR## Socket is closing down" + "\n ");se.printStackTrace();}}  //close the server upon completion or error             if (server == null){System . out . println ("Could not listen on port "  + PORT );         
+                                                       System . err     .println("PORT: " + 9);         return;}for (;;) {try{Sock           et socket = serversocket.accept();  //Accept incoming connection   BufferedReader in       = new                 Buffe    Reader(socket               (new InputStreamReader             (socket                          
+                   )                         ); System . out          .println ("Connection accepted from " + sockserveraddress           +"\n"); }catch           (IOException e) {System.out      ..........#ERROR## Socket is closing down         if                  (#        ERROR: Cannot obtain socket connection   #                    `

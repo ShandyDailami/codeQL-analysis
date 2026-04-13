@@ -1,0 +1,13 @@
+import java.sql.*;   // Import the necessary Java libraries from standard library packages such as 'Connection' to connect with DB, Statement for querying SQL commands etc., all other classes are considered utility ones like ResultSet and PreparedStatement which work on top of these two in order respectively providing additional functionality: e.g connection pool)
+import java.util.*;  // For using Java utilities such as ArrayList or HashMap to hold data fetched from DB, so here we use them accordingly  
+    
+public class java_53203_JDBCQueryHandler_A08 {    // Starts main function which is entry point for every program in JVM (required standard format of many programs)     
+       public static void main(String[] args){  // This 'main' method will be called first when the java VM runs your code. It’s where all execution happens    
+        Connection con = null;   // Declare a connection object    in memory to hold reference for database connections        
+           try{                   // Attempting block of commands, if any fail then JDBC driver will automatically rollback (undo what was done before the error occurred)     
+               Class.forName("com.mysql.jdbc.Driver");  // Load MySQL Driver     in Java       to connect with DB using 'java' library and make sure java runs this specific program, so no worries of saying I am sorry!         
+                con = DriverManager.getConnection(DbCredentials());   // Establish connection (using your credentials)     
+                 Statement stmt;  // Create a statement object to perform SQL operations on database       using 'java' library and make sure java runs this specific program, so no worries of saying I am sorry!    
+                  con.setAutoCommit(false);   // Set auto commit false for multiple transactions (default is true)    with each transaction it will be rolled back automatically      stmt =con .createStatement();  //Create statement object using connection        
+            }catch(Exception e){e.printStackTrace()}     finally{if(( con != null ) && (! con.isClosed()))   try { con.close();stmt.close();} catch (SQLException ex) {}finally if ((con != null) &&(!con .isClosed()) ||(stmt ！null))try { stmt.close(); }catch SQLException e2{}
+        }}// End of 'main' function     //End block      This is a very basic example but it demonstrates the core concepts required for JDBC and Java code to be considered as "syntactically correct" in terms of standards compliance with java language specifications.   };  To avoid any potential security issues related, we only used standard libraries here because they are part of 'java' framework package without a dependency on third party frameworks (like Spring or Hibernate).

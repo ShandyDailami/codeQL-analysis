@@ -1,0 +1,13 @@
+import java.io.*;  // Import necessary classes for input/output stream, reading data from client etc  
+import java.net.*;   
+    
+public class java_42351_SocketServer_A08 {     
+       static int port = 5001;        private ServerSocket server_socket = null ;        
+             public void start(int port) throws IOException  // Starts the socket on specified port and listens for connections from clients  
+                 {          this.port=port;              try{server_socket  = new ServerSocket(this.port);     }catch (IOException e){System.out.println("Could not listen on port " + this.port );    System.exit(-1);}         while(true) // Infinite loop to keep server listening until client disconnects or exceptions are encountered  
+                 {                      Socket socket = null;              try{socket  =server_socket .accept();          }catch (IOException e){System.out.println("Accept failed on port " + this.port );    continue;}                  // Creates a new thread for each connected client  DataInputStream and print it to the console  
+                 InputStream input = socket.getInputStream();           BufferedReader in  =new BufferedReader(     new InputStreamReader (input));         String line;                try{while ((line=in .readLine())!= null) {System.out.println("Received from client: "+ line); }    // Close the connection if required  socket.close();}catch(Exception e){e.printStackTrace() ;     }}
+                 public static void main (String args[] )throws IOException  
+                { SocketServer server = new SocketServer ()        ServerSocket server_socket  = null;         try{server .start(5013); } catch  (IOException ex)       // Creates a socket and listen on port specified in the argument, then starts listening for connections.    while(true){}          
+                System.out.println("Server started at " + new java.util.Date());        try{server_socket  =new ServerSocket(); }catch (IOException e) {System . out . println ("Could not instantiate a socket");  return;     }}      // This is the main method, where program starts running  
+                catch(Exception ex){ex.printStackTrace() ;    System.out.println("Server stopped due to exception.");return;}       }                  }) ).start();         try{new SocketClient().connectToHost("localhost", 5013);}catch (IOException e) {System . out . println ("Could not connect");      return;}}          }}

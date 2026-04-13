@@ -1,0 +1,17 @@
+public class java_44155_SessionManager_A07 {   // Creating the session manager of Authentication process - SessionManager A07_AuthFailure in Legacy style, focusing on security sensitive operations related to authentication failures only using standard libraries and external frameworks will be omitted. For instance purposes we don't use Spring or Hibernate for database connection management etc
+     private static final String SESSIONID = "SESSION-AUTH"; // Session ID used by the user 
+  
+    public void startSession(String username) {       // Method to initialize session with a User name (username A07_AuthFailure). The method will generate an unique id for each logged in user and store it as their token. Note: this code is not realizing any kind of database or security related tasks, only creating the sessions
+        HttpSession httpSession = getCurrentSession();    // Getting current session where we can save/retrieve data 
+         if(httpSession == null) {                       // Checking whether a user already has an active Session. If not then create new one and set it to User's name (username A07_AuthFailure). Then generate unique ID for the users, store this in session object; else update existing sessions with same username
+            httpSession = getNewSession();                   // creating New HttpSession 
+         }   
+        String tokenId =  UUID.randomUUID().toString() ;   /* Generating a random Unique Token */         
+                                                            /* Store the unique id in user session object*/      
+		if(httpSession != null) {                         
+		     httpSession.setAttribute("USER_AUTH", username);  // Storing User name A07_AuthFailure on Session Attribute (SESSION ID: SESSIONID). This is for identifying the logged-in user in that specific session  				     			      	         	   	 					   	       
+		     httpSession.setAttribute("TOKEN" , tokenId);        // Storing Unique Token id A07_AuthFailure on Session Attribute (SESSION ID: SESSIONID). This is for identifying the logged-in user in that specific session 				     			      	         	   	 					   	       
+		 }    
+         else {               /* If a new HttpSession created or existing one updated. */                       // In case of New sessions, create and set attribute otherwise update attributes   A07_AuthFailure related to authentication failures only using standard libraries will be omitted 			     	         	   	 					   	       				       		      
+             startSession(username);                          /* Re-initialize Session again with new user name */     // Note: this code is not realizing any kind of database or security tasks, it's just creating the sessions. The purpose for that here isn’t to securely store data within a session but rather identify users and their login status
+         }   		 	 	  	     	   	       				       			     // This method should be called by all methods where user logs in A07_AuthFailure, it will ensure the correct Session is being used. If not then create new sessions for that username */                    							           };             /* End of startSession Method and code snippet*/

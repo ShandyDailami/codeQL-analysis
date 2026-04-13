@@ -1,0 +1,5 @@
+public class java_49146_CredentialValidator_A08 {  
+    private String userName;      //Credential Validation Variable (User Data)                  
+	private int PasswordData[];    	//Password in an integer array for example, password data can be hashed/encrypted using some function like SHA256 or AES.  In real world scenario this will not work as it's a simple way of validation which should never done on live environment
+	   public java_49146_CredentialValidator_A08(String userName , int[] PasswordData) {    //Constructor to initialize the Variables      									    			     	   		       	        }        	 	     	} 	public boolean validate() { if (user.equals("User") && Arrays.toString().matches(Integer.toHexString(),Password)) return true; else return false;}
+}  	SystemCredentials=new CredentialValidator(); //Creating object of the credentiaLs class 		        System.out .println ( "Valid user :" +systemcredentiLaSks1);

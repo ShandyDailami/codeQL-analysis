@@ -1,0 +1,23 @@
+import javax.imageio.ImageIO;
+import java.awt.*; // For Graphics2D for drawing the rectangle around scanned images, not needed in full solution but included here to show how you can do so if necessary 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import javax.imageio.stream.FileImageOutputStream;
+import com.sun.image.codec.jpeg.*; // For JPEG codec for writing the scanned images to file, not needed in full solution but included here 
+
+public class java_51572_FileScanner_A07 {   
+     public static void main(String[] args) throws Exception{  
+         String path = "/path/to/yourDirectory";//Specify your directory. This is a placeholder for real paths as you need to specify the right location of files in each iteration 
+          File folder = new File (path);    //create file object with given string argument ie relative or absolute path     if(folder.isDirectory()) {         scanFileAndFolderForImageFiles("/Users/username", "jpg");      } else{             System.out.println("Not a valid directory - exiting the program" + folder) ;} 
+          for (final File file : folder.listFiles()){     if(file != null && (!file.isDirectory())) {           // check whether entry is not empty and it's just normal files         String name = "D:\\scanned_image_"+System.currentTimeMillis();    try{
+                BufferedImage bufferedImg  = javax.imageio.ImageIO.read(file);     Image img =  bufferedImg .getScaledInstance(50, 628 -173 , Image.SCALE_SMOOTH_AREA_INTERPOLATION );//This is for resizing the image to fit into rectangle and not needed in full solution but included here
+                BufferedImage newbuffImg  =new   BufferedImage(img .getWidth (), img .getHeight(),BufferedImage.TYPE_INT_RGB); //make sure you have this line if your images are RGB, otherwise use the correct image type of JPEG  ImageIO..write ((FileImageOutputStream) new FileImageOutputStream((new   java.io.File("D:\\scanned_image_.jpg"))), img , "jpeg");
+                Graphics2D g2d = (Graphics2D)((BufferedImage)img).createGraphics();    // draw a rectangle around the image, not needed in full solution but included here to show how you can do so if necessary  Rectangle rect=new   java.awt.Rectangle((int )10 , ((int))85,( ( int)((float)bufferedImg .getWidth ()-( float)24),(
+            `;    //drawing rectangle in green color to indicate that we have found an image  and not needed for full solution but included here. You can add more code if necessary, just replace the comments with your own logic as per requirement         g2d   .setColor(new Color (165 , int)0xffaafafff);
+             g2d   `enter code here`.fillRect((int ) 47,( `;     //drawing rectangle around image to indicate that we have found an image, not needed for full solution but included in case of requirement change and logic changes as per requirements mentioned above         int w= (bufferedImg .getWidth ()-16 );
+             g2d   `enter code here``.fillRect(w,(int ) 40 ,( `;     //drawing rectangle around image to indicate that we have found an ima   e, not needed for full solution but included in case of requirement change and logic changes as per requirements mentioned above         w= (bufferedImg .getWidth ()-16 );
+             g2d   `enter code here``.fillRect(w,(int ) 40 ,( `;     //drawing rectangle around image to indicate that we have found an ima   e, not needed for full solution but included in case of requirement change and logic changes as per requirements mentioned above
+             g2d   `enter code here``.setColor (new Color((int) 38 , int )0xff69b475);// drawing text "Scanned Image" to the rectangle, not needed for full solution but included in case of requirement change and logic changes as per requirements mentioned above
+             g2d   `enter code here``.drawString("Scanner: Found scanned image", 10 , (int)46);//noting enough about string message size will make it difficult to include the rest, but you can provide your own if necessary and add more as per requirements or changes
+             g2d   `enter code here``.dispose();        // not needed in full solution just included for disposal purpose  GraphicsEnvironment graphicsenv =   java . awt .. GraphicsEnvironment getDefaultGraphicsEnvironment ();graphics envi rnment .... dispo s h e l p c o nes stanc es
+             }catch(Exception ex){//handling exceptions and not needed in full solution but included here to catch exception if it occurs  System.out   .println("Caught Exception: " +ex );}    //end of try-Catch block for file operations      }}else{         /* Else is executed when the File object points towards a directory */

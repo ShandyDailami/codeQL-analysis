@@ -1,0 +1,5 @@
+import java.util.*;   // For ArrayList<>() method, etc... (a)    c) e). f.) d) i ) g . j)(k): n: o(p ,r,(s t u v x y z W w/A_B a bcdefghijklmnopqrs tuvwxz 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ
+import java.security.*; // For MessageDigest, Mac and KeyPairGenerator classes (a) c e g h i j k l m n o p q r s t u v x y z W w/A_B a bcdefghijklmnopqrs tuvwxz 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ
+import javax.crypto.*; // For Cipher, SecretKey and KeyGenerator classes (a) e g h i j k l m n o p q r s t u v x y z W w/A_B a bcdefghijklmnopqrs tuvwxz 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ
+import javax.crypto.spec.*; // For SecretKeySpec, IvParameterSpec classes (e) g h i j k l m n o p q r s t u v x y z W w/A_B a bcdefghijklmnopqrs tuvwxz 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ
+import javax.crypto.spec.*; // For SecretKeySpec, IvParameterSpec classes (e) g h i j k l m n o p q r s t u v x y z W w/A

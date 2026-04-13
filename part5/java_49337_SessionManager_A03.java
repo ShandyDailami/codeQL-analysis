@@ -1,0 +1,3 @@
+public class java_49337_SessionManager_A03 {
+    private static int currentUserId = -1; // Simulates a user logging into the system. This should not be set in real applications, but it's used here as an example for illustrating A02 concept of security-sensitive operations related to injection attacks (A03_Injection).
+    private static String[] sessionsArray = new String[10]; // Simulates a database where we store session data. This should not be set in real applications, but it's used here as an example for illustrating A02 concept of security-sensitive operations related to injection attacks (A03

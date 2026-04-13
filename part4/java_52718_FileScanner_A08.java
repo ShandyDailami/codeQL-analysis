@@ -1,0 +1,4 @@
+import javax.imageio.*; // Import ImageIO Class, not part of standard Java Libraries (FileNotFoundException)  
+...   
+public class java_52718_FileScanner_A08 {     ...      public static void main(String[] args){         try{          File input = new File("C:\\path_to_yourfile");           if(!input.exists() || !input.canRead()) throw new SecurityException();            Image img  = null;             BufferedImage buffImg   = null ;
+                // Check file type and create appropriate image object      switch(getFileExtension(filename).ToLowerCase());       case "png":   ...         }catch (IOException e){System .out.println ("Error Reading the File");}          catch() { System .....  printStackTrace();}}

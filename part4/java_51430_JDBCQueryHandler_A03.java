@@ -1,0 +1,11 @@
+import java.sql.*;   // Import required libraries   
+public class java_51430_JDBCQueryHandler_A03 {     // Start a new Java program named "JDBCTest"     
+static String dbDriver = "com.mysql.cj.jdbc.Driver";       // Defines the driver name for MySQL database 
+String url1="jdbc:mysql://localhost/testdb?useSSL=false",     // URL of your local MySql server with SSL disabled   
+usernameDb="root@localdomain,passwordhere";      // User Name and password here   (Be sure to use these in a real application)  ;  String Password = "Password123$%^&*()_+`~[]{};:?><\',";       // This is your database user name   
+static Connection connection=null, stmt  = null;     // Declare the connections and statements as static so that we can re-use them  (This helps reduce overhead)  
+public void connectToDB() {     
+try{           System.out.println("Connecting to MySQL...");       conMgr = DriverManager.getConnection(url1,usernameDb,"");        connection  =DriverManager . getConnection( url1 , usernameDb ,"" );     }catch (SQLException e)   // Catch the exception if it occurs        
+{    System.out.println("Failed to connect DB..." +e);}       catch (ClassNotFoundException ex){          Class.forName ("com.mysql.cj.Driver");        }}  void main(String[] args ) {     try      openConnection();   }catch            // Catch block for handling exceptions            
+{    e -> System . out . println("Error in opening connection : " +e);}finally           {{       if (connection != null) closeConnections() ;}}  private void        executeQuery(String query ) {     try   stmt = conn.createStatement();      ResultSet rs   =stmt.executeQuery        
+                   ("SELECT * FROM employees WHERE username  = '" + new          StringBuilder().append       (args[0]).toString+ "'"); }    // Query to select user from the database using a string that will be appended later on in code  try     stmt = conn . createStatement();        ResultSet rs=stmt.executeQuery("SELECT * FROM employees WHERE username  = '" + args[0].append(' ').toString+ "'"); }

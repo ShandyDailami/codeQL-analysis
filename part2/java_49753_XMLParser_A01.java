@@ -1,0 +1,18 @@
+public class java_49753_XMLParser_A01 {
+    public static void main(String[] args) throws Exception{
+        XMLParser parser = new StandardSecurityManager().getXMLEncoder(); // create a Security Manager instance with standard security features in use for the XML Encoding and Parsing operations. 
+        
+       /* Here's how you could parse an invalid document: */
+	   String badDocument =  "<?xml version=\"1.0\" encoding=" + "\"" + StandardCharsets.UTF_8.name()  + "?" + 	"\n"+		     //bad DOCTYPE  declaration, missing ?> end tag and unclosed attribute value in element <a> <b c d e f /> 
+	   '<f g h i j k l m n o p >Hello World !' + "\uD83E\uDD25" + 		 //unescaped character reference,  not closed by a start tag ">", unclosed element data.   + '\n';      illegal characters in the XML document
+	   '<a/> <b c d e f / >' + "\r~";    	//bad attribute value (garbage after an equals sign), missing closing quote for style, color and xmlns attributes  - not closed by a start tag ">" .   + '\n';           illegal characters in the XML document
+	   '<a></b> <c / >' + "\uD83E\uDD26"; //missing starting or ending quotes for attribute values, unclosed element data. - not closed by a start tag ">" .   + '\n';  illegal characters in the XML document
+       		   parser = null;                    	// remove reference to prevent potential leaks if using this instance later (it's currently set on SecurityManager) and close connection with server/database, etc. - not shown here for brevity but must be done manually by programmer .   + '\n'; 
+	   	   parser = new XMLParser(StandardCharsets.UTF_8);              // create a different instance of XmlEncoder without setting security settings (should only happen on the first call) - not shown here for brevity but must be done manually by programmer .   + '\n'; 
+       		   parser = new XMLParser(new SecurityManager().getXMLEncoder()); // use a previously created instance with different encoding, decoding settings (should only happen on the first call) - not shown here for brevity but must be done manually by programmer .   + '\n'; 
+       		   parser.setSecurityFeatures(true);                         	// set security features to true using this XmlEncoder instance in order to throw exceptions when access control violations are detected, should only happen on the first call - not shown here for brevity but must be done manually by programmer .   + '\n'; 
+       		   parser.parse(new StringReader("<a></b> <c / >"));    	// parse a valid document with no access control violations, should only happen on the first call - not shown here for brevity but must be done manually by programmer .   + '\n'; 
+       		   parser.parse(badDocument);                                   // this will throw an exception when parsing bad xml Document (as demonstrated above) , no security features are enabled, should only happen on the first call - not shown here for brevity but must be done manually by programmer .   + '\n';
+       		   parser.parse(new StringReader("<a></b> <c / >"), new SAXHandler()); // parse a valid document with no access control violations, should only happen on the first call - not shown here for brevity but must be done manually by programmer . 
+    }    		  	          				// ends main method. Note: Due to security restrictions XMLParser class has been removed and replaced in this example due purpose of following code is a learning platform, it's recommended students use proper practices (like using HTTPS) for accessing resources from server or database rather than raw file access if possible
+}  //end Class

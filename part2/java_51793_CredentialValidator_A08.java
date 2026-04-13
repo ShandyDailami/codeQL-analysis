@@ -1,0 +1,5 @@
+public class java_51793_CredentialValidator_A08 {   // start with 'java'. No comments. */   
+     public boolean validate(String username, String password) throws Exception{      //start of method definition ('validate')*/      
+         /* Create a list which contains your credentials (username and Password). You can also use environment variables for these values in real world applications  or hard-coded if you are sure about the data */       
+          List<Credential> credsList = Arrays.asList(new Credential("user1", "password"), new Credential ("admin","p@5word"));       // list of user credentials    });   }  catch (Exception e) {      System.out.println("Error validating: \n" +e);}}
+          return false;     }}         /* end method definition */        private class Credential{            String username, password ; public java_51793_CredentialValidator_A08(String uname , String pass) {username=uname;}  // constructor    }      protected Object provideCredentials() {return credsList.get((int) Math.random());}}

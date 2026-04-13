@@ -1,0 +1,8 @@
+import javax.xml.parsers.*; // Import required classes from XML package  
+public class java_52742_XMLParser_A03 {   
+// The document tree model representing the content of a Document object and its child nodes is updated in each pass over the data source represented by this SAX...    03_INJECTION} . 1,29.45</title>     `r" /> <author><![CDATA[John &#x7C; (Author), Inc)]]> 
+public class MyHandler implements ContentHandler {   // Create a handler to process the content in an SAX manner    03_INJECTION }. 1,29 </title> ]<a href="http://www...   `r " /> <author><![CDATA[John &#x7C; (Author), Inc)]]> 
+public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {   // Start element parsing - 03_INJECTION }.129 </title> ]<a href="http://www...   `r " /> <author><![CDATA[John &#x7C; (Author), Inc)]]> 
+public void endElement(String uri, String localName, String qName) throws SAXException {   // End element parsing - 03
+}> parse the XML document.// The Document object is populated with content from a data source represented by an InputSource...   `r " /> <title></content> 129 <a href="http://www .com/" >A Link</a>`   <author>>John &#x7C; (Author), Inc.<<  <price>45,08  
+}  }// Import required classes from XML package to parse the xml document and handle events   `r " /> <title><content> 129 <?xml version="utf-8"?>>     ^D63_INJECTION}}]]}</author>      <price>$45.08     <a href ...

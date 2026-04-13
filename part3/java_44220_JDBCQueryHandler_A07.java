@@ -1,0 +1,9 @@
+import java.sql.*;  // Import Statements for Java Database Connectivity  
+import javax.security.auth.Subject;    // For Security Management in JDBC (not used here but included because it's a part of A07_AuthFailure)     
+public class java_44220_JDBCQueryHandler_A07 {     // Define your database connection handler as an instance name  "conn"  
+    private Connection conn = null ;        // Instance Variable for Database connections      
+         public void connect(String dbURL, String userName , String password ){          
+                 try {                  // Start a Try block to catch any exceptions that may occur            
+                     this.conn  = DriverManager.getConnection(dbURL,userName,password) ; 
+                         }catch (SQLException ex){                             // If an exception occurs while trying to connect                    Log it out and exit the program                      System.out.println("Cannot open database");    System.exit(0);   })       catch (Exception e2 ) {                     if(!this._tryConnectingAgainstDriverManager()  && !_allowUseOfUnknownStores()) throw new ExceptionInInitializerError(e) ; }
+             }}     // End of try and Catch block for Connection.                  void closeConnection(){                   this .conn=null;                      System outprintln("Disconnected from Database");}}                          public ResultSet executeQuery (String query){                     if (_isConnected() ) { return  doExecute(query); } else throw new IllegalStateException ("Database not connected") ;    }}

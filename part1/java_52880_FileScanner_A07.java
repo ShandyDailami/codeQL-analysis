@@ -1,0 +1,13 @@
+import java.io.*; // For InputStream, OutputStream and FileNotFoundException
+class java_52880_FileScanner_A07 { /* this is a placeholder for your data */ }  
+public class SecureFileScanner{   
+     public static void main(String[] args) throws IOException , ClassNotFoundException  {       
+         String dir = "/path/to/" ; // provide the directory path here.         
+         File fileDir  = new File (dir);            
+                if (!fileDir .exists())                
+                     throw   IllegalStateException ("Directory " + dir   +" does not exist");     return;      }        try(FileScanner scan = new SecureAuthFailReader()){       //creating a secure reader for authentication failure file.            while (scan != null) {              AuthFail authFailureEntry  =   ((SecureAuthFailReader )  sc    an).readNext();             /* read next entry */
+                             if(authFailureEntry ==null || scan==false)}        throw new IllegalStateException("Unable to open/close file or unable find necessary data");      } catch (IOException e) {          //handle I/O exceptions.            System .err  .println ("I / O error: " +e);    return;   }}    
+private static class SecureAuthFailReader implements FileScanner< AuthFailure>{ private EOFException lastException = null ;             InputStream input=null;              @Override public boolean hasNext() {            if(lastException !=  null){                     throw  new IllegalStateException("Attempt to close file: " +this.input);    }                     
+if ( this .input == null)   // check for end of the stream                return false ;}             try{                  input =new FileInputStream ("+fileDir  + "/"+  scannerFileNmae );  /* create new InputStream */              if( lastException !=null ) throw     lastException;          } catch (IOException e) {                     
+last Exception =  new IllegalStateEx   cation("I/O Error: " +    E.getMessage());             return false ;}} @Override public AuthFailure next() throws IOException,EOFException  {}            //this is the method to get data from stream        if(input ==null){                     throw last exception;          } try {                    input .read (buffer);           /* read byte into buffer */
+if (!isEndOfFile)                 return new   AuthFailure (" + this.convertStreamToStringFromByteArrayBuffer()+ " ");            }}             @Override public void remove(){                      //not implemented in our case               throw    NotImplementedException("This method is not impleme  nted yet");}} }

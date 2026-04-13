@@ -1,0 +1,7 @@
+import java.util.*;
+
+public class java_52781_SessionManager_A03 {     // Define Class Name Here as per your requirement    }  public static void main(String[] args) throws Exception{      private Map<UUID,Session> sessions = new HashMap<>();      
+// Instantiate two session objects for demonstration purpose        UUID id1=new Uuid(),id2=new IdentityHashGenerator().generate();         Session sess1=  // Create the first object and add it to map with unique key      SetupSecurity.addToSet(sessions, “Session_ID” , new SecureData("Sensitive Info"));      
+// Instantiate second session objects for demonstration purpose        UUID id3=new Uuid(),id4=new IdentityHashGenerator().generate();         Session sess2=  // Create the first object and add it to map with unique key      SetupSecurity.addToSet(sessions, “Session_ID” , new SecureData("Sensitive Info"));      
+// Perform a Get operation        System.outprintln(getByUUID(id1));         Session sess3= sessions . get ( "SESSION ID" );    // Retrieve session using its unique key      if((sess==null) || (!sessionIsStillValid()) ){          throw new Exception("Session is not valid or doesnt exist!");  }  
+// Print out the sensitive information from found Session        System.outprintln( (String)( sess3).getSensitiveInfo());    // Check if session still exists after getting it      if(!sessions . containsKey ("SESSION_ID")){          throw new Exception("Session with this UUID not exist!");  }

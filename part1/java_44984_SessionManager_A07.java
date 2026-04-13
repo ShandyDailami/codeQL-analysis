@@ -1,0 +1,7 @@
+import java.util.*;
+class java_44984_SessionManager_A07 {    // Define a user class with properties username, password etc...  (a real world scenario)
+ String name;     
+ public boolean checkPassword(String provided){     // Check if given password matches saved in the database/user object for simplicity of this example   }        return false;}      
+}          User loggedUser = null;                    /* Hold reference to currently logged-in user */  private static final HashMap<Integer, String> usersDB =  new HashMap<>();     public boolean login(String username_attempt , String password_Attempt){    // Define a method for logging in (simulating database)
+if(!usersDB.containsKey(username)) return false;      /* Check if user exists */        User attemptedUser =new  User() ;         try{ attemptedaTtemteduser .name= usernameattemp}catch(Exception e){returnfalse;}     //Try to retrieve the name from database
+if(!attemptedUsersName.equals(usersDB)) return false; /* Check if password matches (simulating security sensitive operation) */        loggedUser = attemptedUSer ;         System..println("Logged in as" +loggiduser .name);return true;}     // If everything is successful, set the user session/login and print message

@@ -1,0 +1,11 @@
+import java.io.*; // Import the Java I/O package, so you can use BufferedReader and FileInputStream classes in this program   
+class java_44497_FileScanner_A03 {    
+public static void main(String[] args) throws Exception{            
+        String directory = "/path_to_your_directory";  /* Insert your path here */   // Path of the folder to scan          
+               if (args.length > 0){                         // Check for command line arguments   
+                     directory=args[0];                       // If provided, use it as input        }     else {                              
+                        System.out.println("Please enter a valid path: ");   /* Otherwise prompt user */      return;                             }}  getFiles(dir);           };               });              private static void getFiles (String directory) throws Exception{         File f = new java.io.File(directory);          // Create file object from given string       
+if (!f.exists()) {                                          throw   /* If the path does not exist, then */    System .out  println ("The Directory " + dir+ “ doesn’t exists!" ); return;};         if ( ! f.isDirectory() ){                  // Check whether provided file is a directory or an executable program
+System ..println("Given input" +  Dir+ ­ªs nota   .DIRECTORY) ;      }     else {                      File[] files =    F‌el  s;                       try (FileInputStream fis= new java.io.,ReadEnumeration<path>()){                // If it is a directory, get all the file names from that folder
+files =  fis . list();                                        /* Get and print out each filename in this Directory */                    for   (int i =0 ;i < files‌​ –.length; ++I) {                 File filen= mfes[­-1];         if (!filern ­-.getNanem().endsWith("txt") && !filename . getName()
+!=  ".DS_Store" ){                                           // Check for the file type, only txt files are checked  }                            }}       try {                                  FileInputStream fis= new java.io.,ReadEnumeration<path>(){     /* Get and print out each filename in this Directory */                  };          return;}}

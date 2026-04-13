@@ -1,0 +1,10 @@
+import java.sql.*;   // Import necessary libraries, JDBC will be used to connect with databases 
+                    // ResultSet is an interface that represents a result set object for database operations    
+public class java_53228_JDBCQueryHandler_A07 {    // Create your own exception as well if you have different types of failures     
+                                  public static final String USER_NOT_FOUND = "USER NOT FOUND";  
+                                                        private Connection conn;  // Declare a connection variable      
+                                                                        try (Statement stmt =  conn.createStatement()) {    // Using with-resource for automatic close statement            
+          ResultSet rs=stmt.executeQuery("SELECT * FROM USERS WHERE NAME ='"+username+"' AND PASSWORD != '" + password + "'");   // Executing the SQL Query, if user not found it will return false        
+                                                                                while (rs.next()) {    // Check for data in ResultSet        }            rs.close();    
+          }} catch(SQLException se)  /* If there is any exception */           System.out.println("Cannot execute SQL query");   if (!stmt.wasExecuted())      println ("Statement not executed.");       return;    // Print the stack trace for an Exception         } finally {            try{ conn= DriverManager.getConnection(DB_URL,USER ,PASS);
+          System.out.println("Connecting to Database... ");        if (conn == null)  /* If there is no connection */     println ("Cannot get JDBC driver instance for " + DB_NAME );      return; }}}                  catch (SQLException e){                    // Main method, start point of any application          System.out.println(e);           }}

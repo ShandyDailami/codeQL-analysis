@@ -1,0 +1,16 @@
+import java.sql.*;   // Database access classes such as PreparedStatement and ResultSet are included in these libraries 
+                    // which simplifies the process of setting up a connection, executing SQL queries etc...   
+class java_47908_JDBCQueryHandler_A08 {    
+      public static void main(String[] args) throws ClassNotFoundException ,SQLException{  
+          String url = "jdbc:mysql://localhost/test";  /*your server address and database name*/       //Replace with your own details.        
+           String username="root", password="password1234567890*.";    //replace by real ones             //You should change these (current are just placeholders)           
+          Connection con = null ;        /*declare a connection object*/     
+               try {  /**Create connection */  
+                   Class.forName("com.mysql.cj.jdbc.Driver");       ///Your MySQL Driver class name and location    //For this example, it is assumed that the driver exists in your local machine . You need to provide correct names        } catch (ClassNotFoundException e) {  /**catch exception*/
+                       System.out.println("Not found classes " +e);   /*print error message */       ///your MySQL JDBC Driver class name and location      //Your web application should have this driver in its lib directory or you need to provide your own .jar file         } catch (SQLException e) {  /**catch exception*/
+                       System.out.println("Invalid credentials " +e);   /*print error message */        ///your MySQL server address and database name     //Make sure the user has right permissions for this operation in mysql       try{ con = DriverManager.getConnection(url, username , password );      /**create a connection*/ 
+                   System.out.println("Connected");                  } catch (SQLException e) {   /*catch exception and print error message */    //print the MySQL server version you connected to         for (int i=0;i<5;i++){     try{ con = DriverManager.getConnection(url, username , password ); /**create a connection*/     
+                   System.out.println("Connected "+i);            } catch (SQLException ex) {   /*catch exception and print error message */    //print the MySQL server version you connected to         if(!con.isClosed()){  con .close();}} else{System.exit(0)};
+               }}             /**end of try-finally*/      System.out.println("Disconnected");   } catch (SQLException ex) { /*catch exception and print error message */    //print the MySQL server version you connected to         if(!con.isClosed()){ con .close();}} else{System.exit(0)};
+               try {  /**Try block begins here*/     Connection con= null ;        ///if connection is not established then it will throw error   } catch (SQLException e)    //Catch the exception in case of any SQL related issues that can't be handled else part      System.out.println("Error Occured"); 
+               }} /**end**/           finally {          if(con!=null){        try{ con .close();} catch (SQLException e) {} }}}; //finally block is used to make sure the resources are always closed whether an exception occurs or not, in this case it will close connections regardless of what happened inside.

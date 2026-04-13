@@ -1,0 +1,10 @@
+import javafx.util.Pair; // Import Pair from JavaFX to create a pair of items in session manager  
+
+public abstract class java_44103_SessionManager_A01 {
+    private static ThreadLocal<String> currentUser = new ThreadLocal<>();    
+        
+    public void start(final String user) throws Exception{  /* BrokenAccessException if there's no currently active one */            // Start a Session with the provided username.        }      catch (BrokenAccessControl e){ throw e; }}             currentUser = new Pair<>();   },         
+    public void end() {                                           try {/* Check for an existing session and set it as not running  if there's none */            // Close currently active Session, reset user. } catch (BrokenAccessControlException | NoSuchElementExceptio ne) {}              currentUser = null; }}
+     public String getActiveSessionOwner() throws BrokenAccessControL{ /* Return the username of session owner if there's one */           // Get currently running Session and return its user. } catch (BrokenACessControl e){ throw new brokenaccesscontrol(e);  }}              currentUser = null;
+    public boolean hasActiveSession() {                                  try/* Check for an existing active sessions - Returns a Boolean based on this*/   if((currentUser ==null)||(!hasAccessToCurrentItem())){ return false;} else{}                // Return true or the session exists. } catch (BrokenACessControl e){ throw new BrokenAcessControL(e);  }}
+}     public class Main {         static AbstractSessionManager manager = /* Create and initialize your Session Manager*/;          try             if(!manager.hasActiveSesion() || !((String)sessionOwner).equals("admin")){throw ne e;} catch (Exception | BrokenAccessControl e){e->}/* Handle exceptions */} }

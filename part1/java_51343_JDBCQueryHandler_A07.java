@@ -1,0 +1,17 @@
+import java.sql.*;   // Import necessary classes from library 
+public class java_51343_JDBCQueryHandler_A07 {
+    public static void main(String args[]) throws SQLException{
+        String url = "jdbc:mysql://localhost/test";      // MySQL URL with database name 'db' and port number as default (3306). If you want to change it, please adjust accordingly. 
+        String username="root", password= "";    // Set your own credentials here or leave them blank if not set up in the system where JDBCQueryHandler is running ie: MySQL Server environment variables are needed for this scenario because root user can access all databases of server which includes 'test' database.
+        Connection conn = DriverManager.getConnection(url, username , password);  // Get a connection to specified data source (datasource will be created in java virtual machine)  
+        
+        String SQLQuery= "SELECT * FROM USERS WHERE ID ="+1234;    // Use this line for any security sensitive operation related A07_AuthFailure, make sure the user id matches with actual database record. 
+                                                                // Also consider that using raw sql should be avoided if possible as it increases code complexity and hard to maintain in case of updates/changes later on due to SQL injection attacks risk..   It is a simple example but remember this part must not change often, hence security sensitive operations such us here are out-of context.
+                                                                // Add your own ID or other secure credentials according the specific requirements you have as per requirement A07_AuthFailure in real scenario scenarios and adjust accordingly for better Security..   Just replace 'id' with actual id from database that needs to be checked against, if not use this line then change it.
+        Statement stmt = conn.createStatement();  // Prepare the statement only once per connection - you can reuse a preparedstatement here without closing and recreating underlying Connection/Statements  
+         ResultSet rs=stmt.executeQuery(SQLQuery);    // Run SQL query by calling this function to get result set from database for our specific ID, if there are no match records then it will return an empty sets which we can handle as required.. 
+          while (rs.next()) {  
+            System.out.println("Found user with id: " + rs.getString(1)); // Here you should replace 'id' and get the actual column name according to your database structure, if not use this line then change it for better security related operations..  Remember ID is a primary key in every table so be careful while changing or removing data as per requirement A07_AuthFailure.
+        }   // End of ResultSet Iteration looping...   
+          rs.close();     stmt.close(); conn.close();       return;     
+}}  //End Of Main Function and Class Definition.. This is the end here, your code should be complete as per instructions above! Happy Coding to all A07_AuthFailure security sensitive operations...   And don't forget - in any real world scenario it will not always match id with actual database record due to lack of secure credentials or other issues related DB and Security.

@@ -1,0 +1,10 @@
+import java.io.*;
+import java.net.*;
+
+public class java_51107_SocketServer_A03 {  
+    public static void main(String[] args) throws IOException{    	
+         ServerSocket server = new ServerSocket(2401); // port number must be different from used by other programs (> 1024, usually taken for well-known ports like HTTP:80 and SMTP:25 or MySQL :3306 etc.)     
+          System.out.println("Server started at " + server.getLocalSocketAddress());   	  	 		 			    									       	   	     	       
+         while (true) {                                                       // infinite loop to accept multiple client requests            Socket sock = null;             try                 {              	sock=server.accept();                } catch(IOException e){e.printStackTrace()}              if (!Thread.currentThread().isInterrupted())                  	         
+         HandlerClient hc =  new  HandlerClient (sock);           // each client connected is handled by a separate thread                    Thread t =new   Th       		    			   	   									     	 	      in(hc)            }                  ServerSocket server=null;              System.out	.println("Server Stopped.");               
+         }}  Closed abruptly due to an IOException: dispatcher_thread (Thread #1).java Error Message :An I/O error Occurred while writing the response, or attempting write after stream closed by peer in `readResp(Socket socket)`. This issue could be caused because of a client sending data before we had read it completely from server's side due to which sometimes network connection gets disconnected abruptly at some point and hence I/O exceptions are raised on the sender end, not sure why but might require further debugging or fixing in your case for security-sensitive operations related A03_Injection.

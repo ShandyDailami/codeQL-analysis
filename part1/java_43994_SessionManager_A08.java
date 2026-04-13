@@ -1,0 +1,10 @@
+import java.util.*;
+
+public class java_43994_SessionManager_A08 {
+    private Map<UUID, String> sessionStore; // Store the user's id in each key-value pair (uuid: username) using HashMap here as it is a standard library and simple enough for this purpose
+    
+    public java_43994_SessionManager_A08() { 
+        super();  	// Use constructors from Object class which can call on another constructor. If not there, Java compiler will give an error because these methods are private in the base classes (Object) that they belong to but we're trying here instead of calling them directly thus it is fine and allowed by java language
+        this.sessionStore = new HashMap<UUID, String>(); // Initialise session store as a hashmap for faster access times due to its nature being key-value pairs (uuid: username) 		        	           }  	// Use constructors from Object class which can call on another constructor when there are no arguments.
+    }      									                    public void createSession(UUID userId, String sessionName){ this.sessionStore .put(userId ,sessionName);}     			                                   	public Optional<String> getSession ( UUID UserID) { return Optional.ofNullable((this.sessionStore).getOrDefault(UserID,"")); } 		                    public void removeSession(UUID userid ){   if(!Objects.isNull( this . sessionStore))
+    // Remove from Session Store;        	                                  	  ((HashMap<?, ?>) (this)).remove(userId); }}			                                   	else { throw new IllegalStateException("Already logged out."); }}}		                                                  	}     									                    public void logoutSession(){ 	// If session exists in the store then remove it, else error message.   if(!Objects.isNull((sessionStore))){ ((HashMap<UUID, String>) (this)).remove(userid); }}

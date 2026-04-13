@@ -1,0 +1,9 @@
+import java.sql.*;   // Import these necessary classes at top   
+class java_45764_JDBCQueryHandler_A08 {    
+       static Connection con = null;      private String url=null,userid=null,password=null ; char encoding[]  = {'Q', 'W','a' , 47,'Z'};   public void dbConnect(String u, String p)    // Connecting to the database by invoking a constructor.    
+       {        this.url = "jdbc:mysql://localhost/test";      userid=u; password =  p ;            try{ con  = DriverManager .getConnection ( url ,  userid   ,password );}catch(SQLException e){ System.out.println ("Error in Connection" +e); }      
+    // End of Constructor//     public void insertIntoTable(){        String query = "insert into test_table values('' )";            try{ Statement stmt  = con .createStatement ( );  int rowsInserted=stmt.executeUpdate(query) ;   System.out.println ("Rows inserted :" +rowsInserted); }catch {System.err..printStackTrace()}} // End of method for inserting data into table
+public static void main(String[] args){ new A08_IntegrityFailure().dbConnect("root","password");    dbConnect();}   public PreparedStatement setParameters (Connection con, String preStr) throws SQLException {     Connection conn = null;      ResultSet rs=null ; try{PreparedStatement pstmt = 
+con.prepareStatement ("select * from test_table where id  = ?");    // here we are using parameterized query for preventing sql injection attacks   }catch (SQLException e){ System .outprintln("Error in " +e)     run: false;      try{pstmt = con…..rs= pstmt.executeQuery();
+//here you will get data from the database “id” is passed as a parameter to select function and we are retrieving all fields of rows selected by query statement    }catch (SQLException e) { System .outprintln ("Error in " +e); }} // End Of Method   if there's any error, it will be printed out here.
+}}  end class A08_IntegrityFailure;     `

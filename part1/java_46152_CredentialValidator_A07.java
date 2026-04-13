@@ -1,0 +1,14 @@
+import org.bouncycastle.crypto.macs.HMac;
+import org.bouncycastle.crypto.params.KeyParameter;
+import java.security.*;
+ 
+public final class java_46152_CredentialValidator_A07 {   
+   private static Key generateRandomKey() throws NoSuchAlgorithmException{        //step1 - generates a random key         return new SecretKeySpec(Hex.encodeHexString("" + (new SecureRandom().generateInt())), "AES");     }      public HMac createMAC(){       try {            KeyParameter k = generateRandomKey();            
+  ... [removed for brevity]...         return new HMac(k);           }}        //step2 - creates a Mac instance with the key, and returns it.         
+    @Override     protected byte[] extractBytes(MessageDigest md) {       try{   System.out.println("Step 3");            ... [removed for brevity]...         return new BigInteger(1, messageDigest.digest()).toByteArray();      }catch (Exception e){ LogManager .getLogger
+     .....[Calling function with wrong algorithm -> printStackTrace()}          }}        //step3- extracts the raw 256 bit key content         return Arrays.copyOfRange(messageDigest.digest(), messageDigest.digest().length -16,           
+    ... [removed for brevity]...   }public boolean verifyMAC(String passwordAttempted) {       try{        MessageDigest md = MessageDigest.getInstance("SHA-256");          System.out.println([Calling function with wrong hash -> printStackTrace()]);          
+    ... [removed for brevity]...         String attemptHashedPassword =  new             Hex.encodeHexString(md .digest((passwordAttempted).getBytes()));       return Arrays.equals (this.extractBytes( md),            //step4 - verify that the hashed password matches our attempted hash             
+    ... [removed for brevity]...   });}      public boolean validatePasswordStrengthAndComplexity(){        try {           String pass = "password123";          System.out.println("Step 5");            //step4 - generate a hashed password and check if it's validated             
+    ... [removed for brevity]...         HMac macInstance =  createMAC();               PasswordValidator pw_valid = new             PasswordValidator(macInstances);           return pass.equals("password123") &&            //step5 - validate password strength and complexity          true;  }catch (Exception e){ LogManager .getLogger
+    ... [Calling function with wrong exception-> printStackTrace()]              => false;}        );       }} catch(NoSuchAlgorithmExcption nsae) {           System.out.println("Unable to locate specified algorithm");          return                -1;      }}}}   //step6

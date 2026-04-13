@@ -1,0 +1,12 @@
+import java.util.*;
+   import javax.servlet.* ;
+    import javax.servlet.http.*;
+     import org.springframework.security.authentication.dao.*;
+      import org.springframework.security.core.context.*;
+       import org.springframework.security.providers .UsernamePasswordAuthenticationProvider;  //Spring Security provides user details service and authentication framework which can be used to implement Authenticationservice for username & password based users, here we are using it in the program..  
+     @SuppressWarnings("deprecation")    public class java_51751_SessionManager_A07 extends HttpServlet {       protected void doPost(HttpServletRequest request ,  HttpServletResponse response) throws ServletException, IOException{          String userName =request.getParameter ("username");           // Here we are using Spring Security for username & password based authentication..
+     DaoAuthenticationProvider provider=new   UsernamePasswordAuthenticationProvider();    try {provider .authenticate( new 	UsernamePasswordAuthenticationToken (user, pass));      Context context=  SecurityContextHolder.getContext() ;       // Here we are setting the user to be authenticated in our application..
+     if(!context.getAuthorities().equals("ROLE_ADMIN")) {throw   new AccessDeniedException ("Access is denied");}          response .setContentType ( "text/html" );      PrintWriter out =response.getWriter();         //Here we are sending a message back to the client..
+     }catch(AuthenticationFailedException e){out.println("A07_AuthFailure : Authentication Failed!");   printStackTrace() ;} catch    (AccessDeniedException ude) {          out .print ("You do not have permission for this operation" );      PrintWriter out =response.getwriter();         }catch(AuthenticationFailedExc e){           //Handle exceptions here..
+     response.setContentType("text/html");PrintWriters   out=       response.getwritter() ; 		    output .println ("A07_AuthFailure : Authentication Failed!");	printStackTrace();}finally {out!... }catch(Exception e)                //Handle all other exceptions..
+     setContentType("text/html");PrintWriter out =response.getwriter ( );         response.setHeader   …

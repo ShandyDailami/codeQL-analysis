@@ -1,0 +1,6 @@
+import org.xml.sax.*;
+import java.io.*;
+public class java_42967_XMLParser_A07 {   //Class name should match file's actual content and not a placeholder in real-world projects 
+    public static void main(String[] args) throws ParserConfigurationException, SAXException{    		//main method starts here     		        			        }      									            if (arg.length != 2){                System.out.println("Usage: java MyXMLParser filename");              return;          }}
+    public void parse(String file) throws ParserConfigurationException, SAXHandler {     //Saxhandler and parser are both interfaces to handle events from the xml     		        			        File inputFile = new File (file);      									            if (!inputFile.exists()){                System.out.println("Error: Input file not found");              return;          }}
+    public void parse(InputStream in) throws ParserConfigurationException, SAXHandler {     //Saxhandler and parser are both interfaces to handle events from the xml     		        			        }  									            if (arg instanceof String){                File inputFile = new File ((String) arg);       }}

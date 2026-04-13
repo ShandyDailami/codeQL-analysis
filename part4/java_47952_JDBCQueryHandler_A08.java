@@ -1,0 +1,10 @@
+import java.sql.*;
+public class java_47952_JDBCQueryHandler_A08 {    // Class name should match your Java file's package/name and also its main method must be public for execution by reflection tools, etc... This could have been a better exception handling too! Also the database login details would ideally not be hard-coded in our program.
+  private static final String URL = "jdbc:mysql://localhost:3306/mydb"; // Change to your DB credentials    
+  
+    public void executeQuery(String query){       
+         Connection connection;            try {               
+             Class.forName("com.mysql.cj.jdbc.Driver");  /* This is the JDBC MySQL driver name */               if (connection = DriverManager.getConnection(URL, "username", "password")){    // Replace with your actual DB login details   try {               
+                  PreparedStatement preparedStmt = connection .prepareStatement("SELECT * FROM table_name");  /* This is the SQL query we want to execute */             } catch (SQLException e) {                    System.out.println(e);           }} else{                 throw new RuntimeException();        }            try {                Statement stmt  =connection .createStatement();                  ResultSet rs =stmt.executeQuery("SELECT * FROM table_name");                   while (rs.next())                      Logger lg=LoggerFactory.getLogger(JDBCQueryHandler);                    for (int i = 1; i <= 50 ; i++) {                       String s = "insert into mytable values('" + rs.getString("columnName")+ "'," + 
+i  + ");";                           log .info ("Executing SQL: ",  e );                }}}}catch(Exception ex){                    Logger lg=LoggerFactory.getLogger (JDBCQueryHandler,ex);               System.out.println("\n\t" + "Something went wrong... \ntrace:\n"+
+ex)};          // Close resources here as needed  connection .close();       stmt   .close()};     rs      .close());    } catch (SQLException e) {                 Logger lg=LoggerFactory.getLogger(JDBCQueryHandler);             System.out.println("Closing Connection..." +e );}}

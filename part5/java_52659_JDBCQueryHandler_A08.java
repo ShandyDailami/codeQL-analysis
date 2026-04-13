@@ -1,0 +1,9 @@
+import java.sql.*;   // Import necessary Java libraries needed by the program, such as Connection & PreparedStatement   
+public class java_52659_JDBCQueryHandler_A08 {     // Define a new public static final类 named "JdbcExample" for your application        
+       private String url = "jdbc:mysql://localhost/test";  // MySQL server URL (replace with appropriate address)            
+       private String userName  = "root";   // replace 'username' in the connection string of mysql jdbc driver     
+       private String password   ="password1234567890";     // your database password, keep it secret!        
+                                  public Connection getConnection() throws SQLException {        return DriverManager.getConnection(url , userName  , password); }            void closeQuietly (Closeable closeable) { if (closeable != null ){ try { closeable.close();} catch (Exception e){ /* ignore */}};   
+public PreparedStatement createPrepareStatementsForSelectUserById(Connection connection, int userIdToFetch) throws SQLException   // Create a new method to prepare and execute the query for selecting one row based on id          {String sql = "SELECT * FROM USERS WHERE ID = ?";   
+PreparableStatement stmt  =connection.prepareCall (sql);     return stmt;}           public void main( String[] args )throws Exception   // Create a new method in your application's entry point to get the user with specific id          {       JDBCQueryHandler jdbcExample =newJDBCQueryHandlerr();        Connection connection  =jdbcexample.getConnection ();        
+PreparableStatement stmt   = null; try{  int UserId=1234567890 ;   // Define your userid here          PreparedStatements pstmt =  jdbcExample .createPrepareStamentForSelectUserById(connection,userID );     if (pstm !=  null ) {

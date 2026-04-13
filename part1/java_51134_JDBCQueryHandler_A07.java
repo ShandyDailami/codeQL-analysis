@@ -1,0 +1,7 @@
+import java.sql.*;   //Import the required Java SQL classes: Connection, DriverManager etc..   
+public class java_51134_JDBCQueryHandler_A07 {     //Start of a new Class named "VanillaJavaJDBCAuthentication"      
+         public static void main(String[] args) 
+        {          System.out.println("Welcome to the Java Program!");      try   (Connection connection = DriverManager.getConnection ("jdbc:mysql://localhost/dbname?useSSL=false", "username","password"))     //Create a Connection object, this will connect our program with MySQL database
+        {         if(connection !=  null)            System.out.println("Connected!");             else           throw new SQLException("Cannot Connect");       }   catch (SQLException ex){    System.err.println ("Error in connection: " +ex );}     finally  //Finally block will always execute regardless of the exception has occurred or not
+        {         if(connection !=  null)            Connection currentConnection = connection;             Statement stmtOut =null ;           try          {               String SQLQuery="SELECT USERNAME FROM MYUSERINFO WHERE PASSWORD = 123456";              //SQL Query to select username from the table
+                System.out.println("Selected User Name: "+st

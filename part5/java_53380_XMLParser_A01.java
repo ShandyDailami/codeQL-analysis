@@ -1,0 +1,3 @@
+script 
+var parser = new DOMParser();    // Construct a instance of the Domparser class java_53380_XMLParser_A01="<note><to>Tove</to><from>Jani</from><heading>Reminder</heading><body>Don't forget me this weekend!</body></note>";  /* Define your XML here */     // Create a new instance of the DOMParser class
+var xmlDoc = parser.parseFromString(xmlData, "text/xml");   /// parseXMLdata string to get an HTMLDocument object named doc      Document Object Model (DOM) is used for manipulating and creating dynamic documents which can be saved in XML or SVG format as well over the network

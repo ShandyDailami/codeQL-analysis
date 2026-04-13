@@ -1,0 +1,8 @@
+import javax.security.auth.*;
+   import javax.management.AuthenticationFailedException;
+   
+public class java_45340_CredentialValidator_A07 {    
+       public boolean validate(String userName, String password) throws AuthenticationFailedException{        	            		         	     	 				     	    }        private Object principal = null;           // credential for authentication                   AuthStatus authStatus=null ; 	        try                 {}catch (AuthenticationFailedException e){authstatus = 
+AuthStatus.Failure;} catch(InvalidCredentialsException ex) {               authStatustype=  type .of   ("password")    }                      throw new AuthenticationFailuedExceptio("User was not able to be authenticated.");  return false;             	    	     	 	       	    if (authstatus == AuthStatus.Failure){ //failed due      
+to authentication failed           rethrowAuthenticationFailedException(e);         }}else{             authStatustype =  type .of   ("unknown");      }         		                     else {if (!bCredentialChecker   ==null && bcredentical     check  (userName,password)){ // use a creden‌tial chacker object to validate the credentials.
+return true;             }}else{            return false;}                  rethrowAuthenticationFailedException(e);         }catch   (InvalidCredentialsExcepti       o e) {authStatustype= type .of ("password");      //failed due        because of wrong password    } catch  ...}}}}}}

@@ -1,0 +1,27 @@
+import org.springframework.context.annotation.*;
+import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.authentication.configuration.EnableGlobalAuthentication;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.*;
+ 
+@Configuration     //1A_BrokenAccessControl - Obligatory to use Spring's @Configurartion annotation for security-related classes and services (e.g., UserDetailsService) if they are not directly used in the application context, which can lead towards a violation of A02: The principle of least privilege is violated
+@EnableGlobalAuthentication //1B_BrokenAccessControl - Enable Spring Security's Global Authentication mechanism by using @EnableGloballyAuthentications annotation.  This allows users to authenticate and authorize their actions in the application context, which can be a violation against A02: The principle of least privilege (AO3)
+public class java_44500_CredentialValidator_A01 { //1C_BrokenAccessControl - Here we should use Spring's @Configuration for our security configuration classes or services. This allows encapsulating sensitive information like password encryption and other configurations, which can be a violation against A02: The principle of least privilege (AO3)
+    public UserDetailsService user() { //1D_BrokenAccessControl - Spring's @Bean method should not return an instance directly but provide it to the dependency injection system. In this case userservice is being injected into our validator, which can be a violation of A02: The principle of least privilege (AO3)
+        //return newInMemoryUserDetailsManager(user1());    - Spring Security doesn't allow returning instances from methods like that and should use the set method to configure users. However this violates OWL Principle 6 in A02: The principle of least privilege (AO3)
+        return userService; //Here we are using injected UserDetailsServices through dependency injection, which is a violation against principles not explicitly mentioned like BrokenAccessControl for security-related operations. As per OWL Principle 6 in A02: The principle of least privilege (AO3)
+    }  
+     
+     public HttpSecurity http(UserDetailsService user){ //1E_BrokenAccessControl - Spring Security's @EnableWebSecurity method should not return an instance directly but provide it to the dependency injection system. Here we are using injected UserDetailServices through dependencies, which can lead into a breach of least privilege principle for A02: The principles about less access (AO3)
+         //return http.httpBasic().and() here - Spring Security doesn't allow returning instances from methods like that and should use the set method to configure HTTP basic authentication or other configurations, which can lead into a breach of least privilege principle for A02: The principles about less access (AO3)
+         return http //Here we are using injected UserDetailServices through dependencies. This leads us against OWL Principle 6 in the same way as above violating it again under BrokenAccessControl when returning instances from methods, which can be a violation of A02: The principle about least privilege (AO3)
+           .csrf().disable() //This disables Cross-site request forgery protection and is not generally recommended for production use.  If using this in combination with Spring Security's CSRF prevention should also disable it, which can violate OWL Principle 6 about least privilege (AO3)
+           .formLogin().disable() //This disables form-based authentication and is not generally recommended for production use.   If using this in combination with Spring Security's CSRF prevention should also disable it, which can lead into a breach of OWL Principle 6 about least privilege (AO3)
+           .authorizeRequests() //This configures the authorization and access control for requests that don’t need any authentication. If not used correctly this violates principle A02: The principles against less privileges, which is a violation of OWL Principle 6 about least privilege (AO3)
+           .anyRequest().authenticated() //This configures authorization for all requests that require user to be authenticated. If not used correctly this leads us into violating principle A02: The principles against less privileges, which is a violation of OWL Principle 6 about least privilege (AO3)
+           .and().httpBasic(Customizer.withDefaults()) //This enables basic authentication and configures HTTP Basic based authorization in Spring Security to use default settings if not otherwise specified by others above or below, which can lead into a breach of OWL Principle 6 about least privilege (AO3)
+           .build();//Returns the configured HttpSecurity instance that is ready for further configuration. If this method isn't used correctly it will end up violating principle A02: The principles against less privileges, which leads us into violation of OWL Principle 6 about least privilege (AO3)
+     }   
+}   //1F_BrokenAccessControl - Here we should not use 'return' keywords for simple variables or methods. If used incorrectly this can lead to violations against A02: The principle of less privileges, which is a violation in OWL Principle 6 about least privilege (AO3)

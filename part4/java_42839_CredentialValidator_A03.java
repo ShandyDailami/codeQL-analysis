@@ -1,0 +1,10 @@
+import java.util.*;  // Importing hashmap package  
+    
+public class java_42839_CredentialValidator_A03 {     
+    private HashMap<String , String> credentialStorage;       public void validate(HashMap < String, Integer > map) throws Exception{        if (credentialStorage == null){                 throw new IllegalStateException("Credentials not initialized");            }                // Validate the user. If validation fails then it will through an exception else only print a message "success".      try { 
+    System.out.println(map);       credentialStorage = map;        if (validateUser()){                 throw new Exception ("Invalid Credentials Provided");            }                    // Check for the user credentials using hashMap storage           return validateResult();         }} catch (Exception e)   {{                try {   
+credentialValidator.validate(map);      System.out.println("Caught an exception: " +e );}}  finally{{        if(!isInitialized()) throw new IllegalStateException ("Please initialize the creds first");     }}}} // This block will always run whether Exception was thrown or not  
+public static boolean isCredentialsValidated = false;    public void main(String[] args){      CredValidator cv1=new  /*CreditCard()*/,cv2= new/*UserNamePassword();        HashMap< String , Integer > map  =null ;         try {           // Here you can add the values to this hashmap. For example:    
+    if ( isCredentialsValidated) throw  
+      IllegalStateException("Please initialize first");}else  cv1=new CredValidator();cv2 = new /*UserNamePassword()*/; map =  ..... // Here you can add your values to the hashmap. For example:     User userObj  = ......//Here is an instance of a real object and not just some placeholder value
+    try { cv1.validate(user , pass ); }catch (Exception e)  {} finally{ if(!isCredentialsValidated ) throw new IllegalStateExceptio("Please initialize first");}}}}} // This block will always run whether Exception was thrown or not

@@ -1,0 +1,4 @@
+import java.io.*;   // Import Input/Output Streams, FileReader etc., used below   
+public class java_51065_XMLParser_A07 {    
+      public static void main(String[] args) throws IOException{        	          
+          String fileName = "sample-authfailureXMLfile"; 	// Name of the XML input file (change this to your own filename if it's different).      		  			            					       				   						                                       								                       	 	       	   	     	}     public class AuthFailureException extends Exception {}      private static final String AUTH_FAILURE = "A07_AuthFailure";

@@ -1,0 +1,6 @@
+import java.sql.*;
+// import org.springframework.jdbc.core package and create a bean of ConnectionFactory if needed, e.g., @Bean public DriverManagerDataSource dataSource() { return new DriverManagerDataSource("jdbc:mysql://localhost/test", "username", "password"); } 
+public class java_48035_JDBCQueryHandler_A03{   // Create the Class name as per requirement ie.: A03_Injection.java, etc...   
+     public static void main(String[] args) {      new JDBCQueryHandler().run();        }       private Connection conn;         try 
+{             this.conn = DriverManager.getConnection("jdbc:mysql://localhost/test", "username","password");          run();} catch (SQLException e1){e1.printStackTrace();}finally {if(this.conn != null) try { conn.close(); }catch (SQLException e) {}
+         }}   // end of main method  private void run()     if we want to avoid the use of 'run' just add it as a function inside your class and call this in constructor or any suitable place like init methods, etc...

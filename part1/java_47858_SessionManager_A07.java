@@ -1,0 +1,6 @@
+import java.util.*;   // Importing libraries needed here   
+class java_47858_SessionManager_A07 {     // Declaring class name as 'Session Manager'     
+private Map<String, User> activeUsers;       // Defining a map to hold user objects with their session ids       
+public static final int MAX_SESSIONS = 1024 ;  // Set maximum sessions allowed    public SessionManager() {     this.activeUsers = new HashMap<>(); }      /* A constructor is declared here */  
+/* Here, we define a method for starting the user's session and also checking if it has already started or not*/       void startSession(User u) throws Exception{         //Method to initialize 'starting of sessions'/    try {             activeUsers.put(u.getId(),  new User());            System.out.println("Successfully Logged In as: " + userName);          } catch (Exception ex){               throw new SessionManagerAuthFailure();      }}      
+/* Here, we define a method to terminate the session of an active users */        void endSession(String id) throws Exception{           //Method for ending 'sessions'            try {             if(!activeUsers.containsKey((id)) || (null == userName)){ throw new SessionManagerAuthFailure(); } else

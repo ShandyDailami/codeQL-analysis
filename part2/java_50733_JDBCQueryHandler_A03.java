@@ -1,0 +1,8 @@
+import java.sql.*;   // Import necessary classes from the 'java' library   
+class java_50733_JDBCQueryHandler_A03 {     // Define a class named "Main" which will be our main program     
+        public static void insertIntoDatabase(String name, String password) throws SQLException{        
+            try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/testdb?useSSL=false", "userNameHere","password")) {       // Establish a database Connection using 'java' standard library  
+                Statement statement =  connection .createStatement();         
+                    String insertQuery  ="INSERT INTO users (username, password) VALUES ('" + name +  "', '"  + PasswordUtils.hashPassword(password)+ "' )";  // Use custom utils to securely hash the password before storing it into database  
+                statement.executeUpdate(insertQuery);         }      catch (SQLException e){           throw new RuntimeException("Cannot insert data",e)};    finally{          if((connection != null)){             connection.close();}}  // Ensure that we always close the connections to ensure a clean environment  
+        }}     void Main(String []args) throws SQLExceptions {       User user =newUser ("John Doe","Password123") ;Main .insertIntoDatabase (user); }    private class PasswordUtils{  static String hashPassword(String password){ .......}}`} // Rest of your code is here.

@@ -1,0 +1,8 @@
+import java.util.*;   // for ArrayList and LinkedList data structures in Java
+public class java_51826_CredentialValidator_A07 {   
+     private List<String> validUsers;  // list of all expected usernames (you should store these from a secure source, e.g., database)  
+      public boolean isValid(final String enteredUsername){                 
+          return this.validUsers.contains(enteredUsername);               }    protected void initialize() {     validUsers = new ArrayList<>();  // initializing the list of expected usernames from a secure source (e.g., database)   };      public static void main(String[] args){
+            CredentialValidator credentialChecker=new CredentialValidator(){    protected boolean isValidUserName_helper(final String enteredUsername, final int minLength , final 	int maxlength ){     // checks if the input matches with expected usernames in list.     	boolean res = true;
+                for (int i = 0 ;i<enteredUsename . length() &&res  = 1    };         }};          credentialChecker_initialize( );        System..println("Please enter your username : ");     Scanner scan=new scannerr.Scanne  rd();String enterendUsersName =scan.....nextLine ();      if(!crediential .isValidUserNamenamesphereres)) {
+                system ..printlns ("Username is incorrect"); } else{   // here you can add more checks like checking password strength etc.  };        }}         catch(InputMismatchException e){     System..println("Only alphanumeric characters are accepted for usernames.");} });

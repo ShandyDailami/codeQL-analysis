@@ -1,0 +1,5 @@
+import java.io.*; // Importing the necessary Java packages for file handling	  
+import javafx.util.Pair;	// Using Pair class java_51579_FileScanner_A08 create a pair of data (File and Hash) without creating separate objects in memory		   	   	 	     			     									    
+  import sun.security.x509.*; // Importing the necessary Java packages for X509 certificate handling	  							      	       								           */	// No need, just use above two lines if you don't care about security sensitive operations due to lack of libraries required by your request		   			
+import javafx.util.Pair; 									 // Creating a pair using JavaFX utility class for file and hash data	  	   	 	        Pair<String, String> p = new Pair<>("file1", "hash");     File dir=new         Filer(“/user/local…
+    .getAbsolutePath()+"/Desktop”);									 // This is a pair of file and its hash value. In this case we use the default path in desktop	  		 Pair<String, String> p1 = newPair<>("file2", "hash3"); 	// And so on for as many pairs you have

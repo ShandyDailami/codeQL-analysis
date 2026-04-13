@@ -1,0 +1,8 @@
+import java.io.*; // For FileScanner 
+
+public class java_52623_FileScanner_A03 {
+    public static void main(String[] args) throws IOException{  	    		      	// Starts the program, argument are not needed in this case (args[0])
+         String path = "./src/main";                 					       	   			 // Sets directory to scan  ('path' will be changed by user input or command line option), can also use '/Users/username...' for absolute file paths.   		    		// Use current working dir if you want the program in same package as Main class
+         FileScanner(new java.io.File(path)).scan(java.util.regex.Pattern.compile("SELECT (.*) FROM users WHERE password = '(.*)'"), // RegEx Pattern for SQL Injection  ('.*', '.') are placeholders which will be replaced by the actual code part
+         (file, match) -> System.out.println(String.format("%s:%s", file.getAbsolutePath(), match)));      		    		// This method gets called when a matching String is found in files 									    // Do not forget to replace '.', 'SELECT' and other placeholders by your actual SQL command
+         });  							                                    	   			       	       	 	     	}     								          }// End of Main class, always remember the ending curly brace.	    		                    	// Always make sure you have a space after all if conditions inside main method (if else for example) and comment at least one line above them too

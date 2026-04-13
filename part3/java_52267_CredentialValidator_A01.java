@@ -1,0 +1,9 @@
+import javax.security.auth.*;
+public class java_52267_CredentialValidator_A01 implements CredentialValidation {
+    public static final String USERNAME = "username";      // username attribute name in request object  
+     protected Object getSubject(String arg0) throws InvalidStateException, CredentialNotFoundException{  return null; }      
+         @Override         
+        public boolean validate(Credential credential){               if ("user".equalsIgnoreCase((credential.getID()))) {                 System.out.println("Successfully authenticated");                // Return true to indicate authentication is successful            false otherwise           }}                  return (validatePasswordAndReturnResultUsingLoginNameBasedOnDatabaseQuery
+}   }  else{                     throw new CredentialValidationException ("Unknown user:"+credential);}}        catch(SQLException e){throw new javax.security.auth.*;       // Handle exceptions appropriately here                 Sysout("Error: " +e)                  return false; }}          public boolean getCredentialsNotRequired(){ 
+    System out (“No Creds Required”);                    if ((user==null)) {return true;}else{System .Out.Println( username );              throw new javax.security , not supported exception } catch exceptions e   Sysout ("Error: " +e)                  return false; }} 
+      public boolean getCredentialsExpiredAndNotRequired(){       System out (“No Creds Required”);                      try{ if ((user == null)) {return true;}else                     User currentUser = userManager.getCurrentUsername();     // Get the currently logged in username              Sysout( –currentUseremail ); } catch exceptions e   sysout ("Error: " +e) return false; }}

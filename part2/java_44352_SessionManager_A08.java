@@ -1,0 +1,6 @@
+import java.util.*;   // importing necessary classes from Java's standard library   
+public class java_44352_SessionManager_A08 {    
+ private Map<Integer , String> userMap;  /* Creates a map with Integer keys and Strings as values */     
+ public static final int SECURE_LENGTH = 10 ;         /**/          Secure password length. Should be set to match the expected secure level (in this case, A08)*/       private class UserSession {  /* Defines a session within user sessions map and hold id of users */       
+     Integer SessionId;      public int getUserid(){ return   SecurityManager().getCurrentSecureLevel(); }         /**/          Use the current secure level to provide unique identifiers for each*/    }}            UserSession USERSESSION_INSTANCE=new  userSesssion ();       void main(String[] args){      /*Main Function */    
+        //Initializing sessionManager and Security Manager   SessionManager sm = new SecureLevel();             /**/          Here we are creating the object of our class where a method to create secure level id will be included*/    }}  }           Please let me know if this meets your needs. Happy coding!

@@ -1,0 +1,22 @@
+import java.sql.*;   // Import the necessary classes from package 'java.sql'
+
+public class java_45290_JDBCQueryHandler_A08 {
+    private static final String DB_URL = "jdbc:mysql://localhost/testdb";  // Database URL (Replace with your actual database)
+    private static final String USERNAME ="root";   // Your MySQL username, replace 'root' with the correct one in real system.
+    private static final String PASSWORD  ="password";// The password of user mentioned above for establishing connection to mysql server  Replace it if you want or provide your own root passowrd here (In case security is an issue).  
+    
+        public Connection getConnection() throws SQLException { // Return the database connections.   
+            return DriverManager.getConnection(DB_URL, USERNAME ,PASSWORD);  }// This will create connection with MySQL Database and returns it back to us by calling method 'close'. Close is necessary operation so that we can release resources used in earlier steps . If not done properly then those calls may lead into a memory leak.
+        
+        public ResultSet executeQuery(String query) throws SQLException {  // This will take the sql statements as parameter and returns back resultset from database if successfull otherwise null or exception occurs while executing it so use try-catch block to handle this situation in caller method accordingly .    }// It is used for select operation.
+        
+        public int executeUpdate(String query) throws SQLException {   // This will take sql statements as parameter and returns back number of rows affected by the queries if successfull otherwise 0 or exception occurs while executing it so use try-catch block to handle this situation in caller method accordingly .    }// It is used for insert,update operation.
+        
+        public void close(Connection connection) { // This will release resources back given 'connection' object which was provided by getConnections().   If not done properly then those calls may lead into a memory leak or it can also be an issue in case of some error while executing the queries on database and we couldn’t find any resource related to that query.
+            if (connection != null) {    // Checking whether connection is already open/not ‘null'.   If not then close operations are performed else print a message saying 'Already Closed' or do nothing otherwise, this can help in avoiding memory leaks by ensuring correct resource release management when done with database manipulation.
+                try{connection.close();}catch(SQLException e){e.printStackTrace();}} // closing the connection if not already closed; else print a message saying 'Cannot close' or do nothing otherwise, this can help in avoiding memory leaks by ensuring correct resource release management when done with database manipulation
+        }    public static void main (String[] args) {   /* It is just for testing and may be removed. */  try{// Try block to wrap our code into a single unit of work as possible, if an exception occurs then we can roll back all changes made in the transaction using 'auto-commit' set false which will ensure that database transactions are isolated from each other so no data loss happens when multiple queries happen at once.
+            JDBCQueryHandler jdbc = new JDBCQueryHandler(); // Instance of our class ‘JDBCQuery’    Connection connection  = null;   try {connection =  jdbc .getConnection (); if(connection !=null){// Checking whether we are able to establish a valid database connectio
+                ResultSet result =jdbc.executeQuery("SELECT * FROM user"); // Executed SQL statement in JDBC and returns back the data ‘result’   while(!result .isAfterLast() ) {System..println(“User details:” +结果集); }    jdbc。close (connection );
+            }}catch{e.printStackTrace();}// Catch block to handle any exception that occurs within our code, if not handled then it will terminate the program and show a message 'Exception caught' with stack trace of error in console window which can help debugging purpose by providing details about what went wrong where on your system or software.
+        }  // This is end main method for testing purposes only . Remove this when you are ready to use it as production code */}// End class JDBCQueryHandler definition here... It includes all required methods and properties including getConnection, executeUpdate(String query),executequery (string) etc., in a try-catch block so that if exception occur then can be caught by caller method.

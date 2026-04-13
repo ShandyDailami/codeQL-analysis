@@ -1,0 +1,6 @@
+import java.sql.*;   // Import required classes here: ResultSet, PreparedStatement & DriverManager from package 'java.sql' (Java Database Connectivity)    
+public class java_49758_JDBCQueryHandler_A03 {    // Define the Class Name as "JDBCQueryHandler"     
+//Create a function for Connection      
+private static Connection getConnection() throws SQLException{   /*SQL Exception will be handled here*/  return DriverManager.getConnection("dburl", user, password);}     }         public class Main {        // Define the main Class as "Main".    def main(args):          try:           JDBCQueryHandler j = new JDBCQueryHandler();                if (j != null){               System.out.println ("Connected to database");              Connection con  = getConnection() ;            PreparedStatement ps   =   con .prepareStatement("insert into mytable(name, age) values  (? , ?)")}
+catch Exception e {e.printStackTrace();}           if (ps != null){               System.out.println ("Data inserted successfully");              }          finally{                          //closing the connection                try     {if   (con!=  null ) con .close() ;}} catch(SQLException se) {} 
+finally    {try      {if ((Statement)ps !=null ) ps .close()        except SQLException se){}       }catch (NullPointerException npe){}}}

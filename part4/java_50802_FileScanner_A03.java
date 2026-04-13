@@ -1,0 +1,9 @@
+import java.io.*;   // Import the necessary classes of file handling package    
+       import javax.sound.midi.*;    // For MIDI support     
+public class java_50802_FileScanner_A03 {         
+static String currentDirectory;              /* This variable will hold our starting directory */        static boolean doContinue = true ;  /** Flag to control the loop*/         public static void main(String args[])           throws Exception           
+{       // Create a file scan object and point it at an initial location.          FileScanner fscan;      try {fscan= new File("/home/user");} catch (Exception e){e.printStackTrace(); }             currentDirectory =    "/";              while(doContinue)           
+{           String[] filenames  = null ;         // Array to hold the file names in our directory          do               /* Attempts a read operation on this path */     try {filenames= fscan.getFileList();} catch (Exception e){e.printStackTrace() }             if(null ==   filenames) break;              for          
+loop through each file/directory in the current directory          File    temp = null ;        // Create a temporary object of type 'file'         try {temp= new     java.io.File (fscan + "/"+filenames[index]);} catch(Exception e){e . printStackTrace(); }             if  
+(!java_lang == packageName && temp !=  null)          // If we are not in the same包 as    'it' and it is a file        try {      java.io.__Scanner scan = new     javax__midi_.Sequence(__MIDI -1);} catch (Exception e){e . printStackTrace(); }         if  
+(false == doContinue) break;              // If we have to stop, then end this loop          System    out!.println ("Exit"); return ;             /* Exit the current method */  @return     ________END_OF__FILE________ };                  }}                 catch (Exception e){e . printStackTrace(); }

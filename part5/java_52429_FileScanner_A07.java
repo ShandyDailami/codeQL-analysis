@@ -1,0 +1,8 @@
+import java.io.*;   // Import File I/O classes needed for scanner program    
+    import java.security.*;      // For SecurityManager class, which can be used if required by your application (optional)         
+        public final class java_52429_FileScanner_A07 {          
+            static String userDir = "/home/user";         private File dir;  char[] chars={'a','c','f', 'e'};    // Array of characters for password                 
+              SecurityManager sm = new SecurityManager()     {             protected boolean equivalentAction(Action action)      throws AccessControlException{ return false;} };   public static void main (String args [])                     try         { A07_AuthFailure scnr=new  A07_AuthFailure();                 ScannedObject sno = sm.checkPathPermission("read", userDir);               if(sno instanceof DirectorySecurity) dir=  new File((DirectorySecurity )sno );else throw         
+     new UnsupportedOperationException ("Not a directory: " +user Dir)}, Exception   e 1}                catch (UnsupportedOperationException uoe){System.out . Println("Read-only file system");    }catch(AccessControlException ace) {             System. out. println (. getMessage());      throw
+a ce;       }}          try{ for (;;) ;           int index = chars[0] ^ '@' & 31;   File [] files=dir . listFiles (); if    (! dir . canRead () ||files ==null) {System. out. println ("No such directory: " + userDir)} else{ for(File file :
+     files){if ((index = chars[0] ^ '@' & 31 )==file.getName ().hashCode())    System .out   .println("The name is:"+      // Show the names of all matching files          Println ("Name: " +       File Dir);}}}}}

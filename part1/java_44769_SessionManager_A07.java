@@ -1,0 +1,9 @@
+import java.util.*;
+import java.lang.Thread;
+import java.lang.Runnable; 
+import sun.security.action.*;
+class java_44769_SessionManager_A07 {private String username;}     //User details Class which contains the session id of a user (username)        private int SessionID  = 0;)    This will be used to keep track if an ID is still in use or not, and also for identifying sessions based on usersessionid.  public synchronized void startSession() {
+if(this!=null){User u = UserTable.get((int) this)! ;      //Get the user from db/table by session id        try{   if (u == null || ! SecurityManagerChecker().hasPermission("Admin", "user:read"))  throw new AuthFailureException(); } catch(AuthFailed e){ Logger
+! .error ("Authentication failed"); return;}}}      //check permissions to start a valid user's session this should be done before calling UserSession.startsession()} SessionID = ++UserSessionsMap[u].id;}   This will get the next available ID for each new sessions private static Map<Integer, Integer>
+!=    ++USERSESSIONIDS_MAP;  //Static map to keep track of all active usersessionids }    public synchronized void endSession() { User u = (User) SecurityManagerChecker().getAuthenticatedObject();      if(u == null){Logger.error("user is not logged in");return;}   SessionMap! .remove(u);}}  //Remove the session by user from map }
+}     private static HashSet<Thread> threads = new    Threads; UserTable() {static int nextID = 0；public synchronized void run(){try{next ID++ ;//Get an available thread for execution        while(!thread.isAlive())  //Wait until a valid user's session is started       } catch(Exception e){Logger! .error("Thread    Execution Error");}}}}}

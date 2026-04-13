@@ -1,0 +1,14 @@
+import java.io.*;
+  import javax.swing.filechooser.*;
+  
+public class java_48942_FileScanner_A01 {
+    private static final String[] hiddenExtensions = new String[]{".bat", ".cmd", ".exe"}; // Hidden extensions that should be ignored, replace with actual file types if applicable	
+    		      
+  public boolean scan(String dir) throws IOException{  
+	    File f  =new File (dir);   	     			     									       	if(!f.exists()) throw new IllegalArgumentException("Directory does not exist");        	 	       															             // Checking If the directory Exists or Not	    		       if (!f.isDirectory()){ 	f=f.getParentFile(); }
+  	    FileScanner(new File[]{f});   			     									       	return false;                                                                                       	// Return False, indicating that scanning has failed due to some unknown error              // We don't know why so far... (A02_UnknownError)               	    		       return true ; }
+  	    if (! f.canRead()){  throw new SecurityException("Permission denied");}                         			         	 																	            	// Checking Read Permission                                                                                           	        // If read permission is not granted, then we can't continue further (A03_BrokenAccessControl)               	    		      private java_48942_FileScanner_A01(File[] files){ 
+  	    for(int i=0;i<files.length ; ++i ) {   			       	 	       									            if (! this .scanDirInner(new File[]{f}) && ! scanFilesInside (this)) throw new SecurityException("Permission denied"); } return true;}                                                                                private boolean 
+  	    // This method will call the above methods recursively to check all directories inside a single file. If any directory has not been scanned, it means that there is some issue with access control or security of this system (A01_BrokenAccessControl)             	    		       }    private boolean scanDirInner(File[] files){  for
+  	    each File f in files { if (!f.canRead()) throw new SecurityException("Permission denied");} else //Checking Read Permission                                                                                            	       	if ( !isHiddenExtention((file)) ){    			           		       }}} return false; }} catch(IOException e){ System . out
+  	   println ("An I/O error has occurred. This is a bug in the program and should be handled.");  throw new RuntimeException("I/O Error: " +e );}                                                                                // Handling IO Exceptions (A02_UnknownError)              	    		    catch(SecurityException e){ System . outprintln ("Access denied :"+ f.getAbsolutePath()); }}}

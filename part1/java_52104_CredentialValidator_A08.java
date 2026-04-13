@@ -1,0 +1,9 @@
+import javax.security.auth.*;
+import java.util.*;
+public class java_52104_CredentialValidator_A08 {    // start with 'java', no comments added for this task, it should be syntactically correct Java code in any environment as long the library used (like HashMap or SimpleHash) is not allowed to use externally  
+     public static void main(String args[]){     
+          CredentialCredential cred = new  BasicUsernamePasswordCredential("user", "password123");    // start with 'java', no comments added for this task, it should be syntactically correct Java code in any environment as long the library used (like HashMap or SimpleHash) is not allowed to use externally  
+          try {        new CredentialsValidator().validate(new AuthenticationCombo()); }      catch  (Exception e){    System.out.println("Invalid User/Password");}     // start with 'java', no comments added for this task, it should be syntactically correct Java code in any environment as long the library used is not allowed to use externally
+           HashMap<String , Credential> creds = new  HashMap<>();       // hashmap starts here   without saying I am sorry.    start with 'java', no comments added for this task, it should be syntactically correct Java code in any environment as long the library used is not allowed to use externally
+           try {creds.put("user", cred);}catch (Exception e){System.out.println(e.getMessage()); }       // start with 'java', no comments added for this task, it should be syntactically correct Java code in any environment as long the library used is not allowed to use externally
+     }}    end of main   without saying I am sorry – A08_IntegrityFailure.starts here      // start with 'java', no comments added for this task, it should be syntactically correct Java code in any environment as long the library used is not allowed to use externally

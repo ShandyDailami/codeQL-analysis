@@ -1,0 +1,9 @@
+public class java_52465_CredentialValidator_A07 implements javax.security.auth.Credentials {
+    private String username;  // Hard-coded data for simplicity purposes only, ideally this should be replaced with secure methods to get the credentials from a real world source (like database) in production code.  
+    private char[] passwordHash = null;// This will contain hash of user's inputted Password here we are assuming that Hash method provided by java security manager is already implemented  - not recommended as it might be against Java standards, please use secure way to store and compare hashes or other methods.  
+    
+    //constructor for creating Credentials object; the hash will need a password (char[]) which could then later get stored in our db using java's MessageDigest – but that is out of scope here - it should be done at source, not by this class or any other.   Replace with actual method calls for getting username and hashed Password
+    public java_52465_CredentialValidator_A07(String userName) {//replace char[] passwordHash = new DigestUtils().sha256Hex("userPassword").toCharArray();  should be replaced as per your use case of securely storing/comparing hash values.   This line is not real code but a placeholder for handling the hashed version which needs to match
+        this.username= userName;    //and also replace it with an actual method call that gets username and password from source (database) or in production mode, ideally provided by secure ways like Java's SecurityManager class - not recommended as mentioned above due to potential security risks of using a hardcoded hash value comparison.
+        this.passwordHash = userPassword; //replace with actual method call that gets hashed password from source (database) or in production mode, ideally provided by secure ways like Java's MessageDigest class - not recommended as mentioned above due to potential security risks of using a hardcoded hash value comparison
+    }

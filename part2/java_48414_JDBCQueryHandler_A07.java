@@ -1,0 +1,4 @@
+import java.sql.*;   // Import necessary classes from JDBC library   
+// import org.apache.*; (Don't use these libraries - they are included in standard Java distribution)     /*Import Apache Library*/     
+      
+public class java_48414_JDBCQueryHandler_A07 {        public static void main(String[] args){         String url = "jdbc:sqlite:/testdb";   // SQL Lite database URL             Connection conn=null;  try{               Class.forName("org.sqlite.JDBC");                   conn  = DriverManager.getConnection(url);                 if (conn !=  null) {System.out.println ("Connected to the sqlite database.");} else                           System.out.println ("Failed at connecting SQL Lite Database!" );           } catch (SQLException e){             System.err.println("An error occurred in JDBC operations: " +e);         }        }}

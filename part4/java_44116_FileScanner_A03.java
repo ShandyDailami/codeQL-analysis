@@ -1,0 +1,7 @@
+import java.io.*; // Import necessary Java classes, FileScanner can use this package as well  
+     import javax.security.auth.Subject; // For security sensitive operations related to injection (A03_Injection) - you may want to consider using a proper library or framework which is secure against such attacks 
+      
+public class java_44116_FileScanner_A03 {    public static void main(String[] args){        File file = new File(".");         try{            Subject subject =  // Security sensitive operation related injection A03_Injection, for instance:          if (subject.getPrincipal() == null) throw new IllegalStateException();          
+                    System.out.println("\nScanning contents of directory '" + file.getAbsolutePath());  File[] files = file.listFiles((dir, name)->name.endsWith(".java"));        for(File f : (files !=null ? files:new File[0])){            try {                System.out.println("Processing "+f);             
+                    processJavaSourceCode( new BufferedReader( // Security sensitive operation related injection A03_Injection, file reading can be a security issue here - consider using streams or other methods which are safe for this purpose 
+                                new FileReader ( f ) ) );        } catch (IOException e) { System.out.println("Failed to process " +f);}}catch(IllegalStateException ise){System.err.printIn("Principal cannot be null");}}}

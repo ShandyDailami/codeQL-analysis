@@ -1,0 +1,3 @@
+import javax.xml.parsers.*;   // Importing the parser class java_52399_XMLParser_A07 standalone library of Java XML API    
+public Class Main {    }      public static void main(String args[]) throws ParserConfigurationException, SAXException{       private NamespaceHandler handler = null;  @Override protected DocumentBuilderFactory getDocumentBuilderFactory() {@return new DTDBuilderFactory();}        //Returning instance of custom XML parser.           
+XMLParser xmlp=xmlDoc .getDefaultHandler ();                xmlFile = "/path/to/yourfile";   Reading the file in default handler, then parsing it using parse method which is a synchronous operation and this will throw SAXException if any error occurs while reading or processing XML.

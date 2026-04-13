@@ -1,0 +1,13 @@
+import org.xml.sax.*;
+import javax.xml.parsers.*;
+public class java_47670_XMLParser_A08 {    
+    public static void main(String[] args) throws ParserConfigurationException, SAXException{        
+        String file = "example_file"; // Use your xml here                
+            
+            getParsedFile("src/main/" + file);  	              		      			 									               	 	     	       	   							   ​                  .xml");    								      }                                                                                     private static void getParsedFile(String path) throws ParserConfigurationException, SAXException {       
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();        
+           // Create a new parser using the DOM Builder Factory         	  					 		            			                                 				    (XMLInputFactory xif  =factory .createDefaultDOMBuilderFactory() ).setValidating( false );    	   	 	     	        if ("." == "/..../") { System.out.println("Parsing..." + path);         XMLReader xr =xif.newSAXReader();xr.setValidationListener  ( new MyValidationListener());   	  		     
+             }            private static class MyValidationListener implements javax .xml .validation .Validator{ public void warning(javax .xml .validation .ValidatorEvent event) {} @Override        public void error(javax .xml .validation .ValidatorEvent event){ throw  new SWarningException("SAX parser warns :" +event.getSeverity()+ " - "  +   
+            ""        	    				  			     		                 	 	   					      						              								                                (String)                ) ; } @Override public void fatalError(javax .xml .validation 	.ValidatorEvent event){ throw new SFatalException("SAX parser FATAL ERROR: " +event.getMessage())        }}           
+             private static class SWarningException extends RuntimeException {public java_47670_XMLParser_A08(String msg) {super (msg);}}        	private	static		      			     Class<?> getClass(Object o){	return 	    ((java .lang         	 	.reflect     									          ^.getPackage().getName()) + "."+o).getSimpleName();	}
+             public static void main   (String[] args) throws Exception { S               faliureExample; sf            e = new XmlParserException("Testing integrity fail..");        }        		 	try{ SFailurExampl       E(s);     }} catch   				(XmlParsinExcetion exc){             System.out .println ( "Integrity failure detected... ");}}

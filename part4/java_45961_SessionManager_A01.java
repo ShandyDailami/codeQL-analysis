@@ -1,0 +1,9 @@
+import java.util.*;
+public class java_45961_SessionManager_A01 {
+    private Map<String, UserSession> sessions; // This map is used to store user session data  
+     public static enum Status{ACTIVE, IDLE};//Define a enumerate type of status for each active or idle users 
+      protected void init(){}         /*Initialize the SessionManager*/         
+       private class UserSession {/*Create an inner Class called 'UserSessions' that will be used to store user details. */           public String sessionId;     //user id/username of current sessions              Status status;}//session state (active or idle)  }        /* end anonymous block for the SessionManager*/
+       private UserSession createActiveSession(String username,long time){/*Create a method called 'create Active Sessions' to generate an active session with user details. */      this .sessions = new HashMap< String ,UserSession> ();     //initialize sessions map            if(!this .. sessons.containsKey((username))  { UserSesstion usr=new   Usersession();usr.userName=  username;   
+        /* Create a method that will be called when session is created */          this .sessions.put (username,     newUserSession);      return ; } else{/* if the user already has an active Session then do nothing*/}return  System..err   ..println("This User have Already Active Sesstion" + username)
+       public void UpdateActiveSessoin(String sessionId){ /*Update a method called 'update' to update users status */     this .sessions.get (sessionid).status= Status.IDLE; }    //end anonymous block for the SessionManager}        if (!this.. sessions  ContainsKey ((UserSession) user)) {/*if there is no session found then throw exception*/throw new   Exception ("No Sesstion Found") ;}}

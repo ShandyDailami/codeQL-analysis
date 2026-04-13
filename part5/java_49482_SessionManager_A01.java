@@ -1,0 +1,9 @@
+import java.util.*;
+public class java_49482_SessionManager_A01 {   // define the name of your program as a Java identifier, ie., "Session Manager" in this case   
+      private Map<String /* username */ , String/* password*/> userPassword;     /// map for holding all users and their corresponding hashed/salted passowrd  (Note: security-sensitive operations are done here)   // Note that using a 'password' directly as the plain text is insecure
+    private Map<String /* session id */ , String/* user name*/> activeSession;     /// map for holding all sessions and their corresponding users(note : no need to hash/salt, just use same data while accessing)  // No security-sensitive operations here. Just storing the unique ID of a logged in person
+      public java_49482_SessionManager_A01() {        /// constructor: initialize userPassword (map), activeSession map with empty entries   /* Note that this is only for demonstration and should not be used as secure example */   
+          super();     // Call to parent's class or object.  This will give an exception if called directly by any other classes/ objects in the program, ie., SecurityManager would throw a runtimeexception here because it tries direct access of private java_49482_SessionManager_A01(username and password)   security manager should only be used on public methods for demonstration purposes
+          userPassword = new HashMap<String , String>();  // Create hashmap to hold users's username & hashed/salting version passowrd. Note: this will store plain text, which is not recommended in a secure setting   activeSession  =new LinkedHashMap<>()    ;// create map for storing session id and user name
+      }     /// end of constructor  // begin public methods to interact with the maps (i.e., operations/data manipulation) below...      
+}        /* End Session Manager Program */

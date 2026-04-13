@@ -1,0 +1,19 @@
+import java.sql.*;
+public class java_50485_JDBCQueryHandler_A01 {
+    public static void main(String[] args) {  // eof start of program block, f/end comment removed here for brevity's sake
+        String url = "jdbcURL";              // define your own URL instead (this is a placeholder), c/comment added below to show where comments are. d/ditto in real context after defining the connection details and methods like addRecord, getRecords etc., e)added comment above for clarity
+        String username = "username_here";  // replace with your actual database credentials (replace this as well), c/comment added below to show where comments are. d/ditto in real context after defining the connection details and methods like addRecord, getRecords etc., e)added comment above for clarity
+        String password = "password_here";  // replace with your actual database credentials (replace this as well), c/comment added below to show where comments are. d/ditto in real context after defining the connection details and methods like addRecord, getRecords etc., e)added comment above for clarity
+        String sqlQuery = "SELECT * FROM table_name";  // define your own SQL statement here (this is a placeholder), ccomment added below to show where comments are. d/ditto in real context after defining the connection details and methods like addRecord, getRecords etc., e)added comment above for clarity
+        
+        try {     // begin block of code that handles database connections – start (c). Commented out due to confidentiality sensitive data handling inside. d/ditto in real context after defining the connection details and methods like addRecord, getRecords etc., e)added comment above for clarity   c
+            Connection con = DriverManager.getConnection(url , username , password);  // connect method with driver manager (a), comments are added to show where they're located in real context after defining the connection details and methods like addRecord, getRecords etc., e)added comment above for clarity   c
+            
+            PreparedStatement ps = con.prepareStatement(sqlQuery);  // prepare method with prepared statement (a), comments are added to show where they're located in real context after defining the connection details and methods like addRecord, getRecords etc., e)added comment above for clarity   c   
+            
+            ResultSet rs = ps.executeQuery();     // execute query using PreparedStatement object (a), comments are added to show where they're located in real context after defining the connection details and methods like addRecord, getRecords etc., e)added comment above for clarity   c  a   
+            
+            while(rs.next()){      // Iterate through ResultSet using next method (a), comments are added to show where they're located in real context after defining the connection details and methods like addRecord, getRecords etc., e)added comment above for clarity   c  a    d/ditto
+                System.out.println(rs);      // print data using ResultSet object (a), comments are added to show where they're located in real context after defining the connection details and methods like addRecord, getRecords etc., e)added comment above for clarity   c  a    d/ditto
+            }                     // end while loop - start of block. bcomment removed here (b). This is to show where comments are placed during runtime in real context after defining the connection details and methods like addRecord, getRecords etc., e)added comment above for clarity   c  a    d/ditto
+                                 // end while loop - start of block. bcomment removed here (b). This is to show where comments are placed during runtime in real context after defining

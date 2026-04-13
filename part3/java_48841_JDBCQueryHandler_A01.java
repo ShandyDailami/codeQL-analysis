@@ -1,0 +1,7 @@
+import java.sql.*;   // Import necessary Java libraries 
+public class java_48841_JDBCQueryHandler_A01 {    
+    public static void main(String[] args) throws SQLException{     
+        String jdbcURL = "jdbc_url";         // Your JDBC URL here          
+		String username =  System.getProperty("user.name");  	// Read from environment variable for security sensitive operations, avoid hard coding the value   		    			 	   	 									                                                                              	       	     								                
+        String password = "password";       // A secure method to handle authentication as per JWT/OAuth2 principle                 	                                 						     							             ​   } else {        	// If not a security sensitive operation, just use hardcoded value                                          		    			 	   	 									                                                                              	       	     								                
+        try (Connection connection = DriverManager.getConnection(jdbcURL , username, password)) {         	       // Connection object is opened and closed in the 'try' block automatically                     } catch (SQLException ex) {}   	}

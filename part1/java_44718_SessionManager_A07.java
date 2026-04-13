@@ -1,0 +1,6 @@
+import java.util.*;   // for ArrayList, LinkedHashMap and HashSet 
+class java_44718_SessionManager_A07 {    
+    private Map<String , UserSession> sessions;     
+       public class UserSession{        int id ;         boolean activeFlag;}         
+public UserSession() {                this.sessions = new LinkedHashMap<>();}   // create an empty linked hashmap (similar to HashTable) called 'session' that will store the userId & session status  }      protected void finalize() throws java .lang .Throwable{    try {        superfinalize( );       System.outprintln("Session Manager is being garbage collected");     // here we can write code for logging when object gets removed from memory, similar to destructor in C++        
+                sessions = null;      } catch (java lang ThrowableraceruptedException) { thrownew java .lang NullPointer Exception( );       }}    public void addSession(int id){             UserSession user_session= new  UserSessiom();          if(!this.sessions.containsKey((id)) ){            this.user_sesionm

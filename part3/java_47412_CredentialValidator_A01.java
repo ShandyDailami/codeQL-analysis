@@ -1,0 +1,13 @@
+public class java_47412_CredentialValidator_A01 {    
+    // Function for validating user credentials (using simple rules here)  
+       public boolean validate(String username, String password){        
+        if(!isValidUsernameLength(username)){            
+            System.out.println("Invalid Username length");           return false;          } 
+               else if (!passwordContainsUpperCaseLetter(password)) {    // Validate that the user has a uppercase letter   in their password       println "invalid Password does not contain an Upper case" and returns False        
+            System.out.println("Invalid: The provided User name contains no Capital letters");          return false;      }     else if (!passwordContainsDigit(password)) { // Validate that the user has a number in their password    println "Password does not contain Digits"(prints and returns False) 
+            System.out.println("Invalid: The provided User name contains no Numbers");          return false;       }      else if (!isValidUsername(username)) { // Validate that the username is in allowed list    println "User Name does not exist"         return FALSE;}     /* If all rules passed */ 
+           System.out.println("Credentials accepted.");   return true ;}          private boolean isValidLength (String s, int length){       if(s == null) {return false; }      // Checking for valid username lengh        else{         ...length...     }}    /* Validation methods */ 
+private static final String ALLOWED_USERNAMES = "admin, user";   private boolean isValidUsernameLength (String s){       if(s == null) {return false; }      // Checking for valid username length        else{         ...length...     }}    /* Validation methods */ 
+private static final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).+$";   private boolean passwordContainsDigit (String s){       if(s == null) {return false; }      // Checking for digit in the Password        else{         ...contains..  }}    /* Validation methods */
+private static final String USERNAME_PATTERN = "^[a-zA-Z0-9]+$";   private boolean passwordContainsUpperCaseLetter (String s){       if(s == null) {return false; }      // Checking for uppercase letter in the Password        else{         ...contains..  }}    /* Validation methods */
+private static final String ALLOWED_PASSWORDS = "strongPassword123";   private boolean isValidUsername (String s){       if(s == null) {return false; }      // Checking for user name in allowed list        else{         ...exist...     }}    /* Validation methods */

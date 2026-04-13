@@ -1,0 +1,15 @@
+import java.security.*;
+// import necessary classes needed by MessageDigest and KeyGenerator class java_46051_CredentialValidator_A08 security library of Java SE:
+public class CustomCredentialValidator {   // declaring a new Class named "CustomCrendialvalidator" 
+    public boolean validate(String username, String password) throws NoSuchAlgorithmException{       //declaration method for validating user credentials. This function will take in the Username and Password as parameters and return true or false based on validation result of hashcode comparison (SHA-256). 
+        MessageDigest md = MessageDigest.getInstance("SHA-256");                          //Using SHA Algorithm for hashing passwords, it takes a message digit in bytes then returns the digest which is stored as byte array and encoded into hexadecimal string format ie., hash value of that input 
+        md.update(password.getBytes());                                                   //Updating this with our Password to be Hashed by using update() method  
+       byte[] bytes = md.digest();                                      //This will give us the Hash code, a message digest object is used for all hashing operations in Java 10 and later versions of standard library classes MessageDigest can handle any size binary data (byte array) or raw data with length provided by InputStreamReader(istream).
+       StringBuilder sb = new StringBuilder();                                 // declaring the variable to hold our passwords hashcode as a string.  
+        for(int i=0;i<bytes.length;+++){                                      // looping through each byte in bytes array and append it into hexadecimal format 
+            sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));  
+        }         return (sb.toString().equalsIgnoreCase("+ve"));                  // if hashcode is equal to "positive" then it will be authenticated else not    for A08_IntegrityFailure and should always have a positive result in such cases as per the SHA-256 algorithm
+        }  public static void main(String[] args) throws NoSuchAlgorithmException{   //declaration of Main method, it will run our program. It is used for testing purpose only due to its lacks real usage and does not do anything else in a typical way like calling other methods or handling user inputs
+        CustomCredentialValidator custom = new CustomCredentialValidator(); 
+    }                                                                               // Testing Credentials Validation with the example of username "user" & password equals SHA-256 hash ("password"). This should return true. If not, it means that A08_IntegrityFailure has been violated and no exceptions must be thrown in this case to prevent further security breaches
+}  //end Main method   }}};// end of class CustomCredentialValidator }}    End Of File: CredentialsValidationExampleJava.java}}}!);`\}}});

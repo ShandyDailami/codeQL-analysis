@@ -1,0 +1,7 @@
+script
+const fs = require('fs'); // File system module in NodeJS provides APIs related specifically the file I/O operations such as readFile and writeFiles etc...  
+// DOMParser class java_52869_XMLParser_A01 used to parse XML content into Document object.  We can get nodes from document, manipulate them however we need then re-insert these new created elements back onto xml string with `xmlSerializer` function provided by ES6 promises/async functions:
+const { Serializer } = require('domutils'); // Provides methods for turning Node objects into text content.  This is useful when sending an XML document to a browser or somewhere else you want the data as plaintext, not HTML attributes like `innerHTML="<div>..."` does - we need that:
+const { parseAsync } = require('domutils/lib'); // A set of DOM utilities for working with async and promises.  These will help us handle XML reading more efficiently than synchronous methods could if it were written in a way to not block the event loop (which is what NodeJS normally does):
+const { XmlSerializer, ParsingConfig } = require('xml-serializer'); // Provides xml serialization and deserialization.  It has an async method for handling XML files:    AXIOS_DEFAULTs are set to axios by default (which is used if `window` object doesn't exist).
+const { createReaderAsync } = require('xmlreader-promise'); // Provides methods like read and nextElement in Promise style.  It behaves identically as the synchronous versions:    AXIOS_DEFAULTs are set to axios by default (which is used if `window` object doesn'

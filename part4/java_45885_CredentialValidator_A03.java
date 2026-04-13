@@ -1,0 +1,4 @@
+public class java_45885_CredentialValidator_A03 {
+    // No ORM tools or external libraries here like Hibernate and Spring are allowed for this task because they add unnecessary complexity to the problem. This program is strictly a matter of security sensitive operations related A03_Injection only, using standard java library methods in clean code style . 
+     public boolean validate(String username, String password) {   //method that validates if given credentials are correct or not     
+        return (username != null && username.equals("admin") )&& ((password != null && password.equals("pass123")));    }       //return true only for hardcoded values  , and false otherwise .   }}

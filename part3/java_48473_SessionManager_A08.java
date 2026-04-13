@@ -1,0 +1,14 @@
+import org.hibernate.Session;    // To get access Session object (Hibernates's equivalent) for database operations in JPA style
+import org.hibernate.SessionFactory;     // The core part of Hibernate API, which handles all the interactions with MySQL/Postgres SQL databases and provides a way to communicate them from Java programs 
+   import java.util.*;       /* For using ArrayList */   
+public class java_48473_SessionManager_A08 {       
+      private List<String> userList;     // User's list stored in this variable, will be used for checking session integrity later on (A08_IntegrityFailure) . Can store more data if needed 
+   public void init(){                  // Initializing the Hibernate SessionFactory. This is one of our security-sensitive operations A07: User must have permission to create a new instance and configure it, otherwise this method will fail (A14_ConfigurationFailure).   
+         Configuration configuration = new Configuration();   /* The main part here */  // It loads the hibernate settings file.     
+          configuration.configure("hibernate.cfg.xml");       
+           SessionFactory sessionFactory =  configuration.buildSessionFactory();       // Builds a Session from Hibernates' equivalent of Java Persistence API (JPA). A08_IntegrityFailure: User must have permission to create sessions  .  
+     }    private Session currentSession;      /* Represents the actual session, we use this here for database operations */        public void openSession() {          // Opening a new/existing web transaction. You will want more checks in A08_IntegrityFailure and other errors (A12: User must have permission to create transactions).
+         currentSession =sessionFactory .openSession();   /* It is important here that you cannot open multiple sessions on the same connection because it's not thread safe. If they were concurrent, every new session would be a different one */          }    public void closeCurrentSession() {           // Closing up currently opened web transaction (A07: User must have permission to create transactions) 
+         if(currentSession != null){ currentSession .close();}   /* Be careful with this A12_UserMustHavePermissionToManageSessions */          }    public boolean openNewSession() {           // It opens a new web transaction and returns true. If something goes wrong then it will return false (A07: User must have permission to create transactions) 
+         if(currentSession == null){   /* We need this because we only want one session at any given time */ currentSession =sessionFactory .openSession(); }    public Session getCurrentSession() {           // It returns the currently opened web transaction (A07: User must have permission to create transactions)
+         return 	currentSession;    	}   /* Be careful with this A12_UserMustHavePermissionToManageSessions */      }}

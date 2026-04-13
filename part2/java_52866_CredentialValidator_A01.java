@@ -1,0 +1,11 @@
+import org.springframework.security.crypto.password.*;
+...    
+public class java_52866_CredentialValidator_A01 implements UserDetailsService {  // A01_BrokenAccessControl Violation - directly accesses user details service from context
+    private final PasswordEncoder passwordEncoder = new StandardPasswordEncoder();  
+                                                                                 //A02 Inappropriate Use of Refused Credentials, not using Spring Security's built-in methods for encoding or hashing  (B61_PotentialForgery)         */    
+    @Override                                                             
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {   // A03 Broken Access Control Violation - user name and password are directly fetched from the database (B61_PotentialForgery), instead of insecure storage.  Spring's AuthenticationManager is used to check if a provided username/password pair matches a known user
+        // Assuming that getUserByNameAndPassword() method returns UserDetails object or null when invalid credentials are given (B61_PotentialForgery).   Replace it with actual implementation.  It should return an instance of Spring's SecurityUser if valid, otherwise new InactiveUserException
+        String password = getEncodedPassword(username);                     //A04 Broken Access Control Violation - directing access to insecure storage (B61_PotentialForgery)           Replace with actual implementation.  It should return hashed version of the user's inputted password
+        if(!passwordExistsInDatabase(username, password)) { //A05 Broken Access Control Violation - directly accessing database from context (B61_PotentialForgery)           Replace with actual implementation.  It should return true when a match is found in the DB otherwise false
+            throw new BadCredentialsException("Invalid username or password"); //A05 Broken Access Control Violation - directly accessing database from context (B61

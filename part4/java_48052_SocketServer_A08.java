@@ -1,0 +1,10 @@
+import java.io.*;  
+import java.net.*;  
+public class java_48052_SocketServer_A08 extends Thread {    
+private Socket s=null;      
+public java_48052_SocketServer_A08(Socket s) {      super("Thread-Client-"+s);         this .s =s;}          public void run(){           try{            
+//Receive the message from client    char[] msg  =new byte[1024];  //byte array to receive data              BufferedReader br= new     BufferedReader(      new InputStreamReader ( s.getInputStream()));        System.out.println ("Waiting for Client Message");         String str =br .readLine();         
+//check integrity by comparing the received message with its length and check whether it's a replay or not              if((str != null) &&      ((ServerThread )this).isIntegrity(str)){                     System.out.println ("Received Integrity failure"); return; }           //if no of bytes read is less than 1024, then it's end and close this thread             if((receivedDataLength != -1) && ( receivedDataLength < 9)) {this . stop();return;}        
+//Send the acknowledgement back to client     PrintWriter pw = new      PrintWriter( s.getOutputStream(), true);  //send data over socket          System.out.println ("Sent Acknowledgment");           pw.print("Message received successfully!");pw .flush();             }catch (Exception e){System. out . println     ("Error in thread " + this .getName()+"\n"         + 
+e );s =null;}}public boolean isIntegrity(String str) {return true;}   // Here you can add your custom logic to check if the received data matches with its length and not a replay. }  public static void main ( String args []) throws IOException{       Socket s= new        Socket("127.0.0 .84",6539);    
+ServerThread t =new ServerThread(s );t.start();           //here server is waiting for a connection from client             while ((receivedDataLength == - 1) && (str !=  null)) { }}}   catch IOException e{    System. out . println ("Exception in main thread "+e);}}}

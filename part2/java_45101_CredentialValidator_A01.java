@@ -1,0 +1,13 @@
+import javafx.util.Pair; // we will use Pair for storing the credential data pairwise which is used in this case to match credentials with stored ones  
+                       /* If you are not using JavaFX, please remove or replace these imports */   
+public class java_45101_CredentialValidator_A01 { 
+     private static final String[] USERS = {"user", "admin"}; // Sample users for validation. In real app it should come from a user repository  
+       protected Pair<String , Credential> sampleUserCredentialsPair =  new Pair<>("user","password");    /* For security reason, in this example we're using plain text passwords */ 
+                                                   // Use something like bcrypt for real app. In case you decide to use BCRYPT add dependency and modify the code accordingly  
+     public boolean validate(String userName , String inputPassword) {    /* Password should be encrypted here instead of being in clear, this is just a simplistic example */ 
+         return (userName != null && USERS[0].equalsIgnoreCase(userName)) // if the entered username matches any known one then it's valid  
+               && ("password".equals(inputPassword));// and password provided also matched for that user. For real app, you should use a hashed version of input here instead */ 
+     }    /* Also note about users being case sensitive in this example (username comparison is not). In the context where it's used like above we are treating them as identical regardless if they were entered with different cases so that matches what spring security does.   For real world app use a hash function or similar to make sure username and password can be compared without considering case */ 
+}    /* End of SecuredCredentialsValidator example*/     public class Main { // this is just for testing, remove later once you have your validator in place...      static void test()   {       SecurityContext context = SecurityContextHolder.getContext();        if (context != null)         {           Credential creds  = new UsernamePasswordCredentials("admin", "password");          Authentication authResult = 
+    authenticate(creds);// call your authentication method here      }   // end of test...     public static void main(String[] args){       SecuredCredentialsValidator sec =newSecuredCrendentialvalidator();        System.out .println("User : admin Password: password is valid:" +
+    (sec.validate ("admin", "password"))); } // end of Main class */

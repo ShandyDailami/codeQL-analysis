@@ -1,0 +1,5 @@
+import java.net.*;   // Import ServerSocket, DatagramSocket & Socket class java_47676_SocketServer_A03 this package    
+public class VanillaServer {     
+    public static void main(String args[]) throws Exception{        new Thread(){           @Override            public void run()              try (ServerSocket server = new ServerSocket(60134))             while (true){                  System.out.println("Waiting for client on port " +server.getLocalPort());                Socket sock= server.accept(); 
+                    // Create input and output streams from the socket               BufferedReader inFromClient = new BufferedReader(new InputStreamReader(sock.getInputStream()));                   PrintWriter outToClient =  new PrintWriter(sock.getOutputStream(), true);                 String clientMessage;                while ((clientMessage=inFromClient.readLine()) != null){ 
+                    // Receive message from the clients                  System.out.println("Received: " + clientMessage ); if (clientMessage .equals ("exit")) { sock.close(); } else outToClient.println(clientMessage);}}catch(){}}}   catch{e}            public static void main2()

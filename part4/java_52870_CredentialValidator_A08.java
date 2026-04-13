@@ -1,0 +1,9 @@
+import java.security.*;   // Import necessary classes 1A_SensitiveDataInUse; (e) SANITIZE ME    
+public class java_52870_CredentialValidator_A08 {    //c - DO NOT USE EXTERNAL LIBRARIES, focus on A08 integrity failure only      
+      private String algorithmName = "SHA-256";  // Algorithm used for hashing (e) SANITIZE ME  1B_SensitiveDataInUse   
+     public boolean validate(String passwordAttempt){           int iterations = 5;          try {                    SecureRandom sr = new SecureRandom();            byte[] salt = new byte[8];              // Generate 64-bit (=256 bit) random Salt.                for (int i = 0; i < 8 ; i++){                  
+             salt[i] = sr.nextInt(Integer.MAX_VALUE);}        MessageDigest md  = MessageDigest   .getInstance("SHA-256");         // Generate SHA  by using the algorithm name            String passwordToCheckHash;           for (int i = 0 ; i < iterations ;i++){                   
+             byte[] hash =md.digest(passwordAttempt);                 saltedPassword :=salt + md   .digest((byte [])(new GStringBuffer().append(" ").concat  stringify passwordToCheckHash) );         // SALT+HASH to check the integrity of a hashed value       
+             MessageDigest newMd =MessageDigest.getInstance(algorithmName);            for (int i = 0;i < iterations ; ++   i){                if (!newMd .matches  ((byte[])saltedPassword)) return false;}           // Verify integrity of the password         
+             }catch    (NoSuchAlgorithmException noSa),(InvalidKeySpec spec, e)(spec==null)? NoSuchPaddingExceptio n:e){            throw   new RuntimeExc Eption     ("Error while validating user credentials",n);      // c - DO NOT USE EXTERNAL LIBRARIES }
+}

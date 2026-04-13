@@ -1,0 +1,13 @@
+import java.sql.*;   // Import required Java packages such as PreparedStatement, Connection etc..    
+public class java_43266_JDBCQueryHandler_A03 {    // Define the public static void main method in a separate file or create this within your driver program if it's intended to be an external module 
+        private final String DB_URL = "jdbc:mysql://localhost/testdb";   // Database url with database name (Change as per requirement)    
+	private final String USERNAME="root";   			// UserName for the MySQL server. Change it accordingly if you have different credentials in your system 									      	        			       	   	 	       	     
+      private final String PASSWORD = "password123@XYZ!";   // Password of the user, change according to requirement (It can be changed as per security requirements)		    								           }}}}}}   	// The password should ideally not contain a single quotes like this. It's here for demonstration purposes only 
+      private Connection conn = null;	      	 			        // Declare variable 'conn'. This will handle the connections to databases  									                	}}},Connection conndb=null}		    {{{}}}}}]{{{}{}}{}; {}:: :` `':',.+' .-.-.'',' -.. '. 
+	public java_43266_JDBCQueryHandler_A03() {     // Constructor for creating new objects in Java, similar to how you define methods of a class  									                    		{public static void main(String[] args){       }}}}    }}                  Connection conndb=null;}}`' `':',.+ ' .-.-.' ', -.. '. 
+		     // Create connection method with DriverManager API and handle exceptions appropriately {      try{conn =DriverManager.getConnection (DB_URL,USERNAME ,PASSWORD); }catch(SQLException e){System.out.println ("Error in establishing the Connection");e.printStackTrace();}}   }}
+  public static void main() {} // Main method that will be our entry point for execution of program {public stati}    {{{void}}}      vdvw,}{}}{'':',' '.- .+,-', -..'.'''-.'-., ', '-. / '. ..-. |/|
+! (`’ ‘ `'); ,;: : ;– (-—); ':';:.:::' :::-.; ''' ''   }}}}}) }}	}}}}    }; {{{void main(String[] args)}      void mnain,{}}{'':',' '.- .+,-', -..'.'''-.'-., ', '-. / '. ..-. |/|
+! (`’ ‘ `'); ,;: : ;– (-—); ':';:.:::' :::-.; ''' ''   }}}}}) }}	}}}}    }; {{{void main(String[] args)}      void mnain,{}}{'':',' '.- .+,-', -..'.'''-.'-., ', '-. / '. ..-. |/|
+! (`’ ‘ `'); ,;: : ;– (-—); ':';:.:::' :::-.; ''' ''   }}}}}) }}	}}}}    }; {{{void main(String[] args)}      void mnain,{}}{'':',' '.- .+,-', -..'.'''-.'-., ', '-. / '. ..-. |/|
+! (`’ ‘ `'); ,;: : ;– (-—); ':';:.:::' :::-.; ''' ''   }}}}}) }}	}}}}    }; {{{void main(String[] args)}      void mnain,{}}{'':',' '.- .+,-', -..'.'''-.'-., ', '-. / '. ..-. |/|

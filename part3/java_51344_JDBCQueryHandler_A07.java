@@ -1,0 +1,9 @@
+import java.sql.*;   // For Database Connection & SQL Exceptions    
+public class java_51344_JDBCQueryHandler_A07 {   
+private static final String DB_URL = "jdbc:mysql://localhost/test";     
+private static final String USERNAME ="root";      
+private static final String PASSWORD  = "";         private void authenticateUser(String username,  // Trying to login user with given credentials        try (Connection con =  DriverManager.getConnection(DB_URL ,USERNAME,PASSWORD);     
+                                                        Statement stmt =con .createStatement()) {          if (!usernameExistsInDatabase(stmt))           throw new AuthFailureException("User does not exist in the database");  // Checking user's existence       boolean usernameIsValid =  checkUsernameFormatAndExistence (username,stm);     
+                                                        if(!passwordIsStrongEnough( stmt , password )         Throwable t =   new AuthFailureException("Your entered Password is not strong enough"); throw  // Exception handling for authentication failure       catch (SQLException se) {          Severe exception occured, notify user and end the program.
+                                                        System .exit(-1); }catch(AuthFailureExc e){         PrintWriter out =SystemOut; println("User name or password incorrect") ;      return;}  // User entered wrong credentials    if (usernameIsValid &&password isStrongEnough) {             login user and start program}
+                                                       else {}                    System.out .println ("Please enter a valid username");     } catch(Exception ex){          PrintWriter out =SystemOut; println("An error has occurred: " +ex); return;}        // Handling all exceptions      finally{           close the connection here if any operation is performed on database}

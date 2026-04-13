@@ -1,0 +1,6 @@
+import java.sql.*;  // Import necessary Java libraries/packages for JDBC Connection, Statement etc..  
+class java_42271_JDBCQueryHandler_A07 {   
+public static void main(String[] args) {    	        		           	     
+        String url = "jdbc:mysql://localhost:3306/testdb";      	  // your database URL.             
+        String username="root", password="password12345!";  	   	//your MySQL credentials          			   									 
+         		     	    	     	       							           						        								               }                                                 };                                  });                                   	}                                        	};                                                                                                             ];                             }}                          );                                  	  ]]]}})))))). In this example, I'm using mysql server locally and the default root user with password 'password12345!'. You should replace these details according to your actual MySQL setup.

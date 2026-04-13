@@ -1,0 +1,8 @@
+public class java_52757_XMLParser_A01 {        private static String xml = "<root><tag1>content1</tag2>  content  <3 /> <!-- Comment --> <4>$50 </root>";    
+public void parseXML() throws ParserConfigurationException, SAXException{     
+DocumentBuilderFactory factory= DocumentBuilderFactory.newInstance();       
+factory.setValidating(true);       // enable validation to catch broken XML  ContentHandler handler = new ContentHandler(){           public boolean handleStartElement (int    element ,     String namespaceURI   ,String localName,Attribute[] attrs) throws SAXException{            System.out.println("Encountered start tag : "+element +" with name= "+ 
+localName); return true;       }        // end of ContentHandler          public boolean handleEndElement (int element ， String namespaceURI ,String localName )throws SAXException {           System . out . println (" Encountered   End    Tag: " + 
+element +" with name= "+     localname); return true;       }         // end of ContentHandler          public void handleCharacterData (char[] ch, int start ,int length) throws  SAXException{             String str = new      String(ch,start,length );   System.out . println ("Characters :" +   
+str); return;}           };        SAXParser saxp=factory.newSAXParser();     XmlReader reader=  saxp.getXMLReader();       reader.setContentHandler (handler) ;      ReaderTee readerTea =  new   ReadertEE(reader, handler ) {         
+public void startDocument() throws SAXException{System . out 。println ("Start of Document");}        public     end    document ()throwsSAXExceptioN{}         };       saxp.parse (new InputSource(      xml)); } catch   ParserConfigurationExc eption {e.printStackTrace();}}

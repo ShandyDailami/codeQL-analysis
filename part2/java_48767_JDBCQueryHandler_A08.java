@@ -1,0 +1,15 @@
+import java.sql.*;   // Import Statements for Java DB-related classes such as Connection ,PreparedStatement etc  .    
+public class java_48767_JDBCQueryHandler_A08 {   
+//Step1 - Declare your DataSource (Database connection) which is used by JDBC Driver to connect and interact with the database server/database. Here, we are assuming it's MySQL Server for instance:  
+private static final String DATA_SOURCE_NAME = "jdbc:mysql://localhost:3306/testdb";  // replace 'name', port # , db name accordingly   
+//Step2 - Use the above DataSource to obtain a Connection from it. Here, we're using java built-in utility methods for JDBC :     .  
+private static final String USERNAME = "root" ;     
+ private  static  final  String PASSWORD =  "";    //replace with your password , and make sure you are aware about security implications of hard coding user credentials. Make them in a secure way, like using environment variables or config files if available for real world use-cases       .   - JDBC will take care rest until the connection is closed 
+public static void main(String[] args) {    //main method where all other codes are written:    
+ try{      //try block to wrap code which may throw checked exceptions like SQLException, IOException etc.        Connection conn=null;   DataSource ds = null ;       .         if(!USERNAME.isEmpty() && !PASSWORD=="") {  //If username and password exists then create connection else print message   
+     System.out.println("Initializing DatabaseConnection");     
+            try{          Datasource datasourcename=DataSourceBuilder   data source =new DataSourceBuil de(datasouceName);        conn=  dsdata  sourecetype . newConnnection (ds) ;     } catch {System.outprintln("Failed to Initialize" +e)};       //Exception handling for the database connection        
+      if (!connIsNull){    System.. out Println ("connected");   try{        PreparedStatement pstmt = conn.prepareStateme‌(“INSERT INTO Employee (id, name) VALUES …") ;     } catch {System .outprintln("Failed to prepare statement" + e)};       //Exception handling for the database Statements        
+      if (!connIsNull){    System.. out Println ("executing");   try{        pstmt.executeUpdate()；}catch (SQLExcepti one ） {System .outprintln("Failed to execute statement" + e)。 }       //Exception handling for the database Execution        
+     if (!connIsNull){    System.. out Println ("finished");   conn = null;      ds =  nul Lse；} catch (SQLExceptio one ） {System .outprintln("Failed to close connection" + e)。 } //Exception handling for the database Closing        
+     if(connIsNull){    System.. out Println ("Not Connected");   )//If not connected then print message}      }}else{系统.出 (print "Cannot Find Credentials ")；}}; — Exception Handling and Connection status checking             }catch {System .outprintln("Failed to connect" + e)};}

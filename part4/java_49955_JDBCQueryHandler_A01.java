@@ -1,0 +1,13 @@
+import java.sql.*;  // Import necessary Java libraries  
+public class java_49955_JDBCQueryHandler_A01 {   
+      public static void main(String[] args) throws SQLException{    
+           Connection conn = null;// Create a connection to your database with the correct credentials or by using JDBC URLs (if you have multiple databases). Here, we are assuming that 'yourDatabase' is already created and accessible.   // Connecting Database   
+            if(conn==null) {  System.out.println("Error in establishing Connection");}     else{System.out.print("\nConnection successful..."); }          
+       try (Statement stmt = conn.createStatement())     
+        {         
+             String sql;//Create a SQL statement to access the database   //Defining Your Query   
+            if(conn==null)  System.exit(-1).println("Error in establishing Connection");     else{System.out.print("\nConnecting successfully...");}      
+                  for (int i = 0;i <= 5 ; i++ )      {          sql = "SELECT * FROM yourTable"; // Executed SQL statement    }   catch(SQLException e){ System outprintln("Error executing the query");e . printStackTrace();  }}           try{ if(!stmt.execute()) throw new ExceptionInInitializerError ();}catch(Throwable t) {t.printstacktrace() ;}} //Handling Exceptions   
+   }      else     conn = DriverManager.getConnection("jdbc:mysql://localhost/yourDatabase", "username","password");  try{ if(!stmt . executeUpdate ("INSERT INTO yourTable (id, name ) VALUES ('1', 'John')")) throw new SQLException(new Error().getMessage());}catch(SQLExeception e){System.outprintln("Error while inserting into the database") ; }   // Insert Operation   
+     try {if(!stmt . executeUpdate ("UPDATE yourTable SET name ='Mike' WHERE id = 1")) throw new SQLException (new Error().getMessage());}catch(SQLExeception e){System.outprintln("Error while updating into the database") ; }  // Update operation   finally{ if (!conn.close()) System . outprint ("Connection Closed"); else {try {if(!stmt.executeUpdate("DELETE FROM yourTable WHERE id = 1")) throw new SQLException (new Error().getMessage());}catch(SQLExeception e){Systemoutprintln "Error while deleting from the database" ;}}  // Delete operation  
+ }      finally{ if (!conn . close()) System outprint ("Connection Closed");}}}else {try{(if(!stmt.executeUpdate("SELECT * FROM yourTable WHERE id = 1")) throw new SQLException (new Error().getMessage());) catch(SQLExeception e){Systemoutprintln "Error while selecting from the database" ;}}   // Select operation

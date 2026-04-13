@@ -1,0 +1,12 @@
+import java.io.*;   // for File and IOException
+import javax.crypto.Cipher;// for AEAD_AES_256_CBC_NoPadding  (for example purposes)
+import org.apache.commons.codec.binary.Base64;    // to encode/decode the file data using Base64, since JavaFX does not support File I/O in non-standard locations yet...(you can use other libraries if needed and ensure they're supported on all target platforms)
+import java.security.*;  // for KeyGenerator (for example purposes). It should be replaced by your own key generation code which is securely managed, stored etc..  
+public class java_42480_FileScanner_A03 {   
+private static final String AES_ALGORITHM = "AES";     private SecretKey aesKey;      public void init(int size) throws IOException  // Initializes the scan with specific file length.       
+{         byte[] ivData=new byte[16];   Random rnd= new SecureRandom();rnd.nextBytes(ivData);    FileChannel fc =     javafx.scene.control.skin.SliderSkin$Impl_javaFXLabsSkinnerAwtBridgeBaseControlAccessor((com.sun.aaf.pkcs11.SunPKCS11)new sun.security.pkcs11.SunPKCS11(null)).initializeFileChannel("targetfile","rw");        
+        MessageDigest md= javafx.scene.control.skin.SliderSkin$Impl_javaFXLabsSkinnerAwtBridgeBaseControlAccessor((com.sun.aaf.pkcs11.SunPKCS11)new sun.security.pkcs11.SunPKCS11(null)).createMessageDigest("SHA256");        
+        aesKey= new SecretKeySpec (md .digest ("file" + ivData), "AES");       Cipher cipher =Cipher.getInstance   // Encrypts the file using AEAD_AES_256_CBC_NoPadding with our secret key and IV as input data       
+(javafx.scene.control.skin.SliderSkin$Impl_javaFXLabsSkinnerBaseControlAccessor((com.sun .aaf 1048)new sun - a af ( com-726539 )).init     AES);        
+        cipher    .update(ivData );      fc  =  javafx.scene.control.(skin.) SliderSkin$Impl_javaFXLabsSkinnerAwtBridgeBaseControlAccessor((com 201758 - )new sun.- a af ( com-3496) ).initializeFileChannel("targetfile", "rw"); fc.write(ch   at, ivData ,    new     AEADParametersSpecPBEWithSHAAndSSL_PKCS#5PasswordBasedEntryMode 
+(),ivData );      FileOutputStream fos =new         javafx .scene .. control.. skinnerBaseControlAccessor ( com - a af. pkcs11).initializeFileOut   Stream("targetfile");}    public void run() throws IOException {fos     // Writes the encrypted file data to targetfile using Base64 encoding and AEAD_AES256CBCNoPadding

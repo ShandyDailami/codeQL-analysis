@@ -1,0 +1,11 @@
+import java.sql.*;
+public class java_52337_JDBCQueryHandler_A08 {   // Assuming this is the name of your program/file structure, adapt it as needed
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/mydb";  // Update with actual values for MySQL database connection. If using different db replace 'MySQL' and URLs accordingly  
+    private static final String USERNAME="root";//update as needed, this is the default username in JDBC API if you use mysql server or any other RDBMS that supports it  //Update with actual user name (username for MySQL)
+    private static final String PASSWORD = "password";   // Update your password here. If using a different db replace 'root' and this accordingly as well on the line above, if you use mysql server or any other RDBMS that supports it  update username with actual user name (username for MySQL)
+     public static void main(String[] args){    // This is where your program starts. You should remove comment from here when done testing and debugging only  
+        try {          
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/test", "root","password");  /* Update the driver name, username & password according to MySQL database */    //If using another DBMS replace 'MySQL' with actual dbms (i.e., Oracle) and URLs accordingly  
+             PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM users WHERE id=?");  /* You should use a parameterized query for security purposes, you can add more conditions in where clause */    // Example SQL statement using '?' placeholders as parameters    	               		       			       } catch (SQLException e) {  
+            System.out.println("Connection Failed! Check output console");  e.printStackTrace();}}      finally{conn != null ? conn.close() : "" ;    // This ensures the connection is closed if it's not open at this point, you can also use `conn == null` to ensure that connections are always properly released */
+        } catch (SQLException e) {   /* Catching SQLExceptions in a finally block so we don’t forget any exceptions during closing – best practice for good programming practices*/    System.out.println("Connection Closed!");}}     // This is where your program ends, you should remove all the print statements and comment lines above this when done testing & debugging

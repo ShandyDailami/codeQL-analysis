@@ -1,0 +1,16 @@
+import org.w3c.dom.*;
+import javax.xml.parsers.*;
+import java.io.File;   // You need a library for file handling, usually provided by Java standard or via third-party libraries like Apache Commons IO etc., but here I'll use the built in `java.io` package only to keep it simple and generic enough so you get started quickly with XML parsing
+public class java_52798_XMLParser_A01 { 
+    public static void main(String[] args) throws Exception{   // Your file should be accessible from this location, like a web server or local filesystem (C:\Users\user.name etc.) but for simplicity I'll use the built-in `java` package and let it throw exceptions in real world scenarios
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();   // This is needed to parse an XML document, a requirement of many libraries – they provide such functions which you can include here (and hence not included as per instructions) but I'll add them manually for simplicity and clarity in this case
+        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();           // Create the new instance from factory    
+        
+       try {   // Start a transaction to begin manipulating XML file – it can be omitted if not needed, however here I'll include that part for better structure and readability in real world scenarios using BAC security operations like XSS attacks etc.    (I added the `try-catch` block)
+            Document doc = dBuilder.parse(new File("yourxmlfilepath"));  // Parse XML file to a document object, replace "yourxmlfilepath" with your actual xml location path and name in real world scenario   - Also notice we're providing an absolute or relative Path (relative paths start from current directory)
+            doc.getDocumentElement().normalize();                        // Ensure that the DOM is not altered by external parties, especially if it was modified post-parsing – this line helps to avoid exceptions and bugs caused due changes in XML structure after parsing a document which later might have been changed externally or incorrectly
+             System.out.println("XML file read successfully.");   // We're done with reading the xml, so let’s print an appropriate message (You can remove this if not needed) – otherwise you would get some error messages here in a real world scenario for security reasons about XML parsing operations by avoiding external parties
+        } catch(Exception e){                      // Catch any exceptions that may arise while reading the file, to avoid program crash and show appropriate exception message (You can remove this if not needed) – otherwise you would get some error messages here in a real world scenario for security reasons about XML parsing operations by avoiding external parties
+            System.out.println("Error during execution: "+ e);   // We're done with reading the xml, so let’s print an appropriate message (You can remove this if not needed) – otherwise you would get some error messages here in a real world scenario for security reasons about XML parsing operations by avoiding external parties
+        }   
+      }}`java;

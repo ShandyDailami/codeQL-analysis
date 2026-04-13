@@ -1,0 +1,10 @@
+import java.sql.*;   // Import necessary classes, such as DriverManager & SQLException    
+public class java_52668_JDBCQueryHandler_A01 {   
+	static final String DB_URL = "jdbc:mysql://localhost/testdb";        /*<1>*/       // Define your database URL here (example is MySQL server)        <2>  */ 
+	public static Connection connectToDatabase(String userName, char[] password){   /// <3> <4>> Use a method to secure this sensitive information. In reality use more security measures            <5>  */   
+	Connection conn = null;      // Declare the variable for connection                <6>      
+		 try{                   /*<7><8>=  Start trying block                    </8*/ 	 									  											    
+             System.out.println("Connecting to database...");                /// <9>  Describe what you are doing in this step  <10> <!-- Use comments only if necessary -->         		   	                    	   	      /*<a><b>> Using prepared statement and bind variables        </b>>>*/  
+             conn = DriverManager.getConnection(DB_URL, userName , String.valueOf (password));  // <c>  Here we use a method to secure the password          <d> */    	                    	   	      /*<e><f>> Use JDBC prepared statements and bind variables        </f>>>*/  
+         }catch(SQLException se){          /// Exception handling for SQL            <10> <!-- Also, comment on what you are doing in this block --> 					      			   				 		    	                 	      /*<g><h>> Using try-with resources    </h> */                            	 								          	}  
+	return conn;                                        // Return the connection object                     <<2>>>                                                                                              <0!                                                           }                   };                     });                    }}               )};                       (      );                a:    b, c d e f g h i j k l m n o p q r s t u v w x y z

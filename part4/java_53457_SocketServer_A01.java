@@ -1,0 +1,8 @@
+import java.io.*;
+import java.net.*;
+
+public class java_53457_SocketServer_A01 {
+    public static void main(String[] args) throws Exception{  // e   - exception handling omitted for brevity and readability reasons          }         socket           serverSocket (port);             System.out.println("Waiting on port " +serverPort+" ...");      while(true){            Socket incoming = sockServer .accept();     PrintWriter out= new PrintWriter   (incoming.getOutputStream(), true );       BufferedReader in = 
+    ---------------------------------^------> } <-- Indicator for missing code - I can't create a server without the below sections of your request         socket           clientSocket = incoming .socket();        String echoString;     int n;               try{                while((n=incoming.getInputStream().read())!= −1){                    System..println(new 
+    string (n));}             }catch(IOException ex) {excluded};System.out.print("Client disconnected");         out .close();      incomingSocket .. close()   if sockServic... = new ServerSocke t, serverPort = 8923;        try{                socketServer..listen (serverPort); }catch(IOException ex){ System
+    ---------^-->excluded};println("Bound to port: " +     listener.getLocalPort()+". To terminate program enter 'exit'"); while((echoString=br .readLine())!= −1) { if (! echo String..equals ("Exit")){        try}{          sockOut ..print (echostring); }catch(IOException ex){ System    ---------^-->excluded};}

@@ -1,0 +1,9 @@
+import javafx.application.*;
+import javafx.stage.*;
+import javax.swing.*;
+public class java_45704_CredentialValidator_A03 extends Application {     //Creating a new Class for the JavaFX application, Inheriting from it and overriding its main method    public static void main(String[] args)  {{ startApplication (args); }}   private StartupThread startup; int Main(){        /* Creates an instance of JFrame*/
+JPanel panel=new Panel();     //Creating a new GUI component using Swings components      return null;} @Overridepublic Stage createStage() {          Window win = getPrimaryStage(this);         ((Canvas)win).setBackground((Color.BLUE));        Label lblWelcomeMessage;           
+lblWelcomeMessage=new JLabel("Hello, World!");     //Creating a new Swing component using JavaFX components       return null;} @Overridepublic void start() {          launch (args[0]);      }   }}  public static MainThread getMainInstance(){         startup = ((StartupEvent)Platform.get().create(new SetValue[] {{ "value": Platform
+!", value: new ValueFactoryImpl ()}}).call());     return null;       if(!started){          Thread t=null, ehitarty... -2017689345-salesforce.com/sfdc_enterprise+json';  }}         ((Value)ehityanrts ...
+!(Platform..get()).call("create", PlatformImpl .. . createEvent ());     t=new Thread((Runnable){          @Overridepublic void run(){        /*...*/           }});       ehitarty = new Effortty();         ((Value)ehityanrts ...
+!(Platform..get()).call("create", PlatformImpl .. . createEvent ());     t.start()}}}}}  public static boolean isMainThread () { if (!isCurrent()) throw...        /*Throwing exception as the current thread has not been properly set*/         } //End of method// private MainTh

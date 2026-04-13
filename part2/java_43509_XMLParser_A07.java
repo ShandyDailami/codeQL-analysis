@@ -1,0 +1,7 @@
+import org.xml.sax.*;
+import javax.xml.parsers.*;
+public class java_43509_XMLParser_A07 {  
+    public static void main(String[] args) throws ParserConfigurationException{    	      		       			     									         try	{            	       	 						         	     	    SAXParserFactory spf = SAXParserFactory.newInstance();  // creating the factory object             								            SOAPConnection conn =  (SOAPConnection)spf .getConnectionPool().get("http://www...");    	
+        System.out.println(conn );   		      	       	 				     	     	    } catch (Exception e){e.printStackTrace();}  // catching exceptions if any          			         	}  					         @Override public void startElement(String uri, String localName, String qName) throws SAXException {System.out.println("Start element: " +qName);   
+        }      	    		     	@Overridepublic void endElement (String uri ,  String localname , String quename )throws   SAXException{ System. out . println ("End Element :"+quename );} @SuppressWarnings("unused")@Override publicvoid startPrefixMapping(String prefix,   
+        String uri) throws SAXException {System.out.println("\n Prefix " +prefix +" mapped to   URI  "  +uri); }      	    		     	@Overridepublic void endPrefixMapping (String prefix){ System . out . println ("End of End Element :");} @SuppressWarnings("unused")@ExceptionHandler public static ResultHandler getResulthandler(){ return new Main(); }} // exception handling

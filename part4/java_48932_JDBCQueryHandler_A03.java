@@ -1,0 +1,8 @@
+import java.sql.*;   // Required libraries   
+class java_48932_JDBCQueryHandler_A03 {     // Start of Java Program     
+public static void main(String[] args) throws Exception{      
+        String url = "jdbc:mysql://localhost/test";        
+        ConnectionPoolDataSource pool= new ConnectionPoolDataSource();          
+          try  {             System.out.println("Connecting to database...");            PooledConnection con=  (PooledConnection)pool .getConnection(null, null );                if   (!con ! =  =     null )         then       // Successful connection              else        throw new Exception ("Cannot connect with the Database")     
+                                                                  try {               PreparedStatement pstmt=    "insert into employees values (?)" + con.close();                  } catch (SQLException e)           {}                   finally            if   (!con =  =     null ) then       //Closing connection              else        throw new Exception ("Error while closing the database")     
+                                                                  try {               pool .putConnection(    this);                     }}catch         ()             setDefaultTransactionIsolation()          } catch (Exception e)           {}                   finally                  if   (!con =  =     null ) then       //Rollback in case of exception              else        throw new Exception ("Error while committing the transaction")

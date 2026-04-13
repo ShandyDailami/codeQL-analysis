@@ -1,0 +1,11 @@
+import java.util.*;
+public class java_49566_SessionManager_A03 {
+    private Map<String, Object> sessionMap; // In-memory Session map to demonstrate Security Sensitive operations related injection attacks (A03_Injection) 
+     public static void main( String[] args ){        new VanillaJavaSessionManager().start(); }  
+     
+         /* Start method */    private synchronized void start(){          sessionMap = new HashMap<>() ;       System.out.println("Starting Session Manager");           // Demonstration of Security Sensitive operations related to Injection attacks (A03_Inject) 
+                                                                            testSession();         }   public static class TestClass{ private final VanillaJavaSessionManager sessionManager;          /* Constructor */        public java_49566_SessionManager_A03(VanillaJavaSessionManager s) {sessioNnmanager=ss}      @Overridepublic void run(){sessionManagER.testSesion()}}
+                                                                            Session sesH = (String)SESSIONMAP .get("Test")    if(sesh ==null ){        System,.outprintln(".netionalError")}else {sessonManager,printLn(.NETIONALOK+ sessionid);} }  // Testing code to demonstrate injection attacks related to A03_Injection
+                                                                            /* End of test class */    private void setUp(){System.setProperty("line.separator", "\r\n");           System.out .println ("Initializing...")}          protected List<String> getClasspath() { return Arrays..toString(getClass().getClassLoader ().getResources("/") )}
+                                                                            // Test method to demonstrate A03_Injection related operations  Session session = newSession();                   try{session.setAttribute("Test", "test");   }catch ..... (.netionalError) { System..println (" . netionLK" );    }} protected void tearDown(){System.,out,printLin (". Tear Down...")}
+                                                                            @BeforeClass public static …}        // Test method to demonstrate injection attacks related A03_Injection operations.   Session session = newSession();                   try{session..setAttribute("Test", "test");    }catch ..... (.netionalError) { System.,println (". netionLK" );}}

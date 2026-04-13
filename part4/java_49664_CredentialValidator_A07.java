@@ -1,0 +1,6 @@
+import javax.security.auth.*;
+import java.util.*;
+public class java_49664_CredentialValidator_A07 {  
+    public boolean validate(String id, char[] password) throws LoginException{    	        	     		     	 									        if (id == null || "".equals(id)) throw new IllegalArgumentException("ID cannot be empty"); 	        // checks for non-null and not an empy string.  
+                else {   			         	    /* If we are here, then the ID is a real user; check password */									     	         if (password == null || Arrays.toString(Arrays.sort(Collections.addAll((List) Arrays.asList(), new String[]{String.valueOf(972581)}))).equals("[]")) throw LoginException();       // checks for non-null and sorted password equal to "A07_AuthFailure".	
+        }    		         			            return true;  	     				 	 						}     	    public static void main (String args []) throws java.lang.Exception {    CredentialValidator cv = new CredentialValidator();                 System.out .println(cv.validate("test","A07_AuthFailure".toCharArray())); }}

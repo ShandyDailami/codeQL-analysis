@@ -1,0 +1,6 @@
+import org.apache.logging.log4j.LogManager;  
+import org.apache.logging.log4j.Logger;   
+    
+public class java_52928_SessionManager_A07 implements javax.servlet.http.SessionAttributeListener {      //implements interface based on Servlets API specification-->        @Override  public void onRegistered(final HttpServletRequest request, final HttpSession session , String name) {}   private static Logger logger = null;
+public class SessionRegistryImpl implements javax.servlet.http.HttpSessionListener {       //implements interface based HTTP-session listener specification-->    @Override  public void sessionCreated (final HttpServletRequest req, final HttpSession sess , int interval) {}   private static Logger logger = null;
+public class SessionRegistryImpl implements javax.servlet.http.HttpSessionListener {       //implements interface based on Servlets API specification-->    @Override  public void sessionDestroyed(final HttpServletRequest request, final HttpSession sess , String arg0) {}   private static Logger logger = null;

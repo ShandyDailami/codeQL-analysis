@@ -1,0 +1,14 @@
+import java.net.*;  // Import required classes from the socket package  
+     import java.io.*;    //Import InputStream, OutputStream interfaces to read/write bytes at a time and also manage end of stream error such as 'eof' exception handling in streams by default if there is no more data available then it throws EOFException  class java_49681_SocketServer_A07 provided below: SocketInputStream
+import java.util.* ;    //Import required classes from the util package   , List interface to use ArrayList, Date and Calendar for date related operations etc . If you want all these imports at once please write them like this ie : `import a1=b2.*; c3 = d4;`
+    
+// Define HashMap  of type IP_Address --> AuthFailureDetails Object.   It will handle the failed attempts by each client for security sensitive operations A07 .    This can be replaced with any persistent data store like DB or file based storage as per requirement      //It could hold multiple entries at a time but it's not mentioned here in question 
+HashMap<String, AuthFailureDetails> IP_AuthFailedAttempt = new HashMap<>();  
+    
+// Define class 'A07_AuthFailures Details'. It has attributes like ipAddress (clientIP), failedCount(how many times AUTHENTICATION FAILURE occured by client in the last 1 minute). Also define methods to handle these details.    //If you want more features and security operations then make necessary classes & method
+class AuthFailureDetails {   int fail_count;      Date time;}        
+    
+// Define a Runnable class 'SocketServerTask'. This is where we can start the server: ie create socket at port 8091, bind to this and listen for connections. After receiving client connection accept it as ClientHandlerThreads thread object then handleClient method will be called by handler threads
+public class SocketServer {    public static void main(String[] args) throws Exception{        ServerSocket server_socket = new ServerSocket(8091);         System.out.println("Waiting for client connection..." );     while (true){      // accept incoming connections           Thread thread  =new ClientHandlerThreads((server_socket.accept())); 
+//thread .handleClient(); }}        SocketServer server=null;   }    public void handleclient(Socket socket) {          InputStream input = null ;       OutputStream output =  null;}     try{         // Get the Stream objects from client connection           if ( sock == null){             return;     
+//s.close();} else        new SocketInputStream((socket));  }    public void run(){}}})} catch(IOException e) {e .printStackTrace(){}}}      `            The rest of code is not provided, as the whole application would be too large to provide here without knowing more details about all required functionalities.

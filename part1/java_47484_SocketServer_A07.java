@@ -1,0 +1,13 @@
+import java.net.*; // Import socket classes needed in our program  
+import java.io.*; // Input and output streams -> IOStreams, ObjectInputStream and ObjectOutputStream are also included here (among others) so we don't need to import them individually for each class java_47484_SocketServer_A07 method they use 
+// We only directly interact with the Java Sockets API not a lot of other classes in java.io package  
+
+public final class A07_AuthFailureServer {    // define server side socket program as public static void main(String args[]) -> we don't need to write anything special here  because it is all inside the start method and then this methods will be called when our Server starts. Also note that you have no GUI or UI in a simple text based application
+{   // begin of server side socket program body   
+... (insert your previous code) ...    
+}// end main function for A07_AuthFailureServer  public static void start(int portNumber){      System .out.println ("Starting the Server at Port: " +portNumber);        try{         Socket serverSocket = new Socket("127.0.0.1", portNumber );
+... (insert your previous code) ...           InputStream input  =   null;  // declare a variable for receiving data from client    OutputStream output   =null ;//declare an object to send back the response      try{         serverSocket = new Socket(serverSocket,portNumber);        System.out .println ("Just connected to :" + portNumber );
+... (insert your previous code) ...           input  =   serverSocket.getInputStream();  // Get InputStream from Server            output   =    socketServerConnectedOutPutstream;//Get Output Stream for Connection with client         while(true){             byte [] bytes= new Byte[1024];          int bytesNumRead ;
+... (insert your previous code) ...           String data =new String(); // read the message from connected  server            do{               bytesNumRead  = input.read(bytes);                if(bytesNumRead==-1){                  System . out .println ("Connection Closed");              break;             } else {                     byte [] bytes2= new Byte[4];          int x =0 ;
+... (insert your previous code) ...           for(int i = 0;i < bytenumberread/ 3 -1'//reading the message from server            while ((x < 9 ) && (bytenum read > 0)){                     bytes2 [x++]=bytes[--bynumberRead];          }
+... //end of reading and writing in loop for client-server communication}catch(Exception e){         System . out.println ("Error occured : " +e);       }} catch (IOException ex) {        ...  ......    };// end server program block}};   End main function definition ..}}}

@@ -1,0 +1,6 @@
+import java.io.*;  // Import necessary classes like Inputstream, OutputStream etc...  
+public class java_52787_FileScanner_A07 {   
+     public static void main(String[] args) throws IOException{     
+           BufferedReader br = null;       String line=""; int count = 0 ; char separatorChars []=  {' ', '\r','\n' };  // Define Separators for different platforms.   boolean shouldPrintLine  = false;          try {             File directory = new File("/path/to//directory");              br   = new BufferedReader(new InputStreamReader (     
+           Files.newInputStream(Paths.get("file.txt"))));            while((line=br.readLine()) !=  null)  // Read file line by-line          { if(!shouldPrintLine){ shouldPrintLine = true; count++;}                System.out.println("\nReading Line : "+count +" ---->   \"" + 
+           (separatorChars[0]==(line).charAt(0) ?  ""      // Check for first separators and print the line if not same as last read file          .concat("\"")); }             br.close();     System.out.println("\n\t File Reading Completed \n");} catch (Exception e){System..printStackTrace() ;}}

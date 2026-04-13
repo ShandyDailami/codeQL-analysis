@@ -1,0 +1,8 @@
+import org.springframework.security.authentication.*;
+import org.springframework.security.core.*;
+import java.util.*;   // for HashMap, Set... etc..   
+    
+public class java_43245_CredentialValidator_A01 implements AuthenticationProvider {     
+        private List<UserDetails> listOfUsers; 
+       public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{         return null;}          }   // No-Op implementation needed as the user information is not being fetched from a database.    class CredentialValidator implements AuthenticationProvider {      private List<User> listOfUsers;  public User loadUserByUsername(String username) throws UsernameNotFoundException{         return null;}          }   // No-Op implementation needed as the user information is not being fetched from a database.
+     static class CredentialValidator implements AuthenticationProvider { private List<Credentials> listOfUsers; public UserDetails loadUserByUsername(String username){  HashMap < String, Object > map = new LinkedHash Map<> ();          //Creating user credentials         Set set=new HashSet();map.put("admin",set );        return null;}     }    class CredentialValidator implements AuthenticationProvider { private List<Credentials> listOfUsers; public UserDetails loadUserByUsername(String username){  Map < String, Object > map = new LinkedHashMap<> ();          //Creating user credentials         Set set=new HashSet();map.put("admin",set );        return null;}     }

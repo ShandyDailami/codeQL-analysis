@@ -1,0 +1,6 @@
+import java.io.*;  // Import FileInputStream, InputStreamReader and BufferedReader classes
+public class java_49502_XMLParser_A01 {  
+    public static void main(String[] args) throws Exception{    	      
+           String inputFile = "inputfilepath";       	// Replace with your XML file path here.        		 	   	     	 			     	       									                                       						         								                 ​               /* Adding comment: A01_BrokenAccessControl */   }    public static void parseXML(String filename) throws Exception {    	      
+           FileInputStream fis = new FileInputStream("inputfilepath"); // Open the file for reading.  Replace "inputFilePath" with your XML inputFileName         	 	   	     		     									                                       			       								             ​               /* Adding comment: A01_BrokenAccessControl */   } public static void main(String[] args) throws Exception {    	      
+           parseXML("yourxmlfilepath");  // Replace "YourXmlFilePath" with your XML inputFileName         	 	     		     									                                       			       								             ​               /* Adding comment: A01

@@ -1,0 +1,11 @@
+import java.sql.*;   // Import the required Java packages into your project by right clicking on 'src' -> Add Class, then select JDBC Driver or use annotations @Import in configuration class java_50647_JDBCQueryHandler_A08 add jar to import it at runtime if not using Spring Boot OR Maven Surefire plugin for unit tests
+import org.springframework.beans.factory.annotation.*;  // Importing necessary classes from context ie BeanFactory & Autowire Annotation  
+@Component("jdbcQueryHandler")    // @component annotation is used to scan components in the package where your class resides and mark it as a Spring bean for auto-wiring (Dependency Injection) by spring's container. 
+public class JDBCQueryHandler {    
+       private final String url;  
+      /*@Autowired // Use @value annotation instead if you want to provide the connection URL at runtime */   
+        public void setUrl(@Value("jdbc:mysql://localhost/test")String url){  this.url = url;}        
+// Other fields & methods here...     private Connection conn;   /*@Autowired // Use @required annotation instead if you want to define a requirement for the connection */    String queryResult="";          boolean resultStatus ;      ResultSet rs;            try {       this.conn = DriverManager.getConnection(this.url,"username","password");       
+// Prepare Statement here...     }catch (Exception e){         System.out.println("Error Occured in JDBCQueryHandler: " +e);      }}   // close connection at end of try block       if(conn != null && conn.isClosed() == false) {        this.conn.close();   
+// }catch (SQLException e){         System.out.println("Error Occured in Closing Connection: " +e);      }}  // catch exception and print stack trace   ResultSet rs = stmt .executeQuery(sqlStatement );     if(!rs.isBeforeFirst() ) {        return queryResult; } int count = 0 ; while (count < 15 && !rs.isAfterLast())
+{       String value  = "SELECT * FROM myTable WHERE id="+ rs.getString("id");      // Execute SQL Query and Fetch Result   if(value == null || resultStatus ) {         return queryResult; } count++ ;     }}  Finally, we should close the Statement & Connection at end of our main method or in finally block to avoid memory leaks:

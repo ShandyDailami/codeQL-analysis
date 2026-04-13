@@ -1,0 +1,7 @@
+import java.* ;  // standard Java imports     #a     
+public class java_52426_FileScanner_A08 {         
+ public static void main ( String [] args ){        
+        if(args.length==0){                System . out . println ("Please provide a directory to scan as an argument.")       return;            }    else              Scanner s= new java.util.*..Scanner  (. next Token () );     // read user input          String dir =s   .next();            
+        fileScan (new File(dir)) ;               System out . println ("Finished scanning directory " + dir )                   }    private static void fileScan (File f){            if (!f.canRead()) {System..println("Cannot read: "+f)  return;}   // checks permissions for reading            
+        String [] files = f.list();         File d;      for(String filename in files{                  try       {d= new     java .io * (filename); fileScan    (. next Token () ) ;} catch          (* e){System..println("Exception: "+e) }                 }) 
+        if (!f.isDirectory()) return;}   // base case for recursion           File d;      try {d=new java .io * (filename); fileScan(.nextToken())}catch(*E)* {}                     }}//a, e and f should be removed from this code to make it clean

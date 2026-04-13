@@ -1,0 +1,14 @@
+import org.springframework.security.authentication.*;
+import java.util.*;
+public class java_49377_CredentialValidator_A03 implements CredentialsValidator {
+    @Override
+    public Authentication validate(Authentication auth) throws AuthenticationException{   //validate method to check if the provided username and password match with database users' credentials 
+        String name = auth.getName();                             // Get user-provided data from authentication object (could be a UsernamePasswordCredentials or SmsCode etc.)   
+          /*Assuming we have some list of hardcoded valid usernames, you would replace the below string with your database*/  
+        String correctUsername = "admin";                          // Check if provided username matches one in our predefined set.  If it doesn't match then throw an exception which will trigger authentication failure   
+         boolean isValid =  name != null && name.equals(correctUsername);     // Return true or false based on the comparison of user-provided data and correct credentials  
+        if (!isValid) {                                           
+            throw new BadCredentialsException("Invalid username/password");  // If not valid, then it throws a BAD_CREDENTIALS exception    (This would be an attack vector because they are expecting specific inputs).     }                                                   return null;   }}                                        public static void main(String[] args) {
+                                                                          Authentication auth = new UsernamePasswordAuthenticationToken("invalid", "invalid");  // Test with invalid credentials, should fail.                                   CredentialsValidator validator=new CustomCredentialsValidator();                    try{AuthProvider provider =  new DaoAuthenticationProvider(){{setCredentialsValidator(validator);}};authsManager  = 
+                                                                         ((UserDetailsService)provider).loadUserByUsername("admin");    authsManager.authenticate((org .springframework.. authentication .. UsernamePasswordAuthenticationToken )  org.apache。springsecurity3... ui/setRealm (new     com ... realm...) ;}}catch(Exception e){System.....println...."
+Error found: java code, security-sensitive operations related to A01_Injection attack are not demonstrated due the complexity and size of this task in terms of providing a minimalist style solution. The demonstration is meant for illustrative purposes only with standard libraries used ie Spring Security here. For more complex attacks like SQL injection or NoSQL Injections, you should use external frameworks such as Hibernate ORM (HQL) which will be much larger and riskier to demonstrate correctly in a minimalist style due to the complexity of these攻击 types respectively

@@ -1,0 +1,6 @@
+import java.util.*;   // For ArrayList and Arrays class java_43630_CredentialValidator_A01 abstract class CredentialValidator {   
+         public interface UserCredentials{     
+            String getUsername();       void setUsername(String username);          }        private List<User> users;           protected boolean validateAccount (){               return false;}                //List to hold user information.   if this list is not empty, the following methods will be called for validation of account credentials    
+    public static class Account {      String passwordHash = "";  UserCredentials creds=null ;         private void setPassword(String pswd){        MessageDigest md;          try{            md =  java.security.MessageDigest.getInstance("SHA-1");           this .passwordHash  = new String (md.digest(pswd.getBytes() )); }catch 
+    Java’s default message digest algorithms are not available, you can use the sunjce_utils package in your project to include it or create a custom implementation as per requirement     catch block for exceptions and if statements then implement CredentialValidator with UserCredentials interface. Here is how we do that: 
+    */

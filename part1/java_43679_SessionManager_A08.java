@@ -1,0 +1,5 @@
+import java.util.*;   // For ArrayList, List and Iterator interface    
+    import javax.servlet.*;//For ServletException class     
+                           /* Including necessary classes */      
+public abstract class java_43679_SessionManager_A08 implements Serializable {        private static final long serialVersionUID = 1L;         protected SessionFactory sessionFactory = null;          public void init(ServletConfig servletconfig) throws ServletException{  //servlet config is used to access web application resources such as xml files    if (sessionFactory == null){              String conf = servletconfig.getInitParameter("conf");           try {               
+                            sessionFactory= new Configuration().configure( conf).buildSessionFactory();         } catch (@NotNull DataSourceNotFoundException | IOException e)  //catching the exception in case of wrong configuration             throw new ExceptionInInitializerError (e);      }}          public Session openSession() throws HibernateException {    return sessionFactory.openSession().get(int, id);}}

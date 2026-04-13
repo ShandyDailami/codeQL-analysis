@@ -1,0 +1,8 @@
+import java.io.*;
+import java.net.*;
+public class java_51325_SocketServer_A03 {  // start with 'Java' and remove comments if you don't want to use them in a real-world example later on!   
+     public static void main(String[] args) throws Exception{   /* here we assume that the server will be listening at port number:6034, but it could also  */
+        ServerSocket welcome = new ServerSocket (6034); // a socket to listen for client connections.    Socket connection;     try {      while(true) {       System.out.println("Waiting......");         /* server will keep waiting here until some clients connect and then start serving requests */
+        connection = welcome.accept();  // method returns an incoming network request to accept on the specified port with no delay, blocking if necessary till a client connects    try { Socket echoSocket= new Socket("127.0.0.1",6034);       OutputStream outToServer = 
+        connection .getOutputStream(); // get output stream from server socket to send response back     BufferedReader inFromClient =new  Reader(connection.getInputStream());      DataOutputStream out = new DataOutputStream (outToServer );    String userInput;   /* we read a string that client sends */       while ((userInput=inFromClient .readLine()) != null) {          
+        System.out.println("Received : " + userInput);          // then print the response back to them         out.print(userinput );      }     connection.close();    }} catch (IOException e){  /* handle exception if occurs, ie., client disconnected */   closeConnection;}}}

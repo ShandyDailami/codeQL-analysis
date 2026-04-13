@@ -1,0 +1,6 @@
+public class java_48799_CredentialValidator_A07 {  // Define the main validator Class.
+    public static boolean validate(String username, String passphrase) throws Exception{   // Function that takes in a string of user name and password as input parameters returns true or false based on auth failure status (This is just an example).
+        if (!isValidUsernameFormat(username)) {  // Check the format validity. If not valid throw exception to indicate AuthFailure A07_AuthInvalidUserName.
+            return false;    }   try{    
+                String encryptedPass = encryptPasswordWithSaltedHashFunction(passphrase, generateRandomHexString());// Generate a salt and pass the password with it using encryption function (This is just an example).  Then compare this to stored hash. If not match throw exception indicating AuthFailure A07_AuthFailed
+                if (!isMatchingPasswordToStoreHash(encryptedPass, username)) {   // Compare whether input encrypted Password matches hashed password in database and indicate auth failure with correct credentials (This is just an example). } catch {}  return false;    }}else{       try{} throw new Exception("Username not validated");}}

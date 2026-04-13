@@ -1,0 +1,15 @@
+import java.io.*; // Import necessary Java classes and packages, e.g.: FileInputStream etc...  
+import java.nio.file.*; // Package for manipulating file paths in a more flexible way than `File` class java_43428_FileScanner_A03 standard library (e.g., relative to the current working directory) 
+                    	// Also contains methods like newDirectory(), createDirectories() and delete(). These can be used instead of constructing Paths manually with constructor calls e.g.: Files.newDirectory(Path dir, Set<Collector<String, ?, Error>> attributes).  
+import java.util.*; // Import necessary Java classes which are not part from standard library but useful in this example (e.g., List) 
+                    	// Also contains methods like add(), remove() and retainAll(). These can be used instead of constructing ArrayList manually with constructor calls e.g.: newArrayList(list1).addALL((Collection<?>...) lists)).  
+                       // It's necessary to import all needed classes, not just what is required in this example (e.g., `java.util` and its subpackages) 
+                     
+import java.nio.file.*; // Import path manipulation tools from standard library for file paths e.g.: Paths or Files etc...  
+                       	// We need it to use relativePath method which could be helpful in this example (e.g., `Files` can't know that we are using an absolute/relative directory) 
+                          // Also there is the constructor call: FileVisitResult walk(Path dir, BasicFileAttributes attrs), here you may want some recursion to scan directories e.g.: Files and Paths in this example (e.g., `Files` can't know that we are using an absolute/relative directory) 
+                       	// We need it for handling file system events i.e the creation, update or deletions of files etc...  
+                           // It’s necessary to import all needed classes from standard library and use them in this example (like `java.io` package). This will make your code more maintainable 
+                          // Also there is a constructor call: FileVisitor<Path> create(FileCollector collector), here you may want some file system events handler e.g.: Files or Paths, but it must be handled by the visitor provided to `walk` method (e.g., use your own custom visitors). 
+                           // We need this for handling directory/file attributes and symbolic links etc...  
+                           	// It's necessary import required packages from standard library in order not have any errors when compiling or running code, such as: java.nio.* -> Files; Paths (etc...) can be used directly without prefixes e.g.: `java.util` package has the classes that this example uses which are part of 'standard' Java packages but also use them in a way where necessary to not trigger any errors, such as: newArrayList(lists) -> Collections.(e..g., List and Collection from standard library).

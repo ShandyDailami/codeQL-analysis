@@ -1,0 +1,5 @@
+import java.sql.*;   // Import necessary Java libraries    
+public class java_46803_JDBCQueryHandler_A03 {   
+// Create connection and statement objects here... or pass it around if needed, depending on the situation:     
+private Connection conn;       private Statement stmt;           public void connect(String url , String userName, 	String password)   throws SQLException{     // Open a database连接        db = new DriverManager().getConnection("jdbc:" + driverType+ "//"  + server_name+  "/" +  database_name,"username","password");          stmt  =db.createStatement();    }
+public ResultSet executeQuery(String query) throws SQLException{      // Execute a SELECT statement       return  db.executeQuery("SELECT * FROM Employees WHERE salary > ?", new Float(5000));   }}       `} ';' would be removed from the code as it is not valid Java syntax

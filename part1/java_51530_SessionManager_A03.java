@@ -1,0 +1,9 @@
+// package declarations start from the class java_51530_SessionManager_A03 or at least one level up, followed by imports if necessary (e.g., "import javax..")  
+package com.example; // make sure to match your packages in real application code    
+    public interface UserRepository extends JpaRepository<UserEntity, Long> { } 
+// Spring Security uses the Authentication object and a provider of credentials for authentication/authorization requests (e.g., database or LDAP)  
+public class MyAuthenticationProvider implements AuthenticationProvider{     
+private final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();    // password encryption    
+@Autowired private UserRepository userRepo;  @Override public Authentication authenticate(Authentication authentication){         if (authentication.getCredentials() == null) { return null;}        String username = authentication.getName();          Optional<UserEntity> optionalUser =  this.userRepo .findByUsernameOptional((String) authentication.getPrincipal()); 
+    // Checking password equality is done in the following way:   UserDetails user = (UserDetails)aContext.getAuthentication().getPrincipal() ; return encoder.matches(password, user.getPassword()) ? new SecurityUser(user):null;      }     catch (Exception e){ throw new RuntimeException("Cannot authenticate "+ authentication);}}   
+   // SpringSecurity uses the AuthenticationManager to provide a centralized place for handling all of these things - not shown here but is generally used in its setAuthenticationProviders method.  This example also doesn't use UserDetails services or loadUserByUsername, it only demonstrates injection and security related operations with specific libraries like Spring Security

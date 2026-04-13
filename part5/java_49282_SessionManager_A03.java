@@ -1,0 +1,9 @@
+import javax.security.auth.Subject;
+//... import other necessary classes if needed, but do note you only need them to start with 'javax.' in their name for simplicity ...
+
+public class java_49282_SessionManager_A03 { // we'll use this as our session manager interface 
+    private static int activeSessions = 0;  
+    
+	public void openSession() throws Exception{// assuming that the method is safe and does not accept any parameters. We can add more error handling here if needed...      	
+        System.out.println("Opening new Session " + (++activeSessions)); // logging only for simplicity, in a real world scenario we would use some form of tracking system to log sessions opened by our application users ... 		
+	}   			  									     	     	   	 	       								    	       }                          .                              ......                            .....                        `.

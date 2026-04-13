@@ -1,0 +1,7 @@
+import java.net.*;  // Import the necessary classes for socket and server functionality here...
+public class java_49439_SocketServer_A01 {   /* Start your program by creating an object of this main method */
+    public static void main(String[] args) throws Exception{    
+        ServerSocket welcomeSocket = new ServerSocket(8189);  // create a server that listens on port number 67 and waits for client to connect. It returns the socket it was bound with, as well an InetAddress of whoever made this connection...   /* Create your own exception handling if you want */
+        while (true) {    
+            Socket connectionSocket = welcomeSocket.accept();    // accepts a new incoming request from client – waits until the server gets one to start processing it..      }       for(;;) is used as an infinite loop so that socket can listen continuously and accept more clients */   /* Create your own exception handling if you want, eh? just catch block will do. Make sure this while ends with a '}' or some form of statement termination*/
+            PrintWriter out = new PrintWriter(connectionSocket.getOutputStream(), true);  // Get the output stream from socket... it's used for sending messages back to client ...       }        welcomeSocket.close();     /* Close your server when you are done with all clients */   }}

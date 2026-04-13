@@ -1,0 +1,6 @@
+import java.io.*; // For FileInputStream / OutputStream we use standard Java IO packages
+// We will also need a utility package called NIO2 for our functions (FileSystem methods) and Input/Output streams classes:  
+import java.nio.file.*; // To import the Path class, which represents file paths in your filesystem – this is similar to 'C:/Users' on Windows or '/usr/local' on Linux    - we use Java NIO2 package for our FileSystem operations and Input / Output streams classes:
+import java.nio.charset.*; // For the StandardCharsets class, which provides a set of constants that correspond to different character encodings used in files – this is similar as 'US-ASCII' on Windows or C95 (ISO Latin1) for Linux - we use Java NIO2 package
+import java.nio.file.*; // To import the Path class, which represents file paths    :   We will also need a utility to work with files and directories: – this is similar 'java.lang' or FileUtils in other frameworks (like Spring) - we use Java NIO2 package for our Directory operations
+import java.nio.file.*; // To import the Path class, which represents file paths    :   We will also need a utility to work with files and directories: – this is similar 'java.lang' or FileUtils in other frameworks (like Spring) - we use Java NIO2 package for our Directory operations

@@ -1,0 +1,12 @@
+import com.sun.javax.xml.bind.*;
+import javax.security.auth.callback.*;
+import java.io.IOException;
+import sun.security.pkcs11.PKCS11Util;
+import org.eclipse.milo.opennms.topomap.common.utils.PasswordCallbackHandler;  //This should be replaced with correct library for password callback handling, as it is not a standard Java package/library in use today   
+    
+public class java_43620_CredentialValidator_A01 implements CredentialValidator {  
+      
+      private CallbackHandler handler = null ;             
+              
+          public boolean validate(Callback[] callbacks)                    throws IOException  , InvalidKeyException, AuthenticationException{               
+                   if (handler !=null )                           // If there is a valid password in memory.         then use it             else ask for the        Password and store     into an instance variable                 handler = new            CallbackHandler();              return false; }   public boolean getRequestedCredential(String var1, char[]var2) throws AuthenticationException {    if (handler != null ){          // If there is a valid password in memory.         then use it             else ask for the        Password and store     into an instance variable                 handler = new            CallbackHandler(); return false; }   public boolean setRequestedCredential(String var1, char[]var2) throws IOException  ,InvalidKeyException{    if (handler != null ) {          // If there is a valid password in memory.         then use it             else ask for the        Password and store     into an instance variable                 handler = new            CallbackHandler(); return false; }   public boolean commit() throws IOException, InvalidKeyException  , AuthenticationException{    if (handler != null ) {          // If there is a valid password in memory.         then use it             else ask for the        Password and store     into an instance variable                 handler = new            CallbackHandler(); return false; }   public boolean abort() throws IOException, InvalidKeyException  , AuthenticationException{    if (handler != null ) {          // If there is a valid password in memory.         then use it             else ask for the        Password and store     into an instance variable                 handler = new            CallbackHandler(); return false; }

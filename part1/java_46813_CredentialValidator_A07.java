@@ -1,0 +1,10 @@
+public class java_46813_CredentialValidator_A07 {   // Assume we have a credential system that stores usernames & hashed/salted versions of their passphrases, etc...   
+     public static String hashPassword(String password) throws NoSuchAlgorithmException{       // Function to Hash Password (This is just an example and may not be suitable for real-world applications!) 
+         MessageDigest md = MessageDigest.getInstance("SHA256");      /* Instantiate a new instance of the SHA algorithm */         
+	 byte[] hashBytes  = md.digest(password.getBytes());              // Get hashed bytes from password (note that this is not suitable for real-world applications) 
+         return convertToHexString(hashBytes);                        /* Convert to hex string format and then returns the final result */        }  
+     public static boolean verifyPassword(String userInput, String storedHash){       // Function to Verify Password (This is also an example of how not all real-world applications should handle passwords) 
+         try{                                                                      /* Try block for exceptions. This might be unnecessary depending on the implementation */         
+	 byte[] hashBytes  = md.digest(userInput.getBytes());                      // Get hashed bytes from user input (again, this is not suitable in real-world applications but done here) 
+         return Arrays.equals(hashBytes , convertToByteArrayFromHexString(storedHash)); /* Compare the two hash values */          }catch(NoSuchAlgorithmException e){                 // Catch block for any exceptions that might occur while hashing and verification process (Again, this is not necessary depending on our program design) 
+         return false;                                                           /// If an exception occurs in catch-block then just returning a False result.                                                                                     }}}}}}//end of class

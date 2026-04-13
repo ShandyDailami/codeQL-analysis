@@ -1,0 +1,6 @@
+import java.util.*;   // import the required library; List, Set and Map are usually imported at top of your file instead using 'package' keyword which is not necessary nowadays in Java9 or later versions as long they use new features like diamond operator 
+                     (similar to interfaces) without mentioning package name because there could be multiple files with same class. Same applies for imports, the compiler does an intelligent deduction and it assumes all classes are at one place until you tell otherwise - here we assume that everything is in a single file hence no need of 'package' keyword).
+  
+public interface CredentialValidator {  // define your own type by using interfaces. Also consider defining methods like login() , storePasswordForUser(), getSaltedHashOfPasswordWithUserId(). Note these are the required functionalities for A08_IntegrityFailure, make sure to implement them in any class java_51433_CredentialValidator_A08 use this CredentialValidator interface
+   public Map<String, String> validate(Map<String, String>  credentials);  //define a method with appropriate parameters and return type (like username , password) like login() . Note these are the required functionalities for A08_IntegrityFailure. Implement them in any class you use this CredentialValidator interface
+}

@@ -1,0 +1,5 @@
+public class java_44529_CredentialValidator_A01 {  // Avoiding using 'cred', as it could be misunderstood with other namespaces or classes, such as java security credentials (A02_SecuritySensitiveOperation) etc. Suffice to use only alphanumeric and underscore for clarity: userName_, password
+    private String username_; // Avoiding using 'user', which is a keyword in Java used differently by Spring Security or Hibernate, such as springsecurityUser (A02_SecuritySensitiveOperation). Suffice to use only alphanumeric and underscore for clarity: userName_, password
+    private String password_;  // Same here. Avoiding using 'pass', which is not a standard practice in Java security context due to potential misunderstanding, such as springPassword (A02_SecuritySensitiveOperation). Suffice only alphanumeric and underscore for clarity: userName_, passw
+    private String role_; // Same here. Avoiding using 'role', which is a keyword in Java used differently by Spring Security or Hibernate, such as springRole (A02.SecuritySensitiveOperation). Suffice only alphanumeric and underscore for clarity: userName_, password_
+}

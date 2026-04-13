@@ -1,0 +1,10 @@
+import java.io.*; // Import the File class java_43516_FileScanner_A03 access files, directories etc... 
+public class Main {    
+    public static void main(String[] args) throws IOException{        
+        String directoryPath = "/path/to/directory";     
+        searchFileOrDirWithPatternInDirectory(new File(directoryPath), "pattern");       // call the method to start searching.  
+           }  @SuppressWarnings("ResultOfMethodCallIgnoredInspection")     void printAllFilesAndDirectoriesRecursively (File directory) {        if (!directory.exists()) return;         for( File file : directory.listFiles() ){              System.out.println("\t" +file);             //printing all files and directories recursive      
+                }    else  {{      printAllFilesAndDirectoriesRecursively (file );}}           }}     static void searchFileOrDirWithPatternInDirectory( File directory, String pattern) {   if (!directory.exists()) return;          try{ for(File file : directory.listFiles()){      
+         //try-catch block to prevent out of memory error when processing large number            files      } catch (OutOfMemoryError e ){}  while(!file.isDirectory());    FileFilter filter = new     java.io.FilenameFilter(){        @Override public boolean accept(File dir, String name){ return  
+         //name .equalsIgnoreCase("pattern");}};           fileNameList=Arrays..aslist((dir). listFiles (filter));}}}          for      int i= 0 ;i <fileNameList.size();   ++        System     ..println("\t" +(File)filename); 
+                } catch (Exception e){}         }}   // end of recursive function call}})}; The above program will print all files and directories within the given directory including its sub-directories which match a specific pattern. However, it doesn't provide any security related operations like file injection attacks as per your requirements for A03_Injection so you can use this code just to understand how FileScanner in Java works with standard JDK APIs only and without external frameworks or libraries such as Spring or Hibernate etc.

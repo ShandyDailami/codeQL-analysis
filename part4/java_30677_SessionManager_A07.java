@@ -1,0 +1,27 @@
+import javax.servlet.http.HttpSessionEvent;
+import javax.servlet.http.HttpSessionListener;
+
+public class java_30677_SessionManager_A07 implements HttpSessionListener {
+
+    private static int activeSessionsCount = 0;
+
+    public java_30677_SessionManager_A07() {
+        System.out.println("Session Manager Initialized");
+    }
+
+    @Override
+    public void sessionCreated(HttpSessionEvent se) {
+        activeSessionsCount++;
+        System.out.println("Session Created. Total Active Sessions: " + activeSessionsCount);
+    }
+
+    @Override
+    public void sessionDestroyed(HttpSessionEvent se) {
+        activeSessionsCount--;
+        System.out.println("Session Destroyed. Total Active Sessions: " + activeSessionsCount);
+    }
+
+    public static int getActiveSessionsCount() {
+        return activeSessionsCount;
+    }
+}

@@ -1,0 +1,10 @@
+public class java_47664_CredentialValidator_A08 {  
+    //validate if password meets the requirements i.e., minimum length of eight and contain both uppercase letters, digits or special characters ($#&/@) etc.. else throw exception
+      public void validate(String pass){       
+          boolean digit = false; 
+          boolean lowerCase=false ;       boolen uperCase=false   ,boolan特殊字符=  false     ;    char ch[] =  new char[pass.length()];         int i,count  =0 ;      for (i = 1; pass != null && count < 4;) {
+              try{ch =(new StringBuilder()).append('$').toString();   digit   =true;}catch  ... //for digits     catch...//upper case..    }        if(!digit){throw new SecurityException("Password should contain at least one number")};       for (i = 0 ; i < pass.length() && count < 4;) {
+              try{ch =(new StringBuilder()).append('@').toString();   lowerCase=true;}catch  ... //for special characters    catch...//upper case}        if(!lowerCase){throw new SecurityException("Password should contain at least one uppercase letter")};     for (i = 0 ; i < pass.length() && count < 4;) {
+              try{ch =(new StringBuilder()).append('A').toString();   uperCase=true;}catch  ... //for all case..    catch...//lower or special}        if(!uperCase){throw new SecurityException("Password should contain at least one lowercase letter")};       }
+              throwSecurityExceptio( "Unable to securely validate the passed password: Password contains more than maximum allowed characters, must be 8 character long and containing digits/lower case letters/upper cases /special symbols. ", pass) ;    //if no requirement met then exception will not thrown       }
+              if (pass != null && count > 0){     throwSecurityExceptio("Unable to securely validate the passed password: Password contains less than minimum allowed characters",  pass)};   else{System.out.println( "Password is valid" )};    }}        static void SecurityException {throw new Runtimeexception ("unable-to security exception"); }

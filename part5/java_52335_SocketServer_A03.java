@@ -1,0 +1,7 @@
+import java.io.*;   // Import InputStream, OutputStream classes here...   
+import java.net.*;     // Include Socket class java_52335_SocketServer_A03 the net package (standard library)..      
+public class Server {        
+private static int port = 8107;      // Define a constant for server's listening Port          private boolean running = true ;  public void run() throws Exception{   while(running){ try new ServerSocket(port).accept().new BufferedReader (in ).readLine();    Socket socket= it.getAcceptedSocket();
+OutputStream out_stream;       //Create an output stream for the client...      InputStream input = null ;  if ((input==socket.getInputStream())){     System.out.println("Client connected"); } catch(Exception ex){} try {   OutputStream out= socket . getOutputStream ();    PrintWriter writer =  new PrintWriter (out ,true );      
+writer.println ("Server: Message received from client.");  //Send response to the server...      if ((input==socket.getInputStream())){     System.exit(0) } catch(Exception ex){}         try { socket .close() ;    out_stream = null;}catch (IOException e1 ) {}
+}}   public static void main(String args[]  throws Exception                  // Main method here...      Server server =  new Service();       while ((running))server.run () }     }}`;

@@ -1,0 +1,8 @@
+import java.security.*;
+import javax.security.auth.*;
+
+public class java_43196_CredentialValidator_A01 implements GenericFilter {  // Filter interface from JSA, must implement one or more methods (filter()...) to be used with container like WebServer and Servlet Container(servlets).  
+     public void doFilter(Request request, Response response) throws IOException{    // This method will get called every time a client sends an HTTP Request.  It should set the appropriate headers for this request if necessary (like setting Content-Type or authentication info in authorization header), and then call chain next filter to process it as actual service was requested by user on server side
+         try{   // Authenticate User Here, Let's assume we are using username/password validation  here. Replace with your own logic if required:    	         	 	     		      			   	        }catch(AuthenticationException e){       									     	    throw new Failure("User not authenticated",e);}
+         // You can also implement custom rules, but this is a complex topic and it's out of the scope here.  Here we are just checking user authentication status:    		         	 	     	   }catch(AuthenticationException e){       									     	    throw new Failure("User not authenticated",e);}
+    // If all good, continue to next filter in chain using this method... (doFilter()...)  ... else go into catch block and handle the error as you want.	   }catch(IOException ex) {    			        e2 = new Failure("Exception while handling request",ex);      throw e2;}}

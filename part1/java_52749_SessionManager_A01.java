@@ -1,0 +1,9 @@
+import sun.security.util.Password; // Import Password utility from Sun Security Utilities package to convert string password into hashed one for storage or comparison in database (it uses SHA-256 algorithm)
+// import classes required here... like java's builtin ones, external packages and so on 
+import javax.naming.*; // JNDI related operations are used when creating a Context object as well to interact with JavaNamingService from Sun based libraries (like using NamedContext in above example). You can use these classes or methods if required for your project's security handling, but not necessary here unless there is some specific requirement.
+import java.sql.*; // Database related operations are done through this package and its sub-packages like PreparedStatement etc., 
+// import javax.*; packages to interact with JavaNamingService from Sun based libraries (like using NamedContext in above example). You can use these classes or methods if required for your project's database handling, but not necessary here unless there is some specific requirement.  
+import java.util.*; // Use of utilities and collections like ArrayList etc., 
+// import javax.*; packages to interact with JavaNamingService from Sun based libraries (like using NamedContext in above example). You can use these classes or methods if required for your project's security handling, but not necessary here unless there is some specific requirement.  
+import java.security.*; // Security related operations are done through this package and its sub-packages like MessageDigest etc., 
+// import javax.*; packages to interact with JavaNamingService from Sun based libraries (like using NamedContext in above example). You can use these classes or methods if required for your project's security handling, but not necessary here unless there is some specific requirement.

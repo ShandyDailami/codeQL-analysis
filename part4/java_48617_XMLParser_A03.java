@@ -1,0 +1,18 @@
+import javax.xml.parsers.*;
+// import org.w3c.dom.Document; // Uncomment this if you want to use the Document object created from parsing an XML file, instead of using JAXP's DOM API directly like below...   
+public class java_48617_XMLParser_A03 { 
+     public static void main(String[] args) throws ParserConfigurationException, SAXException{  
+         //Step1: Create a factory for the parser. The following line is not only creating but also configuring it with correct validation schema (to protect against external attacks).   
+          DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance(); 
+           dbFactory.setValidating(true);  
+         //Step2: Use this factory to create a new document builder which can parse the input source of your XML file ...    
+            DocumentBuilder dBuilder =  dbFactory.newDocumentBuilder();   
+          /* Step3a & step4 : Create an instance for parsing and build DOM tree from any given xml string or files... */  //Uncomment this to use a document created by parser instead, not used here  
+         // parse inputXML file as Document object ...     ddoc =dBuilder.parse(inputFile);    return;      }             private static void sanitizeAndDumpDocument (Node node) {          /* Step5: This is just for demonstration purposes only to dump the parsed DOM tree into a string */           Element elem=node.getParentNode().getElementSibling();  
+         // Print out each child of this parent Node in turn...     do{printOut(elem);  }while (false) ;    };      private static void printOut(Element node){          /* Step6: This is just for demonstration purposes only to dump the parsed DOM tree into a string */       System.out.println("Starting Child Element");        
+        // Print out each child of this parent Node in turn...     do{printChildrenRecursive((Node)node, 0); }while (false)};      };   private static void printChildrenRecursive(final Node node , final int indentation){          /* Step7: This is just for demonstration purposes only to dump the parsed DOM tree into a string */           if (!Objects.equals(null,(Node)node)) {
+         // Print out each child of this parent (after spaces), recursively...     do{printChildrenRecursive(( Node ) node .getFirstChild(), indentation + 1);}while (( false).equals(_obj_[i]));}};      }    public static void main(String[] args) throws ParserConfigurationException, SAXException {          
+         // Test our new parser by parsing and dumping a small xml file...     DocumentBuilderFactory dbFactory = 
+        Builder factory =   DomBuilder.newInstance();  String inputFile="src/myfile"; parseAndDumpDocument(factory ,inputFile); } private static void parseAndDumpDocument (final Node node) throws ParserConfigurationException, SAXException {     // ... Step2a & step3: Create an instance for parsing and build DOM tree from any given xml string or files...  
+        DocumentBuilder dbuilder = factory.newDocumentBuilder();    /* Uncomment below to use a document created by parser instead of above line */  Element elem=(Element)node; printOut((Node)_obj_[i]);return;}     // ... Step5: This is just for demonstration purposes only, not used here...  
+        }}}`         private static void main (String [] args){          /* Uncomment this to use a document created by parser instead of above lines */  DocumentBuilderFactory dbFact= Dombuilder.newInstance(); string inputfile = "myFile"; parseAndDumpDocument(dbFactor,input file);}

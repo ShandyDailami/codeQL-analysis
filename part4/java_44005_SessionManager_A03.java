@@ -1,0 +1,17 @@
+import java.util.*;   // Importing built in ArrayList class java_44005_SessionManager_A03 'Java' library so that Set can be used along with it, instead of using separate classes as Stack and Queue (as standard libraries).
+
+public abstract class SessionManager {     // Declaring a Abstract Class for the session manager 
+    private static Map<UUID, String> sessions = new HashMap<>();   // Storing user IDs to UUID mapping in an 'Hashmap' data structure. Key: UserID Value : Generated Unique Token/Session Id (as SessionId) and storing it into a map called Sessions
+    private static Set<UUID> validUsers =  new HashSet<>();  /* In this set, we store the user IDs of whom session tokens have been issued */   // Declaring another 'Hashset' for our users. This will ensure no two sessions are opened by same (valid) User at a time
+    
+    public static String startSession(UUID id){                     // Method to create new Session 
+        if(! validUsers.contains(id)){                              /* If the user is not present in "Valid Users" set, then we consider this session as Invalid */  
+            sessions.put(id , UUID.randomUUID().toString());      / Then generate a random unique token and put it into our 'sessions' map with User ID (as SessionId) being its key 
+                                                             // Assigning new Generated Unique Token/Session Id to the user    */       
+            validUsers.add(id);                                    /* Add this session id in "Valid Users" set*/     }   /* If it is already present then we consider as Invalid Session and throw an exception or return error message * 
+       //throw new Exception("User Already logged In");                You can handle such cases according to your project requirement like logging the user out before trying login again etc. */    else {          /* Else this session will be considered invalid since User is already Logged in*/      }   return UUID.randomUUID().toString(); 
+       //return "Invalid Session";                               In case of Invalid sessions it should throw an exception or mention that on UI side and handle accordingly with appropriate project requirement */     };    public static void endSession(String sessionId){           /* Method to close the current User's Sessions*/      if(!sessionExists(sessionId)){          // If Session does not exist, then return error message.
+            System.out.println("Invalid/Not Logged In");   } else {                                  /*** Close a user’s session by erasing his token from all the sessions and validUsers set */    UUID uuid = getUUIDfromSession(sessionId);  //Fetching UserID (as Sessionid)
+            System.out.println("Ended Session of: "+uuid );   /* End Sessions for this user*/        }     Set<Map.Entry<UUID, String>> entries =  sessions.entrySet();    Iterator<Map.Entry<UUID,String>> iterator =entries .iterator(); 
+            while (iterator.hasNext()) {                              // Looping through all session and validating if the current Session token matches with it */         Map.Entry<?, ?> pair =  iterator.next();   UUID uuid2  =pair.getKey();     /* Fetching UserID from sessions*/   
+            System.out.println("Ended All Sessions of: "+uuid2 );      //Print all End Session users  */};});

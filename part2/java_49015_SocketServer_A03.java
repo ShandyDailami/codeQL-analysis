@@ -1,0 +1,6 @@
+import java.io.*;
+import java.net.*;
+
+public class java_49015_SocketServer_A03 {  // Class name is self explanatory, starting with 'Secure' makes it a secure example ;)   .// Server socket listener thread   
+       public static void main(String[] args){     Runtime.getRuntime().addShutdownHook(new Thread()      { @Override                  public               void run(){try{if((ServerSocketThread)!=null &&                     (ServerSocketThread).isAlive()){(ServerSocketThread).interrupt();        ((ServerSocketThread).stop();)}catch{}finally {} Server.closeFilesAndExit();} }}); 
+       private static ServerSocket server;     Socket sock;    DataInputStream inFromClient,inLenient;   byte[] bytes=new                     byte[1024];         String userInput ="";      int readBytes = 0 ;             try{server   = new                    ServerSocket(6789);            System.out .println("Server listening on port 6789");while((read     &lt;= 5)){sock= server      `enter code here `    .accept();System   out     ``\nAccepted connection from: ' + sock                 :getInetAddress().toString());inFromClient = new DataInputStream(sock. getInputStream ()); System  .....

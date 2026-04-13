@@ -1,0 +1,9 @@
+import java.util.*;   // For ArrayList and HashMap data types, used for List<T> & Map <K, T> 
+public class java_46856_SessionManager_A08 {   
+     private static final long SESSION_TIMEOUT = 5 * 60 * 1000;      public interface OperationStatus {}      
+        
+        protected Map<String, Object> sessionMap = new HashMap<>();   // Stores the sessions. Key is UserId (User A) and Value in Session object(s).         
+           private List <OperationStatus>  logList=new ArrayList  < > () ;  public static final OperationStatus SUCCESS =  new SuccessOp() , FAILURE =    new FailureOp();        class   Op implements OperationStatus {}       Class     Successop extends op implemens     
+         // the other operation.. e.g., if you have another user B, add a entry in session map under UserB id with success or failure object as its value for ‘login’ and 'logout' operations respectively:    void startSession (String name) {   Object old =sessionMap .put(name , new Sessionobjec t());         if ((old != null))     System.out
+         ​​​        ...// handle expiry of session here, for example by deleting it from the map ‘setTimeout’ will be called after a user is logged in or out and remove them (from sessionsMap)    }   void endSession(String name){       Object old =session Map .remove. if
+         ​​​        ...// handle integrity failure ie., different session has been ended, not the previous one here – just delete from map     "}public class Sessionobjec t {…..constructor and getter methods.... }`    // The other user's sessions are stored in this object. UserA’s log is recorded as SuccessOp for 'login'.

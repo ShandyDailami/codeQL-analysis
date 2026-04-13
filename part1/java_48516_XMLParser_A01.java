@@ -1,0 +1,6 @@
+import org.xml.sax.*;
+import javax.xml.parsers.*;
+public class java_48516_XMLParser_A01 {  
+    public static void main(String[] args) throws ParserConfigurationException, SAXException{    	      		     	       	     	 	   			       									  } @Override	public boolean handleStartElement ( String uri , String localName , String qName )throws SAXException	{ return false;	}	@Override
+public boolean handleEndElement(String uri, String localName, String qName) throws SAXException {return true;}	  		     	 	   			       									  } @Override	public void characters ( char [] ch, int start,int length )throws SAXException	{}     public static class MyHandler implements ContentHandler{    private boolean inElement;
+private Stack<String> stack ;public StringBuilder stringBuffer = new StringBuilder();@Override  	      		     	   			       									  } @Override	public void setDocumentLocator(Locator loc) throws SAXException {this.stack=new     Stack<>();}    public static class MyHandler implements ContentHandler{ .......

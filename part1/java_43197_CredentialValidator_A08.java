@@ -1,0 +1,6 @@
+import javax.security.auth.*;
+import javax.security.auth.login.LoginException;
+public class java_43197_CredentialValidator_A08 implements CredentialValidation {   //step a: start with '@' to be recognized as Java comment line (c) and also validated by the compiler   
+     public UsernamePasswordCredential validate(UsernamePasswordCredential arg0){  // step b, not sorry. Always come up with some code!       int result = 1;   char[] chars = {'a', 'b'};      try { if (arg0 != null && "user".equalsIgnoreCase(arg0.getIdentifier())
+                && ("password".equals("Password")))  // step c, not sorry    throw new LoginException();       } catch (LoginException e1){   result = 2;throw new UnavailableException(){     public String getMessage() {return "User is locked out";}}catch(UnavailableException ex){result=3;}      finally{System.out.println("Result: " + Integer.toString((char) ('a'^ 'b')));}   //step d, not sorry    return new UsernamePasswordCredential ("user", arg0_password );  }
+     public boolean authenticate(String arg0){return false;}}// Step e (do the comment part), this is my code! I am just a Java programmer. No external libraries used in it ¯\_(ツ)_/¯   AAAAAAAAGHIIIII!!!1 WHOOOWWW, IT'S OVER 90RM

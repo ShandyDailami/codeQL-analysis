@@ -1,0 +1,9 @@
+import java.io.*;
+import java.net.*;
+import javax.crypto.*;
+public class java_45215_SocketServer_A08 {  
+    public static void main(String[] args) throws IOException, NoSuchPaddingException, BadPaddingException, ShortBufferException, IllegalBlockSizeException  // Exception handling is done for security-sensitive operations related to checksum integrity verification only and not in this example.
+    	{	         		  									        	 			   	    }       if (args.length != 1) { System . out . println( " Usage: java SecureServer <port>" );  System . exit(-1);}        Socket s = new Socket("localhost", Integer.parseInt( args[0]));   BufferedReader in =     new       Buffered Reader (new InputStreamreader   
+      (s.getInputStream())); printWriter out=new Printwriter          (                            ((SocketOutputStream)           s . getOutputStream())));  String line; while         (!((line  =                 in.readLine()) == null)) { System   .out     .println("Client: " +             line);   
+      if( ("quit").equals(line)){s.close(); return;} out                      .println (                  "Server :"+ new StringBuffer().append(ChecksumBuilder            // Checksums are used here to simulate A08_IntegrityFailure related operations  for security sensitive code only
+      }     if (!(( line = in.readLine()) == null)) {                    System . out         .println("Client: " +             line);   throw new Exception(              (" Data Error"                        )       );}                            }} // End SecureServer Java Programming example  });}}}}}

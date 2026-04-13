@@ -1,0 +1,9 @@
+public class java_43299_CredentialValidator_A01 {  // Start of "Program" block for Java syntax, also follows conventions as per above instructions (a to e).
+    private String correctPassword;   // Instance variable with a set password which can be changed or reset based on your needs. For instance it could point towards the real user's secret key in production-level codebase etc... 
+    
+                                    /* In case you don’t have any specific logic to check for access control (A01_BrokenAccessControl), then below is a simple example of how password can be set and validated */    //End Instruction. The comment has been removed from this block by your request, so it won't run as the code will not compile now
+                                    /*  public static void main(String[] args) {  
+                                        CredentialValidator cv = new CredentialValidator();      
+                                         */cv.setPassword("correctpassword");      // setting password for validation    (* this line removed, only purpose is to set the instance variable*)        }*/     /* End of Main block  *//* In case you want a different logic just modify "checkCredentials" method accordingly in real production scenario  
+                                        public boolean checkPassword(String entered_password){ // function that checks if password matches pre-set one. (In A01 Broken Access Control context, it could involve something like hashing/encryption and comparing the result with stored hash or encrypted values)  */        return cv.correctPassword.equalsIgnoreCase(entered_password);
+                                    }      // End of CredentialValidator class block     (f). The comment above this line will be removed by your request, so it won't compile now   /*End Instruction*/    (* This program is a very basic example and should not use for real production level code.*)  */

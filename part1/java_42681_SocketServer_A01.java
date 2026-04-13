@@ -1,0 +1,10 @@
+import java.io.*;
+import java.net.*;
+
+public class java_42681_SocketServer_A01 {  
+    public static void main(String args[]) throws Exception{    	      
+         ServerSocket serverSock = new ServerSocket(8192); //port number is arbitrary, should be a port you choose and available for use 		
+          while (true){               			       									     	     	 	       	   								   }    private void listenForClients(){	     Socket clientSock;             try{         serverSocket = new ServerSocket(8192);                  System.out.println("Waiting for connection on port 8192");              while ((clientSock=serverSocket.accept()) != null){        OutputStream outToClient;                           BufferedWriter out =new BufferedWriter (                   	 				 new         	OutputStreamWriter( client Sock .getOutputStream(), "UTF-                    			    8"));
+                         System.out.println("Connection accepted from: \n" +  		 					   	     	   						      ClientAddr );                            inToServer=                      out               	.createBufferedReader (new InputStreamreader                      	        				       clientSock .getInputStream());              String userInput, response;        while((userinput =                             i.readLine()) != null){
+                                    }                         System.out    … "Exiting.");                   close(client s   ock);    						} catch (IOException e) {e.printStackTrace();}					}}catch(){}            public static void main(){ServerSocket serverSock;try{server S      tatic Server socket("8192") ;         System..println          ("Waiting for connection on port 
+                            }                   this(“myport”) :   .startt               (new Thread () {public                    @override publicvoid run()                  {}     //do nothing...           })            new SocketServer();} catch        Exception e    ){e.printStackTrace}}}}, exception){                 }}

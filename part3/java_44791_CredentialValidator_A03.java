@@ -1,0 +1,16 @@
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.*;
+import java.sql.*;   //database connectivity library for Java   
+
+public class java_44791_CredentialValidator_A03 extends HttpServlet {     #1#$%^&*()@_+~`|}{[]:;"<>?,. /This line is to declare a new servlet  named "Login"// This should always be the first thing in your server.java file when extending any other classes
+{    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {   #2#^&*()@_+~`|}{[]:;"<>?,. /This line declares a method to handle HTTP POST requests.  A common practice is using the 'doGet' and then writing an equivalent in post
+{         String username = request.getParameter("username");    #3#^&*()@_+~`|}{[]:;"<>?,. /This line gets information from a form field named "usename"  (which should be the correct name for your login page) which is sent via post
+         String password = request.getParameter("password");    #4#^&*()@_+~`|}{[]:;"<>?,. /This line gets information from a form field named "passowrd" (which should also be the correct name for your login page) which is sent via post
+          //In this point you may want to add more security measures like using parameterized queries, prepared statements or connection pooling.  However since we are not dealing with real database operations here and only reading from a form field it can just use normal string comparisons as in the next lines of code    #5#^&*()@_+~`|}{[]:;"<>?,. /
+         if (username != null && username.equals("admin") && password !=null  &&password . equals ("password")) {   // comparing with hard coded string which can be easily changed in future to use a real database operation or even prepared statements and parameters...    #6#^&*()@_+~`|}{[]:;"<>?,. /
+              response.sendRedirect("successfulLogin");  // if both values match, then redirects user to 'welcome' page   This is a very simple example it should not be used in real world scenario because password comparison can easily by cracked (e.g., using rainbow tables) and you don’t want users knowing that they are logged into the system
+         } else { // if values do not match then redirects to 'failure' page  #7#^&*()@_+~`|}{[]:;"<>?,. /This line will show an error message, and provide a link for them too. For this purpose we use the response object
+              throw new ServletException("Invalid username or password"); //this exception can be shown to user on form page “failure” by calling request . setAttribute ("errorString" , e); below line is just example how you should do it, in real world scenario there would need more complex logic   #8#^&*()@_+~`|}{[]:;"<>?,. /
+         } //end of if condition    – a very simple and minimalist way to handle login. In future use parameterized queries or prepared statements for SQL operations, better error handling mechanism can be used as well   #9#^&*()@_+~`|}{[]:;"<>?,. /
+} //end of doPost method    – end line above should not affect your code any further. It is the standard way to setup a servlet in java and it does exactly what we have done here, handling post requests only if they include 'username' parameter with value equal to "admin" as well '.

@@ -1,0 +1,14 @@
+import java.io.*; // Import necessary Java libraries 
+   import javax.xml.parsers.*;// Include the required XML parser library    
+    public class java_48270_XMLParser_A08 {          
+        private static final String xmlFile = "sample.xml";         // Your input file name     
+       BufferedReader reader;          // Declare a buffering Reader 
+   DocumentBuilderFactory factory;            
+	Document document;             			// A model of the XML structure                 			    
+	public void parseXML() throws ParserConfigurationException, IOException {   									        	 	   	     	       	                                                                                   }               private String getFileAsString(final File file)throws IOException{  return new String(Files.readAllBytes(file.toPath()));}       public static boolean isValidXmlFileName(final String filename){ try          
+      {new XmlParser().parse("sample_schema.xml", "UTF-8");   // Try to parse the XML file using a custom schema (optional)  return true;}            catch        	         	       	 		    	   	     	}             public static void main(){             									   			 try          
+      {new XmlParserExample().parseXML();}                     }                           Catch                   Exception e               Logger.getLogger(XmlParseExamPe..);   ErrorReporting.logError("Failed to parse the XML file",e,Levels.)  // End of catch block and error handler   
+      {}}// close try-catch for logging errors                       if ((isValidXmlFileName))              System .outprintln ("The xml filename is valid");          else                	System  	. outprint ( "Invalid or missing Xml file name "); }                    	}									  Catch           Exception e                    Logger.getLogger(..); ErrorReporting,e logError("File not found",
+      e; // End of catch block and error handler    private void parseXML() throws ParserConfigurationException {DocumentBuilderFactory factory = DocumentBuilderFactory .newInstance ( ); Factory  = 	 	factory 			.setIgnoringElementContentWhitespace(true); }                  try                    document = 	   					          
+      				     DTDProcessor dtp  =         			     	      factor.parseFromFile("sample_schema_.xml");         return;}}catch                            e              System . outprint ( "Failed to parse the XML file" +e  );}}}                    	}   Catch                   Exception    ErrorReporting,..logError( .....); }}
+Note: This is a very basic solution for an A08_IntegrityFailure example. In your own code you should handle exceptions and check if files exist before trying to read them (A12). Also this xml schema file ("sample_schema_.xml") does not actually exists or it has been tampered with, so be sure of using a real one that is free from any security issues!

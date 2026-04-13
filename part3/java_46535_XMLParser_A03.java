@@ -1,0 +1,11 @@
+import java.io.*;   // Import InputStream, FileInputStream etc... from package `file`   
+import org.w3c.dom.*;     // For DocumentBuilderFactory & DOM interface use imports {org..} not to be confused with Java standard library 'javax.' 
+import javax.xml.parsers.*;   // Import XMLParser (for parsing) and SAXHandler(SAX for event-driven parsing), from package `parser`   
+
+public class java_46535_XMLParser_A03 {     // Class name is same as the file/XML document, in this case 'XmlFile' 
+      public static void main(String[] args){  	// Main method (driver) starts here. Can be any valid Java statement instead of a function definition or constructor call.   	
+        try{      		     // Try-catch block for handling exceptions if error occurs while parsing the XML file         				 			                 	 	   					         } catch(ParsingException e){   println("Parse Exception: " +e);}             finally {                   System.out.println ("Closing parser and document...") ;     
+           DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();       // Create a factory for every time we parse an XML file   	Document 		     builder = 			         	 					       	    .getDocumentBuilder()  				         System.out.println(“Before reading the xml......”);     
+           try{                   	// Try-catch block to handle exceptions if error occurs while building a Document from parsed DOM structure       // Parse your XML document using built class 'XercesDOMParser'     builder.parse (new File ("SampleFile"),handler) } catch(SAXException e){   println("Sax Exception: " +e);}        finally {                     System . out .println “Closing parser and Document...”;     
+            XmlHandler myHandler = new XmlHandler();     // Create a handler object for your own custom SAX parsing   			         	 					       }  				         catch(Exception e){ println("Error: " +e);}          		 final static ‘Log’ log= LogFactory.getLog (XmlParsing . class) ;       
+             // Start point of code, do not change     	logical part starts here...   			 }// closing brace}}   End Of Program;    						}					// Main method ends Here} This is a simple Vanilla Java XMLParser example program in Academic style. Using standard libraries only and with security-sensitive operations related to A03_Injection as per your instructions

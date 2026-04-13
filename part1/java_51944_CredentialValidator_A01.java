@@ -1,0 +1,11 @@
+public class java_51944_CredentialValidator_A01 {   // Start of '``'s code block.   
+     public static boolean validate(String username, String password) throws Exception{        // Method definition starts here without a comment as requested in the instructions above ('`').      
+         if (username == null || password==null){  // Checks for presence and not empty of input fields to avoid BAC.   
+             throw new IllegalArgumentException("Username or Password is blank.");  
+        }         
+                
+		if( !passwordIsStrongEnoughToSucceedLoginAttemptsBasedOnSecurityStrength()) { // Checks for strong password requirements in A01_BrokenAccessControl. 
+            throw new Exception("Password does not meet the minimum required strength");   			  		    					     		}          				      	   															         }                                                                                  						                       });              };                        if (username == null ||password==null){thrownewIllegalArgumentExceoption(“Username or password is blank.”);}};
+  // End of '``'s code block and here it begins ('`')   for creating the main program to test CredentialValidator, you can use any text editor like Notepad (Windows) / TextEdit (Mac), Eclipse/ IntelliJ IDEA or Java IDE. The following lines are used in conjunction with this example:
+  public class Main {    // Start of '``'s code block ('`').  			    		public static void main(String[] args){try{validate("test", "password");}catch (Exception e){(e).printStackTrace();}};						}					// End ''./};});
+  try, if not successful throw the exception. If so print out error message and exit program using System's errror method or suitable logging mechanism such as log4j in Java EE environment with detailed debug information (if any). The above example is for testing purposes only but serves to showcase how a custom CredentialValidator can be created, while also adhering strictly within the given constraints.

@@ -1,0 +1,9 @@
+import javax.security.auth.*;
+import java.io.*;  // for FileScanner class java_48289_FileScanner_A01 named "File" in this example (to avoid confusion with default file scan)      
+       
+public final class A01_BrokenAccessControl {  
+    public static void main(final String[] arguments){              System.out.println("Attempting to access the resource...");             authenticateUser();      }         private static boolean authenticationTest(){          // simple test of username/password combinations           return ( "user".equals(java.util.Base64.getDecoder().decode("cmVtbWluQHN0cmluZw==")) && 
+    ("passwd123".equals((new String(java.util.Base64.getDecoder().decode("YWRtaW4="), "UTF-8"))));   }       static {           if (authenticationTest()){             System.out.println("\nAccess granted to user!");          // Add real access logic here, e.g., open files or perform network requests        
+        try(FileScanner scan = new FileScanner(".")){              for (;;){                     ScanningLoop(); }           }} else {                  PrintWriter out=new PrintWriter (System.out,true);             // if authentication fails inform the user          out.println("\nAccess denied!"); System.exit(-1) ;}      
+        private static void ScanningLoop(){              try{                         File file = scan .nextFile();                 openAndRead(file)} catch  (#   uncheck/ignore){}}           @Override public String toString ( ) { return "\t"+getClass().getName() + "[name= "   + 
+        name  +"]";} } private static void printUsage(){          System.out.println("\n\u2193 USAGE: \r\n java A01_BrokenAccessControl");     }}  // end of class definition

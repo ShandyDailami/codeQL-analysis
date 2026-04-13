@@ -1,0 +1,11 @@
+import java.sql.*;   // Import the necessary classes and packages   
+class java_51906_JDBCQueryHandler_A03 {    
+// Create a connection object, which represents your database Connection     
+Connection conn = null;         public void connectToDatabase() throws SQLException{          if (conn ==null){             String url="jdbc:mysql://localhost/test";           // URL of MySQL server   
+            String userName= "root";     int passwordLength= 1024 ;  char[] password = new   char[passwordLength];      SecureRandom sr =  new SecureRandom();       for (int i = 0;i < passwordLength;i++) {        // Generating a random password         
+            password [i]=sr.nextInt(127); }     String completePassword =new   String(password);           System.out.println("Connecting to database..." + url );         conn =  DriverManager.getConnection (url,userName,"complete_password");      }}  // Call the method that sets up a connection if it has not already been set      
+public void disconnectFromDatabase(){          try {            if(conn != null){              conn .close();           } System.out.println("Disconnected from database.");} catch (SQLException e)   {e.printStackTrace() ;}}  public static void main(String[] args )throws SQLException{ // Calling the method to establish a connection if not already established      
+        new JDBCQueryHandler().connectToDatabase();         try    {           PreparedStatement pstmt = conn .prepareStatement("INSERT INTO EMPLOYEE (LASTNAME, FIRSTNAME, AGE) VALUES(?, ? ,?)");          // Setting the values for each parameter in a SQL query. 
+        int i = 1;   String lastname= "Sony";String firstName ="Steve", age  =   25+ "";      pstmt .setInt (i++, Integer.parseInt(age));pstmt. setString (i ++ ,firstName );     //Setting the values for each parameter in a SQL query      
+        if(!lastname.equals("") && ! firstName. equals (" ")  ) {         lastname = "Sony" ;   age = 25;      pstmt .setInt( i++, Integer.parseInt (age));pstmt     // Setting the values for each parameter in a SQL query      
+        }           if (!lastname.equals("") && !firstName. equals (" ") ) {          lastname = "Steele" ;   age = 30;      pstmt .setInt( i ++, Integer

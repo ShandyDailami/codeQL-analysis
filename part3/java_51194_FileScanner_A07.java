@@ -1,0 +1,10 @@
+import java.io.*; // Importing necessary classes from package 1 to use buffer functions etc., and important for Input/Output Streams  
+public final class java_51194_FileScanner_A07 {    
+    public static void main(final String[] args) throws IOException{        
+        File file = new File(".");         
+            if (file.isDirectory())           // Checking whether the passed object is a directory or not  ... it won't be but we will use this to prevent any potential null point exceptions    
+                System.out.println( "Scanning all files and subdirectories for main directory: " + file);      else      
+            return;         // If no such Directory, Exit the Program           File[] listOfFiles = dirFileObject .listFiles();   if (null ==    listOfFiles) {System.out..println("No Files or Directories present in this location");return;}          for(int i = 0 ;i < listOfFiles.length;+++){                  // Iterating through each file object...
+                            File currentFile = listOfFiles[i];  if (currentFile .isHidden()) {System..println("Skipping HIDDEN FILE: " +    name);continue;}              try(InputStream inStream= new BufferedReader   (.readlines())){      // Attempting to open the file...
+                                    FileScanner scan =new     java.io.FileScann‌er (inStram)  ;scan .useDelimiter("\\Z");// using delimiters for long files          while(scn -   doesn't match "exit") {String line;    if((line=s       can.nextLine()) != null){           // Checking file content...            
+                                        System..println ("LINE:  -->" +    +      Line);}}}}}catch (IOException e) {}            }          }}              catch(NoSuchElementException nsee   ){System ..println("An error occurred. Please try again.");}         return;    // If no such file, Exit the Program

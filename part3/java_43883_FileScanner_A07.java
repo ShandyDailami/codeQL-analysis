@@ -1,0 +1,8 @@
+import java.io.*; // for FileScanner class java_43883_FileScanner_A07 (no need to use other libraries)
+
+public class A07_AuthFailure {  
+    public static void main(String[] args){  /* begin of program */
+        try{    			// attempt block starts here     		/* no exception handling needed in this case, but it's a good practice*/          			                                                                            if (args.length != 1) throw new Exception("Usage: A07_AuthFailure <directory>"); // check the correct usage of program
+         File dir =new java.io.File( args[ 0 ]);     /* get file or directory specified by command line argument */   			                                                                                if (dir == null || !dir.exists()) throw new Exception("Directory does not exist: " +args [ 0]); // check that the given path exists
+         FileScanner scan =newFileToucher().scan( dir , true ); /* get a file or directory scannert using default implementation */     			                                                                            for (java.io.File e : Objects .requireNonNull( scan ).listFiles() ){  // loop through all files and directories in the specified path         
+             if(!e.canRead()) throw new Exception("Permission denied to read: " + e);   /* check that we have permission for reading */     			                                                                            System.out.println ( e );   						// print file or directory name	      		  }     // end of program                                                      };

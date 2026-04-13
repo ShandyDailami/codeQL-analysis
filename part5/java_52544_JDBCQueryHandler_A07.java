@@ -1,0 +1,10 @@
+import java.sql.*;   // Import necessary Java classes  for JDBC to work   
+
+public class java_52544_JDBCQueryHandler_A07 {     // Begin with a public generic method named "VanillaJdbc" that takes no parameters and returns void type (void)     
+      
+	public static boolean authenticateUser(String username, String password){   // We will be using the concept of Authentication for this example.  This function is going to return true if authentication succeeds else it false   
+		// Assume we have a table named "Users" with fields: 'username' and 'password'.     The below SQL query checks whether given username & password match in our system DB or not  		
+	        String selectQuery = "SELECT * FROM Users WHERE USERNAME='" + username + "' AND PASSWORD= '"+ password +"'";    // Build a SELECT statement for authentication 			
+	        						// Assuming the table 'Users' has two fields: usename, and passward.  		    				      						          	}     	    catch (SQLException se){            System.out.println("Failed to execute SQL query in authenticateUser() method.");    return false; }  // Catch exception if any happens during execution of queries       
+				// Close the resources regardless whether they are successful or not          try {     dbConnection.close();   } catch (SQLException e) {}     		        		return true;}// If everything is fine, then we can proceed further without worrying about what will happen next       if there's no exception caught during execution of above SQL query/operations 
+				// This means the username & password match our records. Thus return True (Authentication Successful)      }else {     System.out.println("User not found in system");    // If user is unable to find, then print a message and hence returns False for Authentication Failure      	return false;  }}

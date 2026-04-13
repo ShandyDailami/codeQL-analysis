@@ -1,0 +1,5 @@
+import javax.xml.*;
+import java.io.*;
+public class java_51532_XMLParser_A03 {  
+    public static void main(String[] args) throws ParserConfigurationException{    	        		       			            	        }`enter code here `@Override protected XMLReader createXMLReader()throws SAXException, IOException 					{return DocumentBuilderFactory .newInstance().newDocumentBuilder();}public String parseFileAndReturnContent (){InputStream inputStream=getClass.forName("samplexmlData").getResourceAsStream("/inputfile");`enter code here `parse(null)XMLReader reader;StringBuffer sf = new Stringbuffer()
+    try{reader  = create XML Reader(() ->new ParsingErrorHandler(),  (char[] )-> 0);	    	    Document doc=   readDoc((InputStreamEvent)- > inputStream, reader)}catch{}finally {try {} catch(Exception e){}}return sf.toString();}`enter code here `public static void main() throws ParserConfigurationExceptio  N{new Main().parseFileAndReturnContent()); }

@@ -1,0 +1,22 @@
+import java.sql.*;
+
+public class java_46721_SessionManager_A03 {
+    private static final String url = "jdbc:mysql://localhost/test"; //change to your database details here if necessary; replace with actual db name and location of tables User, Sessions etc...  
+    private static final String user = "root";  // change it according to your mysql username. If you are using another DBMS just update the credentials accordingly.. For MySQL root is used by default until a new one has been set up in above line for other types use correct details like 'username', ''password'', etc...
+    private static final String password = "root";  // change it according to your mysql user's current pwd. If you are using another DBMS just update the credentials accordingly.. For MySQL root is used by default until a new one has been set up in above line for other types use correct details like 'username', ''password'', etc...
+    
+    public static void main(String[] args) {  // This will be your entry point to our program.  
+        Connection conn = null;     
+         try{                   
+             System.out.println("Connecting Database...");                        
+                 Class.forName('com.mysql.cj.jdbc.Driver');                /* Step A */   
+                          //Step B - create the connection using your credentials here and db name   --done above as per requirements     for mysql JDBC driver, you may have to do some additional configurations based on DBMS type  e.g., if it's MS SQL Server use 'com.microsoft.sqlserver.jdbc.SQLServerDriver', same applies when using different types of databases   
+                 conn = DriverManager.getConnection(url , user, password);   // Step C - get the connection here and assign values to your credentials as per requirement         --done above for mysql JDBC driver         
+                          System.out.println("Connected successfully");             /* connected */               Connection con=conn;  conn = DriverManager.getConnection(url , user, password);     // Step A again   }catch (Exception e){System..e;}//Step D - If any exception occurs while executing the steps then handle it here     
+        try {                   
+            String q1  ="create table Users (username varchar(255) primary key not null ,password  varchaar(255), email varChar(20))";   //step A - create your tables according to requirement --done as per requirements. The above is just a simple example
+            String q  ="create table Sessions (session_id int auto increment primary key not null,username varchar(255)not  null , logintime datetime ) ";// step B- Create the sessions' information in Users and Session tables by changing as per requirement. The above is just a simple example
+            con.createStatement().executeUpdate (q1); //step A   -- done here, creates your table according to requirements     For mysql JDBC Driver use suitable create statement for MySQL  e..g., if it's MS SQL Server then execute update will be different    } catch(Exception ex) {System...ex;}//Step D - If any exception occurs while executing the steps this part handles them in above code.
+            con.createStatement().executeUpdate (q); //step B -- done here, creates your session's information by changing as per requirement     For mysql JDBC Driver use suitable create statement for MySQL  e..g., if it’S MS SQL Server then execute update will be different   }catch(Exception ex){System...ex;}//Step D - If any exception occurs this part handles them in above code.
+        }} catch (SQLException se) {se.printStackTrace();}         // Step C- Finally, close the connection here if it's not done manually  e..g., for MS SQL Server then use `con .close()` method and also we need to handle all possible exceptions that may occur while executing our code (For MySQL JDBC Driver).
+        finally {            try{ con.close();}catch(SQLException se){se.printStackTrace(); }     //Step D- If any exception occurs this part handles them in above catch block   }}  Here we are closing the connection to database when it is no longer required, ensuring that resources used by DB operations can be freed up and reduces memory leaks for applications using JDBC or similar.

@@ -1,0 +1,5 @@
+import java.sql.*;
+public class java_46820_SessionManager_A03 {   // Start with 'Session Manager'. This will be our manager object for database session 
+    private static final String DB_URL = "jdbc:mysql://localhost/test";     // The URL or the server where your MySQL is located, replace it accordingly based on real location. Also consider replacing user and password appropriately as well (A02_Injection).   'user' should be replaced with a secure version of itself which we will inject via code injection
+    private static final String USER = "root";     // Replace this username according to your MySQL setup, also make sure it is safe for the security context.  Also consider replacing password appropriately as well (A02_Injection).   'password' should be replaced with a secure version of itself which we will inject via code injection
+    private static final String PASSWORD = "root";     // Replace this root here too, make sure it is safe for the security context.  Also consider replacing password appropriately as well (A02

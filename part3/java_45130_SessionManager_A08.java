@@ -1,0 +1,10 @@
+import java.util.*; // Importing basic Java classes like list etc..  
+class java_45130_SessionManager_A08 {    
+    private Map<String, String> sessions;// Using HashMap to store session data with userId as key and token(session ID) as value      
+      public class UserSession{            
+          static int count = 0 ;  // Count of active users.               
+           final long creationTime = System.currentTimeMillis();    private String id;   getID() { return this.id;}     setID(){this.count++; Random rand=new Random( );         this.id=  Integer.toHexString((rand .nextInt())); } 
+      public UserSession( ) {sessions = new HashMap< >();}       // Constructor for session manager, initializes sessions map        void addSessionID(User u) {          String id=u.getID() ;           if (!checkDuplicateByUUIDAndTimeDifferenceLessThan10sec())  
+      }  throw new IllegalArgumentException("Illegal Argument");    // Check to see the UUID is not already in use and time difference less than one second     void checkSessionExpired(String sessionID){           if (sessions.containsValue && (!sessionExistsInMapByUUIDOrTimeDifferenceLessThan10sec)) {            throw new IllegalArgumentException("Illegal Argument"); }
+   public boolean SessionManagerExceptionTest()  throws Exception{    // Here're all the methods related to exception handling     private static final long EXPIRY_TIME = 6 * (24*3);      set<String> sessionUUIDs =new HashSet<>();        try {               addSessionID(user1)} catch (IllegalArgumentException e) 
+   {}         //try with resources          finally{            }     if (!sessionExistsInMapByNameAndTimeDifferenceLessThan24h){              throw new IllegalStateException("Not Enough Resources");}        return true;}}}}}                  The code above contains a session manager that handles sessions for users and checks the integrity of their data.

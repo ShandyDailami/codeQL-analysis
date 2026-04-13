@@ -1,0 +1,24 @@
+public class java_52635_CredentialValidator_A07 implements CredentialValidator {  
+    // Method that validates if username or passwords are correct. If not, it returns null otherwise a new Authentication object with user information and authorities to add in authentication process (this depends on the type of credentials you're using). 
+     public Authentication validate(Authentication auth) throws BadCredentialsException {  
+        String presentedPassword = auth.getCredentials().toString(); // gets password from Credential instance returned by getName() method if user name and pass were provided in constructor - for example: new UsernamePasswordCredentials("user", "password")  else it could return null, indicating that the authentication failed
+        String presentedUsername = auth.getName();    //gets username/name from Credential instance returned by getName() method if user name and pass were provided in constructor - for example: new UsernamePasswordCredentials("user", "password")  else it could return null, indicating that the authentication failed
+        
+        String expectedUsername = (String) auth.getDetails().get("expected_username"); // this is supposed to be user input from your application or another source of truth for username and password comparison - not present in getName() method when you call validate(..).  If it's null, then the authentication failed
+        String expectedPassword = (String) auth.getDetails().get("expected_password"); // same as above but to expect a password instead of user name/id for username and pass comparison - not present in getName() method when you call validate(..).  If it's null, then the authentication failed
+        
+        if (presentedUsername == null || presentedPassword == null) {   // checking whether both fields are filled or one is empty. In reality these checks should be performed on real objects of Credential not strings directly in string comparison like this because we do have details from user input to compare with the ones stored within authentication object
+            throw new BadCredentialsException("Username and password must be provided"); // if any field are missing, then throws an exception indicating that they cannot authenticate.  In a real world scenario you would want more specific exceptions for each kind of failures (e.g., UsernameNotFoundExcpetion or PasswordNotMatchingException).
+        }  
+        
+       /* Compare expected password with the hashed version stored in database, not actually compared to plain text */  //This should be done on a server side by using BCrypt and Spring's bcrypt matchers. This is just an example showing how it can go for demonstration purposes only   
+        if (!BCrypt.checkpw(presentedPassword , expectedPassword)) {   // compares the presented password to actual stored hashed version of pass, returns true or false accordingly  - not a comparison with plain text; in reality you would want use BCrypt's implementation for this purpose     
+            throw new BadCredentialsException("Invalid credentials");    // throws exception if invalid login details are provided. In real world scenario more specific exceptions should be used here based on the kind of failure (e.g., wrongPasswordExcpetion or accountDisabled). 
+        }  
+        
+       /* If password matches and username found, then return new authentication object */    // creates a new Authentication token with user information attached to it if everything is correct - not used in this example but for future reference. In real world scenario you would want an actual implementation here which uses Spring's UserDetailsService or something similar
+        Auth auth = (Auth) presentedUsername;  /* assumes your Credential has a name and credentials */   // creates new Authentication token with user information attached to it if everything is correct - not used in this example but for future reference. In real world scenario you would want an actual implementation here which uses Spring's UserDetailsService or something similar
+        return auth;    /* returns the authenticated authentication object, filled as above */  // creates new Authentication token with user information attached to it if everything is correct - not used in this example but for future reference. In real world scenario you would want an actual implementation here which uses Spring's UserDetailsService or something similar
+        throw null;    /* never actually called because we are returning a fully formed object after checking credentials */  // returns immediately and does nothing, only serves as placeholder until all the exception handling has been done. In real world scenario you would want to have more specific exceptions for each kind of failures (e.g., UsernameNotFoundExcpetion or PasswordNotMatchingException).
+    }  
+}

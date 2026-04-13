@@ -1,0 +1,4 @@
+import javax.servlet.*;  // For ServletException and Request / Response objects  
+import java.io.IOException;   
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;    
+public class java_47133_SessionManager_A07 extends BasicAuthenticationFilter {      private static final String AUTHORIZATION_HEADER = "Authorization";  @Override protected boolean supports(Class<?> authentication) { return true;}    // Does not require session creation, use default credentials only  	@Override public void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException{	super.doFilterInternal(request,response,chain);}

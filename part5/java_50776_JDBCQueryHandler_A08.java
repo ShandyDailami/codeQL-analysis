@@ -1,0 +1,7 @@
+import java.sql.*;
+public class java_50776_JDBCQueryHandler_A08 {
+    public static final String JDBC_URL = "jdbc:mysql://localhost/test";  //replace with your database URL and name, e.g., jdbc:mysql://dbserver01:3306/databaseName;username=root password=  etc...
+     private Connection connection ;    Statement stmt  = null   ;      ResultSet rs =null          ;        String query =  "SELECT * FROM Users WHERE ID NOT IN ( SELECT UserID from Transactions) "; //replace with your sql Query  e.g., select*from users where id not in(select userid form transactions )
+    public void connect() {   try{ connection= DriverManager .getConnection("jdbc:mysql://localhost/test","root", "password"); }catch (SQLException e) {}            catch (ClassNotFoundException cnfe){}  finally     { //close resources here if needed }}//end of method}}
+    public void executeQuery(){   try{ stmt = connection.createStatement(); rs=stmt .executeQuery(query); while (rs.next()) {" + "User ID is: " +  rs.getString("ID")};  } catch (SQLException se) {se.printStackTrace()}        //handling SQL exception  
+    public void closeConnection(){ try{ if(stmt != null ) stmt .close(); connection.close();}catch (SQLException se){}}//end of method }}

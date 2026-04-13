@@ -1,0 +1,11 @@
+import io.jsonwebtoken.*;
+import java.security.Key;  
+import java.util.Date; 
+class java_51851_CredentialValidator_A03 {    // class name should be descriptive of what it does or the purpose to create this credential validator object for, e.g., 'ValidateUserCredentials' not just 'VC'. This is a simple implementation and may need modification based on specific needs  
+private Key secretKey;  // Assuming we are using HMAC512 which means it uses an asymmetric algorithm (rsa) with the same key size, or symmetric algorithms like AES-encrypted passwords. You can replace these depending upon your use case   
+public CredentialValidator(String jwtSecret){   /* JWT secret should be kept a safe place and not shared */  // Initialization of our SecretKey based on given string        private static final long EXPIRATION_TIME = 86400;      public void init(int daysExpiration) {   
+EXPIRATION_TIME = daysExpiration * 24 * 60 * 60 * 1000;       secretKey  = MacAlgorithm.HMAC512(jwtSecret.getBytes()).generateKey();   } public boolean validateToken(String jws) {    /* JWS is a String with the token */
+try{            // Decoding and verifying our Token           SignatureVerifier signVerifier = new SignatureVerifier() {};        byte[] signature =jws.split("\\.")[2];         System.out.println(signature);       return true;      }catch (Exception e){          /* This will catch any exception that is not an instance of JWTExpiredException */
+System.out.print ("Signature did NOT verify");return false;}   }} // end CredentialValidator class  The code above should be wrapped within a main method to run as below: public static void main(String[] args){       String jwtSecret = "my-jwt-secret";          long currentTimeMillis= System.currentTimeMillis();        Date now =  new     java.util . gregorian calendar   (int year ,  int month,    in day) ;
+ CredentialValidator credVal  =new      CredentialValidator( jwtSecret);       //initialize token validator with secret key and date of expiration time for the first user credentials        credval. init((int )EXPIRATION_TIME / ( 24 *60*1));
+String JWT="";     /* Here we are using a placeholder string which is to be replaced by actual token*/      //create your jwt here and assign it in the line above          credVal. validateToken(JWt);}}   }}

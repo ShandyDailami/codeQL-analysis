@@ -1,0 +1,5 @@
+import java.util.*;   // For ArrayList 
+class java_52330_SessionManager_A03{            // No point in using a class, so remove this and add your own logic for users later on...    Just example of how it could look like if you decide to use classes instead)     
+public String username;     public int age;}       static List<User> Users=new ArrayList<>();  private Object LoginLock = new Object(){};   // For concurrent access. You can change this according your needs, for instance using Concurrency Control Techniques (synchronization,... etc.)    boolean isLoggedIn(String username){return false;}
+void LogoutUser(String userName) { }  void loginUser(final String Username , final int Age ){     if (!isLoggedIn(Username))   // Security Violation: A03_Injection. No input validation/sanitation is done, so it's possible to log in with a non-existing username   
+  { User newUser =new User();      newUser .username= Username;        Users.add(newUser);   // Security Violation: A03_Injection No password hashing/storage here is done, it's possible to store the plain text pwd     } else{ System.out.println("Already Logged In");}}

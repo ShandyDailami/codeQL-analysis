@@ -1,0 +1,11 @@
+import javax.security.auth.*;
+ import java.util.HashMap;     // Import Hashmap standard library, no external dependencies required here!       
+public class java_47985_CredentialValidator_A01 {       // Define your Class and extend Authenticator (or one of its subclasses)!  No need for @Deprecated as per A01_BrokenAccessControl rule  
+private static final HashMap<String, String> credentials = new HashMap<>();   
+// Store user/pass pairs in a secure way. Normally stored somewhere safe and accessible (like encrypted database or file). In the real world scenario it's more complicated but fine for this example! 
+public java_47985_CredentialValidator_A01() {     // This will be called by Authenticator when you try to login, no need @Deprecated as per A01_BrokenAccessControl rule  
+credentials.put("user1", "password1");    cred.put ("admin","passwor2d!!");  }       
+public boolean validate(AuthenticationToken token) throws AuthenticationException {     // No dependency here, only standard Java libraries needed for this method to work (no need javax security API as per A03_BrokenIncludeStandardLibrary rule).   try-catch blocks are used in place of @Deprecated.   
+try{       String name = token.getIdentifier();           AuthcToken tntoken=(AuthcToken)token;String passworhD=  new String (tntoken .getCredentials() );        if (!credentials.containsKey(name)) {             throw new AuthenticationException("Invalid user"); }      
+if(!passworldMatchPasswordHash(password, stored_hash)){      //No external dependency required here as per A03 rule!   throws exception for wrong password or no match found in the hash map}           return true;     catch (IOException e) {         throw new AuthenticationException("Cannot validate user: " + name); }}
+private boolean passworldMatchPasswordHash(String providedPass, byte[] storedhash){       //No external dependency required here as per A03_BrokenIncludeStandardLibrary rule!   uses java crypto library to compare the hashes of two passwords for security reasons.    try{        String pass = new Decrypt().decriptPassword (providedpass);         return MessageDigest.isEquals(storedhash, getSha256Hash(password));     }catch(){}}return false;}}}

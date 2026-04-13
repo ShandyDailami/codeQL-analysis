@@ -1,0 +1,5 @@
+import java.sql.*;    // for all Java SQL related operations  
+public class java_52312_SessionManager_A08 { 
+     Connection conn = null;          // Declare the variable of type connection, so you can use methods like openConnection() and executeQuery(), etc., on it later       
+      String url="jdbc:mysql://localhost/mydatabase";    // database URL        
+       Statement stmt =null ; 	   	//Statement is used to perform SQL operations such as SELECT , INSERT, UPDATE & DELETE.  	    		           			            	       	 									                   								         						       	     ​              							                                        a                         f                      g                   h                  i                        j                     k              l                 m           n         o      p                q       rs    s  t                          u                       vw xyz

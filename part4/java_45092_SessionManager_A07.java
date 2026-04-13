@@ -1,0 +1,19 @@
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import javax.transaction.Transactional;     // for @Transactional annotation and Spring's transaction management  
+   
+@Repository 
+public class java_45092_SessionManager_A07 {         
+     
+        private SessionFactory sessionFactory ;      	// Hibernate the place to store our objects in database using a SQL interface .	Holds reference of Database.	 	    //it will inject by spring container via @Autowired annotation  				    (because it is Spring managed bean) 		    1st parameter - type, and Second Parameter-name
+     
+        public java_45092_SessionManager_A07(SessionFactory sessionFactory) {            	//Spring Container calls this constructor to initialize the object. It sets references for other beans .This has dependency injection feature in spring ie..its called Constructor Injection 	   //it will inject by Spring container via @Autowired annotation
+        	this.sessionFactory = sessionFactory;			   			//this line is saying, "Create AuthFailureDAO with this Sessionfactory"     (because it's a dependency)      	 	   1st parameter - type , and Second Parameter-name   //it will inject by Spring container via @Autowired annotation
+        } 									     	                 			//constructor injection is not recommended in spring unless you have to. It can lead into problems    (because it's making a new AuthFailureDAO every time)     if the constructor fails due dependency issues   //it will inject by Spring container via @Autowired annotation
+        			      					     				         		//Spring Container calls this method when object is being created.  It sets references for other beans .This has Dependency Injection feature in spring ie..its called Setter injection    (because it's not recommended to use setters because they can lead into problems and create a new AuthFailureDAO every time)
+     	@Transactional			            		//this is equivalent of @Autowired, used for methods that should be executed within the context of an active transaction. It means any method annotated with this will start inside a managed Transaction    //it uses Spring's native features  and its recommended way to manage database transactions
+        public void saveAuthFailure(AuthenticationFailureEvent authFail){	  	//Spring @Transactional mechanism saves us from dealing directly in the SQL commands. It automatically manages transaction, rollback etc., for our custom object by using Hibernate utility methods provided Spring’s SessionFactory  //it uses hiberndate's sessionfacoty to interact with database
+        	Session currentSession = this.sessionFactory.getCurrentSession();	//Spring provides the getBean() method which allows us access other beans created through @Autowired annotations or using component scanning for annotation based configuration in Spring container   //it uses spring's feature and its recommended way to interact with database
+        	currentSession.save(authFail);					   		    	//Spring JDBC Template methods, it allows us insert into the table through hibernate session  (because we used @Transactional annotation)//this is equivalent of SQL INSERT INTO command in DB by Spring's SessionFactory class  
+        }     				        	         			            //it uses spring’s db context to interact with database and manage transactions. it also includes all the necessary methods for our custom object  (because we used @Transactional annotation). This is a minimalist style program without external frameworks such as Spring or Hibernate

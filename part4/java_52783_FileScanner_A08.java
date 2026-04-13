@@ -1,0 +1,9 @@
+import java.io.*; // Import File I/O utilities and classes for handling streams in Java applications
+import java.nio.file.*; // Paths & Files, necessary to interact with files system including reading directory contents etc...  
+class java_52783_FileScanner_A08 { 
+    public static void main(String[] args) throws IOException{
+        String currentDir = System.getProperty("user.dir");	// Get the path of executing file (location where you run this code from). It can be anywhere, but it's usually 'src/main', or your project root directory for Spring Boot apps etc... 	 	   		    	  				
+        File currentFile = new File(currentDir); // Create a java.io.file instance that represents the file we are interested in (the one our program is currently on). We can provide it with any path, but usually this will be '.' for .java files inside your project root directory or some other specific location
+        System.out.println("Current File: " + currentFile); // Prints out what the file we're interested in looks like (the Java source code)  	 	   		    	  				   			 	       	     					      						     							         									}}}}}}; }} }}); }); }) };
+        if(currentDir.endsWith("/src/main")) { // Check whether current directory is a Spring Boot project location, ie it has '... src/main' in the path (or similar)  				   		    	          					 	   			     	       	 	      */}} else{ return; } FileScanner fileS = new FileScanner(currentFile); // Create and initialize our scan. We only want to read files, not directories or other types of entities
+        System.out.println("Starting reading..." );				   		    	  					 	   			     	       	 	      */}} else { return; } }); }}`};}); }) };}})})))) // Initialize the FileScanner (starts scanning). We pass in our file and a lambda function that will be called for each found item.

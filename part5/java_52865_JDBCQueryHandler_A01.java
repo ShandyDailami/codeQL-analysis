@@ -1,0 +1,14 @@
+import java.sql.*;
+
+public class java_52865_JDBCQueryHandler_A01 {  // A unique example of a Class name in CleanCode style, here it is named 'Vanilla JDBC Query Handler'.  
+    private static final String URL = "jdbc:mysql://localhost/test";     
+    private static final String USERNAME ="root";      
+    private static final String PASSWORD="password";  // Security-sensitive information, should not be hardcoded. Use Environment Variables or User Secret Manager to prevent it from being exposed in version control system etc...  
+    	
+	private Connection connection;         			//JDBC object for connecting database and executing SQL queries   									      			     	   						 	 	     															              //Using static block because we are not planning on doing more operations like setting up the statement or result set. In other words, once it's created this way (using 'static'), JVM will cache these objects for efficiency so they don’t get garbage collected and thus can be reused multiple times with minimal overhead without any significant impact to performance when done correctly
+	private Statement stmt;						//JDBC object representing an SQL statement. 				  	    		   	   	     	 	        //We'll use this as our main means of interacting directly database we will send queries through it via methods below      			                                 								     							                         						           ,,,.,, .
+	private ResultSet rs;						//JDBC object for dealing with result set from the executed SQL statement. 		   	    	   	 	        //It stores data returned by a query and can be manipulated using its own methods            				                                  			      								  							                                                   ,,,.,, .
+	private PreparedStatement pstmt;						//JDBC object that encapsulates an input parameterized SQL statement. 		    	                	   	 	        //Used for sending parameters to a query at run time as well                     in methods below       				                                              								     							                                                ,,,.,, .
+	private String selectQuery = "SELECT USERNAME FROM EMPLOYEE WHERE ID =?";   	//SQL Query 					  		    	                	   	 	        //The question mark (?) will be replaced by actual values from calls to the methods below. This method takes an int parameter and retrieves a user name with that id in database
+	private String insertQuery  = "INSERT INTO EMPLOYEE(ID, USERNAME) VALUES(?, ?)";		//SQL Query 					  		    	   	 	        //Again question mark (?) will be replaced by actual values from calls to the methods below. This method takes two string parameters and it can also optionally take a Date parameter
+			   				      	     							                                                              ,,,.,, .         `

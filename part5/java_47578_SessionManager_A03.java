@@ -1,0 +1,7 @@
+import javax.sql.DataSource;   //Standard Java libraries only, no need for hibernate framework   
+import java.sql.*;             //Oracle SQL JDBC driver jar file will be included in your project path    
+public class java_47578_SessionManager_A03 {     
+private DataSource dataSource ;  /* Dependency Injection */
+// Constructor DI   (no explicit injection, use setter for inject)    public void setDataSource(ConnectionPoolingSingleton cp){this.dataSource=cp;} // no need to do anything here because we will be using constructor dependency inject and not field-based one  , this is the magic of spring
+public java_47578_SessionManager_A03() {         /* Constructor Injection */   dataSource = ConnectionPoolingSingleton.getInstance();}    public interface ConnectionPoolingSingleton{static SingletonInstance instance=new SingletonInstance(); private java_47578_SessionManager_A03(){}} //singletons are not thread-safe and this is the only way to do it, use static inner class
+public  enum SingletonInstance {instance;}   /*Eager Initialization*/ public Connection getConnection() throws SQLException{return dataSource.getConnection();}    }    `       This code will start with `java' without a comment because we are writing Java for J2EE standards (not necessarily syntactically correct).

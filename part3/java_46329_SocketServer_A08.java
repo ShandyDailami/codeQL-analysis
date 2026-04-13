@@ -1,0 +1,3 @@
+script 
+const http = require('http');   // Importing the 'Http' module from NodeJS standard library, it is equivalent with Java’s HttpURLConnection class. It provides methods for creating TCP servers and handling HTTP requests/responses using streams underneath to handle raw socket data (using Buffer) on a network connection
+const net = require('net');    // Importing the 'Net' module from NodeJS standard library, it is equivalent with Java’s Socket class. It allows you create server side TCP sockets for receiving and sending binary or text-based datagram packets in any size using streams underneath to handle raw socket data (using Buffer)

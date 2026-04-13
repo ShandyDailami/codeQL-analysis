@@ -1,0 +1,14 @@
+import java.sql.*;   // Import necessary libraries for JDBC, Connection etc...   
+class java_50098_JDBCQueryHandler_A07 {     // Start of main class       
+public static void main(String[] args)          // Entry point method        
+{     
+// Create a connection to database using the DriverManager          
+try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/testdb", "user1234567890","password"))     {    }       catch(SQLException ex)        // Catch any error that might occur and handle them with the exception block     
+{          System.out.println ("Error in establishing connection :(");  exit(-1)};   try            (Statement stmt = conn.createStatement())             
+           {                  }                     catch(SQLException ex){System.out.printf("%s",ex);exit(-2 );}         // Catch and handle the error for creating statement object     if(!conn.isClosed() ){try             (ResultSet rs=stmt .executeQuery("SELECT * FROM Employees"))              
+           {                          }            catch(SQLException ex){System.out.printf("%s",ex);exit(-3 );}          // Catch and handle the error for executing Query      if(!conn.isClosed() ){try              (ResultSet rs=stmt .executeUpdate("UPDATE Employees SET Salary = 100 WHERE Department = 'Sales'"))               
+           {                              }             catch(SQLException ex){System.out.printf("%s",ex);exit(-4 );}   // Catch and handle the error for executing Update statement  }}    if(!conn.isClosed() ){try              (ResultSet rs=stmt .executeQuery("SELECT * FROM Employees"))              
+           {                          }             catch(SQLException ex){System.out.printf("%s",ex);exit(-5 );}          // Catch and handle the error for executing Query      }}     conn.close();}}    if(!conn !Closed() ){try              (ResultSet rs=stmt .executeQuery("SELECT * FROM Employees"))              
+           {                          }             catch(SQLException ex){System.out.printf("%s",ex);exit(-6 );}          // Catch and handle the error for executing Query  }}   Finally, close connections when we're done with them      try              (ResultSet rs=stmt .executeQuery("SELECT * FROM Employees"))              
+           {                          }             catch(SQLException ex){System.out.printf("%s",ex);exit(-7 );}          // Catch and handle the error for executing Query  }}   print Statement in java if (!conn !Closed() ){try              (ResultSet rs=stmt .executeQuery("SELECT * FROM Employees"))              
+           {                          }             catch(SQLException ex){System.out.printf("%s",ex);exit(-8 );}          // Catch and handle the error for executing Query  }}   print Statement in java}}`

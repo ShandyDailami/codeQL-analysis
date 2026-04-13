@@ -1,0 +1,6 @@
+import java.io.*;  // Input/Output Streams & Buffers Important because they handle binary data easily; e.g., read an image, write a file etc...   
+import java.net.*; // Networking functionalities: socket(), bind() (Server), listen(socket)   and accept(). Socket Connection Management ... 
+    
+public class java_50679_SocketServer_A08 {      public static void main(String[] args){       try{           ServerSocket server = new ServerSocket();         System.out.println("Waiting for client on port: " + Integer.toString(server.getLocalPort()));          Socket connectionToClient =  server.accept();            BufferedReader inFromClient=new BufferedReader (new InputStreamReader 
+    (connectionToClient.getInputStream()));           String userInput;         System.out.println("Connected to client"); while ((userInput = inFromClient .readLine()) != null){     // read from the socket...   } server.close();       connectionToClient.close();             }} catch(IOException e) {e.printStackTrace();} 
+    } System.out.println("Closing down the server"); try{ for (int i = 0; true ;i++){ new VanillaJavaSocketServer().main(null);}}catch (Exception ex){System.err.println(ex.getMessage());}}}

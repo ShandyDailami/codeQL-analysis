@@ -1,0 +1,6 @@
+import javafx.scene.control.*; // Importing for TextFields & PasswordField (for password input)
+    
+public class java_51478_CredentialValidator_A03 {   /* Creates a new public, default-accessible method called main */   
+// The application entry point and the primary driver of our program: 1 line only       ; Exclamation mark is needed to start lines in Java.        //      :         /\* Asterisks are used for comments           *\/     /*/ (comment)   [space]/*(not necessary)/
+    public static void main (String[] args){            System . out                   (. setVisible (1));          }                private TextField usernameInput, passwordInput;             CredentialValidator validator = newCredentials -> { //This anonymous inner class implements the validation logic for a user credentials.
+    public boolean validate (){              String inputUsername  =   this . getText                                   (username Input);         ​String     inputPassword   =     ​​this                                                                         (.getText PasswordInput).charAt(0));                 return        //Returns true if passwords match and false otherwise:                ((input    Username.equals       ("admin")) &&             `

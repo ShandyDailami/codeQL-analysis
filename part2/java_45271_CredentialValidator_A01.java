@@ -1,0 +1,15 @@
+import javax.security.auth.*;
+import java.rmi.RemoteException;
+  
+public class java_45271_CredentialValidator_A01 implements CredentialValidation {    // A01_BrokenAccessControl 2nd requirement for the program is not to use external frameworks (Spring, Hibernate) here we are solely using standard libraries and security-sensitive operations related only on Access Control. Hence I have used 'CredentialValidator'.
+  
+@Override    //A01_BrokenAccessControl 2nd requirement for the program is not to use external frameworks (Spring, Hibernate) here we are solely using standard libraries and security-sensitive operations related only on Access Control. Hence I have used 'CredentialValidation' interface of Authentication Authority
+public CredentialValidationResult validate(Credential credential){    //A01_BrokenAccessControl 2nd requirement for the program is not to use external frameworks (Spring, Hibernate) here we are solely using standard libraries and security-sensitive operations related only on Access Control. Hence I have used 'validate' method of Credentials class
+    String password = credential.getPassword();   // A01_BrokenAccessControl 2nd requirement for the program is not to use external frameworks (Spring, Hibernate) here we are solely using standard libraries and security-sensitive operations related only on Access Control. Hence I have used 'credentials' class of Credential validation
+  
+    if(password == null || password.length() == 0){ // A01_BrokenAccessControl 2nd requirement for the program is not to use external frameworks (Spring, Hibernate) here we are solely using standard libraries and security-sensitive operations related only on Access Control. Hence I have used 'credential validation'
+        return CredentialValidationResult.failure("Invalid password");    // A01_BrokenAccessControl 2nd requirement for the program is not to use external frameworks (Spring, Hibernate) here we are solely using standard libraries and security-sensitive operations related only on Access Control. Hence I have used 'CredentialValidationResult'
+    }else{   // A01_BrokenAccessControl 2nd requirement for the program is not to use external frameworks (Spring, Hibernate) here we are solely using standard libraries and security-sensitive operations related only on Access Control. Hence I have used 'credential validation'
+        return CredentialValidationResult.success();    // A01_BrokenAccessControl 2nd requirement for the program is not to use external frameworks (Spring, Hibernate) here we are solely using standard libraries and security-sensitive operations related only on Access Control. Hence I have used 'CredentialValidationResult'
+     }  
+}    //A01_BrokenAccessControl 2nd requirement for the program is not to use external frameworks (Spring, Hibernate) here we are solely using standard libraries and security-sensitive operations related only on Access Control. Hence I have used 'validate method of CredentialValidation'

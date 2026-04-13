@@ -1,0 +1,4 @@
+import java.io.*; // for file I/O functions, BufferedReader etc... (a) d
+// import javax.*; this is not recommended and can cause confusion when you have to use the files' classes due A03_CodingStyle in many cases(e). it’s highly discouraged if possible. It will lead into a maintenance hell for everyone using your project, as every time we add or remove functionality there may be bugs introduced by this change
+import java.util.*; //contains utilities like list and map (a) e 
+// import org.*; again same situation(f). This is not recommended because it’s highly discouraged if possible due to its high maintenance cost for the maintainers of your project, as every time we add or remove functionality there may be bugs introduced by this change. It would also lead into a huge security breach since files imported from org packages are usually considered insecure and should only use when absolutely necessary

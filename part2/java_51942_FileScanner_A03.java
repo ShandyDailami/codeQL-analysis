@@ -1,0 +1,11 @@
+import java.io.*; // Import the File class java_51942_FileScanner_A03 its subclasses to get file names, directories etc  
+class Main { 
+    public static void main(String[] args) throws IOException{    	
+        String dir = "/path/to/directory";           	// Directory we want scan in      		        
+	    try (FileScanner scnr = new FileInspector().fileScannedRecursively()){   // create a file inspector object   			 									     	 	     	       						    	          }                      {             if(scnr.in.isDirectory()) return;                 		        
+            String absDirPath  = scnr.fileAbsolutized().getCanonicalFile().toString();	// Get absolute path of the directory, then convert to string             									     	 	       						    	          }  catch (Exception ex) {             System.out.println("Error scanning folder" +ex);               return;       
+		    File dirToScan = new File(absDirPath );                // Create a file object from the absolute path                            			  
+            if (!dirToScan.exists())                           		// If directory doesn't exist, exit     									    	 	       	     	    }  print all files in this folder (including subfolders) using their names and paths:          try {    for(File file : dirToScan.listFiles()){        
+                    if (!file.isDirectory())                        // If the element is not a directory, then it's probably one of our target    									     	 	  			 		       }                      else{             System.out.println("Skipping Directory: " + file);              continue;          }}catch (Exception ex){          
+                            println ("Error scanning files"+ex );    return;}                 // catch exception if any error occurs in reading directory    									     	 	  			 		       }         closeable {             scnr.close();       	   	}                     	// finally block for clean up          try{              main(args);          
+                    }}catch (Exception ex){               println ("Error executing"+ex ); return;}    // catch exception if any error occurs in running the program    									     	 	  			 		       }

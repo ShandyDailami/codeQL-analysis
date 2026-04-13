@@ -1,0 +1,5 @@
+import java.io.*;
+ import java.net;
+ implements Runnable {    // Define our server as an instance of Thread so we can run multiple connections at the same time, using threads        }         public static void main(String[] args) throws IOException{             Socket socket = null;}               while (true){                 try  socketserver.accept();
+                  if((socket=serverSocket.accept()) !=  null ) { Thread t  = new thread_for handling this connection;t .start () ; }           }}catch(IOException e1) {} catch(Exception ex}   // Main Method             System.out.println("Server Started at Port "+ port);
+                  Socket socket =null;} while (true){          try { if ((socket=serverSocket.accept()) !=  null ){ Thread t  = new thread_for handling this connection;t .start () ; }  }} catch(IOException e1) {}catch (Exception ex)} System.out.println("Server Started at Port "+ port);

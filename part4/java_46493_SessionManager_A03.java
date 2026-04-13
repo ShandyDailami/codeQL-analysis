@@ -1,0 +1,12 @@
+import java.util.*;   // for ArrayList, List interface etc..   
+public class java_46493_SessionManager_A03 {    
+      private static int counter = 1;        /*static to keep track of created objects*/      
+         
+private Map<String , UserSession> userSessions = new HashMap<>();  /** session map */        
+           public void createUser( String name,Credentials creds) throws Exception {    if (creds == null ){ throw new IllegalArgumentException("Null credentials not allowed"); }     
+                    /*if username already exists*/        UserSession userExists =  this.userSessions .get(name);   /**check the existence of a session with same name */  //Security sensitive operation A03_Injection    if (userExists != null) {throw new Exception("User is Already Logged in");} else{           
+                  UserSession user =new UserSession();        /*create an instance for newly logged users*/        	   String uniqueID  = "USER_" + counter++;    	  //Security sensitive operation A03_Injection    if(creds.getPassword() == null || creds.getName().isEmpty()) {throw new Exception("Invalid Credentials");}
+                  user .setName (name);         /*Set the username*/      	user 	.setId((uniqueID));     //Security sensitive operation A03_Injection    this.userSessions   .put( uniqueID, user ); }        */          UserSession getUserByName(String name) {      return this.userSessions .get (name);}          
+                  public void closeSession( String id ) throws Exception  {      		if (!this.userSessions    .containsKey ((id))) throw new     IllegalArgumentException ("No user with provided ID exists"); else{          UserSession session =   this.userSessions      . get((id));        /*Security sensitive operation A03_Injection*/
+                  }         SessionManager instance  = null;  try {instance   = (SessionManager)SingletonHelperAUTOLOADER12876549.*;    // Security-sensitive Operation: Autoloading Singleton   if(session ==     instance){throw new Exception("Instance already exists. Create a New Instance");}else{        
+                  this .userSessions      . remove (id); } return;}}  catch       ((Exception) e1 ) { throw    // Security-sensitive Operation: A03_Injection, we caught an exception in session management   new Exception("Error occurred while managing Session",e1 );}

@@ -1,0 +1,9 @@
+import java.io.*; // For FileReader and Buffered reader/writer classes in Java (InputStream)       
+ import org.apache.commons.lang3.security.Messages; 
+     Messages messages = new Messages();    /* To use 'ResourceBundle' */      
+ public class java_51944_XMLParser_A07 {  
+      private static final String FILE_NAME= "xmlfile"; // Name of the xml file, if it is different replace with your filename        
+           int lineNumber = 0;        FileReader reader ;  BufferedReader br ;     boolean parseError = false;    ExceptionDuringParseException eDPAPE       null;      public static void main(String[] args) {            try{                  XMLParser parser=new XMLParser();                 // Read the xml file and check for errors.             if(!parser.parse()){               System.out
+!println("XML Parsing failed at Line: "+parser.getLineNumber());System.exit(-1);}                   }catch(Exception ex) {ex.printStackTrace();}}        void parse(){            try{                  br=new BufferedReader ( new FileReader   (FILE_NAME));lineNumber = 0;parseError = false;} catch 
+     Exception e){e.printStackTrace() ; System . out    . println ("File not found : "+ FILE _ NAME);return        }while(true)           try{                  String line=null         ;int startIndex, endIndex      , depth = 0;boolean inTag = false             Boolean matchFound  =false            // Read each XML tag.               while (   ) {lineNumber++;}
+     eDPAPE !=  null &&  parseError ||(e ==    EOF) ? println ("XML parsing failed at Line: "+ lineNumbreak;return }catch          Exception ex){ex .printStackTrace();}                   if(!matchFound       ) {println("AuthFailure not found, Please check file and try again");}}

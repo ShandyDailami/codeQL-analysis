@@ -1,0 +1,24 @@
+import javax.net.ssl.*;
+import java.io.IOException;
+import java.util.Base64;
+
+public class java_49496_SocketServer_A08 {
+    private int port = 8091; // default HTTPS Port 7023 is used by the OS to avoid conflict with existing ports (like HTTP and SMTP) in a non-SSL context, but we can use any available one. The better choice for production environment would be using an open/nonstandard port like `8491`
+    private SSLServerSocket server;  // Server socket listener object  
+    
+	// Constructor to initialize the HTTPServerPortListener with a given initialised HTTP and Secure Port, default being: http -> 7023 & secure->6523 (Open for nonssl contexts) or provide custom ports. e.g `new SSLServer(portNumberHTTPS);`
+    public java_49496_SocketServer_A08() { }  // constructor without parameters uses the system's port numbers, suitable in a NonSSL Context and is recommended by OS but not necessary to call it directly as we use default ones above (7023 & secure->6524).	        		  
+     private String username = "admin";   	// User name for Basic Authentication – It's mandatory. If the server allows anonymous access, this field can be left blank - e.g `new SecureServer(username);`	    // Password (MD5 encrypted)	for HTTPD basic authentication in plain text is also provided here with default being "admin".
+     private String password = getMD5("password");   	// Basic Authentication User's MD5 Encrypted PWD – It’S mandatory, if server allows anonymous access this field can be left blank. e.,g `new SecureServer(username, password);`      // Get the md5 encrypted of "pwd" provided by user for authentication in plain text is also done here with default being 'password'.
+     private String realm = "_secure_realm";   		// This value will be used to make a request. e.,g `new SecureServer(username, password,"MySecuredApplication");`  // Value of the Realm attribute in http-header for Basic Authentication and also as part required by WWW HTTP authentication protocol
+     private String keyStorePassword = "password";  	// Password to be used while initializing keystore & truststore. e.,g `new SecureServer("keystore_pass","truststore_pass");`  // passwords for both keys are also provided here with default being 'password'.
+     private String keyStorePath = "path";			// Path to your .jks file, where the keystore is. e.,g `new SecureServer("keystore",".pem","truststore");`  // path and format of both keys are also provided here with default being 'password'.
+     private String keyAlias = "key";				// Alias for your Key (Private/Public).e, example : new SSLserver(username,"md5_passwd",null);	   this is mandatory if no trusted certificates were used. i.,g `new SecureServer("keystore","truststore");` // Password of the key to be encrypted for HTTPS server in plain text (like 'password') should also provided here with default being "key".
+     
+    public String getMD5(String input) {		// This method will convert a given string into its MD5 equivalent. e.,g `getMd5("input");` // It's used to encrypt the password for Basic Authentication in plain text, with default being "password".  			
+    MessageDigest md;		 	 				       		// Digesting instance that will be responsible of digest algorithm (MD5) and final hashed value is created here. e.,g `md =MessageDigest.getInstance("MD5");` // It's used to encrypt the password for Basic Authentication in plain text, with default being "password".
+    byte[] bytesOfInput = input.getBytes(); 	 			// This line will provide an array of Bytes that is going into our instance md (md). e.,g `bytesOfInput=inputToMD5(“test”);` // It's used to encrypt the password for Basic Authentication in plain text, with default being "password".
+    md.update( bytesOfInput ); 			// This will update your byte array using an existing message digest instance from MessageDigest class and get its finalized output as a new hash value (md). e.,g `newMessage=getMessageInstance("MD5");` // It's used to encrypt the password for Basic Authentication in plain text, with default being "password".
+    byte[] bytesOfMd5Hash = md.digest(); 			// This line will provide a hashed value using our MessageDigests instance and get its finalized output as new hash Value (md). e.,g `newMessage=getMessageInstance("MD5");` // It's used to encrypt the password for Basic Authentication in plain text, with default being "password".
+    return bytesToHex(bytesOfMd5Hash); 				// This line is responsible of getting an MD6 value from our hash and convert it into a hexadecimal representation. e.,g `newMessage=getMessageInstance("MD5");` // It's used to encrypt the password for Basic Authentication in plain text, with default being "password".
+    } 				// end of getMd5 method ...

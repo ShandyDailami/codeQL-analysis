@@ -1,0 +1,9 @@
+import java.util.*;   // Import required packages from Java library in order not only importing but also using other classes (ArrayList etc.) as well..   
+public class java_46661_SessionManager_A08 {     // Define the name of our Class 
+private Map<String, String> sessionMap;      /* A Hashmap to simulate a database*/      
+        private static final int MAX_SIZE = 1024 * 5 ;   /// Maximum capacity for this manager.        
+    public java_46661_SessionManager_A08() {     //Constructor is called when an object of the class (Session Manager) it created            
+            sessionMap = new HashMap<String, String>(MAX_SIZE);      /* Create a Map with our maximum size*/           }   /// Called 'Singleton' pattern. We only allow one instance for all clients       public void addUserSession(String userId , Session sess) {     // Method to Add User session            
+        if (sessionMap != null &&  MAX_SIZE > sessionMap .size())      /* Check map is not full or it has been fully initialized */          /// If Map isn't Full then only add the new Value else throw an exception.              String value = UUID.randomUUID().toString();      
+        sess.setSessionId(value);                                  // Create a Session id using uuid and set in session Object            }   public void removeUserSession (String userid) {     /// Method to Remove User's sessions          if(sessionMap != null &&  MAX_SIZE > sessionMap .size())          
+        sess.setSessionId("");                             // If map is not full or it has been fully initialized then only clear the Session id otherwise throw an exception             }   public boolean containsUserSession (String userid) {     /// Method to check whether a User's Sessions exists            return sessionMap .containsKey(userID); }}

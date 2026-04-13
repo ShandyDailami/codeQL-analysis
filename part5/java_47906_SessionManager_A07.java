@@ -1,0 +1,9 @@
+import java.util.*;   // Importing needed classes from Java Standard Library package: Optional, List etc...   
+class java_47906_SessionManager_A07 {     // Declaring class name as "Session Manager"       
+// Initialization of a Map with keys and values (String username) for session storage      
+private static Map<UUID , String> user_sessions = new HashMap<>();  
+  private final Random random;     
+public SessionManager(){    this.random=new Random() ;}     // Constructor         
+// Method to create a UUID and store it as the key in our map        public synchronized       Optional<UUID>  startSession(String username){           if(!user_sessions.containsKey((username)))      {               user_sessions.put (System.currentTimeMillis(),   random.nextInt() + "_"+ username);                return  null;          }            else{
+// User tries to re-login and gets a sessionID already in use        System.out.println("User has an active Session, please log out first");               UUID uuid = (UUID)user_sessions.get(username).split ("__")[0];                return Optional .ofNullable((uuid)); } 
+}    // End of Class definition      public synchronized     Optional<String> getSessionUserName   ((Optional  < ?- user session id optional= UUID)) {       if(!user_sessions.containsKey(username)){           System.out.println("No Active Session found");               return null; }          else{              // Get username from the given uuid        String  uname = (String)   ((HashMap<?, ?> ) userSessionID).get    ("__" +user_sessions .containsKey(username))      {                   System.out.println("No Active Session found");               return null; }           // Return username if present else throw exception}

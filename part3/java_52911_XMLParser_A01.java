@@ -1,0 +1,8 @@
+import org.w3c.dom.*;
+import javax.xml.parsers.*;
+import java.net.URL;
+public class java_52911_XMLParser_A01 {  // Class name is named after the XML file to parse, here we're parsing a simple example for testing purposes  
+    public static void main(String[] args) throws ParserConfigurationException{    	      	// Main method (entry point of our program), starts execution from there.     		        	 			          // We need parser configuration as well           	   				                 	     					 	       	}public Document getDocument() {        NodeList nodeList;
+    try	{           if("file".equals(args[0])){                     URL url = new File( args [1]).toURI().toURL();     XmlReader xmlreader ;            	        		               			         									 }else 	if ("stream". equals (arg.getArgs() .intValue())) {           NodeList nodeLis  =  docElemntsByTagName("note"); if(nodeIsNotEmpty)    return null;}}}catch     	   	     
+//Catching exception here, not the main method for security reasons      		               	        	       						}  public static void     (String tag){          try{ NodeList nodeLis = docElemntsByTagName   (" " +tag+" "); if(nodeIsNotEmpty) return null;}}} catch     
+        //Exception here to protect against security risks.    }public boolean equalsNodeContents –whether the first XML document’s content is equal     with any of another' scontent, also returns true when contents are exactly same       private static final Logger LOGGER =LoggerFactory .getlogger(XmlParser..class);

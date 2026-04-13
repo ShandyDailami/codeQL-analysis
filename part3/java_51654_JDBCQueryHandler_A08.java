@@ -1,0 +1,5 @@
+import java.sql.*;   // Import the required packages for database connectivity using 'PreparedStatement' & ResultSet   
+public class java_51654_JDBCQueryHandler_A08 {     // Defining a public Class named "JDBCQueryHandeler"      
+        private static final String url = "jdbc:mysql://localhost/db";  // Database URL   Example of MySQL database, can be changed according to your requirements     
+		private static final String userName="root", password="password";    // User Name and Password for the MYSQL Server. Update as per requirement       
+	public void execute(String query) {    	// Defining a public method 'execute' that accepts parameter of type string, "query". This will be used to run SQL statements     		 	 	  			      									    }															} // Closing the main class block}

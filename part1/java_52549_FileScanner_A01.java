@@ -1,0 +1,14 @@
+import java.io.*;   // Import necessary Java packages for handling files and directories
+    import javax.imageio.ImageIO;// For reading image format like png etc.. not needed if we're working with text file 
+    
+public class java_52549_FileScanner_A01 {      
+         public static void main(String[] args) throws Exception{   //main method to run our program from command line       
+             File folder = new File("C:\\Users");           /// Specify your directory here. For example C:\Windows\System32  or D:\, etc...           
+              walkDir(folder, ".*[^.]java$");     //Call function to traverse through files and directories       print out file names on console        }      static void walkDir(File folder , String ext) {   /// Method for scanning directory    if ( ! isConnected() ) return; 
+         try (DirectoryStream<Path> dirs = Files.newDirectoryStream(folder.toPath(), "glob:*.{ext}", new BasicFileAttributes()))     // Create a Directory Stream to list all files with the extension specified      for ( Path path : dirs) {    File file  =  
+         if (!file.canRead()) throw  IllegalArgumentException("The folder/path provided is not readable");// Check Permission        try{       BufferedReader reader = new BufferedReader(new InputStreamReader(     //Try-catch block to handle IOExceptions in case of failure while reading file
+         Files.newBufferedReader ( path , StandardCharsets.UTF_8 ) );  String line;    PrintWriter writer  =null ;      try {       if (!path .equals ("C:\\")){   println( "Found non-textfile :"+     // Filter the files for text or not
+         Files.isHidden ( path) || !Files.exists( Path.of           (  parent + "/." +  name)))    writer = new PrintWriter            ((new File      ("D:\\temp291036_5847"+name)), true);   // Write into a temporary file    
+         while          (( line =  reader .readLine()) != null) {        if (line.trim().isEmpty()){ continue;} writer       ?                " :"( name ) + "\n");  }      println(path          +  (!Files    .isDirectory   ( path)?                     "/"           +    
+         Files          .isHidden             (              path                  )?               "-h":                 "")}; // Print the file information on console       if                    writer != null {writer.close();}        }  catch(IOException e)           System      .out    .println("I/O exception occurred, error: " +    
+         e); continue;}   }} ;//End of function body}}}}}; //Call the method to scan directory recursively for all files and directories in this specified folder. The following line is used when we want       stop scanning at some point (e.g., after printing out 20           file names)

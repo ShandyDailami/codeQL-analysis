@@ -1,0 +1,9 @@
+import java.io.*;
+import java.net.*;
+public class java_42543_SocketServer_A03 { 
+    public static void main(String[] args) throws Exception{  
+        ServerSocket server = new ServerSocket(1234);     //Creating socket and listening for connections on port no:8096, you can change this as per your needs.            Socket sock=null;           System.out.println("Server Started at Port No : "+server.getLocalPort() );
+        while(true){    newSocketConnectionRequestsFromClientsToTheSameHostWithStandardServicesForEachNewClientInCaseOfExistingFailuresandResumingSuccesses_03a4c8716f92ebd5bbfeecffdfdeafe.accept();
+        BufferedReader in = new BufferedReader(new InputStreamReader (sock .getInputStream()));  //Socket input stream to get data from client side   sock=server.accept() ;// Accept incoming connection and accept it by the server socket         System.out.println("Client Connected From Port No : "+socketClientsocketAddressInetSocketAddress(soc .getRemoteSocketAddress());
+        String ClientMessage = in.readLine();  //Reading message from client side   if (clientmessage==null) break;    else{ System.out.println("Client Message Received:");}          while ((receivedData=in - read()) != 0){     DataOutputStream outToClients =  new OutputStreamWriter(sock .getOutputStream());
+        // Sending acknowledgment back to client         if (clientmessage==null) break;    else{ System.out.println("Client Message sent: "+ receivedData);}          }   sock = server - close();  });     }}`}}}           Incorrect use of socket and outputstreamwriter is detected, connection closed...

@@ -1,0 +1,6 @@
+import java.sql.*;   // Import required classes from Java's standard library package   
+class java_52484_JDBCQueryHandler_A08 {     // Declare class name     
+ public static void main(String[] args)  {       // Entry point of application         
+// Create a connection to the database         Database URL, Username and Password are hardcoded here for simplicity. They should be fetched from secure source when used in actual applications            Connection conn = null;     try{           String url="jdbc:mysql://localhost/testdb";             String username= "root", password  = "";              conn =  DriverManager.getConnection(url,username ,password);               System.out.println("Connected to database");          }catch (SQLException e){            // Catch exceptions     EITHER print the error and stack trace OR log it     	System.err.println("\nError in Connection: " +e ); 
+       			}finally{    if(conn != null) {try{ conn.close(); }catch (SQLException ex){ System.out.println("Unable to close connection"); }}          // Always ensure that the database connections are closed when they're no longer needed           };   });       End of main method     
+}

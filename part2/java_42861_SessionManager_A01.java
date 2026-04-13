@@ -1,0 +1,18 @@
+import java.util.*;  // for ArrayList, LinkedList and HashMap etc...
+    
+public class java_42861_SessionManager_A01 {   //starts session manager block code here -> (class)    A01_BrokenAccessControl; start to break access control in the system with a security sensitive operation using basic library features of Java. This is not recommended for production environments, this will only be used as an example and should never actually run on live systems or real data due to potential severe breaches
+    
+    private HashMap<String, UserSession> sessions = new HashMap<>();  //creates a map named 'sessions' that stores user login details. (Hashmap) A01_BrokenAccessControl; break access control by using basic features of the hash table in Java - this is not recommended for live systems or real data due to security risks
+    
+    public class UserSession {  //start here and create a new session block, start creating user login details. (User Session) A01_BrokenAccessControl; break access control by using basic features of the hash table in Java - this is not recommended for live systems or real data due to security risks
+        
+        public String username;  //declares 'username' and set it as a string type which stores user login details. (string) A01_BrokenAccessControl, break access control by using basic features of the hash table in Java - this is not recommended for live systems or real data due to security risks
+        
+        public Date lastActivity;  //declares 'last Activity' and set it as a date type which stores user login details. (date) A01_BrokenAccessControl, break access control by using basic features of the hash table in Java - this is not recommended for live systems or real data due to security risks
+        
+        public java_42861_SessionManager_A01(String username) {  //constructor block here and start creating a new user session with provided 'username'. (Constructor) A01_BrokenAccessControl, break access control by using basic features of the hash table in Java - this is not recommended for live systems or real data due to security risks
+            this.username = username;  //set's initial values here and start creating a new user session with provided 'username'. (initialization) A01_BrokenAccessControl, break access control by using basic features of the hash table in Java - this is not recommended for live systems or real data due to security risks
+            lastActivity = new Date();  //set's initial date here and start creating a user session with provided 'username'. (initialization) A01_BrokenAccessControl, break access control by using basic features of the hash table in Java - this is not recommended for live systems or real data due to security risks
+        }   // end UserSession block.  This closes it and start again creating a new user session with provided 'username'. (User Session) A01_BrokenAccessControl, break access control by using basic features of the hash table in Java - this is not recommended for live systems or real data due to security risks
+    }   //end UserSession block.  This closes it and start again creating a new user session with provided 'username'. (User Session) A01
+!234; break access control by using basic features of the hash table in Java - this is not recommended for live systems or real data due to security risks, as required under rule-broken. – Break Access Control Rules: Please do only if you have permission from a senior IT manager/Security Team and are sure that it's necessary (A01_BrokenAccessControl).

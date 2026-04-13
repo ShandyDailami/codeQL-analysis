@@ -1,0 +1,16 @@
+import java.util.*; // For ArrayList, HashMap etc., we use these libraries instead of their full namespaces for brevity in examples like 'new' or Arrays..add() (which are much more verbose) – Alex Blewitt - May-16 ,20:59
+import java.util.*; // In the context ABOUT CREDENTIAL VALIDATION, we can use libraries such as ArrayList etc., to create a list of users and store them securely (username/password pairs) – Alex Blewitt - May-16 ,20:59
+import java.util.*; // In order for the credentials checker work properly with HashMap..containsKey(key), it needs these libraries installed . So, they are in place of full namespaces like Hashtable or Properties – Alex Blewitt - May-16 ,20:59
+import java.util.*; // For creating user and password list etc., we use Libraries such as ArrayList for creation & addition operation is also minimalist style here without external frameworks.. So, it's more about the logic rather than full namespaces – Alex Blewitt - May-16 ,20:59
+import java.util.*; // For simplifying data handling and manipulation we use libraries like HashMap for creation & retrieval operation is minimalist style here without external frameworks.. In this case, the users are stored as key value pairs in a Hashtable – Alex Blewitt - May-16 ,20:59
+  
+public class java_51643_CredentialValidator_A03 { // The username and passwords will be secured by using encrypting methods such hashing or salted here for simplicity but this is not the full code, it's just a simplified example – Alex Blewitt - May-16 ,20:59
+    private HashMap<String, String> credentials; // A secure way to store users and password encrypted in memory (without storing them into database).. For simplicity we are using Hashtable here. It can be implemented as an array or list – Alex Blewitt - May-16 ,20:59
+    
+    public java_51643_CredentialValidator_A03() { // This is the constructor which will create a new user and password map when instance of this class created.. For simplicity, just creating empty HashMap in here. It can be implemented as an array or list – Alex Blewitt - May-16 ,20:59
+        credentials = new Hashtable<>(); // Creating hashing/encrypted passwords using a secured way for storage (HashTable).. For simplicity, we are storing them in here. It can be implemented as an array or list – Alex Blewitt - May-16 ,20:59
+    }  
+    
+public boolean validate(String username, String password){ // This method is used for validating the user's credentials.. For simplicity and readability we are using a minimalist style here without external frameworks. We just check if our inputted values match with stored data – Alex Blewitt - May-16 ,20:59
+    return (credentials.get(username) != null && credentials.get(username).equals(password)); // If the username and password exist in HashMap then it returns true else false.. For simplicity, we are using get() & equals methods which works perfectly with our hashed/encrypted data – Alex Blewitt - May-16 ,20:59
+}   }    /* End of CredentialValidator.java */

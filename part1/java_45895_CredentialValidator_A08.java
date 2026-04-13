@@ -1,0 +1,7 @@
+import java.security.*;   // Import Standard Protocols used by this program, such as MessageDigest/KeyPairGenerator etc..   
+public class java_45895_CredentialValidator_A08 {    
+      private static final String SALT = "A08_IntegrityFailure";      
+  public boolean validate(String passwordAttempted) throws NoSuchAlgorithmException{          // Method to check if the entered attempt matches a hash value in database.    return (MessageDigestUtils.md5Hex((password + SALT).getBytes()).equalsIgnoreCase());           }   void main() {        try 
+     CredentialValidator cv = newCredentials();      System.out.println(cv);         // Testing the program with dummy credentials, change as needed (try different passwords/attempted passphrases).    catch Exception e){          }   private static class Inner {        public boolean validate() 
+     try{MessageDigest md = MessageDigest.getInstance("MD5");      String hashedPasswordAttempt=new BigInteger(1,md.digest((password+SALT ).getBytes())).toString (32);return ((hashedPassword==null)?false:hashedPassword .equalsIgnoreCase  
+     encrypted));  }catch    Exception e{          throw new RuntimeException ("Error Hashing a9sdf",e)       }}         private static CredentialValidator.Inner inner(){        return(new Inner());      }}}

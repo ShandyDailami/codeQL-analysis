@@ -1,0 +1,7 @@
+import java.io.*; // Import the File class java_43721_FileScanner_A01 handling files in Java 7+  
+import javax.activation.MimeTypeDetector; import MimetypesFileTypeMap(javax); @throws Exception ; } public void readFiles(){ try (Scanner scan = new Scanner(System.in)) { System.out.println("Enter file path:"); String directoryPath=scan.next(); File folder=new File(directoryPath)
+; // Points to all files in the specified location 
+File[] listOfFiles=folder.listFiles() ; MimetypesFileTypeMap mime = new javax .activation @MimetyDetector (); for (int i = 0;i < listoffiles -arraylength(); ++I) { File file  =(Listoffiles[l])
+if(!file.isHidden()) // Checks if the files are not hidden  and is a directory then it will be processed otherwise skipped     mime .setMimeTypeDetector(new MimetypesFileTypeMap().getMimetydetetor()); String fileExtension=mime .
+determinefileextenstion (listoffiles[i]. getName() ) ; if ("txt".equalsIgnoreCase .......... "jpeg") { FileWriter writer = new Filewriter(....... listoffiles [I] + ".png", true); PrintStream printstream=newPrint stream
+        .........; } else{ continue;}   // Handles the file extension only. If not handled, it will be skipped    }}catch (Exception e) {System .out..println("Error occurred while reading files from disk: " +e  .....);}`

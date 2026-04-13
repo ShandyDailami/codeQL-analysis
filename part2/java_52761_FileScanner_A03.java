@@ -1,0 +1,6 @@
+import java.io.*; // Import the necessary libraries to access file system and I/O operations  
+public class java_52761_FileScanner_A03 {   
+      public static void main(String[] args) throws IOException{        try (DirectoryStream<Path> dirs = Files.newDirectoryStream(  Paths.get("."), "dir/*"); Iterator<Path>  itr =  dirs .iterator())   // Use of Java I/O libraries to read directory contents
+      {          for(final Path file :itr ){            if (file != null)       FileScanner fs = Files.newFileScanner(  file, ".*spammer*", StandardOpenOption.READ);           System .out .println ("Looking at the files and directories in:" +   // Print out location of each found directory or a non-existent entry
+            ""+file );     while (fs.hasNext()){        String nextPath = fs.next();       if(nextPath != null)         System  .out .println ("Found suspicious file"   +  ":" +   // Print out location of each found directory or a non-existent entry
+            ""+file);     }      }} catch (SecurityException se ){          Selection.notify(null,se,"Access to the FileSystem denied");}           finally {              Security.addComponent(  this );}}});`    // Add our component as safe        try   {'" + pathName  + "': osPathname' }); }

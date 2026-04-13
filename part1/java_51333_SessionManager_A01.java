@@ -1,0 +1,10 @@
+import org.springframework.context.annotation.*;
+import org.springframework.security.config.Customizer;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
+import java.util.*;  // Import List and Iterator interfaces for use in collections, e.g., Collections.sort(list) or while (Iterator<T> iter = list.iterator()) { ... }   you may need these depending on your needs but it's not a mandatory requirement to include them
+import javax.servlet.*;  // For servlets and request/response objects in this example, the HttpServletRequest object is used for authentication only rather than security context which contains user details like authorities etc    or just import ServletApi if you don’t need all these classes but Spring Security core functionality would be enough
+import org.springframework.security.*;  // Import AccessDeniedException and AuthenticationEntryPoint, they will provide the response to an unauthenticated request in case of a lack authentication/authorization context for your secured endpoint   e.g., (new ServletApi(authenService)) or (@Autowired private UserDetailsService userDetailService)
+import org.springframework.security.web.*;  // For WebSecurity, HttpServletRequest and SecurityConfigurer to customize the security configuration in Spring MVC applications only within a specific context path   e.g., (new ServletApi(authenFilter)) or (@Autowired private AuthenticationManager authenticationManger)
+import org.springframework.security.*;  // Import AccessDeniedException, and RoleHierarchy for adding hierarchical roles to define role-based access control    you can use @PreAuthorize("hasRole('ROLE_ADMIN')") or .@PreAuthorize has a method on the object/method that allows users with specific user details like ROLES etc.

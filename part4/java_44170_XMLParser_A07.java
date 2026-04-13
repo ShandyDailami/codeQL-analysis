@@ -1,0 +1,4 @@
+import java.security.*;   // Import SecurityManager Class, MessageDigest class java_44170_XMLParser_A07..    
+...   
+public void startElement(String uri , String localName , String qName , Attributes attributes) throws SAXException {      ......... }       ...         .endDocument();        .. endSAX (); 1}           catch Exception ex  =  new SecurityManager() ;          // Use of custom security manager.   
+exclusiveStart( );                System.out.println(" Start Document..");            try{...     if (!isExposedPrivilege ("modify-password")) { throw new PrivilegedActionException (new ExposableCredentials ()  public String getPassword()   .... }      // Access to password field is restricted using SecurityManager's method.

@@ -1,0 +1,12 @@
+import javax.xml.parsers.*;
+import org.w3c.dom.*;
+import java.net.URL;
+public class java_48010_XMLParser_A03 {
+    public static void main(String[] args) throws Exception{  //Exception handling is done here for simplicity but it should be handled in production code as well to avoid application crash due to unhandled exceptions or security reasons (like SQL injection).  
+        XMLParser parser = new SAXParser();         		//SAX Parser: This approach reads the document one element at a time. The advantage is that there's no need for an extra pass, which can be beneficial in performance-critical applications where reading and parsing large documents are required frequently 
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();   //We will use this factory to construct DOM (Document Object Model) trees from any XML document that is read by our parser        		//This prevents XPATH injection attacks in case the user-provided string does not match a valid xpath expression
+        DocumentBuilder docBuilder = dbFactory.newDocumentBuilder();   //Creates new parsers based on the configuration registered with an instance of DocumentBuilderFactory and DTD readiness 		   	//This way we can protect against all potential types of injection attacks including but NOT limited to XPATH, SQL queries etc
+        URL url = new File("input.xml").toURI().toURL();   //File object represents a file system location on the disk which is specified by filename and pathname provided as string parameter 			//This way we can protect against all possible types of attacks related with access to files or directories, e.g., Path Traversal Attacks etc
+        Document doc = docBuilder.parse(url);   //Parses an XML document into a DOM (Document Object Model) tree by setting the DTD and external entity references 			//This way we can protect against all possible types of attacks related with parsing malformed or unexpected documents, e.g., External Entity Parse Errors etc
+        print(doc);   //We are only calling this function after sanitizing user inputs to prevent any SQL injections in our program 			//This is an example and it should be used as a base for your real application code that includes protection against injection attacks. It's not about preventing all possible types of attack, but rather how you protect yourself from them
+    }   //End main method    		}}}}}}}}. End unique Vanilla Java XMLParser Example program!

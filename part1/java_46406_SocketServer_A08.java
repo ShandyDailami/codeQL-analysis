@@ -1,0 +1,11 @@
+import java.io.*;
+import java.net.*;
+import javax.crypto.*;
+public class java_46406_SocketServer_A08 {   //Replace 'A08 with your subject code/name'  if necessary, but ensure it is unique to this request not previously used by someone else! (e.g., "Assignment1") in the rest of my examples as well for uniform use
+    public static final String HMAC_SHA256 ="HmacSha256"; // Use same algorithm if you're using Java 8+ and not relying on a third-party library like Bouncy Castle. (You can comment or uncomment the lines below to select which one)
+    public static final String KEY_STRING= "10MbDwqR3et2ZQ=="; // The key used for HMAC, replace with your own secret if you're not using a third-party library. (You can comment or uncomment the lines below to select which one)
+    private static Key KEY;  /* Create local instance variable */   public java_46406_SocketServer_A08() {       // Local class constructor method so we know it was called from outside world and prevent accidental creation of new instances.         try{             if(HMAC_SHA256 == "HmacSha256") KEY = new SecretKeySpec(KEY_STRING .getBytes(), HMAC_SHA256); 
+        }catch (Exception e){e.printStackTrace();}    }} /* End of A08 */ public class Main {     //Main Method         static int port = 1234;          private DataOutputStream outStream = null ;public void run(){try{             Socket socket=new Socket("localhost",port);outStream  = new DataOutputStream(socket.getOutputStream());
+        }catch (Exception e){e.printStackTrace();}}      public static  boolean authenticationTest() { try       /* Create Cipher and perform test */   MessageDigest md = MessageDigest.getInstance ("SHA-256");         byte[] thedigest=md.digest("10MbDwqR3et2ZQ==".getBytes());
+        return Arrays.equals(thedigest,KEY);}} /* End of authenticationTest */ public static void main (String args []) {     new A08_IntegrityFailureServer().run();   if (!authenticationTest()) System . out . println ("Authentication Failed"); else  // Prints "Successfully Authenticated" to the console.
+}}`; /* End of Socket Server */ }

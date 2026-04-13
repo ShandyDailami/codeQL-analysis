@@ -1,0 +1,18 @@
+import java.sql.*;   //Java Database Connectivity(JDBC) API v2.x interfaces are placed here, so use JAVA SQL TYPES as well for creating Connection and Statements   
+                   
+public class java_48788_JDBCQueryHandler_A08 {    
+        private static final String url = "jdbc:mysql://localhost/test";   //database URL (change according to your database) 
+	private static final String userName="root";	//username of the mysql server, change it accordingly if needed. root is a common username for many databases   	    		     	   			      	 	     									             						         							            	       ​       								   //also ensure that you have proper access rights to MySQL on this machine
+	private static final String password="password";	//Password of the mysql server, change it accordingly if needed. Password is a common username for many databases   	    		     	   			      	 	     									             						         							            	       ​       								   //also ensure that you have proper access rights to MySQL on this machine
+ 	public static void main(String[] args) {        
+                try{              
+                    Connection con=DriverManager.getConnection (url,userName ,password);                 	    		     	   			      	 	     									             						         							            	       ​       								   //establish the connection with database          
+                     System.out.println("Connected");                  
+                      String sql = "insert into Employee(id,name) values (?,?)"; 	//Query to be executed                   	    		     	   			      	 	     									             						         							            	       ​       								   //it is used for inserting data in the database. Here id and name are placeholders which can take any value
+                     PreparedStatement pstmt = con.prepareStatement(sql);                 	    		     	   			      	 	     									             						         							            	       ​       								   	//create a prepared statement           
+                      for (int i=1;i<= 50 ;i++) {                          //loop to insert 49 records                
+                            pstmt.setInt(1,i);                        	    		     	   			      	 	     									             						         							            	       ​       								   //setting value in placeholders          
+                            pstmt.setString(2,"emp"+i);                     	//loop control for name               	                            		  xxxxxxxx_IntegrityFailure... and many more things will happen here after this comment   	 	   			      	     									             						         							            	       ​       								   //insert the data into database
+                            pstmt.execute();                         	    		     	   			      	 	     									             						         							            	       ^_IntegrityFailure... and more operations will be performed after this comment    -------------->  }           try-catch blocks are used to handle exceptions, if any occurred during the execution of above code
+                     con.close();                         	    		     	   			      	 	     									             						         							            	       ^_IntegrityFailure... and more operations will be performed after this comment    -------------->   }           catch(SQLException e){ System.out.println("Something went wrong");}           
+                }catch (SQLException ex) {System.out.println ("Cannot connect to database server: " +ex);}};

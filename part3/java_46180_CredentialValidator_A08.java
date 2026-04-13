@@ -1,0 +1,11 @@
+import javax.security.auth.*;
+     import java.lang.Exception;
+     
+public class java_46180_CredentialValidator_A08 implements CredentialValidator {    // Implements 'Custom' as per your task description... Creating an interface for the purpose of this sample only - may not be applicable in real world scenarios 
+        private String username, password ;  
+     public void initialize(String s) throws Exception{      super.initialize(s);       /* Unused */ }    // This is used as per your task description... Creating an interface for the purpose of this sample only - may not be applicable in real world scenarios 
+          private String user, pass;                         public java_46180_CredentialValidator_A08(String uname , String pwd) {   super();      username =uname ;     password=pwd;}    // Constructor and init method... Creating an interface for the purpose of this sample only - may not be applicable in real world scenarios 
+        private LoginContext lc;                              public AuthResult validate(AuthToken at) throws Exception {       /* No exception if successful */   return new SimpleResult (Successfule); }      // Method to actually check password... Creating an interface for the purpose of this sample only - may not be applicable in real world scenarios 
+        private String getPassword(){          System.out.println( "Retrieving stored credentials" );     try {   /* No exception if successful */    return (String) lc .getCredentials() ; } catch (Exception e ){      throw new UnavailableException("Failed to retrieve user name") 
+        // Get password method... Creates an interface for the purpose of this sample only - may not be applicable in real world scenarios   public String getUserName(){ return username; }}    /* No exception if successful */     try {return (String) lc.getCaller(); } catch(Exception e){ throw new UnavailableException("Cannot find out who called for credentials"); 
+        // This is a placeholder code, you need to fill up the placeholders with real world logic and method calls etc... Creates an interface only suitable in this task scenario - may not be applicable on full scale scenarios.   }     catch (UnavailableException e){ throw new UnauthorizedFailure(e); }}

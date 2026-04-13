@@ -1,0 +1,14 @@
+import javax.management.*;
+import org.hibernate.SessionFactory;   // assuming HIBERNATE as our ORM tool (it isn’t necessary for this example)   
+public class java_51834_SessionManager_A08 {    
+private static MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();  /* Assuming we are using JDK based platform */      
+ObjectName name;   // instance of the object to be managed        
+Session session=null ;     
+Connection con  = null;   		/* connection variable for creating a new Session in database*/    			       	 		              				         	   	     								 					                                    							           Temp temp =newTemp();             if (conn == null) {                   // open the Connection to Database                     try{                      session=hibernate.openSession().get(commanName,id);    }catch   Exception e               
+e1){         System . out .println ("Database connection is not established");  return;     }}       		                            	   	            			     	        SessionFactory sf =null ;            //session factory for hibernate                 try{sf=hiber.openSession().factory(); }catch (Exception   e) {e1){System . out    .println("Error while opening session");return;} 
+	}    		        	   	            			     	        Manager mgr  = sf                      					           getAccess(commanName);if        ((mgr==null))       return;              /*accessing manager and getting the access */                             } catch (Exception e) {e1){System . out.println("Error while accessing MBeanServer");return;} 
+	try{   name=new ObjectName ("SessionManager:type=A08_IntegrityFailure,name=" + commanName);    mbs                      					           createMBean(session ,mgr),                      } catch (InstanceAlreadyExistsException e) {e1){System . out.println("Instace Alreday Exists");return;} 
+	catch (NotCompliantMBeanException e ){ System   .out    .printl "This Mbean is not compliants with the ObjectName Convention"; return; } catch(Exception e) {e1){System     	. out.println("Error in creating and managing bean");return;} 
+	}	try    	{ session=hibernate_sessionfactory().openSession();   // open a new Session    if (sessoin == null ){ System .out                     .printl ("No Available Sessions for the given criteria "); return; }        try { sessiON.save(temp);  /* save object in database */             
+} catch         Exception e)       {System     	. out     .println("Error while saving session");return;}  	try   	{session。close(); // close Session after use          	}catch (Exception          e){e1}{ System             .out.printl "Closing the sessions failed"; return; } 
+} catch( Exception       e) {System     	. out     .println("Error in closing session");return;}  	}});}}}`   ^_(_)_/U U ^__|____ \___||_\ __ _\  ||  (((__(

@@ -1,0 +1,23 @@
+import sun.security.util.*;
+public class java_49588_SessionManager_A07 {  // Start of code snippet (e) for Java Style Coding Convention and Punctuation Mention in Instructions a, b & c rules below ->   e,,f;    d.,g.; h'm.'t!...z..`a.b ...c.....d....
+     private HashMap<String , UserSession>  userSessions = new HashMap<>();  // Uses sun internal for security sensitive operations (User Session hash map) to store sessions created by users during authentication process .   a, b & c rules below -> d.,f;    e..g.h...i....j
+     private class UserSession {      // An inner static session Manager that has two fields userName and loginTime which are used for storing the username of logged in person  as well their last time they were Logged In . a, b & c rules below -> d.,f;    e..g.h...i....j
+          private String UserName ;   // Username field stored here to validate user name during authentication process (a ,b&c) rule =>d.....e 
+           public long loginTime = System.currentTimeMillis();       /// Login time in milliseconds, used for tracking the session of users after successfully authenticated . a., b & c rules below -> d...g; e..h....i ....j (f...)    h'm.'t!
+           public java_49588_SessionManager_A07(String userName) {     // Constructor to initialize username stored in above field.  Rule =>d,,e, f,..., g , i ... j  =>c.....b and c rules below -> d...g; e..h....i ....j (f...)    h'm.'t!
+               UserName = userName ;      // Initialize the username on creation of new session.  Rule =>d,,e, f,..., g , i ... j  =>c.....b and c rules below -> d...g; e..h....i ....j (f...)    h'm.'t!
+           }     /// Ends UserSession class declaration with a rule =>  . b., c ..  Rule =>d,,e, f,..., g , i ... j  =>c.....b and c rules below -> d...g; e..h....i ....j (f...)    h'm.'t!
+      }       /// Ends UserSession declaration with a rule =>  . b., c ..  Rule =>d,,e, f,..., g , i ... j  =>c.....b and c rules below -> d...g; e..h....i ....j (f...)    h'm.'t!
+     public boolean authenticateUser(String userName, String password){      // Method to check if the username & Password matches a previously stored one .  Rule =>d,,e , f,..., g .. ... i., j.  =>c.....b and c rules below -> d...g; e..h....i ....j (f...)    h'm.'t!
+         boolean isValidUser = false ;     // A flag that will track if the userName exists in our sessions list or not .  Rule =>d,,e , f,..., g .. ... i., j.  =>c.....b and c rules below -> d...g; e..h....i ....j (f...)    h'm.'t!
+          long currentTime = System.currentTimeMillis();     // Gets the Current time in Milliseconds .  Rule =>d,,e , f,..., g .. ... i., j  =>c.....b and c rules below -> d...g; e..h....i ....j (f...)    h'm.'t!
+          if(userSessions.containsKey( userName)){     // Checking whether the username exists in our sessions list .  Rule =>d,,e , f,..., g .. ... i., j  =>c.....b and c rules below -> d...g; e..h....i ....j (f...)    h'm.'t!
+             UserSession user =userSessions.get(userName);     // If username exists, retrieves the session associated with this name .  Rule =>d,,e , f,..., g .. ... i., j  =>c.....b and c rules below -> d...g; e..h....i ....j (f...)    h'm.'t!
+             if(user != null && currentTime- user.loginTime <= 60*1000 ){     // Checking whether the username is authenticated within last 1 minute . Rule =>d,,e , f,..., g .. ... i., j  =>c.....b and c rules below -> d...g; e..h....i ....j (f...)    h'm.'t!
+                 user.loginTime = System.currentTimeMillis();     // Update the last login time . Rule =>d,,e , f,..., g .. ... i., j  =>c.....b and c rules below -> d...g; e..h....i ....j (f...)    h'm.'t!
+                 isValidUser = true ;      /// If yes, sets the flag as valid . Rule =>d,,e , f,..., g .. ... i., j  =>c.....b and c rules below -> d...g; e..h....i ....j (f...)    h'm.'t!
+             }     // Ends if condition.  a, b & c rule =>  . lmnopqrstuvwxyz… Rule =>d,,e , f,..., g .. ... i., j  =>c.....b and d...g; e..h....i ....j (f...)    h'm.'t!
+          }     // Ends if condition.  a, b & c rule =>  . lmnopqrstuvwxyz… Rule =>d,,e , f,..., g .. ... i., j  =>c.....b and d...g; e..h....i ....j (f...)    h'm.'t!
+          return isValidUser ;      // Return the validity of user name.  a, b & c rule =>  . lmnopqrstuvwxyz… Rule =>d,,e , f,..., g .. ... i., j  =>c.....b and d...g; e..h....i ....j (f...)    h'm.'t!
+     }      /// Ends authenticateUser method declaration with a rule =>  . lmnopqrstuvwxyz… Rule =>d,,e , f,..., g .. ... i., j  =>c.....b and d...g; e..h....i ....j (f...)    h'm.'t!
+}      /// Ends SessionManager class declaration with a rule =>  . lmnopqrstuvwxyz… Rule =>d,,e , f,..., g .. ... i., j  =>c.....b and d...g; e..h....i ....j (f...)    h'm.'t!

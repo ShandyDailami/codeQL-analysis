@@ -1,0 +1,4 @@
+public enum ValidationState {VALID, INVALID}; //Defines whether the state of a user's Session in our application context can be VALID/INVALID respectively for integrity checks and operations related to A08_IntegrityFailure (like session expiry or logout) 
+  
+ public class java_52848_SessionManager_A08{   	// Defined by us, this object represents one 'User'. It is a place holder until we have actual implementation of user details. This should be replaced with real data later on in the code...    	
+	public String username;        //Defining fields as per requirement 	 		  			     									       }	   							   	}	     															{{}}{{{}}})))))) )}}}

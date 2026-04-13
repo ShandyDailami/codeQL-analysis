@@ -1,0 +1,8 @@
+import java.util.*; // Importing the HashMap class java_53761_CredentialValidator_A03 'collection' package to create hashmap in later step  
+class CredentialValidator {    
+    private Map<String, String> credentials;     
+        public static void main(final String[] args) throws Exception 
+          {         final Scanner sc = new Scanner (System.in);           System.out.println ("Enter number of user");       int numUser=sc.nextInt();     for (;;)    //Creating a loop to iterate through the users             CredentialValidator cv1 =  new 
+      CredentialValidator(numUser, sc) ;cv1 . validate()   }         private static String encryptPassword (final char[] password){char [] encrypted=  ...; return...}          public void addCredentials(){            this.credentials=new HashMap<>();    for (;;) {           System.out
+      out.println("Enter username");String userName =sc . nextLine() ;System.out.println ("Password: "); String password   = encryptPassword ( sc .next().toCharArray());   credentials .put(userName,password)  }     if (!credentials.containsKey... // Checking the entered credential in hashmap    CredentialValidator cv = new ...;cv..validate()}          public void validate(){         System
+      out.println("Enter username");String user=sc . nextLine();if (this.credentials.get(user).equals....) {System  .....}}else{        // If creds are not correct then print wrong credentials message    }   }}

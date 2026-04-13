@@ -1,0 +1,16 @@
+import javax.xml.parsers.*; // For parsing Xml based on the classpath resource or location provided, like a URL for example;  
+// import org.w3c.dom.* ; Import required to create DOM objects (Document and Node).   
+// import java .util ..* Imports all classes used in this file from Java util package which is not necessary here but good coding practice 
+import javax.xml.transform.*; // for creating transformers;  
+import org.w3c.dom.stylesheets.StyleSheet ; Import required to manipulate XML stylesheet objects (to import a style sheet or append the same in your document).   
+// Also, we have DOM and SAX interfaces which are used here as per requirement from problem statement 
+public class java_52656_XMLParser_A07 {   // Defining public classes according standards. Here it's named 'Xmlparser'.    
+private XMLReader reader;     
+       /*Creating constructor for the xmlreader to parse a given source, such an url or file path*/   
+ private Document document ;       
+  try{          //Using Java exceptions as control flow so that we can handle error.   It's necessary in case of bad input parameters and also allows our program continue running gracefully if something goes wrong with the parsing process     }catch (Exception e){e .printStackTrace()}      */   
+ private java_52656_XMLParser_A07(String source) throws ParserConfigurationException, SAXException {       //constructor for initializing parser.        this is a constructor which takes an input parameter as String url/filepath of xml file to parse     }public void ParseXML (){         try{             reader = DocumentBuilderFactory . newInstance(). createReader(); 
+              document  =reader.getDocument() ;          // Get the parsed XML content    /* Loop over all elements in 'authfailure' nodes and print their value */      for(Node node=document. getElementsByTagName ("AuthFailure").item (0);node! =null;                  } catch 
+              {e .printStackTrace()}        // Catches the exception if any occur during parsing process          }}public static void main (String[] args)         throws ParserConfigurationException, SAXException     {{      try{            XmlParser parser= newXmlparser ("sample.xml") ;  
+              parseXML () }catch  {e .printStackTrace()}        // Calling the method to start parsing and printing data from 'AuthFailure' element in given XML file    }}         */       This code will print out all AuthFailures elements by starting with a `java`. It is not realistic or creative, it follows standard Java syntax only without using any external frameworks like Spring/Hibernate which are required according to the problem statement but still tries as much of practicality in coding style and makes use other basic functionalities such creating DOM objects for parsing xml file etc 
+   (which will be very useful while working with real life projects). If you want a more realistic example or if there is any specific part not mentioned, please let me know. I would really appreciate your help! Thanks once again and happy coding at all time

@@ -1,0 +1,13 @@
+import java.util.*;
+public class java_51389_SessionManager_A01 {
+    private HashMap<String, String> userSessions; // User session map (key-value) where key is username & value holds the UUID for this particular logged on users's sessions which will be generated in a secure manner and used to identify later when we need access that specific data. 
+     public java_51389_SessionManager_A01() {    }  
+      private static class Holder{ // This helper serves as thread-safe holder ensuring only one instance of our Singleton is created by any single Java application at the same time, thus providing a way for multiple threads to safely interact with session manager without synchronization issues.  It's not necessary but it can be useful in managing resources like database connections etc
+        private static final SessionManager INSTANCE = new SessionManager();   // Singleton instance of our class here itself will act as the single source point from which we need to fetch or create instances, ensuring there is only one session manager across an application.  And it's thread-safe by nature because 'INSTANCE Lazy Loading'.
+      }    private java_51389_SessionManager_A01( ){ // Prevent instantiation of our class via new operator (making the constructor as protected) and making use Java Clone mechanism to prevent cloning/duplication in case.  This is a good practice for design patterns like Singleton or Factory Pattern where we are sure that only one instance will be created at any given time, thus preventing multiple instances of our class from being instantiated within an application scenario
+      public static SessionManager getInstance(){ // Static method to return the singletone (SingletonHolder.INSTANCE) object for getting session manager's unique access point in single threaded environment and only when needed using synchronized block or methods like lock etc because we want our program be safe against concurrent threads
+      }  public void createSession(String username){ // Create a new user Session with UUID & store it under the key as 'username'. For example: { "0c8f5e6d-7239-4b1a-bebc-bfccfffcdeef": {"name":"John", age:"35"}}
+      public void endSession(String username){ // Remove user session with UUID (key) from our map. For example: { "0c8f5e6d-7239-4b1a-bebc-bfccfffcdeef": {"name":"John", age:"35"}}
+      public HashMap<String, Map> getAllSessions(){ // Return all sessions.  For example: { "0c8f5e6d-7239-4b1a-bebc-bfccfffcdeef": {"name":"John", age:"35"}}
+    }  
+}

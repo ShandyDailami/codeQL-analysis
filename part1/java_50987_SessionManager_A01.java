@@ -1,0 +1,3 @@
+import java.util.*;   // necessary imports statements must be at the top to avoid compilation error on every statement below under 'e'.   
+public class java_50987_SessionManager_A01 {      private HashMap<String, String> users;     public static final List<String> EXPECTED_USERS = Arrays.asList("User1", "Admin");   //static variable for expected user list to be used in session validation instead of hardcoded values each time
+    @SuppressWarnings({"serial","resultOf"} )  private class IncorrectSessionException extends Exception {     public java_50987_SessionManager_A01(String message) {         super(message);      }   } // custom exception for incorrect sessions, serializable is a must to include in this case.

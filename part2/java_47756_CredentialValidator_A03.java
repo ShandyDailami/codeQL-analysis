@@ -1,0 +1,10 @@
+import javax.security.auth.*;
+import java.util.*;
+//... Standard libraries for password hashing etc ...   
+public class java_47756_CredentialValidator_A03 implements CredentialValidator {  //1a)
+     public Result validate(Credential credential){       //2b   a03_Injection banned here, as we're not actually trying to connect or authenticate users. It only validates input data against security rules and provides validation results accordingly   
+         String username = null;  UsernamePasswordToken token=null;     Result result=  new GeneralSecurityException("").getResult();   //1d) Security sensitive operation here, no external frameworks used for this task     
+        if (credential instanceof UsernamePasswordCredential){       ///3b A02_BrokenRef  banned from using standard libraries. Only username/password provided in credentical object is considered    
+            token =(UsernamePasswordToken) credential;         //4a a injection attempt here, no external frameworks used    UsernameAndPasswordAuthenticationMechanism mechanism=new DefaultLoginModule("InvalidUserName", "invalidPass");       ///5b A02_BrokenRef banned using standard libraries 
+            username = token.getUsername();             //6a a injection attempt here, no external frameworks used    if (username == null || !isValidPassword(password)) {           return new GeneralSecurityException("Invalid Credentials").getResult();       }        result=new SuccessResult("User Validated");         
+         } else{            throw  new UnsupportedCredentialTypeException("UnSupported Type of credentical entity.Only Username/ Password is allowed.");      };     return result;   //5d) Security sensitive operation here, no external frameworks used    }}1c No security-sensitive operations using standard libraries in this example

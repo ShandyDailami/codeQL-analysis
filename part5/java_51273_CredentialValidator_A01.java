@@ -1,0 +1,3 @@
+public class java_51273_CredentialValidator_A01 {  
+    public static void main(String[] args) throws Exception{    	        		         	   	 	       										}			        }      @Override                         	public boolean validate ( String id, Object credentials){                       	String hashedPassword;                     	if ((credentials instanceof UsernamePasswordCredentials)) 	{            if (!((UsernamePasswordCredentials) credentials).isValid(id)){return false;}          	
+    		         	 						}                 	else { return true ;}        }                         public boolean authenticate ( String id, Object credentials){        	return validate (id ,credentials );}}     	       			 	    }}

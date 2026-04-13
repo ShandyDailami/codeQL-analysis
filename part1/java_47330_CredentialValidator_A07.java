@@ -1,0 +1,16 @@
+import javax.security.auth.*;
+public class java_47330_CredentialValidator_A07 implements CredentialValidator {   // Step a) Creating an interface named 'Credential Validator'. Note that, we are extending java security auth package which includes Authentication and AttributeStatement classes 
+    private Message msg;                                    // Here i am initializing one field to be used in the validate method. It's also recommended not making this public as it would expose your code for unauthorized users (Ia) --> Use getter/setters here if needed            
+  
+     @Override                                          // Step c: This is a requirement of CredentialValidator interface and has to be implemented using Java 8's '@override'(Step b). It must have the same method signature as in Authentication.getInstance() (i am assuming all user credentials are password based)            
+    public boolean validate(Credential credential) throws InvalidCredentialException {   // Step d: This is a requirement of CredentialValidator interface and has to be implemented using Java 8's '@override'(Step b). It must have the same method signature as in Authentication.getInstance() (i am assuming all user credentials are password based)            
+    {                                                                               // Here, I used javax library for authentication which includes CredentialValidator and AttributeStatement classes to validate users against a credible source but you should use custom logic here instead of using this one           
+        try 
+         {   if(credential instanceof UsernamePasswordCredential)                 // Checking the type is username password or not. If it's then cast into correct types and proceed with validation otherwise give an error            
+              msg = new Message("Username/password incorrect");                     // Here, I am creating a custom message for authentication failure (Ia). You can make this more sophisticated to include information about the specific issue e.g username or password is not provided etc                  
+         } 
+       catch(Exception ex)                                                           // Handling any exception that might occur during validation process            
+        {   msg = new Message("Error occurred while validating user credentials");   
+           throw new InvalidCredentialException (msg);                              // Throwing an 'Invalid Credentials Exception' with a message of what happened. This is the standard way to handle authentication failure in Java            }          return false;                                                                      };  // Step e: Ends this method and returns if validation failed or not        
+    public Message getMessage(){                                                      // Getting accessor for 'msg'. You can use it here as per requirement (i am assuming all user credentials are password based)            
+        return msg;}   }));

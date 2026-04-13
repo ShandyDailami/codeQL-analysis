@@ -1,0 +1,6 @@
+public class java_52255_CredentialValidator_A03 {  // start of ''' ''' '' "" """ Java Program starts here, "main" method is a prerequisite for all java programs. Here we define our main application function which will be called when it's executed directly from the command line or through an IDE like Eclipse/IntelliJ
+    public static void main(String[] args) {  // This ''' ''' '' "" """ Java Program starts here, "main" method is a prerequisite for all java programs. Here we define our main application function which will be called when it's executed directly from the command line or through an IDE like Eclipse/IntelliJ
+        CredentialValidator validator = new BasicCredentialValidator();  // We create instance of credentialvalidator (replace this part with your actual class) and call 'validate(username, password)' method. If return true program will continue else it'll throw exception if any credentials are incorrect ie., aka injection attack safe
+        validator.validate("user", "password");  // This is our username & Password for the authentication process you can change these as per your requirement - I am using hard-coded values here, consider this part to be where we would need some sort of user input/login mechanism in a real world scenario
+    }  
+}// end Main Class and Program structure ends. (''' ''' '' "" """ Java program Ends)

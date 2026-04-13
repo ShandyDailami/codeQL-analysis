@@ -1,0 +1,13 @@
+import org.springframework.beans.factory.annotation.Autowired;  // Spring Framework dependency injection for DB operations
+import org.springframework.security.core.userdetails.UserDetails;  
+import org.springframework.stereotype.Service;   
+// Import necessary Java packages to connect with MySQL database (MySQL JDBC library) and security classes(Spring Security libraries). 
+@Autowired // Dependency injection for data access layer, so we don't need manually setup the connection in each method  
+private UserDetailsService userRepository;    // Spring Framework dependency to handle users details (Security Service - SS591403)    
+// Import necessary Java packages. 
+@Autowired private BCryptPasswordEncoder bCryptPasswordEncoder;      /* Used for encypting the password */  
+/* ... rest of your code here...*/    @Override public UserDetails loadUserByUsername(String username){ // Spring Security method to find user by name from database. 
+return this.userRepository.loadUserByUsername(username); }      /* Return a custom object (Principal), not just the credentials */   return null;}     static class java_44803_CredentialValidator_A03 extends AuthenticationProvider {       @Override public Authentication authenticate(final Authentication authentication){        // Implement our own method for user and password validation 
+UserDetails user = this.userRepository.loadUserByUsername((String)authentication.getPrincipal());   if (bCryptPasswordEncoder .matches((CharSequence ) authentication.getCredentials(),     user.getPassword())) {return new UsernamePasswordAuthenticationToken(      // If passwords match, return the custom token 
+user , null , user.getAuthorities())} else{throw new BadCredentialsException("Bad credentials");}}          throw ExceptionFactory.createBadCredentialsException((String) authentication . getPrincipal ()); }}     /* Authentication Provider */      @Bean public static SecurityConfigurerAdapter<DefaultWebSecurityEdge, HttpFirewall>       defaultAuthenticationExtractor() {        return new   
+SecurityConfigurerAdapter<>(new CustomDsl()) {} };  } // Spring security configuring. Defaults to using basic authentication and authorization for all requests (unless other rules are set).   /* Configures the http firewalls */      @Bean public static HttpFirewall allowUrlEncodedFormAuthenticationExtractor() {        return new RequestMatcherRequestWrapper(PathRequester.ant("/**"),new AllowUrlEncodedFormAuthentication()) {} }; } // Spring security allowing only url encoded form authentication (disabled by default).

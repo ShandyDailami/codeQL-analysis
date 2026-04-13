@@ -1,0 +1,17 @@
+import java.io.*;  // for Input/Output Stream,Socket etc...  
+import java.net.*;    //for ServerSocket ... Socket class java_52458_SocketServer_A07 javax.crypto.SecretKey;       //Importing SHA-256 algorithm from Crypto API    
+import javax.crypto.spec.SecretKeySpec ;  //For creating secret key with the specified string  
+        
+public final class SecureServer {   
+           private static String HASH_ALGORITHM = "SHA256";     
+            public SecretKey ourKey;       
+               void setOurKey(){          this.ourKey= KeyGenerator.getKey(); }                  //Set the key            
+         ByteArrayOutputStream outContent  = new    ByteArrayOutputStream ();       //For storing all data coming in from client          
+                 Socket sock ;            BufferedReader brIn = null;  PrintWriter pwOut   =null   ,      wrServer=null,brFromClient    =     null          InputStream dis = null         OutputStream dos  =    null              Boolean flagSecure =  false        boolean secureFlag=  true          
+                      void run() {                  try{                     sock      =new Socket ("127.0.0." , 89);                 brIn   = new BufferedReader (                       new InputStreamReader(sock . getInputStream()));                   pwOut         =     new PrintWriter    (   outContent, true );                   
+                        // Send the generated number to client            wrServer    =new ServerSocket      ("127.0.0." , 89);               brFromClient   = null;                                              run() {                     try{                      if(sock==null) return;}                   while((brIn . readLine ()) !=         
+                       }catch{}                    // Receive from client            SecureServer ss = new         Socket           ("127.0 .",       89);                  brFromClient   = sokc     e       b   t      inp    OutputStream outt  =new BufferedWriter (                      Printwriter(sock . getOutputStream()));                   
+                            } catch{} // Write to client if no match occurred           pwOut           = newPrintWrite  ("127.0." ,89)         sokc          e       t      inp    outt =new BufferedWriter (              Printwriter(sock . getOutputStream()));               
+                            } catch{} // Close connection                    brFromClient   = null;             pwOut          =null     ;                  wrServer.close();                      if(!flagSecure){ ss                   SecretsKeys      for          all        Socket s in socket  ) return;}                     setOurKey() {ourkey =new SecretKRYeySpec (HASH_ALGORITHM , ourKEY)}
+                          }catch{} // Close connection                    brFromClient   = null;              pwOut            =null   ;     wrServer.close();                  if(!secureFlag){ for(all Socket s in socket) return;}                   setOurKey() {ourkey =new SecretKRYeySpec (HASH_ALGORITHM , ourKEY)}
+                         }catch{} // Close connection                    brFromClient   = null;               pwOut            =null   ;     wrServer.close();                  if(!flagSecure){ for(all Socket s in socket) return;}                   setOurKey() {ourkey =new SecretKRYeySpec (HASH

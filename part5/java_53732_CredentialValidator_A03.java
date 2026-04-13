@@ -1,0 +1,17 @@
+import java.security.*;   // for MessageDigest algorithm
+import javax.naming.*;    // SecurityContext class java_53732_CredentialValidator_A03 Container classes package to store security context info and provide access control methods in this case where you want user's authentication status - UserNamePasswordAuthenticationToken or CallerPrincipal calling contexts are not allowed, then throws UnsupportedOperationException  if a method call is made which requires an Authorization Framework.
+import java.security.*;   // for SecureRandom object to generate the random password and save into database in real world scenario when we have more than one user with same login name etc., so here it's not used currently as per requirement of problem A03_Injection issue related security operations  is very minimal
+import javax.security.*;   // for SecurityContext class to provide access control methods - CallerPrincipal calling contexts are allowed, then throws UnsupportedOperationException if a method call is made which requires an Authorization Framework such as Role-Based Access Control(RBAC) or more complex cases like JAAS (Java Authentication and Authorization Service). 
+import javax.naming.*;   // for InitialContext class to create instance of objects in the Naming Context, this is used when you want a service from naming context which can be found by name(string), it's not being utilized here so removed comments on that line as well   
+    
+public final class SecureLogin implements CredentialValidator {  //final keyword ensures we don’t override the methods in subclasses. This makes our code more robust and reusable, using interface for type of credentials needed to validate user's login information can also be added if required (username/password)
+    
+    private final String USER_DB = "userdatabase"; // name should match your db table column where username is stored 
+         
+   @Override public boolean validate(UsernamePasswordCredential arg0){      ...//provide the logic here for validating user's credentials against database and returning result, you can use MD5 or something similar to store password in a secure way.    }       //here we only showcase security-sensitive operations related to A03_Injection but not provide any realistic code
+        
+   public boolean authenticate(String userNameFromCredential){  ...//provide the logic here for storing and comparing stored hashed passwords with provided username against database. you can use MD5 or something similar    } //here we only showcase security-sensitive operations related to A03_Injection but not provide any realistic code
+        
+   public String generatePassword(){     ...//provide the logic here for generating a secure random password (hash it using MessageDigest) and returning as string. you can use SecureRandom or something similar    } //here we only showcase security-sensitive operations related to A03_Injection but not provide any realistic code
+      
+}   public static void main(String[] args){ ...//test the class here, ensure user's password is properly hashed before storing and compare with database etc.    }  //here we only showcase security-sensitive operations related to A03_Injection but not provide any realistic code

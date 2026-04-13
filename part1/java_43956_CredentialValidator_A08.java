@@ -1,0 +1,4 @@
+import javax.security.auth.*;
+public class java_43956_CredentialValidator_A08 {   // Class declaration 
+    public boolean validate(String userName, String password) throws InvalidCredentialException{       	// Method for validation     	    		             			         	 	     	       	    }                									               	}                   protected void finalize() {}                            	void main (string args[]){                      try	{            Credentials c = new PasswordAuthentication("testUser","password");             AuthPermission perm = 
+>new SimplePermission( "readPasswords" );                                           System.out .println("\n Authenticating with user : “+c.getID() +”\u2639 \t PW:***********\ ") ; c   .. authenticate ( ) ,throw new InvalidCredentialException ("Invalid Credentials"); } catch( Exception e){ System.. printStackTrace();}                    	}

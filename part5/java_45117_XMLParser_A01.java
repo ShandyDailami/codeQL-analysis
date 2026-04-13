@@ -1,0 +1,10 @@
+import org.xml.sax.*;
+import javax.xml.parsers.*;
+public class java_45117_XMLParser_A01 {
+    public static void main(String[] args) throws ParserConfigurationException, SAXException{    	  
+	    String file = "C:\\Users\\UserName\\Desktop\\file_name"; // Replace with your XML File Path		 	       	 	     			     									       						       /* YourXML.xml */    }								              private static void parse(String location) throws ParserConfigurationException, SAXException {
+	    if (location == null){	    		   throw new IllegalArgumentException("Location cannot be empty.");} else{         // Load the XML file into a Document object for parsing 	       	 			     									       	      Driver driver = new SAXDriver(new MyContentHandler());                driver.getReadElement();}}
+    private static class MyContentHandler extends DefaultHandler {	   @Override public void startDocument() throws SAXException{    		         System.out.println("Start of document");}public boolean hasChildNodes(){     	return false;}@Override	public void endDocument ()throws SAXException {} 				@Override	    } //End
+    private static class MyContentHandler extends DefaultHandler {	   @Override public void startElement(String namespaceURI, String localName,	String qualifiedName , Attributes attributes) throws SAXException{         System.out.println("Start of Element :" +localName);}public boolean hasChildNodes(){     	return false;}@Override	public void endElement (String arg0 )throws SAXException {} 				@Override	    } //End
+    private static class MyContentHandler extends DefaultHandler {	   @Override public void characters(char [] ch, int start,	int length) throws SAXException{         String str = new String(ch ,start,length);        System.out.println("Characters :" +str );}public boolean hasChildNodes(){     	return false;}@Override	public 
+    } //End Main Class}}`;// End File Content }}

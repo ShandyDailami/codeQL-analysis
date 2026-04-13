@@ -1,0 +1,21 @@
+import java.sql.*;   // Import required classes to access SQL features using JDBC (Java Database Connectivity)    
+public class java_44109_JDBCQueryHandler_A01 {   
+       public static void main(String[] args){     
+            try{       
+                Connection con = null;        
+                           /* Establishing a connection */             
+                Class.forName("com.mysql.cj.jdbc.Driver");          // Load the MySQL driver 
+                                                                   // In your case, you may use 'org.mariadb.jdbc.Driver' depending on what database management system (DBMS) is in place       
+                 con = DriverManager.getConnection("jdbc:mysql://localhost/mydatabase", "username","password");      /* Creating connection */              // Replace with your actual MySQL JDBC URL, username and password 
+                PreparedStatement pstmt =  null;                  // Create a preparedstatement         
+                 String query ="SELECT * FROM Users WHERE role=?" ;     // Fetch data from the DB based on some condition        Prepare statement for execution  
+                     con.setAutoCommit(false);                   /* Set autocommits to false */        
+                pstmt  =con .prepareStatement (query)           /**/  Execute Prepared Statement **/      // Executing a preparedstatement    ,here we are passing value ie role as "Admin" for example         
+                     pstmt.setString(1, "admin")             /* setting parameter values */        Print the result set       ResultSet rs = null;         print out column name and data from database  while iterating over it     
+                            try {   // start of begin transaction    Beginning Transaction     con .begin()          } catch (SQLException e) {}           Ending our current transaction after this block.        if (!con.isClosed())             System.out.println("transaction committed");  else            throw new SQLException();     
+                        rs = pstmt.executeQuery();       /* Execute the query */          while(rs != null && rs .next()){         //Iterate through each row of a ResultSet    String name  =     rs.getString("name") ;        System.out.println("\nName: " + name);      } con close (and commit) in finally block, even if an exception was thrown         
+                           try {   /* end transaction */             // Ending Transaction       Con .commit();         Print out the result set  ResultSetMetaData rsmd = null;     print column names from database while iterating over it            int i = 1 ;           for(i=0; i <rsmd.getColumnCount()+1, i++){    String name  =   (String)rsmd .getValue("name")  System.out.println((char)(65 + i ) +  " :"  +     rs md..getString ("user"));         }            
+                             if (!con.isClosed()) {                     // Ensure we are not leaving any open connections       println("\n Connection is closed"); con .close();  System.exit(0);          }} catch (SQLException se) {}           Error occurred while executing SQL statement or committing transaction - closing connection and exiting from program           
+                    }catch (ClassNotFoundException e1){                 // exception if JDBC driver not found      println("JDBC Driver not Found");  System.exit(0);     }} catch (SQLException se) {          /* Exception in handling SQL request */        try{             con .rollback();         Print sql exception   }catch (SQLException ex){              
+                    // Do something else here, maybe log the error and continue...      Logger l = Logger.getLogger(VanillaJdbcQueryHandler_.java);           BasicConfigurator.configure();  ExceptionUtils.printStackTrace(ex ,l,"An Error Occured in executing SQL Statement!" );
+                    //Do something else here, maybe log the error and continue...      }    }}catch (SQLException ex){}        println("Something went wrong with your Transaction");}} catch (IOException e) {e.printStackTrace();}}}  */ End of Main Method     Catching all Exceptions as mentioned above for robustness - do not worry, that's the point!

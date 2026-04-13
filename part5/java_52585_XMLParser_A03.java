@@ -1,0 +1,15 @@
+import org.xml.sax.*;
+import org.xml.sax.helpers.DefaultHandler;
+
+public class java_52585_XMLParser_A03 extends DefaultHandler {  // Define your own handler, extend default one to avoid unnecessary work and handle errors in a more controlled way (e.g., by logging or throwing exceptions)    
+    boolean bName = false;  
+    boolean bAge=false ;     
+       String name , age;        int count = 0  ;// declare your counters here            // Initialize them once and use only if needed, otherwise you can always reset the variables                    private static final SAXParserFactory saxPf =SAXParserFactory.newInstance();   boolean bDoctype=false   
+       public java_52585_XMLParser_A03() {     super (); }      void startDocument()throws SAXException{ System.out.println("Start of Document");}           // Initialize all your counters here as the document starts          private static final String DOCTYPE_DECL ="<?xml version=\"1.0\" encoding=\"UTF-8\" ?>";    public void startElement(String namespaceURI, String localName , 
+        int type)throws SAXException{ System.out.println("Start of Element " +localName);   if (localName .equals ("Person")) count =count+1;      bDoctype=true;}               // Use the document's doctype here, and check it in an element      
+    public void endElement(String namespaceURI , String localname  int type )throws SAXException{   System.out.println("End of Element " +localName );if (bDoctype) { if (!DOCTYPE_DECL .equals ("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>")) throw newSAXException( 
+        localname);} bAge = false;   //reset all your booleans here }     public void characters (char [] ch , int start,int length )throws SAXExceptio{ if (!bName){ name=new String (ch,,start,length );      System.out .println (" Name is : " +name); bAge = true;} else { age  = new 
+        String(ch ,start, length) ;   //reset all your booleans here }     public void endDocument(){    int totalElements= count-1;System. out .print("End of Document");}         System..out ("Total elements in document are :" +totalElemements); 
+      if(bAge){ age = new String (ch, start ,length );       //reset all your booleans here }   public void warning( SAXParseException e ){System.err .println(" Warning: "+e .getMessage());}     /** main method for testing */ 
+       `public static void main (String [] args){SAXParser saxp=saxPf.newSAXParser(); MyXMLParaser myxmlpars=  newMy XML Parser( );   try{ SAXSource source =saXX .readerWtihUTF8Charset("sample123456790-ABCDEFGHIJKLMNOPQRSTUVXYZ.xml" ; sasaxmLpars)); 
+        }catch (Exception e){ System ,println ("error : " +e .getMessage());}`         // This is a minimalist style program, you can add more complexity or functionality to make it realistic!       Injection prevention - this code does not use external frameworks like Spring. The usage of the default handler and SAX parser helps prevent injection attacks related to A03_Injections (i.e., Cross Site Scripting).

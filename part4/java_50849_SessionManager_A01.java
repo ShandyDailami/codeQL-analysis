@@ -1,0 +1,13 @@
+import javax.management.*;
+import javax.security.auth.Subject;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import com.sun.jmx.remote.security.AccessControl;
+public class java_50849_SessionManager_A01 {  // replace User with the real user object in your system    }    
+private String username, password = null ;   private Session session=null;}      public void setUsername(String usr)       this.username =  usr        System.out.println("Enter Password");         BufferedReader br=  new BufferedReader (new InputStreamReader  (System.in))
+;          try{password =br .readLine(); }catch   (IOException ex){    // read password from keyboard}      SecureUser secuser=new     SecureUser() ;secuser.setUsername(username);       getSession(Secure User) session_factory =  HibernateUtilities
+            .buildSessionFactory().openSession())        Subject   s = new     Subject.publicInstance();               // create a subject    publicKey=new PublicKeyInfo (...).  this is just an example, replace it with your actual implementation of getPublickey(..) and generateSignature((...)
+            .replaceAll(" ", "+");          SignatureGenerator   sg = new     DefaultSignatureGenerator();               // create a signature generator    byte[] b=new        ByteArrayInputStream (...).this is just an example, replace it with your actual implementation of getBytes(..) and generateByteSignatrue((...)
+            .replaceAll(" ", "+");          s.setPrivateKey  ("...");               // set private key from Public Key    bc=new      BCEntryCertificateChainBuilder (...).buildEntryChains   ((byte[]))};           SecurityException     se = null;             try{s .verify(sg ,bc) ; }catch         {se  = new          SecureVerificationException("...");
+            System.out.println ("Signature verification failed");  printAccessControl ( s );}              catch    // handle all security related exceptions       e.printStackTrace();}}      public void setUsername(String usr)   this.username =  usr     getSession().close() }catch             {getCause());System.out.println("Could not access the session"); 
+            (Exception$123_Wrapper);} catch    // handle all exceptions, replace Exception$  with your actual exception class name in case of      different type              try{s .verify(sg ,bc) ; }catch         {se  = new          SecureVerificationException("..."); System.out.println ("Signature verification failed"); printAccessControl ( s );} catch

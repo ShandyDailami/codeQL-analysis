@@ -1,0 +1,18 @@
+import java.io.*; // Input/Output Streams and their wrappers (BufferedReader, BufferedWriter) are used for reading from / writing to the client connection socket respectively  
+import java.net.*;//ServerSocket is a special kind of Socket where you only listen on one end or bind it 1234 port number(here I'm using same as in Client code). Server and Clinet sockets are used for communication between server & clients (Both the ends)  
+import java.util.*; //For instance, Scanner is a class java_53279_SocketServer_A08 reads text from an InputStream by buffering characters or lines until there ain't enough to read it available  Read more about this below on how we use them in our program: https://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html
+  
+public class A08_IntegrityFailureServer { //Main server-side code begins here (We will call it Server) 
+    public static void main(String[] args){    
+        try{         
+            System.out.println("Starting Socket Program");          
+            
+            //Creates a socket and binds to port number provided in arguments of this method or default as localhost:1234 (if no argument is passed) 
+                ServerSocket server = new ServerSocket(1234);    System.out.println("Server listening on Port : "+server.getLocalPort());     //Listening to client requests from clients  	             		               while((client_socket=server.accept()).isConnected()){      
+                //Accepts an incoming connection and accepts a new socket for the requesting (Client)  if there is no more connections, it will wait until some time passes without any activity on listening sockets then exception 'SocketTimeoutException' occurs    	              	  PrintWriter out =new    BufferedWriter(new OutputStreamWriter  
+                //Here we use printwriter and buffered writer to send message back at the client 			                             (InputStreamReader in =  new InputStream Reader istream,1024))      		      System.out .print ("New Connection established : " +client_socket.getInetAddress().  
+                //toString()+" listening on port: "  +server. getLocalPort());        try{        	  BufferedReader in =new  Buffere    Reader( new InputStreamReader ( client_sock et.read() ));      		          String line;    	            while((line=in . readLine()) !=  null){     
+                //In this part we handle the incoming messages received from clients and send back echoed message to 	    respond    System out,println("Echoing :"+LINE );	      }Client().close();       ServerSocket. close()    		  	}catch(IOException e) {System . err(. "IOExeception Occurred while processing Client ", +client_socket);
+                //Here we catch the exception that may occur due to client connection, and send back an error message or log it  for debugging purpose     	       }    		  	}catch(IOException e){ System.err .println("Server Accept Failed :"+e) ;    close();}          finally{         //This block will run no matter what the try-except blocks catch,finally ensures that we always clear resources like sockets (if any). 
+                socket connection is closed and all system resource are released. It's a good practice to do this in case of exceptions or errors within our server code   }    if(server_socket != null){      try{ ServerSocket temp = new     Socket("127,0.,8");temp .close();}catch (IOException e) {System
+                out.println ("Failed :"+e);}} catch({  //Here we handle general exceptions and log them for debugging purpose   System   	.err( "A General Exception Occurred: ", e ); })     }          	            	}//Main server-side code ends here (We call it Server)

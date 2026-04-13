@@ -1,0 +1,9 @@
+import java.sql.*;   // Import necessary Java libraries 
+
+public class java_52124_JDBCQueryHandler_A07 {     // Start of the program (class) definition and name declaration   
+                                                    public static void main(String[] args){      }       
+                                            private Connection connection;                             try{         protected String dbURL = "jdbc:mysql://localhost/test"; 
+                                    private final char SECRET_PASSWORD='$ecr3t';     //Secret password for the database. Do not share this with anyone and use it responsibly!          }catch(SQLException e){              System.out.println("Error connecting to MySQL Database");         e.printStackTrace();       }}
+                                        public static void createConnection() throws SQLException{   connection = DriverManager.getConnection(dbURL, "root", SECRET_PASSWORD);  // Establish Connection with the database      }     protected List<User> getUsers(){        PreparedStatement preparedStmt=null;    try {           String query="SELECT * FROM Users";          preparedStmt = connection.prepareStatement(query,ResultSet.TYPE_SCROLL_INSENSITIVE);   statement execution for fetching data      }catch (SQLException e){     System.out.println("Error executing SQL Query");    //Handle Exception here! 
+                                                                                                               }}                     public static void closeConnection(){              try{ connection.close();} catch(SQLException se) {         Seems like a problem occurred, handle it accordingly . }catch (Exception e)   {           System.out.println("Error in closing connections");          e.printStackTrace();    }
+                                                                                                                      }} // End of the program

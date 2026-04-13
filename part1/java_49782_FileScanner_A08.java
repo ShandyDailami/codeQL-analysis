@@ -1,0 +1,9 @@
+import java.io.*;  // Import Java Input-Output Exception(s) if needed   
+// Do consider using `javax.*` packages instead, as they are part of modern API and more robust tooling support in IDE's/tools such IntelliJ etc..  
+public class java_49782_FileScanner_A08 {    
+        public static void main (String[] args) throws IOException  // Throws exception if file does not exist or can’t be opened for reading.   
+         {     
+             FileInputStream fis = new FileInputStream("C:/Users/your_directory");// replace with your directory path   }       catch(FileNotFoundException e){e.printStackTrace();}          // Handle IO related exceptions     if (args.length == 0) return;  try{    for (;;) {        String line; while ((line = fis.readLine()) != null ) ;                   
+             File file  = new File("C:/Users/your_directory", "file name");// replace with your specific filename   } catch(SecurityException se){se.printStackTrace();}    // Handle security related exceptions  if (args.length == 0) return;      try{        for (;;) {            String line = null ; while ((line=br.readLine()) != 
+             null ) {}// replace with your specific filename and handle end of file exception          } catch(EOFException e){e.printStackTrace();}  // Close resources         fis.close())};   try{        for (;;) {            String line = br . readline (); if ((br==null) ) return ;            
+           FileOutputStream fos= new    FileOutputSteam("C:/Users/your_directory", true)})// replace with your specific filename      } catch(IOException ie){ie.printStackTrace();} // handle other I/O related exceptions  }}      `;

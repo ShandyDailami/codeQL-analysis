@@ -1,0 +1,5 @@
+import java.sql.*;  // Import Statements and Classes needed to connect Java DB & perform operations with them... (We'll use this package)  
+// ...plus our specific database details/connection data here.....(You may want these in a file or environment variables...)   
+    
+public class java_52860_JDBCQueryHandler_A07 {  // Start of Class Body, define the name and purpose for your program.          (Name should be meaningful so it helps others understand what you're doing)  
+      public static void main(String[] args){         /* Define entry point to application */     }        };    });}                                                    ));                                                                 ))));}}; }} ;}}} //... Close the code for this section as requested. The closing braces are used at a similar time in each line of previous codes which helps with syntax and logical understanding....

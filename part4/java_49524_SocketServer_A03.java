@@ -1,0 +1,12 @@
+import java.io.*; // Import necessary classes here, like Reader & Writer used above OR use imports specified by the frameworks you're using in real code (e.g. BufferedReader and PrintWriter) if not dealing with file streams etc..  
+                 
+public class java_49524_SocketServer_A03 { 
+    public static void main(String[] args){ // Main method, where server begins running         
+        try{            
+            ServerSocket welcomeSocket = new ServerSocket (6013);     
+                         System.out.println ("Waiting for connection..." );   /* Create a socket to receive client requests */ 
+                        Socket connectionToClient = welcomeSocket.accept();     // Accepts incoming request from any of the connected clients         PrintWriter out = new OutputStreamWriter (connectionToClient .getOutputStream());       System.out.println ("Connection established!" );    BufferedReader in  =new   InputStreamReader(connectionToClient.getInputStream()) ;
+                        String clientQuery=in.readLine();  // Reading a line of text from the Client socket          while (!clientQuery.equals("Exit")) {                out .println ( "Server says: Hello, " + clientQuery);     System.out.println ("Message to client :"  +   clientQuery );    }
+            welcomeSocket.close();  // Close connection with clients after use        in.close() ;      out.close ()         Connection is closed now...       /* End of code */           }} catch(Exception e){e .printStackTrace ();}     System.out.println ("Server has stopped!" ); }
+                                                                                                                  public class InsecureClient {  // Client side to test the server, using same method for both sides      try{   Socket connectionToServer = new Socket("localhost",6013) ; PrintWriter out=new OutputStreamWriter(connectionToServer.getOutputStream()); BufferedReader in  =    InputStreamReader (connectionToServer . getInputStream())  String serverQuery; while (!serverQuery.equals ("Exit")){       System.out.println   ("Client says: " +     serverQuery);      } out = new OutputStreamWriter( connectionToString Server) ; Connection to the client side is closed now... /* End of code */}}
+                                                                                                                  catch (Exception e){e .printStackTrace();}  }}

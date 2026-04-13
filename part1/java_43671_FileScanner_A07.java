@@ -1,0 +1,7 @@
+// Import required standard libraries (file system) 
+const fs = require('fs');   // file and directory manipulation library from NodeJS core module 'module' of nodejs package manager npm install --save @types/node if not installed already by running:npm i -D typescript ts-node@10.2.dev typeselectorify
+ 
+class java_43671_FileScanner_A07 extends Error { // A custom exception class for handling auth failure cases in NodeJS environment (JavaScript does NOT support exceptions) you can use builtin error or create a new one based on your needs, this is just an example of how it could be done.   }    const err = new Err('Auth Failed')
+  'use strict'; // Requirements for "Strict Mode" in NodeJS environment and TypeScript's type definitions are declared with the word `strict` to catch errors that may occur during program execution, this is required by most of our code.   }    const err = new Error('Auth Failed');
+  fs;        // Importing file system module from nodejs core 'module'. Allows us access methods and properties which are inbuilt within NodeJS Environment's Standard library like readdir() for reading directory content, stat(), unlink etc as well.   } const f = require("fs");//Import the FileSystem libray
+  var path =  __dirname + "/folder_to_scan"; // Specify folder to scan with respect file system module methods and properties (readFileSync: synchronous read of a directory, listFiles/sync)...    })();`;   }); `});  `})()); /* End */

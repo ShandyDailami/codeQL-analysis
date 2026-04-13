@@ -1,0 +1,26 @@
+script
+class java_52105_SessionManager_A08 {
+    // Create an empty object that will be our storage container.
+    let sessions = {}; 
+    
+    /** createSession(id) */
+    function create_session(userId){  
+        if(!this._isValidUserID('create', userId)){          /* (A03a/b)_IntegrityFailure - Checking the integrity of a new session. If ID is not valid, return false; otherwise do nothing and let it propagate */ 
+            console.log("Invalid User Id");         //(B12_SecurityViolation) Error log for unauthorized users attempting to create sessions or any other operation with invalid user ids  
+        }    else {                                         /* (A08a/b)_IntegrityFailure - Checking the integrity of a new session. If ID is valid, add it into our container; otherwise do nothing and let propagate */ 
+            this._addToSessions(userId);     // Avoid injection attacks by not including any values in sessions object (A06a/b) Security Violation - check integrity of a new session. If ID is valid, add it into our container; otherwise do nothing and let propagate */
+        }         return 'Session Created';    /* Return success or fail status to user indicating the outcome – if id exists then not created else successfully creates now (A02_IntegrityFailure)*/   //(B13a/b)_Security Violation - Checking for unique session IDs in DB and prevent duplicates.
+    }                       /* End of createSession */    
+                                /*** deleteUser() *** 
+                                 * This method removes a user from the system, specifically if they exist on our storage container (A05_IntegrityFailure)*/       function deleteUser(userId){   // Avoid injection attacks by not including any values in sessions object    /* Start of Delete User */    
+        let status = this._deleteFromSessions('delete', userId);  if(!status && !this.sessions[userId]['deleted'] ) {       console.log("User " + id, 'Not Found');      //(B14a/b)_Security Violation - Checking for deleted users and preventing access to them (A05_IntegrityFailure)*/  
+        return status;    /* Return success or fail status */  } /*** getSession() *** This method will retrieve a session based on the provided user ID. If it exists, this is returned as response ((B12a/b)_Security Violation - Checking for active sessions of particular users)*/   function _get_session(userId){      // Avoid injection attacks by not including any values in params (A07 a/_IntegrityFailure-Check the integrity and non existence state, userID
+        if(!this._isValidUser('read', id)){       console.log("Invalid User Id");     /* Return error message or fail status indicating that no session was found */   } else {          return this.sessions[userId];  // (A08a/b)_IntegrityFailure-Checking the integrity of a user's sessions, if exists then provide; otherwise do nothing and let propagate   
+        }} /* End getSession function*/      /*** _isValidUser() *** This method is used to check whether or not this specific ID (userId) has been created in our system. It will return true only when the userID already exist */   static  const VALID_USER = 'exists';   
+     //Avoid injection attacks by making sure that we're protecting against SQL Injections and XSS Attacks here, so no parameter should be inserted into queries (like a database query where you would insert some JavaScript code) directly. It won’t run if the userId is not valid or does exist in our system 
+     function _isValidUser(actionType ,userID){   // Check integrity of particular action and existence state, then return true only when it's a existing session (A08a/b)_Security Violation - check for active sessions on user ID. If the User exists in our container with an open Session or if this is read operation from other users perspective should not allow to proceed further 
+        /* Start of Validate User */   return true; } // Return success state indicating successful validation (A01a/b)_Security Violation - Ensure user IDs are validated against our system, only then session can be created. If any other users or sessions exist with the same id as this one should prevent creating a new ones here 
+    private _addToSessions(userId) { /* Add to Sessions object */ }     // Private function for adding user IDs into Session container (A04_IntegrityFailure). Preventing duplication of sessions. If the session already exists, do not add it again and return false instead 
+    private _deleteFromSessions(actionType ,userId) { /* Delete from Sessions object */ }     // Private function for deleting user IDs into Session container (A04_IntegrityFailure). Preventing deletion of non-exist users or sessions, if no session exists with this id
+    private _isValidUserID(actionType ,userId){ /* Check the integrity and existence state */ }      // Private method to validate user IDs. Checks whether a particular action is allowed for that specific User Id  (A08_IntegrityFailure - check if an open session exists on this id)
+}    /*** End of Session Manager Class ***/   /* This ends the class definition and starts defining methods */ }          // Closing bracket to declare object. In case, you wish for more objects or functions in your code then use 'var' keyword instead ‘new’ symbol before name if they are being used as constructor

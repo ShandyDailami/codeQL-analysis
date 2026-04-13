@@ -1,0 +1,24 @@
+import java.security.*;
+// ... and other necessary imports...
+
+public class java_51867_XMLParser_A07 {
+    public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeySpecException{
+        // Step 1: Create a KeyStore for our server that contains the certificate used to sign requests.  
+		// (In this example we'll use an alias "server-key")...      
+    	String keyEntryPassword = "password";    String secret="AES_SECRETKEY2048forAuthFailureEventHandlingExamplePurposeOnly!";  // This should be a long, random string or cryptographic secure value.  		        		// It's used for encrypting password and other sensitive data in this example
+        KeyStore keyStore = KeyStore.getInstance("JKS");    SecureRandom sr = new SecureRandom();      String alias="server-key";     byte[] barray=sr.generateByteArray(24);	KeyGenerator kg =  KeyGenerator.getInstance ("AES", "BC");  
+        kg.init(new KeyGenParameterSpec [1] ,barray );    Key securekey =kg.generateKey();  //We generate a new key with the alias and password provided above		        	    SecureRandom sr2=	       Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
+        Certificate cert =  securekey;   KeyStore ts = KeyStore.getInstanceKeyStore();    String tsfn=  "server-truststore";     KeyStore trusts=createMyKeyStoreWithCert(tsfn,cert);  // Step3: create Trust Store...        		     		// ...and then add the cert to this store
+        keyStore .setEntry(alias , securekey    , sr );   ts.setEntry (tfn + "_entry", trusts,. null ) ;     KeyManagerFactory kmf =KeyManagerFactory	.getInstance("SunKS","BC");  // Step4: create a new KEYSTORE and Trust Store...      
+        String tsfn="server-truststore";   ts  =createMyKeyStoreWithCert(tsfn,cert);         	kmf.init (new KeyStorePasswordCallback()    {"password".toCharArray () },null) ;  // Step5: set trust store password callback...      
+        System .setProperty("javax.xml.parsers","com.sun.org.apache.xerces.internal.parsers.SAXParser")  	;System .setProperty ("javax.xml.validation", "true");  // Step6: set the parser...        		
+        XMLReader xr =  SAXSource.newInstance ( new A07_AuthFailureEventHandler(),   1 ) ;       SecureRandom sr3=sr  	;      BufferedInputStream bis =null    	 	    InputMethodContext immc=  JAXPConstants .IMC_NONE 
+        try {                xr =  SAXSource.newInstance ( new A07_AuthFailureEventHandler(),   1 ) ;       SecureRandom sr3=sr  	;      BufferedInputStream bis =null    	 	    InputMethodContext immc=  JAXPConstants .IMC_NONE 
+        {                    String fileName  = "sample.xml";              File inputFile =  new java.io.File (fileName)       ;    SAXHandler sh  =  null;                  // Step7: create the parser...        		     		// We do not instantiate a custom handler here, but use one that extends DefaultHandler and implements A07_AuthFailureEventListener
+  } catch(Exception ex){ System.out .println ( "Error in parsing" + fileName ) ;     return;  	} try { sh = new SAXHandler ()     		      		// Step8: instantiate the custom handler...        									    // We do not call super() at this point as we need to provide our own constructor for a07_authfailure.
+ } catch (Exception ex){ System .out  .println ("Error in creating A07AuthFailureEventListener" +   );     return;		}       	    xmlParser  = XmlPullParserFactory    .newInstance()     				// Step9: instantiate the XML Parser Factory...        		      
+ {                  String fileName = "sample.xml";             InputStream is =  null         	 	      try{              FileInputStream fis=  new   java.io 	.FileInputStream (fileName)    	; xmlParser .setFeature(XmlPullParser.FEATURE_NAMESPACES, false);       
+            SAXSource source =new    SAXSource        				// Step10: create the parser...         		     	  // We do not call super() at this point as we need to provide our own constructor for a07authfailure.setContentHandler(sh)       ;  	try { xmlParser .parse (is, handler ) } catch 
+   `java/langsyntaxexception#1-239856i:e='com~gcoldw~org|uaeawebapp_ui|a07authfailureeventlistener.Au t r h e N . run()Ljava;<init>(Ljavacollectors4llegacystoragemodel152java8optionalillegalargumentexception)N
+     } catch (Exception ex){ System out 	.println ("Error in parsing" + fileName ) ; return;} }}`    // Step7: instantiate the custom handler...        		      		// We do not call super() at this point as we need to provide our own constructor for a0 auth fail.
+     catch (Exception ex) { System out 	.println ("Error in creating Au t r h e N . run()" +   ); return;} }`catch(Excei o l ong exception){System ou ptln("EXception: "+e);}}'java/ioillegalargumentexception#1-239856d=ex.getMessage()Ljava;<init>lorg|uaeawebapp_ui||a07authfailureeventlistener._Ctor`

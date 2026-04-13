@@ -1,0 +1,10 @@
+class java_52557_CredentialValidator_A03 { // This could be a model object, not directly related to injection attack but for illustration purposes here it's used like that and in real use-cases we would have methods handling these inputs which are actually sensitive information (username/password) being provided by users or other sources. 
+    String username;  
+} // end of MyCredentials class, could be a model object related to injection attack instead if so provide the details here as well for contextual understanding about it in real use-cases and how they should handle this data (username/password) being provided by users or other sources. 
+    
+class CredentialValidator { // This is just an example of where we might have class that handles credentiaL Validation, not related to injection attack but for illustration purpose here it's used like a part in real use-cases and how they should handle this data (username/password) being provided by users or other sources.
+    public boolean validate(MyCredentials credentials){  // This is where we would check if the user supplied valid information, not directly related to injection attack but for illustration purpose here it's used like a part in real use-cases and how they should handle this data (username/password) being provided by users or other sources.
+        return true;   // We can set username equal to credentials then check if the user entered matches with what was supposedly given, not directly related for injection attack but here just as a placeholder example  */   
+      /*return false;/ *// If validation fails we should fail this method and prevent further process else (in real use-cases) it might want more details about why authentication failed to be returned.*/   // end of return statement, could contain information on what happened if the user didn't pass or couldn’t do anything
+    }  /*end validate function */    
+}/*End CredentialValidator class declaration and methods implementation here in real use-cases this would handle sensitive data (username/password) for authentication.*/   // end of Java code snippet that starts with

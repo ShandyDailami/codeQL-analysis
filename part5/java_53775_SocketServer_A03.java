@@ -1,0 +1,20 @@
+import java.io.*;
+import java.net.*;
+
+public class java_53775_SocketServer_A03 {
+    public static void main(String[] args) throws IOException{       
+         ServerSocket server = new ServerSocket();          // Create a server socket at port number assigned by the OS, and bind it to any IP address (in case of multicast groups). 
+                                                                   The default is localhost. If you want this feature then don't set your own ip or use 'INADDR_ANY'. In such cases ServerSocket(49672) will be used which uses port number assigned by the OS, and it binds to any IP address from all interfaces (0.0.0.0).
+         server.bind(new InetSocketAddress('\u0000', 49672));   // Bind this socket with a specific ip or non-unique port number provided by the user, e.g., new InetSocketAddress("185.37.95.6", PortNumber)
+         System.out.println( "Server started on: 4000" ); // This will print out your local IP address and a random assigned port number to check if it's successful or not, you can change this according with the requirement  
+                                                                       when starting server in real network scenario remember that Ports are reused by other programs so ensure no one else is using these ports.  If someone tries connecting from another machine use ip instead of hostname for ServerSocket("IP", port number) and InetAddress().getHostName() it will work properly
+                                                                       but be aware this may cause issues with network communication within a larger system or in more advanced scenarios like NAT traversal.  Also, you need to provide access only on ports that your application needs (like localhost for non-secure applications) and are available from the operating systems point of view due some security considerations
+                                                                       such as using SOCKS proxy if applicable according with OS's requirements e.g., SystemPropertyEnvironmentPluginFactory in Windows, NSHttpConnectionPool etc...  For production environments consider implementing SSL/TLS for communication over network and make sure to follow best practices on secure programming principles which include least privilege principle ie user’s privileges should be minimized as much possible
+                                                                       so the server socket won't accept any connections from unauthorised users. In Java, you can use 'SocketOption Level option value SOL_SOCKET Solaris only and is available in API level 14 or above.' )   // Enable SO_REUSEADDR for non-blocking mode
+         while(true) {       
+             Socket socket = server.accept();       // Accept a connection from the client, create new stream handler to interact with connected site (socket). A blocking call until some data or end of file is found on this inputstream  and then returns an instance that can be used for reading/writing operations through network byte streams using methods available in java.io package
+             // If you have a thread-pool based application, make sure to manage the threads properly otherwise it may lead into unpredictable behaviour due resource leaks like blocking on accept() call after return of socket from server could cause new connection is accepted and current client process will be blocked by next available data.  In real world applications consider using ExecutorService for managing pooling thread, which can handle multi-threaded connections effectively
+             OutputStream out =socket .getOutputStream(); // Create output stream to send bytes back(to the sender) or write operation into this socket object gets a channel from underlying transport such as TCP connection in case of Socket.  After writing all data use 'flush()' method for ensuring that written contents are sent and become available at peer end
+             out .println("Hello Client"); // Write "message" to the client  
+         }    
+    }}

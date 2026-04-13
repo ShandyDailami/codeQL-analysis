@@ -1,0 +1,16 @@
+import javax.servlet.*;  // Import Servlet API (for servlets) & JSP(s).
+import java.io.*;       // For Input/Output operations, exception handing etc...
+import javax.servlet.http.*;   // Handling HTTP requests and responses - for session handling use these packages only if you want to store sessions or not in the current example (if this is an a07_AuthFailure case) 
+    
+public class java_50765_SessionManager_A07 extends HttpServlet {    // Extend from servlets' base classes: Servlet, Filter etc. using 'Http...'.  
+      private static final long serialVersionUID = 1L;       //Serializable (versioning). Required for multiple objects or versions of same object in Java 5 & later onwards as per Serialization protocol requirement defined by JVMs/OSes during the runtime..   
+    
+        public java_50765_SessionManager_A07() {   }                      // Default constructor. Needed only when we are using a Builder-like approach to create instances (for example: for Hibernate or Spring).  A07_AuthFailure case might not require this, unless you want more flexibility in creation of new sessions instance later on
+        
+        @Override    public void init(ServletConfig config) throws ServletException {   // Initialize the servlets. Executed before any service() method is invoked by a request from client  A07_AuthFailure case might not require this, unless you want to execute some initialization code at start up
+            super.init(config);        System.out.println("Session Manager Initialized");    // Calling the parent's init function and logging that session manager is initialized..   }     @Override  public void destroy() {// Cleanup tasks, close connections if needed A07_AuthFailure case might not require this
+            super.destroy();       System.out.println("Session Manager Destroyed");    // Calling the parent's init function and logging that session manager is destroyed..   }      @Override  public void service(ServletRequest req, ServletResponse res) throws ServletException {     HttpServlet servReq = (HttpServlet)req;      
+        HttpServlet servResp= (HttpServlet)res;}          // This method will be called when a client sends us an HTTP request. A07_AuthFailure case might not require this, unless you want to do something with the incoming requests and responses as per your application requirements..   }  @Override    public HttpSession createSession(Serializable arg0, boolean arg1) throws HessianException {     // Creating a session in SessionManager. Avoid using it for managing sessions - if needed then use this method to manage them manually
+        throw new UnsupportedOperationException();}   }  private static MySessionManager singleInstance = null;       @Override public synchronized HttpSessionDAO getSessionDAO() {     // This function will return the session DAO instance. A07_AuthFailure case might not require this, unless you want to use a specific Session Manager like Hibernate or Spring..
+        if (singleInstance == null) singleInstance = new MySessionManager();       }  public static synchronized HttpSession getSession(HttpServletRequest req){     // This function will return the session of given request. A07_AuthFailure case might not require this, unless you want to manage sessions manually
+        throw new UnsupportedOperationException() ;}   }}

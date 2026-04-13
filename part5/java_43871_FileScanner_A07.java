@@ -1,0 +1,15 @@
+import java.io.*;   // Import Java I/O utilities (like File, BufferedReader etc.)
+// import javax.* for more specific classes if required such as InputStreams in this case
+    
+public class java_43871_FileScanner_A07 {    // Class name should be descriptive and follow camelCase style. 
+   public static void main(String[] args) throws IOException{     
+       String directoryPath = "/path/to/directory";        File dir = new File(directoryPath);         if (!dir.exists()) {           System.out.println("The specified file or directory does not exist"); return;     }   // Checking for the existence of a specific path ie., folder
+       SecureFileScanner sfs=new SecureFileScanner();        File[] listOfFiles = dir.listFiles(file -> {         if (StringUtils.endsWithAny(Collections2.filterElementEndsWildcardMatcher("*"+".log", file, true), Arrays.asList(".txt")))           return false; else               // If a .TXT log does not match with any specified extensions then it'll be skipped
+             if (StringUtils.endsWithAny(Collections2.filterElementEndsWildcardMatcher("*"+".xml", file, true), Arrays.asList(".txt")))           return false; else               // If a .TXT or XML does not match with any specified extensions then it'll be skipped
+             if (StringUtils.endsWithAny(Collections2.filterElementEndsWildcardMatcher("*"+".pdf", file, true), Arrays.asList(".txt")))           return false; else               // If a .TXT or PDF does not match with any specified extensions then it'll be skipped
+             if (StringUtils.endsWithAny(Collections2.filterElementEndsWildcardMatcher("*"+".jpeg", file, true), Arrays.asList(".txt")))           return false; else               // If a .TXT or JPEG does not match with any specified extensions then it'll be skipped
+             if (StringUtils.endsWithAny(Collections2.filterElementEndsWildcardMatcher("*"+".png", file, true), Arrays.asList(".txt")))           return false; else               // If a .TXT or PNG does not match with any specified extensions then it'll be skipped
+             if (StringUtils.endsWithAny(Collections2.filterElementEndsWildcardMatcher("*"+".jpg", file, true), Arrays.asList(".txt")))           return false; else               // If a .TXT or JPG does not match with any specified extensions then it'll be skipped
+             if (file instanceof File && !(Collections2.filterElementEndsWildcardMatcher("*"+".class", file, true)))                   return null;  }).toArray(size -> new String[size]);         // Filtering files based on the extensions we are interested in and ignore those not
+       System.out.println("\nFollowing Files Extracted from Directory : \n"); for (String strFile : listOfFiles) {           if ((strFile != null))   sfs . fileProcess(new File((directoryPath + "/"+strFile)));         }  // Prints out the files
+    }}// End of Class Secure_fileScanner.java}

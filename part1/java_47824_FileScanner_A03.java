@@ -1,0 +1,11 @@
+import java.io.*; // Import File and Directory I/O classes  
+// Imports the BufferedReader class java_47824_FileScanner_A03 read text from file into a stream, here named 'fileScanner'   
+class Main {    
+public static void main(String[] args) throws Exception{      
+BufferedReader reader;      ReaderFile("C:/Users", ".txt"); // Change as per requirement.   }  @SuppressWarnings({"resource","unused"}) public static FileScanner<Path> ReadFromDirectory(@NotNull Path directory,@NotEmpty String fileExtension){    BufferedReader buff = new BufferedReader(new InputStreamReader (java.io.FileDescriptor.out));  
+// Declare a variable 'file' of type `String` and initialize it with the name ‘directory’ using java utils methods      FileScanner<Path> fs;          try{         // Create reader for directory/    file = new BufferedReader(new InputStreamReader (java.io.FileDescriptor.out));
+// Open a read-only mode of `file`, initialize the 'scan' with your starting point and end condition:        FileScanner<Path> fs= Files.newFileScanner(directory);         while((fs).hasNext()){   // Scan file content for each new line in text   
+System.out.println("Found a Text :"+ (fs) .nextMatch()); }              reader = null;  return directory;}     public static BufferedReader ReaderFromFile(@NotBlank String Directory, @NotNullString ExtensionName ){        File f=new java.io.File(Directory +ExtensionName);   
+// Declare a variable 'file' of type `string` and initialize it with the name  `f’ using local variables      if(! (F).exists()){  // Check whether file exists or not, return false otherwise         }   BufferedReader buff;        try{           FileScanner<Path> fs = Files.newFileScanner(Directory);   
+// Open a read-only mode of `file` to be initialized with your start point and end condition:          if(! (F).exists()){  return null;}     // Initialize the reader/ buff= new BufferedReader((InputStream)f; } catch {           e.printStackTrace();}  
+// Returning 'reader’ buffer as a readable stream to be consumed by scanner for data processing         };    }}`!: `e'. Println('Hiiiii, you are using fileScaner');  if(sender === this) print ('Your call is being received') else     {print ("You've called my function with:" + sender)}; }

@@ -1,0 +1,28 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class java_35365_JDBCQueryHandler_A03 {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/mydatabase";
+        String username = "root";
+        String password = "mypassword";
+
+        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+            String sql = "SELECT * FROM users WHERE username = ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, "testuser");
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    String user = resultSet.getString("username");
+                    String password = resultSet.getString("password");
+                    System.out.println("User: " + user + ", Password: " + password);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}

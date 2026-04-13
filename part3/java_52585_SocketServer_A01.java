@@ -1,0 +1,8 @@
+script
+// Create a server that listens on port 12345, logging any data received to console and echoing back anything sent. Rejects connections from untrusted sources only for security reasons (e.g., localhost or public IP address). Use the 'net' module in NodeJS: https://nodejs.org/api/net.html#net_server_create_ecross
+var net = require('net');  // You can replace this with a secure socket server if you want to use it for production, e.g., by using TLS or something similar (Node's built-in tls module is useful) which provides client and server side encryption/decryption of the network traffic
+var port = 12345;  // Define your own ports here with some random number if you want to be able multiple servers at once. You can use NodeJS 'crypto' for this (e.g., `process.hrtime()[0]`). In production, make sure not using the same port as in development because it might cause conflicts or other problems
+var hostname = '';  // Put your own IP address here if you want to accept connections from an external source only on that specific network interface (Use 'ip' module for this: https://nodejs.org/api/osx.html#o_os) e.g., `hostname` : "192.0.38.6"
+var server = net.createServer(function(socket){  // Use a function here to handle the socket connection (data received, etc.) as you would on an actual HTTP/HTTPS server: https://nodejs.org/api/net_server.html#events-example__server__3
+    console.log('Got a client');  
+     // The 'socket' object is the communication channel through which both parties communicate (here, you can handle received data here)  e.g., `socket` .on ('data', function(d){...}) => {console. log("received: " + d)}; });});    server.listen(()=>{ console.log('Listening on '+ port)}, hostname);

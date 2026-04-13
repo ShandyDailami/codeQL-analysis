@@ -1,0 +1,19 @@
+import java.sql.*;
+import org.apache.commons.dbcp2.BasicDataSource;  // import the library to use Basic Data Source Connection Pool in Java applications	  
+   
+public class java_49894_JDBCQueryHandler_A07 {
+	private static final String URL = "jdbc:mysql://localhost/test";    	// replace with your database url and name if necessary (may vary based on DB type)
+  private static final String USERNAME = 	"root" ;                     // provide username for the MySQL Server running in localhost. may need to be different depending upon db user credentials  	
+	private static final String PASSWORD = "password";                 	// replace with your password if needed (may vary based on DB type) 		   			      	   	 	     									    
+	public Connection connection;                                          // declare a variable of class 'Connection' for database connections. It will be used in the connect method  	
+	private Statement stmt;                                               	        // create statement to perform SQL commands           
+      private ResultSet rs ;                                                 	// declaring result set object			   		 	   	 	     									    
+      
+	public void startConnection() throws SQLException {                      // function starts connection by creating a new instance of the class Connection. If it fails, exception is thrown and logged on console for debugging  	           	       
+          BasicDataSource dataSource = new BasicDataSource();             	// create object ‘data source’ which will be used to obtain connections from pool			   		    	 	   	     									      // setup the connection information - database URL (local, remote), user name and password. If not specified then default values are provided  	
+          dataSource.setDriverClassName("com.mysql.jdbc.Driver");       	// load driver into JVM by providing its classname			   		    	 	     									      // set up a pooled connection using the settings defined in this configuration object 
+           Connection conn = (Connection)dataSource .getConnection();  	         	       	   							                     }       // get new connections from our data source. The returned 'connections' are not tied to any specific database session, they just provide access into a pool of databases available for use within your application		   			
+           connection= conn;                                                  	// assign the acquired Connection object in variable ‘connection’  	           	       	   									     // setup our SQL statement and execute it. This is where we run some queries or do other operations on this database using JDBC (Java Database Connectivity). If not set up, then exception will be thrown		   			
+	}     	 	     							                     } 	// close the connection by calling 'closeConnection' method  	           	       	   									     // it is a good practice to use try-catch blocks for our connections in order guarantee that we can catch and handle exceptions properly. It allows us more control over what happens if something goes wrong than otherwise		   			
+	private void closeConnection() {                                       	// this function will be used when the program ends, ensuring all database operations are completed or closed	           	       	   									     // perform cleanup by closing our Statement and Database Connection  	 	     							                     } 	}          ]]>]]'</pre><br /> 
+I hope it helps to you. If there is anything else I can help with, please let me know! Please note that this code should not be used in a real-world application as the password for your MySQL server and database credentials are set directly here which includes plain text information (insecure). You need proper security measures such as using environment variables or secret management systems to handle sensitive data.

@@ -1,0 +1,3 @@
+import java.sql.*;   // For all database related classes (Connection, Statement etc.)   
+immutable class java_43188_JDBCQueryHandler_A01 {     // Immutable object which stores DB credentials and other settings for connection pooling only      
+}      immutable public static final String JDBC_URL = "jdbc:mysql://localhost/test";   // Sample URL to access MySQL database. Replace with your actual url    }  Public class ConnectionManager {     private int attemptCount = 0;        boolean connectedToDatabase=false;

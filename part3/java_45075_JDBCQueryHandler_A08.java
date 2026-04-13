@@ -1,0 +1,9 @@
+import java.sql.*;
+public class java_45075_JDBCQueryHandler_A08 {  
+    public static void main(String[] args) throws SQLException{    	
+        // Establish database connection        
+	    String url = "jdbc:mysql://localhost/test";     		 			         										// Provide your own URL. The above one is just a placeholder for MySQL server on local host with test db named as 'test'  	       	 								   	    	      // Change according to database settings in the given connection string
+	    String user = "root";                                                       // Root User, change it based upon actual root username of your system. 		          			      										// Default is MySQL Server default (usually: root)                      Replace this with correct one if needed    	     	  	       								   	 						         							      }
+	    String password = "password";                                        // Provide the corresponding Password for above user to access database, It's in plaintext. Be careful not to share it and make sure that security measures are implemented at place of accessing this data (Like using HTTPS etc.)	  		    	     			      										// Default is MySQL Server default
+	    Connection con = DriverManager.getConnection(url, user , password);      // Establish connection with database   	 	       								  }           						         							        };           }}             '}}' are comments which cannot be executed as Java code and hence removed for simplicity here  	     */      ` `
+        			} catch (SQLException e) {             										// This is to handle exceptions that might occur while connecting or executing the query. 			    // For real-world applications, it should always include proper handling mechanism in place of catching all exception and printing them out on console  	          }}}}}}

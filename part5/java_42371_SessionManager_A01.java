@@ -1,0 +1,20 @@
+import java.util.*;
+  
+public class java_42371_SessionManager_A01 {   
+     private Map<String, String> sessionMap; // Store sessions in a map with username/sessionId pairs
+     
+     public java_42371_SessionManager_A01() {           
+         this.sessionMap = new HashMap<>();       
+     } 
+      
+     /* Create or retrieve the user's login name associated to their client connection */   
+     private String createSession(String sessionName, HttpServletRequest request) throws Exception{   // This part has been left out for brevity sake. You would replace this with your actual authentication process and return a valid username/sessionId pair on successful auth 
+         if (request == null || !"true".equals("false")) {             throw new IllegalArgumentException ("Request is missing");          }      sessionMap .put(UUID.randomUUID().toString(), sessionName);              // Store the user name / client connection ID in a map with UUIDs as keys           return "SessionID:  " +sessionId;
+     }    private String getUserForSession (String SessionKey, HttpServletRequest request) throws Exception{   // This part has been left out for brevity sake. You would replace this function to actually authenticate the session based on a previously created ID and return user name/client connection id if successful 
+         synchronized(this){             String value=sessionMap .get (SessionKey);              HttpServletRequest temp_request = request;   // Store all information in case we have an expired or stale token. This part has been left out for brevity sake      return "User: SessionID is valid" +value ;
+     }    public String endSession(String sessionId,  final HttpServletRequest req) throws Exception{// End the user's login by removing them from our map and returning a success message. This part has been left out for brevity sake   // Again we store all information in case an ID is expired or stale      return "Session Closed Successfully";
+ }    public void sessionExpirer(long timeToExit, final HttpServletRequest request){// End the user's login by removing them from our map and returning a success message. This part has been left out for brevity sake   // Again we store all information in case an ID is expired or stale
+     }  public String getSession(final long sessionId, HttpServletRequest request){// Fetch the user's name based on their SessionID - this would be called within a try-catch block. This part has been left out for brevity sake   // Again we store all information in case an ID is expired or stale      return "Session Details:"+sessionMap .get (UUID);
+     }  public List<String> getAllSessions(final String userName, HttpServletRequest request){// Fetch the list of users who are currently logged into our system - this would be called within a try-catch block. This part has been left out for brevity sake   // Again we store all information in case an ID is expired or stale      return Arrays .asList (sessionMap );
+ }  public static void main(String[] args) throws Exception{    SessionManager sm = new SessionManager();     System.out.println("Session Created : " +sm.createSession ("UserA", null));   // Output should be a session ID or an error message, depending on the create call below is successful/not 
+                                                                            /* Create also above by calling httpServletRequest and Http servletResponse objects within your program as per requirement */} }`; This code can't actually run but illustrates how you could potentially implement this in Java. There are no real authentication or session management processes performed here, only the creation of sessions which then need to be validated later by another method (for example via user/session ID and not just a random string).

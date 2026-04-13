@@ -1,0 +1,9 @@
+import java.io.*; //For serializable and IOException  
+//HttpSessionEventHandler implements Serializable to maintain the session data over requests between users - A01_BrokenAccessControl requirement      
+public class java_48941_SessionManager_A01 {    
+    public static boolean authenticated = false;         private String username, password ; 
+      /* The following code demonstrates how you can secure a method. */   //A02 Broken Access Control: Hide the session id in logs to prevent unauthorized access      
+        @Override           protected void doSecureAction(HttpSessionEvent event) {     printWriter out =event .getSession().setAttribute("sessionid","hidden"); }    public static boolean isAuthenticated()   return authenticated;  //accessor method-A02 Broken Access Control: Validate user credentials
+         void login (String u, String p){ if(u.equalsIgnoreCase ("admin") &&p .equals ("password")) {authenticated= true;} else throw new SecurityException();}   public static boolean checkAccess(){  //access control requirement - A01_Broken Access Control: Check session id validity     
+        HttpSession temp = (HttpSession) request.getAttribute("sessionid");    if(temp == null || !((SecurityManagerImpl )request . getSession().getServletContext()).checkRoleMembership ("admin", ((UserRealm)(Request ))))) throw new SecurityException(); return true; }  
+      //The following part of the code is not secure and will be removed due to A01_BrokenAccessControl requirement.       public void logout(HttpSessionEvent event){ authenticated= false;}     if (!isAuthenticated()) {request .sendError (403); return; }  request_.getSession().invalidate();}

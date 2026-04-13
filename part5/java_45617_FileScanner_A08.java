@@ -1,0 +1,15 @@
+import java.io.*;   // Import necessary classes: File, Path... etc., in order to read/write file system resources including directories (directories can also have their names and paths)
+class java_45617_FileScanner_A08 {    
+    public static void main(String[] args){     
+        Scanner s = new Scanner(System.in);   // Reading input from user  for example "C:/Users/" in Windows or "/home/user" on Linux (Linux needs to be installed java and set JAVA_HOME)    
+         System.out.println("Enter the root directory: ");      
+        String strRootDir = s.nextLine();      // Reading input from user for example "C:/Users/"   or "/home/user"  in Windows; it will be used to start scanning .txt files starting at this path and below    
+          System.out.println("Enter the file extension: ");       String strExtension = s.nextLine();      // Reads input from user for example ".csv",".json","*.xml"" or ""  (blank line) if left blank it will scan all .txt files    Scanner inJava =  new java.util.Scanner(System.in);  
+        System.out.println("Enter the name of file: ");       String strFileName = s.nextLine();      // Reads input from user for example "abc"  or "" (blank line) if left blank it will search in all txt files    File rootDir =  new java.io.File(strRootDir);  
+        findTxtFilesInDirectoryUsingRecursion(rootDir, strExtension , strFileName );     // Call method to start the recursive scanning starting from given directory and with specific file extension .txt (or if not specified it will scan all)    }      @SuppressWarnings("unused")  
+ private static void findTxtFilesInDirectoryUsingRecursion(File dir, String strExtension ,String filename ) {     File[] listOfFiles = dir.listFiles();          // get a collection of files and directories from this directory  if the extension is not null then filter by it else use all .txt    List<File> txtFilesList =  new ArrayList<> ();        
+        for(int i=0;i < listOfFiles.length ; ++i) {           File file =listOfFiles[i];       // loop over files and directories in this directory     if((file instanceof java.io.Directory))   findTxtFilesInDirectoryUsingRecursion ( 
+     1,strExtension , filename );          return; }         for(int i=0 ; i < listOfFiles . length -i ) {           File file =listOfFiles[i];       if(!file.isFile()) continue;}        // ignore all non-files files   String extension =  strExtension == null ? ".txt" :strExtension 
+      List<String> txtExtensionsList= Arrays..asList(extension);     boolean matchFoundFlag = false;    for (int i= 0 ;i <listOfFiles.length -1 ) {          File file  = listOfFiles[i];        if(!file . isFile() || (!matchFoundFlag && !filename 
+      == null))continue;}           String filenameInQuestion =  ((java.io.File)file).getName();         // get the name of current selected files    match = false;      for(int i=0 ;i < txtExtensionsList . length -1 ) {          if (!matchFoundFlag && (filename == null ||
+       file !==null)) continue;}           String strFinalPath =  ((java.io.File)file).getAbsolutePath();        // get the full path of selected files      match=true;     }   return ;  }}

@@ -1,0 +1,19 @@
+import javax.security.auth.CredentialValidationResult;
+import javax.security.auth.callback.*;
+import javax.security.sasl.SaslClient;
+import java.util.Collections;
+import java.net.URI;
+  
+public class java_52460_CredentialValidator_A03 implements CallbackHandler {  //1a   
+     public static void main(String[] args) throws Exception{            
+         System.out.println("Enter username:");           
+         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));  
+                 String userName=reader.readLine();  //1b    (Reads the entered value from command prompt)             
+           CredValidator cv = new CredValidator();                System.out.println("Enter password:");             BufferedReader reader2   =new BufferedReader(                                                          ReaderTools;   InputStream inputstream=System,InputStreaminput-1};                                                                          String passwd  =reader2 .readLine ();  //reading entered value from command prompt   
+         validateUserCredentials((CallBack) userName ,passwd );// Calling the method to check credentials.             }           public CredentialValidationResult                                              call(CallbackHandler callbackhandler,                                                                                      URI            authorizationuri   string authenticationid){                 System . outprintln ("Inside Validator.");                return (CredentialsValidationresult ) 1;     
+     }} //end of class   2a-class and method declaration are on the same line. If there is a single statement within this block, you must place it at end or after first colon(:) followed by indentation if multiline statements exist then declare all variables in one go (using semicolon).
+  7//end of class   2b-This code demonstrates the use of credential validation. It checks whether a provided username and password match with hardcoded values or not, which is also against security best practices for using credentials directly as plain text but serves to illustrate how this works within JavaSE without any external frameworks/libraries (Spring / Hibernate etc).
+  8//end of class   2b-Please note that in actual production code you would want more robust and secure implementation. For instance, passwords should be hashed before being stored for security purposes as well a lot other factors like rate limiting are also needed to prevent brute force attacks on login attempts etc..
+  9//end of class   2c-This example does not include external frameworks / libraries but the same principle applies. It's always best practice in JavaSE (and thus vanilla java) for handling user credentials that cannot be handled directly by your code or other users like a program would and so they should all stay out of it unless absolutely necessary due to security concerns etc..
+  10//end of class   2d-This example is not using external frameworks / libraries, but the principle applies. The main idea behind this approach for A03_Injection attacks or any kind injection attack in JavaSE (and thus vanilla java) would be: Don't directly take user input into your code which can cause it to accept malicious data as valid credentials like a password and log him/her on, etc.
+  12//end of class   3d-Ends with semicolon(;). Please note that you have commented all the lines inside this block so if there are single statement in these blocks then they should be placed after first colon (:) followed by indentation or end at line ends and also use braces properly.

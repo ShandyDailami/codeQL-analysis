@@ -1,0 +1,11 @@
+import java.io.*;  // Import BufferedReader and DataOutputStream classes to read client inputs from socket connections    
+import java.net.*;    // Include Socket class java_46210_SocketServer_A08 creating new network sockets or binding them     
+  
+public class SecureSocketServer {      
+// server port number, will be used by clients connecting here 1234 is a common choice and should not block any ports in your system    
+static final int SERVER_PORT = 1234;    // define the actual integer constant to hold value of Server Port     
+Socket socket = null;   // The new Socket object        System.out must be used for output         BufferedReader input  ;       String lineRead, inStr=null , outStr  ="";     int ch = 0;          try {           securityServer(); } catch (IOException e) {} finally{}
+// the following methods are responsible to handle communication between client and server.      //the method for handling IO         socket = new Socket(" + SERVER_PORT +  ");        System.out .print ("Connected To Client" );          while((ch=inputStreamReader(System.in).read())!= 0) {   try{    if (socket == null || !socket.isBound() || (!socket.isConnected()))
+            //throw new Exception("Connection Refused"); }  else       outStr += inputStreamReader().read(); socket.getOutputStream(),outStr);        System . err Println ("Message Sent" + " Message: '"+ outStr +  "' ");          inStr = brInputStream(socket,new byte[1024]);           if (inStr == null) throw new Exception("Connection Refused");       else   /*Process the received message here*/
+            System.out .println ("Message Received :" + " Message: '"+ inputStreamReader().read()  + "' "); } catch(Exception ex){      //catch exception and show error in console for debugging     printStackTrace();         }}  SecurityServer method is responsible to handle the connections from client, security measures are implemented here.
+// Implementation of Server side socket connection Here       static voidsecuritySever(){   try{        DatagramSocket server = new                // create a datagram/UDP socket for listening on port SERVER_PORT          BufferedReader brInputStream (socket ,new byte[1024]);         } catch(IOException ex){  printStackTrace(); }}

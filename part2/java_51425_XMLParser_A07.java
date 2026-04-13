@@ -1,0 +1,11 @@
+import org.xml.sax.*;
+import org.xml.sax.helpers.DefaultHandler;
+
+public class java_51425_XMLParser_A07 {
+    public static void main(String[] args) throws ParserConfigurationException{    	  		      			     	     									 	 	    } @SuppressWarnings("serial")class MySAXHandler extends DefaultHandler {          private int nElements = 0 ;          	private String lastElement = null;
+         public boolean startDocument()   	{ System.out.println( "Start of document" ); return true;}     	  	public void endDocument(){System. out . println ( "End of the Document") }       	    @Overridepublic 	 									    	void startElement	(String uri, String localname ,	String qName, Attributes attributes) {nElements ++; lastElement =qName ; System.out.println( ("Start Element: ") + qName );}        	  	@Override public void endElement (String uri ,String Localname 
+       	     			     		    	 									    String qName ){ nElements --;} @SuppressWarnings("unused")public boolean startPrefixMapping	(	String prefix,      								// the namespace URI for which to register the local name.  	System . out . println ("prefix " +
+       	     			     		    	 									   							"="+URI ); return true; } @SuppressWarnings("unused")public boolean endPrefixMapping (String prefix){ System.out 	.println( "End of Prefix Mapping: "  +  	            //the namespace URI for which to unregister the local name .
+       	     			     		    	 									    String qName ) { return true; } @SuppressWarnings("unused")public void characters (char [] ch, int start ,int length){ System.out 	.println( "Reading Character Data: ");	}  	      	@Override public boolean ignorableWhitespace	( char[] ch ,	int start ,    			// the whitespaces to be ignored .
+       	     			     	 	   						    String qName ){ return false; } }} class Main {public static void main (String [] args) throws ParserConfigurationException, SAXException 	{XMLParser parser = new XMLParser(); BufferedReader reader =  //new Filereader("test.xml");  	SAXParser saxp = 
+        	     			     		    	 									    Driver driver=saxp .getSAXDriver (MySAXHandler：class);       SAXSource source=  新建StaxEventFactory () );driver。setSource(source) ;} BufferedReader br = new Filereader("test.xml"); int c; while ((c  =br .read()) != -1){ driver	.characters (ch , start, length )；}}

@@ -1,0 +1,10 @@
+import java.io.*; // Importing necessary classes for file I/O operations and exceptions handling etc...
+public class java_51332_FileScanner_A07 {    
+    public static void main(String[] args) throws IOException{     
+        File folder = new File("Your_Directory");  /* replace with your directory */          
+         BufferedReader reader;   // Create a buffering character input stream.      
+            for (File file : folder.listFiles()) {     // For every files in this dir...   
+                if (!file.isFile() && file.getName().endsWith(".txt")){  /* Checking only .text Files */           }   else{ continue; }}             while ((reader = new BufferedReader(new FileReader (file))) != null){     // Creates a buffering character input stream for each text files   
+                    String lineInFile;      char[] charsArray  =lineInFile.toCharArray();  int i = 0, j= 1 ;            while ((i = reader.read())> -1) {              if(charsArray[j] =='A'){                     for (int k=2;k<charsArray.length-3 && charsArray[k+1]-48==AuthFailure .toCharArray() ; j++,i-- , ++k){
+                         System.out.println("Line number " + file.getName());    /* print out the line */}}}}}     // To close all resources use try/catch here  and handle exceptions properly for a production code   } catch (IOException e) {e.printStackTrace();} }} Catching Exceptions in Java is an important part of programming, it's always good practice to have error handling mechanisms so that your program doesn’t break unexpectedly when faced with situations like IOExcpetions or NullPointerException 
+    }}} at line number file.getName()` and prints the content from .txt files if they contain 'AuthFailure'. This is just a simple example, for an enterprise style solution you may need more security operations based on your requirements such as reading/writing multiple types of data to avoid any potential threats etc...

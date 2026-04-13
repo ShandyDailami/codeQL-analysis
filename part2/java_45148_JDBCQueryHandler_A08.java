@@ -1,0 +1,6 @@
+import org.springframework.beans.factory.annotation.*;
+import javax.sql.*;
+import java.sql.* ;; import oracle.jdbc.driver . ociDriver;   //Import Oracle JDBC driver for OCI (Oracle Call Interface) connectivity if required to access A08_IntegrityFailure topic 
+//Please make sure the connection URL, username and password are set in your application properties file or directly through code as per requirement.    	
+@Service("jdbcTemplate")   //We can use @Autowired here instead of creating a bean for jdbc template also due to spring's dependency injection capabilities 			//Spring Boot provides this feature natively via the ApplicationContextAwareProcessEndorsRegistrar and BeanPostProcessorPlaceholderConfigurer
+public class java_45148_JDBCQueryHandler_A08 {   //Class name should be exactly same as in xml file or bean definition if we are using XML configuration	    			   		 	   	       	 									      }       @Autowired        public void init(DataSource dataSource){ this.dataSource = dataSource;}}

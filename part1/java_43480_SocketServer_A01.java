@@ -1,0 +1,7 @@
+import java.io.*; // Import necessary classes 
+import java.net.*; // For ServerSocket and Socket class java_43480_SocketServer_A01 class TCPServer {    
+    public static void main(String args[]) throws Exception{     
+        int port = 8093;          // define server's listening ports        
+      	ServerSocket welcomeSound = new ServerSocket(port);             System.out.println("Waiting for client on port :"+welcomeSound.getLocalPort() + "...\n");                  Socket connectionToClient =  welcomeSound.accept();           // accept the incoming requests from clients             
+               BufferedReader inFromClient = new BufferedReader(new InputStreamReader (connectionToClient.getInputStream()));          PrintWriter outToClient= new  PrintWriter (connectionToClient.getOutputStream(), true);         String clientMessage;                      try {                    while ((clientMessage = inFromClient.readLine()) != null)                System.out.println("Received Client: " + clientMessage );                   if(clientMessage ==null){System.out.print ("Closed connection from client"); break;}
+               }catch (Exception e ){             // handling exceptions  for socket communication                  e . printStackTrace();}           outToClient.close(); welcomeSound.close();         System.out.println("Connection closed by " +connectionToClient);}}}

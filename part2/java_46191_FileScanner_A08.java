@@ -1,0 +1,10 @@
+import java.io.*; // Import the necessary packages for handling streams/input, output etc  
+public class java_46191_FileScanner_A08 {    /* Start of Class */    
+/* Main Method starts execution from here...*/      public static void main(String[] args) throws IOException{       System.out.println("File Scanning Program started...");        //Define the path to search in         String directory = "/Users/yourusername";          File dir = new File (directory );
+   if (!dir.exists()) { 
+     throw new IllegalArgumentException ("Given directory does not exist!"); }      
+      /* Calling file listing */    listFiles(dir, "txt");        System.out.println("File Scanning Program ended...");         // Stop execution here...}}          FileFilter filter = null;           if (filter ==null) {  filtering by extension: txt files only} else{             applying custom Filter }  
+/* Calling file listing */    public static void listFiles(File dir, String ext){     /* Start of Method to List Files in Directory*/        for (String s :dir.list()      ) {{          File f = new java.io.File((s));              if (!f.isDirectory()) {
+         // If file is not a directory then we consider it as text or image/media type, otherwise considered only txt files   char[] chars={'.'};           String extension;  try{             Extension: .txt      }catch (Exception e){e=$s}          if (!f.isHidden() && s!= $dir + "/"   ||
+         // Removing the comment line and making it a valid code snippet...   }}else { throw new IllegalArgumentException ("Given file is not directory!");}}             }           FileFilter filter = null;  /* Start of Method to List Files in Directory */ if(filter ==null) return;} else{
+         // Implementing custom Filter}     for (String s : dir.listFiles().toString()) {        try{}catch    throw new IllegalArgumentException ("No such extension exists!"); }}}else System .exit(-1)} catch() {}   /* End of main method */ }}  FileScanner ends here...

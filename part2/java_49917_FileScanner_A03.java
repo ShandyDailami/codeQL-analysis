@@ -1,0 +1,14 @@
+import javax.security.auth.Subject; // Import Subject for Security context  
+// import org.apache.commons.io.*;  Imports Apache Commons IO library if not using standard java libraries   
+      
+public class java_49917_FileScanner_A03 {    
+          
+        public static void main(String[] args) throws Exception{        	            		         			                 										// Main function starts here  
+            // Start with the user's home directory. 
+              Subject currentUser = new Subject.Builder().build();                    	 	       	     	   						                System.out.println("Current User Directory: " + java.io.File.separator+currentUser.getPrincipal());    			     		   										// Printing the user's home directory 
+              String path = currentUser.getPrivateClaims().get("basedir").toString();   // Get base dir (user's homedirectory) from Private Claim based on subject principle           	                   System.out.println("\nScanning files in " +path);         	 				    		                 
+              java.io.File directory = new java.io.File( path );            			  // Create File object for given Directory   	     					         if (directory.exists()){                    	// If the specified file or directory exists, then process it                      	System.out.println("Scanning all files in " +path);               
+              String[] children = directory.list();                         		     	  System.setProperty(java.util.prefs.Preferences.USER_ROOT,"./src/main");   // Set preferences root for user home 	     .forEach (child -> {            						// Loop through files and directories in the given Directory
+              if (!children[0].equals(".") && !( children [1] == null)) System.out.println ("File Name: " + child);                  // Print File names only when they're not . or ..	     });                      } else {              					       	   		   	 	// If directory doesnt exist, then print message accordingly  
+              systemOutPrintln("No such Directory exists at path:"+path );      			  System.exit(0);                // Exit the program in case no dir is found                 };            	         				     } else {                 					     	   		   	// If there's an error, then print message and exit  
+              systemOutPrintln("Error Occurred while scanning Directory: " + path ); System.exit(0);                    // Exit the program if any err occured during scan  };           	         				     }                      }} ;;     		   	 	// Close Delimiter for Java Code	});                   -.-'

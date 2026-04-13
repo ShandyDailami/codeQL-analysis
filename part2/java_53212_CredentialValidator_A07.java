@@ -1,0 +1,13 @@
+import org.springframework.security.authentication.*;
+import org.springframework.security.core.*;
+import java.util.*;
+public class java_53212_CredentialValidator_A07 implements AuthenticationProvider {
+   @Override public Authentication authenticate(Authentication authentication) throws AuthenticationException {
+      String username = authentication.getName(); // get the user name or other unique information from `authentication` object (could be email address, id in your case);  if it's not present throw new IllegalStateException;   for brevity we just use a static variable here and later you can replace this with dynamic data fetching
+      String password = authentication.getCredentials().toString(); // get the user information (password) from `authentication` object, in case of database or other unique source it will be there  if not throw new IllegalStateException;   for brevity we just use a static variable here and later you can replace this with dynamic data fetching
+       /* check password strength */      //You would usually verify the user input against something more complex than simple equality checking to ensure security (for example, complexity level or history of failed attempts).  Here's an empty placeholder:    if(!isPasswordStrong(password)){ throw new AuthenticationCredentialsNotFoundException("Invalid Password")};
+      //create and return the authenticated token. You will need a custom Token object here with your unique fields filled in, such as user id or role name etc., that you can generate on successful authentication    List<GrantedAuthority> authorities = new ArrayList<>();  for brevity this variable is just used to contain roles when creating the `User`
+      return new UsernamePasswordAuthenticationToken(username, password/*authorities*/); //replace '...' below with your unique fields. You may also add more information in token like user details etc., depending on what you want   for brevity we use static variables here and later replace this part of code according to dynamic data
+  }
+    @Override public boolean supports(Class<?> authentication) { // return true or false based upon if it can provide the type/class `authentication` is being used with. In our case, all Authentications are for UserName and Password pairing so we support both of them here   For brevity:   
+      return UsernamePasswordAuthenticationToken.class == authentication;  }     // you may replace this part according to dynamic data fetching if necessary}

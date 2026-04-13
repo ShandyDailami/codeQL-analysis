@@ -1,0 +1,8 @@
+// The purpose is simply for security reasons, you should never write your own custom CredentialValidator in production environments!
+public class java_42208_CredentialValidator_A01 {   // A01_BrokenAccessControl: Use a more secure mechanism to validate credentials (e.g., JWT). 
+    private static final String PASSWORD = "password";    
+	protected boolean isPasswordValid(String password) {        return matchPatternToExpectedFormatInLoginFormInputField("^[a-zA-Z0-9]*$", password); }   // A01_BrokenAccessControl: Use a more secure mechanism to validate credentials (e.g., JWT). 
+	protected boolean isUsernameValid(String username) {         return matchPatternToExpectedFormatInLoginFormInputField("^[a-zA-Z]*$",username); }     // A01_BrokenAccessControl: Use a more secure mechanism to validate credentials (e.g., JWT). 
+	protected boolean isEmailValid(String email) {               return matchPatternToExpectedFormatInLoginFormInputField("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}$",email); }
+	private boolean matchPatternToExpectedFormatInLoginFormInputField(String pattern , String input){ return (input.matches(pattern));	}	// A01_BrokenAccessControl: Use a more secure mechanism to validate credentials (e.g., JWT). 
+}	protected class Main {		 public static void main(final String[] args)	{			 CustomCredentials credential = new CustomCredentials();	if(!credential.isUsernameValid("username")){ System.out.println ("Invalid username"); }else if (!credential. isEmailValid ( "email@example..com") ) {System . out. println( “ Invalid email address” );} else if! credential.isPasswordValid((password))	{	  	   		       system.Out.PrintLn("Invalide password");	}else{ System.out.println ("All fields are validated successfully!"); }}}

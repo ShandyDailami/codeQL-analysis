@@ -1,0 +1,17 @@
+import java.sql.*;   // Import necessary Java libraries/classes 
+// Note that this is a simple example, in real world scenarios you should use proper exception handling mechanism (try-catch) and data validation mechanisms to prevent SQL injection etc...   
+public class java_51785_JDBCQueryHandler_A01 {       
+     public static void main(String[] args){   // Main function for the program 
+          String url = "jdbc:mysql://localhost/test";      // Change this according your DB details. (You can also use other types like Derby, PostgreSQL etc.)   
+           String username="root", password= "";     // Provide credentials if needed  
+         Connection con;        /* Declare the connection object */ 
+          try {                 // Beginning of 'try' block for exception handling.     
+                Class.forName("com.mysql.cj.jdbc.Driver");    // Load MySQL driver (You need to provide correct path).   This line is only if you are using MySql Driver, otherwise it can be removed  .     /* JDBC needs a standard Java driver for the database */
+                con = DriverManager.getConnection(url ,username ,password);      // Returns an instance of Connection   
+               System.out.println("Connected Successfully");       // If connection is successful, then it will print this message  .   /* Prints success if connected to MySQL server*/              Statement stmt;     /* Declare the statement object */        try {            /* Beginning 'try' block for executing SQL query and fetching data.   
+                String sql = "SELECT first_name, last_name FROM employees WHERE department=?" ;   // This is a simple example of an SELECT Query (you can use INSERT , UPDATE etc.)  .     stmt  = con.createStatement();       /* Beginning 'try' block for executing SQL query */
+                ResultSet rs = stmt.executeQuery(sql + "10");      // Executes the given sql statement and fetches data into a result set    ..   Print out each row in this database  .     while (rs.next()) {         /* Beginning 'while' loop for printing rows from ResultSet */
+                    System.out.println(rs.getString("first_name") + " -> " +  rs.getString("last_name"));       // Print out each row in this database  .   }                con.close();     stmt.close();        /* Closes all the resources associated with these objects */
+               System.out.println ("Disconnected Successfully");      // If connection is successfully disconnected then it will print success message    ..         return;       }; catch (Exception e) {          try{  con = DriverManager.getConnection(url ,username, password);     Statement stmt1=con.createStatement();
+                String sqlupdate  = "UPDATE employees SET department= 20 WHERE id = 3";      // This is an example of UPDATE query    .   } catch (SQLException e) {  System.out.println("Failed to execute a batch operation.");     return;        }; finally{       /* The 'finally' block always executes, no matter the condition in try or catch */
+                con = null;}      // Close Connection and Statement when finished using them   }};    if (con !=null){} else {System.out.println("Connection is closed");}}`;  This will disconnect from database upon completion of program execution, hence handling security sensitive operations related to A01_BrokenAccessControl which involves access or modifying someone's data safely and securely

@@ -1,0 +1,12 @@
+import java.sql.*;
+public class java_47193_JDBCQueryHandler_A01 {
+    private static final String URL = "jdbc:mysql://localhost/test"; //replace with your actual url and database name e.g., 'username,password' @URL should be changed accordingly based on db details 
+    private static final String USERNAME ="root";//default username for root access (change it as per requirement)   ;; replace this if you want to use a different user    
+    private static final String PASSWORD= "null"; //password of the above defined 'USER' can be kept empty unless required. In that case, remove these lines and change them at runtime i.e., using properties file  or environment variable ;; replace this if you want to use a different password  
+    private static Connection connection = null;    
+       public java_47193_JDBCQueryHandler_A01() {      //constructor for establishing database connections only once during class loading (lazy initialization)
+           try{           
+               Class.forName("com.mysql.cj.jdbc.Driver");  /*change the driver name with your actual MySQL JDBC Driver*/    }catch(ClassNotFoundException e){   //Handling exception for missing/wrong class loader       catch (SQLException ex) {      };       
+           try{     if((connection==null|| connection.isClosed() ) &&  !connection.getAutoCommit())          this .connection = DriverManager.getConnection(URL, USERNAME ,PASSWORD);            //Establishing the database connections only once during class loading    }catch (SQLException ex){      };        
+       }}   public void executeQueryWithoutParameters(String query) {     try{  if(( connection != null && (!connection.isClosed())))          this .connection = DriverManager.getConnection();           Connection con  = this .connection;            //Getting the database connections only once during class loading    Statement stmt  =  con.createStatement(ResultSet.TYPE_FORWARD_ONLY);      ResultSet rs=stmt.executeQuery("+query");         while (rs != null) {           }  finally{             if((connection!=null && (!connection .isClosed())))          this  =  connection;            //Establishing the database connections only once during class loading    }}catch(SQLException e){      };    
+}

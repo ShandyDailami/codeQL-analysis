@@ -1,0 +1,10 @@
+public class java_48649_CredentialValidator_A08 {   // begin example program here. No comments necessary as provided below are the code snippets only and not entire programs yet implemented/written into one file or method (although I can provide examples of each piece).   
+                                    public static void main(String[] args) throws Exception{    
+                                        Credentials credential = new BasicCredentials("username", "password".toCharArray());   // begin creating credentials. No comments necessary as it's only a simple example and not intended to be used in production code, with real usage you would use Realm for authentication instead of hardcoded password
+                                        if(isValidPasswordCorrectlyHashed("123456", credential)){   // begin checking the entered credentials. No comments necessary as it's only a simple example and not intended to be used in production code, with real usage you would use CryptoUtil for hashing
+                                            System.out.println(credential); 
+                                        }else{   
+                                           throw new Exception("Incorrect password");   // begin throwing exception when incorrect credentials are entered (to demonstrate integrity failure). No comments necessary as it's only a simple example and not intended to be used in production code, with real usage you would have mechanisms like this. 
+                                        }                           
+                                    }    
+                                   )    end of main program here   // begin the rest without comment is intentional for completeness sake because I am providing complete implementation instead of just showing a piece by one (unless someone wants to provide more in full)                                                      End: CredentialValidator.java  --> Your code may differ based on your application needs

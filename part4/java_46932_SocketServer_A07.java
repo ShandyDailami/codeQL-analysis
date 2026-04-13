@@ -1,0 +1,8 @@
+Script
+import java.net.*;   // for InetAddress, ServerSocket   
+public class java_46932_SocketServer_A07 {    
+private static final int port = 8091;        private byte[] buffer = new byte[256];         public void start() throws Exception       {}          @Override           public void run(){              try (ServerSocket serverSock=new ServerSocket(port))   // waiting for client to connect    
+{System.out.println("Waiting Connection......");                  Socket sock =serverSock .accept();                   System.out.println("\nAccepted connection from : "+sock.getRemoteSocketAddress());             DatagramSocket datagram=new      //handling client's request         
+DatagramSocket(port);              try{                       BufferedReader reader       =  newBuffered Reader (InputStreamReader sock .getInputStream()));  String str; while((str =reader     readline()) !=  null){            System.out             outprintln("Received: "+               str );                  //ECHO BACK to client                   
+byte[] bytesToSend= ("Hello, Client!").getBytes();              datagram .send(bytesTosend);}}catch (Exception e) {e.printStackTrace()};}}} catch      IOException  E){System     Console().println("Error: "+E)}finally{serverSock_.close(),sock   _.close,datagramsocket.. close();} }
+public static void main(String[] args){tryAuthServer auth = new AuthServer;auth.start()}} // to run server    on port 8091     public class Main         {static ServerSocket serverSock=null;}//main method starts the serv...   sidemainmethod}

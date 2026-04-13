@@ -1,0 +1,12 @@
+import java.security.*; // Import for MessageDigest and KeyGenerator classes
+import javax.crypto.*; // For Cipher class java_50848_CredentialValidator_A08 encrypt the data in CFB mode  
+    
+public abstract class MyCredentialValidator {   
+       public static boolean validate(String plaintext, String hashed)  throws NoSuchPaddingException ,NoSuchAlgorithmException{        	            	     
+        MessageDigest md = MessageDigest.getInstance("SHA-256");          // instance of the SHa Algorithm to convert into hash value          	       		    	   
+   byte[] h_val  = md.digest(plaintext.getBytes());                     	// hashed version in Byte  format        	      			   	     				     					       	 							            	}            public static boolean validate (String plainText, String storedHash) {                    try{                // compare the two hash values to determine equality         	       		    	   
+   MessageDigest md = MessageDigest.getInstance("SHA-256");          		// instance of SHa Algorithm    for comparing     	 			      	     				 					        } catch (NoSuchAlgorithmException e) {              // catching the exception if no such algorithm exists                     return false;                		    	   
+   byte[] h_val  = md.digest(plainText.getBytes());                     		// hashed version in Byte format            			     	 				 					        }                   								    catch (NoSuchAlgorithmException e) {                // catching the exception if no such algorithm exists                     return false;                		    	   
+   byte[] b_val = storedHash . getBytes();                           	       							             		// converting into bytes          	     						         			        				 					        }                    try{                 								    MessageDigest md=MessageDigest.getInstance("SHA-256");             // instance of the SHa Algorithm   for hashing     	 		      	   
+     byte[] b_hash  =md . digest(b_val);                            		// checking with stored Hash           	     					        } catch (NoSuchAlgorithmException e) {              return false;                			   	       				 									}                 	return h_val.equals(b_hash );                    		         
+                                                                     	    }}                                                    // end of class                       	 							      ¨!`^} `€'|}{{}}}}} |]}}{{{{}]{[{'[]['',''].split(''))]])}';)||){}[}]','-+;][""])==}))))((("

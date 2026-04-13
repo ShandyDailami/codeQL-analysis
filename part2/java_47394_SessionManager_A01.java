@@ -1,0 +1,11 @@
+import org.hibernate.Session;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.*;
+import org.springframework.stereotype.Service;
+import javax.servlet.http.HttpServletRequest;
+@Service
+public class java_47394_SessionManager_A01 {  // A01_BrokenAccessControl Manager Class (Session Fixation) using Spring Security and Hibernate/Spring  
+     private final org.hibernate.SessionFactory sessionFactory ;    @Autowired      public java_47394_SessionManager_A01(org.hibernate.SessionFactory sf) {sessionFactory=sf;}  // Inject the hibernte's factory via constructor injection for dependency management (D-I)          
+       HttpServletRequest request;   Authentication authentication;     private void manageSessions() {        sessionFactory.getCurrentSession().evict(this);         }      public Session currentSession(){return this;}    // Returns the active Hibernate's 'session'.  Note: A security sensitive operation related to broken access control is not implemented here, it can be done in more complex scenarios like JWT or OAuth.         
+       @Autowired     void setRequest(HttpServletRequest request){this.request = request;      }    // Set the current Http Request for contextual information (like remote address). This operation should only called during authentication and authorization flows, not directly in application code like controllers or services as it is sensitive to security operations         
+       public void authenticate(String userName , String password ){   try {  if(!requested()) throw new InsufficientAuthenticationException("Insufficent Authentication") ;      // Security-sensitive operation related A01_BrokenAccessControl           authentication = manager.authenticate (new UsernamePasswordAuthenticationToken ((user),(password)) );     } catch (InternalAuthenticationServiceException e) {  System . out . println (" Exception caught in login: " +e);      throw new InternalAuthenticationServiceException("fail") ;       }}

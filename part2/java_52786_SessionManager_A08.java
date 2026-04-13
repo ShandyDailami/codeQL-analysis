@@ -1,0 +1,10 @@
+import java.util.*;
+public class java_52786_SessionManager_A08 {  
+    // Creating a hashmap that will act as the database of user accounts, with their passwords securely hashed using SHA-256 for added security level and sessions stored under sessionIds to track which users are logged in at any given time 
+     public static Map<String, String> accountMap = new HashMap<>();   // User Account Database: Username - Password (Hashes)   
+       private static List<SessionData>  activeSessions  = Collections.synchronizedList(new ArrayList());// Session Data for Active Sessions  ... We use a synchronised list to prevent data corruption due concurrent access by multiple threads...   // User Database: AccountID - Information of current session (User ID, IP etc)
+     static {    accountMap .put("admin","7c6f4d8b1ad20e5df39cefaeaabdcffa");//Admin Password is Hash "password"   } // User: Admin - AccountID  ......       activeSessions.add(new SessionData ("accountid", new Date()));}   
+     public static boolean login (String user , String pass ){          return accountMap .get(user).equals(pass);        }}     
+public class Main {   // Data to track sessions... ...// User Database: AccountID - Information of current session 
+private SessionData data;               }       });}}}}}            ......     public static void logout (String userId){             if (!data.getAccount().equals(user)){              return false;}        }}          else{                activeSessions .removeIf((Session)session->   // Checking and Validating Session against a provided User ID...   
+         session.accountid_.equalsIgnoreCase(UserID));}}}}}            ......     public static List<String>  getLoggedInUsers (){             return dataList;                }}          }  ... This program is just to showcase the concepts related A08_IntegrityFailure in terms of user authentication and session management.

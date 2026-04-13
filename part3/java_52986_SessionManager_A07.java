@@ -1,0 +1,12 @@
+public final /* Avoid unnecessary explicitness in case of private or package-private methods */ SessionManager {  
+    // Fields for storing session context  and current user id (if any)    
+        InMemorySessionContext<String, Object> ctx;         
+       String loggedInUserID = null ;             
+        
+           /* Constructor - Initializing the in memory object with some values */            public SessionManager() {                  this.ctx= new  InMemorySessionContext<>(); }    // Initialize session context and set to `null` for now             @Override       protected void finalize(){super().finalize ();}
+     /* Method - To check whether a user is authenticated or not */            public boolean UserAuthenticated(String id) {   if ((id != null ) && (!ctx.getSessionIds().contains  (id))) return false; ctx .associateWithID (userId,sessionFactory );return true;}
+     /* Method - To get the logged-in user's session */             public String GetLoggedInUser() {   if(loggedInUser == null) throw new UnsupportedOperationException ("No one is currently Logging in"); return this.ctx .getSessionIds().iterator ().next();}
+     /* Method - To close the logged-in user's session */                public void CloseLoggedOutUsersSessions() {   if(loggedInUser == null) throw new UnsupportedOperationException ("No one is currently Logging out"); this.ctx .endSession  (this._currentlyLogedoutuser);}
+     /* Method - To change the user's session */               public void SwitchUsersSessions() {    if(loggedInUser == null) throw new UnsupportedOperationException ("No one is currently switching users."); loggedOut(); _Current_Session = SessionFactory.OpenNewSession (this._currentlyLogedoutuser);}
+     /* Method - To close all sessions */                 public void CloseAllSessions() {   if(loggedInUser == null) throw new UnsupportedOperationException ("No one is currently closing multiple users's session."); this . ctx.invalidateSession (this._currentlyLogedoutuser);}
+     /* Method - To Log the user out */                  public void logOut(){if(!_isAuthenticated )throw  unsupported operation Exception("User not Authenticated"); loggedInUsersID= null;}    }   // Set session context and current User to `null`, this will be called when we want an inactive Session.

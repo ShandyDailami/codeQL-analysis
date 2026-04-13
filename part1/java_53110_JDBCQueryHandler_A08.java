@@ -1,0 +1,13 @@
+import java.sql.*;   // Import necessary classes from database library    
+    import java.util.Properties;// For handling properties file and environmental variables (username/password etc.)       
+     
+public class java_53110_JDBCQueryHandler_A08 {                      // Declare the public static void method 'main'        
+                                                    private String url, username, password ;          Private instances for dburl , usrname & passwd      
+    Connection con = null;                             If you are trying to establish a connection with your DB then this is where it goes. 
+     
+public java_53110_JDBCQueryHandler_A08() {                        // Constructor method        private string url2, username_old password pswd ;           The fields that we use in our constructor         
+    if (System.getProperties().containsKey("username")){              This code will get the credentials from system properties or environmental variables        
+      this.url = System.getProperty ("dbUrl");  // Get db url and username/password using environment variable           } else {            It's a local connection assume same as above          Properties props=System.getProperties();                String hostURL  =props.getProperty("hostURL"), userName   =props .getProperty("userName") , password =props .getproperty ("Password"); 
+      this.username =  username;                            // Set dburl and usrname & passwd through constructor            }          if (password==null) {                This is to handle the situation when a new line has not been added yet        throw new IllegalArgumentException("No password set") ;         }} else{             If no properties are provided then assume same as above           this.url =  url;                    // Set dbUrl through constructor               } if (userName == null) {                  This is to handle the situation when a new line has not been added yet        throw 
+    IllegalArgumentException("No username set") ;            }}   else{             If no properties are provided then assume same as above           this.password = password;                // Set dbPassword through constructor               } if (url == null) {                  This is to handle the situation when a new line has not been added yet        throw 
+    IllegalArgumentException("No url set") ;            }}   else{             If no properties are provided then assume same as above           con = DriverManager.getConnection(this.url, this.username , password) or               = null;                  Connect to DB               }       return con;}      // End of the method

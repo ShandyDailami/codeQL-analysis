@@ -1,0 +1,14 @@
+import java.io.*;  // Import the necessary classes from Java SDK library for InputStreams / Outputstreams etc...  
+    import java.net;// To use Socket class java_48389_SocketServer_A01 net package to create socket connections, server sockets and clients can be created at same time by creating an instance using new method with IP address & port number as argument  (IPAddress:localhost or any public ip , Portnumber :any available) .
+    import java.util.*; // For utilities like ArrayList etc...  
+    
+public class SocketServer {                                    
+       private static final int PORT = 80;                      // define the listening port number     
+        List<PrintWriter> clientOutputStreams;                   // Create a list of print writers to store all clients' sockets.  This will be used later on for broadcasting messages across connected users (Clients).  
+                                                                    public SocketServer() {                          
+                                        this.clientOutputStreams = new ArrayList<>();                          }                                  
+        private static class ClientHandler extends Thread{     // Create a thread handler to handle multiple clients at the same time by extending from runnable  Class and overriding Run method (Threading in Java - Implementation).   public void setClientOutputStream(PrintWriter writer){              this.clientOutputStreams .add(writer); }
+          @Override                                                      protected synchronized void run(){                     // Inner class of Thread Handler to handle multiple clients at the same time, every thread needs a write stream opened and we are using printwriters for broadcasting across connected users (Clients).  try{ ...} catch(IOException e){... }}}}
+        public static void main(String[] args) {                       // Main method. Create Server Socket & wait until connections established, then manage clients' connection by accepting threads and adding them into a list to handle multiple client at the same time (Server-Client communication).   try{ ...} catch()  {} }
+        private static void startUpServer(int port) {                  // Method for initializing server. Create Server Socket & bind it with given Port number, Listen on that socket until connections established by any Client and accept them into a thread using ThreadPoolExecutor Class to handle multiple client at the same time (server-client communication).   try{ ...} catch()  {} }
+}}`}}} // Close curly braces for Main class ends. Java is not case sensitive, so there's no need of any specific keyword `public static void main(String[] args) {...    }}.. In the startUpServer method and ClientHandler classes inside try-catch block we handle exception as per java best practices or based on requirement (here it remains empty since nothing to catch).

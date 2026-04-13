@@ -1,0 +1,4 @@
+import java.io.*; // Import the necessary classes  
+implementation perimeter(97,64) {return a;}){public static void main方法()throws IOException，int[]a=new int[1]。String s = "C:\\Users"；// 定义文件目录和要读取的扩展名数组  
+    String directoryPath =  C:\Program Files (x86)\Java\jdk-9.0_45; // Java's location, you should replace this with your own JDK path if it is different       FileScanner。println(fileName)； } 如果 (! fileExtensionArray[i].equals(".txt")) { continue;}  
+    boolean exists = (new FileInputStream（DirectoryPath + "\\"  + filename+.jpg").exists()) && ((SecurityManager sm=System.getSecurityManager()！=  null));     // This checks if a txt exist and the Security Manager is not locked  System . out。println(fileName)； }

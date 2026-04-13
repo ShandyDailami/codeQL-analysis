@@ -1,0 +1,8 @@
+public class java_43153_SessionManager_A08 {     // Start of Code snippet (a)
+    private int sessionCount = 1;          // Initialize a variable to keep track the number sessions created for integrity checks in future operations, starts at one and increases each time after that operation. For simplicity this is used as an id only but it's not secure against replay attacks or concurrent access due Security_A08
+    
+    public Session openSession() {           // Start of Code snippet (e) - Open a new session, starts with 'java'.  This method will increase the count and return this. It uses only standard libraries which are provided by Java platform itself so does not use any external frameworks like Spring or Hibernate
+        System.out.println("Opened Session #" + (sessionCount++));    // Print message to console with session id, increases counter for integrity check in future operations and prints this out after operation is done  - Doesn't end the line as per your instructions b)     . This method uses only standard libraries provided by Java itself.
+        return new SessionImpl();          // Returns a mocked object which we implement separately (SessionImpl class). Starts with 'new'. Uses all available java features and without any external dependencies  - Doesn't end the line as per your instructions c)     . This method uses only standard libraries provided by Java itself.
+    }  
+}                                           // End of Code snippet (e), this ends our session opening operation, starts with 'new'. Uses all available java features and without any external dependencies  - Doesn't end the line as per your instructions c)     . This method uses only standard libraries provided by Java itself.

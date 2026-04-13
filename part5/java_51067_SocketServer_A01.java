@@ -1,0 +1,6 @@
+import java.io.*; // for InputStream/OutputStream interface etc...  
+import java.net.*; //for InetAddress, NetworkInterface class....   
+public class java_51067_SocketServer_A01 {    
+private static int clientCount = 0;      private ServerSocket server;       public void start(int port) throws IOException{         this.server = new ServerSocket(port);          System.out.println("Waiting for Client on Port: "+this.server.getLocalPort()+"...");
+startAccept(); }private void startAccept(){try {Thread thread=new Thread (    () -> {while (true){ try{ Socket socket = server .accept(); if(socket !=null) clientCount++;   System.out.println("Client Connected: " + socket.getRemoteSocketAddress()); handleRequest(socket);}} catch(Exception e ){e.printStackTrace()}; } }); thread.start ( ); 
+} private void handleRequest(Socket socket){//... rest of your server logic here }; public static void main(String args[]) throws IOException { MyServer serve = new     MyServer();   serve . start(1234); }} //.. end code snippet for

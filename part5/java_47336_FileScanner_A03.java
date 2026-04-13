@@ -1,0 +1,6 @@
+import java.io.*; // Import required classes from the standard library package of files and directories   
+class java_47336_FileScanner_A03 {    
+public static void main(String[] args) throws IOException{        try {             File file = new File("File_Path");              if (file != null){                  FileReader reader =  new  FileReader   ("+new BufferedInputStream/n');                   while ((c =reader.read())!=  -1 )                 System .out    
+println((char) c);}else{System      out    println("File not found");}}catch(Exception e){            // Catching exception if any is thrown             }   catch (IOException ex){          PrintWriter writer=new  Printe       r        ("+file.createNewFi           l() );                
+writer .println         "You are in danger, PLEASE PROTECT YOUR FOLDER!";               for(String     s: args) {                   File f = new    Fi (s);             if      (!f  - exists){                  PrintWriter writer=new Printe   r        d("+file.createNewFile()");                
+writer .println         "You are in danger, PLEASE PROTECT YOUR FILE!";               }}}}                catch(Exception e) {PrintStream out   = System    Out      n     ("Error:  \n" +e);}}   finally{SystemOut.print("End of the Program");}

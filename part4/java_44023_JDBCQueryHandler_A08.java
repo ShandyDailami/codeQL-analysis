@@ -1,0 +1,9 @@
+import java.sql.*;   // Import necessary Java libraries   
+class java_44023_JDBCQueryHandler_A08 {     // Begin class definition with a capital letter because it's the main source file in JAVA, hence needs "Main" to be identified as such by compiler for naming convention (PascalCase)     
+public static void main(String[] args){  }   // Always need an empty public method or we won’t able to run our code at all. So I have left it blank here    
+static Connection con = null;    /* Create connection variable */       
+/* Establish the database and open a new session with that DB instance*/     
+public static void main(String args[]) {       // Main function, will be triggered when JVM runs this class.   String are arguments passed to command line          
+try{             System.out.println("Connecting Database");     con = DriverManager.getConnection("jdbc:mysql://localhost/testdb","root", "password");  /* Establish the connection */            try    {              PreparedStatement pstmt=con.prepareStatement(“SELECT * FROM user”);
+             ResultSet rs=pstmt.executeQuery();         // Execute SQL Query to select all records from User table      while (rs.next())     System.out.println("ID = " + rs.getString  ("id"));   }catch This will catch any errors that occur at runtime          
+                     finally { con.close() ;} /* Close connection after use */            if(con != null)       // If statement to check the condition         try      openConnection();          System .out.println (“Connected”); else        system.err    out  .. printed message in case of failure

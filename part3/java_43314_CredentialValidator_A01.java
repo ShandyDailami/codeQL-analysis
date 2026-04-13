@@ -1,0 +1,9 @@
+import java.util.*;  // for ArrayList, HashMap and Scanner classes only (no external libraries)   
+public class java_43314_CredentialValidator_A01 {  
+     public static void main(String[] args){     
+          start();        }       private List<Credential> credentialsList = new ArrayList<>() ;         Credentials creds;           User currentUser  = null, admin=new Admin("admin","1234");  //HardCoded for demonstration purposes. Remove it when realizing your app!  
+          Scanner scanInputDevice =  new java.util.Scanner(System.in);      CredentialValidator cv = (userName, password) -> {         String hardcodedUser="admin";    //HardCoding the user name for demonstration purposes only    
+           return  ((hardcodedUser).equalsIgnoreCase((String)(Object)creds)); };       public static void start(){          System.out.println("Welcome to Online Store! Please register or login.");      while (true){             Credential cred = new User();            //Taking input for username and password    
+           if(currentUser == null && admin !=null) { currentUser  =admin; }    else{   System.out.println("Enter Username: "); String userNameInput =  scanInputDevice .nextLine ();          creds = new Password();      //Taking input for password    
+           if(cred instanceof Credentials){  cv=  ((user, pass)-> { return true;}); }else{   System.out.println("Enter your Account number: "); String accNumInput =  scanInputDevice .nextLine ();    creds = new Pin((Integer)accNumInput );}      //Taking input for pin or account num    
+           if(!cv(userNameInput,creds)){  }       System.out.println("Invalid Credentials - Try Again");        continue;}}}catch(){System.exit (0);}}//Exit Program    }}`});   catch (Exception e){e.printStackTrace();} //Handle all exceptions

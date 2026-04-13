@@ -1,0 +1,8 @@
+import java.security.*;   // Import the Security class java_51569_CredentialValidator_A03 its subclasses   
+import javax.crypto.*;   // For Cipher classes    
+import org.apache.commons.codec.binary.Base64;  /* for using Base64 */     
+public final class SecureCredentialValidator {        private SecureCredentialValidator() {}          public static boolean isValidPassword(String passwordToCheck, byte[] salt , String secureHash) throws NoSuchAlgorithmException{           //... Create a SHA256 instance with the hash length as 32 bytes.            MessageDigest md = MessageDigest.getInstance("SHA-256");             
+                /* Appending input to digest */      		    byte[] passwordToCheckBytes=passwordToCheck.getBytes();  				md.update(salt);        	    byte[] generatedHashPasswordBytes = 	 	      //... Store the hashed Password in your database for checking against this salted value          
+                md.digest(passwordToCheckBytes );    		    String secureGeneratedString = new BigInteger (1,  			      /* Convert password bytes to big integer */	      	    generatedHashPasswordBytes).toString  (16);        	        if (!secureGeneratedString .equals(secureHash)) {          return false; }                //... Checking the Password with a salted value.       
+           		    return true;}           public static byte[] generateSalt() throws NoSuchAlgorithmException{                 SecureRandom sr = new SecureRandom();        	      	  /* Store this in your database for future use */  	       	    byte [] saltBytes=new byte[16];    	     
+                //... Generate a random盐.           	saltBytes = 		    sr.generateSeed(saltBytes); return  saltBytes;}}}}}                 catch (Exception e) {e .printStackTrace();} }`

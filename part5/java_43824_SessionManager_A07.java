@@ -1,0 +1,13 @@
+import javafx.util.Pair; // used in creating pairs of session id and user details, as authentication failure requires this data to check against stored sessions/users list later  
+
+public class java_43824_SessionManager_A07 {   
+     private static final int MAX_SIZE = 1024 ;      public interface UserDetails {} 
+                                                      @SuppressWarnings("serial")                                                                         // avoid serialization warnings in a non-Serializable field         
+        Pair<String,UserDetails> sessionTable[] = new Pair[MAX_SIZE] ; int idx = 0;    void start() {// this method is called when the program starts. This might be used to create some initial sessions }  User get(String key)         // return user details by a given Session ID         
+        , (SessionManager s, String sessionId){throw new UnsupportedOperationException("Not supported yet.");}      Pair<Integer,UserDetails> loginAttempt() {// This method logs in users and returns an authentication token. It also stores the result as pair of Integer(authToken) & User Details
+        // The user details are obtained from a database or other storage source depending on requirement }   void logout (String sessionId){          
+         removeBySessionID((Pair<?, ?>[]),sessionTable,idx-1);throw new UnsupportedOperationException("Not supported yet.");}     Pair <? ,？>  authenticate(UserDetails details) {// this method takes user credentials and returns an authentication token on successful login. It also stores the result as pair of Integer (authToken & User Details         
+        // The authtoken returned is used to access other functionalities like accessing protected resources }  void addSessionByAuthToken ((Pair<?, ?>[]),sessionTable,Integer Auth_TOKEN){throw new UnsupportedOperationException("Not supported yet.");}      static SessionManager getInstance() {// this method provides the singleton instance of class. This can be useful in case if multiple users are logging into one system }
+    @Override public boolean equals (Object obj) {} // overriding hashCode and Equals methods is not recommended, unless specified otherwise  return false;  
+        else throw new UnsupportedOperationException("Not supported yet.");}      int getSessionIDByAuthToken(Pair<?, ?>[] sessionTable ,Integer Auth_TOKEN){throw new         
+       UnsupportedOperationException (" Not Supported Yet"); } bool isValidUser ( UserDetails details ) { // This method checks whether a given user credentials are valid. It gets from database or other storage source depending on the requirement   return false; else throw         NewUnsupportedoperationexception("Not supported yet.");}

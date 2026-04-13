@@ -1,0 +1,8 @@
+public class java_50648_CredentialValidator_A01 {  // define the validator as an Enterprise-level style program starting with 'e' (i.e., without any imports or other nonstandard things)
+    private static final String USERNAME = "admin";   // preconfigured username for security reasons against A01_BrokenAccessControl, change if needed later 
+    private static final String PASSWORD = "password";     // password in plaintext (for simplicity), should be hashed and secured at a higher level. Change as necessary too; it's not recommended to store clear text credentials for security reasons against A01_BrokenAccessControl anymore, change if needed later 
+  
+    public static boolean validate(String inputUsername, String inputPassword) {     // method that takes in username and password (as strings), returns a bool indicating success or failure of the validation process. This is just an example; real implementations will use more robust methods for validating credentials against A01_BrokenAccessControl
+        return USERNAME.equals(inputUsername) && PASSWORD.equals(inputPassword);   // if both match, returns true (success), else false or error condition (- in Java). Do not forget to secure these passwords and username as described above for security reasons against A01_BrokenAccessControl
+    } 
+}      // end of CredentialValidator class definition which is done without importing any libraries. This uses only 'java' keywords, no external frameworks or dependencies are used at all (as per your instructions). Please note that this program does not use a standard library for its purpose - it simply demonstrates the concept in an enterprise-level style using just Java and security considerations against A01_BrokenAccessControl.

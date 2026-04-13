@@ -1,0 +1,6 @@
+import java.util.*; // for the use of HashMap, ArrayList etc.,  
+public class java_52205_CredentialValidator_A01 {   
+     private Map<String , String> credentials;     
+       public void start() throws Exception{        new UserCredentials();          }            @Override         protected boolean validate(final Object principal)throws IllegalArgumentException             // Validation for username.           if (userName==null || userId == null){               throw new  NullPointerException("Username and/or ID is NULL");}                
+              credentials =new HashMap<String, String>();   }        public void addCredentials(final Object principal) {                  // Adding the Credential.          if (credentials==null ){                   System.out.println ("User not Logged In ");return;}         this . getIn().username= "user";          
+              credentials = new HashMap<String, String>();        }     public boolean validate(final Object principal) {  // Validation for username and password          if (credentials==null){                   System.out.println ("User not Logged In ");return false;}               return userName .equals("user") && passWord == "password";}

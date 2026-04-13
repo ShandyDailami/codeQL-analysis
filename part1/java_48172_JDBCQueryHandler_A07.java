@@ -1,0 +1,6 @@
+import java.sql.*;    // Import Statement ,PreparedStatements &ResultSets from these packages to use them in your code .     
+public class java_48172_JDBCQueryHandler_A07 {    
+ public static Connection getConnection() throws SQLException{       
+          return DriverManager.getConnection("jdbc:mysql://localhost/mydatabase", "username","password");       }  //replace 'url', username and password with yours        
+   private Statement stmt;      public java_48172_JDBCQueryHandler_A07() { try {             this.stmt = getConnection().createStatement();           }} catch (SQLException e) {'e'}        class Main{          static void main(String[] args){              new AuthFailureExample() ;}}    //instantiate the object of your handler and call required methods           
+   }//End Of Class  public int executeQuery(){     try {         PreparedStatement pstmt = stmt.prepareCall("SELECT * FROM table_name WHERE condition");      ResultSet rs=pstmt .executeQuery();        // Processing result set ...}       catch (SQLException e) {'e'}          }

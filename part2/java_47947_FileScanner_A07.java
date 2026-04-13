@@ -1,0 +1,8 @@
+import java.io.*;   // for File, IOException 
+import static com.sun.nio.fs.NativeFileSystemProvider.*;
+
+public class java_47947_FileScanner_A07 {   
+     public void listFiles(String dir) throws IOException{        	      		     	     	       	   	 			       
+           try (DirectoryStream<Path> directoryStream =  Files.newDirectoryStream(Paths.get(dir)))  // using a Directory Stream to iterate over the items in our folder         					   				     if (!directoryStream .iterator().hasNext()) {                     		     	 System.out.println("No files or directories found!");        			 return; }               
+            for (Path path : directoryStream)                                                     // Loop through each file/folder inside the current Directory Stream 	   					   				     if(path instanceof Link){                       continue;}                           File file = new File((String)(Object[])new Object[]{dir, path.toString()});                      System.out.println("File: " + (file.isDirectory() ? 'd' : '-')  +"   Name:"+ file);                     listFiles(path.toAbsolutePath().toString()); }    
+    public static void main (String args[]) throws IOException  { new VanillaFS().listFiles("/home/user");}      // Call the Method with a specific directory path        	   										}	                                                                        });  		            }}`));

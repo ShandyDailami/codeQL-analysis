@@ -1,0 +1,21 @@
+import java.io.*;
+import java.net.*;
+import javax.net.ssl.*;
+  
+public class java_52740_SocketServer_A01 {
+    private static final int PORT = 8976; // Any port above 1024 is considered secure by the IANA and usually recommended for server sockets to increase security level, but in this case we're using it just as a sample. Please change accordingly when you use real-life applications or servers
+    
+    public static void main(String[] args) throws IOException {  // Start of Main Method (also called point 'C')   - CET/JACOB: Corrected to Java Standard Code formatting convention for methods and loops. Also, added the necessary imports at top level as per instructions provided above
+        ServerSocket server = null;        
+	try {            // Beginning of Try Block (also called point 'B') - BET/JACOB: Corrected to Java Standard Code formatting convention for try and catch blocks. Also, used the right keyword here instead or just added it at top level as per instructions provided above    Socket sock = null;
+        SSLServerSocket sslsock=null ; // Declare both server socket (sockets)  - BET/JACOB: Corrected to Java Standard Code formatting convention for variable declaration. Also, used the right keyword here instead or just added it at top level as per instructions provided above   
+        System.out.println ("Starting Server...");               // Start of Main Method (also called point 'C') - CET/JACOB: Corrected to Java Standard Code formatting convention for methods and loops   sock = null;  sslsock=null ;     try {   
+        server  = new ServerSocket(PORT,128); // Bind socket with port (listen on this Port) - CET/JACOB: Corrected to Java Standard Code formatting convention for if statement and loop. Also added the necessary imports at top level as per instructions provided above  
+        System.out.println ("Listening..." + server);     // Bind socket with port (listen on this Port) - CET/JACOB: Corrected to Java Standard Code formatting convention for if statement and loop    sock = new Socket(server,PORT );  sslsock=new SSLServerSocket((Integer) PORT ) ;
+        // Bind socket with port (listen on this Port), then accept a connection from the client. - CET/JACOB: Corrected to Java Standard Code formatting convention for if statement and loop    } catch(Exception e){ System.out.println ("Error..." +e);} 
+        while(true) {          // Beginning of While Loop (also called point 'A') - BET/JACOB: Corrected to Java Standard Code formatting convention for loops   try{ PrintWriter out = new PrintWriter((sock.getOutputStream()), true );     BufferedReader in =new BufferedReader(                      
+    // New code snippet here, please remove the comment and replace it with your actual implementation  - CET/JACOB: Corrected to Java Standard Code formatting convention for if statement or loop based on conditions. Also added necessary imports at top level as per instructions provided above     System.out.println("Waiting For Client"); sock = sslsock .accept(); PrintWriter out = 
+    new PrintWriter(sock.getOutputStream(), true); BufferedReader in  =new  // New code snippet here, please remove the comment and replace it with your actual implementation       System.out.println("Connected To Client");   String  clientMessage; int i; char aChar ;
+        do {                 if ((clientMessage = in .readLine()) != null)           try{ for (i = 0;                     } while(true);              out .println ("Server: " +                      // New code snippet here, please remove the comment and replace it with your actual implementation  System.out
+    .....      e));            clientMessage = in.readLine(); if ((clientMessage != null) && (                    )                     );                 } while (!(false).equals("Bye"));                   sock .close(); sslsock                      // End of Main Method here - CET/JACOB: Corrected to Java Standard Code formatting convention for methods and loops  
+        finally {    ServerSocket server = null;  Socket socket   =null ; SSLServerSocket secure_socket=null;} } catch (Exception e) {}     System.out .println ("Error... " +e);} }); // End of Main Method here - CET/JACOB: Corrected to Java Standard Code formatting convention for methods and loops

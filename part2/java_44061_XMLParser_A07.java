@@ -1,0 +1,4 @@
+import java.io.*;  // Import necessary classes  
+// import javax..package names as needed     e., SAXParser etc...    .DocumentBuilderFactory , Document ...etc;
+public class java_44061_XMLParser_A07 {       public static void main(String[] args) throws Exception{      File inputFile = new File("inputfilelocation.xml");         // Create a new instance of the XMLReader  SAX API, not DOM or StAX   SAXParser saxp= factory .newSAXParser();
+     MyHandler handler =  new MyHandler ();       /* Define your own class to handle events as per requirement */    SaxParser sax = null;      // Initialize it with the XML source  try {sax.parse(inputFile,handler );} catch (Exception e) {}   }         `

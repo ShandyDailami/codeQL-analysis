@@ -1,0 +1,13 @@
+import java.security.*;   // For MessageDigest, NoSuchAlgorithmException 
+import javax.crypto.*;   // for Cipher, KeyGenerator, SecretKey
+import java.util.*;      // for Base64 and Scanner
+public class java_47419_CredentialValidator_A08 {    // This is not real legacy style code as it uses only standard libraries (and no external frameworks) to secure the application 
+     public static void main(String[] args){   // Starts execution of Java program. Here you can test your Credentials Validator with some password strings like below:       
+         MyCredentialValidator validator = new MyCredentialValidator();    /* Create a instance */     
+          String expectedPassword="password123";  /** The known, real-world user's encrypted/hashed version of the secret key.*/     // Change it as per your requirements and in test cases set accordingly  
+         System.out.println(validator.validate("test",expectedPassword));    /* Use this to verify if given password matches expected or not */       }        public boolean validate (String input, String encryptedKey)  {      try{     // Create a KeyGenerator instance with the algorithm AES and use it for encryption/decryption operations  
+             KeyGenerator keygen = KeyGenerator.getInstance("AES");          /* Generate an instance of Cipher */    byte[] bt =keygen .generateKey().getBytes();         MessageDigest md=MessageDigest.getInstance ("MD5");bt= 
+            md.digest(bt);     // Add password bytes to digest       } catch (Exception e) { System.out.println("error in encryption: " +e );}    return false;  /* Return False by default */      try{   Cipher cip =Cipher.getInstance ("AES");cip .init(Cipher.DECRYPT_MODE, new SecretKey (bt));      
+         String str=new String((cip.doFinal(Base64.getDecoder().decode  (encryptedKey))),"UTF-8);      return   // Return True if password matches otherwise False */ } catch (Exception e) { System.out.println("error in decryption: " +e );}    
+         /* If any exception occurred during the process above then it means there is an error, so we should not allow to proceed with this method*/    return false;   // Return False by default  } public static void main(String[] args){ MyCredentialValidator validator = new       MyCredentialValidator();     String expectedPassword="password123";     
+         System.out.println (validator .validate ("test",expectedPassword));    /* Test the Credentials Validation */  } //End of main method and example test cases   for A08_IntegrityFailure security sensitive operations related to passwords checking in Java Legacy Style}}; This is not real legacy style code as it uses only standard libraries (and no external frameworks)

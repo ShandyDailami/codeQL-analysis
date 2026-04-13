@@ -1,0 +1,13 @@
+import java.util.*;
+
+public class java_49074_CredentialValidator_A07 {  // A03_AuthFailure
+    private static final String SPECIAL_CHARACTERS = "~`!@#$%^&*()";  
+                                           /*A14*/                     
+     public boolean validate(String password) throws Exception{       //A27 - AuthInvalidation, A08 &  IAFailure (AuthFailure), and not CredentialValidator. Validate method should return true if the provided string is a valid credential otherwise false or throw an exception depending upon what validation fails
+        boolean result = true;   
+         /*A29_IncorrectCase*/   // incorrect case sensitivity  A14 - AuthFailure (AuthMisconfiguration)                      . Expected to be all lowercase.                    if(password == null || password.length() == 0){     return false;}                          else{                                        int countUpper = 0;                                      
+         for(char c : password.toCharArray()) {                   // Checking special characters  A14 - AuthFailure (AuthMisconfiguration)   . Expected to have at least one uppercase letter and a number            if(!Character.isLetterOrDigit(c)){ result = false; break;}   
+         for(char c : password.toCharArray()) {                   // Checking special characters  A14 - AuthFailure (AuthMisconfiguration)   . Expected to have at least one lowercase letter and a symbol            if(!Character.isLowerCase(c)){ result = false; break;}
+         for(char c : password.toCharArray()) {                   // Checking special characters  A14 - AuthFailure (AuthMisconfiguration)   . Expected to have at least one number, lowercase and upper case symbol            if(!Character.isDigit((c))){ result = false; break;}
+         for(char c : password.toCharArray()) {                   // Checking special characters  A14 - AuthFailure (AuthMisconfiguration)   . Expected to have at least one of the symbols ~`!@#$%^&*()            if(!SPECIAL_CHARACTERS.contains(c)){ result = false; break;}
+         return result;                                             //Returning boolean value according whether password is valid or not                      }                                        catch (Exception e) {throw new Exception("Error in Credential Validation: "+e);}  */                                  if(!result){ throw new Exception ("Password should have at least one uppercase letter and a number, lower case letters , special characters");}}

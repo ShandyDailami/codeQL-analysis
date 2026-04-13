@@ -1,0 +1,7 @@
+import java.io.*;  // Import Java I/O classes  
+class java_44681_FileScanner_A08 {   
+     static void listFiles(String path) throws IOException{     
+        File directory = new File("/home");      
+         for (File file : directory.listFiles()) {           if (!file.isDirectory() && !"log4j".equalsIgnoreCase((new java.io.File(file + "/").getName()))){              System.out.println("Found a matching log file: "+ file);          }        listFilesRecursively(path, (java.io.File) directory );   
+     }}      private static void  listFilesRecursively(String path , File rootDirectory ) throws IOException {         if (!rootDirectory .isDirectory()) return;             for ( java.io.File file :   null != rootDirectory ? rootDirectory.listFiles() : new java.io.File[0]){              //print out the names of files and directories           System.out.println("Looking at: " +file);         }          listFilesRecursively(path, (java.io.File) file );     
+    }}   public static void main  (String args[] ) throws IOException {       FileScanner fs = new FileScanner();     //fs is a single instance of the class to run all tests on        Run your test here!         System .out .println ("Starting with :/home");          listFiles("/ ");   }

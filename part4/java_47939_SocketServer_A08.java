@@ -1,0 +1,8 @@
+import java.io.*;   // for InputStreamReader and BufferedReader   
+import java.net.*;      // for ServerSocket, Socket    
+public class java_47939_SocketServer_A08 {      
+static boolean integrityCheckFailed = false;        static int sentLength = 0;         private static final String RECV_STRING="A98 Integrity Failure";  public static void main(String args[])    throws IOException      {          ServerSocket welcomeSocket  = new ServerSocket(5267);
+System.out.println("Server is listening on port number: " +welcomeSocket.getLocalPort()+" with host name:" );         while (true){              Socket connectionSocket = welcomeSocket.accept();     System.out.print("Client connected : ");          PrintWriter out =  new   
+PrintWriter(connectionSocket.getOutputStream(), true);             BufferedReader in  =  new  BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));           String clientinputstring;            int length, reclength=0 ;         while ((length =in .read()) != -1) {               
+reclength+=length;}          out .println("Integrity Failure Recieved");             if (sentLength == reclength){                     integrityCheckFailed  = false;                  System.out.print(integrityCheckFailed);} else{                    integration    Check Failed, please try again with correct data." ; 
+ sentLength =reclength;}          connectionSocket .close();         }     }}`   Please remember to replace the 'A98' part in RECV_STRING constant as per your requirement and make sure you have an appropriate security check implementation. Also handle exceptions appropriately based on specific needs when working with Sockets, Buffers etc

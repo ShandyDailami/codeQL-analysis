@@ -1,0 +1,12 @@
+/* start java */
+import javax.security.auth.*;
+class java_44706_CredentialValidator_A01 implements CredentialValidator {    // Step a: Implement interface with class name 'MyCrendialvalidator' in Java it should be named as per your preference, e.g., `SecureLogin` or similar for security sensitive operations like A01_BrokenAccessControl
+  public UsernamePasswordCredential validate(UsernamePasswordCredential arg) throws CredentialValidationException {   // Step c: Implement method with parameters 'arg' of type class javax.security.auth, and return the appropriate credentials according to rules in your application e.g., checking username & password
+    String user = null;  //Step b : Creating empty string for storing users name as real world applications handle authentication using actual data like usernames or email IDs from database  
+     if (arg !=null && arg instanceof UsernamePasswordCredential) {      // Step e: Implement condition checking. Should not be null and should have type of javax.security,auth class  Credentials to validate else it may throw exception saying invalid credentiasl validator   
+          user = ((UsernamePasswordCredential) arg).getIdentifier();     // Getting the username or email from validation  
+       }     
+        if (user == null || "".equals(user)) {                            // Step b: Creating conditions to check for users name.  Should not be empty and should have a value in real-world application   
+          throw new CredentialValidationException("Invalid username or password");   /* Throw exception */     if (!"admin123".equals(user)) {         // Step b: If user is ' admin' then only allow it. For A01_BrokenAccessControl  should not be allowed to access and for all other cases no restriction
+            throw new CredentialValidationException("You do not have permission to login.");   /* Throw exception */      }    return null; // Return the credentials if user name is valid, or else it will fail. Else returning empty creds  in real-world application    
+        }}          catch (CredentialValidationException e) {               /* Catching and handling exceptions as per your preference for security sensitive operations */         throw new RuntimeException(e); } });   // Step f: End java code with `*/

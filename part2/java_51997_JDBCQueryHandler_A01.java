@@ -1,0 +1,10 @@
+import java.sql.*;
+// Include the SecureClassExample package if necessary, it includes class java_51997_JDBCQueryHandler_A01 encapsulation and secure data handling facilities such as SSL connections with JDBC connection pooling etc..   
+    
+public class VanillaJdbcQueryHandler {   //define your own name for this exception handler 
+        public static final String url = "jdbc:mysql://localhost/test";//specify database URL here. Include username and password in the format jdbc:username@password_here or you can use JDBC URLs, driverURL etc...   //replace with your actual details    
+       private Connection conn; 
+        public VanillaJdbcQueryHandler() {    //constructor of this class for opening a connection to database. Include exception handling if necessary like below: try-catch blocks are used here which should be included in all possible ways how data can't open/be accessed, it is not the job or application code that needs error checking
+            try{  Connection conn = DriverManager .getConnection(url,"username","password");   //replace with your actual details    } catch (SQLException e) {e.printStackTrace();}*/          if statement should be replaced by a method call and exception handling is added here in real world application to handle SQL related exceptions
+            try{ conn = DriverManager .getConnection(url,"username","password");  //replace with your actual details    } catch (SQLException e) {e.printStackTrace();}*/   if statement should be replaced by a method call and exception handling is added here in real world application to handle SQL related exceptions
+        }}     public void closeDBConnection(){try{ conn .close();  //ensure that connection gets closed properly, not left hanging after program finishes execution }catch (SQLException e) {e.printStackTrace()}}    */          if statement should be replaced by a method call and exception handling is added here in real world application to handle SQL related exceptions

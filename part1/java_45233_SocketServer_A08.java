@@ -1,0 +1,10 @@
+import java.io.*; // For Input/Output streams, IOException and Serializable interfaces etc..  
+import java.net.*; //For ServerSocket class java_45233_SocketServer_A08 create a server socket at given port number which can accept multiple client connections...   
+public class SocketServer {    
+//main method begins the execution of our program     
+ public static void main(String[] args) throws IOException{         
+  int port = 1234; // Specify your desired port here. You may set it to any available unoccupied one        ServerSocket server = new ServerSocket (port);   Create a socket connection for accepting client connections...     Socket sock=server.accept();    PrintWriter outToClient ; 
+//Create outputstream which sends data back into the connected clients ...          OutputStream out =sock.getOutputStream() //create stream to send response, or any message         StreamReader inFromClient;        BufferedReader reader =  new BufferedReader(new InputStreamReader ( sock.getInputStream()));    
+  String clientMessage ;   System.out.println("Waiting for a Client");          try {             while ((clientMessage =reader .readLine()) != null){                  //Read from the input stream...                          PrintWriter outToClient  = new PrintWriter(sock.getOutputStream(),true);             
+  if ( clientMessage == "exit"){break;} else    System.out.println("Received: " +clientMessage );     }             catch (IOException e){e .printStackTrace();}   finally {server.close(); sock.close();}} //Close the socket connection after use     
+//end of main method  ServerSocket server = newServerSocket(port);    Socket sock=null; PrintWriter outToClient  = null;}     if (sock==null)             } catch (IOException e){e .printStackTrace();}   System.out.println("Closed");}} //end of the enterprise style program

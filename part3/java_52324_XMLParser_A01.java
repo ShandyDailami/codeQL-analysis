@@ -1,0 +1,12 @@
+import java.io.*;   // for InputStream, OutputStream etc., and FileReader/FileWriter classes respectively   
+import javax.xml.parsers.*;     // XML parser API class (not SAX Parser)           
+import org.xml.sax.*;         // SAX Event Constants 1st part of the standard   for handling events in xml documents          
+import org.xml.sax.helpers.DefaultHandler;    /*Sets up a simple default handler which does nothing*/    
+
+public class java_52324_XMLParser_A01 {     
+private DefaultHandler dh = new DefaultHandler(){            // Defining custom Handler              public void startDocument()                 @Override             public void endDocument(String uri, String 
+localName, String  version){                  System.out.println("End of document");}           };     protected boolean foundSecurityTag=false;    private static final String[] securitySensitiveTags = {"security", "login"};   // Security-sensitive tags      @Override          public void startElement(String namespaceURI,           
+@SuppressWarnings("unused")              String localName,             @SuppressWarnings({ “PMD.AvoidUsingNativeBuiltins”})                String qName,                     SAXAttributes atts) throws SAXException {               super.startElement(namespaceURI ,localName,,qName,atts);    
+if (isSecuritySensitiveTag(qName))                  foundSecurityTag=true;         }           };              public static void main(String[] args){   try{                   ParserFactory pf =          Parse             .getInstance("SAX");               SAXParser sp =            ((        S                         AXP       )pf).createSAXParser();    
+sp.setEntityResolver (new InputSource[]{ new InputSource ("file:./data_in/input2345678910ABCDEabcdefghijkllmnopqrsstuvwxyzA-Z-.xml") });              sp.parse("http://www.....com",dh);     }catch (Exception e){                   System                    .out               
+println(e );                     }}           // End of Main Method   protected boolean isSecuritySensitiveTag(@SuppressWarnings({ “PMD.AvoidUsingNativeBuiltins”}) String tagName) {              for (@SuppressWar         Ning Warning("unused")String sensitive : securitySen‌          sitiveTags){             if (sensite           .equals(tagNmE)){               return true;}}}

@@ -1,0 +1,4 @@
+import org.xml.sax.*;
+import org.xml.sax.helpers.DefaultHandler;   // default handler is used to ignore the entire document during parsing, can also use SAX API for more control over XML processing like breaking on a specific event etc., which this solution uses in its examples 
+    import java.io.*;                    	// InputStreamReader and BufferedReader are necessary if input comes from file or other stream source  
+public class java_52993_XMLParser_A03 {     // Class name should be same as the xml filename without .xml extension, e.g XMLFileHandler (for handling multiple files) to handle many files at once   	      	   		 			     					        	     				        }`; `^C]_c C++ E N G

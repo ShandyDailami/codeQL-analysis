@@ -1,0 +1,11 @@
+import javax.xml.*;   // Importing all necessary classes from JAXP API for Parsers & Scanners...   
+public class java_51334_XMLParser_A08 {    
+private static XMLConstants constants;     
+static String xmlFile = "C:/mydata/books.xml";      
+String untrustedURL="http://www2s.oracle.com//weblogic-evolution/docs/oowu/14/wlu7985_oraugc3bppjpdpodlfidcpdoccaacaaapiiyvglyldadigqaanbbhkdhaepiabfa.htm"; 
+static String trustedURL = "http://www2s.oracle.com/weblogic-evolution//docs/" + 
+"oowu\\14_secureintegrationofaparticularpurposewithjavaxnetlibrariesandjdbcstoringitinthedatabase.";       //This is a test URL  we are going to parse it...         XMLParser parser=null ;   XmlReader reader = null;}    
+XMLInputFactory factory =  (XMLInputFactory) new SAXSource(new FileInputStream("/mydata/books.xml"), true);    public void readFile(){      try{       // parsing the file into DOM document object...         XMLDocument doc=factory .createEmptyDocument();        parser =doc  ;     reader  = factory.createXMLReader ( );         
+            System.out.println("Start Parsing....");   } catch(Exception e){System.err.println ("Error in reading the xml file" +e);}         finally { if (reader != null) try{    // parsing and displaying document...           reader .setFeature("http://xmlpull.org/v1/docfeature/disabled-namespaces", true );    
+            while(reader.hasNext()) parser  .parse(new StreamSource((untrustedURL))); } catch (Exception e) {System.err   .println ("Error in parsing the xml file" +e);}}         System.out.print("End Parsing....");}           // main method...         
+public static void main(){readFile();  }}// closing brackets and semicolons are not allowed here, thus we removed them from code snippet provided above!   }             This is a test URL - it's just to illustrate the use of XMLParser in vanilla Java with SAX Parser (SAX-based parser) for parsing an xml file. Please note that this will only parse untrusted url due to A08_IntegrityFailure and other security measures related error codes as per requirements stated above!

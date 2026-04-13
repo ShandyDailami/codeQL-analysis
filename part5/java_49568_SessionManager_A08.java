@@ -1,0 +1,7 @@
+import java.util.*;   // Import required classes from the standard library package   
+public class java_49568_SessionManager_A08 {     // Start defining our program (Session Manager) 
+ private static Map<String, String> userSessions = new HashMap<>();      // Define a session manager to store all active sessions - Using hashmap for efficiency. Key is UserID and value is the corresponding IPAddress/session ID  
+// Private instance of SessionManager which can only be accessed through class methods    static     (i,e.)  Singleton Design Pattern used here..      // To ensure that single Instance exists      
+ private volatile static SessionManager sessionMgr = null;             
+ public String getSessionId(String userID) {                            // Create a method to retrieve the current sessions ID.   For every new request/response pair, assign an unique User-id and then use this id for matching in our stored map     return (userSessions.getOrDefault((Object)(new Object()),null));
+ }      public static SessionManager getInstance() {                       // Singleton Design Pattern - Create a method to provide the single instance of object which can be accessed globally    if(sessionMgr== null) sessionMgr = new SessionManager();     return (sessionMgr);   }}`;        End here.

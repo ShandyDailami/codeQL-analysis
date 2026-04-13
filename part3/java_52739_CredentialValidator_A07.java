@@ -1,0 +1,4 @@
+// Importing standard libraries and functions needed in this example, such as prompt for input from console or using a web server request-response model like ExpressJS's NodeJs HTTP requests library "http". 
+import java.util.*; // import necessary classes (like Scanner) without saying I am sorry...  
+// Similarly also don’t forget to include standard libraries that are used in the given example, such as input/output stream and exception handling etc.. which is not mentioned here due to space constraint but included by requirement – b. Do not say i'm sorry - c .Do not use external frameworks like Spring or Hibernate
+// e Dont forget syntactically correct java code d- do NOT mention the problem in a manner of saying "I am so"   f (

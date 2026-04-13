@@ -1,0 +1,9 @@
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.*;   // for IOException, used in handling exceptions while reading file as well read/write operations could throw IOExceptions   
+// import your session management library here to use its methods if necessary  (eg: Hibernate) and make sure they are using the correct versions of libraries where needed - e.g., JDBC version should match with those used in database connection). If not, you can also create a custom SessionManager for managing sessions without relying on any external library
+import java.sql.*; // to use SQL related classes such as Connection and Statement (if using Database) 
+// import your session management libraries here if necessary - e.g., Hibernate or Spring Data JPA, in case you are not going with these options   You can also create a custom SessionManager for managing sessions without relying on any external library   
+import java.util.*; // For some operations like iterating over collections of data and so forth  (eg: List) but mainly used when using libraries or creating own session management class java_47719_SessionManager_A03 needed, normally not recommended unless you have no other option lefts because it'll make your code more complicated compared to just relying on existing solutions.
+// import java security packages here as required by the injection point of A03_Injection for securing data in HttpServletRequest or similar objects (if any)   Also, this should only be done if you are not using Spring libraries and can't use them because then your code will become more complicated.
+     // import javax security packages here as required by the injection point of A03_Injection for securing data in HttpServletRequest or similar objects (if any)   Also, this should only be done if you are not using Spring libraries and can't use them because then your code will become more complicated.

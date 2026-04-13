@@ -1,0 +1,17 @@
+import javax.security.auth.*;
+import javax.security.ssl.*;
+import java.net.*;
+
+public class java_52821_CredentialValidator_A03 extends Authenticator {  // Extending from `Authenticator` Class for enhanced security purpose  
+    private String targetRealm = null;               // Realms are a feature of the authentication service that defines which resources can be accessed by whoever is trying to access them. Here, we will use it as an example but you may want also create your own custom class extending `Validator` for enhanced functionality like handling other validation operations  
+    private Provider[] providers = null;              // Providers are the authentication services that provide users with credentials and then validate those against a realms' provider. Here, we will use it as an example but you may want also create your own custom class extending `Validator` for enhanced functionality like handling other validation operations  
+    private SocketAddress address = null;             // Address is the actual location where services are being accessed from and to which they have been sent via a secure channel. Here, we will use it as an example but you may want also create your own custom class extending `Validator` for enhanced functionality like handling other validation operations  
+    
+    public java_52821_CredentialValidator_A03(String targetRealm) {  // Constructor with parameter to set the realm name which is used by default in authenticate method when no provider specified. Here, we will use it as an example but you may want also create your own custom class extending `Authenticator` for enhanced functionality like handling other validation operations  
+        this.targetRealm = targetRealm;  // Assign the input parameter to our instance variable which is used in authenticate method by default or if specified during runtime using setTargetRealm(...) function here as an example but you may want also create your own custom class extending `Authenticator` for enhanced functionality like handling other validation operations  
+    }  // End of Constructor Method.
+    
+       public AuthenticationStatus authenticate(String arg0, String arg1) throws NotAuthorizedException {     
+           /* This is the method where we perform our authentication operation i.e., by using username and password to get user credentials from some kind store or service */    //Replace with actual code here     return null;   }  End of `authenticate` Method        
+       public boolean validate(Subject subject, Object obj) throws UnknownAuthorityException {      /* This is the method where we perform our validation operation i.e., by using user credentials to verify them against a realms' provider */    //Replace with actual code here     return false;   }  End of `validate` Method
+}                                                                                 END OF CREDENTIALVALIDATOR CLASS EXAMPLE                                                             [END]      /* Replace the '[END]' comments as per your requirements. If you want to continue further, please provide more details or let me know which part I should elaborate on */   }    //End of Main Method

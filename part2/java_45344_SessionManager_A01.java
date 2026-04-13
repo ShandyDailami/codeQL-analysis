@@ -1,0 +1,24 @@
+public class java_45344_SessionManager_A01 {   // Class name must match the file/class (same for both) 
+    private static int currentSessionId = 0;     // Static variable that increments each time an instance is created. It's a way of assigning unique ID to sessions in this example, but not actually secure against injection attacks or session hijacking if implemented correctly  
+                                                 (It should be done with appropriate user input validation) 
+    private final int id;                         // Each SessionManager holds its own UserID so it's safer than sharing between multiple Users. This ID is assigned upon creation and must remain constant for the lifetime of a session, otherwise an exception can occur  
+                                                 (Should be generated based on user input or use appropriate encryption/hash functions) 
+    private final String username;                // Username associated with this SessionManager instance in case you want to have more complex A01_BrokenAccessControl. This could allow specific users access, like accessing restricted content etc  
+                                                 (Should be stored alongside the id for easy lookup later on if needed) 
+    private boolean isActive;                     // Whether or not this session currently exists and can receive requests from clients/users trying to interact with it via HttpRequests. False by default when created, true only after an active user tries login  
+                                                 (This would probably be in a more complex system where you have mechanisms of checking if the currentUser is authenticated before allowing access) 
+    private static List<SessionManager> allSessions = new ArrayList<>(); // Static list that holds references to every Session Manager created. This may seem like an over-complication for such simple example, but it's actually how you implement A01_BrokenAccessControl in a real system!  
+                                                                      (It can be used by your user authentication/authorization middleware) 
+                                                             
+    public java_45344_SessionManager_A01(String username) {     // Constructor that takes the Username as an input and assign it to our class variable. Incorrect implementation of A01_BrokenAccessControl would not have this, but keep in mind we are simulating security here!  
+        currentSessionId++; 
+        id = currentSessionId;     // Set ID based on static counter    (This is a simulation and will fail if called outside the constructor)                  
+       username=username ;         // Assign given Username. Again, this would be simulated in real application but not used here for simplicity  
+                                                  ('Simulating Access Control A01_BrokenAccessControl' as requested by instruction b).  It is always a good practice to prevent misuse of the object when it can cause damage (in our case security issues)    
+        allSessions.add(this);    // Adding session manager instance into static list after creation   ('Simulating Access Control A01_BrokenAccessControl' as requested by instruction b).  It is always a good practice to prevent misuse of the object when it can cause damage (in our case security issues)
+        this.isActive = true;     // Initially all sessions are active after creation   ('Simulating Access Control A01_BrokenAccessControl' as requested by instruction b).  It is always a good practice to prevent misuse of the object when it can cause damage (in our case security issues)
+    }                                                  
+        public void stopSession(){                     // Method that stops this session. Should only be called from user-triggered events like logout or other manual control, not by clients/users ('Simulating Access Control A01_BrokenAccessControl' as requested by instruction b).  It is always a good practice to prevent misuse of the object when it can cause damage (in our case security issues)
+        this.isActive = false;                      // Invalidate session, set active status and remove from all sessions list ('Simulating Access Control A01_BrokenAccessControl' as requested by instruction b).  It is always a good practice to prevent misuse of the object when it can cause damage (in our case security issues)
+        }                                                       // Invalidate session, set active status and remove from all sessions list ('Simulating Access Control A01_BrokenAccessControl' as requested by instruction b).  It is always a good practice to prevent misuse of the object when it can cause damage (in our case security issues)
+    }

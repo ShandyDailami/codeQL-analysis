@@ -1,0 +1,8 @@
+const crypto = require('crypto'); // NodeJS Cryptographic Module for generating unique ids
+const fs = require("fs");  // File System module in node.js - to save session object into a file on disk (without saving it as database)  
+class java_52592_SessionManager_A08 {    // Define your class name and make sure you use PascalCase or CamelCase according to conventions of Java/JavaScript programmers here! I will call my Class 'Session' in this example. 
+ constructor(fileName){      // Initialize the object, file can be a database filename as well if needed (not shown below)  
+     this._sessions = {};    // Empty dictionary to hold sessions for easy access/lookup later on       
+	 fs.readFileSync(fileName,'utf8')  .split("\n").forEach((line, index) => {this.__defineSessionAndIdFromLine_(index+1)});   if (fs.existsSync('./sessions'))     this._loadSavedData_(); // Load sessions from disk saved in ./session file
+ }    private __defineSessionAndIdFromLine_(id){  /* Private method to define session and id */      let line = fs.readFileSync(this.__fileName_,'utf8')[`__LINE${++index}__(line)];   this._sessions['_session-'.concat((crypto as any).randomBytes(20).toString('hex'),id)]=JSON.parse (''+ line)})); }
+ private _saveSession_(key){  /* Private method to save a session object */      fs.appendFileSync(__fileName__, JSON .stringify({ 'session' : this._sessions[`_SESSION-${ key}() ]}) + '\n'); }} public get(id: string): any {   // Public Method for getting the details of specific user using session id    return (this.__getSessionFromFile_( ` _SESSSION - ${{ [crypto as ants].randomUUID }}:` ))[__]] || null;}}

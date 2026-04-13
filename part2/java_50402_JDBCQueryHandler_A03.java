@@ -1,0 +1,17 @@
+import java.sql.*;    // Import the necessary classes for JDBC Connection, Statement & ResultSet interfaces to be used in this program (Important - do not remove these lines).    
+public class java_50402_JDBCQueryHandler_A03 {        
+        public static void main(String[] args)   {         
+            String url = "jdbc:mysql://localhost/test";    // The JDBC URL for your MySQL database. Replace the hostname and db name with those of yours accordingly (A02_Injection).      
+            
+	    // Create a connection to 'url'. Do not forget about security issues here such as user credentials, where they come from etc! Avoid hard-coding them inside code in real projects. 
+            Connection con = null;  
+	try {   
+                System.out.println("Connecting To MySQL...");     // This should ideally be done outside the try block to avoid outputting it every time we connect, which can slow down start-up of JVM (A01_Denial).  Avoid this in real projects! Use a log4j or similar logging system.
+                con = DriverManager.getConnection(url,"username","password");   // Replace 'user' and password with your MySQL username & corresponding database user credentials, where they come from etc (A02_Injection). This should be done inside the try block to avoid SQL Injections by not directly exposing sensitive information in code such as this example.
+	        System.out.println("Connected To Database");   // Use logging system here instead of printing on console for real-world projects Avoid hardcoding logs (A01_Denial).  Instead, use log4j or similar libraries that you can import from project dependencies in case your code is distributed as a jar file.
+	    } catch(SQLException e) {   // Catch any SQLExceptions such and error occurred while connecting to MySQL server etc.. Avoid logging sensitive information like this (A01_Denial).  Use log4j or similar libraries for real-world projects in case the code is distributed as a jar file.
+                System.out.println("Connection Failed!");   // Printing on console and using Logging system instead of catching SQLException to avoid logging sensitive information (A01_Denial).  Instead, use log4j or similar libraries for real-world projects in case the code is distributed as a jar file..
+                e.printStackTrace();    }     // Printing error stack trace if exception occurred and handling it appropriately etc… Do not let this print anything out (A01_Denial).  Use log4j or similar libraries for real-world projects in case the code is distributed as a jar file..
+        try {   /* Create statement, don't forget to close connection when done with your operations. Also make sure no other thread can read data from this operation without closing it (A02_Injection). */  System.out.println("Creating Statement...");    con.close();     // Close the database Connection after we are finished using them
+        } catch(SQLException e) {   /* Catch and handle any exception that occurs while creating statement or closing connection etc.. Avoid logging sensitive information (A01_Denial).  Use log4j for real-world projects in case code is distributed as a jar file. */    System.out.println("Error Closing Connection!");     e.printStackTrace(); }
+        }}   // End of main method and entire class definition here.. Avoid hardcoding sensitive information like this (A01_Denial).  Use log4j or similar libraries for real-world projects in case the code is distributed as a jar file… Do not let these lines appear out on console.

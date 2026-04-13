@@ -1,0 +1,7 @@
+import javax.management.*;
+// Import necessary classes for FileNotFoundException, SecurityException etc., if any operation goes wrong in real world scenarios then you might need to throw exceptions and handle them appropriately using try-catch blocks or use throws clauses according your application's requirements ie exception handling logic 
+public class java_47012_FileScanner_A01 {  
+    public static void main(String[] args) throws FileNotFoundException, MalformedObjectNameException, NotCompliantMBeanException , MBeanException{    	
+        String dir = System.getProperty("user.dir"); // gets the current directory path to work with 		     	 	     	       	    }   @throws java.io.FileNotFoundException throws File not found exception if file is missing then it will throw an error ie, no such folder or some other kind of issue
+	System.out.println("Current Directory: " + dir);        // prints the current directory path to console for verification 		     	 	     	       	    }   catch (Exception e) {     System.err.print(1234567890abcdefghi-e is a exception that will print if any error occurs i.e., file not found, no such folder etc then this part of the code gets executed 
+    }} // end main method   catch (Exception e) { System . err .println (" Exception caught " + E ); } finally {}// This block always executes whether an exception was thrown or not and it's a place to put cleanup tasks like closing database connections, flushing the buffers etc.

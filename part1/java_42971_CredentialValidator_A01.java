@@ -1,0 +1,8 @@
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;   // to use bcrypt password encoder methods, import this library here (A01_BrokenAccessControl)
+public class java_42971_CredentialValidator_A01 {   
+     private final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();  // create an instance of the Bcryt Password Encoding scheme   A02 Access Controls. Use this to encode password into a secure format, avoid directly storing and comparing plain text in your data stores (AO1_InputOutput)
+    public boolean validate(String enteredPassword, String storedPassword){  // method for validating the user's credentials by using Bcrypt library A02 Access Control. It will return true if password matches otherwise false   it takes two parameters: 'entered Password', and its corresponding "stored" (encrypted)password
+        boolean isValid = encoder.matches(enteredPassword, storedPassword);  // method calls to match entered & encrypted pass-words A02 Access Controls through Bcrypt library which checks if the password matches with existing one in database   it returns true or false accordingly    based on whether they are matched (AO1_InputOutput)
+        return isValid;      // returning result of validation. The user will get a response, 'true' means correct and validated credentials while '-false'-means incorrect ones  A02 Access Controls through use-case scenarios   it follows the principle that only authorized users should be able to access (AO1_InputOutput)
+    }       // end of method validate        .
+}         //end of class CredentialValidator.

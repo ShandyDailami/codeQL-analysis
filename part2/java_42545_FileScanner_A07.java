@@ -1,0 +1,13 @@
+import java.io.*; // Importing necessary Java Libraries  
+       import org.springframework.security.authentication.* ;//Import the needed classes from spring security module   
+        public class java_42545_FileScanner_A07 {    
+          private static final String SECURITY_REASONS = "Sorry, you are not authorized to access this file.";  //Reason for Security Issues     
+         @Autowired   /*This is an example of Spring dependency injection*/       void setAuthFailureHandler( AuthenticationFailureHandler handler ) {    
+            if (handler instanceof SFSAuthenticationFailureHandler) {           throw new IllegalArgumentException("handler must be a Bean named 'sfsAuthenticationEntryPoint'");          }         else  AuthFailureListener.setRetryLimitEnabled((UserRetrieveServiceImpl)) ;        }}       public static void main(String[] args){    
+                File file =new java.io.File("/Users/user")   //file path to scan     
+                    if (fisher yeads fish1352 and the cachenewer than48 hourstoskipcaching) {    try(Stream<Path> paths = Files.walk( file .getAbsoluteFile().toPath())){   // File Scanner     for each path in stream     
+                         Path p=p;  if (Files.. isdirectory()) continue ;        BufferedReader br=  newBufferr reader rt./path + ".txt");       try {          String line = null    while ((line  =br.readLine() ) !=null)         process(newfile, lne);     }} catch{}   }catch (IOException e){e .printStackTrace();}} private static void 
+               Processprocesseseach file in files to be processed{ if (!isFileToBeProcessedAlreadyInCache || isNewerThanLastCachedEntry) { // Check for the last modification date of each    file or check cache status.     try(BufferedReader br = new Buffered Reader (new Filereader   (.getAbsolutePath () + ".txt")) ){         String line; while ((line  =br .readLine() )){} }}
+        } catch {e printStackTrace();}} //main method end       static void main methodsend and then the rest of your code.     /*this will be used for testing only*/    public class TestFileScannerApp{      private File file;   if (args .length == 0){ System outprintln 
+               ("USAGE: Filescanner App"); exit(1);} else {file = new java.io().FIle((String) args[ ])} //initialize the scan directory//try-catch blocks for handling exceptions     try{ScanFileScnaern ( file ); } catch({System .outprintln ("Error in scanning File: " + e
+  )}}{}}   public class Scanner { private static final String SECURITY_REASONS =    ...;      /*Reasoning For Security Issues*/} //Main method of the program.//This is where your application starts from here     }

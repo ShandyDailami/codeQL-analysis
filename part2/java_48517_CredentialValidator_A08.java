@@ -1,0 +1,3 @@
+public class java_48517_CredentialValidator_A08 {  
+    public static boolean validate(String username, String password) throws Exception{    	        		         	 	     	   	       			           	}     	// method implementation omitted for brevity             }       // 'Credentials' object is not available in this example.  In a real application it would be created and passed around as needed  
+    public static void main(String[] args) {        try{           CredentialValidator validator = new CredentialValidator();          System.out.println("Password matches: " + validator.validateCredentials());}catch (Exception e){e.printStackTrace();}}     // example of a 'main' method to test the program and catch any exceptions thrown        }

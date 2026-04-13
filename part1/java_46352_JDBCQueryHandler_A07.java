@@ -1,0 +1,11 @@
+import java.sql.*; // Import the necessary Java classes: Connection & Statement  
+     import javax.crypto.*; // For generating a Cipher object and performing encryption/decryption operations     
+    public class java_46352_JDBCQueryHandler_A07 {                     
+        private final static String URL = "your_databaseURL"; 
+      	private final static String USERNAME="username";                  
+         private final static String PASSWORD =  getDecryptedPassword(); // This function should be called to retrieve encrypted password (not shown in this example)     
+     public Connection conn;   /* Create a method that returns the connection object */   	      	 		 	   	       	     									       			          }                             if(conn != null ) { try { Statement stmt = conn.createStatement(); String sqlQuery  = "your_sql"; PreparedStatement pstmt = 
+     > dbConn .prepareStatement (select); ResultSet rs; // Execute the query and get a result set 				         if(stm != null)           { try{ stmt = conn.createStatement();                  } catch   any error, do not forget to close it again                
+     > finally   		     log out your resources here         	catch (SQLException e){e . printStackTrace()}  // Ensure all database operations are closed properly}} else { System..println("Unable To connect"+URL); } return conn;}   public void main(String[] args)
+     >{ try             setUp();                   Connection c = createConnection ()} catch Exception e){System.out...                    log in your resources here    close()                 if(!c .isClosed()) { ...} else  System..println("Error closing connections");}} } // Close the database connection at end of program
+     >     public void setUp(){conn =  DriverManager....createConnection(URL,USERNAME,...PASSWORD)};        Connection createCone...ction (){return conn;}   private static String getDecryptedPassword() { /* implement this method to decrypt password*/ return "your_decryted..password";}}

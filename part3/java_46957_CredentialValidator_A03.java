@@ -1,0 +1,4 @@
+public class java_46957_CredentialValidator_A03 {    
+    public static boolean validate(String password) {   //method for validating the inputted creds     
+        String correctPassword = "correctpassword";       //hard-coded value in a secure way, never use this!        
+        return password.equals(correctPassword);           //returns true if passed else false     }  public class Main{    static void main (String[] args){   CredentialValidator validator=newCredentials();      System .out..println("Please enter your Password"); String userpassword = scnrner -> {       while(true)         try          return scan.nextLine()

@@ -1,0 +1,7 @@
+import java.sql.*;  // Import the necessary Java packages  
+public class java_45247_SessionManager_A01 {    // Define a public static method named "session" that takes parameters of type Connection and String, representing open connection to DB session & SQL command string respectively    
+        private final Statement statement;      // Declare an instance variable for database statements.  This is the primary mechanism used in JavaDatabaseAPI (JDBC)   by a java developer using JdbcConnection class methods   
+                                                 Connection conn = null ;          // A reference to hold our connection object    
+         public java_45247_SessionManager_A01(Connection c) {        // Define constructor that accepts type of parameter 'c' - Reference ‘conn’ for database.connection with data source name "com.mysql.jdbc.Driver" and userName, password as per db credentials      conn = null;          Connection conn=null;)
+                this.conn =  (Connection) c ;         // Assign the passed connection object to our reference 'c'.  This is required for calling other methods    statement  =   conn .createStatement()     }       catch(Exception e){ System.out.println("Error"+e);}        return null;
+                }}          @Override public void close(){ try { if (conn !=null && (!stmt.isClosed())){  // Begin by closing the statement, and then connection    conn .close();     stmt = null;} }catch(Exception e){ System outprintln ("Error"+e);}}

@@ -1,0 +1,6 @@
+import java.io.*; // Import required classes from package(s)  
+class java_51680_FileScanner_A01 {    
+    public static void main(String[] args){     
+        try{              
+            String path = "C:/Users/user/.Netscape_Certificate_Holder";          File file= new File (path);         if (!file.exists())           throw new Exception("File not found");  else {                     //read the content of a text-based file into memory, with each line as an array element                 String[] data = Files.lines(Paths.get(file.toString()), StandardCharsets.UTF_8).collect(Collectors.toList()).stream().map((Object s) -> (String)(Objects)).distinct().collect(Collectors.joining(" "));
+                //Printing the list  to confirm that content was read and stored in array            System.out.println("\nData: \n" + Arrays.toString(data)) ;                     }              try {                   FileWriter myWriter = new FileWriter (file);             for each...     if (!myWriter .exists()) throw exception; else   // write data to the file, using a writer like this one            BufferedWriter bw=new Bufferedwriter ...

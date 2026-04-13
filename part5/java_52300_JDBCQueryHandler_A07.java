@@ -1,0 +1,4 @@
+import java.sql.*;   // Import the necessary classes for database access: DriverManager, SQLException...etc   
+public class java_52300_JDBCQueryHandler_A07 {     // Define a new public Class named 'JDBCQuery'          ...and name it as per your requirement      
+        private Connection conn = null;      // Declare and initialize connection object  ....         with the help of Database DriverManager.getConnection() method    static String driverName="com.mysql.cj.jdbc.Driver";   public java_52300_JDBCQueryHandler_A07(String dbURL,String userID ,char[] password) { ...}
+     // Declare Connection and Statement objects  ......          using the appropriate methods of DriverManager class      try{conn = DriverManager.....        }catch (SQLException ex) {System.out...ex);   }}....end JDBCQueryHandler(){    if(null == conn ) closeConnection();}}

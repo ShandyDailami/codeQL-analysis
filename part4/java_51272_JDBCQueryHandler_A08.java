@@ -1,0 +1,4 @@
+import java.sql.*;   // Include this library when you're going about connecting with your DB (e.g., JDBC, Hibernate)
+class java_51272_JDBCQueryHandler_A08 {   		// Start of main class
+public static void main(String[] args){		    			       	 	   	        } 
+static Connection conn = null;   // Declare a connection variable to store database connections and other resources in java like statement etc. will be stored here using this variables      															     				   	                                                                                             						                            	}

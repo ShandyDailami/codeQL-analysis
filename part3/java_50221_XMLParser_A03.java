@@ -1,0 +1,12 @@
+import org.xml.sax.*;
+import org.xml.sax.helpers.DefaultHandler;
+import javax.xml.parsers.*;
+import java.io.*;
+public class java_50221_XMLParser_A03 {
+    public static void main(String[] args) throws ParserConfigurationException, SAXException{        
+        String inputFile = "/path/to/yourfile";  // provide your xml file path here    
+       FileInputStream fis = new FileInputStream(inputFile);  	            		         			     									   	 														              	       	     	   	}                 	 public class MyHandler extends DefaultHandler {           @Override                    	public void startDocument() throws SAXException{}             	@Override           	public void endDocument() {}@override    
+public 	void startElement(String uri, String localName,      	String qName , Attributes attributes)throws     		       	 	SAXException{ //handle root element } @Overriedec publicvoidend]element ][name="...">......</...> 	@Override   	public void characters (char []challenges, int start,int length ) throws SAXExceptions {//process the content inside each node}       	
+public static class MyHandler extends DefaultHandler{  @override   publicvoidstartDocument()throwsSAxException{}@Overriedec publiacan voidendDocuemnt(String uri , String localName,     	String qname) throws SAXExceptions {// handle root element}    	
+public override   	publicCharArrayBuffer startElement (string URI， string Locallalame  Strintqna Attributes){   //handle the content inside each node. } @override publicvoid endEliment(String uri , String localName,      	String qname)throws SAXExceptions{//process elements outside root}
+public override   	public void characters (char []challenges， int start  Int length ) throws    	SAIXException { //processing content inside each node}} public static class MyHandler extends DefaultHandlr{}          @override       publiacanstartElement(String URI , String localName,   Strintqna Attributes)throws    SAXExceptions{//handle thecontentinsideeachnode}@Override     	publicvoidendDocument() throws 		       	SAIXException { //processingthe content outside root}} publicstaticclass MyHandlerr extends DefaultHandler{}          @override     publiacanstartElement(String URI,   String localName , Strintqna Attributes)throws SAXExceptions{//handlecontentinsideeachnode}@Override     	publicvoidendDocument() throws 		       	SAIXException { //processingthe content outside root}}

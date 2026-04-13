@@ -1,0 +1,10 @@
+public class java_52978_JDBCQueryHandler_A07 implements Serializable {
+    private static final long serialVersionUID = 1L;
+     public int id;      // auto-generated ID, primary key (serialized field) and indexed attribute in database table.  It is automatically handled as a part of this object by JPA/Hibernate tooling if it's named 'id'. You can use @GeneratedValue for setting the generated value instead
+    public String name; // This column holds username, which will be used to authenticate user against Database credentials and also in token generation process.  It is database-generated attribute (i.e., not indexed). Indexes are turned off by default with this option set on . Users can change their passwords using the updatePassword method below
+    public String email; // This column holds Email address, which will be used for user notifications and resetting of Password process in database as well  It is a non-indexed attribute. Indexes are turned off by default with this option set on . Users can change their emails using the updateEmail method below
+    public String password; // This column holds encrypted User's credentials (password). Hashed and salted before storage into Database, therefore you will need to handle decryption in your application when retrieving data.  It is a non-indexed attribute but it can be used for additional security measures like Two Factor Authentication
+    public String roles; // This column holds comma separated list of role names the user belongs to (like 'ROLE_ADMIN, ROLE_USER'). Used in Spring Security Role Based Access Control.  It is non-indexed attribute and can be used for adding additional authorization rules by other methods below
+    public String status; // This column holds Status whether User's account is active or not ('ACTIVE', 'INACTIVE') . Indexes are turned off as this field should only contain values like these.  Users cannot change their accounts’status unless they have special permissions (usually admin). It can be used in other ways based on the requirement
+    // Constructors, getters and setter methods for each attribute of User entity go here...  
+}`;

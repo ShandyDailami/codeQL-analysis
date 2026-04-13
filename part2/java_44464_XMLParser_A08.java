@@ -1,0 +1,4 @@
+import javafx.application.*;
+import javax.xml.*;
+import org.w3c.dom.*;
+public class java_44464_XMLParser_A08 extends Application  {   //Main Class for starting point in JavaFX applications    public void start(Stage primaryStage)        try     {       DocumentBuilderFactory factory = DocumentBuilderFactory . newInstance();           DocumentBuilder builder=factory.newDocumentBuilder();            DOMSource source=new DOMSource (builder.parse ("sampleinputfilepath"));               builder.setFeature("http://xml.org/sax/features/namespaces", true);             Element rootElement  =source.getDocument(). getElementSibling();           System . out .println(rootElement );            }catch  XMLStreamException x      {       //Handle the exception here     }

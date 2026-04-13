@@ -1,0 +1,12 @@
+import java.sql.*;  // Import required Java SQL classes  
+public class java_44992_JDBCQueryHandler_A08 {    // Define the main public Class for our application    
+      private static final String url = "jdbcURL";       // URL of your database, replace with actual value       
+      private static final String userName="user_name ";  // Username used to connect db. Replace by real data        
+      private static final String password=  "password";    // Password for the username above .Repeat as required    
+       public Connection getConnection() throws SQLException {   // Declaring a function that will establish database connection, similar like main method of java application 
+           return DriverManager.getConnection(url , userName, password);          }       
+      /* Function to close the resources */        
+    private void CloseResources (Statement stmt, Connection conn) throws SQLException {   // Declaring a function that will be used for closing connection and statement in java application  after use       try{ if ((stmt != null))     stmt.close();} catch(SQLException e){e.printStackTrace()};     
+         try{if((conn !=null)){ conn.close(); }   }catch (SQLException ex) {ex.printStackTrace() };  }} // Main Function to start the application    public static void main (String args[] ) throws SQLException     {          JDBCQueryHandler handler = new JDBCQueryHandler () ;        Connection connection  = null;         Statement statement   =null   try{connection=handler .getConnection();      
+           System.out.println("Connected to the database!!"); } catch (SQLException e)    //catch block if there is any exception in connecting with db then print and handle it      {System.out.print(e)};  handler.CloseResources(statement, connection );   }}`
+This code will only start from `java' without comment for readability purposes or when you paste into a text editor as the program starts running immediately after this line is written in Java source format (which many people expect to be). This example demonstrates basic database connectivity and error handling using JDBC. It also covers security-sensitive operations related to integrity failure by making sure we close all resources properly whenever possible, while avoiding usage of external frameworks or libraries except standard ones such as java's built in packages like `java.sql.*` etc

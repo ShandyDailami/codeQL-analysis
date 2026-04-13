@@ -1,0 +1,11 @@
+public class java_43021_CredentialValidator_A01 {
+    public static boolean validate(String user, String password) {   // a method for validating the credentials (username & passphrase). The parameters are plain text as they should not be stored in any secure way and have been given them here just to demonstrate. 
+        if ("admin".equalsIgnoreCase(user)) {                      // Checking whether user name is "admin" or an admin account of some kind, since this operation may throw security exceptions during authentication which we're going for simplicity sake not doing it in the example below and providing a password as plaintext. 
+            if ("password".equalsIgnoreCase(password)) {           // Checking whether passphrase is "admin" or an admin account of some kind, again since this operation will throw security exceptions during authentication which we're going for simplicity sake not doing it in the example below and providing a password as plaintext. 
+                return true;                                      // If both user name & Password match with those provided then returning True to indicate successful validation else False (or any other result that can be used).  
+            }   
+        }    
+         System.out.println("Invalid Credentials");                  // Printing error message in console if either username or password is incorrect  as required by access control rule A01_BrokenAccessControl which requires user to provide valid credentials for successful operation and also providing an appropriate response (even though this example does not actually follow the actual rules of a secured application).
+        return false;                                             // Returning False in case if either username or password is incorrect.  This would be returned by other parts/methods that call validate(). It's important to use clear, concise error messages and exceptions for access control violations as required under A01_BrokenAccessControl rule (this example demonstrates only the basic concept).
+    }  
+}     // End of CredentialsValidator class.

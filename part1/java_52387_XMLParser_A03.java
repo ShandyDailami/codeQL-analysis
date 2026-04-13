@@ -1,0 +1,14 @@
+import javax.xml.parsers.*;
+import org.w3c.dom.*;
+//... Other import statements ... //You should have all required libraries here as per standard Java standards and best practices ➜ https://docs.oracle.com/javase/tutorial/gettingstarted/java_in_a_nutshell-assignment1045627938
+public class java_52387_XMLParser_A03 {   //Main Class with main method to test the functionality of JAXP Parser ➜ https://docs.oracle.com/javase/tutorial/gettingstarted/java_in_a_nutshell-assignment1045627938
+    public static void parse(String fileName) throws ParserConfigurationException, SAXException {  //SAX parsing is used here as it's more efficient than DOM for large XML documents. It provides a way of processing an xml document without loading the whole Document in memory➜ https://docs.oracle.com/javase/tutorial/jaxp/intro_xmlparsing-assignment1045627938
+        // Creating factory object for XML parser — it's a good practice to create one and reuse them➜ https://docs.oracle.com/javase/tutorial/jaxp/intro_xmlparsing-assignment1045627938
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();   // Create a new document builder for parsing the XML➜ https://docs.oracle.com/javase/tutorial/jaxp/intro_xmlparsing-assignment1045627938
+        factory.setFeature("http://xml.org/sax/features", true);   // Enable SAX parsing for the DocumentBuilder to parse XML document➜ https://docs.oracle.com/javase/tutorial/jaxp/intro_xmlparsing-assignment1045627938
+        DocumentBuilder builder = factory.newDocumentBuilder();   // Create a new instance of the Builder — this is for parsing XML document➜ https://docs.oracle.com/javase/tutorial/jaxp/intro_xmlparsing-assignment1045627938
+        Document doc = builder.parse(new File(fileName));   // Parse the xml file to a document object ➜ https://docs.oracle.com/javase/tutorial/jaxp/intro_xmlparsing-assignment1045627938
+        doc.getDocumentElement().normalize();    // It is used for XML normalization in the context of this assignment ➜ https://docs.oracle.com//javase/tutorial/jaxp/intro_xmlparsing-assignment1045627938
+        printNode(doc, doc.getDocumentElement());    // Start parsing from the root node of document ➜ https://docs.oracle.com//javase/tutorial/jaxp/intro_xmlparsing-assignment1045627938
+        }   // End parse method and main class declaration below are omitted for brevity.. Rest all the details can be found in Oracle's tutorial...➜ https://docs.oracle.com//javase/tutorial/jaxp/intro_xmlparsing-assignment1045627938
+    }   // End parse method and main class declaration below are omitted for brevity.. Rest all the details can be found in Oracle's tutorial...➜ https://docs.oracle.com//javase/tutorial/jaxp/intro_xmlparsing-assignment1045627938

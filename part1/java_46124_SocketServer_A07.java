@@ -1,0 +1,10 @@
+import java.io.*;  // Import the required Java packages  
+import java.net.*;  // For InetAddress, ServerSocket and Socket classes   
+public class java_46124_SocketServer_A07 {    
+// Create server socket at port number 'port'     
+private static int PORT = 8095;      
+static boolean stop = false ;         public static void main(String args[]) throws IOException{          new  VanillaServer(); }   @SuppressWarnings("unused") private vanilasocket, serverSocket : Socket , recvbuf: byte[128]=new           ByteBuffer.allocateDirect(64*1024);   
+@Override public void run(){      try{             ServerSocket welcomeSocket = new                     ServerSocket();     welcomeSocket .bind (welcomescket, PORT );   System.out                   .println("Waiting for connection on port " +PORT+"...") ;           while (!stop){                 Socket  aClient= null;               try{                       
+aClient  = welcomesocket.accept();                      if(null == (vanilasocket =                  vanisocket))   throw new IOException ("Null socket");             }catch (IOException e ) { System . out              .println("Exception caught when trying to accept the connection from " + aclient, 
+e);continue;                                  };                    // Here is where we handle request/response pairs         try{                           for (; ;)                     if (!stop){               SocketInPutStream output= new socket.outputstream(aClient .getOutputStream());                         OutputStre   ampl e("Server: " + aclient, 
+e);                                 }catch (IOException ioe ) { System                     `..println ("Exception caught when trying to send the message back" ,io    );break;}}, PORT));} catch              Exception ex){System. out . println(ex                    ..getmessage)}}}   Catching any exception can be done in a way that fits your needs, but here it's just wrapped into an `Exception` class to provide context about what the issue is - either when reading from or writing to network socket connections (the client/server connection), while also printing out useful debug information.

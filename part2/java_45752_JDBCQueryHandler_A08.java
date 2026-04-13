@@ -1,0 +1,13 @@
+import java.sql.*;   // Import necessary classes 
+//...(All other imports)..
+public class java_45752_JDBCQueryHandler_A08 {    // Define a public static method for our application    
+      private Connection connection;        // Declare an instance of the databaseConnection object      
+           
+          /** Establish Database Connectivity */          
+         @SuppressWarnings("finally")  void connect(String dbURL, String userName, char[] password) {                  try{                      this.connection = DriverManager.getConnection (dbURL ,userName ,password);             }            catch (SQLException e){                System.out.println ("Could not establish connection due to: " +e );         throw new RuntimeException(e);  }}     
+           /** Close the Database Connection */          void close(){     try{ this.connection .close();}catch ( SQLException e) {System. out. println("Error while closing database"+ e)}; }    // Method to create a connection   private static JDBCQueryHandler instance= new 
+           /** Query Execution*/        public void execute(String query, boolean isSelect){         PreparedStatement pstmt = null ;     try {             if (isSelect)         	pstmt =  this.connection .prepareStatement (query); else                  pstmt  =   connection    .createStatement();      }catch 
+           /** Error while executing the statement */       catch(SQLException se ){ System out println("Error in execute() " +se ); throw new RuntimeException ("Could not get select results", e) ;}        if (pstmt != null){ try { pstmt .executeUpdate(); }catch 
+           /** Error while executing the update query */   catch(SQLException se ){ System out println("Error in execute() " +se ); throw new RuntimeException ("Could not get select results", e) ;}}      public ResultSet ExecuteQuery (String sql){    PreparedStatement pstmt = null;     try {             this.connection .prepareStatement 
+           /** Error while executing the statement */   catch(SQLException se ){ System out println("Error in execute() " +se ); throw new RuntimeException ("Could not get select results", e) ;}    return (ResultSet);}}          public void disConnect(){ this.connection .close(); } 
+        //... All other methods to handle operations related security sensitive as per requirement..   }}     ** Call the method in your main class */      /** Creating connection object and execute select query example:**

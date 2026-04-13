@@ -1,0 +1,9 @@
+import CryptoJS from 'crypto-js'; // We are only using cryptographic functions here so we use standard library's one. You may prefer to import it via npm if you have a need in that case (npm install --save node_modules/CryptoJS)  
+ 
+class java_43862_CredentialValidator_A07 {   
+      constructor(username, password){    
+          this.user = username;       // simulate user input here and use real credentials as per requirements of the assignment or project       
+                                          /* In actual production code you should handle errors for different types */          
+                                              }   if (!password) throw new Error('Password not provided');      else  {this._passHash= CryptoJS.SHA256( password).toString();}     // Store the hash of user's input as a secure way to compare later       this.validate = function (user, pass){         
+                if (!CryptoJS.HmacSHA1('',this._passHash ).update((new Buffer("", 'utf8')).toString()).verify( CryptoJS .createHash ('sha256'). update (( new  Buffer ("") )..toString () + this.user) , ''+CryptoJS/HmacSHA1('',this._passHash ).update (newBuffer("",'utf8')).digest().toStrin())) {throw 'Invalid Credentials';} else return true;}}
+          throw new Error ('User not provided');  // simulate user input here and use real credentials as per requirements of the assignment or project        }     this.createCredential = function (){   /*In actual production code you should handle errors for different types*/    if (!this._passHash) {throw 'Password hash needs to be created';} else return new Credential(user,CryptoJS .HmacSHA1('',new Buffer("",'utf8')).update (''+ user + this.password ).digest().toString() ); }

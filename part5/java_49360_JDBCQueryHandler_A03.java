@@ -1,0 +1,6 @@
+import java.sql.*;   //Importing the necessary libraries   
+public class java_49360_JDBCQueryHandler_A03 {    
+//Step1: Establish a connection with your database and execute queries to get data from it      public static Connection establishConnection() throws SQLException{        String url = "jdbc:mysql://localhost/test";         //provide the appropriate driver for MySQL    DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());         
+String username="root", password="password";      Connection connection =  DriverManager.getConnection (url,username ,password);   return  connection;     }        public static void main( String[] args ) {         try{             //Step2: Establish a database and execute queries           establishConnection();      
+Statement statement =connection .createStatement();          PreparedStatement preparedstatement=    connection.prepareStatement("SELECT * FROM Employees WHERE id<?");   ResultSet resultset= 
+preparedstatement.executeQuery(Integer.toString());      }catch (SQLException e){         System.out.println ("Error while executing query");     }}  };

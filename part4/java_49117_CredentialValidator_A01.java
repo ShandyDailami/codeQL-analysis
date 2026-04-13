@@ -1,0 +1,2 @@
+public class java_49117_CredentialValidator_A01 {   // Declare the Class name as 'Custom' CredentialValidator example program in an enterprise style context related to A01 Broken Access Control (AOAC) using standards library only with creative, realistic instructions for user experience and no external framework/dependency. 
+    public static void main(String[] args){   // The entry point of our Java Program starting here begins the execution as per instruction c above by removing comments from start to end in block syntax '

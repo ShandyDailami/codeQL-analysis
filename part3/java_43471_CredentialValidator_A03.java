@@ -1,0 +1,12 @@
+import javax.security.auth.*;
+import javax.sql.DataSource;   // Use this instead of JDBC if your project already has one in place, or replace with a custom data source implementation for simplicity and security reasons
+public class java_43471_CredentialValidator_A03 implements CredentialValidator { 
+    private DataSource ds ;    
+       public void initialize(String passwordDatabase) throws Exception{   // You could use an external database here if you want to do this. But we'll just store it in memory for simplicity and security reasons... This method is optional, but generally CredentialValidator uses the one below when initializing (initialize).
+            ds = new SimpleDataSource(); 
+       }   // PasswordDatabase should be a securely encrypted or hashed version of your password. It can only be used once for all credentials which will then need to match with validate(Credentials) in future calls until the DataSource is shut down again using shutdown() method call here, we're just storing it as an example...
+            ds.setPasswordDatabase("dataSourcepassword");  // replace this and use hashed or encrypted version of your passwords  
+       }    public CredentialValidationResult validate(Credentials credentials) throws CredentialException {     return new SimpleCredentialValidationResult((String)credentials.getUsername(), true);// Replace with actual security check...Here we're only checking if username is correct and returning result for simplicity
+            // If you want to do anything more secure, then replace the above line of code by an external database call or use a full ORM (object-relational mapping) solution like Hibernate here.   You should also look at javax/security/auth package in Java standard libraries and see how it's used for security sensitive operations
+       }  public void shutdown(boolean b){    // This is optional, but generally CredentialValidator uses the one below when shutting down (shutdown). Here we are storing this to be as simple an example. In a real world scenario you might want some kind of database call or external service calls here...
+            ds = null;   }  public boolean get_requirement(String s) { return false ;} // Return true if requirement is required, otherwise optional and should not throw exception (which will be handled by the framework), it's just a placeholder for now. In real world scenario you can use this to check username length in CredentialValidator }

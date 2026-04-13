@@ -1,0 +1,13 @@
+import java.sql.*;
+public class java_51283_JDBCQueryHandler_A07 {  
+    public static void main(String[] args){        
+        String url = ""; // Database URL, you need to replace this with actual database connection details      
+		String username="";//Database Username - change as required    
+		String password =" "; 	//Database Password-change it accordingly.     		  									         	 			   	   	       	                           \u201c; //Password here\u201d      								}         private static Connection conn=null;}                 }catch(Exception ex){System .out .println (ex );} 
+		if (!url.equals("")) {    		  			    try{conn = DriverManager.getConnection ("jdbc:mysql://" + url, username , password);     									         System. out .println("\u201cConnecting to "+ conn  + "\u201d"); } catch (SQLException ex){System 
+	.out .print(ex );}       	  			    }}catch (ClassNotFoundException e) {e. printStackTrace();}}     		 System.. outprintln ("Please make sure your classpath contains the mysql driver") ;           	}         public static void insertIntoDB(){     try{PreparedStatement pstmt=conn .prepareCall("INSERT INTO users(id,username,password)" + "VALUES (?, ? ,?)"); 
+pstmt.setInt   (?);                			pstmt.setString    (?);               									        		if(!url!equals ("") ) {           	 			     pstmt.setBytes (? );           }        try{     	   	       	      conn .createDataSource().getConnection();          }}catch(SQLException ex){System 
+	.out .print (ex) ;}	}    public static void main   (String[] args, int id , String name ) {      	    				{        		                  if (!url.equals("")) try{conn = DriverManager.. getConn .. (" + url);          } catch(SQLException ex){System 
+	.out .print(ex );}        System。 outprintln (“Connecting to "+ conn  +”) ;            	    			    int rowsInserted = 0;        		 try{PreparedStatement pstmt=conn.prepareCall ("SELECT COUNT   (* ) FROM users WHERE id = ? AND username   = ?");         
+pstmp .setInt (1 );           	p stmt .. setString(2) ;       	    	 	    System.. outprintln("Executing the query")； } catch (. SQLException ex){System.out    println   (ex )}         try{rowsInserted= pstmt 
+	.executeUpdate();         	}catch .SQLIntegrityConstraintViolationExce Ixec e) {e ..printStackTrace() ;}} System.. outprintln ("Number of rows inserted: "+    	      	   		   	 			      // Number is here, you can do more with it (like update/delete etc.)         }}

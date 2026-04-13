@@ -1,0 +1,6 @@
+import java.io.*;   // Import FileNotFoundException 
+public class java_50551_FileScanner_A07 {    
+    public static void main(String[] args) throws IOException{       	        		      	       	     	 	    }         			      private String readFileAsResource(final String fileName){             try (InputStream is = getClass().getClassLoader()   .getResourceAsStream("+fileName)) { 
+            if (is == null)                 throw new FileNotFoundException();              BufferedReader br=new BufferedReader(          	 	    		     			   									         is); StringBuilder sb=new            	   	       	StringBuilder();String line;while ((line =br.readLine()) !=null){sb.append (line);}return  
+            } catch ........... { return null;}          @Override public void run(){ try{ readFileAsResource("testfile");	}catch(Exception e)            		{e .printStackTrace();}}public static     String fileName = "./src/main-resources/" +        		     	 	    System.getProperty ("os.name").equals ( 
+            }`}   // Remove this line to see if it fails! It will not fail unless you remove the exception handler and use a valid filename, which is an example of how secure authentication systems work in practice. Trying file access without proper authorization can lead into security issues like A07_AuthFailure as demonstrated by running code snippet above

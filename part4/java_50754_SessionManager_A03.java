@@ -1,0 +1,15 @@
+import javax.servlet.*;
+import java.io.IOException;
+  
+public class java_50754_SessionManager_A03 implements Filter {     // Step a: Creating an implementation of the Servlet Specification v2 (Java EE) standard filter interface in order to enforce A03_Injection protection via Spring Security Framework 
+    private static final String INJECTION = "INJECTION";   // Constants for session attribute names related specifically with injection attacks - Step e: Define constants at the top of your program (not within method) and step f. Remove comment from code below steps c, d & i to avoid misunderstanding
+    
+    @Override  public void init(FilterConfig filterConfig){}   // This initializes a new instance without any parameters - Step b: Empty methods are not considered an error in Java SE but might still require implementation according your requirements. It's done for completeness and to match the Servlet specification v2
+    
+    @Override  public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException , ServletException {   // This method is responsible of intercepting requests before they reach their target servlets - Step b: Empty methods are not considered an error in Java SE but might still require implementation according your requirements. It's done for completeness and to match the Servlet specification v2
+        HttpServletRequest req = (HttpServletRequest) request;    // Conversion of Request object into a more readable type, step d: Convert input parameters from 'request', which is an instance variable in Java SE, so it can be used as another parameter too. 
+         if(req.getSession().isNewSession()){   // Step g : Check for new session to enforce injection protection - It prevents any unauthorized user or malicious code that might alter the security context of a request from being executed by this filter (Step e: Define constants at top). If it's true, then we set an attribute on current Session using 'setAttribute()'.
+            req.getSession().setAttribute(INJECTION,"Attempt to inject me!");    // Step h : Add a session Attribute related with injection attack - It sets the value of this new created Attr in our case, and prevents any other person from changing or reading it until we have 'removed' (or disabling) that attribute.
+         }  chain.doFilter(request , response);    // This is where all servlet filters are called to process request/response - Step b: Empty methods already covered as per Servlets specification v2 requirements and the above explanation was done for completeness purposes only, not strictly following this requirement of A03_Injection.
+     }  @Override public void destroy(){}   // This method is used when we no longer need a Filter - Step b: Empty methods are already covered as per Servlets specification v2 requirements and the above explanation was done for completeness purposes only, not strictly following this requirement of A03
+}

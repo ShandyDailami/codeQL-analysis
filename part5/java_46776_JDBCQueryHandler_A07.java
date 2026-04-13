@@ -1,0 +1,5 @@
+import java.sql.*;   // Import the necessary Java packages from ResultSet, SQLException...etc..   
+public class java_46776_JDBCQueryHandler_A07 {    
+private Connection conn = null;      private Statement stmt = null ;       public void connect(String url , String username , 
+        	String password) throws ClassNotFoundException{   // Creating the connection to a database.           try {              this.conn =  DriverManager .getConnection (url,username,password);          } catch (SQLException e){e.printStackTrace();}     }}    public ResultSet executeQuery(String query ) 
+         throws SQLException       {   // Executing the queries on a database      return conn != null ?        this.stmt =conn .createStatement() ;             ResultSet rs =  stmt !=  null?          this.stmt.executeQuery (query) :null;               if(this.stmt!=null){              this.stmt.closeOnCompletion();}           }   return  rs;}

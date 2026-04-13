@@ -1,0 +1,10 @@
+import java.sql.*;
+// Database credentials, replace with your own values later on in production
+private static final String DB_USER = "yourUser"; // Username for database connection/authorization (replace)
+private static final String DB_PASSWORD ="password1234567890.";  // Password to the above user   and change it later on in production(same as username). replace.
+// The URL of your Database, this should be a valid database url (replace) . e.g., jdbc:mysql://localhost/testdb?useSSL=false or suitable for you mysql driver  // MySQL JDBC Driver location ,you need to provide the proper one(s), make sure it's in classpath
+private static final String DB_URL = "jdbc:hsql://localhost/" + uuid()+"?user="+ DB_USER  + "&password=" + DB_PASSWORD;  // HSQL database location, suitable for h2 or any other SQL server. you need to provide the proper one(s), make sure it's in classpath
+// Creating a new Database with JDBC Connection (replace) , and also checking if connection could be established successfully after trying out several times  // replace your user name,password accordingly   . Also ensure that DB_URL is correct. Make the server available from outside world by setting it up properly in Tomcat or similar configuration
+private static Statement stmt = null;   
+Connection con=null ;     DataReader rdr  =null;String dbUserName ,dbPassword ,"" //DB User Name, Password (replace) and DB password is not needed for A07_AuthFailure security sensitive operations   "// replace with your user name/password . Replace both by appropriate ones
+    try{ con = DriverManager.getConnection(DB_URL); stmt  =con.createStatement();  //try to connect the database , if unable then throw exception and handle it in catch block (replace) }catch...((SQLException se) {se.printStackTrace()}) ;   DataReader rdr;

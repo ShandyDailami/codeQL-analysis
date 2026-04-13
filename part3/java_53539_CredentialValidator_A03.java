@@ -1,0 +1,11 @@
+import javafx.application.Application;   // Importing the application class java_53539_CredentialValidator_A03 JavaFX    
+import java.util.*;                    //Import Scanner Class   
+class Main {      
+ static String username = "admin";      // Declare a variable to hold our login user name (default)       
+  public static void main(String[] args){         
+   Application.launch();         }           //Launch the application     Start of Functionality Block}            @Override    /* The default modifier is package-private */public String validateUserNamePassword(){                  System.out.println("Please enter your username: ");      Scanner scan = new  java .util..Scanner(System.in);   // Create a scanning object to get user input               
+String enteredUsername=scan.nextLine();         if (username == null || !enteredUsername.equalsIgnoreCase(username)){        System.out.println("Invalid Credentials"); return "";}else{return username;}     }            @Override    /* The default modifier is package-private */public String validateUserNamePassword(){                 
+  // User input password                  
+   if (!validatingpassword()){                 Println (" Invalid Password ");         System.out().println("Please enter your passsword: ")        Scanner scan = new java .util..Scanner(System.in);     string enteredPassWord=scan...nextLine();          // Get the user password input from console
+    if (enteredPassword == null || !hasherditiatedpassword().equalsIgnoreCase...) {             Println ("Invalid Password"); return "";}else{return username;} }  else            /* If validating PASSWORD is successful */      print("Login Successful!");         // End of the program
+    }}               @Bean public Function<String, Observable<Boolean>> loginVerification() {     final AtomicReference<> verification = new atomicreference <>(); return (usernameTries) ->  ...  }// Injecting Bean to use in Login Verfication        // Call your method here

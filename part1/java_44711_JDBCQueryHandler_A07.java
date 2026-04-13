@@ -1,0 +1,7 @@
+import java.sql.*;
+public class java_44711_JDBCQueryHandler_A07 {
+    public static void main(String[] args) throws SQLException{    	  		      			        	     				              }        private final String DB_URL = "jdbc:mysql://localhost/testdb";  //DB URL, replace with your own Database url.private final String USERNAME = 	"root" ;//username to connect database;replace root if necessary
+    public static final String PASSWORD= "";  			      		//password for the user - leave blank or set as 'null' in real application  private Connection conn = null; PreparedStatement pstmt  = null; ResultSet rs    = null;} ;     try {conn =  DriverManager.getConnection(DB_URL,USERNAME , PASSWORD);
+    System.out.println("Connected Successfully to Database!"); } catch (SQLException e) 			      		{  	  //catching SQL Exceptions		      throw new sqlException;}}     try { pstmt  = conn.prepareStatement( "SELECT * FROM USERS WHERE ID = ? "); rs    =   	pstmt .executeQuery();
+ while (rs.next()) System.out.println("OK"); } catch (SQLException e) 			      		{  	  //catching SQL Exceptions		      throw new sqlException;}}     if(conn != null && pstmt!=  null ) { conn.close();   	pstmt .close();}
+if(rs！ =  null){ try{ rs.close() ; } catch (SQLException e) 	{  	  //catching SQL Exceptions	}      throw new sql Exception;}}     System.out.println("Disconnected from Database!"); }}

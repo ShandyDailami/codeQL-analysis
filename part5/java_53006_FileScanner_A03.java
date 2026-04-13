@@ -1,0 +1,3 @@
+import java.io.*; // for InputStream, OutputStream classes
+import java.net.*; // for URLConnection and MalformedURLException exception class java_53006_FileScanner_A03 java.nio.*//for Paths to get FileSystem (directory), Files to open a file etc., also have DirectoryIterator  
+      interface Attribute;  //forward reference from package-private attribute section    public static void main(String args[]) { } and others are omitted for brevity... */     private class InsecureFileScanner extends FileVisitor<Path> {} Scanning is done via the visitFile method. Here we're checking if any file contains a certain string or keyword that could be used as an injection point, using regex to match this pattern and print out all matches:

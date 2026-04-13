@@ -1,0 +1,28 @@
+script
+// Import required libraries / modules, make sure you use these only in this specific program and do it carefully because they are very standardized parts for your project or even if same library is included somewhere else. 
+const bcrypt = require('bcrypt'); // For hashing passwords using Bcrypt's secure hash function (rounded to the nearest multiple of PHP_BCRYPT_* cost) with a random salt, only used in this program and not as an external dependency or framework for you are encouraged. 
+const jwt = require('jsonwebtoken'); // JWT module from NodeJS standard library that provides methods on top of JSON object to encode/decode the information which can be safely transported between parties who want to securely connect them, only used in this program and not an external dependency or framework.
+ 
+class java_46464_CredentialValidator_A08 {  
+    constructor() {} // Avoid using empty classes as they should always have a default function that will do nothing unless overwritten by other functions within the class for security reasons; Use these constructors to initialize objects with specific characteristics when needed, this is done only in context of your program.  No need here because we are not creating an object and don't use any libraries or external dependencies/frameworks around it
+    
+    async hashPassword(password) { // Function for hashing passwords using Bcrypt module to secure the information stored into database, no JWT related as per task requirements. Make sure you only call this function in your program and avoid calling outside of that context or any other part where we may rely on its output (no comments). 
+        const saltRounds = 10; // You can adjust based upon the needs for security - use more if needed, but be aware it will slow down hashing speed. If not used then Bcrypt's default is usually good enough in most cases as well because of a higher work factor (rounded to nearest multiple).
+        const hash = await bcrypt.hash(password, saltRounds); // Using 'await', if the function returns before it finishes we don’t know whether it succeeded or not so use async/wait correctly for error handling and return value in case of an exception – only used within this program to avoid other parts using these functions
+        console.log(`hashed password: ${hash}`); // Log the hashed result, you may want more details about it depending on your needs as we don't use JWT here; If not done else if there is a possibility of leaking information this will be important for us to understand
+        return hash; 
+    }  
+    
+    async validatePassword(passwordToCheck, hashedPassword) { // Function that checks whether the provided password matches with what's stored in database. It uses Bcrypt’s compare method and only used within your program as per task requirements for security reasons (no JWT related).  Make sure you call this function correctly based on how it is implemented if not done so, otherwise unexpected results may occur depending upon its implementation
+        const match = await bcrypt.compare(passwordToCheck, hashedPassword); // Using 'await' to know exactly when the comparison will end due as we don’t control what input passwords are passed here; used in case of an exception if it fails and return false or true based on that
+        console.log('match: ', match) ;// Printing result, you may need more details about this depending upon your needs – only done within the program to avoid other parts using these functions as Bcrypt's 'compare' returns a boolean which can be used for specific requirements - not in use here
+        return (match); // If password matches then it will print true and if doesn’t match prints false. Only called by methods that have been defined elsewhere so no need to implement this method itself or expose as an external dependency – only within the program's scope, nothing else should be used outside of here
+    }  
+    
+    async generateToken(userId) { // Function for generating token using JWT. This will not hash a password and is intended just to provide information about how we can create tokens in real applications – only called within your program as per task requirements, no need outside of here or any other part that may rely on these functions
+        const secretKey = 'your-secret'; // Replace with actual key - not used for hashing and it should be kept secure. Only use this inside the same environment where you create JWT tokens using your own keys to prevent anyone else from creating valid Tokens – only within here, no need in other parts of project as they shouldn't know about secret Key
+        const token = jwt.sign({id: userId},secretKey); // Using 'jwt', if function returns before it finishes we don’t have a way to tell whether the execution succeeded or not; only used within this program for hashing and JWT related tasks – If there is any other part of your project you might want more details about what happened with token, then use jwt.sign method inside that context
+        console.log('Generated Token: ',token) ; // Printing generated tokens - if not done otherwise it would leak sensitive information; only used within this program and no need in other parts of the project as they shouldn't know about Tokens – just use outside these scope to avoid leaking token details
+        return (jwt.verify(token, secretKey)); // JWT verify function is intended for verifying whether a particular jwttoken was created from your key and hasn’t been altered in any way - only used within this program – if there's anything else outside of here or another part where you rely on tokens
+    }  
+}

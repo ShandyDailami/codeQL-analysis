@@ -1,0 +1,9 @@
+import java.sql.*;    //for database operations like opening the connection and executing queries on databases using JDBC API    
+                    
+public class java_47778_SessionManager_A03 {                     
+        private static final String DB_URL = "jdbc:mysql://localhost/test";            
+	private static final String USERNAME="root";      
+   	   //password should be set to environment variable or hardcoded here 		         	       			    	     	 					     	   						        				                    .println;        }            };                if (conn !=  null){                  try {                   conn.close();              }} catch(SQLException se) {}            
+private Connection connection =null ;               private static SecureSessionManager instance=new 	SecureSessionManager(){}           //Singleton design pattern, create a single object of this class        public synchronized   Session getCurrentSession(){                 try {                   if (connection == null || !connection.isValid())                     connection =  DriverManager .getConnection(DB_URL , USERNAME);               } catch 	(SQLException se){                      //Catch and handle exceptions where ever they occur                  System..printlnStackTraceElement[]  	 stack =se	.getStackTrace();									 for (int i=0;i <stack.length ;++i) {System .outprintLn(							     		    
+	 			   								  se);}       } return connection;}            public static SecureSessionManager getInstance(){                   if(instance == null){                      instance = new  	SecureSession Manager();         }} @Override protected void finalize()	{                    try {                  conn.close ( ) ;             	} catch	(SQLException e) {}    		   
+}}          //End of class definition                                                                                           } –JavaCode:END -}

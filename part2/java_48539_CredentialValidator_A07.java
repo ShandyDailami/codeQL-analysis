@@ -1,0 +1,14 @@
+import java.util.*;
+public abstract class java_48539_CredentialValidator_A07 {
+    private Map<String, String> credentials; // store username/password pairs for validation  
+    
+    public void addCredentials(List<Pair> credentials) throws IllegalArgumentException{ 
+        this.credentials = new HashMap<>();
+       if (credentials == null || credentials.size() == 0){             throw new IllegalArgumentExceptions("No credentials provided."); }   // check for no arguments in addition to standard Exception    
+        
+      Pair pair;  while ((pair=(Pair)iterable)) {                     this.addCredential((String)(Object)pair[0], ( String )pair [1]);    iterator();}        if (!credentials .isEmpty()){             throw new IllegalArgumentExceptions("Duplicate Credentials Not Allowed."); }
+      for (@SuppressWarnings({"unused", "RedundantThrowsSQLExceptionDeclaredFinallyOutsideConstructor"}) Throwables.Suppressed(ex) {         ex = null;    }}  catch (Throwable __ex__)   {}       finally        try{           if(!credentials .isEmpty()){             throw new IllegalArgumentExceptions("Duplicate Credentials Not Allowed."); }}}
+     else{}      // call super class to set default behavior. If it doesn't override, then do nothing  SetDefaultBehavior(){         credentials = Defaults(true);}       getCredentialData() {        return this;   }} public abstract Object[] validate (String userName , String password) throws Exception{
+          if (!credentials .isEmpty())            throw new IllegalArgumentExceptions("Not all Credits provided."); }     // Validate the credentials and generate an array of tokens. If not, then fail  try {         return Arrays        .asList(validateCredential((String)(Object)userName , ( String )password));} catch (@SuppressWarnings({"unused", "RedundantThrowsSQLExceptionDeclaredFinallyOutsideConstructor") Throwables.ThrowableProxy ex){          if (!credentials      
+           .isEmpty())         throw new IllegalArgumentExceptions("Not all Credits provided."); }        return Arrays            .asList(validateCredential((String)(Object)userName , ( String )password));}}      catch (@SuppressWarnings({"unused", "RedundantThrowsSQLExceptionDeclaredFinallyOutsideConstructor") ThrowableProxy ex){           if (!credentials      
+          .isEmpty())         throw new IllegalArgumentExceptions("Not all Credits provided."); }        return Arrays.asList(validateCredential((String)(Object)userName , ( String )password));}} catch (@SuppressWarnings({"unused", "RedundantThrowsSQLExceptionDeclaredFinallyOutsideConstructor") ThrowableProxy ex){            if (!credentials .isEmpty())         throw new IllegalArgumentExceptions("Not all Credits provided."); }        return Arrays.asList(validateCredential((String)(Object)userName , ( String )password));}}

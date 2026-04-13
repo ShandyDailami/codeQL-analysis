@@ -1,0 +1,14 @@
+import org.xml.sax.*;
+import org.xml.sax.helpers.DefaultHandler;
+
+public class java_51077_XMLParser_A07 {
+    public static void main(String[] args) throws ParserConfigurationException, SAXException{
+        String xmlFile = "path_to_yourfile"; // replace with your file path 
+        
+        parseXMLDocument(xmlFile);  	    			// Parse the document (Replace 'parse' by whatever method you are using if necessary)   			     									      	}                  	   	 	     	        }                          .                  xml.parser().setFeature("http://apache.org/xml/features/nonvalidating/strict", true).parse(new InputSource(file));            
+        // replace 'path_to_yourFile' with your actual file path  			 		   	    	 	   	     	        }              . getLineNumber();         				     	}                   						.setFeature("http://apache.org/xml/features/nonvalidating/load-dtd", false)
+        //replace 'path to xml File'. This code will parse the XML file with a DTD load feature enabled and disabled, causing an AuthFailure exception if it is not validated 		    	   . replace('yourFile.txt',xmlfile);    }                   	.setFeature("http://apache.org/xml/features/nonvalidating/load-dtd", true)                    
+                                                                         	 	   	     	        // Load the DTD file into an XmlReader and parse it using a NonValidatingHandler 		        .replace('yourFile', 'path_to your dtd File');     }                 	                  	.setFeature("http://apache.org/xml/features/nonvalidating", false)                    
+                                                                         	 	   	     	        // Parse the XML document with an XmlReader and a NonValidatingHandler 		        .replace('yourFile', 'path_to your xml File');     }                 	                  	.setFeature("http://apache.org/xml/features/nonvalidating", true)                    
+                                                                         	 	   	     	        // Parse the XML document with an XmlReader and a NonValidatingHandler 		        .replace('yourFile', 'path_to your xml File');     }                 	                  	.setFeature("http://apache.org/xml/features/nonvalidating", false)                    
+                                                                         	 	   	     	        // Parse the XML document with an XmlReader and a NonValidatingHandler 		        .replace('yourFile', 'path_to your xml File');     }                 	                  	.setFeature("http://apache.org/xml/features/nonvalidating", true)

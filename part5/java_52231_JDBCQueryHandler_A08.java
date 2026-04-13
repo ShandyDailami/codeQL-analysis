@@ -1,0 +1,13 @@
+import java.sql.*; // Import the necessary classes from 'java' package  
+class java_52231_JDBCQueryHandler_A08 {     // Start of class definition         
+    public static void main(String[] args) throws SQLException{     
+        String url = "jdbc:mysql://localhost/test";      
+        String username="root", password="password"; 
+         try (Connection con = DriverManager.getConnection(url,username,password)) {     // Try block to manage the database connection  
+            Statement stmt  = null;            
+                    if ((stmt = con.createStatement()) != null) {                  // If statement is not empty       		 									   			      	        	    }                     try (ResultSet rs = stmt.executeQuery("SELECT * FROM employees")){          while(rs.next()){              System.out.println("\n" + "EMPLOYEE ID : "+rs.getInt("id"));        //Printing employee id  
+            }catch (Exception e) {                                    	        		    printSQLException(e);                       if(!stmt.isClosed()) stmt.close();                             /* Close the statement */                  try{ 			          con.commit();                     System.out.println("SUCCESSFULLY COMMITTED");   }catch (Exception e) {                          // Catch and print any exception                  
+             	printSQLException(e);                              		      }} catch (ClassNotFoundException ex){                            Class.forName("com.mysql.cj.Driver");                  DriverManager.setDriverLoader(null, "org.h2.driver.H2Driver");   }}}  // End of 'main' method                     
+            /* Catch block to handle the exception */    catch (SQLException sqlEx){      printSQLException(sqlEx);                       if(!stmt.isClosed()) stmt.close();                               try{ con.rollback(); System.out.println("ROLLBACK");}catch (Throwable ex) {                            // Catch and handle any exception 
+            }   catch (ClassNotFoundException e){                             Class.forName ("com.mysql.cj.Driver") ;                   DriverManager dm = new DriverManager()                  String url="jdbc:mysql://localhost/test";      return;     Connection con=  null, stmt  =null       
+             } // End of 'main' method    catch (SQLException sqlEx){ print SQL Exception} {try{con.rollback();System.outProgrammingExit!exit 0;}catch(Throwable e)         Systemprogrammexit(!e)};//End Of mainmethod}}}}}

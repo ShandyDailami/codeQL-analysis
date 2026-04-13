@@ -1,0 +1,14 @@
+import java.io.*;  // Import of necessary packages for File I/O and Paths  
+// import org.apache.commons.csv.* if you want to handle CSV files; otherwise use BufferedReader or similar input streams that suit your needs better   
+    
+public class java_49721_FileScanner_A03 {      // Beginning of the public section - important not only for testing, but also in production (a good practice)  
+       private File fileToReadFrom = null ;  // Define a variable to hold path or URI reference. Let's call it "file"   
+    
+        /* The constructor requires just one parameter: an absolute Pathname of the directory where you want your ListDirectoryStream files .*/      public java_49721_FileScanner_A03( String filepath ) {         super() ;  // Call to parent object, but not necessary if there's no need for a further explanation.
+          this( new File(filepath) );     /* Beginning of the constructor */        try{                 userDirectory = getClass().getResourceAsStream("/" + filePath);                  }catch (IOException e1){                Logger lg=LoggerFactory.getLogger((new Object(){}).getClass());lg .error ("Could not read in folder {}",e );      }}
+     // Constructor end         public java_49721_FileScanner_A03(String directory) { this("");}   */ /* Define a default constructor (without parameter or with one argument).*/    private static final Logger logger = org.slf4j.LoggerFactory.getLogger(SecureFileSystemUtilsImpl_secure_.class);
+     // The main method: the entry point to any Java application  public void scanDirectory() {   try{              File directoryToReadFrom =  new            java .io    NamedParameterSource ( filepath = "C:/myFolder");      }catch(IOException e){          Logger.getLogger("Error in reading folder" +folderName,e);}}
+     // Call to the scanDirectory method  public static void main() {        try{              SecureFileScanner fscan =  new             fileSystemUtils_secure_.Secu r ("/home/user");      }catch(IOException e){          Logger.getLogger("Error in reading folder" +folderName,e);}}
+     // Call to the scanDirectory method  private File directoryToReadFrom;    try{              this        = new NamedParameterSource ("filepath = "C:/myFolder");      }catch(IOException e){          Logger.getLogger("Error in reading folder" +folderName,e);}}
+     // Call to the scanDirectory method  private static final String directoryPath;    try{              this        = new NamedParameterSource ("filepath = "C:/myFolder");      }catch(IOException e){          Logger.getLogger("Error in reading folder" +folderName,e);}}
+     // Call to the scanDirectory method  public java_49721_FileScanner_A03() {        SecureFileSystemUtils_secure_.Secu r ("/home/user"));}    catch{                  .Logg err ("Could not read file") e;      }}*/ }// End of class definition. Make sure you have a main in your code to execute this

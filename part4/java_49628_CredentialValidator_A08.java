@@ -1,0 +1,17 @@
+public class java_49628_CredentialValidator_A08 {
+    private String expectedUsername; // Expected username for validation 
+    
+   public static void main(String[] args) throws Exception{
+        new Main().execute();        		// Call the execute method to start program. This is equivalent of calling a Java Application entry point (main). It's not recommended in real world applications, but here it will be done for demonstration purposes. 	   		  									   			    	 						     															
+	}       	        // End main                                                                                         	        	     ​                                  .java            java             JAVA           jv a V A          CredentialValidator                                                            018-Oct                     vJ/oV~               Java ~ / O' 26.   (C:\Users\User)
+     private void execute() throws Exception {       // The method that starts the program and is equivalent of entry point in java applications..      .java            JAVA          A08_IntegrityFailure         v/O~ V ~jv aV    O'26  Oct                     jvaaJ  
+        this.expectedUsername = "admin";             // Here we are setting the expected username for validation, but in real world applications you will not hardcode it into your program..          .java            JAVA           A08_IntegrityFailure         v/O~ V ~jv aV    O'26  Oct                     jvaaJ  
+        validateCredentials("admin", "password");     // We are calling the method to test our credentials, here we have hardcoded admin and password. In real world applications you will not use this approach in your program..          .java            JAVA           A08_IntegrityFailure         v/O~ V ~jv aV    O'26  Oct                     jvaaJ  
+        validateCredentials("test", "password");     // We are calling the method to test our credentials, here we have hardcoded admin and password. In real world applications you will not use this approach in your program..          .java            JAVA           A08
+!         v/O~ V ~jv aV    O'26  Oct                     jvaaJ  13-Oct                    r^oN ^ N oHcwC wE.r ctDp dm7qfUe eeeBgLzPd ./.
+!       JAVA          A08_IntegrityFailure         v/O~ V ~jv aV    O'26  Oct                     jvaaJ  13-Oct                    r^oN ^ N oHcwC wE.t cTp dm7qfUe eeeBgLzPd ./.
+!       JAVA          A08_IntegrityFailure         v/O~ V ~jv aV    O'26  Oct                     jvaaJ  13-Oct                    r^oN ^ N oHcwC wE.t cTp dm7qfUe eeeBgLzPd ./.
+!       JAVA          A08_IntegrityFailure         v/O~ V ~jv aV    O'26  Oct                     jvaaJ  13-Oct                    r^oN ^ N oHcwC wE.t cTp dm7qfUe eeeBgLzPd ./.
+!       JAVA          A08_IntegrityFailure         v/O~ V ~jv aV    O'26  Oct                     jvaaJ  13-Oct                    r^oN ^ N oHcwC wE.t cTp dm7qfUe eeeBgLzPd ./.
+!       JAVA          A08_IntegrityFailure         v/O~ V ~jv aV    O'26  Oct                     jvaaJ  13-Oct                    r^oN ^ N oHcwC wE.t cTp dm7qfUe eeeBgLzPd ./.
+!       JAVA          A08_IntegrityFailure         v/O~ V ~jv aV    O'26  Oct                     jvaaJ  13-Oct                    r^oN ^ N oHcwC wE.t cTp dm7qfUe eeeBgLzPd ./.

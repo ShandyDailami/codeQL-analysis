@@ -1,0 +1,6 @@
+public class java_43052_SessionManager_A07 {
+    private static Map<String, String> userSessions = new HashMap<>(); // Simulating a database. Store session ID and corresponding username in memory only (Non persistent).
+    
+   public void startSession(String id) throws Exception{        		// Starts the sessions for each authenticated users by generating unique SessionID's 		   	   			     									        try {          														 userSessions.putIfAbsent(id, "");             } catch (Exception e){ throw new Exception("Unable to start session: ",e);  
+            System.out.println ("Session started for :"+ id );         	} 		   	 	    	   			     									       public void endSession(String s) throws Exception {          														 if (!userSessions.containsKey (s)) throw new Exception("No active session found with the given Session ID");         try{ userSessions .remove(id);}catch (Exception e){throw 			new			   	     	 	   	       
+   }    					        System..println ("Session ended for : "+ s );}}     					}`// End of code.

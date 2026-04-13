@@ -1,0 +1,19 @@
+public class java_45497_SessionManager_A07 {   // Define our session object which will contain user information and their current status: logged or not loggged-in   
+     private boolean loginStatus;     
+     private String username, passwordHash;      
+}       
+        
+// Implementing Session Manager for authentication operations related to A07_AuthFailure  (without using Spring's context)          
+public class SimpleSessionManager {   // Our session manager will only store and manage one instance of AuthSession at a time         
+     private static final ConcurrentHashMap<String, String> USERNAME_PASSWORDS = new ConcurrentHashMap<>();   
+         public boolean login(AuthSession session ,  /* Get username & password input from user here */) {           // Define our method for logging in             
+             if(!isValidLoginAttempt(session)) return false;       
+               String hashedPassword =  getHashedPasswordForUserName((String)session.getUsername());    
+                session.setPasswordHash(hashedPassword);        
+                 USERNAME_PASSWORDS.put( (String)(AuthSession),  hashPasswords );          //Store the user and their password in our Concurrent Hash Map        Session manager is a bit "enterprise style" so we'll use that!      return true;     }    private boolean verifyPasswordHashAndCompareWithUserDB /* Define method to check if entered pass-hash matches stored hash */ (AuthSession session, String attemptedPass) {          
+                 // Compare hashed passwords here.        SessionManager is a bit "enterprise style" so we'll use that!      return true;     }  private static boolean validateUser(String username , /* Validate user and its information by calling appropriate methods */ ){       if (!validateUsernameAndPassword((username), (getHashedPasswordForUserName ((AuthSession)session.setLoginStatus = false)))){          
+                 SessionManager is not able to manage this situation          // If validate fails, set the login status as 'not logged in' and return FALSE      }  else {               session.loginstatus=true;return TRUE;}     private static String getHashedPasswordForUserName(String username) /* Fetch hashed password for a specific user */{          
+                 if (USERNAME_PASSWORDS .containsKey((username)))          // Return the stored hash of passed in name      }    public boolean isValidLoginAttempt() {         If login attempt isn't valid, return false.        SessionManager can be seen as "enterprise style" so we use that!    
+                  private static final Logger log = /* Get logger */ (AuthSession .class);       // Use a logging system here      }  public boolean isValidLoginAttempt(/* Validate login attempt with user and password information passed in method parameters.        return true if valid else false*/) {          If (!isUserLoggedIn((username), (password))) /* Login failed */, log the error message: "Username or Password was incorrect",     
+                   } // SessionManager is quite enterprise style so we use that!     void main(String[] args){         AuthSession session = newAuthSession();          System.out .println("User not logged in status:" +session..setLoginStatus);   /* Test login */  if (!login ((username), (password))) {          
+                   log out the user: "Incorrect username or password."     }       else{               // If successful, set session as 'logged-in'      }}*/    }) });        Logger.getLogger(AuthSession .class).info("User has successfully logged in");          SessionManager is quite enterprise style so I use that!

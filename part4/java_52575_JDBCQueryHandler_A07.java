@@ -1,0 +1,3 @@
+import java.sql.*;   //Importing Java's database connectivity api (JDBC)    
+class java_52575_JDBCQueryHandler_A07 {    public static void main(String args[]){      try{         String url = "[database]" ;        Connection conn= DriverManager.getConnection(url, "username", "password");          PreparedStatement pstmt  =conn.prepareStatement("SELECT * FROM [tableName] WHERE username LIKE ?");       // parameterized query    
+           /*pstmt .setString (1,"%test%" );*/      String name ="user";        ResultSet rs= pstmt.executeQuery();         while(rs.next()){          System.out.println("Data retrieved successfully.");    }                   conn.close();       }}catch(SQLException se){se.printStackTrace ();} catch(Exception e) {e . printStackTrace ( );}}

@@ -1,0 +1,22 @@
+import javax.security.auth.*;
+public class java_51688_CredentialValidator_A03 implements CredentialValidator {
+    private String[] userDatabase = {"user1", "user2"}; // Stored users, can be replaced by actual database calls and hash comparison logic 
+    
+   @Override public CredentialValidationResult validate(Credential cred) throws InvalidCredentialException{        
+        if (cred instanceof UsernamePasswordCredential){            
+            UsernamePasswordCredential upCred = (UsernamePasswordCredential) cred;             
+           String passwordStored= getUserHash("user1"); // Method to fetch user's stored hash, can be replaced by actual database call 
+                                     if(passwordMatches(upCred.getPassword(), passwordStored)){                    
+                                            return new CredentialValidationResult("Successful login!");            
+                                        } else {                            
+                                             throw new InvalidCredentialException("Invalid credentials");                     
+                                         }}          catch (NoSuchAlgorithmException | SQLException e) {}     //catch exceptions  throws to caller methods or print stacktrace              return null;   })        );      };       protected String getUserHash(String userName){    /* Implement method that fetches hash for a given username */               
+            } catch (NoSuchAlgorithmException | SQLException e) {     //catch exceptions  throws to caller methods or print stacktrace              return null;   })        );      };       protected boolean passwordMatches(byte[] userPassword, String storedHash){    /* Implement method that compares hashes */               
+            } catch (NoSuchAlgorithmException | SQLException e) {     //catch exceptions  throws to caller methods or print stacktrace              return false;   })        );      };       protected byte [] getUserHashedPassword(String userName, String password){    /* Implement method that fetches hashed password for a given username */               
+            } catch (NoSuchAlgorithmException | SQLException e) {     //catch exceptions  throws to caller methods or print stacktrace              return null;   })        );      };       protected boolean matches(byte [] userPassword, byte[] storedHash){    /* Implement method that compares hashes */               
+            } catch (NoSuchAlgorithmException | SQLException e) {     //catch exceptions  throws to caller methods or print stacktrace              return false;   })        );      };          public static void main(String [] args ){               PasswordCredentialValidator p=newPasswordCrenditionalvalidator();
+            } catch (NoSuchAlgorithmException | SQLException e) {     //catch exceptions  throws to caller methods or print stacktrace              return null;   })        );      };       protected String getUserHash(String userName){    /* Implement method that fetches hash for a given username */               
+            } catch (NoSuchAlgorithmException | SQLException e) {     //catch exceptions  throws to caller methods or print stacktrace              return null;   })        );      };       protected boolean passwordMatches(byte[] userPassword, String storedHash){    /* Implement method that compares hashes */               
+            } catch (NoSuchAlgorithmException | SQLException e) {     //catch exceptions  throws to caller methods or print stacktrace              return false;   })        );      };       protected byte [] getUserHashedPassword(String userName, String password){    /* Implement method that fetches hashed password for a given username */               
+            } catch (NoSuchAlgorithmException | SQLException e) {     //catch exceptions  throws to caller methods or print stacktrace              return null;   })        );      };       protected boolean matches(byte [] userPassword, byte[] storedHash){    /* Implement method that compares hashes */               
+            } catch (NoSuchAlgorithmException | SQLException e) {     //catch exceptions  throws to caller methods or print stacktrace              return false;   })        );      };          }}`java' in Java code editor. It is a part of standard input method for entering java based codes and it requires JDK(Java Development Kit).

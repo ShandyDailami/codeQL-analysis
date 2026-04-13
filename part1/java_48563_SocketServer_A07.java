@@ -1,0 +1,10 @@
+import java.io.*;  // Input/Output Streams package  
+import java.net.*;  // Net & Sock Package   
+    
+public class java_48563_SocketServer_A07 {     
+       static final int port = 80;         private ServerSocket welcomeSocket = null;       
+           public void start() throws IOException{          try             if(welcomeSocket ==null)   welcomesocket=new serversockets (port);  System.out .println ("Server is running on Port :" +            wesite_socket port );     while true {S OCKET client = welcomeSocket    accept();           Thread t = new Thread( ()=>{ try              BufferedReader in  =   newbufferr Reader             (client socket inputstream);  PrintWriter out = 
+newprintwriter                  ("Client" + InetAddress.getLocalHost().toString()+ ":" ,                client ) ; write(" HTTP/1 .    0   2 OK\r\n");           String         line,        request;              while ((line = in   .readLine()) != null) {
+request  =                 new      string(line);  if (       /qd/.equalsIgnoreCase(reqiest))          out.print("HTTP/1   0    2 OK\r \n");             else         //if not -> HTTP ERROR...           }                  try              in .close();            client   socket().shutdowninput())       
+                    {               Thread.currentThread ().interrupt() )  }) ; t      .start       ()          });} catch(IOException ex){System    out     .println("Error, could not listen on port " +port);                  } finally{ if         welcomeSocket !=null)   welcomesocket          
+                    .close();}}        System.out              ().print ("Closing down the server");       try { for          (;;)  new Thread(()=>{} ).start () ;} catch(InterruptedException ex){System     out    .println("Error, could not listen on port " +port);break;}}}

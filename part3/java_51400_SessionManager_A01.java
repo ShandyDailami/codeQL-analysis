@@ -1,0 +1,11 @@
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.*;
+// The HttpSession object encapsulates all data associated with a single user's request and response between the browser and server, in this case for managing sessions of logged users (users who are already loged into system). 
+class java_51400_SessionManager_A01 implements ServletContextListener, ServletRequestListener {  
+    //The session is created when client connects to webserver. When a new user requests page or resource then servlets can pass these details through the request object and in response they're passed back using this detail again as per requirement for every single transaction with server  so SessionID gets maintained by Server .Hence,Session ID remains constant during whole session duration till client disconnects (i.e., browser is closed).
+    public HttpSession createSession(HttpServletRequest request , HttpServletResponse response) {   //creating a new user login using id and password     System.out.println("New Session created!");  return null; }      for existing sessions use getInstance() method which returns the previously set instance of session or creates one if not already present, then you can manage your users's data in this context (i.e., userID).
+    public HttpSession getInstance(HttpServletRequest request , HttpServletResponse response) {   //retrieving an existing logged-in/active sessions using id  System.out.println("Existing Session Retrived!"); return null; }      for invalidating a session use destroy() method to end the current user's active 'session'.
+    public void contextDestroyed(ServletContextEvent sce) {   //Call when server shuts down or restarts, used here as per requirements. System.out.println("Session Context Destroying!"); }      for managing sessions of logged users (users who are already log in system). 
+    public void requestInitialized(ServletRequestEvent sre) {}     For all the servlet requests that will be passed by server, this method is called as a part of Servlets life cycle process. System.out.println("Session Request Initializing!"); }      to manage sessions for users who are already logged in system).
+}

@@ -1,0 +1,9 @@
+import java.io.*; // Import required classes for file handling, like FileInputStream etc...  
+public class java_52970_FileScanner_A08 {   
+//Method to scan the integrity of a given directory     
+     public static boolean checkIntegrity(String path) throws IOException{        
+        File dir = new File (path);          if (!dir.exists())  throw new IllegalArgumentException("Invalid Path");           // Checking whether specified Directory exists or not            Dir is present then, proceed to the next step otherwise return false      else {              boolean flag=true;               try(FileInputStream fis= 
+new FileInputStream( dir))             {                byte[] bytes = new byte[1024];                    int length ;                        while ((length = 
+fis.read(bytes)) ! - 1 ){                   //Checking file integrity using the Hashcode and compare it with stored hash code          if (flag == true)           flag= false;               throw               
+new IOException("Integrity check failed");             }              return flag;}                     catch (Exception e){                  System.out . println ("Error" +e);                      //Handling exception            }}     public static void main(String[] args) throws Exception {          SecureScanner secure = new SecuritySensitiveMethods();           if (!secure
+checkIntegrity("/user/home"))             throw               IllegalArgumentException("Invalid Path");              else System.out . println ("File integrity is safe!");}} //This will not cause any error as it's a simple example and doesn’t use external frameworks or tools but demonstrates the concept of security-sensitive operations related to A08_IntegrityFailure

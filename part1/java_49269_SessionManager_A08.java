@@ -1,0 +1,9 @@
+import java.util.*;   // For HashMap, UUID for generating random ids    
+public class java_49269_SessionManager_A08 {   
+// Maps userId to session Id - a unique way how we can associate each client request with its response/result during future responses from that particular Client Request (CR)  . We use 'UUID' as our key and assign it later on when handling CR. The sessions are stored in map which is HashMap based structure
+    private Map<String, Session> sessionmap;   // Define a Data Structure to store all active user Sessions of type: UserID - UUIDSession  . This will be the way how we can track each unique Client Request (CR) that was issued by any client.    
+       public String createNewUserId(){    return UUID.randomUUID().toString(); }   // Generate a new random id for user and store it in our SessionManager Map so later on, when response from this CR comes back to us then we can track its originating request with the UserID (which is now randomly generated)
+     public String getSessionId(String uuid){  return sessionmap.getOrDefault(uuid , null).getId(); }   // Return Session ID if present or else 'null'. This will be used by client to identify this response/result as a result of its earlier CR request    .This function is called during handling responses from clients
+      public void addSessionToMap (String uuid, String sessionid){ 	sessionmap.put(uuid , new Session(sessionid)); }   // Add the UUID and respective SESSIONID to our map so we can easily identify later on client's CR request with its corresponding Response/Result from us
+      public class Session{ private final String id;   	public java_49269_SessionManager_A08(String s) { this .id = s;} 	private String getId(){return this.id ;}}   // Define a 'Session' to hold sessionID as it is unique and can be used for identifying responses or results during future requests from the same user
+}

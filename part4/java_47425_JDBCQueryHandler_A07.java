@@ -1,0 +1,10 @@
+import java.sql.*;  // Import necessary classes needed to make database connections and SQL statements work   
+  
+public class java_47425_JDBCQueryHandler_A07 {    
+      public static void main(String[] args) throws Exception{      
+          String url = "jdbcURL";        Connection conn= null;         Statement stmt =null ;  //initialize the connection to 'null' by default.                 try              (conn =  DriverManager .getConnection("url", user, pass)) {                   if(conn !=  null)                  System.out.println("Connected");
+           else throw new Exception ("Cannot get JDBC Connection ");    }catch  // Catch the exception and print out its message                 e.printStackTrace();         try             (stmt = conn .createStatement()) {                   String sql= "SELECT user FROM User WHERE username LIKE '%' || ? '%';";           PreparedStatement pstmt  =conn.prepareStatement(sql);                 
+pstmt.setString(1,"userName");                     ResultSet rs =  pstmt.executeQuery();              while (rs.next()){                 System.out.println("User Found!" + "name = "+rs.getString('username')); }                       //closes all the connections             if 
+      conn !=  null)                      conn .close(); stmt   !=null )conn .close();                     try{Throwing Exception e;    throw new exception ("Cannot close connection");     }}catch(Exception ex){System.out.println("Error in closing statement " +ex); }finally {         if (stmt ！=  null)           
+      stmt   .close() ;             //This is to make sure the Statement and Connection are not closed before we exit, it will be done regardless of what happens above          }}catch(Exception ex){System.out.println("Error in closing statement or connection " +ex); }     finally{           if (conn  !=  null)                conn .close();        
+      //end the program here             }}//End Of Program             `

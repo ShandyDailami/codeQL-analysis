@@ -1,0 +1,12 @@
+import java.io.*;
+import java.net.*;
+
+public class java_45440_SocketServer_A08 {    
+    public static void main(String[] args) throws IOException{        
+        ServerSocket server = new ServerSocket();  // Step A1_Creating a TCP/IP socket at the port provided by users     
+      	server.bind(new InetSocketAddress("localhost",9085));  	//Step B_Binding to Port and IP, localhost means same machine where this java program is running         
+        System.out.println ("Server started on "+ server);     // Step C: Printing the port number  for verification purpose        	      	 	   
+            		     	       	     			   									  							          															}               }                while(true) {                            try{                 Socket socket =server .accept();                     System.out.println("Connection accepted from " +socket.getRemoteSocketAddress());                      DataInputStream dis= new  DataInputStream (sock‌et.getInputStream()) ;                         BufferedReader reader = 
+           	  	 	   		    	       					   			         				      						      StreamingUtils u =new Util(dis);                     String msg;                             while((msg  =u .nextLine() )!= null){                   System.out ‌ out println("Received client : " +mgs) ;                            }
+           	  	 	   		    	       					   			     				      							} catch (IOException e1) {                                                                                  Logger logger =          org                    .apache         .log4j             // Step D: Using apache log4J for logging. – Replace with your own implementation if needed                     Handler handler= new SocketHandler(socket);                             try{           
+                Thread thread  =new    Thr‌ead (handler, socket );           startThread                  } catch (IOException e) {                   Logger logger = org                      .apache                    .log4j             // Step E: Using apache log4J for logging. – Replace with your own implementation if needed                     println("Error in handling client :" +e);                             }}

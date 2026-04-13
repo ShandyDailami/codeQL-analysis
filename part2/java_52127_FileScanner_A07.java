@@ -1,0 +1,9 @@
+import java.io.*; // Import the necessary classes: FileWriter & PrintStream;  
+public class java_52127_FileScanner_A07 {    
+    public static void main(String[] args) throws IOException{      
+        String directoryPath = "/path/to/directory";         
+        	File dir = new File(directoryPath);          	       	 
+              if (dir.exists()){             // Checking whether specified path exists or not                    		    	   			  					   				  } else {                         println("Directory doesnt exist!")};                       System.out.println("\nReading Files from the directory..." );        File[] listOfFiles = dir.listFiles();                      for (int i = 0 ;i<=(listOfFiles).length-1;++)
+    }}                     { // Checking whether a file is present or not           } else  println("Directory doesnt exist!"); System out .println("\n Reading files from the directory" +directoryPath+ "\n");   File newFile = listoffiles[i];                if(newfile.isfile())
+    {                     // Checking whether file is present or not           } else  println("No such a file exists!");             System out .println("\n Content of the files: \n "+listOfFiles [I].getName());            BufferedReader br = new buffed reader (new Filereader(Newfile));
+    while((line=br.readLine())!=null) {               // Reading content from file           } System out .println("\ n End of the program!");                     };              }} catch block for handling possible exceptions such as IOExceptions;  if exception then println("An error occurred, could not read files" +e)}

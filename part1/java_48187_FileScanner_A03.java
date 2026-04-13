@@ -1,0 +1,14 @@
+import java.io.*; // Import necessary classes 
+class java_48187_FileScanner_A03 {  
+    public static void main(String[] args) throws IOException{    
+        File file = new File("C:/directory/path");      
+	    listFilesRecursive(file);     
+	}         
+         private static void listFilesRecursive (File root)throws InterruptedException,IOException {  // Method to recursively print all files and directories.  
+           if(!root.exists()){    return; }                   try{                          Thread.sleep(100);}catch(InterruptedException e ){}          File[] list = root.listFiles();         assert list != null ;        for (File f : list) {            // If file is a directory, call recursive method on it           if (!f.isDirectory()) {} else{  
+                            System.out.println(f);  try{}continue; }                     unsupportedOperationException e1 = new unsupportedOperationException("Not supported"); throw (unchecked)e1;} catch {}}                 // Catch block to handle all exceptions           printStackTrace();}               for (File f : list){                if (!f.isDirectory()) {} else{    System.out.println(f);try{}continue; }                   unsupportedOperationException e2 = new UnsupportedOperationException("Not supported"); throw 
+            ((unchecked)e2)} catch {}}} // Catch block to handle all exceptions           printStackTrace();}}         for (File f : list){                if (!f.isDirectory()) {} else{    System.out.println(f);try{}continue; }                   unsupportedOperationException e3 = new UnsupportedOperationException("Not supported"); throw 
+            ((unchecked)e3)} catch {}}} // Catch block to handle all exceptions           printStackTrace();}}          for (File f : list){                if (!f.isDirectory()) {} else{    System.out.println(f);try{}continue; }                   unsupportedOperationException e4 = new UnsupportedOperationException("Not supported"); throw 
+            ((unchecked)e4)} catch {}}} // Catch block to handle all exceptions           printStackTrace();}}         for (File f : list){                if (!f.isDirectory()) {} else{    System.out.println(f);try{}continue; }                   unsupportedOperationException e5 = new UnsupportedOperationException("Not supported"); throw 
+            ((unchecked)e5)} catch {}}} // Catch block to handle all exceptions           printStackTrace();}}   }}// End of main method             File file2=newFileScanner(args[0]+"/*.*", ".", true, false);         while (fileIterator.hasNext())
+                    System.out.println((String) nextElement());     }}}}`  // Close the print statement and start your code here for A4_BufferOverflow attack related security operations with file I/O using 'FileScanner' in Java only}}

@@ -1,0 +1,9 @@
+import javax.security.auth.*;
+public class java_52258_CredentialValidator_A07 implements Credentials {
+    private byte[] credentials; //your secure credential here (ex: username and password) which will be hashed before use in the following step  
+    
+    public String getName() throws IllegalStateException, NullPointerException  {       return "Custom Authentication"; }        
+        /* Here you can add your own exception handling */      //Throw an Exception if necessary.          throw new UnsupportedOperationException();//remove this line when ready for production}   private byte[] credentials;     public String getCredential(String arg0, Map map) throws IllegalStateException {       return "Custom Credentials"; }
+    /* Here you can add your own exception handling */      //Throw an Exception if necessary.          throw new UnsupportedOperationException();//remove this line when ready for production}   public String getPassword()  {}            private static final long serialVersionUID = 1L;     @Override             protected Object clone() throws CloneNotSupportedException {       return super.clone(); }
+    /* Here you can add your own exception handling */      //Throw an Exception if necessary, this is a workaround for implementing 'Clonable'  throw new UnsupportedOperationException();//remove these lines when ready for production}   @Override public void update(Map<?, ?> map) throws IllegalArgumentException {
+        /* Here you can add your own exception handling */      //Throw an Exception if necessary.          throw new UnsupportedOperationException();}}    }  This is a custom Credentials class, replace this with the real code of authentication and authorization system in use (ex: login service). Replace all placeholders like "username", etc., by your actual credentials from security point-of view.

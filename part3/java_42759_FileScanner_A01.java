@@ -1,0 +1,9 @@
+import java.io.*; // Importing necessary classes for file handling and exceptions  
+public class java_42759_FileScanner_A01 { 
+    public static void main(String[] args) throws IOException{ 
+        String directoryPath = "/path/to";//replace with your real path here, e.g., "C:/Users" or similar on a Windows machine; replace this to the actual location where you want read files from in order for it's workable  
+          try (FileScanner scanner =  new FileWalker().walk(directoryPath)){  // Using 'try-with resources', Java will close filescan after use. This is recommended practice instead of using finally blocks because if there are exceptions, the resource may not get closed properly for some reason like OutOfMemoryError in case no exception was thrown during execution  
+            while ( scanner .hasNext() ) {  // Will loop until it has read all files within directory   
+                File file = scanner.nextFile();//this represents a single entry, you can process this as needed based on your use-case like printing out the name of each found file  
+                  System.out.println(file);     }  // prints filename to console in real usage scenario      }) {    throw new RuntimeException("Unexpected error"); };// This is a simple exception handler, you can replace this with any suitable way for your application handling unexpected errors if necessary! */} catch (Throwable t)  
+{t.printStackTrace(System.out);throwing exceptions and not using the try-catch block makes it difficult to understand where exactly in our program an error is occurring unless we include all of them, which can lead us into a situation that's hard or impossible for someone else (or ourselves) to debug!

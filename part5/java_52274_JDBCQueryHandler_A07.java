@@ -1,0 +1,6 @@
+import java.sql.*;
+// Creating a connection object for the Database  Connection conn;  
+public class java_52274_JDBCQueryHandler_A07 {    // Defining our main program Class name as Main, public keyword is also important to allow other classes/files access this file via 'Main method' if there are no errors in it.    
+        private static final String url = "jdbc:mysql://localhost:3306/test";  /// Change according your db details here///   // the URL of MySQL Database    username and password provided by mysql server for JDBC connection, replace with yours         public Connection conn;       void startConnection() {
+            try{      if(conn == null || !conn.isValid())     conns = DriverManager.getConnection("jdbc:mysql://localhost/test", "root","password");    } catch (SQLException e)  // SQL Exceptions to handle any errors we may encounter during our connection process
+        {           System.out.println ("Unable To Establish Connection With Database Server :( ");            };   try{         conn = DriverManager.getConnection("jdbc:mysql://localhost/test", "root","password");  } catch (SQLException e) // We are catching the SQL Exception as well to handle any error we may encounter while establishing a connection    }}

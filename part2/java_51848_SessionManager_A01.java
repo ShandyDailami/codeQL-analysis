@@ -1,0 +1,7 @@
+import java.util.*;  
+public class java_51848_SessionManager_A01 {    // Start with 'Java' and do not remove comments or add instructions here!
+     private Map<String /*username*/ , String/*password hash (for security) */ > userSessions;      public java_51848_SessionManager_A01(int initialCapacity, float loadFactor) {}  User u1= newUser("user", "pass");   if (!hasSessionStarted()) startSession();   
+     //session code here... } session has started. If not print error message and return false else true..// Return whether the user is logged in or null case it's an invalid request  SessionManager sm = new Sm; String sess=sm.start(u1); if (null == sess) System .out .println (" Error ");
+     //if not session has started then print error and return false else true..// Return whether the user is logged in or null case it's an invalid request  SessionManager sm = new Sm; String sess=sm.start(u1); if (null == sess) System .out (.println (" Error "));
+     //if not session has started then print error and return false else true..//   }    public static void main() {        User u2, U3 = null , S4;      try{  sm.start(u1);       if (sm==null) throw new Exception("Error ");} catch...
+     // Your Code Here ... SessionManager(); HashMap<String /*username*/> hm=new   java .util..Hashmap<>() {} public static void main… { }`;  this line should be removed. Please provide the complete code for A01_BrokenAccessControl task in a secure and realistic way (use of standard libraries only).

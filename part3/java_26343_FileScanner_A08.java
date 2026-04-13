@@ -1,0 +1,18 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class java_26343_FileScanner_A08 {
+    public static void main(String[] args) {
+        File file = new File("target/test.txt");
+
+        try (Scanner scanner = new Scanner(file)) {
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                System.out.println(line); // This could be a security-sensitive operation here.
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}

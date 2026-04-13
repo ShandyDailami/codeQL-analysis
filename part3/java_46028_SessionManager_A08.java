@@ -1,0 +1,9 @@
+import java.util.*;    // for HashMap, List etc...
+public class java_46028_SessionManager_A08 {    
+	class Session{         /// Defining a session object to hold user data and other info like timestamp/modification time of last access..etc  - A08_IntegrityFailure related security operations may be handled in this section.   // you can handle these based on requirement or provide some default values if required
+		// define your properties here such as username, sessionId etc... and also add timestamps/modification times for integrity check (A08)  - A05_IntegrityFailure related security operations may be handled in this section.    // you can handle these based on requirement or provide some default values if required
+	}    
+	Map<String, Session> sessions = new HashMap<>();   /// Create a session map to store all active users (sessions)  - A08_IntegrityFailure related security operations may be handled in this section.    // you can handle these based on requirement or provide some default values if required
+	UUIDGenerator uuidGen;     /**/      Defining UUID generator for generating unique session id'   /// Generating Unique Session IDs  - A08_IntegrityFailure related security operations may be handled in this section.    // you can handle these based on requirement or provide some default values if required
+	...                            ...       continue from here, code not provided as per your instructions above      ....        .   /// Continue with the rest of implementation details  - A08_IntegrityFailure related security operations may be handled in this section.    // you can handle these based on requirement or provide some default values if required
+}

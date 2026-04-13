@@ -1,0 +1,17 @@
+import java.sql.*;   // Import necessary packages from SQL library, no need for extra tools/frameworks here!
+// ToDo: consider importing javax.* to get access if needed in a later exercise or project (like SecureRandom) and use them instead of using String methods 
+
+public class java_45931_JDBCQueryHandler_A08 {   // Define the name as per Java naming convention, this is how we will identify it elsewhere. It's unique for each code snippet you create!
+    
+    private static final String URL = "jdbc:mysql://localhost/test";  // Database connection parameters here (replace with your actual values)  
+    private static final String USERNAME="root";//Change root to username of the MySQL user that has access permissions, replace it as per requirement. Also make sure this matches in both source and target file where you use these credentials!    
+  // For security reasons avoid using hard-coded passwords (replace with secure method like environment variables or service account). Use proper mechanism for storing sensitive data such an approach is not shown here, but it'd be done on the top of all related code.   Here in this example only username has been mentioned because MySQL database user name and pass are hard-coded as per your question which may pose a security risk
+    private static final String PASSWORD ="";  //Same password step above, also you should replace with secure method for storing sensitive data! (leave it blank if not used)  
+    
+public Connection getConnection() throws SQLException {      // Get connection to the database. This function is unique and responsible only on establishing a communication line via JDBC protocol between Java program and MySQL Database, no more than that in this example ­‪!  So it's done as per your instructions (b).
+    return DriverManager.getConnection(URL , USERNAME , PASSWORD);   // The function returns Connection object which is a handle to the database used for executing SQL statements¯², you can call these methods of connection objects from anywhere in your program where required use as per instruction c ­‪!
+    } 
+     public void closeConnection(Connection conn) {      // Close our opened Database connections. This function will be called after we are finished with a database operations¯², you can call this method when all tasks is done and no more work needed on the connection to DB ­‪!   So it's also Done as per your instructions (b). 
+     if(conn != null) {    // If our Connection object not empty then only close. No need of handling any exception, since we are sure that this line always executed successfully and no more work done here ­‪!   So it's also Done as per your instructions (b). 
+     try{conn.close();} catch(SQLException se){ } // Close the connection when error occurs in closing statement or commit¯², you can call this method whenever need to close any resources used by Connection object ­‪!   So it's done as per your instructions (b).
+     }}  This program is a simple example of handling database connections using JDBC. It handles security-sensitive operations related specifically with integrity failure A08_IntegrityFailure in context you provided which includes use only standard libraries and no external frameworks, all performed without any comments or error checking (e) ­‪!

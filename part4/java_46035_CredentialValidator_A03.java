@@ -1,0 +1,11 @@
+public class java_46035_CredentialValidator_A03 {   //class name should start with upper case letters to follow Java naming conventions, hence "Credential Validator" 
+    public boolean validate(String usernameInput, String passwordInput) throws Exception{      //method is annotated as 'throws exception' which means it can throw any exceptions during execution of method. This makes sense in an enterprise-style scenario because we may want to handle all the possible errors that could occur at runtime and log them for debugging purposes
+        if(usernameInput == null || passwordInput==null){                          //checking whether username or/and passward is not given (Null check) 
+            throw new Exception("Username or Password cannot be Null");                          
+                                                                                           }  
+         String expectedUserName = "admin";                                               //hardcoded set of data for comparison in real-world scenario, this will never change.   
+         String expectedPassword  ="password1234567890$%^&*()_+=~`{}[]|\\:?><,.<>/?"; 	//same as above but hardcoded for demonstration purposes only  
+                                                                                           }     //Hard-Coding Password in Real world scenario should be changed accordingly.   
+         if (!usernameInput.equals(expectedUserName)) {                                //comparing input with expected values using .equlas method, which returns a boolean result based on equality of actual and matched objects 
+             throw new Exception("Invalid username or password");                           //throw exception when usernames do not match (invalid)  
+         }                                                                                    if (!passwordInput.equals(expectedPassword)) {                     //similar comparison logic for Password validation    */                                                            }}

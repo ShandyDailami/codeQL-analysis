@@ -1,0 +1,12 @@
+':
+
+'''Java program - XmlParserExample: '''  
+import java.io.*;    // Import InputStream and OutputStream classes    
+import javax.xml.*;      // For parsing XML data    
+import org.w3c.dom.*;  // To use DOM, we need this class java_52913_XMLParser_A08 the Document interface (from API)      
+public final class XmlParserExample {   public static void main(String args[]){        String xmlFile = "data/example.xml";         File file  = new File(xmlFile);           try{            XMLReader reader   =     javax.xml.parsers .DocumentBuilderFactory  // Creates a factory for building    DOM based objects (like elements or documents).
+             Document doc      =   reader.newDocument();        domInitializeDocFromFile("example1", file,doc);          }catch(Exception e){            System.out.println("\nError in parsing XML: " +     xmlFile+"\n");         }} private static void    domInitializeDocFromFile (String tagName , File datafile ，Document doc) {      try{           InputStream input   =   null;          if(datafile !=null){             // Checking for a file on the hard drive           
+                         input    = new FileInputStream(new java.io . File ("C:\\Users\"+tagName +".xml" ));} else  {System.out.println("No XML data found"); return;}          if (input==null){             System.out.printlns   "Error No Input Stream...";           
+                         }     // Create an instance of the DocumentBuilderFactory from our factory       
+               javax . xml parsers    .DocumentBuilderFactory builderfactory  =         java ． xml       nalibrary.. DOMSource source   =      new org.xmlpullrequest。dom   version2_3 (input) ;          // Here we use a specific SAX parser to read the document, which should be faster and consumes less memory than reading in chunks
+              DocumentBuilder builder  =         factory .newDocumentBuilder();             doc =       builder ． parse(source);           }catch   (Exception e){            System.out.println("\nError parsing XML: " +     xmlFile+"\n");        }}'''          This program reads an XML file and then uses a SAX parser to process it, which is faster than reading the entire document in chunks as done by DOMParser or Streaming API (using InputStream). It also does not consume any memory more.

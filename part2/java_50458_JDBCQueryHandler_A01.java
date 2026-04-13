@@ -1,0 +1,6 @@
+import java.sql.*;  // import necessary packages from sql package (Connection, Statement etc.) in order not be forced by other libraries like Spring or Hibernate for database accesses    
+public class java_50458_JDBCQueryHandler_A01 {      
+// Start of main method      public static void main(String[] args)        throws SQLException         Connection conn = null;          // Declaring connection variable   Statement stmt=null;  ResultSet rs=null;    try{           conn =  DriverManager.getConnection("jdbc:mysql://localhost/testdb","root", "password");           
+// start a new transaction       if (!conn.setAutoCommit(false)) {             throw new SQLException("Cannot access db from this thread.");         }          stmt = conn.createStatement();           rs=stmt.executeQuery ("SELECT * FROM employees WHERE role LIKE 'Manager' ");      while (rs.next()){              String name  = rs.getString(1);           
+System.out.println(" Manager Name: " +name );        }               // Commit the transaction    conn.commit();         }finally {           if (stmt != null) stmt.close();          if  (conn!=  null ){              conn.close();     }}       catch(SQLException e){      System.out.println("Error in connection: " +e);  
+}} // End of Main method

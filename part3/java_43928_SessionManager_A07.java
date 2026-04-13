@@ -1,0 +1,12 @@
+import java.util.*;  // Importing the HashMap, Scanner & other needed classes from Java standard library  
+public class java_43928_SessionManager_A07 {   
+     public static Map<String , Boolean> loggedInUsers = new HashMap<>();            
+     
+       private void login(String username) throws Exception{              
+        if (loggedInUsers.containsKey(username)){                     // Checking whether user is already in the map, If yes then throw exception else add to it and set value as true 
+            System.out.println("User " + username+" has been logged-in");    Console console = new java.io.PrintWriter(System.out);     }else{       logInUsersAndSetValueToTrue (username,console );}         // Logging the user in        try { Thread.sleep(500) ; 
+          if (!loggedInStatus){                                       throw new Exception("Failed to login");    }                                        Console console = new java.io.PrintWriter(System.out);     System . out .println ("Login successful for " + username );}} catch (Exception e1 ) {                    // Catching any exception that might have occurred and printing the error message
+        if (!loggedInStatus){ println("Failed to login: ");  console .printStackTrace(); }      }}    private void logOut(String userName) throws Exception{           Logout users from map. If it's not in then throw exception else remove form hashmap and set value as false  
+          if (!loggedInUsersStatus){                                                  Console con = new java .io..PrintWriter (System . out);      System ." User" + userName+ "has been logged-out";}                     }} catch(Exception e2 ) {            // Catching any exception and printing the error message
+        if (!loggedInUsersStatus){ println("Failed to logOut: "); con.printStackTrace(); }    }}  public static void main (String []args) throws Exception{       Scanner input = new java .util .Scanner(System . in);     while (true ) {         System."\nChoose Option:\n1-Login \t2-Logout": "); String choice  =
+     >input.next(); if ("1".equals(choice)){ SessionManager sm=new  Sesssion Manager;sm..login("user");} else if   {"!Q" . equals (choices) ){SessionMaNaager sM = new SeSsIoN MAnaGer;} seq.logOut ("User")}}

@@ -1,0 +1,7 @@
+import java.util.*; // Import the necessary Java classes needed by this program, such as List and Map interfaces used herein with their respective import statements at top of file  
+public class java_53067_CredentialValidator_A08 {    
+    public static boolean validateCredentials(String username , String password){        
+            if (username=="admin"){ // Check for admin user            
+                return true;  }           else       {              System.out.println("Invalid Username or Password");                 return false;}                      
+        /* Here we are assuming that a correct entered credentials will always be returned and any failed attempt to get an incorrect username/password is handled with the print statement */          // Returning true upon successful login, else returning ‘false’           }              public static void main(String[] args) {             CredentialValidator.validateCredentials("admin", "test");        
+        /* Call your function here in a test environment where you can validate user input values with 'println' statements */     }}                 // Testing this class by passing username and password as string inputs to the method       }

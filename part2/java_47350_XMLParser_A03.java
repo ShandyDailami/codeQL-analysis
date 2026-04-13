@@ -1,0 +1,14 @@
+import java.io.*; // Import required classes from Java library  
+implements org.xml.sax.XMLReader {  // Use javax XML parser for simplicity   
+     public static void main(String args[]) throws Exception{      
+        SAXParserFactory factory = SAXParserFactory.newInstance();     
+         
+         try (SAXParser saxParser =  factory.newSAXParser())   /* create a new instance of the XMLReader */ {  // Use Java's own xml parser, avoid external frameworks   
+             HandlerClass handler= new HandlerClass() ;       		//create an object to handle parsed data         	   			    		     	       	 									        	     	}       } catch (ParserConfigurationException e)   /* exception handling */  {                  System.out.println( "Failed to create SAX parser" +e);}
+           // TODO Auto-generated method stub       		// implement a handler such as in this case         	   			    		     	       	 									        	     	} }    catch (SAXException e)   /* exception handling */  { System.out.println("Error parsing the document: " +e);}
+             @Override                  public void startDocument() {}       		// Implement method to handle DOCUMENT_START    	       	 									        	     	}           	@Override         	public void endDocument ()   /* End of Document */      { System.out.println("END OF XML"); }   		 	   			
+             @Override              public void startElement(String uri, String localName,      		String qName)       	{ // Implement method to handle ELEMENT_START    	       	 									        	     	}   /* Call the handler's elementEnd() */     	@Override         	public endelement (){} 	   			
+             @Overide            public void characters(char[] ch, int start,	int length ){          		// Implement method to handle CHARACTERS        }    	       	 									        	     	}   /* Call the handler's characterEnd() */     	@Override         	public End_Element(){}} 	   			
+             @Overide       public void warning(SAXParseException e) {/*Implemetn methods for handling warnings*/}   		// Implement method to handle WARNINGS        }  	       	 									        	     	} /* Call the handler's error() */     	@Override         	public Fatal_Error(){}} 	   			
+             @Overide       public void info(SAXParseException e) {/*Implemetn methods for handling information*/}   		// Implement method to handle INFORMATION        }  	       	 									        	     	} /* Call the handler's error() */     	@Override         	public SyntaxError(){}} 	   			
+             @Overide       public void fatalError(SAXParseException e) {/*Implemetn methods for handling errors*/}   		// Implement method to handle FATAL_ERRORS        }  	       	 									        	     	} /* Call the handler's error() */

@@ -1,0 +1,5 @@
+import java.sql.*;   // Import necessary classes from the JDBC package   
+    
+public class java_50314_JDBCQueryHandler_A07 {     
+       static Connection con;        private final String url = "jdbc:mysql://localhost/test";         string user="root",password="your_database-specific_passwd";           public  void main (String args[])   throws SQLException{          //Open the connection to MySQL database.
+    {            con=  DriverManager .getConnection(url,user , password);               System.out.println ("Connected!" );             } catch(SQLException e )         {"Cannot connect " +e ,"Exiting ..."}        finally           {@SuppressWarnings("finally") Connection close (){          if (! con == null)            try {con .close();}}catch    ( SQLException se   ){se.printStackTrace() } catch( Exception e     )         {"Closing failed " +e , Exiting ..."}        }}

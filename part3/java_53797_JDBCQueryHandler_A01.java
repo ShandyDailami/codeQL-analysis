@@ -1,0 +1,7 @@
+import java.sql.*;   //Importing necessary classes for JDBC usage   
+class java_53797_JDBCQueryHandler_A01 {    	//Main class begins here     
+public static void main(String[] args) throws SQLException{      	
+        String url = "jdbc:mysql://localhost/mydatabase"; 	   
+	String userName="username_here";   //Change with your own credentials.		   	 			        				    					                    	//Put the username here, change it as per requirement          
+     	char[] password =  'password'.toCharArray();               	       								      						       							         	      /*Do not forget to set a strong and unique character array for password  */   //Change with your own credentials.   		                 									              			           	    }                       .//This is just an example, replace it as per requirement
+     	Connection conn = DriverManager.getConnection(url , userName,password);                                                           	 	       							        								           /* Connecting to the database */  //Make sure you have required drivers and your MySQL server running    		                    									             }                                                                  	    };//Main function for testing connection

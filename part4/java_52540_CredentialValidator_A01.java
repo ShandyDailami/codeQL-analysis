@@ -1,0 +1,3 @@
+import javafx.application.*; // JavaFX Application classes required by CredentialValidator class java_52540_CredentialValidator_A01 com.sun.glass.ui.* ;  // Components for UI related operations, used only if no other framework is present      
+                                 
+public abstract interface UserCredentials {      void setUsername(String username)        String getUserName();          void clearPassword()         boolean validate (); }     public class CredentialValidator implements javafx.application .Application  // Simple Java Application to demonstrate the use of credentials validator    private static TextField usrname, passwd ; @Override   protected Void initialize(javafx.stage       ... stages) {      createForm()......}

@@ -1,0 +1,10 @@
+import java.sql.*;   // Import the necessary classes for JDBC Connection, Statement & ResultSet	
+		    	 	// They are all part of standard libraries used by database driver like MySQL Connector/J or Oracle Driver etc..   
+					     			      
+public class java_42541_JDBCQueryHandler_A01 { 				        
+//Create a connection to the SQL Server.   The Connection object is then initialized with drivers that will interact with this DB server through JDBC (Java Database Connectivity)		    	 	               	       	   	     	// These are provided by Java database driver packages like MySQL or Oracle Driver, etc			    // and it allows operations such as opening a session to the SQL Server.
+public Connection getConnection() throws SQLException {  				        					     								       }; 						                                       
+//The method is going create statement object that can be used for running various type of queries on database tables	    	 		       			                   	       	   	     	// This allows operations such as select, insert , update or delete query to the DB server.    // and execute these SQL commands through a Statement Object which it then returns
+public  ResultSet excuteQuery(Statement stmt) throws SQLException { }  				        	       };		    	 	       	   	     	// Methods for getting connection object & executing Query on database tables using PreparedStatements, CallableStatements or other type of statements.    // and this method will return the result set after execution
+//This is a security sensitive operation related with A01_BrokenAccessControl  		    	 	               	       	   	     	// Here we're just going to update some data in database – e.g., user passwords should be hashed & stored securely, etc..    // and this method will do that
+public void performSecuritySensitiveOperation(Connection conn) throws SQLException { } };  				        	       	   	     	// Here is the main driver function		    	 	               					     	} 			         	};}

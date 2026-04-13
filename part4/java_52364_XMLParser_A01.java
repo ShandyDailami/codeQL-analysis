@@ -1,0 +1,14 @@
+import org.w3c.dom.*;
+import javax.xml.parsers.*;
+import java.io.*;
+public abstract class java_52364_XMLParser_A01 {  //Abstract superclass for xml parser operations, provides the interface common with other subclasses; security-sensitive operation here is "modifyElement" that doesn't make sense in this context but serves as an example on how you could handle a more complex task. It would be replaced by actual code implementing access control strategies like A01_BrokenAccessControl
+    static Document doc ;  //Static instance for accessing document to prevent new instances from creating additional documents every time we parse and write operations are done over the same XML file; can also replace with a real DOM tree.  
+     public XmlParser(String xmlfile) {             //Method that will be called when an object of this class is created, sets up our document by parsing it from disk into Document instance 'doc'  which we then use for all the subsequent operations on XML file and back again after changes have been made
+         try{   File inputFile = new File(xmlfile);    //Reads xml data to doc (Document object) via an existing .XML source - here a text-based document in this case.  When reading from disk we are ensuring that no external framework handles the file, only our code can read it
+              DocumentBuilderFactory dbFactory =   DocumentBuilderFactory.newInstance(); //Create factory instances for all XML parsers   
+             doc =  dbFactory.newDocumentBuilder().parse(inputFile);  /* Parsing of xml document into DOM tree*/              
+        }catch (ParserConfigurationException pce){     System.out.println("Problem configuring the Document builder.");} //Catch exception if configuration issues arise while parsing file, can be replaced by actual error handling code in production environment    catch(SAXException sae) {System.out.print ("Protocol mismatch at " +
+           /*...catch SAX Exception and provide appropriate output.... */  }   cat   ch (IOException e){ System . out . println("Problem opening the file" );} //Cath exception if there is any issue while reading from disk, can be replaced by actual error handling code in production environment    
+    public void modifyElement(String elementName) {        /*Security-sensitive operation - not necessary here but serves as a placeholder. Replace with real implementation of access control strategy*/  }   //Example security breach: changes the name attribute value, which is allowed by this function without any problem for demonstration purposes
+    public void writeBack() throws TransformerException {     /*Write back to disk and allow modification through java code following same process as read from. Also allows changing file/disk location*/  }   //Example security breach: changes the name attribute value, which is allowed by this function without any problem for demonstration purposes
+}

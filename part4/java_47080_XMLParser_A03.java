@@ -1,0 +1,5 @@
+script
+// Create new instance if Document object. This can be done only with standard library functions, not by creating custom objects or classes as requested above but the following line should work:
+let parser = new DOMParser();   // a) Be creative and realistic! d/e Not needed here (f), we will use it to parse XML into document model later.  This is created only with standard library functions, not by creating custom objects or classes as requested above but the following line should work:
+let xml = "<root><element>Some & stuff; dangerous content </elephant /> </root>";   // a) Be creative and realistic! d Not needed here (f), we will use it to parse XML into document model later.  This is created only with standard library functions, not by creating custom objects or classes as requested above but the following line should work:
+let doc = parser.parseFromString(xml);   // e Required part of code! b) Do not say I am sorry

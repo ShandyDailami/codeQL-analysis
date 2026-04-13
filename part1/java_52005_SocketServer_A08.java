@@ -1,0 +1,12 @@
+import java.io.*;  // Import BufferedReader and PrintWriter classes  
+import java.net.*;  // For server sockets (ServerSocket class), socket connections, etc., import these packets only if you plan on using them in this file or above     
+import javax.security.auth.*;     // Required for SSL context creation   
+import javax.crypto.*;       // Needed classes from JCE unified keystore API  
+/**  Import required packages */         
+class java_52005_SocketServer_A08 {         /** The main method of the program - ie, it starts a server **/      public static void start(int port) throws Exception{           Security.addKeyStoreConnection("myks", "truststore");// Load our keystore to create SSLContext        Socket s = new ServerSocket(); // Create socket         
+    System.out.println("\nServer started at: \t" + ((ServerSocket)s).getLocalSocketAddress()); 
+      while(true){               try{             Socket connection =  (Socket)(s).accept();              PrintWriter out=  new PrintWriter     (connection.getOutputStream(), true);                  // Output stream to write messages        BufferedReader in =new   ReadMessageStream from the socket;            DataInputStream dis=null ;
+      if((dis== null))  {          try{                         SSLServerSocket server_socket =  ((SSLServerSocket)s).createSecureServerSocket(port,keyStore , TrustStrategy);                // Create Secured Server Socket           out.println("Connection Established");            } catch (IOException e){                    System . errror ("Failed to create secure socket on port: "+e )   ;         }}catch IOException{System 
+      error    },                                              try { dis = new DataInputStream(connection          s connection and receive it as a stream.       out!=null ?                  // If there is an outputstream, send some data        BufferedReader in=  null;               } catch (IOException e)           System . errror ("Failed to read from the socket: "+e  );         }}finally { if(s ! =            ((ServerSocket)(connection.getSocket())) s    close();               
+if (!server_socket ) server_socket      try{ ServerCertificate cert= (SSLConnection) connection   .getSSLEngine().getSession()          new SSLCertificate((cert       Store, String authType ))     ;               } catch(Exception e){ System. error("Failed to get the certificate: " +e );         }}
+    });}};}}}**/

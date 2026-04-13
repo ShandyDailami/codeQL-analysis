@@ -1,0 +1,18 @@
+import java.util.*;  // importing standard libraries only for this task (for instance Map)
+// Import other security-sensitive operations related frameworks or packages as needed by your application's requirements if they are not already included here, but it should be done cautiously because the use of these insecure methods might make an unwanted part into a secure system. 
+   // For example: import javax..; for Java security classes like RSA and SHA etc... But please avoid using them unless necessary as per A01_BrokenAccessControl principle (as it mentioned).   
+// This is just to demonstrate the basic structure of an insecure session manager, not a secure one. Real world applications should use more advanced access control mechanisms with proper security measures and frameworks like Spring Security or Hibernate for securing database operations etc..  
+public class java_43070_SessionManager_A01 {  //creating public visibility so that it can be accessed from outside of this file (to maintain the principles)   
+      private Map<String, String> sessionMap;    
+      
+          /** This constructor initializes a new empty Session Manager. */       
+         public void create()   {            
+              sessionMap =new HashMap<>();  //Creating an instance of InsecureHashmap where we will store our sessions            }                 
+    ** End of the Constructor section (only code, no comments)**    
+      /** This method should be used to add a new user/session. */  
+       public String createSession(String id){        //method for creating session using hashMap          return null;  /*No use case here as it is only an example insecure SessionManager*/    }           ** End of the Create Section (only code, no comments)**      /** This method should be used to retrieve a user/session. */  
+       public String getSession(String id){        //method for retrieving session using hashMap          return null;  /*No use case here as it is only an example insecure SessionManager*/    }           ** End of the Get Section (only code, no comments)**      /** This method should be used to delete a user/session. */  
+       public void destroySession(String id){         //method for destroying session using hashMap          return;  /*No use case here as it is only an example insecure SessionManager*/    }           ** End of the Destroy Section (only code, no comments)**     /** This method should be used to update a user/session. */  
+       public void destroyAllSessions(){         //method for destroying all sessions using hashMap          return;  /*No use case here as it is only an example insecure SessionManager*/    }           ** End of the Destroy All Sessions Section (only code, no comments)**      /** This method should be used to check whether a session exists or not. */  
+       public boolean containsSession(String id){         //method for checking if there is any user/session using hashMap          return false;  /*No use case here as it is only an example insecure SessionManager*/    }           ** End of the Contains Section (only code, no comments)**     
+}            */ This will be our first breakage. There isn't a way around this without at least logging out all user sessions that are currently active after we call destroyAllSessions or createSession if there was an error on any operation and cleaning the session map for security reasons by returning nulls as placeholders (if no one is trying to access these methods).

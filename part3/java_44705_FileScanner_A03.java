@@ -1,0 +1,12 @@
+import java.io.*; // Import necessary classes such as File, Paths etc...  
+import static java.nio.file.StandardCryp*};//Importing standard libraries for cryptographic operations   
+public class java_44705_FileScanner_A03 {    
+  public static void main(String[] args) throws IOException{        
+      String directoryPath = "D:\\"; //Specify your Directory Path here            
+          File initialDirectory =  new java.io.File (directoryPath);      
+           if (!initialDirectory .exists())        throw    new IllegalArgumentException ("Invalid Dir");     int fileCount=0;   char prefix ;  do {      try{         final String s = directoryPath + "\\"+(char)(++prefix) + '*';              File finalldirectory =  new java.io.File (s);       if (!finalldirectory .isDirectory() || !((final DirectoryStream<Path> stream= Files.newDirectoryStream   
+          (path)))){ throw  IllegalArgumentException ("Invalid Dir"); }} while(false) ;        Path start = path;     do{   // Read all files in directory, not recursively         for (;;) {               try             @SuppressWarnings("unused") final File file =  stream.nextFile(); if (file == null ||          
+          ((Files.size  (Paths .get(    (.concat ("\\", dirname + "\\"+     getName ()).replace ('/', '.'))))) {  ++nfiles; } else break;} continue;}       // File not found, end of directory        if (!streamcloseable) stream   = Files.newDirectoryStream  (path);      catch(SecurityException se){throw new IllegalArgumentException("Access Denied");}} while   
+          false)}while    0 < ((final DirectoryIterator<Path> iterator =   Directories .newDirectoryIterator              (.concat ("\\", dirname + ".*"), FileAttributes.SORT_UNSORTED)) ;        finally {  try (Stream<String>  lines= new BufferedReader(
+          new StringReader("D:")).lines()){forEachLine((line) ->{if (!Files .exists   ((Paths    .get ("\\".concat     line))) throw IllegalArgumentException             else if(!isImageFile  (.accept (new FileNameExtensionFilter      (\"jpg\",\"jpeg\", \"png\"")) )
+          {}});}}}`; // Check file extension in the directory, and filter it according to your needs. You may modify this code or add more conditions as per requirement! This is a very basic example for demonstration purposes only with security-sensitive operations related A03_Injection handled by no external libraries except standard Java library

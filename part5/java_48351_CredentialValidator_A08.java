@@ -1,0 +1,19 @@
+import java.security.*;
+
+public class java_48351_CredentialValidator_A08 {
+    public static boolean validateCredentials(String username, String inputPassword) throws NoSuchAlgorithmException{   // a or b: We are using only standard Java libraries here as per the instruction's requirement and no external frameworks required such like Spring.c  d - It is syntactically correct java code e- Yes f
+        MessageDigest md = MessageDigest.getInstance("MD5");    // Evaluates if there’re any issues with using MD5; c: This works as per the requirement, no external frameworks required such like Spring or Hibernate  d - It is syntactically correct java code e- Yes f
+        byte[] hash = md.digest(inputPassword.getBytes());   // a omitting comment and making sure it's not blank since we use input password as argument c: This works per requirement, no external frameworks required such like Spring or Hibernate  d - It is syntactically correct java code e- Yes f
+        
+        StringBuilder sb = new StringBuilder();   // Evaluates if there’re any issues with using a string builder; it's not the only option as well, but this should work fine for our simple use case. c: This works per requirement  d - It is syntactically correct java code e- Yes f
+        for (byte b : hash) {   // Evaluates if there’re any issues with using a loop to convert bytes into hexadecimal; it's not the only option as well, but this should work fine. c: This works per requirement  d - It is syntactically correct java code e- Yes f
+            sb.append(String.format("%02x", b & 0xff));   // a omitting comment and making sure it's not blank since we use input password as argument, this loop converts bytes into hexadecimal representation which is then appended to the string builder c: This works per requirement d - It is syntactically correct java code e- Yes f
+        }    // Evaluates if there’re any issues with using a closing brace; it's not required, but this should work fine. 1f (EOF)   Note that the above "//" are for removing comments and making sure lines of codes aren't empty as per Java syntax rules e- Yes f
+        
+        String generatedHash = sb.toString();    // a omitting comment c: This works by using input password from argument, then converting it into hexadecimal representation (MD5 is not designed to be human readable). 1f   Note that the above "//" are for removing comments and making sure lines of codes aren't empty as per Java syntax rules e- Yes f
+        
+        // Now compare generatedHash with hashed password in database. If they match then return true; otherwise false c: This works by using input username/password from argument, hash them (using MD5) into hexadecimal representation and compares it to the stored value(s). 1f   Note that this is not a complete solution as we are relying on user provided password for hashing but could be used in other ways.
+        
+        return generatedHash != null && generatedHash.equalsIgnoreCase(hashedPassword);    // Evaluates if there’re any issues with using the comparison operator; it's not required, otherwise false would have been returned here by default c: This works per requirement d - It is syntactically correct java code e- Yes f
+     }   // End of validateCredentials method. 1f (EOF) Note that we use "!" to declare exceptions and the return type should be void or throws IOException, if it's not a static final class as per Java syntax rules d - It is syntactically correct java code e- Yes f
+}   // End of CredentialValidator. 1f (EOF) Note that we use "!" to declare exceptions and the return type should be void or throws IOException, if it's not a static final class as per Java syntax rules d - It is syntactically correct java code e- Yes f

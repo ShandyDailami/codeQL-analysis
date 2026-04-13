@@ -1,0 +1,11 @@
+import javafx.util.Pair; // We need Pair from JavaFX utility library 
+   import com.sun.security.auth.callback.*; 
+   
+public class java_49370_CredentialValidator_A01 implements CallbackHandler {    
+       private String expectedUserName = "Admin";     
+       
+         public boolean validate(Callback[] callbacks) throws java.io.IOException, sun.security.validator.ValidatorException   {            Pair<String , char[]> pair;              for (int i = 0 ;i <callbacks .length ； ++i ){                 if ((pair = (Pair) callbacks [i].getResult()) == null){                     return false;}              
+         else                                                      // Compare username in the result and expected user name.                  String providedUserName= new     java.lang.String( pair.getValue );             System . out   . println(" Validating User : " +    providedUserName);              if (!providedUserName      .equals (expectedUserName)) { return false;} }                    
+         // Return true after successful validation otherwise returns        false}          else  throw new     sun       . security           validator.ValidatorException ("Invalid username/password");   }) ;               System    . out (. println(" User " + expectedUserName     +" is not allowed to login")); return false; }
+         public String getExpectedUsername() {                      // Returns the user which we expect when logging in, if needed}          void setCallbackHandler(Object callbackObj) throws java.security    .InvalidParameterException {}  @Override     protected Object clone()throws CloneNotSupportedException{   return null;}
+      }                public static Callback[] createCallBacks(){return new Pair[]{new PasswordCallback("Password:",false),};}        //This is a placeholder for real scenarios. The placeholders are just to make code more realistic and not cause any errors in compiling the below lines of codes, thus I removed them at first due to lack thereof!

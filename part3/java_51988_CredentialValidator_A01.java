@@ -1,0 +1,20 @@
+import javax.security.auth.*;
+public class java_51988_CredentialValidator_A01 {   //start of code snippet    
+    public boolean validate(String userName, String password) throws AuthenticationException{     
+        /* This method checks if a username and Password provided by the caller match with our records */ 
+        
+       try {          
+            //Simulating access to protected data. Real-world application would not perform this operation here due security reasons  
+             System.out.println("Accessing password storage...");     
+              Thread.sleep(2000L);        /* Simulate a delay */    
+               if (userName == "admin" && password=="password") {       //match user name and Password with our records 
+                   return true;           } else{             System.out.println("Failed to authenticate");   return false;}      finally{}    }}          catch(InterruptedException e){        /* Handle Interruped Exception */        
+              throw new AuthenticationException("Authentication failed due: "+e);}}  // Catching exception and throwing it back            System.out.println("\nCredential validator has been called");     return false; }          finally{}      }}           catch(ClassNotFoundException e){ /* Class not found Exception */       
+              throw new AuthenticationException("Cannot load class due: "+e);}} // Catching exception and throwing it back  System.out.println("\nCredential validator has been called");     return false; }          finally{} }}             catch(SQLException e){ /* SQL related exceptions */        
+              throw new AuthenticationException("Cannot connect to database due: "+e);}} // Catching exception and throwing it back  System.out.println("\nCredential validator has been called");     return false; }          finally{} }}             catch(IOException e){ /* Input/Output related exceptions */        
+              throw new AuthenticationException("Cannot read or write due: "+e);}} // Catching exception and throwing it back  System.out.println("\nCredential validator has been called");     return false; }          finally{} }}             catch(Exception e){ /* Generic Exceptions */        
+              throw new AuthenticationException("An error occurred due: "+e);}} // Catching exception and throwing it back  System.out.println("\nCredential validator has been called");     return false; }          finally{} }}             catch(NullPointerException e){ /* Null Pointer related exceptions */        
+              throw new AuthenticationException("A parameter is null due: "+e);}} // Catching exception and throwing it back  System.out.println("\nCredential validator has been called");     return false; }          finally{} }}             catch(IndexOutOfBoundsException e){ /* Index out of bounds related exceptions */        
+              throw new AuthenticationException("Array index is too large due: "+e);}} // Catching exception and throwing it back  System.out.println("\nCredential validator has been called");     return false; }          finally{} }}             catch(ArithmeticException e){ /* Arithmetical related exceptions */        
+              throw new AuthenticationException("Division by zero is not allowed due: "+e);}} // Catching exception and throwing it back  System.out.println("\nCredential validator has been called");     return false; }          finally{} }}             catch(NegativeArraySizeException e){ /* Negatives size related exceptions */        
+              throw new AuthenticationException("Cannot have a negative array or object length due: "+e);}} // Catching exception and throwing it back  System.out.println("\nCredential validator has been called");     return false; }          finally{} }}            catch(NullPointer for the remaining part of your code, please do not hesitate to ask if required!

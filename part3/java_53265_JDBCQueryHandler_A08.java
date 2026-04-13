@@ -1,0 +1,18 @@
+import java.sql.*;   // Import required Java libraries (for SQL operations)    
+    import javax.sql.DataSource;  // If using a MySQL data source, uncomment this line to use it instead of the default one below         
+       /* DataSource ds = new com.mysql.cj.xdevapi.ClientPreparedStatement.NonClosingDelegatingStatementFactory(ds); */  
+    import java.util.*;  // Import ArrayList for storing user data from login function    
+     
+public class java_53265_JDBCQueryHandler_A08 {      
+        private DataSource ds;          /* Declare a variable to store the connection pool details (MySQL in this case)*/        
+           public List<String> usernames = new ArrayList<>();   // Sensitive information. Keep it secret and do not share    
+             String passwords ;    //Sensitive Information keep It Secret Do Not Share      
+        private static final String URL="jdbc:mysql://localhost/test"; /* Your MySQL server IP or hostname */     
+            public java_53265_JDBCQueryHandler_A08() {   }  /** Instantiate the DataSource object with details of your database connection **/     // Constructor to instantiate our data source (MySQL in this case)      
+         try {          ds = DriverManager.getConnection(URL,"username","password"); /*Establish a Connection */        usernames .add("User1" );   passwords  . add ("Password_for User1") ;     } catch ... // Error handling and exceptions for db connections, uncommented   
+         public void login() {          try (Connection con = ds.getConnection()) /* Try to connect */       if(con != null)      System.out.println("Connecting......");  else throw new RuntimeException ("Cannot Connect") ; usernames .forEach((un)->  // Print out all the users and their passwords one by-one   
+         {   PasswordTransformer pt = (str,user)-> /* Hide sensitive information */     return str; }); } catch ...  uncommented      try{ con.close();}catch...//Close connection if any error occurs in operation so far          // Main method to test and run the program
+        public static void main(String[] args) { new JDBCQueryHandler().login() ; /* Run our Login function */ }   /** This is how we start running this file. Only when it has been compiled will Java execute these instructions **/    try{new JDBCQueryHandler();}catch... //This catch block should never be reached as the constructor and login method have called new objects 
+     in java to construct our data source (MySQL) if an error occurs, this cannot happen because of how we've set up everything. If there was a mistake during setup that caused it not to compile properly here is where you would add code */ }   /* This line and comment are required for the program to run without crashing due to exceptions in login method which will be hidden using password transformer function*/
+     catch (SQLException | RuntimeException e) {  // Exception handling, uncommented    if(e instanceof SQLException){ds.close();}else{throw new AssertionError("ASSERTION FAILED"); }   /* This code closes our connection when an error occurs */        System.out.println("\n\tExiting... thanks for playing!\a") ;  // Exit application gracefully
+    }}**/`java' at the start of each block and `/* uncommented after catching exceptions*/ in end blocks, this way you can hide code related to exception handling as mentioned above which will be hidden by password transformer. Please note that it is always important not to share sensitive information such usernames or passwords with anyone else for security reasons only realistically should they know the program and are allowed access rights on database server like user1,password_for User 2 etc in this case

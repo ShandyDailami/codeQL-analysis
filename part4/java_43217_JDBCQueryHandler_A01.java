@@ -1,0 +1,7 @@
+import java.sql.*;   // Import the necessary classes from JDBC library    
+public class java_43217_JDBCQueryHandler_A01 {    // Define a new public, static function called "VanillaJdbc" which takes no parameters and returns void (void main) type of objects 
+      private Connection connection;        // Declare variables to store database connections  
+       String url = "jdbc:mysql://localhost/test";     // Specify the URL for connecting with MySQL Database   
+		String userName="root";        	// User Name in case you're using root as username  or provide your actual Username. (change it according to database)  
+       String password = "password";      // Password of above specified username, change accordingly if necessary and ensure that the Database has correct credentials set up for these users on MySQL server side   	    		        	// Change this too in case you are using root as user or provide your actual User's encrypted/decrypted 
+       public void connect() {            // Function to establish a connection with database  			            	       	   	 									     	     						        }                       Connection = DriverManager.getConnection(url,userName , password);    try{     this .connection= (java.sql.Connection) java.lang.Class.forName("com.mysql.cj.Driver");         System.out.println("\n Connected to Database\n "); } catch

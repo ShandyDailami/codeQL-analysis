@@ -1,0 +1,14 @@
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.*;
+public class java_47349_SessionManager_A07 extends HttpServlet {
+    HashMap<String, String> users = new HashMap<>(); // Simple user storage (not recommended in real-world applications) 
+     public void init() throws ServletException{   }//We override this method to perform at container initialization. It's not required here but it can be used if we plan on adding more functionality   
+      protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException , IOException {  // We don’t use POST in our example   }    
+       public java_47349_SessionManager_A07() {}//A default constructor is required for servlets. This can be removed if we decide not to include it later on    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException , IOException {  // We don’t use GET in our example   }
+       public static void main (String args []) {}//A Main method is required for servlets. This can be removed if we decide not to include it later on   	    	 	    private class MyFilter implements Filter{private String filterName;public  Void init(FilterConfig fconfig) {filterName =fconfig .getInitParameter("Filter Name");return null;} public void doFilter(ServletRequest request, ServletResponse response,
+          IOException chain ) throws java.io.IOException , ServletException   	  	{HttpServletRequest servReq= (HttpServletRequest)request; HttpServletResponse resp =    	(HttpServletResponse)response ;String  username  =servReq .getParameter("username");       String password = 	  servReq .getParameter ("password" );if(users.containsKey   	   ((user, passwd)-> user==null || !passwd.equalsIgnoreCase ( users    	.getOrDefault(user , null))) ){      request.setAttribute  ("failure", "Invalid Credentials"); resp .sendRedirect("/login?failed=true" );return;}request  	      
+          .setAttribute("username ", user);response.sendRedirect("/welcome "); return; } @Override public void destroy() {} // This method is not required in this example as we're simply demonstrating a simple session management system – it’s never used and can be removed or modified for added functionality
+  	}    ) ;    	 	    private class MyServlet implements Servlet{private String servletName;public void init(ServletConfig sconfig) {servletName =     	      	sconfig.getInitParameter("Servlet Name");} public  Void doServ‌        et(HttpServletRequest request, HttpSevr     elResponse ) throws Se   tException   	 	{String username= ( String)(request . getAttribute ("username "));if
+          null==usernamen return;/* serve some action */return;} @Override public void destroy() {} // This method is not required in this example as we're simply demonstrating a simple session management system – it’s never used and can be removed or modified for added functionality     }}}`      
+  	}

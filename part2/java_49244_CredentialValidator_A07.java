@@ -1,0 +1,5 @@
+public final class java_49244_CredentialValidator_A07 {  // This could technically include fields such as username, hashedPassword etc for security reasons - a more secure way depends on DB and user's specific needs; these are kept simple examples only)  
+    private String mUsername;     public void set(String name){mUsername=name;}     
+                               // password  (not shown here due to brevity & not securing sensitive data like hashedPassword.)      
+        @Override                /* This should be a hash of the actual Password, but that's beyond scope */    public boolean equals(Object o) {     if (!super.equals(o)) return false;  // same object -> returns true        
+                               }                        else throw new IllegalArgumentException("Can only compare objects to themselves");   /* different types not allowed*/      @Override                  /**/public int hashCode() {@return super .hashcode();}          public String getUserName(){    if(mUsername==null)throw  //a Exception; return musername;}

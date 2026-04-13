@@ -1,0 +1,17 @@
+import java.sql.*;   // Import required classes from the database package    
+public class java_52820_JDBCQueryHandler_A08 {    // Main Class to test Jdbc operations with Prepared Statements and ResultSet objects     
+ public static void main(String[] args) throws SQLException{ 
+       String url = "jdbc:mysql://localhost/testdb";   // Database URL    
+        String username="root";         // Username for the database.    You should replace with your actual user name from db configuration file or directly in code if it's externalized     
+        String password= "";             // Password to connect DB, you must set according to security policy and also be careful not hardcode here    
+       Connection con = null;            // Declare a connection object of the class 'Connection'.   A JDBC Connector is used for this purpose.   
+      Statement stmt=null;             //Declaring statement that will interact with database 
+        try{                             //try-catch block to handle exceptions    
+          con = DriverManager.getConnection(url, username, password);//Getting connection object   A driver manager is used for this purpose in Java   
+           stmt=con.createStatement();                                   ///Creating a statement and assign it with the Connection Object  In JDBC each Query Execution returns as Result Set      //Assigns SQL Statements into these objects     if executed then closes connection else not, using 'try-catch' block  
+          String sql = "SELECT * FROM A08_IntegrityFailure";            ///Selecting the required database table    You should replace with your actual query from db configuration file or directly in code  //Assigns SQL statements into strings     if executed then closes connection else not, using 'try-catch' block  
+          ResultSet rs = stmt.executeQuery(sql);                         ///Executing the select Query    In JDBC each Select Execution returns as a set of Row for these objects      //Assigns SQL Statements into strings     if executed then closes connection else not, using 'try-catch' block 
+          while (rs.next()) {   /* Access column values */               ///accessing and storing the selected row data in variables    You should replace with actual operations from your db context//Assigns SQL Statements into strings     if executed then closes connection else not, using 'try-catch' block 
+              String firstName = rs.getString("first_name");             // Get a specific column value (replace "column" and "table")    You should replace with actual operations from your db context//Assigning values to variables   if executed then closes connection else not, using 'try-catch' block
+              System.out.println( firstName );                            ///prints the data fetched in console  //If execution of above code was successful it will close Connection object    use try finally blocks for handling exceptions and ensure proper closing of database resources     } catch (SQLException e) { ... handle exception...}      
+        }}catch block to manage any errors that may occur during this process.      This 'try-catch' is a must in real project, it helps you get informed if something goes wrong while executing SQL queries or interacting with the Database   //Assigns error handling codes into catch blocks     } finally { ... ensures proper closing of resources...}

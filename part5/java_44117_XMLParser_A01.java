@@ -1,0 +1,11 @@
+import javafx.scene.control.*;
+import org.xml.sax.*;
+import javax.xml.parsers.*;
+import java.io.*;   // Import Input and Output Stream Classes    ;;Import File Class     import      a       d Obsolote, incluso        *  e Necessaria per l'access control A01_BrokenAccessControl */         public class java_44117_XMLParser_A01 { private String title;private Author author;}
+import java.util.*;   // Import List Interface and Iterator    ;Import File Class     import      a       d Obsolote, incluso        *  e Necessaria per l'access control A01_BrokenAccessControl */ public class Library { private ArrayList<Book> books;}
+import java.util.*;   // Import List Interface and Iterator    ;Import File Class     import      a       d Obsolote, incluso        *  e Necessaria per l'access control A01. Access Control (AO) */ public class Main {public static void main(String[] args){
+// Parse the XML file and create an ArrayList of books for ease-of use later on   ;; Import File Class     import      a       d Obsolote, incluso        *  e Necessaria per l'access control A01_BrokenAccessControl */    SAXParserFactory spf = SAXParserFactory.newInstance();
+// Parse the XML file and create an ArrayList of books for ease-of use later on   ;; Import File Class     import      a       d Obsolote, incluso        *  e Necessaria per l'access control A01_BrokenAccessControl */ SAXParser sp = spf.newSAXParser();
+// Read the XML file and create an ArrayList of books for ease-of use later on   ;; Import File Class     import      a       d Obsolote, incluso        *  e Necessaria per l'access control A01_BrokenAccessControl */    try {XMLReader xr = sp.getXMLReader();
+// Read the XML file and create an ArrayList of books for ease-of use later on   ;; Import File Class     import      a       d Obsolote, incluso        *  e Necessaria per l'access control A01_BrokenAccessControl */    xr.setContentHandler(new BookSAXHandler());
+// Read the XML file and create an ArrayList of books for ease-of use later on   ;; Import File Class     import      a       d Obsolote, incluso        *  e Necessaria per l'access control A01_BrokenAccessControl */    xr.parse("books.xml");} catch (Exception ex) {System.out.println(ex);}}

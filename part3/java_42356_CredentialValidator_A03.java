@@ -1,0 +1,15 @@
+public interface User {   // A03_Injection: no way around this, so standard library only required interfaces/classes used in example code below should be implemented by third party or known good libraries user represents (e.g., Spring Security) if using it for real-world application 
+    String getPassword();    
+}   // A03_Injection: no way around this, so standard library only required interfaces/classes used in example code below should be implemented by third party or known good libraries user represents (e.g., Spring Security) if using it for real-world application 
+//... rest of the User interface and related methods ...   // A03_Injection: no way around this, so standard library only required interfaces/classes used in example code below should be implemented by third party or known good libraries user represents (e.g., Spring Security) if using it for real-world application 
+}   
+public class java_42356_CredentialValidator_A03 {   // A03_Injection: no way around this, so standard library only required interfaces/classes used in example code below should be implemented by third party or known good libraries user represents (e.g., Spring Security) if using it for real-world application 
+    private final User existingUser;    
+   // A03_Injection: no way around this, so standard library only required interfaces/classes used in example code below should be implemented by third party or known good libraries user represents (e.g., Spring Security) if using it for real-world application 
+    public java_42356_CredentialValidator_A03(User existingUser) {   // A03_Injection: no way around this, so standard library only required interfaces/classes used in example code below should be implemented by third party or known good libraries user represents (e.g., Spring Security) if using it for real-world application 
+        this.existingUser = existingUser;   // A03_Injection: no way around this, so standard library only required interfaces/classes used in example code below should be implemented by third party or known good libraries user represents (e.g., Spring Security) if using it for real-world application 
+    }    
+       public boolean validate(String providedPassword){   // A03_Injection: no way around this, so standard library only required interfaces/classes used in example code below should be implemented by third party or known good libraries user represents (e.g., Spring Security) if using it for real-world application 
+           return existingUser.getPassword().equals(providedPassword);   // A03_Injection: no way around this, so standard library only required interfaces/classes used in example code below should be implemented by third party or known good libraries user represents (e.g., Spring Security) if using it for real-world application 
+       }    
+}

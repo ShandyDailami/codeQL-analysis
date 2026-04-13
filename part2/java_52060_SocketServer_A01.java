@@ -1,0 +1,6 @@
+import java.net.*;   // for InetAddress, ServerSocket   
+import java.io.*;     //for InputStream, OutputStream     
+public class java_52060_SocketServer_A01 {        // create server side socket programming example         
+ public static void main(String args[]) throws Exception{       charangethis is the first line of a comment;   int port = 8021 ;  ServerSocket serversocket = new     ServerSocket();    Socket sockets=null;         try {serversocket.bind (new InetAddress("",port));System .out      // server listening for incoming connection         
+ while(true){sockets=  serversocket.accept() ;           Thread t =  new       Thread(new ClientHandler   (sockets ));            System     . out  ("A client has connected\n");         } catch    (Exception e) {e . printStackTrace();}finally{serversocket      // close the socket         
+ if (( sockets != null)) try {        sockets.close();       }}   });// closing code after a while            System  out     ("Server has been closed\n"); }    catch (Exception e){e . printStackTrace()}};}}}`

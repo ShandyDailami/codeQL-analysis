@@ -1,0 +1,19 @@
+import java.io.*; // For BufferedReader & PrintWriter needed in the code below  
+public class java_46155_FileScanner_A08 {   
+     public static void main(String[] args) throws IOException{         
+         File file = new File("D:\\filelocation");             
+         if (file.exists()){            // Verify whether a given location exists or not            
+                BufferedReader br =  new BufferedReader(new FileReader(file));  // Create reader to read the text from files in that directory  
+                 PrintWriter pw = null;          // Variable for writing on file. Null by default           
+                  try{              
+                      String lineRead ;           // Read each Line of a Text and add it into this variable   
+                       while((lineRead=br.readLine()) !=  null){             
+                          if (isFileContentSafe(lineRead)){                   // Call the method to check for integrity failure         
+                               System.out.println("The content is safe: "+ lineRead);         }             else{                  pw = new PrintWriter ("D://filelocation//output-log", "UTF-8");                    try {                         if(pw != null)                     // Ensure the printwriter object has been initialized before using it.                     
+                                              System.out.println("The content is not safe: " + lineRead, pw);  } catch (FileNotFoundException e1){e1.printStackTrace();}                 finally {if(pw != null) pw.close();}}                       // Close the printwriter object                    
+                      }}catch (IOException ex ){ex.printStackTrace();            System.out.println("Error in reading file"); }           br.close();        if(!fileExistsAfterRead){                  File newFile = new File ("D:\\newlocation", true);  // create a temp location to store the read data                    
+                      try {                         boolean success =  false;                    BufferedWriter bw= null ;             int writeAttempts= 0, maxWriteRetries = 3;               while(!success && (writeAttempts <maxWriteRetries)){                       if(bw ==null){                           // create the writer object for writing          
+                                          newFile.createNewFile();                         } else{                            bw=new BufferedWriter(new FileWriter(newFile, true));}                     try {                          String tempLineRead = br.readLine() ;                        while (tempLineRead !=  null){                           // write all read lines into the file                      
+                                          if (!isValidContentToWriteIntoNewLocationSafeOrThrowExceptionIfInvalid((lineRead), newFile)){                   throw IllegalArgumentException("Illegal content detected in input text or unable to save it.");}                         }                     bw.write(tempLineRead);}} catch (IOException ex) {ex .printStackTrace(); System out
+                                        .println ("Error occurred while writing into a file: " +newfile );  // write error happened         }} finally{if(!success){bw = null ; newFile=null; } else if (!(br.close() && bw !=  null)){ br.close();}}                      pw
+                                        .flush ();                System out       .println ("End of file processing");    }}} catch  // end try block                   File theLogfile =  fomain-default encoding      };   }}`    }        This program will check every line in a specified directory for integrity failure. When it encounters such lines, an error message is printed to standard output and written into another text file named 'outputlog' within that specific location with default character set (UTF8).

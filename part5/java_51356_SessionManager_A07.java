@@ -1,0 +1,15 @@
+import java.util.*;   // Import the required classes for List interface, ArrayList etc.,
+                     // We will use a Map to associate User names with passwords in order not to expose sensitive information such hashed and encrypted data about users' accounts or login attempts if needed... I did this here just as an example: 
+public class java_51356_SessionManager_A07 {   
+     private static List<User> loggedInUsers = new ArrayList<>();   // Create a list of Users that have already authenticated. This is where you store them when they log in (a).     
+                                                               
+       public void startSession(String username, String password) throws AuthFailureException {   
+        User userToLogin=new User(username ,password);  //Instantiate a new object of type "User" with the given parameters. This would be done here for each login attempt (b).     
+                                                       
+       if(!isValidCredentials(userToLogin)) throw AuthFailureException("Invalid username or password");    else   {         loggedInUsers.add( userToLogin ); }  // If credentials are valid, add the User object to our list of 'logged in' users (c).     
+                                                               
+       public void endSession(String username) throws Exception{        if(!isLoggedIn(username)) throw new AuthFailureException("User is not logged-in");     else {          removeFromListAndThrowAwayPasswordOrCredentialsIfPossible(loggedInUsers,new UserDetails(username));} }  // If user logs out then check whether they are in our 'Log In' list (d).
+       private boolean isValidCredentials(User login) throws AuthFailureException {    if(!login.passwordMatches()) throw new Exception("Password did not match"); return true;   else     false;}          /* Check that the password matches with a user-supplied one */  // Here you would use an encrypted and hashed version of your data to validate against (e).
+       private boolean isLoggedIn(String username) throws AuthFailureException {    for(User current : loggedInUsers){     if(!current.usernameMatches(username)) continue; return true;}      throw new Exception("Username not found in list");}  /* Check that the user exists */        
+       private void removeFromListAndThrowAwayPasswordOrCredentialsIfPossible (Collection<User> users, UserDetails target) throws AuthFailureException {    // This method is going to be called when a logout occurs. It will iterate through all Users in our list and see if the user we're looking for has been found - ie., passwords or credentials have changed/been lost (f).
+        users.remove(target);  }}`     //If it finds someone whose data might be compromised, then they are removed from 'loggedInUsers'. Note that this is a simplistic example and should not replace actual user authentication code due to the complexity of handling passwords securely in production level applications (g).

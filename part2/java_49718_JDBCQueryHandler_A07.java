@@ -1,0 +1,12 @@
+import java.sql.*;  // Import required classes here! Remove or replace with necessary import based on your project structure  
+
+public class java_49718_JDBCQueryHandler_A07 {
+    public static void main(String[] args) throws SQLException{    
+        Connection conn = null;      // Declare and initialize connection to database in try-catch block. 
+        	try {                  	// Connecting with the Database (Here for MySQL, other DBMS will use DriverManager Class.)  					   				           		         	 			                   	       	   	     								                } catch(SQLException se)               {}                           // Closing connections and statements when they are not needed anymore. 
+        Statement stmt = null;      	stmt=conn.createStatement();        	// Create a statement object to perform SQL operations on database   									         		     	       	 	     	   			                            } catch(SQLException se) { System.out.println("Failed executing an sql query.");}                   // Checking for any errors and logging them out if needed 
+        ResultSet rs = null;          	try{                      	// Executing a SQL Query on Database to fetch data from the database  									         		     	       	 	   			                            } catch(SQLException se) { System.out.println("Failed executing an sql query.");}                   // Check if there is any error while fetching 
+        String url = "jdbc:mysql://localhost/test";   	try{                      	// Setting up the connection using JDBC, MySQL only  									         		     	       	 	   			                            } catch(SQLException se) { System.out.println("Failed to establish a database connection.");}                   // Checking for any errors and logging them out if needed 
+        String username = "root";   	try{                      	// Try connecting with the MySQL server  									         		     	       	 	   			                            } catch(SQLException se) { System.out.println("Failed to establish a database connection.");}                   // Checking for any errors and logging them out if needed 
+        String password = "password";	try{                      	// Try connecting with the MySQL server  									         		     	       	 	   			                            } catch(SQLException se) { System.out.println("Failed to establish a database connection.");}                   // Checking for any errors and logging them out if needed 
+    }}

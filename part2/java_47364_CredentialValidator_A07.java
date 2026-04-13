@@ -1,0 +1,8 @@
+public class java_47364_CredentialValidator_A07 implements CredentialValidation {   // Define a interface for Validation   
+     public Result validate(AuthenticationContext context) throws IOException, ServiceException{       
+         UsernamePasswordCredential credential = (UsernamePasswordCredential)context.getCredential();  // Extract username and password from the authentication request          
+         
+         String userName=credential.getIdentifier();   // Retrieve User name   	    		     	     									      	       			       	   	 								             ​               	}            }                          else {                  return Result.failure("Invalid Credentials");  }}                      if(user_name==null || password == null){            
+         System.out.println('User Name or Password is Null');    // Print Error Message     	      									  	 			       		         	        }else{     for (int i = 0;i < userName .length();  ) {                     if(user_name[i] != password [])                return Result.failure("Invalid Credentials"); }}                      
+         System.out.println('Failed to Authenticate'); // Print Error Message   	      		                                                 				                  	     	 	        }      finally{     context..dispose(); }}}          public class MainClass {   private static final int PASSWORD_MINIMUM_LENGTH = 8;
+           .........public static void main(String args[]){...............}}// The program's entry point   		      	             } //End of the Java code.     });  }}         `

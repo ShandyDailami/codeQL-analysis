@@ -1,0 +1,8 @@
+import javax.security.auth.*;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
+public class java_50955_CredentialValidator_A01 {  // replace with actual name of your validator in a real-world scenario    }
+     public boolean authenticate(String user, String password) throws LoginException{   return true;}                };      protected PasswordAuthenticationToken getPasswordAuthentication(){       throw new UnsupportedOperationException();}};        private static final Logger LOG = Logger.getLogger (CredentialValidator .class);  // replace with actual name of your validator in a real-world scenario
+     public boolean authenticate(String user, String password) throws LoginException{   return true;}                };      protected PasswordAuthenticationToken getPasswordAuthentication(){       throw new UnsupportedOperationException();}};        private static final Logger LOG = Logger.getLogger (CredentialValidator .class);  // replace with actual name of your validator in a real-world scenario
+     public boolean authenticate(String user, String password) throws LoginException{   return true;}                };      protected PasswordAuthenticationToken getPasswordAuthentication(){       throw new UnsupportedOperationException();}};        private static final Logger LOG = Logger.getLogger (CredentialValidator .class);  // replace with actual name of your validator in a real-world scenario

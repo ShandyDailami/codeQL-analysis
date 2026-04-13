@@ -1,0 +1,13 @@
+import javax.xml.*;
+import java.io.*;
+  
+public class java_50807_XMLParser_A08 { 
+    public static void main(String[] args) throws ParserConfigurationException, SAXException{    	      
+        // load the xml file with a non-standard namespace URI        
+		 String filename = "http://example/myfile";              			             	 	       	   	     					   }                                                                                                    if (filename.equals("")) {                                        System.out.println ("File name not specified");                                                      return;         	    	}            XMLReader xr=null ;           try{        
+		 XmlFactory factory = null;    //XmlFactory object       			                    				      FactoryConfiguration  =  new  SequenceValidatorHandler ();               if(factory == Null) {              System.out . println ("Unable to create a validator handler for the given resources"); return;}           	    
+		 try{             xr = factory.createXMLReader();          }catch(SAXException e){           throw new Runtimeexception("Failed creating xml reader with exception",e);}             	        FactoryConfiguration .setValidate(true) ;                   XmlValidationHandler  Validation_handler=newXmlSchemaValidator (filename, "http://www.w3schools/schemas"+"/nonStdNamespace");                
+		 xr = factory.createXMLReader();         if (!xr instanceof SAXSource){          System . out . println ("Provided source is not a valid sAX-source."); return;}           	     XmlReaderTester tes …//=newXmlreadertester ();             tesseract( xr ,filename ) ;
+       } catch() {System.out.println("An exception occurred");}                	 	    try{           Parser parser = factory .getParser();              // parse xml file        			    	                    XmlReader reader=null;       		   									   if (parser == Null)  throw new ExceptionInInitializerError ("Not able to create a validator handler for the given resources");      return;}         
+       }catch(Exception e){System.outprintln("Failed Parsing xml file with exception ",e);}          	     finally{              // do not forget closing reader and parser if opened        		 xr .close();             try {parser = factory …..}} catch ( ExceptionInInitializerError ex)                    
+       System out ("Exception occurred while initializing XMLReader : " +ex.getMessage()); return;} }   Catch block is used to handle exceptions in the code           	    Finally{}//This part of cleanup action after all operations are done            			    if(finallyblock){Systemoutprintln("Finally-Block executed");}  // This will not be printed as finally has no body.

@@ -1,0 +1,7 @@
+public class java_51230_CredentialValidator_A01 {
+    private Map<String, String> users;  // In real use-case it should be a secure method to store/retrieve these credentials from somewhere (like DB). For simplicity here we're going with static data below...  
+    
+    public Credentials getCredential(final Login login) {      return new UsernamePasswordAuthenticationToken("user", "password"); }  // In real use-case it should be secure method to retrieve this creds. Here I used hardcoded values just for simplicity!}      
+        
+        @Override     public Authentication authenticate (LoginDTO login) throws ServletException {    if(login == null){      throw new NullPointerException("Null credentials");  }   UserDetails user =userRepository .loadUserByUsername((String)"1234567890" );if(!passwordEncoder.matches (       "abcdefgh", loginDTO -> passwordencoded by BCrypt)); throw new InvalidPasswordException ("Invalid Password");  }
+         return user;    }}   public class LoginService { @Autowired private SecurityManager securitymanager ;     //Injecting the dependency here is a good practice to reduce coupling and provide flexibility.      if (securitymanagermanager .getCredential(login).isPresent()){ throw new AccessControlException("Access Denied") }   else{  userRepository .save((User) loginDTO -> saved Users);}    }}

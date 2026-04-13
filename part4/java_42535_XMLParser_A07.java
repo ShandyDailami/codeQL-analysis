@@ -1,0 +1,8 @@
+import org.xmlpull.v1.parser.*;
+import javax.xml.parsers.*;
+public class java_42535_XMLParser_A07 { 
+   public static void main(String[] args) throws ParserConfigurationException, SAXException{   	    
+        String fileName = "src/main/resources/sampleXmlFileForAuthFailureChecking";         //replace with your xml path and filename.     	   	 
+          		      	       			         									  	     	                }  private static void parseXML(String file) throws ParserConfigurationException, SAXException {    public class MyHandler extends DefaultHandler{ @Override     protected void startDocument(){}        //Implement your logic here to check for any security issues in xml.     			@Override      	public boolean characters(char[] chars, int start,int length){        		//Put the code Here          	return true;}}    public static void main (String argv []) throws Exception {  	    XMLReader myparser = null ;    	        if (!XMLReader::class.java.getClass().getName .equals("com.sun.org.apache.xerces.internal.parsers.DOMParser")){ 
+    println ("Using the SAX parser")     	         	} else {println ( "Use QNames for parsing")}        XMLReader myparser = null;    	        if (!XMLReader::class . equals("com..apache...PullParserImplFa..."))  	    return }        		
+  }}                 					    println ("starting Parser")     	         	if (myparser == null) {                     xmlFiles=fileName.split(",");             for (int i =0;i<xmlFileNames .length ; ++++){     if ((new File(Xmlfiles[I])).exists() ){                    myParser=  XMLReader    :: new  java ...} else   {"... not found"}'        	    }      		     	                }}

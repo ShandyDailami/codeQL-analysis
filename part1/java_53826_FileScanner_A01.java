@@ -1,0 +1,5 @@
+import javax.xml.*;
+import org.w3c.dom.*;   // Importing the Document interface, NameSpaceFactory class java_53826_FileScanner_A01...
+ import java.io.*;      //Import BufferedReader Class here    for file handling     and SecurityManager classes below: .addPolicy(new PolicyTemplate(".*", "read"))  , new Proxy() { public Object getTransparentProxy(Object obj) throws IllegalArgumentException, NullPointerException{ return (obj);}};
+import javax.security.*;   // Importing the AuthorizationStatus enum and AccessControlContext class here: .doAs((Runnable)(new Runnable(){public void run(){AccessController.getCurrentAccessControlContext().setReadResolver(this)} }));}  , new Proxy() { public Object getTransparentProxy(Object obj) throws IllegalArgumentException, NullPointerException{ return (obj);}};
+import javax.security.*;   // Importing the AuthorizationStatus enum and AccessController class here: .doAs((Runnable)(new Runnable(){public void run(){AccessController.getCurrentAccessControlContext().setReadResolver(this)} }));}  , new Proxy() { public Object getTransparentProxy(Object obj) throws IllegalArgumentException, NullPointerException{ return (obj);}};

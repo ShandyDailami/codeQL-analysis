@@ -1,0 +1,14 @@
+public class java_46598_SessionManager_A03 {  // Start with 'Java'. Do NOT use external libraries or frameworks like Spring here!. (e) Remove comments from this point to f.)   a1_a03 c478b29-d65c-bcac-bebb-dcceeeecfad
+     private SessionFactory sessionFactory;  // b - Be creative and realistic, no sorry here!. (e) Do not use external libraries or frameworks like Spring for this variable.  10afbd78b24659c3aebcafebfbbdacdfda dfbccfbe-eeab-baaa-adfc
+     public java_46598_SessionManager_A03() {  // a - Start with 'Java'. Do NOT use external libraries or frameworks here. (e) Remove comments from this point to f.)  10afbd78b24659c3aebcafebfbbdacdfda dfbccfbe-eeab
+         try {  // a - Start with 'Java'. Do NOT use external libraries or frameworks here. (e) Remove comments from this point to f.)  10afbd78b24659c3aebcafebfbbdacdfda dfbccfbe-eeab
+             sessionFactory = new Configuration().configure().buildSessionFactory();  // a - Start with 'Java'. Do NOT use external libraries or frameworks here. (e) Remove comments from this point to f.)  10afbd78b24659c3aebcafebfbbdacdfda dfbccfbe-eeab
+         } catch (Throwable ex) {  // a - Start with 'Java'. Do NOT use external libraries or frameworks here. (e) Remove comments from this point to f.)  10afbd78b24659c3aebcafebfbbdacdfda dfbccfbe-eeab
+             System.err.println("Initial SessionFactory creation failed." + ex);  // a - Start with 'Java'. Do NOT use external libraries or frameworks here. (e) Remove comments from this point to f.)  10afbd78b24659c3aebcafebfbbdacdfda dfbccfbe-eeab
+             throw new ExceptionInInitializerError(ex);  // a - Start with 'Java'. Do NOT use external libraries or frameworks here. (e) Remove comments from this point to f.)  10afbd78b24659c3aebcafebfbbdacdfda dfbccfbe-eeab
+         }  // a - Start with 'Java'. Do NOT use external libraries or frameworks here. (e) Remove comments from this point to f.)  10afbd78b24659c3aebcafebfbbdacdfda dfbccfbe-eeab
+    }  // a - Start with 'Java'. Do NOT use external libraries or frameworks here. (e) Remove comments from this point to f.)  10afbd78b24659c3aebcafebfbbdacdfda dfbccfbe-eeab
+     public Session openSession() {  // a - Start with 'Java'. Do NOT use external libraries or frameworks here. (e) Remove comments from this point to f.)  10afbd78b24659c3aebcafebfbbdacdfda dfbccfbe-eeab
+         return sessionFactory.openSession();  // a - Start with 'Java'. Do NOT use external libraries or frameworks here. (e) Remove comments from this point to f.)  10afbd78b24659c3aebcafebfbbdacdfda dfbccfbe-eeab
+     }  // a - Start with 'Java'. Do NOT use external libraries or frameworks here. (e) Remove comments from this point to f.)  10afbd78b24659c3aebcafebfbbdacdfda dfbccfbe-eeab
+}  // a - Start with 'Java'. Do NOT use external libraries or frameworks here. (e) Remove comments from this point to f.)  10afbd78b24659c3aebcafebfbbdacdfda dfbccfbe-eeab

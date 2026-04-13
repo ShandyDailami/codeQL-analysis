@@ -1,0 +1,21 @@
+import java.sql.*; // Import the necessary classes from 'java' package, e.g., Connection (for database connection), Statement etc...  
+// and ResultSet to process data returned by a query for example - SELECT ... FROM users WHERE username = ? AND password =  hashPassword(?) 
+class java_46164_JDBCQueryHandler_A07 {    
+    static final String URL="jdbc:mysql://localhost/test"; // replace with your database url (replace 'your_user' , ''password'' and '/databaseName')   ;;, User should be replaced by the right MySQL username. Replace password as per mysql setup .  The rest can remain same
+    static final String USER="root", PASSWORD = "YourPassword"; // replace with your actual user name & Password from MySql and 'your_user' , ''password'' should be replaced by the right MySQL username. Replace password as per mysql setup .  The rest can remain same
+    public static void main(String[] args) {    
+        try{            
+            Connection conn = DriverManager.getConnection(URL, USER, PASSWORD); // Establish a connection to database using the provided username and Password   ;; User should be replaced by actual MySQL user name & password . Replace with 'YourPassword'  The rest can remain same (Replace both places as per mysql setup)
+            System.out.println("Connected Successfully!"); // If connected successfully, print this message - root Access granted to the Java application on Mysql server from localhost   ;; User should be replaced by actual MySQL user name & password . Replace with 'YourPassword' The rest can remain same 
+            String selectQuery = "SELECT username FROM users WHERE id = 1 AND pin=2"; // replace this query and values as per requirement. Make sure to use correct column names, table schema etc...   ;; User should be replaced by actual MySQL user name & password . Replace with 'YourPassword' The rest can remain same
+            Statement stmt = conn.createStatement(); 
+             ResultSet rs =stmt.executeQuery(selectQuery); // Execute the SELECT query and get back a result set   ;; User should be replaced by actual MySQL user name & password . Replace with 'YourPassword' The rest can remain same, replace column names as per requirements etc...   
+            while (rs.next()){  // Iterate over each row in ResultSet object to print the value of username field for example   ;; User should be replaced by actual MySQL user name & password . Replace with 'YourPassword' The rest can remain same, replace column names as per requirements etc...
+                String username = rs.getString("username");  // Accessing data using getString method and passing the appropriate ResultSet field in string format   ;; User should be replaced by actual MySQL user name & password . Replace with 'YourPassword' The rest can remain same, replace column names as per requirements etc...
+                System.out.println("Username: " + username); // Printing out each row of data from ResultSet object  , for example   ;; User should be replaced by actual MySQL user name & password . Replace with 'YourPassword' The rest can remain same, replace column names as per requirements etc...
+            }            
+        }catch(SQLException ex){ // Catch any SQLExceptions that may occur during the connection or execution of a query.   ;; User should be replaced by actual MySQL user name & password . Replace with 'YourPassword' The rest can remain same 
+           System.out.println("Error in connecting to database");   
+        }           
+     } // End main() method and code is ended here (''') as per instructions   ;; User should be replaced by actual MySQL user name & password . Replace with 'YourPassword' The rest can remain same  on the top of file for comments. Also, remember to handle SQLException properly in production level applications
+ } // End Main class and code is ended here (''') as per instructions   ;; User should be replaced by actual MySQL user name & password . Replace with 'YourPassword' The rest can remain same  on the top of file for comments. Also, remember to handle SQLException properly in production level applications

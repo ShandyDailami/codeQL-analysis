@@ -1,0 +1,10 @@
+import java.io.*;
+import java.net.*;
+
+public class java_43144_SocketServer_A08 {  
+    public static void main(String[] args) throws Exception{    	        		     			       									                 	 	     	    }       // end of the method             private Socket socket;  final String CLIENT_IP = "192.0.38.xxx";                   DataInputStream dis ;
+   @Override                                                                              public void run() {          try{    	        		     			       									                 	 	     	    }catch (Exception e){    System..println("Error: ",e);}}  private ServerSocket server; // end of the method                     int port = 9021;}                          
+   VanillaServer(int p) throws SocketException {port =p ;     		        socket=new          Socket();         }public static void main (String... args){ new                                  Runnable{@Override     public ​void run(){ try             while((dis                  = `NewBufferedInputStream'
+    .../server.socket) !           null ) {                // read a packet, if no data available break;}}catch(IOException e)( System..println ("Error : ",e));}}}try{new VanillaServer (9021);} catch …... Exception){System .out println(" Error:",e ); }
+   ..../server.socket) != null ) {                    // read a packet, if no data available break;}}catch(IOException e)( System..println ("Error : ",    ... /exception),});}}}// end of the method private void sendMessage (String msg){ try             ((PrintWriter out = new Print            Writer((socket.getOutputStream())))) {
+   socket .close(); } catch …... Exception{System,out println(" Error:",e ); }} //end of                  function}}}, e);}}}catch(IOException              .../exception),});}// end                if condition check}}{}}, EOF){}}) while (true)};     try { server = new ServerSocket();   } catch …... Exception{ System..println ("Error : ",E .. / exception)); }}

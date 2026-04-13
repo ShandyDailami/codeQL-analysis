@@ -1,0 +1,10 @@
+import java.security.*;  // Import cryptographic classes needed (Hash, MessageDigest)   
+import javax.crypto.*;  // For symmetric encryption/decryption algorithms only    
+//Import the Base64 class java_49012_CredentialValidator_A08 converts byte to base64 string & vice versa      
+ import sun.misc.BASE64Decoder;  
+      public String generateHashedSalt() {    return new String(Base64.getEncoder().encode(SecureRandom.getInstance("SHA1PRNG").generateKey())); }  // Instantiate a SHA-based random number generator    
+       private MessageDigest md;   void setUpMessageDigest(){md = MessageDigest.getInstance("MD5");}    public String computeHash (String input) {setUpMessageDigest(); return new BigInteger(1, md.digest(input.getBytes())).toString(16); } 
+       private Cipher cipher;   void setUpCipher(){try{cipher = Cipher.getInstance("AES");}catch (Exception e){e.printStackTrace();}}    public String encryptDataWithKeyBaseOnUserInput() {setUpCipher(); return Base64.getEncoder().encodeToString( cipher.doFinal((generateHashedSalt()).getBytes())); } 
+       private Key generateKeysBasedHash(){try{return new SecretKeySpec(md.digest("MySecretPassword".getBytes()), "AES");}catch (Exception e){e.printStackTrace();}}   public boolean validateCredentials() {cipher.init(Cipher.DECRYPT_MODE, generateKeysBasedHash()); String decryptedData = new String( cipher.doFinal((generateHashedSalt()).getBytes())); return 
+       encryptedData .equals (decryptedData); }    public static void main(String args[]) { CredentialValidator validator=newCredentials(); System.out.println("User is authenticated: " +validator.validateCredentials());}     private newHashAndSaltGenerator() {}
+       //constructor not shown, but created when class needs to be instantiated elsewhere in the code  }    public static void main(String[] args) {   CredentialValidator validator=new HashIntegrityFailure(); System.out.println("User is authenticated: " +validator.validateCredentials());}

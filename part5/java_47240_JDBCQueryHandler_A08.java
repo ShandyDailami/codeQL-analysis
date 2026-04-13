@@ -1,0 +1,13 @@
+import java.sql.*;   // Import required Java libraries, including Statement & ResultSet 
+
+public class java_47240_JDBCQueryHandler_A08 {    // Define a new 'JdbcExample' object (this is your main program) for this task    
+       public static void jdbcOperation(String url_str, String userNameStr , String passwordStr){   // Function to perform database operation. This function will take URL connection details and credentials as arguments 
+             Connection conn = null;    // Declare a 'Connection' object (to connect our program with the Database)       
+         try {    
+                 System.out.println("Connecting To DB......");   // Start connecting to database, Print statement will be executed at start of connection and display on console 
+                  conn = DriverManager.getConnection(url_str , userNameStr , passwordStr);    // Get the Connection object (connect with Database) from driver manager      
+                 System.out.println("Connected......");   /* Connecting to database, Print statement will be executed at start of connection and display on console */ 
+             } catch(SQLException se) {      // If any 'SQL Exception' occurs while connecting print error message        Database Connection has Failed .... Please Check Your URL & Credentials.         return;     }, Any other Error occur then it prints the whole exception stack trace    try..catch blocks are used to handle this      
+                 System.out.println("Could not connect with " + url_str  +" as :  ERROR SQLSTATE:"+se);   /* If connection fails print error message */      return;     }, se) { // Close Connection, if exception occurs it will be handled in the catch block try...catch blocks are used to handle this
+                 conn.close();    // close database connections        System.out.println("Closed");  Print statement is printed at end of program and displayed on console      return;   }       }, Exception occur then print its stack trace, if no exception occurred in the block catch{} will be executed          try..catch blocks are used to handle exceptions
+                 conn.close();    // close database connections        System.out.println("Closed");  Print statement is printed at end of program and displayed on console      return;   });     } /* End main method */ }; JDBCExample obj = new JDBCQueryHandler ();obj .jdbcOperation ("dbURL", "username" , password );

@@ -1,0 +1,6 @@
+import java.sql.*;   // For handling SQL Exceptions, Connection and Statement objects are included here...   
+public class java_47637_SessionManager_A03 {    
+// Establish a connection with the database (Replace 'database', user & password as needed)     
+static Connection con = null;       String url="jdbc:mysql://localhost/mydb";  //Database URL   ...       
+try{         Con=DriverManager.getConnection(url,"user","password");     }catch... {e.printStackTrace();}    for example, if the DB is MySQL and we have to use 'com.mysql.*' package instead of default mysql packages like in Oracle or H2 then replace Driver Manager with its respective driver (in above code) 
+public static void main(String[] args){      //Creating a new session...        Session s = con.createSession();     ...   try {    for example, if you want to insert data into database:       PreparedStatement pst=con......         } catch block is needed here which may be very large code length

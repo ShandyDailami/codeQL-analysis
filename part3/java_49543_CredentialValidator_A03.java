@@ -1,0 +1,3 @@
+public interface CredentialValidator {  //f//e: Start of code snippet; remove comment, change e to f if needed in future responses
+    boolean validate(String username, String password);   //a and b - Your creativity goes a long way here! Add more functions as per your requirements. Make sure the program is syntactically correct Java Code by following best practices for code formatting according to style guide (Google's JAVA Style Guide).
+}  //e: End of comment, change e back if needed in future responses; remove this line also once you are done with comments and making your solution clean. If not then add it again when starting a new response session! Do note that the code should be syntactically correct Java Code according to Google's JAVA Style Guide

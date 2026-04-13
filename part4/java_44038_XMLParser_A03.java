@@ -1,0 +1,13 @@
+import org.xml.sax.*;
+import javax.xml.parsers.*;
+public class java_44038_XMLParser_A03 {  
+    public static void main(String[] args) throws ParserConfigurationException, SAXException{    
+        String xmlFile = "src/main/resources/samplefile";  // provide your file here as per requirement        
+		SAXParserFactory saxParserFactory= SAXParserFactory.newInstance();     
+	    SAXParser saxParser  =saxParserFactory .newSAXParser( new InputSource( );      		    			         									   }            `enter code here``public void startElement (String uri, String localName , 	String qName) throws SAXException { System.out..println ("Start Element : " +qName);} public          		void endElement    (String uri         ,     
+      		    			         									   String localName        ,                        	 	       	     							                     )throwsSAXExceptions{System . out ..print l(nement "); }`enter code here``public void characters 	(Char[] ch, int start,	int length) throws SAXXMLParserException { System.out..println("Character Data: " + new String (ch ,start     	    	 	     		        
+      					          			                            				    ));} public         	void ignorableWhitespace(char [] ch   [],int start, int lenthrowsSAXExceptions{System . out ..print lnig whitespaces "); }`enter code here``public void warning (saixmlparser. SAWarnings awarn) { System..println("Warning: " + awarning));} 
+    public static class SimpleXMLHandler implements SAXHandler  		{};    		     			         									   @Override        	public boolean handleStartElement(String uri, String localName ,          	   	 	String qName       	      )throwsSAXXMLParserException { return true; }      	@SuppressWarnings("rawtypes")public   	        List listNodes ; 
+	    	return null;}`enter code here``		   public boolean handleEndElement(String uri, String localname ,        	   	 	String qName) throws SAXException{ System.out..println (" End Element : " +qName); return true; }        @SuppressWarnings("rawtypes")public List getNodeValue(){ 
+	      	return null;} public boolean handleCharacters(char[] ch, int start,int length){   	 	       	   		    	      System.out..println ("Character Data: " + new String (ch ,start     			         )); return true; }        @SuppressWarnings("rawtypes")public List getNodeValue(){ 
+	      	return null;} public boolean warning(SAXParseException e){   	 	       	   		    	      System.out..println ("Warning: " +e );return false ;}`enter code here``}; `end of program'         	}                }   // end class definition           });            }}        	});

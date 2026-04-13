@@ -1,0 +1,7 @@
+import java.sql.*;  // Import the necessary class java_52125_JDBCQueryHandler_A08 database operations such as JDBC and ResultSet  
+    
+public class VanillaJdbcQueryHandler {    public static void main(String[] args) throws SQLException{        String url = "jdbc:mysql://localhost/test";         String username="root";          //Change to your MySQL root password.       String pwd  = "";      Connection connection;   ResultSet rs,rs2 ;     PreparedStatement ps1 ,ps2 ,"SELECT * FROM Users WHERE UserName=?" and "select*from users where userid = ? ";    try {            
+connection =  DriverManager.getConnection(url,username,"");         //Step-3: Establish a connection to the MySQL database      if (conn==null){System.out.println("Failed!"); System.exit(0);}           System.out.println("Connected Successfully..." + conn );  
+ps1 =connection .prepareStatement ("SELECT * FROM Users WHERE UserName=?"  , Statement.RETURN_GENERATED_KEYS);     ps1.setString (1, "testUser");    //Step-4: Execute the SELECT statement       rs =  ps1.executeQuery();      while(rs .next()){           System.out.println("Name :" + rs.getString ("username"));}         
+ps2 = connection.prepareStatement  (select * from users where userid=? ) ;     //Step-5: Execute the INSERT statement   ps2.setInt(1,4);    int affectedRows  =      ps2 .executeUpdate();         System.out.println("Affected rows : " + affectedRows ); } catch (Exception e) {            
+e.printStackTrace() ;  // Step-6: Catch any exceptions that occur during execution   }}`

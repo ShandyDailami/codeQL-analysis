@@ -1,0 +1,16 @@
+import java.sql.*;
+  import javax.sql.DataSource;   //Standard JDBC data source interface and implementation in Java SE/SUN WRL libraries (including Oracle) as well... the one we use here is com.mysql.jdbc for MySQL database, you should replace it with your own Data Source class java_47280_JDBCQueryHandler_A01 API
+  import java.security.*;    //Java's standard security management package used to get information about current user and access control setup of application/classloader etc..
+  
+public class JDBCQueryHandler {    
+       private static final Logger log = ...;      /* use a logging library for better debugging */ 
+       
+    public String retrieveUsername(Connection conn) throws SQLException{                  //1. Connect to database and get Connection object, then call method below which retrieves username from connection...  
+                                                                                        return performQuery("SELECT USERNAME FROM SYS_USER WHERE CONNECTION = ?", new Object[]{conn});  /*2. Retrieve user information related with the provided dbConnection */          }    //3 and pass conn as a parameter in SQL query above, then handle result if any...
+    
+private String performQuery(String sqlStatement, Object[] parameters) throws Exception {   //4 Perform database operation using JDBC API – use this method for all queries. Handle exceptions appropriately (wrapping them inside specific methods to call within try-catch block). This is also the place where security measures like access control should be put into action - in our case, we check if connection user has permission on query execution...
+         logQuery(sqlStatement);  //5 Log database operation. Show what happens before and after a SQL statement gets run against DB (Use logging library to do this).       }  
+     private void setSecurityManager(){    /*8 Set Security Manager which uses current thread's context, making sure all the JDBC calls are also protected by it */  //9 Rest of your implementation goes here. For instance: Permission p = new DummyPermission("query"); ssm.newPolicy(p).addMember(u); Connection conn=ds.getConnection (...), then call grantQuery on permission object and connect ...
+       }   /*10 Make sure to use the right way of passing these as parameters */    //For example: setSecurityManager();  ds = new oracle.jdbc.pool .OracleDataSource; DataSource ds=new oracle.jdbc.pool.OracleDataSource ();ds.setDriverType("thin"); ...
+     private static final String QUERY_LOGGING_ENABLED  = "QUERY_LOGGING_ENABLED";  //12 Enable/Disable logging of SQL queries, it's highly recommended to have this feature enabled...   }      /* (continued in previous code) */    public void logQuery(String query){ if ("TRUE".equals(System.getProperty(QUERY_LOGGING_ENABLED))) { ...  //13 Log all the database operations using logging library here - for example: logger.info("Executing SQL statement {}",query); }
+}   /* End of code */

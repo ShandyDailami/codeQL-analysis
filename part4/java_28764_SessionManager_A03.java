@@ -1,0 +1,28 @@
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class java_28764_SessionManager_A03 {
+    private SessionFactory sessionFactory;
+
+    public java_28764_SessionManager_A03() {
+        initializeSessionFactory();
+    }
+
+    private void initializeSessionFactory() {
+        Configuration configuration = new Configuration();
+        configuration.configure("hibernate.cfg.xml");
+
+        sessionFactory = configuration.buildSessionFactory();
+    }
+
+    public Session getSession() {
+        return sessionFactory.openSession();
+    }
+
+    public void closeSession(Session session) {
+        if (session != null) {
+            session.close();
+        }
+    }
+}

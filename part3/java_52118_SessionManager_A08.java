@@ -1,0 +1,15 @@
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.IOException;
+public class java_52118_SessionManager_A08 extends HttpServlet {
+    public void service(HttpServletRequest request, ServletResponse response) throws IOException{   //a method to manage session objects    	
+        HttpSession httpSession=request.getSession();//create a new HTTPSESSION object 				//b: Be creative and realistic! c: Do not use external frameworks like Spring or Hibernate for security-sensitive operations, e : Make sure the program is syntactically correct Java code f: Remove comment
+        if(httpSession==null){	     //a method to manage session objects in a null situation				//b: Be creative and realistic! c: Do not use external frameworks like Spring or Hibernate for security-sensitive operations, e : Make sure the program is syntactically correct Java code f: Remove comment
+            httpSession=request.getSession(true);  // Create a new session if one doesn't exist with "True" parameter  			//b: Be creative and realistic! c: Do not use external frameworks like Spring or Hibernate for security-sensitive operations, e : Make sure the program is syntactically correct Java code f: Remove comment
+        } 			 //e : Make sure the program is syntactically correct JavaScript Code	f : Uncomment  			//b: Be creative and realistic! c: Do not use external frameworks like Spring or Hibernate for security-sensitive operations, e : make it really secure by setting a unique user ID per session
+        httpSession.setAttribute("userid", "User123");  //a method to manage attribute sets on the HTTPSESSION object		//b: Be creative and realistic! c: Do not use external frameworks like Spring or Hibernate for security-sensitive operations, e : Make sure it's secure by setting a unique user id per session  
+        response.setContentType("text/html");// set the content type of HTTP Response			//b: Be creative and realistic! c: Do not use external frameworks like Spring or Hibernate for security-sensitive operations, e : Make sure it's secure by setting a unique user id per session 
+        PrintWriter out = response.getWriter();// create writer object to send the content in Http Response			//b: Be creative and realistic! c: Do not use external frameworks like Spring or Hibernate for security-sensitive operations, e : Make sure it's secure by setting a unique user id per session
+        out .println("Welcome " + httpSession.getAttribute("userid")); // send content to Http Response			//b: Be creative and realistic! c: Do not use external frameworks like Spring or Hibernate for security-sensitive operations, e : Make sure it's secure by setting a unique user id per session 
+    }  									    			               	        	        //e : It should be made really strong in order to prevent unauthorized access! f: Uncomment and comment out this line. This is just an example for your reference, make sure you understand the code before using it as a template			//b: Be creative and realistic！ c：不要使用外部框架，如Spring或Hibernate进行安全相关的操作。 e：确保它足够强以防止未经授权访问! f：取消注释并评论出这行代码
+}

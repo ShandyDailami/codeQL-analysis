@@ -1,0 +1,12 @@
+import java.security.*;
+public class java_43256_XMLParser_A07 {    
+    static KeyStore ks;   //Keystore object that stores the private key and certificate for authentication purposes      
+        
+    public void createKeyStore() throws GeneralSecurityException{     
+        try (KeyGenerator kg = KeyGenerator.getInstance("RSA", "SunJCE"))  {              
+            kg.initialize(1024);           //Initiate the random key-size for Rsa       }                   catch {}         public void authenticate() throws GeneralSecurityException{          SecureRandom sr=new SecureRandom();             String password = new BigInteger(130,sr).toString(36) ;              Key privateKey  = kg.generateKeyPair().getPrivate();                X509Certificate cert   = ... //Obtain the certificate from source;                  ks =  KeyStore.getInstance("JKS", "SunJCE");          
+ks .load(null, password.toCharArray());     try {                    CertificateFactory cf =   ks.getCertificateChain((X509Certificate)cert);                   X509Certificate c  = (X509Certificate )cf.getChain()[1];                      String alias   = ... //Assign an Alias name to the certificate;                    KeyStore ts    =KeyStore.getInstance("JKS");         
+ts .load(null, password.toCharArray()); try {                   ks=   ts    =  (KeyStore)  tspref.storePassword();           Security.addProvider(new com.sun.net.ssl.internal.ssl.SSLContextImpl_TLSv1_2_Client("SunJSSE")); } catch {}       
+public static void main(String[] args){         try {                      new Main().createKeyStore()) ;     Logger logger = ... // Obtain a suitable logging mechanism;                  for (int i = 0, n=...//Obtained from document XML file.                 XmlPullParserFactory factory=  XmlPullParserFactory .newInstance();                   @SuppressWarnings("unused") 
+PublicClass cc            xmlpp  =factory..parse( new FileInputStream("/path/to/_XML_file"));           while (xmlp...//Obtained from document XML file.                 Node node =   ... //To identify the element of interest, e=xmlnode .getFirstChild();                     if (!e....   
+        }catch {}          catch{}                   Logger logger  = null; try {                  new Main().authenticate(logger)) ;       }}  Exception...//Exception handling mechanism.                    SecurityManager sm = ... //Obtain a security manager (required for our code);              setFactory(sm) })           .setDefaultAlgorithm(ks, "SunJCE");}}

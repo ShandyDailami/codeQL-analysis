@@ -1,0 +1,16 @@
+// Required Libraries for NodeJS Socket Programming - 'https://nodejs.org/api/'
+const fs = require('fs'); // File System Access Module (Node Core Modules)
+const https = require("https");    /* SSL OBJECT FOR NETWORKING */ 
+  
+// Callback function to handle client requests and responses - '(socket, req)' parameters.
+function requestHandler(socket,req){     // Required for NodeJS Socket Programming Documentation (Socket) https://nodejs.org/api/stream.html#stream_class_stream_Socket  
+  console.log('Client connected');          /* When client connects */   
+       socket.on("data", function(message){/* On Message Data Received*/     // Required for NodeJS Socket Programming Documentation (Streams) https://nodejs.org/api/stream.html#stream_event_data  
+         console.log('Receive : ' + message); /* Log the received data */    });  socket . end();// End of Stream Event Data & Emit on disconnecting Client*/     // Required for NodeJS Socket Programming Documentation (Streams) https://nodejs.org/api/stream.html#stream_event_end  
+       console.log('Client disconnected');    /* When client disconnnect */  });                            socket .on("close", function(){/* On Close Event*/      // Required for NodeJS Socket Programming Documentation (Streams) https://nodejs.org/api/stream.html#stream_event_close  
+     console.log('Client disconnected');    /* When client disconnnect */  });                             socket .on("error", function(err){/* On Error Event*/        // Required for NodeJS Socket Programming Documentation (Streams) https://nodejs.org/api/stream.html#stream_event_error  
+       console.log('Error : ' + err);    /* Log the error */                  });                            socket . on("finish", function(){/* On Finished Event*/     // Required for NodeJS Socket Programming Documentation (Streams) https://nodejs.org/api/stream.html#stream_event_finish  
+       console.log('Client disconnected');    /* When client disconnnect */  });                               socket . end();// End of Stream Event Data & Emit on disconnecting Client*/     // Required for NodeJS Socket Programming Documentation (Streams) https://nodejs.org/api/stream.html#stream_event_end  
+});                                                       /* Handle the server side */    var options = {key: fs.readFileSync('/path-to-your SSL certificate file'),cert:fs.readFileSync('/path to your cert')};  //SSL OBJECT FOR NETWORKING - 'https://nodejs.org/api/https.html#https_server_new_ctx  
+var server = https.createServer(options,requestHandler);    /* Create a HTTPS Server */     var PORT = 8431;                                          // The port to run the HTTP on (Port 80 is just for testing) - 'http://nodejs.org/api/https.html#https_server_new  
+                                                                                     _ctx+' :port      https:///www..../ssl-certificate...     /* Port */ server . listen(PORT, function(){                 // Required For NodeJS Socket Programming Documentation (Server)  'http://nodejs ...'.listen()    });}};});}}}

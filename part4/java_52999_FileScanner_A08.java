@@ -1,0 +1,7 @@
+import java.io.*;    // Import FileVisitor interface, Paths and StandardFileAttributes class java_52999_FileScanner_A08 java.nio.file.*; // For using Path to locate a file or directory in the filesystem (requires Java 8)    
+class MyFileScanner {     
+   public static void main(String[] args){         
+       if (args.length != 1 ){              System.out.println("Usage: java FileVisitor <directory>");         return;    }           // Check command line arguments            Path dir = Paths .get(args[0]);      String initPathStr=dir.toString();        try {              
+       Files.walkFileTree(dir, new SimpleFileVisitor<Path>()  // Walk the directory tree         
+         {             @Override              public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException{                  if (file.toAbsolutePath().toString().contains("/System/")) return FileVisitResult.SKIP_SUBTREE; else System.out.println("Found a sensitive file: " + file);                    
+               }            });          }}                 catch(InvalidPathException e){              // Handle exception by printing error message             println ("invalid path"+e );         }}  }) .start();`    In this code, we are walking through each and every files in the directory. If a filename contains '/System/', then skip that file or subdirectory otherwise it prints out its name using System Out Print statement which is considered as an integrity failure operation by your requirement (A08_IntegrityFailure).

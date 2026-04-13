@@ -1,0 +1,9 @@
+import java.net.*;
+import javax.servlet.http;
+public class java_52416_SocketServer_A07 {   // create a new server using sockets in vanilla JavaScript without any external libraries or frameworks like Spring, Hibernate etc..
+    public static void main(String[] args) throws Exception{ 
+        ServerSocket welcomeSocket = null;     // initialise the socket on port number defined by "port" parameter.
+         try {   if (args.length != 1){ System.out.println("Usage: java SecureServer <Port Number>");System.exit(0);}    } catch (IOException e) {} welcomeSocket = new ServerSocket(Integer.parseInt((String) args[0])); 
+        while(true) {   // listen for clients until interruption or "close" request sent from client side...          try{         Socket connectionSock=welcomeSocket.accept();             System.out.println("Connection Established");            BufferedReader inFromClient = new BufferedReader (new InputStreamReader(connectionSock.getInputStream()));
+  // create a reader to read the client's input   String userInput;        while((userInput=inFromClient.readLine())!=null) {       if("close".equalsIgnoreCase(userInput)) break;}         connectionSock.shutdownOutput();connectionSock.close();     } catch (IOException e){ System.out.println ("Exception Occurred: " +e);}  
+    }}  // end of main function...the server waits for client connections, then if a request comes in from the connected socket it prints out what was received and closes connection but not completely removes input stream reader to prevent memory leakage on closed sockets. The program remains open waiting till interruption or "close" is sent by any part of application that uses this server

@@ -1,0 +1,10 @@
+import java.sql.*;    // Import required Java packages/classes     
+import javax.crypto.Cipher;     //Import Cryptography classes such as AES (Java) to encapsulate our data so that even if it is read, someone can't understand or change its content due the encryption method  .  
+...   
+public class java_44049_JDBCQueryHandler_A08 {     
+private static final String url = "jdbc:mysql://localhost/test"; //URL of your database. Replace '//username and password@ip_address with actual details in real world scenario      
+        private static Connection conn;     //Instance variable for connection to the DB         
+   ...    public java_44049_JDBCQueryHandler_A08() {      openConnection(); }  /* Constructor */         void closeconnection(){try{if(conn!=null){conn.close();}}} try{} catch (SQLException e) {}        static Connection getConnection () throws SQLException       //Method to obtain a connection from the pool         
+    ...   public List<Employee> loginCheck() {      String id = "A123";     /* Replace 'id' with actual ID */         Employees employee; try{conn=getConnection();        PreparedStatement pstmt =  conn.prepareStatement("SELECT * FROM `employees` WHERE (`username/password_hash(?)")}))) {pstmt .setString... } catch .... 
+    ...   public boolean encryptDecryption() throws Exception      /*Example of encryption and decription*/     Cipher cipher; try{cipher = Cipher.getInstance("AES");        //Key is generated on server side, not done here for simplicity         Key key =  new SecretKeySpec(keyValue ,0);          
+    ...   }  .... finally { closeConnection(); }} /*End of main method*/          private void openconnection()     try{conn = DriverManager.getConnection (url,"username", "password");} catch... {}        static boolean isClosed(){return conn==null||conn.isClosed()::}

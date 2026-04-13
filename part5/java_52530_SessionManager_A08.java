@@ -1,0 +1,9 @@
+class java_52530_SessionManager_A08 {     // This would be your user data, typically stored in a database row id_user : Integer; username: String...etc        
+    public int id = 0;  	//Just an example for the task of integrity failure detection AOA2-156 – User should not modify this value. It will serve as session identifier used by SessionManager to identify each user's current interaction with system/app instance in real world scenario, it is usually a unique id assigned at creation time and never changes later on
+    public String username = ""; //Just an example for the task of integrity failure detection AOA2-156 – User should not modify this value. It will serve as session identifier used by SessionManager to identify each user's current interaction with system/app instance in real world scenario, it is usually a unique id assigned at creation time and never changes later on
+}   //end of MySession class        
+    
+public interface ISession {         		// This would be your database or session data access layer – The purpose here to isolate the SessionManager from our User's persistent storage (Database, FileSystem etc) which is not shown in this example. Usually contains methods like add(), get() and delete(). AOA2-156
+    public MySession currentUser = new MySession();       //Just an Example for integrity failure detection – This user should never be able to access sensitive data/operations, but still the SessionManager will not interfere with it. It is used by our session manager only and serves as a placeholder in real world scenario
+}  		//End of ISession interface		   					    				      			       						     	 	   								        							 ​                             .         ​​                            ~!@#$%^&*()_+-=`{}[]|\;:",.<>?/1234567890
+   //End of ISession interface and MySession class   									    		                    	        			      ​         	.      . 	    .....~~!@#$%^&*()_+-=`{}[]|\;:",.<>?/1234567890

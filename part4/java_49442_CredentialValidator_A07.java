@@ -1,0 +1,10 @@
+public class java_49442_CredentialValidator_A07 {   // Class to hold the credentials. For simplicity, I'm just adding username & password here but you can expand on this as needed in a real application too.
+    private String userName;
+    private String passWord;
+    
+    public void setUser(String name){  /* Setting method for setting User Name */
+        if (name == null || "".equals(name)) {   // Checking the username is not empty or NULL, it can't be.
+            throw new IllegalArgumentException("Username may not be blank");    // If so then throws an Exception with message.. 
+        } else{this.userName = name;}     /* Else assigns them to their respective variables */  	      	       		              			                                                  				     	 	   	}            	     					                                       	public String getPassword() {return passWord;}} public void setPass(String password)	{passWord=password;}
+    }  // end of SetUser method. Here I'm just setting up a place to store the user name but in real application you might have more fields too like email, etc., and methods for getting them also based on requirement  	    	   		       	       			      					                               	}            	     				                     public String getUsername() {return this.userName;} 
+} // end of class Credentials                 */          }                                                  /* Ending main method here                                                                                    System.out.println("Welcome to secure login system!");    int attempts = 0;   while (attempts < 3)    	{try{Credentials cred = new Credentials();cred.setUser(scn.nextLine());if ("admin".equals(cred.getUsername()) && "password123456789xX!" . equals(StringEncryptor().encryptPassword("mypassword"))){System.out

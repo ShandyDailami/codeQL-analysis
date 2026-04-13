@@ -1,0 +1,15 @@
+import java.sql.*;   // Import necessary classes from package 'java.sql' and others   
+public class java_45559_JDBCQueryHandler_A08 {    
+       static final String USERNAME = "username";     
+       static final String PASSWORD="password";        
+        public Connection getConnection(String dbURL, String userName , 
+                                        String password) throws SQLException{           // Create the connection to database using 'getconnection' method.  
+                   return DriverManager.getConnection(dbURL ,userName , password);    }     
+             static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";  public class Security {          private Connection conn;         // instance variable for connection      
+        try{           this .conn= getConnection("databaseurl","username","password");}catch(Exception e){e.printStackTrace();}}     @Overridepublic void finalize() throws Throwable   {}      protected synchronized  int processIntegrityFailure(){         PreparedStatement pstmt;           
+        try{             String query = "select * from your_table where column=?" ;              this .conn =  getConnection("databaseurl" , USERNAME, PASSWORD);                // Create a statement object.         
+                        pstmt  = conn.prepareCall(query) ;                 setIntegrityFailure();            try {  }catch (Exception e){e.printStackTrace()}         return i;}      protected void finalize () throws Throwable{}   public static synchronized int processAndHandleError(){    String query = "insert into error_table values(?)";              
+        PreparedStatement pstmt; try {                  this .conn =  getConnection("databaseurl", USERNAME, PASSWORD);              // Create a statement object.         
+                        pstmt  = conn.prepareCall (query) ;             setIntegrityFailure();                    try{   }catch(Exception e){e.printStackTrace()}            return i;}      public static synchronized int handle(){           String query = "select * from your_table where condition=?";              
+        PreparedStatement pstmt  = null ;                this .conn =  getConnection("databaseurl", USERNAME, PASSWORD);              // Create a statement object.          try{   }catch (Exception e){e.printStackTrace()}         return i;}            public static synchronized int handle(int id) {           String query = "select * from your_table where column=?";              
+        PreparedStatement pstmt  = null ;                this .conn =  getConnection("databaseurl", USERNAME, PASSWORD);              // Create a statement object.          try{   }catch (Exception e){e.printStackTrace()}         return i;}     }}`  Note: Replace "your_table" , 'column' and database details as per requirement in the code

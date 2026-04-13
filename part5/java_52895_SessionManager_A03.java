@@ -1,0 +1,22 @@
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import javax.transaction.Transactional;
+@Repository
+public class java_52895_SessionManager_A03 {  //Assuming your service layer is using this DAO to interact with the database, we use repository for convenience (no need of `session`) and autowired session factory into it via constructor based DI in Spring  
+    private SessionFactory sessionFactory;//Hibernate's entity manager/Session Factory 
+     @Autowired //Dependency Injection. The UserDao will be injected with the configured 'UserRepository', which is a HQL or Criteria API implementation (no need of `session`)  
+    public java_52895_SessionManager_A03(SessionFactory sessionFactory) {//Constructor based DI in Spring, you should provide Session Factory using Constructor injection  on creation. No more no-args constructor for convenience and error checking will be necessary during the object's lifetime to use it     this way we have encapsulated our dependency which makes sure all interactions with DB are done within Hibernate’s context  
+        if(sessionFactory == null){    //Assuming session is already managed by Spring (no need of `this.` because Session has been autowired)  and stored in this variable using the constructor based DI injection pattern for convenience    
+            throw new IllegalArgumentException("Session Factory must not be null");//Exception thrown if setting it fails during dependency construction, no sense to run code here   //Also Spring managed Beans are Singletons. Only one instance of any bean can exist at a given time in the application context      }  else this.sessionFactory = sessionFactory;   
+        }    
+       @Transactional//Saves and flushes changes made by an EntityManager to data store (no need for `Session`)   //@transaction is included if you're using Spring Data JPA or Hibernate Session, as it will manage transactions. You only use the session in your services/repository when needed
+    public User findUserByName(String name){ 
+        Session currentSession = this.sessionFactory.getCurrentSession();//Getting Current hibernatesession     if empty then throw exception otherwise get that object   //No need to open a new transaction, as the caller will handle it because we're using @Transactional annotation here and Spring handles them internally
+        User user = currentSession.bySimpleNaturalId(User.class).load(name);//By simple natural id method is used on entity class (no need for `session`)  //Load the object by unique key   if it's not there in DB then hibernate throws an exception
+        return user;      }     @Transactional    public void updateUserName(String name, String newname){//Using Spring’s transaction management. No no-args constructor available for convenience and error checking will be necessary during the object lifecycle to use it   //No need of Session in this case
+        User user = findUserByName(name);  if (user != null) {     try{    currentSession.evict(user );currentSession .update(user,new name());//Update operation and flush changes made by EntityManager to data store   //Just update the necessary fields without worrying about SQL Injection
+        }catch(Exception ex){  throw new RuntimeException("Error updating user.",ex);     }}      @Transactional    public void deleteUserByName(String name) {//Same as above with some modifications (no need for Session, no `this.` is used in method parameters because we're using constructor based DI and it will be managed by Spring automatically
+        User user = findUserByName(name); if (user != null){     try{    currentSession .delete(user );currentSession .flush();//Flush the changes to data store   //Delete operation with no worry about SQL Injection.  No need of Session in this case, because we're using constructor based DI and it will be managed by Spring automatically
+        }catch (Exception ex) {     throw new RuntimeException("Error deleting user.",ex);    }}//End transactional methods for update/delete operations without worrying about SQL injection attacks  //No need of Session in this case, because we're using constructor based DI and it will be managed by Spring automatically.

@@ -1,0 +1,17 @@
+import java.io.*; // Import necessary classes from package "file" in standard library jar files for File and Files that you can use to create a new directory, write text into your created folder using BufferedWriter/FileOutputStream etc., also imports InputStreamReader class java_52782_FileScanner_A07 is used while reading the file content 
+import java.nio.*; // Import necessary classes from package "file" in standard library jar files for File and Files that you can use to create a new directory, write text into your created folder using BufferedWriter/FileOutputStream etc., also imports InputStreamReader class which is used while reading the file content 
+import java.security.*; // Import necessary classes from package "java security" in standard library jar files for MessageDigest and SecureRandom that you can use to hash or secure your data, generate random strings using Random  
+class FileScanner {   
+public static void main(String[] args) throws IOException 
+{       
+File rootDirectory = new File("/path/to"); //Replace this with the path of directory which we want scan    
+scanDirRecursively("",rootDirectory);     
+}         public synchronized boolean isValidPassword(final String password){  
+MessageDigest md;    MessageDigest SHA256hash ;  try {       if (password == null) return false;} catch (NoSuchAlgorithmException e1 ){e1.printStackTrace(); }      // Create the hash of message digest        m=md( password + "salt");SHA256_HASH = Hashing SHA- 
+//hash .updateBytes("password".getBytes()).digestAsBytes());    return new String (m);     try {         md =  MessageDigest.getInstance ("SHA1" );} catch(NoSuchAlgorithmException e){e.printStackTrace(); }      // Create the hash of message digest        m=md .update 
+//bytes(" password + "salt".getBytes()).digestAsBytes());    return new String (m);     try {         md =  MessageDigest.getInstance ("SHA-256" );} catch(NoSuchAlgorithmException e){e.printStackTrace(); }      // Create the hash of message digest        m=md .update 
+//bytes(" password + "salt".getBytes()).digestAsBytes());    return new String (m);     try {         md =  MessageDigest.getInstance ("MD5" );} catch(NoSuchAlgorithmException e){e.printStackTrace(); }      // Create the hash of message digest        m=md .update 
+//bytes(" password + "salt".getBytes()).digestAsBytes());    return new String (m);     try {         md =  MessageDigest.getInstance ("SHA-3" );} catch(NoSuchAlgorithmException e){e.printStackTrace(); }      // Create the hash of message digest        m=md .update 
+//bytes(" password + "salt".getBytes()).digestAsBytes());    return new String (m);   System.outprintln ("Password is :" +  md );       SecurityManger sm =new SecureRandom(); Random ra = 
+ // Generate random salt for security sensitive operations      byte[]盐值=sm .generateSeed(8) ;  }     catch (Exception e){e.printStackTrace()}   try{    HashingWritableTable table=  new com..........（请替换为你实际使用的库类名和方法名的代码行，此处省略不讲）     
+//table .put(“user”, user);     }catch (Exception e){e.printStackTrace()}   //end of code block for better readability and maintainable project – Sorry about the confusion caused by this message! We're happy to assist you with any queries related to programming or computer science in a creative manner due acknowledgement, Thanks:

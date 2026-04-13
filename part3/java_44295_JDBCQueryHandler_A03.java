@@ -1,0 +1,7 @@
+import java.sql.*;   // Import necessary Java libraries for database interaction, e.g., DriverManager etc..   
+public class java_44295_JDBCQueryHandler_A03 {    
+// Define the query string with a placeholder (?), which will be replaced by values later on...     
+private static final String SQL_QUERY =  "SELECT * FROM users WHERE username = ? AND password = ?";   // The prepared statement.       
+                                                             public Connection getConnection() throws SQLException {         return DriverManager.getConnection("jdbc:mysql://localhost/db",username,password); }      private void close(ResultSet rs, Statement stmt)          try{ if (rs != null){    	  	 	   		   
+                             // Close ResultSets and PreparedStatements... 										} catch() {}             public List<User> getUsersFromDb(){         ArrayList < User > userArrayList = new           ArrayList<>();            Statement stmt  = connection.createStatement ();          try {             	ResultSet rs=stmt .executeQuery(SQL_QUERY) ;                while ((rs).next()){                   String username, password;                    				
+                             // Prepare the values for each user... 					    			} catch(){ }             return users;} };         public static void main (String args[] ){                 QueryHandler queryH = newQueryHander();               User []users=queryhandler.getUsersFromDb() ;				for(User u:user){					System .outPrintln("Username : " +u.username+" Password:"

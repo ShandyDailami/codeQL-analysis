@@ -1,0 +1,9 @@
+import java.io.*; //for IOExceptions, FileNotFoundException... etc..;      
+public class java_52089_FileScanner_A03 {         
+    public static void main(String[] args) throws IOException{             
+        scanDir(".", ".txt");   }     private static boolean isTextSensitiveOperationSafeToRunInThisEnvironment() // for context-sensitive operation, place it here.          
+      , FileFilter;            class TxtFileFinder extends Filter {             public java_52089_FileScanner_A03(String[] ext) {super();this.ext=new String[ext.length];for (int i = 0 ;i < this .ext. length++)    //initialize extension filter array        
+      + ((String)  super.accept((java.io.File)) ? true : false;}}            TxtFileFinder finder = new            
+      TxtFileFinder(new String[]{".txt"});                                                       } public static void scanDir              (                // recursive function to explore directories...    private                 
+       File[] foundFiles=null,filesNullChecked                     ) {     if                    (! directory . exists())  return;            try                        {             files =                      Directory.list               (directory)                         ;foundFileLines(file); } catch                            IOException e                             // IOExceptions...    finally                             
+      {}        }} private static void foundFilesToConsole(){                          for              (int i = 0,len=                Found Files: ${found             files . length};i            < len; ++) {                     println               ((File file).getPath());                 }}}}  //end of main function.

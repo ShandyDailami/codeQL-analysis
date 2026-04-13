@@ -1,0 +1,12 @@
+import java.sql.*;   // Including this library would allow us use the JDBC methods   
+  public class java_49802_JDBCQueryHandler_A08 {     //Start of main method     
+        static Connection con = null;//Declare a connection object      
+          String server_name="localhost";          
+                int portNumber = 1433;        
+                  String databaseName   = "YourDatabaseNameHere ";   char  
+                   set[] driver_properties  = {'value','here'};    //For example      Set properties for JDBC Driver       Database name is YourDataBaseNaMeHear and the user ID, password are 'user1', ''passw0rd'.  These can be changed according to your needs.    
+                    public java_49802_JDBCQueryHandler_A08() {          try{           con =DriverManager .getConnection(server_name + "\\"+ portNumber , databaseName);   }catch (SQLException ex){         System.out.println("Error in connecting Database: \n\ex");      }} // End of constructor with exception handling    
+                          public void closeconnection() {          try{           con .close();} catch( SQLException  ex ){}                                                                                    println ("Closing connection "+con);    }        static   boolean executeUpdate (String query)         {                if (!query.equals(""))             //Checking for null or blank string before executing the update    
+                                                     try{ con .createStatement().execute(query ); return true;} catch  (SQLException ex){ System.out.println ("Error in updating data: \n\ex");   }          else {return false;}}    public static void main (String args [])      // Main method starts    
+                                                                                    try{ Example db = new example();              if(db .executeUpdate("YourSQLQueryHere")) println("\Successfully updated Database!"); 
+                                                            else                      System.out.println ("Failed to update in the database");       }catch (Exception ex){prints "Error Occurred: \n\ex" ;}} // End of Main method with exception handling     private void closeconnection() {          try{           con .close();} catch( SQLException  ex ){}                                                  println ("Closing connection ");    }}

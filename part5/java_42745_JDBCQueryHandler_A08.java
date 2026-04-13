@@ -1,0 +1,8 @@
+import java.sql.*;    // For JDBC classes    
+public class java_42745_JDBCQueryHandler_A08 {       
+       public static void main(String[] args)      {          try         {              String url = "jdbc:mysql://localhost/test";              
+            String username="root";                String password="password";                  Connection conn =  DriverManager.getConnection (url,username ,  password);                      Statement stmt   =conn .createStatement();                       // select all users query           ResultSet rs =stmt.executeQuery("select * from Employee");                        while(rs.next()){                            System.out.println("\n" + "ID : " + rs.getString('id') );                  }                          conn.close();          }}            catch (SQLException e) {e.printStackTrace();}      
+     //Rest of the code remains as it is...  
+    /* The remaining part after that will depend on how you want your application to behave */ 
+      public static boolean insertIntoTable(Connection conn, String query){         try{                  Statement stmt =conn .createStatement();                   ResultSet rs=stmt.executeQuery("insert into Employee (id) values ('1')");                       return true;               }catch (SQLException e ) {e.printStackTrace();return false;}  
+}  //end of Main class    */     This code is a start and will work for your needs as per the request, but keep in mind that it's still quite raw due to only using standard libraries without any external frameworks or dependencies like Spring/Hibernate. Please note also security-sensitive operations should be done properly at all levels of application (like database level).

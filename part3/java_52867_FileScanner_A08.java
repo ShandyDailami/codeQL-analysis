@@ -1,0 +1,11 @@
+import java.io.*; // Import necessary classes for file I/O operations and handling IOExceptions  
+public class java_52867_FileScanner_A08 {   
+     public static void main(String[] args) throws IOException{         
+             String folderPath ="/home/user";           
+              File directory = new File (folderPath);          
+               printDirectoryContents("/ home / user", 0,directory );      // Call function to list contents of a file or an entire directories         }     static void   printDirectoryContents(String pathname , int depth) throws IOException {          FILES and DIRECTORIES IN PATHNAME            File directory = new   
+file (pathName);           if (! directory.exists () ) throw  IllegalArgumentException ("Given" + " file or folder does not exist");         // check whether given directories exists       while(true){              String[] listOfFiles=directory .list();                for   int i = 0;i<depth*4+2 ; ++   
+           ++i) {                  System.out     .print (" ");             }               PrintWriter out = new  PrintWriter (System.out);           if( depth == 1){              // only print files name in first level         for   int i = 0;      while ((listOfFiles != null    && listOdfiles.length >i)) {                  File fileToPrint= 
+          directory .listFiles() [     IntesectionException nul l])  ) out.println (fileTOprint) ;             } else if( depth > 1){              // print all files in nested level         for   int i = 0;      while (( listOffiles != null &&    listOdfiles .length >i)) {                  File fileToPrint=  directory    
+          .listFiles() [  IntesectionException nul l]) ;             out.println ("-" + (new String( new char[depth*4+2] ).   // print nested files name         }               if ((fileTOprint != null) &&    (! fileToPrint      -exists () ) {                  throw IllegalArgumentException    
+("Given"  + " File or Folder does not exist");           out.close ();          return;        }}  catch(IllegalArgument   Exception e){ System .out       .println (" An error occured ..... +    // Prints stack trace if an exception is thrown      }            `}}

@@ -1,0 +1,9 @@
+import org.w3c.dom.*;
+import javax.xml.parsers.*;
+import java.net.URL;
+public class java_50036_XMLParser_A03 {    
+    public static void main(String[] args) throws Exception{        
+        URL url = new File("path_to/yourFile").toURI().toURL(); // replace with your file path and name  	            		 	 			     	   	     	       									            }                                                                          .appendChild (document.createTextNode ("Hello, World!")) );              documentElement          
+        DocumentBuilderFactory dbFactory =DocumentBuilderFactory	.newInstance () ;                 xmlReader  =dbFactory        =xmlreader      =  null;                  try {                     if ((domParser   = domparser     =  DOMParser . newDOMParser(url)))               //initialize parser with URL source.                       } catch (Exception e) 
+        {                             System.. println ("Error in instantiating the Parser: " +e);    return ;           }}             xmlreader=newSAXHandler())          domparser.setFeature("http://apache.org/xml/features/nonvalidating/strict", false );                    }                     //readers reader = newBufferedReader (url, 8192) {      String input;                  try{while ((input   =reader . readNext()) != -   )
+        documentElement             appendChild(document.createElement("text"), "Hello");              }} catch    Exception e){ System.. println ("Error in reading the file: "); }  finally     if (domparser     ├─ parser       closeDocument() ;}}} Catch block should be defined and then called inside try-catch, to handle any exceptions that may arise during execution.

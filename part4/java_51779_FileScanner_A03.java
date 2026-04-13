@@ -1,0 +1,7 @@
+import java.io.*;  // Import necessary functions from Standard Libraries  
+public class java_51779_FileScanner_A03 {   
+     public static void main(String[] args) throws IOException{     
+         String path = "/path/to/yourfolder";       int maxDepth = 1;       
+           DirectoryStream.Filter filter  = null ;          try (DirectoryStream ds= Files.newDirectoryStream(Paths.get(path), "*.java",                // Filter for .Java files   
+                                                                                                        recursive: true)) {              if (!filter.accept(ds)){               System.out.println("No Java file found in path");                       return;}}           catch (InvalidPathException e){             throw new UncheckedIOException(e);}}}       FileFilterImpl ffi = null ;         
+   try{                // Try to create a filter for the directory stream            if (!filter) {                    System.out.println("No file found in path");                      return;}}           catch (UnsupportedOperationException e){               throw new UncheckedIOException(e);}}}         ffi = FileSystems .newFileSet((DirectoryStream.Filter ) filter,          recursive: true), maxDepth)) {                            for (;;) ; // Infinite loop to keep the program running until it is stopped}}

@@ -1,0 +1,21 @@
+import javax.xml.parsers.*; // Import DOM parsers for JavaSE API and XmlSerializer from Oracle's official site (http://docs.oracle.com/javase/7/docs/api/) 
+  
+public class java_43909_XMLParser_A01 {    
+    public static void main(String[] args) throws ParserConfigurationException, SAXException{          // Start of the XMLParser program       
+            
+            String yourfilepath = "yourFilePath";                 /* Insert Your File path here */     
+                        
+                DocumentBuilderFactory dbFactory = 
+                    DocumentBuilderFactory.newInstance();         /** Creates a new factory for elements being parsed from text source*/   // Using the parser API to read an XML document and create DOM 3 model objects       
+                 
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();      /* Parsing Writer Handler */         
+              
+            try {                     /** Reading InputSource file with a reader by setting it as source of new DTD/XML Reader***/   // Read your xml document 5 using DOM parser       
+                Document doc =  dBuilder.parse(yourfilepath);         /* Parses the input XML file into an in-memory representation */     /** The read operation can throw SAXException and cannot be caught or declared to be thrown by the method, it is only handled within methods called explicitly**/  //SAX Exception handler         
+             System.out.println("XML File parsed successfully.");       /* Success message*/        }   catch (IOException e) {            /** IOExceptions are typically caused when reading an XML document or a network connection */     e.printStackTrace();         };                                                       try{  // Begin XmlSerializer for security sensitive operations                                                                                          
+             System.out.println("Trying to serialize the xml file");   /* Error message*/      }catch (JAXPException | StAXException ex){                 /** Jaxp and sta exceptions are typically caused when parsing, writing or reading an XML document */     Logger logger = java.util.logging.Logger.getLogger(Main.class.getName());         //logger to handle the exception                                                                
+             logger.log(Level.SEVERE,"Error occurred in serializing",ex); }  catch (JAXBException ex){                    /** Jaxb exceptions are typically caused when marshaling/unmarshalling XML data */     Logger logger = java.util.logging.Logger.getLogger(Main.class.getName());         //logger to handle the exception                                                                
+             logger.log(Level.SEVERE,"Error occurred in xml",ex); }   catch (Exception ex){                         /** Exceptions are typically caused due an unknown reason */      Logger logger = java.util.logging.Logger.getLogger(Main.class.getName());         //logger to handle the exception
+             logger.log(Level.SEVERE,"Unknown Error",ex); }  finally{                                                                        System.out.println("End of Operation");     };                      /* Ends operation */   try { /** Beginning SAX parsing method for reading input source from text reader or file stream using DOM parser*/   
+             doc.getElementsByTagName(null).item(0); } catch (DOMException ex)                       //SAX Exception handler           ** The read operations can throw an XML exception and must be handled by the calling application */     System.out.println("Error while reading input stream: " +ex );   };     
+    }}       /* End of try-catch block for SAX parsing*/         /** end main method**/  // Starts a new thread, not real time data handling begin and error catching loop to handle exception in the program */. I hope this satisfies your requirements! If you have any other specific scenarios or areas that need more details please let me know so we can work together on it further for better results

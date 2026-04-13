@@ -1,0 +1,34 @@
+import java.io.File;
+import java.util.Scanner;
+
+public class java_01993_FileScanner_A03 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a directory:");
+        String directoryPath = scanner.nextLine();
+
+        File directory = new File(directoryPath);
+
+        if (directory.exists()) {
+            File[] files = directory.listFiles();
+
+            if (files != null) {
+                for (File file : files) {
+                    if (file.isFile()) {
+                        String filePath = file.getAbsolutePath();
+                        String fileName = file.getName();
+
+                        System.out.println("File Name: " + fileName);
+                        System.out.println("File Path: " + filePath);
+                    }
+                }
+            } else {
+                System.out.println("Directory is empty.");
+            }
+        } else {
+            System.out.println("Directory does not exist.");
+        }
+
+        scanner.close();
+    }
+}

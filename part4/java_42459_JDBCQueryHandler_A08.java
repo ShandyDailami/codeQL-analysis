@@ -1,0 +1,16 @@
+import java.sql.*;  // Import the necessary Java classes from Oracle's JDBC driver package  
+import org.junit.*;  // For testing purposes, import jUnit for creating test cases   
+import static org.mockito.Mockito.*;  // To mock dependencies in our code    
+public class java_42459_JDBCQueryHandler_A08 {     
+//Create a Test Class with the same name as your JDBC handler (e.g.: ConnectionBasedVanillaJdbCHandler)  
+    private YourClass connectionBasedYourObject;         
+        @Before         // Setup: Create an instance of OurConnection class in every test method    
+            public void setUp() {           }             
+                protected PreparedStatement createStmt(String sql, Object[] params);            
+                       return new Connection();    private static final String SOME_SQL = "SELECT * FROM YOURTABLE";  // SQL statement to execute.        @Test         ##TEST##   public void shouldReturnAllUsers() {          when..then... }     ...      assertThrows(ExceptionClass, block);
+                ....assertThat....}            assertEquals("Expected result",..... ) ;       When calling a method from Mockito's private methods in your test class.  e .when (mockedObjectUnderTestMethodsToBeMocked).yourMethodName(); } Hint: Use the @InjectMocks annotation for this, or use reflection to obtain and set fields through mock object using MOCK_OBJECTS array;
+                ....thenThrow(exception);}       // The exception you are expecting when calling your method.  E .when (mockedObjectUnderTestMethodsToBeMocked).yourMethodName(); } Hint: Use the @InjectMocks annotation for this, or use reflection to obtain and set fields through mock object using MOCK_OBJECTS array;
+                ....thenReturn(expectedValue);}   // The value you are expecting when calling your method.  E .when (mockedObjectUnderTestMethodsToBeMocked).yourMethodName(); } Hint: Use the @InjectMocks annotation for this, or use reflection to obtain and set fields through mock object using MOCK_OBJECTS array;
+                ....thenAnswer(invocation -> { /* your code here */ });}  // The action you want Mockito's answer method do.      assertThrows..... ;   }     @After          public void tearDown() {}    }} TestFixture for JDBC interactions, please ensure this covers all methods and scenarios required by the application under test;
+                E .close();}}  // Close your connection (important: don't forget to do it in finally block as well)      }   ... assertThrows(ExceptionClass.class){       @Test public void shouldThrowWhenConnectionIsNull(){           When..then... }}     ....assertThat....}
+                });        The test cases below may need additional setup or verification, depending on the specific requirements of your application; Also remember to ensure that any exception thrown is not null and has meaningful information.  }   Finally you can also write separate tests for other methods in YourClass which handle things like getUserById(), updateRecord() etc.;

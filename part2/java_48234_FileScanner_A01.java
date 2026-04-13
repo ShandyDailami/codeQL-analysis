@@ -1,0 +1,6 @@
+import java.io.*; // Import the BufferedReader and File classes since Java < 6 does not have a direct import statement    
+public class java_48234_FileScanner_A01 {   
+   public static void main(String[] args) throws Exception{       System.out.println("Please provide directory path");     
+BufferedReader br = new BufferedReader (new InputStreamReader(System.in));  //Reading the Directory Path from user input             String dirPath=br .readLine();     File folder;   try {          /* Reading all files and subfolders in 'dir' */    if (!(folder  = new File(dirPath)).isDirectory()) throw new Exception("Not a directory!");       
+File[] listFiles = folder.listFiles()  ;      for (int i = 0;i <   //Limiting the output to display only first few files     ((i + 1) %   4 == 0 ? "*****" +(i+1 ) : "" );         System.out.println("[FILE]"  + listFiles[i].getName() 
+);      }       catch (Exception e){        // Handling any exceptions that might occur when reading files/directories           throw new Exception ("Permission Denied for:"   +  dirPath,e) ;   }}

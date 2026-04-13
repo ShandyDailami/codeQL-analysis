@@ -1,0 +1,10 @@
+import java.io.*; // Import required classes (File, FileNotFoundException)  
+public class java_48946_FileScanner_A03 {   
+     public static void main(String[] args){     
+          String directoryPath = "/home/user";        // Set your target Directory here        
+           walkDirAndPrintFilesInsideDirectoryToConsole(directoryPath);  }       private static void walkDirAndPrintFilesInsideDirectoryToConsole (final String dir) {     Path p=Paths.get(".");      try{   FileVisitor<Path> fv = new SimpleFileVisitor<>(){
+          @Override public FileVisitResult visitFile(Path file, BasicFileAttributes attrs){  if(!fileNameFilteringFunctionality (file)){    return super.visitFile(file ,attrs);}      PrintWriter out=new PrintWriter(System.out);        try{       BufferedReader br = Files.newBufferedReader(file) ;
+          String line;         while((line=  br .readLine()) != null){             if(!isSqlInjectionAttack (line)) {                 System.out.println("\"" + file  + "\": "+"\n \t ->->  ");                  out.flush();           }        }}catch(IOException e1)         {}
+          @Override public FileVisitResult visitFileFailed(Path file, IOException exc){return super.visitFileFailed (file ,exc);}   };  fv .visitFolder(dir,(DirectoryStream.FileVisitorAcceptBoth<Path>& )fv );     } catch (IOException e) {e.printStackTrace();}}
+           private static boolean isSqlInjectionAttack (String line){    // Implement your sql injection prevention logic here, for example:   return line .contains ("' OR '1'" )) ;}       if(line instanceof SQLCommandLineParser ){     System..println("Saw an attack!");}}return false;} private static boolean fileNameFilteringFunctionality (Path p){      // Implement your functionality here to filter files, for example:   return !p .toString().endsWith(".jpg") && !p.toString()
+          .endsWith(".png");} }

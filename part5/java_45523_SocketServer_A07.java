@@ -1,0 +1,23 @@
+import java.io.*; // Import Input/Output Stream classes to deal with input and output operations on sockets etc  
+import java.net.*; // To get Socket class, DatagramSocket is used for UDP protocols or ServerSocket object can be created using socket method of IPTransport ie TCP port 80 as an example here   
+
+public final class java_45523_SocketServer_A07 {
+     private static int clientCount = 1;   /* Counts the number connected clients */
+     
+     public static void main(String[] args) throws IOException, ClassNotFoundException{ //The server will listen on a specific port. We'll use 80 as an example here   
+         ServerSocket welcome = new ServerSocket (9654);   /* Create the socket for incoming connections */            
+          System.out.println ("Waiting For Connection... ");          
+            Socket connectionToClient ; // Declare a variable of type 'socket' to handle each client       
+               while(true) {  // Loop forever so server can listen indefinitely    /* Infinite loop until an exception is thrown */  
+                    try{            
+                         System.out.println ("Accepting Connection ");                connectionToClient = welcome .accept();            Console.log("Connected to client number: " + (clientCount++));                        // Accept incoming request from a specific port    /* Here accepting all clients but for real use it should be done by the unique id or other method */
+                          DataOutputStream outtoClient =  new  DataOutputStream(connectionToClient .getOutputStream());   //Send data to client using this outputstream      BufferedReader inFromClient = new     BufferedReader (new InputStreamReader    Connection.getInputStream()));       String userInput;             System.out.println ("Please Enter Your Name... ");
+                           outtoClient.writeBytes("Enter your name: ".concat(userName+"\n"));  /* Here we read the input from a client */   // Send data to connected socket outputstream    BufferedReader inFromUser =  new     BufferedReader (new InputStreamReader      connectionToClient .getInputStream()));
+                           userInput =in From User.readLine();                       if(userinput != "Correct password") { outtoclient  writebytes("Password is incorrect...\n"); } else   /* If correct */                     Console log ("Connection Successfully Established with ID ");      // Send a message back to the client               
+                    Exceptio M  =new IOException();                           while (true) try{connectionToClient.close() ; welcome .close ()  exit(0);}catch    Exception e {e m vidu cesare;}} } /* End of Connection Handling */ catch   // Catch block to handle socket exceptions
+                    finally// Always a good idea, close connections that are no longer needed or have finished. Here we'll do this regardless the result  if (connectionToClient != null) {try{ connectiontoclient .close();}catch(IOException e){e m vidu cesare;}} }
+     //End of Main Method   /* End Of Program */}}} The server will listen on a specific port. We'll use any available one as an example here    ServerSocket welcome = new Socket (80);  ****Here the program is using UDP protocol for listening to clients, and also sending data back via TCP socket**********
+     //Sending Datagram packet **Datagrams are often used in multicast scenarios. Here we'll use it as an example of a client-server communication scenario.*   DataOutputStream outToServer =  new  DataOutputStream(welcome .getOutputStream());// Send data to server using this outputstream
+     //BufferedReader inFromUser = null;    Bufferedreader inputbuffer=new buffedreaderexample (connectiontoClient. getinputstram()));       String userInput ;   /* Here we read the Input from a client */  outToServer .writeBytes(userName+"\n");     // Send data to connected socket outputstream
+    }// End of Main Method}} }}}}} The server will listen on port number as an example here. We'll use any available one for real-world applications   DataOutputStream inFromClient;  BufferedReader inputbuffer=new buffedreaderexample (connectiontoclient .getInputStream()));      String userInput =null ;     System outprintln ("Enter Your Name... ");
+             } catch(IOException e){ // Catch block to handle socket exceptions here is where we'll check if the client disconnected or not.  We can also use a flag variable like inFromUser */}   finally {if (connectionToClient != null) try{ connectiontoclient .close(); welcome    close () ; exit(0); }catch     Exception e         vidu cesare;}}

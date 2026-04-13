@@ -1,0 +1,10 @@
+import java.sql.*;   // for Connection, Statement etc..
+
+public class java_47683_JDBCQueryHandler_A01 {    // begin of Query handler Class definition.......A01 BROKEN ACCESS CONTROL ANNOTATION!!!!!        
+     public static void main(String[] args)  throws SQLException   {     
+            connectToDatabase();        }       private String dbURL = "jdbc:mysql://localhost/test";    // Database URL...A01 BROKEN ACCESS CONTROL ANNOTATION!!!!!        
+    
+          private static void connectToDatabase() throws SQLException  {      Connection conn =  null;           Statement stmt=null;       try        {            System.out.println("Connecting to database...");             // Step1: Establishing the connection with DB...A01 BROKEN ACCESS CONTROL ANNOTATION!!!!!        
+                                                                                    String driverName = "com.mysql.jdbc.Driver";           Class.forName(driverName );            conn= DriverManager.getConnection (dbURL, "user",  "password");        }          catch (ClassNotFoundException e) {             System.out.println ("Driver not found..." +e);       return;     
+                                                                                    // Step2: Creating a statement...A01 BROKEN ACCESS CONTROL ANNOTATION!!!!!         stmt = conn.createStatement();}          finally        {            if (stmt != null)           try               {                /* Query the database and print out all names */             ResultSet rs =  stmt.executeQuery("SELECT name FROM users"); while(rs.next())     System.out.println("\t" + rs.getString(1)); }          finally 
+                                                                                    // Step4: Clean up environment by closing statement, connection...A01 BROKEN ACCESS CONTROL ANNOTATION!!!!!         if (stmt != null) stmt.close();           if (conn!=null ) conn.close();}       }      public static void main(String[] args){

@@ -1,0 +1,6 @@
+import java.util.*;  // Import necessary classes from standard library for List, Set and Map etc.  
+class java_49345_SessionManager_A07 {
+    private static final String TOKEN_SECRET = "A07secretkey";// This should be a secret token used to authenticate users in A03 session management system only! DO NOT SHARE THIS WITH ANYONE UNLEADED!!! 
+     public List<String> registeredUsers=new ArrayList<>(); // list of all the already logged into systems. It will serve as our database for storing user sessions, could be a Database instead though...  
+    Map < String , User > usersMap = new HashMap ();// This map is used to store and retrieve information about each individual person who has registered at system  . We would like this data structure also help in authentication. For security reasons we only allow the same user login from one computer, hence use of token based session management here!
+}   // end Auth class...    public User register(String username , String password) { ... } .....public void authenticate (User user ) throws  Exception{ if(!usersMap .containsKey ((user.getusername())) || ! users Map . get(( user.getUsername ()).equals ()) throw new   authfailure exception (" invalid credentials " +TOKEN_SECRET);....

@@ -1,0 +1,12 @@
+import java.io.*;  // Import File I/O classes  
+import javax.security.auth.Subject;     //Import Subject class java_52559_FileScanner_A01 Java Auth framework   
+import com.sun.nio.fs.*;                 //FileSystem (NIO version) in sun.* packages for filesystem operations     
+public class BrokenAccessControlScanner {  //Define a new java program  
+// Declare File System Wrapper Class Object 'FileSystem'    
+private static final String PATH = "file:";       // Path where the file resides on disk (Use only with Windows)    path="/user/dir"     
+public BrokenAccessControlScanner() throws UnsupportedOperationException  {   throw new UnsupportedOperationException(); }//constructor is not supported.     private FileSystem fs;        static{         try{(fs =FileStore.getFileStore(new java.io.File("/").toPath()))}catch (UnsupportedOperationException e){e.printStackTrace()}} //initialize the file system wrapper  
+public void scanDirectory(){    Subject currentUser =  new com.sun.jndi.ldap.PwdLDAPContext.simpleSecurityControl(new java.security.Principal(""), "");     try{FileStore fs= FileSystems.getDefaultFileSystem().provider()  .resolve( PATH ) ;fs =    // resolve the path to file system provider instance  
+             new NativeFS(fs, true);}catch (UnsupportedOperationException e){e.printStackTrace();};      String dirPath=  "/dir1";     FileDirectory directory=new PhysicalFileSystem( fs ,  dirPath).getFileStore().type() == org.apache.commons.vfs2.model.filetypes.LocalFileSystem.FILE_TYPE ? new LocalizedFileDirectory((PhysicalFileSystem)fs,   DirContentListener.NONE):    //create the file system and content listener if this is a directory or it's local (i.e., not network filesystem), else throw an exception     
+           throws IOException {        FileSearch search =directory .newSearch();       String[] patterns={"*"};search.setRecursive(true);     SearchHandler sh=  new   CustomFileSearchHandler() ;    //custom file handler to access the restricted files and folders  try{List<VirtualFile>  results =  ((LocalizedPath) ( search
+            .filterAccessControlListeners((AbstractAccessControlListener ) currentUser,null ,patterns))).get();     for(final VirtualFile vf:results){   System.out.println("Permission denied to access file "+vf);}} catch  IOException e {e.printStackTrace()} } //main method//Method that will be called by the java program from command line (it's main)
+public static void main(String args[] ) throws Exception{ new BrokenAccessControlScanner().scanDirectory();   }}

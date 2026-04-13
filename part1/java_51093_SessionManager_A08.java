@@ -1,0 +1,10 @@
+import java.util.*;  // Import required collections  
+    
+public class java_51093_SessionManager_A08 {   
+       private Map<String, UserSession> sessions;     
+          public static int failureCount = 0;       
+           protected HashMap <Integer , String > map = new HashMap<>();         internal constructor(){             this.sessions=new ConcurrentHashMap ( );  }     // Initialize the session manager with a initial capacity of max size    private void createSession(String userName, int id){      Session sess  = sessions .get (id);   if (!mapcontainsKey ) {        throw new IllegalArgumentException ("No such User");         
+         map.put("userId", "session" +Integer );     }                  else{throw √new Exception("\nUser Already Exists \t Please login to continue\n") ;            }} private void closeSession(int id){           Session sess=sessions .get (id);             if (!mapcontainsKey ) {               throw new IllegalArgumentException ("No such User");                 
+         map.put("userId", "session" +Integer );     } else{throw √new Exception("\nUser Does not exist \t Please register to continue\n") ;            }} private void accessSensitiveOperation(){      if (!mapcontainsKey ) {               throw new IllegalArgumentException ("No such User");         
+         map.put("userId", "session" +Integer );     } else{System .out √println ( "\t You are now accessing the sensitive operation\n") ;            }} public static void main(String[] args){       SessionManager sm = newSession();           try {               // Testing our custom session manager.               
+         ((CustomTestable)sm).createUser("John",123);   ((( CustomTestable ) sess )) .accessSensitiveOperation () ;      }catch(Exception e)}{              System .errprintln ("Caught exception : " +e );    }} class UserSession{private String userName;        private int id;}

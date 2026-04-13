@@ -1,0 +1,16 @@
+public class java_52881_CredentialValidator_A07 {
+    // This is just a mock of real passwords. In reality it would be hashed with salted PBKDF2 algorithm and not stored in clear text as you may see on the internet at places like GitHub or similar sites, where this data might get exposed for legitimate uses (A06_Pwn).
+    private static String mockPassword = "testpassword";  // password should be hashed here with salt. In real scenario it is not stored in plain text as we have mentioned above regarding AO7 - Security-sensitive operations related to AuthFailure and PWN(s) (A06_Pwn, A05a).
+    
+    public static boolean validateCredentials(String username, String passwordAttempted){   // In real scenario the method should be more secure with a proper exception handling mechanism.  For simplicity sake let's assume that it will return true or false in case of successful and failed authentication respectively (A05a).
+        if(!isValidUsername(username)){                                            ## AO7 - Security-sensitive operations related to AuthFailure, we are not allowing usernames with disallowed characters. In real scenario more checks should be done here for better security measures against brute force attacks and similar types of threats (A06_Pwn).
+            return false;                                                           ## AO7 - Security-sensitive operations related to AuthFailure, an invalid username was provided in the attempt at login. 
+        }  
+        
+       if(!isValidPassword(passwordAttempted)){                                        /// In real scenario more secure ways of validating passwords should be used here (A06_Pwn). This method is not storing hashed/encrypted versions and only checks against a mock value for simplicity. 
+           return false;                                                             ## AO7 - Security-sensitive operations related to AuthFailure, an invalid username was provided in the attempt at login if it contains unsupported characters or similar (A06_Pwn).
+        }  
+        
+       // All checks and validations passed. This is a mock example for simplicity purpose only without real use cases of actual application – AO7 - Security-sensitive operations related to AuthFailure, return true at successful login scenario in order not allow user access if it fails all the validation criteria (A06_Pwn).
+        System.out.println("User has successfully logged into system.");                        ## For demonstration purposes only – do NOT use this code for real authentication applications and AO7 - Security-sensitive operations related to AuthFailure, user should not be allowed access without successful login (A06_Pwn).
+        return true;   // In reality the method would contain more complex logic.         ## For demonstration purposes only – do NOT use this code for real authentication applications and AO7 - Security-sensitive operations related to AuthFailure, user should not be allowed access without successful login (A06

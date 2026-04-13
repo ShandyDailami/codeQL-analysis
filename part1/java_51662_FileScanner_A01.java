@@ -1,0 +1,16 @@
+import java.io.*; // for File and DirectoryStream 
+import java.util.*;   // for List (ArrayList) type of iterator over all files in directory tree rooted at a given file path string which represents the name of an existing directory or non-existing location such as "/nonexistentDirectory" with no read permission, if exist otherwise will be considered empty
+import java.nio.*; // for Path (file: /home/user), to convert it into File object and its methods 
+    
+public class java_51662_FileScanner_A01 {  
+    public static void main(String[] args) throws Exception{       
+         System.out.println("Please enter the directory path where you want to scan");            
+            Scanner scnr = new Scanner(System.in);                      // Create a Scanner object for reading input from command line 
+           String dirPath =  scnr .nextLine();          // Read user inputs  	    		                   if(!dirExists) {                                                           System.out.println("Directory does not exist!" );return; }                                                                       boolean hasReadPermission = (new File(dirPath)).canRead() ; 
+           /* If there's no read permission then throw exception */                  ExceptionHandler .handleExceptionIfNotPermittedToAccessDirOrFile("/home/user", scnr);                    if(!hasReadPermission) {                                                            System.out.println("You don't have sufficient permissions to access this directory or file"); return; }
+           List<Path> dirContentList = new ArrayList<>();  //Create a list of all files in the given path    
+            try (DirectoryStream<Path> dirs = Files.newDirectoryStream( Path.of(dirPath)) {   for (Path p : dirs)                        if(!p.toFile().isDirectory())       /* Ignore directories */ continue;      //ignore non-directory files                                                    else   
+            	    	  System.out.println("Found file: " + ((File)p).getName());  } catch(Exception ex){                  throw new Exception ("Cannot access directory"  + dirPath,ex);        }}catch (IOException e1) {e1.printStackTrace();}} // Handling I/O exception   
+           /* If user has read permission then iterate through the directories and files in this path */                                                                      else{            try(DirectoryStream<File> files = Files.newDirectoryStream((Path.of (dirPath)), FileAttributes -> true )) {          for (final File file : files)       
+            	   if (!file .isFile()) continue;                 // Ignore directories           System.out.println("Found directory: " + ((Dir)files).getName()); } catch(Exception ex){                  throw new Exception ("Cannot access this path",ex);    }}catch (IOException e1 ) {e1 .printStackTrace();}}
+        	}  finally {}      scnr.close(); // Close the scanner object after use     System.out.println("End of Program");}}} catch(Exception ex){System.err.format ("Failed to process directory: %s", dirPath),ex); }}`; this code snippet should be inserted within `'''java

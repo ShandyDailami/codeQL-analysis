@@ -1,0 +1,6 @@
+import java.io.*; // Import required classes for handling files in Java (Files, Paths...)  
+    
+public class java_44133_FileScanner_A08 {    public static void main(String[] args) throws IOException{           File dir = new File("your directory path here");         Scanner scan;            if (dir.exists()){          For every file inside the specified directories:              for (File f : Objects.requireNonNull(dir).listFiles()) {               // Checking condition to skip hidden files and folders starting with .            
+                                                                    if (!f.isHidden() && !f.getName().startsWith("."))  scan = new Scanner(new FileReader((File) f));              while (scan.hasNextLine(){                  String lineContent=null;                //Reading a Line from the file                        
+                      do {                    if ((lineContent = scan.nextLine()) !=  null){                 System.out.println("Contents of each lines in " +f.getName()+" :\n"  +  (char)16#2758 + lineContent);}}             while (!scan.hasNextLine());
+              } //end for loop   f        scan .close();} else{System.out.println("Directory not found.");}},                 }}    catch(Exception e){ System.err.print("Error : "+e)};  });

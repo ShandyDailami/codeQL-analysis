@@ -1,0 +1,13 @@
+public class java_46959_CredentialValidator_A01 {
+     // You'll probably want to use a library like BCrypt or Argon2 for hashing passwords and salting them, here I will just show how the validation would look in plain text form without any salt:
+    private String correctUsernamePasswordHash = "$2a$10$h3tKH/R.eWPxO7XlVU5v8uTcMpIJGf69dYsNkCnQzF4mZbjAqwLr";
+     // This would be a hashed and salted version of the plain text password "password" when it is set. 
+    private String correctPasswordHash = "";  
+     
+public boolean validateCredentials(String username, String password) {       
+       if (username != null && password!=null){        	    		          	   	     	       	 										if(!username.equalsIgnoreCase("admin")){              			            return false;             }else 	{             	                //For the sake of this example let's say that when a correct username and incorrect (wrong) one is entered, they will get accepted as valid credentials    		       if(password != null && password.equalsIgnoreCase("1234")) {        			               return true;          }else{            	                //In case of an invalid login attempt with the wrong account or a blank/null field (NULL), deny access:
+           System.out.println("\nInvalid username and /or password\n");  		    	       	return false;} 	} else {   				//Null checks for all fields must be done to prevent NullPointerException's in case if any of the parameter is null, hence a return statement with exception would also not work here:
+       }            	          	   	     	 										if(!username.equalsIgnoreCase("admin")){              	return false;}else {             		        //Incase incorrect password entered by user for account "user1" or NULL field (NULL), deny access :  			    if(password == null || !password.equalsIgnoreCase("wrongPassword") ) 
+           System.out.println("\nInvalid username and /or wrong Password\n");    	       return false; }        	       	return true;}        // The method returns a boolean to indicate whether the entered credentials are correct or not:  	    public static void main(String[] args) {          CustomCredentialsValidator ccv = new CustomCredentialsValidator();   
+           System.out.println("\nAccess granted : " +ccv.validateCredentials("admin", null));    	        //Returns true, because password is NULL or incorrect:     	System.out.println( "\n Access denied due to credentials mismatch \n");  ccv. validateCredentials ("user1","wrongPassword"));   }        
+}

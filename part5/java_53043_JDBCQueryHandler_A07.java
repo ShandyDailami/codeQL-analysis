@@ -1,0 +1,7 @@
+import java.sql.*;   //Java database connectivity packages   
+class java_53043_JDBCQueryHandler_A07{    
+  static Connection con=null;      
+static void dbConnect(){     
+try {             System.out.println("Establishing connection to DB");          DriverManager.registerDriver(new com.mysql.jdbc.Driver());           con =DriverManager.getConnection("jdbc:mysql://localhost/DBName","userID", "password");       }         catch (SQLException sqle){      System.out.println ("Error connecting Database"+sqle);     try {con= DriverManager.getConnection("jdbc:mysql://hostname:/db_name?user&amp;#38;password") ;}catch(sqlexception $e)  
+{System . out “ unable to establish connection with mysql” + e;} }        public static void main (String args[]){ dbConnect();       //Establishing a DB Connection      try { con.createStatement().execute("select * from users where username ='"+args[0]  +"'and password= '"  
+    +args [1 ]   + "'");  System . out . println (" User Found "); } catch ( SQLException se ){          //handling authentication failure      PrintStackTrace();System.outprintln("User not found in the database" +se);} }}`             Note: Replace 'localhost/DBName', userID, and password with your DB credentials

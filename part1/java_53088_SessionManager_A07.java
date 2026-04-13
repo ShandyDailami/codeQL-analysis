@@ -1,0 +1,6 @@
+import javafx.util.Pair; // Pair class java_53088_SessionManager_A07 used as a pair, not from standard Java library for simplicity sake (it's just an example)
+       import javax.security.auth.*;     // Added security sensitive operations using AuthFailure exception and Credentials here  
+public static void main(String args[]){    SessionFactory sessionfactory;  private String USERNAME = "username";      protected final PasswordData PASSWORD =  newPasswordData("password",null); User user1,user2 ;         try{     //Creating the factory object and associating it with physical database  
+sessionfactory=new Configuration().configure( ).buildSessionFactory();  System.out.println("\n Register New Users");      registerUsers ( sessionfactory );    }catch (Exception e){System.out.println ("\n Unable to Create Session Factory \nexiting ..."+e);     return;   };
+ try{        //Testing the login procedure with valid credentials  System.out.print("\n User Login Test"); user1 = newUser("John","Public" );user2=newUser( "Paul", "public") ;    testLogin (sessionfactory,user1 , PASSWORD);     }catch
+      Exception e){System . out ("\n Unable to execute login procedure \nexiting..." +e )  return;   }; //Testing the logout function if required. try {logOut( user2 );} catch    ... continue from where it left off ..... (leave as is)     }

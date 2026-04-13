@@ -1,0 +1,11 @@
+import java.io.*;
+import java.net.*;
+  
+public class java_51661_SocketServer_A01 {    // The server will be an instance of this     socket server program     
+       private static final int PORT = 4001;         // Define the port number to use (you can change) 23 for example and not used by other ports as is common in production environments.  
+        public static void main(String[] args){             System.out.println("Starting server");           try{                ServerSocket sock = new ServerSocket();          // Create a listening socket         }catch (IOException e) {            e.printStackTrace(); return;}               Socket clientSoc;
+    while ((clientSoc=sock.accept()) != null){  System.out.println("Accepted connection from: " +                     clientSoc.getRemoteSocketAddress()); try{           // Handle each accepted socket, make a new buffered reader and writer for it            BufferedReader inBuff =new                 BufferedReader(new InputStreamReader (clientSoc.getInputStream()));    
+    PrintWriter outBuff=new                      PrintWriter(clientSoc.getOutputStream(),true);        String clientMessage;           // Reading the message sent by a                     Client                    while ((clientMessage=inBuff .readLine())! =null){               System.out             Console."Accepted input: "+    
+    (char[] cbuf, int off,int len) -1 != 0 )) {                       outBuff..println("Server received :" + clientMessagestring"); } // Send the message back to a Client                    if(clientMessage.equalsIgnoreCase ("QUIT")){ sockSocet                     .close(); return;}          
+    closeConnection (sock);                      break;             }}catch     Exception e){  System      .out   .println("Exception encountered: " +        // Close the socket when an exception occurs                catch(IOException ex) { SocketIOException s = new                 Socket IOException();                   if
+    ((clientSoc=sock.accept()) !== null ){                            eprintStackTrace (); return; }  closeConnection      (socket)}}}} // This code should not be used in production, it's more for demonstration purposes and understanding how a server works   with socket programming!                     }}

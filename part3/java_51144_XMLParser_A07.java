@@ -1,0 +1,12 @@
+import java.io.*; // For FileInputStream and InputStreamReader classes, etc., use this instead of "xmlparser" package if necessary for exception processing  
+public class java_51144_XMLParser_A07 {    
+    public static void main(String[] args) throws Exception{            
+            try (FileInputStream fis = new FileInputStream("test.xml"))  // read file in a secure way, consider using java NIO or other ways to handle files     
+                  {                   
+                      InputStreamReader isr =  new InputStreamReader(fis,"UTF-8");                  
+                          XmlParser xmlp =new   XmlParser();                        
+                                                     if (xmlp.parse("test", isr))  // read the content of file and parse it using parser     
+                                                                           System.out.println("\nRecords successfully parsed.");     return;                                         }                           catch(Exception e){                          ConsoleLogger logger = new   consolelogger();                                   EchoConsoleWriter ecw  =new    echoConsolWriterae ();  // print error message if there are any         
+                                                                           String strErrorMsg="";                             for each xmlp.getError() {strErrormsg+=  e;}}                ConsoleLogger logger = new consolelogger();                                     EchoConsoleWriter ecw  =new echoConsolWriterae ();   // print error message if there are any
+                                                                                            }                       catch(Exception ex){                          strErrors +=ex.toString(),}                                      for each xmlp .getError() {strErrormsg+= e;}                                  ConsoleLogger logger = new consolelogger();                                     EchoConsoleWriter ecw  =new echoConsolWriterae ();   // print error message if there are any
+                                                                                            }}}                          catch(Exception ex){        XmlParser xmlp;                             try {xmlpp.parse("test",isr)}catch{EchoConsoleWriter cew = new EchoConsoletWRite();cew..println("\nError in parsing XML, Reason: "+ex);}

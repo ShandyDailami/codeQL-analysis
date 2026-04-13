@@ -1,0 +1,12 @@
+public class java_50214_CredentialValidator_A03 {   // Class name should start with a capital letter for OOP concepts in Java   
+     private String username;       // Declare variables and ensure type safety     
+                                    // Assigning value to variable using constructor       
+                                           public void setUserName(String user)  throws Exception{        
+                                            if (user == null || user.isEmpty()) throw new IllegalArgumentException("Username cannot be empty");    
+                                             username = sanitizeAndValidateInput(user);          // Validation and Sanitation     
+                                          }   
+                                           public String getUserName() {        return this.username;   }  /* Return type should always match the value to avoid NullPointerException */       private static final String VALID_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";  // Define allowed characters for validation       
+                                           protected static boolean isValid(final String str) {      return (str != null && str.matches("^[A-Za-z" + "1234567890]*$"));   }       private String sanitizeAndValidateInput(String user){       
+                                            if (!isValid(user)) {                  // Check for injection attacks by limiting allowed characters          return null;      }         else{            /* No Injection attack, just limit length */           final int maxLength = 10;    User = (maxLength < user.length()) ? “…" + user.substring(user.length() -  
+            5) :     // ...limit the string to meet maximum character requirement        return sanitizedInput;}      }          public static void main(String[] args){       SecureCredentials sc = new SecureCredential(); try{         /* Try block for handling exceptions */    if (sc.setUserName("1234567890") != null) {        System.out.println("\nUsername is : " +  
+            + secCredsObj .getuserNane()); } // Test Case: injecting a valid string, should not print any message    else{System. out! (“Invalid input...’);}      }}catch(Exception ex){ SystemOutExcpetion e != null;     /* Catch block for handling exceptions */}}

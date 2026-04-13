@@ -1,0 +1,17 @@
+import javax.security.auth.*;
+import org.apache.commons.codec.binary.Base64;   // for decoding strings in BASE-64 encoding, not required if you use String objects directly instead of their Base64 encoded versions but included here anyway to make the program work with both approaches 
+public class java_51924_SessionManager_A08 {   
+     private HashMap<String, AuthenticatedUser> sessions;   // hashmap for storing user session details. This is a simplification and does not provide any real security mechanisms like A08_IntegrityFailure in reality because it uses plain text authentication credentials which may be vulnerable to attacks 
+     
+     public java_51924_SessionManager_A08() {   
+          this.sessions = new HashMap<>();   // create the session map, by default empty for simplicity of example and will need real implementation later on when using actual data storage or sessions in a database context            
+     }                 
+          
+       private String generateBase64AuthToken(String userName, byte[] password) {  /* simple method that generates Auth Token. This would be done with more sophisticated authentication mechanisms */   // implement the real scenario here         return Base64.encodeBase64URLSafeString()....      }    
+          public boolean validateUserSession (AuthenticatedUser user){    if(user == null) {throw new InvalidLoginException("Invalid Credentials");}// throws exception to indicate invalid credentials, not required unless you want a real implementation like A08_IntegrityFailure in reality.  // else return true or false }       
+             public void endUserSession (String sessionId){ /* simple method that ends the user's sessions*/    AuthenticatedUser removed = this.sessions.remove(sessionId); if(!validateUserSession(removed)) {throw new SessionNotFoundException("No such valid User Found");} } 
+     // more methods required like startNewSession, getAuthenticallySignedInuser... as per requirements         
+      public static void main (String[] args){ /*main method for testing. Not necessary unless using actual data storage or sessions in a database context*/   SessionManager sm = new SessionManager();  try {sm .startUserLogin ("John", "password");} catch(Exception ex) {}    }       // not real, just to show how the application is going into use          
+     /* start of session related methods */         public String startNewSession (String userName){          byte[] password = getDecodedPasswordFromSomewhere();      AuthenticatedUser newuser  =new  AuthenticatedUser(Base64.encodeBase64URLSafeString((password)));        this .sessions.put("sessionId", newuser);return "Generated SessionID"; }    
+         // more session related methods like createSession, startNewDBTransaction... as per requirements      /* end of all required sections */      
+   });  **/    private byte[] getDecodedPasswordFromSomewhere() {// method to retrieve password in plain text from somewhere. This would be replaced with real implementation when using actual data storage or sessions context (Database, Session Storage etc.) }     // not implemented for simplicity but should include the decoding of base64 encoded strings into their original format */

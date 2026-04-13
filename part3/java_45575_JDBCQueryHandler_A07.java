@@ -1,0 +1,7 @@
+import java.sql.*;   // Import the required Java libraries: DriverManager, PreparedStatement etc..   
+public class java_45575_JDBCQueryHandler_A07 {    
+// Step #1 - Create a connection to MySQL server using JDBC drivers (Driver is loaded automatically)        
+static Connection con = null;      private static final String url="jdbc:mysql://localhost/testdb";       // database URL   string    public class VanillaJDBCQueryHandler {  @SuppressWarnings("unused")     void connectToDatabase() throws SQLException{          System.out.println("\nConnecting to Database...");           con = DriverManager.getConnection(url,"username","password");      }       
+// Step #2 - Prepare a statement and execute the query (Step is performed using above connection)            public void performQueryExample() {         try{               System.out.println("\nPerforming Query operation...");           Statement stmt = con.createStatement();          ResultSet rs=stmt.executeQuery("SELECT * FROM Users");              while(rs.next())             String name  = rs.getString("name"), password = 
+   // 123456789;               System.out.println("\nName : " + name);            }          catch (Exception e){           System.err.println ("Error in executing query");     e.printStackTrace();       }}        public static void main(String[] args) { VanillaJDBCQueryHandler vjcqh = new 
+   // ...;vjcqh .connectToDatabase ();      try{    ..... }catch (SQLException ex){ System..println ("Error in executing query: " +ex.getMessage());       }}

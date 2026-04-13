@@ -1,0 +1,4 @@
+import java.util.*; // For using ArrayList and HashMap in this example; you would replace these lines as necessary based on your project requirements   
+public class java_52086_SessionManager_A01 {    
+private Map<String, String> map = new HashMap<>();      private static final long EXPIRATION_TIME = 1000L * 60 * 5; // Time in milliseconds for session to expire after   public void putSession(String key)       this.map.put("key", generateToken());        System.out.println("\n--- Put Session ---"); }    
+public String getByKey(final String token){      return map.getOrDefault(token, null);  //Get the session by its unique identifier   public void removeSession() {       if (map != null) {          this.map = Collections.emptyMap();         System.out.println("\n--- Remove Session ---"); }    }}

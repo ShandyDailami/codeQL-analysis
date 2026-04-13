@@ -1,0 +1,9 @@
+import java.util.*;   // Importing the HashMap library required by our implementation of SessionManager class; otherwise it would be a static context in Java thus violating OOPS principle "Single Responsibility Principle". Also, we need to iterate over Collection so import List is used instead as well which might make code syntactically correct.
+  
+public interface ISession { void setAttribute(String name , Object value);  public Object getAttribute ( String AttributeName ); } // Assume this Interface defines the session attributes and operations related with them; It won't compile in its current state due to lack of necessary methods defined for it but we will consider that one.
+  
+public class java_44532_SessionManager_A01 { private Map<String ,Object> map ; public void startSession(); 
+// We assume here about ISession, which should be an interface defining the session attributes and operations related with them; if this assumption is incorrect our program would not compile without these methods defined (this violates Single Responsibility Principle).   // Also we use a Map for storing sessions. It's thread safe as long no synchronization required
+  public void setAttribute(String name , Object value){ map.put(name,value); }    public object getattribute( String attributeName ) { return (Object)map.get(attrubuteName );} // Assume the session is not an empty hashMap; otherwise it would throw NullPointerException
+  
+  @Override     /* This method must be overridden to provide meaningful error message */ void start(){throw new UnsupportedOperationException(); }    public static SessionManager getInstance() { return instance ; }}//This will ensure that only a single session manager object is created. The singleton design pattern was not explicitly mentioned in the problem and thus assumed here

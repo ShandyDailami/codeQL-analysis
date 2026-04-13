@@ -1,0 +1,9 @@
+import java.util.*;   // Import the HashMap class java_42609_CredentialValidator_A07 we can use it here   
+public class CredentialValidator {     
+     private Map<String, String> credsStore = new HashMap<>();       
+      
+         public void addCredentials(String username , String password)  {           c re ds credentials.put("User1", "Password");   }            // Adding the user and their created pass    return;      }}                .add('A07_AuthFailure', new CredentialValidator()) {{         
+             System.out.println(credsStore);}}                    @Test           public void testLogin() {              String username = "User1";        }                                                                                 private static final Logger log=LoggerFactory.*;    // Import the Logger class so we can use it      CredentialValidator  validator;
+         if (username != null)             {"log.info("+   Username provided: ${request.remoteUser}"}                  {validator = SecurityConfig .getStoredCredentials(SecurityContextHolder    restTemplate, request));               log.debug ("checking credentials" + username);                 validator 
+         if (username != null && password!     ==null)             {"log.info("+ "password provided: ${requestData}");              credsStore = new HashMap<>();           // Adding the user and their created pass    return;       }}            .add('A07_AuthFailure', 
+         if (username != null && password!  ==credentials.get(username))             {"log.info("+ "authenticating: ${requestData}");                  throw new AuthenticationFailedException();}}          //throw exception to indicate failed authentication     } else {      log .warn ("login failure : not found" + username);                   return;}}}

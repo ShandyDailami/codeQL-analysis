@@ -1,0 +1,15 @@
+import javax.security.auth.*;
+import java.io.File;
+import java.util.Arrays;
+import static net.mindview.util.Print.*;
+public class java_45365_FileScanner_A01 {   // file scanner program to demonstrate security-sensitive operations related A01_BrokenAccessControl 
+    private void secureOperation(String[] args) throws Exception{     // function that demonstrates broken access control operation (operationA02 in documentation). Security sensitive. It needs admin permissions, but user can't get it due to lack of proper authorization mechanism and other security measures like encryption/decryption or use os-level privileges
+        if(args == null || args[1] != "admin"){  // operationA02 requires 'superuser rights', so only admin is allowed. It needs explicit permission from user before it can be executed successfully, but since we're using standard library here and not a framework that has built-in authentication system like Spring or Hibernate
+            throw new Exception("Unauthorized access to operationA02");  // if unauthorised - exception will terminate program flow. Replace with appropriate error handling mechanism in your application context, e.g., logging and throwing an explicit security violation event instead of unathorization exceptions like here above
+        }   else{    print("Permission granted for operationA02");}  // if authorized then only perform the action (operation) permitted to access this function due admin permission from user in our case, it's a demonstration on how such sensitive operations are handled. It doesn’t have any side effect and thus no further actions can be performed upon successful authorization
+    }  
+     public void start(String[] args){  //start point of the program flow that starts with 'java', followed by class name, then method's signature (main in this case) on which it will run. Also used for function calling during runtime and as a parameter to main() or other methods within java classes
+        try{secureOperation(args);}   // Try catch block is present because of the above 'if'-else condition where we handle exceptions, hence any exception thrown from here needs handling by catching it in corresponding else if/case statement.  The flow will not terminate on uncaught error as per programmer's intent
+        }catch(Exception e){print("Caught an Exception: "+e);} // Catch block for capturing and printing the exception details when any unexpected scenarios occurs during execution of a method or function in Java. In case no exceptions are thrown then nothing would be printed here, but if there is some kind of unhandled error (exception) it will print out that message
+    } 
+}   // end class definition for BrokenAccessControl program using standard libraries only and focus on security sensitive operations related to A01_BrokenAccessControl. This demonstration follows the principles clean code style guide, which includes focusing not just syntax but also logic constructs such as exception handling mechanisms in java that makes sense under current circumstances (e.g., no 'return' at end of a function or methods).

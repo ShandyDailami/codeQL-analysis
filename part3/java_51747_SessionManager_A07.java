@@ -1,0 +1,17 @@
+import java.util.*;   // For List, Set etc..
+    import javax.security.auth.Subject;     // for Subject... (and all related classes) in order to create the authentication token ... when needed by calling AuthenticatedSessionContext#getAuthentication().getPrincipals() 
+     
+public class java_51747_SessionManager_A07 {  
+       private List<String> loggedUsers = Collections.synchronizedList(new ArrayList<>());    //users who are currently connected and can use this session... (all users, only the ones authenticated)          
+     Map < String , Subject > loginNameToSubjectMap =  new HashMap();   // mapping user name to subject representing that account  .... for checking if a given username/password combination is valid or not.   
+      static SessionManager sm = null;       // Singleton session manager instance ... so we can use the same one throughout our application... (one and only)         
+        private java_51747_SessionManager_A07() {}    
+         public static SessionManager getInstance(){   if(sm==null){ synchronized 
+            (SessionManager.class){    sm = new SessionManager();} } return sm;}       // Singleton pattern ...... this is the main way to create a single instance of an object in Java... so that it can be used throughout your application and all other instances are isolated from each others' actions ... 
+        public void addLoggedUser(String username){ loggedUsers.add(username);}    // Adding user login into list.... (only if they have successfully authenticated)    
+       boolean checkLoginValidityAndGetAuthTokenForExistingSessionOrNewOneIfNotYetPresent( String name, char[] password ) {   int hashCode = Arrays.hashCode(password);  Subject subject=null;    //Subject will represent the user account and provide a mechanism for getting information about who is currently using this session...     
+        if ( loggedUsers.contains(name) && loginNameToSubjectMap.get( name ) !=  null){   try {     subject =loginNameToSubjectMap . get(  name );       }catch (Exception e1){    // If we're here, then a serious issue has occurred... this usually means our map structure is in an incorrect or broken state and should be corrected.....
+         System.out.println("Error while accessing session data..."+e); return false;   }}  else {     subject = new SingleServerSubject(name , password );    // New user so create them.... (only if they haven't already authenticated)      try{ loginNameToSubjectMap . put( name,subject ) ;}catch
+         Exception e1){ System.out.println("Error while accessing session data..."+e); return false;}  }   boolean bSuccess = subject != null && ((AbstractAuthenticationToken) (new UsernamePasswordToken(name , hashCode))).authenticate(_SubjectControl.getCurrentSession()) == AuthenticationResult.SUCCESS;    // Check if user is authenticated or not ....
+         try{ loginNameToSubjectMap . put( name,subject ) ;}catch   Exception e1){ System.out.println("Error while accessing session data..."+e); return false;}  } else { bSuccess =false)} catch (Exception ex) // a serious issue has occurred... this usually means our authentication process is in an incorrect or broken state and should be corrected.....
+         if(bSuccess == true){return subject;};   try{ loginNameToSubjectMap . put( name,subject ) ;}catch Exception e1 { System.out.println("Error while accessing session data..."+e); return null;}  }      public static void main (String[] args)

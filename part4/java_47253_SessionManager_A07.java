@@ -1,0 +1,15 @@
+import javax.servlet.*;
+import java.io.IOException;
+@SuppressWarnings("serial") // Suppression of serial version UID for this class java_47253_SessionManager_A07 its superclass ServletException, which have a checked exception (unchecked in Java)  - see http://docs.oracle.com/javase/6/docs/api/java/lang/Throwable.html#ThrowsClause
+public abstract class SecureServlet extends HttpServlet { // extend from servlets to avoid extending Exception classes, also implements Serializable for session management and handling exceptions  - see http://www.oreacode.com/2014-06-30-servletsecurityandcookieshtmlsnippet
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException { // Implementation of GET method for securing the servlets - see http://www.oreacode.com/2014-06-30_servlexceptionhandlinghtmlsnippet 
+        try{  
+            SecureAction(request, response);//calls to secure action where checks and validates session if not present then creates a new one otherwise uses the existing    - see http://www.oreacode.com/2014-06-30_servlexceptionhandlinghtmlsnippet 
+        }catch(Exception e){   //Catch any unchecked exception thrown during execution of doGet() or init method in super class, then handle it here - see http://www.oreacode.com/2014-06-30_servlexceptionhandlinghtmlsnippet 
+            throw new ServletException(e);   //Rethrow the exception to be handled by other methods (or not) in your servlets or filters - see http://www.oreacode.com/2014-06-30_servlexceptionhandlinghtmlsnippet
+        } 
+    };//end of doGet method   //close bracket is for the start tag (<a>) ending in <\b></\u{A}lert!DOCTYPE html;...restofthecode. You can add more attributes and content after this closing line: - see http://wwwservletapiwiki-v2014/indexdothtmlNewsitemShow[http:/newsid=8937](https)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response){}; // implement POST method similar to GET in order for your servlets - see http://www.oreacode.com/2014-06-30_servlexceptionhandlinghtmlsnippet  }catch{...}
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException {//invoke the doGet method for this servlets - see http://www.oreacode.com/2014-06-30_servlexceptionhandlinghtmlsnippet  }catch{...}
+    //Implement other methods similar to get and post in order of HTTP request like HEAD, OPTIONS method (and so on) - see http://www servlet API wiki/indexdothtmllistHTMLtagList[http:/servletsapiwikihtmllist](https]   }//end the class
+}  //close bracket for start tag <a>...restofthecode. You can add more attributes and content after this closing line: - see http://www servlet API wiki/indexdothtmllistHTMLtagList[http:/servletsapiwikihtmllist](https]   }//end the class

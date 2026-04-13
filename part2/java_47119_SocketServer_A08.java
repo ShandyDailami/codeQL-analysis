@@ -1,0 +1,18 @@
+import java.net.*;
+import java.io.*;
+public class java_47119_SocketServer_A08 {  
+    public static void main(String args[]) throws Exception{     
+        //Create a socket and bind it to port number (8056 by default). Port numbers less than 1024 are considered privileged ports, so they should be done with care. In this case we're using the first available port after "free" one(s) in range of [32769-65535]
+        ServerSocket serverSock = new ServerSocket(8056);   //Create a socket for incoming connection requests, assign it to 4th free PORT (Port is available on the first number after "free" ports) in range of [1025->9999]
+        System.out.println("Waiting For Client On Port : ");     
+           //Accepts a client socket connection from one thread and returns an object representing this connection for use by other threads, eh only if the port is privileged(i.e., less than 1024)   , which allows server to listen on more ports in range of [32769->5086]
+        Socket clntSock =serverSock .accept();      //Accepts a client socket connection from one thread and returns an object representing this.  (i:e., the port is privileged(less than 1024)   , which allows server to listen on more ports in range of [32769->5086]
+           //Creating a InputStream, Outputstream for communication with client socket using 'clntSock' Socket object.     (it uses standard I/O - input stream / output streams)  
+        PrintWriter out = new PrintWriter(clntSock .getOutputStream(), true);  //Printwriter is used to send formatted text in the OutputStream, and it also flushes that buffer after each println statement when needed. (It uses standard I/O - input stream / output streams)  
+        BufferedReader in = new BufferedReader(new InputStreamReader(clntSock .getInputStream()));  //Buffering character IO for reassembling the request from client socket, and it also flushes that buffer after each read statement when needed. (It uses standard I/O - input stream / output streams)  
+           //Here we are expecting a message sent by clinet on server side then sending back acknowledgment  to same connection using PrintWriter object for communication with client socket     .(it sends formatted text in the OutputStream, and it also flushes that buffer after each println statement when needed. (It uses standard I/O - input stream / output streams)
+        String str=in.readLine();      //Read a line of characters from server using 'clntSock' Socket object  , we are expecting client to send message on same port then this read returns the received request(i:e., sends back acknowledgment). (It uses standard I/O - input stream / output streams)  
+        out.println("Server Acknowledgement : " + str);     //Send a formatted text in OutputStream, and it also flushes that buffer after each println statement when needed.(it used as client to send acknowledgment back from server.) (It uses standard I/O - input stream / output streams)  
+        clntSock.close();      //Close the socket connection using 'clntSocket' Socket object  .(after this, no more communications are done with that specific port in a single client and once closed , all resources associated will be released for use by other threads.) (It uses standard I/O - input stream / output streams)  
+    }      //End of main method.     Ending the program when server is terminated via close command or termination condition set on ServerSocket object  .(it used as closing operation in java, it can be done by passing false to accept() and shutdown()) (It uses standard I/O - input stream / output streams)
+}

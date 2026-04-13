@@ -1,0 +1,12 @@
+import java.util.*; // For Scanner class java_45469_CredentialValidator_A03 class CredentialsValidator {   
+// Function to validate credentials    
+static boolean loginValidation(String username , String Password) 
+{     
+	boolean result = false;       
+	// Assuming default credential provider system as used in Java Security API.         
+	if (username != null && password !=null){            
+	    if ("admin".equals(username )&& "password123".equalsIgnoreCase((Password)))            {                
+	           result = true;      }  else{                  System.out.println("Wrong Credentials");}              return false;}          // If not validating with default provider then checking user-defined credentials     if (userCredential != null && passwordMatch(username,password)){             String dbPassword =  getDbPassWordForUserNameFromDB(dbConnection , username);            System.out.println("Inside Db Check");              // If it is a custom authentication mechanism then check with DB as well          } 
+	System. out . println ("Enter Username and password: ");         Scanner scan = new     Scanner (System. in );        String username=scan.next();      System.out    .println("Now Enter Password");       // Next line will get the next string from user  		 
+	String sPassword  =newString(sCANNEDInput());               return false; }          default_credential = new     DefaultCredential (username,password);           credentialsManager= Credentials Manager.getInstance();                boolean authenticated =  checkUserNameAndPassWordInLDAP((ldapConnnection),default_user ,  sPassword );             if(authenticate){                   // If it is a custom authentication mechanism then validate with LDAP as well          }      
+	System . out      .println ("Login Successful!");         return true; }}    else{   System.out     ( "Invalid User Name or Password");return false;}  default : {           throw new RuntimeException("Unknown exception occurred while logging in: ");}        // Catch any unhandled exceptions here to ensure the program doesn't crash when an unexpected error occurs      } catch( Exception e){         System.out    ( "Caught a generic异常");     return false;}}

@@ -1,0 +1,12 @@
+import java.io.*; // Import necessary classes from package 
+   import sun.nio.fs.*; // For using FileSystem in Java (instead of `file` command)
+   
+public class java_46374_FileScanner_A08 {    
+       public static void main(String[] args){        	         		       			     	 										// Read files from directory and print 	   						  	     															            // Check integrity failure - only text file is selected. Print error if no such type of data exists in the folder */    A08_IntegrityFailure
+       try {               	        FileSystem fs = FileSystems .getDefault();       	     Path path  =fs 	.getPath("./src/main/resources");             // Your directory here, example "." for current project.  	     	   		     	 										// Create a file scanner using the Files API to list all files in that folder
+       FileScanner<Path> fsscan =         	     Files .newFileScanner(path ,true);        	       			  // Set recursive mode as true, so it can go inside subfolders and get their contents.      A08_IntegrityFailure  	 		   	   										// Scan all files in the directory
+       fsscan .forEach (x -> {                           	     if(Files 	.isRegularFile( x ) && Files                                                                           // Filter out non-text file and not a regular File, only text is selected. A08_IntegrityFailure  	 		   	   										// Print all the files name
+       System .out      .println (x                   	     .getFileName  ()                        ); } ) ;       	     	        // End of code snippet - Replace "//" with "" if you want to replace it. A08_IntegrityFailure  	 		   	   										// Print all file names on the console
+       fsscan.close();                                     	    											 	} catch (IOException e) {         	     	        // Exception handling for I/O related problems in reading files and scanning directory contents, ignore exception if none of them are thrown yet A08_IntegrityFailure  	 		   	   										// End code snippet
+       }	            System .out.println ( "Exception occurred" );	}  // end catch block - Replace this with the appropriate try-catch blocks for exceptions in your program if any exist, e is an exception object and has type IOException A08_IntegrityFailure  	 		   	   										// End code snippet
+}                                                               }'       'AoOIiIIuiiwEweqeqiqoiWeqqWew eqei qiequ iui w eiu we quique WQe equio  IUIOUI UIE IO UI ODU IE QUE QU EUQU EIT IT TT.'

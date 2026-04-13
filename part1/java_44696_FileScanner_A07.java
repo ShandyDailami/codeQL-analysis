@@ -1,0 +1,3 @@
+class java_44696_FileScanner_A07 {   ... }  // Replace with your own code.      */      
+import javax.security.*;          // Import Security Manager, Subject etc...       
+SecurityManager sm = (SecurityManager)  ClassLoader .getSystemClassLoader(). getParent(). getParent(). getParent()    ;     if(sm == null){   System.out.println("No security manager found");} else {      try{         File dir =  new java.io.File("/path/to/directory")             sm. checkPermission (new java .security . Permission ("paint"),dir );  } catch

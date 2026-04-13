@@ -1,0 +1,10 @@
+import java.io.*;
+import java.net.*;
+public class java_49780_SocketServer_A01 {  
+    public static void main(String[] args) throws Exception{ 
+        ServerSocket welcomeSocket = new ServerSocket(8189);      //create a socket at port defined in argument to listen for requests (port number is dynamic, not specified by A01_BrokenAccessControl).      
+         while(true){             	//start infinite loop  	    		   
+            Socket connectionSocket = welcomeSocket.accept(); 			                    System.out.println("A new client has connected");                            									      // Accept a incoming request from the socket (blocking method)                                                                               	   														       HandlerThread handler =  new HandlerThread( );  		   
+	            try{    								//set up stream for communication  with clients, both ways.                       			                                   SocketReader reader =new SocketReader();                                                   System.out.println("Request from Client");                            									      //create and configure a client socket to connect on the port (blocking method)                                                                               	   
+		   	     handler= new Handler(connectionSocket); 								//initialize thread for handling this connection - as it is not in runnable, we must manually control its lifecycle.            													       Thread.start();      //launch handlers to manage client communication (separate from main)
+		   	     }catch(){  				            System.out.println("Request Handling Error");                            			                            }; 	    }} });                                                                       	} );}};'}));}))}}}};});}})`}}{{}{{{)}}}}, {{ {''))));, , ''');)))';') - ''))(((('

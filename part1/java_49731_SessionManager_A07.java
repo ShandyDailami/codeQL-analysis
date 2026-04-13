@@ -1,0 +1,18 @@
+import java.util.*;  // Importing the List interface and ArrayList class java_49731_SessionManager_A07 package util which are essential for our application to work efficiently
+  
+class User {     // Declaring a new class named 'User' with attributes id & name as per requirements in instructions (A07_AuthFailure)   
+ private String userId;         
+  public void setuserid(String uuid){this.userID=uuid;}        
+//Here, we are assuming that the IDs generated for each new User will be unique and immutable to avoid issues related A04 AuthConflict & UUID generation   //Declaring a private attribute userId of type String  (AO1_AuthUnique)    
+    public void setname(String name){this.userName=name;}        
+// Declare the other attributes as per requirement in instructions -> Adding more details if necessary A07 AuthFailure //Declaring additional private attribute user Name and password   type String (AO1_AuthUnique) 
+     public SessionManager() {       }        ///Default constructor for creating new instance of class 'User'   
+      @Override        
+public boolean equals(Object o){           return false;          }               else if (!this.getClass().equals()) {return true;}                  // We have overridden the default compareTo() method from Object superclass, it is used for comparing two instances of class 'User' by calling userId attribute 
+   @Override       public int hashCode(){         return this.userIDs; }                HashSet<String> set=new Hashset<>();            // Declaring a new instance variable named as "hash" and initializing it with the help from your constructor (AO1_AuthUnique)   
+}  /*closing bracket*/     public class SessionManager{       ///Declare this session manager's functions at top. A07 AuthFailure // Declaring a new instance variable named as 'userList', type List and initialize it with the help of your constructor (AO1_AuthUnique)
+   @Override      }public void startSession(User user){     ///Method to initiate session    User currentlyLoggedIn;             if (!set.contains((this)) {currentlyLoggedin=user;} else throw new Exception("Already logged in as: " + this)}  //This is the core of SessionManager's functionality and it handles authentication failures (A07 AuthFailure)
+}`}}}}}//Closing curly brackets for all classes, methods & their definitions. This should be your last piece to our program before running due diligence on every aspect required in AO1_AuthUnique requirement at a minimum - UUIDs unique id's and pass/user details are not included here as they vary based on the requirements of an application (A07 AuthFailure) 
+   //Adding more functionalities if necessary. The class & methods you add should be designed in such that it follows encapsulation principles, following AO1_AuthUnique requirement at minimum - only User related information is exposed and handled as per the needs of an application (A07 AuthFailure) 
+   //You can include additional functionalities like user roles handling or JWT token generation if needed. These should be done according to a specific use-case scenario in real world applications(if any). Refernce your requirement here for more details AO1_AuthUnique requirements at minimum - only User related information is exposed and handled as per the needs of an application (A07 AuthFailure)
+   //Adding commentary based on each function's purpose, use-cases or a general knowledge scenario. Refer to Java docs for more details if necessary AO1_AuthUnique requirements at minimum - only User related information is exposed and handled as per the needs of an application (A07 AuthFailure)

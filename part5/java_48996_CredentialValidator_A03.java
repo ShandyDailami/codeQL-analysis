@@ -1,0 +1,11 @@
+import java.nio.charset.*; // Import ByteBuffer, CharsetEncoder and CharsetDecoder for working with character encodings (like UTF-8) in Java Standard Edition SE without using external frameworks like Spring or Hibernate 
+    
+public class java_48996_CredentialValidator_A03 {  
+    public boolean validate(String passwordAttempted){         // Method to check the validity of user credentials, typically used for login. Takes as input a string (password attempted). Returns true if validated and false otherwise     
+        byte[] encodedPassword = "YOUR_ENCRYPTED_PASSWORD".getBytes("UTF-8");     // Replace with your actual encrypted password  -- This is just an example, it should be replaced by the real operation in a secure way.        
+           if (encodedPassword == null || passwordAttempted==null) return false;      byte[] decode = getDecoder().decode(encodedPassword);     // Decoding your encrypted bytes    boolean result =  ByteBuffer.wrap(decodedBytes).equals(ByteBuffer.wrap(passwordAttempt));  
+        }                                                       if (!result){           System.out.println("Invalid password"); return false;         }}else{               System. out . println ("Password matched, user is validated successfully.");  return true;}     // If the hashed version of entered pass does not match with stored hash then it will throw an exception else if everything matches than success
+        private java.util.Base64.Decoder getDecoder() {          String base64Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";        java.util . HashMap<Character, Character> decoder  = new 
+java.util.HashMap<> ();    for(int i = 0;i < 64 ; ++i) {          char a = base64Chars.charAt((i*4)/3), b=base64Chars .charAt(((i*4+1)/ 
+        3)), c=  base64Chars   .charAt((( i *   4 + 2 ) /    3) ), d =      base64Chars. charAt (( ( i+ 5)*   4/       3)); decoder       .put("" +a, b); 
+decoder          . put (" "+ a , c );   // and so forth….. }; return         java           . util     .. Base64                       ... getDecoder() ; }      for (int i = 0;i < passwordAttempted.length(); ++           ~              if(passwordAtte m

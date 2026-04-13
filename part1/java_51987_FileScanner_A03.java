@@ -1,0 +1,11 @@
+import javax.imageio.*; // This is only needed if we want ImageIO methods to read image files, you can ignore it unless necessary for your specific use case  
+import java.awt.*;    // For creating a new 'Graphics2D' object from an RGBImage and painting using drawRect method 
+import java.util.* ;     // Needed collections frameworks (ArrayList etc)     
+import javax.imageio.stream.*;// To read images as streams rather than files  
+public class java_51987_FileScanner_A03 {   
+private static ArrayList<String> safeExtensions = new ArrayList<>(Arrays.asList("jpg", "png"));  // List of image extensions which are not vulnerable to Injection attacks (safe file types)     public void start() throws Exception{       System.out.println("\nStarting File Scanner...");
+    String directoryPath="C:/";      int count = 0;   Image img ; Graphics2D g2d = null;}  try {         //Create a new Directory object and then list all files in this dir using the is() method            `Directory dir  = getFolder(directoryPath)          File[] flist   =dir.listFiles();
+    for (int i = 0;i < flist.length ; ++i){     if (!flist[i].isHidden()) {            String fileName = flist[i].getName()         boolean isSafeFile= checkImageExtension(fileName)        // Checking image extensions and not allowing any dangerous ones       try{             Image img  = ImageIO.read(new File(directoryPath + "/"+flIST [I] .getpath)) {
+            g2d = (Graphics2D)img.getScaledInstance(150, 137 ,Image.SCALE_SMOOTH); // If file is image or not         System.out.println("File: " + flist[i].getName()+" Is Image :-" +  img instanceof   Image );
+            g2d .drawRect(flist [I]  ! getBounds ().getLocation () ,10,3);          }else{             // If file is not image then print out the text       System.out.println("File: " + flist[i].getName()+" Is Not Image :-" +  img instanceof   Text );}}}
+catch(Exception ex){System.err .print ("Error in scanning files ..... ");ex .printStackTrace ();}     }} } catch (IOException e) {e. println(" Error reading image file: " + e ) ;    try{img = ImageIO..read())}  catching (Illegalargumentexception ex){System outprintln(“Incorrect parameters for read method,”+ex );}};

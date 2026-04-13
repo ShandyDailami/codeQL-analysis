@@ -1,0 +1,7 @@
+import org.springframework.security.authentication.*;
+import java.util.*;
+public class java_45135_CredentialValidator_A03 implements CredentialValidator {
+    private final List<String> validUsers; //List to store all the users that are allowed for validation, real application might use a more secure way of storing these values e.g., DB or another service layer 
+     public boolean validate(Authentication authentication) throws AuthenticationException{  	//Method which will be used by Spring Security framework while trying credentials in login process   	
+         String presentedPassword = (String)(authentication).getCredentials(); // Getting the password from user who tried to authenticate, this is a security sensitive operation 	 		         			    				        return validUsers.contains(presentedPassword);}  	//This checks if entered credentials are in our predefined list of allowed users i.e., Injection Vulnerabilities
+    }                                                      		private static final Logger logger = org.slf4j.LoggerFactory.getLogger (CustomCredentialValidator .class );  //Static method to log events or errors, this is a security sensitive operation and should not be left out of the code   public boolean supports(Authentication authentication) { return true; }		}

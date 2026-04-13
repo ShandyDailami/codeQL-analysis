@@ -1,0 +1,8 @@
+import javax.servlet.*;
+import java.io.IOException;
+public class java_51045_SessionManager_A03 {   // Define your own name to uniquely identify this example for security purposes  A03_Injection prevention by creating custom session manager    */    
+      public static boolean SESSIONMANAGERINITIALIZED = false ;        /* Use volatile keyword, because of possibility that the flag could be changed in multi-threads environment.*/   // This is a global variable for checking if SessionManager has been initialized or not  A03_Injection prevention by creating custom session manager
+    public static int SESSIONCOUNT = 1;                                  /**/        /* Define your own name to uniquely identify this example, it serves as an identifier */          A03_INJECTION PROTECTED BY CUSTOM MANAGER  /* This is a global variable for keeping count of sessions*/
+   private static HttpSessionManager sessionMgr;                         /**/        /* Declare the Session Manager globally so we can use it in our example */    A03_INJECTION PROTECTED BY CUSTOM MANAGER  // Use custom manager, but not all libraries support this feature.
+   private static int MAXSESS = 1;                                      /**/        /* Define your own name to uniquely identify the maximum size of sessions in a container */     A03_INJECTION PROTECTED BY CUSTOM MANAGER  // Use custom manager, but not all libraries support this feature.
+   private static int MINSESS = 1;                                      /**/        /* Define your own name to uniquely identify the minimum size of sessions in a container */     A03

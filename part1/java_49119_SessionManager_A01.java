@@ -1,0 +1,7 @@
+public class java_49119_SessionManager_A01 {  // Class declaration for the `Session Manager`  
+    private static HashMap<String, User> sessionIdToUserMap;     // Map to store sessions and their respective users - Key: String(session id), Value: User object (user info)      
+                                                                     
+                                                       public java_49119_SessionManager_A01() {  /* Constructor */       
+                                        this.init();   }                  private void init(){         
+                                            sessionIdToUserMap = new HashMap<>();} // Initialize the map at creation time of an instance    int getSize ()     Returns current number sessions in our manager       User getUser(String sessionID);  {      return null;}}                   public String createSession (User user)   throws Exception
+                                            if(!user.isActive()){ throw new IllegalArgumentException("Invalid operation, trying to log out a non-active user.");}     // Checking whether the given active state is valid or not                  }                    User login(String username , string password);  { return null;}}                   public void logout ( String sessionID) throws Exception   if(!sessionIdToUserMap.containsKey("")){ throw new IllegalArgumentException ("Invalid operation, No Such Session Id exists.");}     // Checking whether the given user is valid or not                  }

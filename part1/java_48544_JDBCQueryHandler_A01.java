@@ -1,0 +1,10 @@
+import java.sql.*;   // Import necessary Java packages for connecting with databases, statement etc 
+public class java_48544_JDBCQueryHandler_A01 {   
+     private static final String url = "jdbc:mysql://localhost/test";      // provide your own connection URL as per requirement (ex : jdbc:mysqldbserver)
+     private static final String username="root", password="password1234567890@!";   //provide valid credentials  for the database user. Do not use root or any predefined ones, change as per requirement (ex :yourusername and yourPasswordHere)
+    public static void main(String[] args){    	      	//Main function in Java that is starting point of an application/program  		         	   
+         try {      //Try-catch block for handling exceptions  if any occur during execution.				       			                 					               	      } catch (SQLException e) {}   	       	 
+            Connection con = DriverManager.getConnection(url, username , password);      	//Establish connection with database	  		          	    Class.forName("com.mysql.cj.jdbc.Driver");     //Load MySQL JDBC driver into the classpath  for use by clients	       
+            System.out.println("Connected to Database " + con );       				   	  Statement stmt =con .createStatement();      	//Create a statement object	  		     	    String sql="select * from Employee";     //SQL Query string	     			          ResultSet rs  =stmt.executeQuery(sql);        
+            while (rs.next()) {       				   	  System.out.println("ID : " + rs.getString('Id'));      		//Printing ID, you need to change 'id' with column name in your table if required  }          con .close();     //Closing connection        
+            stmt.close() ;     		                    				              }; catch (ClassNotFoundException e) { System.out.println("Error Occured while loading the driver" +e);}   	}};               ^C

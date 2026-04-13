@@ -1,0 +1,18 @@
+import java.io.*;
+import java.net.*;
+import javax.security.auth.Subject;   // Include this for handling security issues and injection attacks
+class java_44551_SocketServer_A03 {   
+public static void main(String args[]) throws Exception{    
+Socket socket;//declare a variable of type Socket 
+ServerSocket server_socket = null ;      ServerSocket net_server=null:       int port = 60012, client_port= 54378 :    try {   //try block to declare the variables and objects     system.out .println("Starting the Echo Sever on Port:" + port);  server_socket = new ServerSocket(         
+port );//server socket created for listening call              while ( true )        /*Infinite loop */         do{           try {       //try block to declare and handle exceptions    system.out .println("Waiting For Connection From Client ...");      Socket client_sock= server_socket   .accept(); System out 
+     .print ("Connection accepted from :" +client_sock ) ;//message sent for confirmation of connection       PrintWriter pw =  newPrintWriter(                   (SocketOutputStream)          s.getOutputStream() );        BufferedReader br =newBufferend    Read      r= null; String servermsg, clientmsgh  string("A03 Injection"):   Subject subject= 
+     //Include this for handling security issues and injection attacks         do{           try {               System out .println( "Entering Message:");          reader = new BufferedReader (new InputStreamreader       ((SocketInputStream)client_sock.getinputstream())) };catch      EchoServer e 
+    // exception   }while;     if (! servermsg == null )//check for a valid message sent from client         do{               try {           string msg = br .readline();             System out ..println("Message Received : " +          (server_sock.getInetAddress().toString()+" -> "  + 
+    // servermsg)); }catch      EchoServer e     };   if (! clientmsgh == null)//check for a valid message sent from the same machine         do {             try{                string msg = br .readline();           System out.println("Message Received From The Same Machine :"+(client_sock
+    //InetAddress().toString() + " -> "  + clientmsgh)); }catch       EchoServer e     };//end if check for A03 injection  try{               servermsg = br .readline();           System out.println("Message Received :" +  (server_sock   
+   //InetAddress().toString() + "-> "+      clientmsgh)); }catch       EchoServer e     };//end if check for A03 injection  do{             try {               servermsg = br .readline();           System out.println("Message Received :" +  (server_sock
+    //InetAddress().toString() + "-> "+      clientmsgh)); }catch       EchoServer e     };//end if check for A03 injection  system..out...print ("Closing the connection");          pw .close(); s.close());   catch (IOException e){                 
+    //Handle exceptions here        System out ..println(e);                   try {             Socket local_sock = new Socket("127".".", client_port );           DataOutputStream out to  write data into socket          ("Hello Server!"),         int n; for (n=0 ;                 EchoServer e     }; //end of the loop
+   catch(Exception ex) { System.out .println    (@exception); }        system..exit(-1)}//close all resources, in case any error occurred while handling connections });  end if block      }}catch Exception              (IOException ie){                  Logger log=newLogger("ErrorLog");                  
+   //(ie),log exception;}}end of the try-Catch and Finally blocks     }});}}}    End code snippet.

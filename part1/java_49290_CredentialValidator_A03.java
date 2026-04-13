@@ -1,0 +1,7 @@
+import java.util.*;
+   import org.springframework.security.core.userdetails.User;
+    public class java_49290_CredentialValidator_A03 {
+        // AuthenticationManager is not used in this example, but can be injected where necessary for a real application (Spring Security). We use it here just to show how we could validate credentials on creation of an object: 
+       private final AuthenticationManager authenticationManager;  
+     public java_49290_CredentialValidator_A03(AuthenticationManager authenticationManager) {    //constructor injection      this.authenticationManager = new MyCustomUserDetailsService(); }        super() should be replaced with your own User class, if necessary (Spring Security uses the same default user structure).  This is just a simple example of how you could use Spring security to authenticate users:
+       public boolean validate(String username, String password) {    //authenticates in our constructor     try{        UsernamePasswordAuthenticationToken authRequest = new UsernamePasswordAuthenticationToken (username ,password);      Authentication authentication  = authenticationManager.authenticate (authRequest );   if (authentication . isAuthenticated () )  {return true; } else { return false;}         catch(Exception e){ System.out.println ("Invalid username or password"+e) ;    // handle exception as necessary for the program flow      }}

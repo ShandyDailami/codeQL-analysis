@@ -1,0 +1,11 @@
+import java.io.*;  // Import necessary Java classes such as InputStream, OutputStream and PrintWriter
+import java.net.*;  // Define Socket class java_52075_SocketServer_A08 create a connection between client & the Server (Client is defined by InetAddress ip)  
+public class SecureSocketServer {   
+     public static void main(String args[]){       
+          try{           
+               ServerSocket welcomeSocket = new ServerSocket(6013);           // Create server socket. Client will connect to this port  (default is localhost:port).     
+         System.out.println("Waiting for client connection on port " + 
+             welcomeSocket.getLocalPort() +" ...");               String userinput;        try{            InputStream in =       welcomesocket.accept().getInputStream();     // Accept the incoming socket           new BufferedReader(new    InputStreamreader   (in));              reader=newbufferedwriter 
+             writer2("connection established");                     while((user input) !=  null){                    userinput =  br .readline()) ;                      if (!userequest.equalsIgnoreCase ("exit")){                        // Decryption                            String encryptedtext = encrypt(username +" "+ usertxt);         }}}catch (IOException e ) {           System .....;    }} catch socketexception sock 
+             err)       ...                    try ...... catching            IOException inne   r          if.........                SocketExcepti onnioerr){                  .println("Error: " + ioex.getMessage()); }catch (UnknownHostException exe ){...}} //handle exception//              catch(Socketexception sock Excetion err 
+             {..}         }}       finally   ...                    writer2 ("connection closed");    try           ..        brclose();     socket close;}}}                   Encrypting/Decryption code is used to illustrate security sensitive operations related                A08_IntegrityFailure. The encryption and decryption are just for understanding purposes, not real-life applications should use actual libraries or frameworks in place of this simple demonstration only}}

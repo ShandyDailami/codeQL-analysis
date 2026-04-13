@@ -1,0 +1,10 @@
+import java.io.*;
+import java.net.*;
+
+public class java_46171_SocketServer_A08 {
+    public static void main(String[] args) throws IOException{  // e.g., port=4015 or whatever you want (default is non-secure ports below 1024), use default if unspecified, but should be secured above this range for secure connections
+        ServerSocket server = new ServerSocket();           // create a socket on the specified port number and listen to it. If no arguments are passed in then by defaults uses an available unsecured ports below 1024 only (non-secure)        	    		   									              	   			                 }
+        System.out.println("Waiting for client...");       // wait until a connection is made to the server socket and accepts it using accept() method, which block if no connections are present at that time due thread pool size set by 0 when ServerSocket constructor call with non-secure port number passed in
+        Socket sock = server.accept();                    	    		   									              	   			                 // create a socket for the client and wait until it sends data to this via write() or read(), block if no clients have connected yet, thread pool size set by 0 when ServerSocket constructor call with non-secure port number passed in
+        System.out.println("Connected!");                  	    		   									              	   			                 // send a message back for client to acknowledge successful connection over socket using write() or read(), block if no clients have connected yet, thread pool size set by 0 when ServerSocket constructor call with non-secure port number passed in
+        DataInputStream dis = new DataInputStream(sock.getInputStream());    	   // create a data input stream to receive the message from client over socket using write() or read(), block if no clients have connected yet, thread pool size set by 0 when ServerSocket constructor call with non

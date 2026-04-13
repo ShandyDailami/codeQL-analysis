@@ -1,0 +1,9 @@
+import java.io.*;
+import java.net.*;
+public class java_47060_SocketServer_A01 {
+    public static void main(String args[]) throws Exception{  
+        // Create a server socket and listen on port number 5001, the same as client's requestPort in SocketConnectionExampleClient:9203... (use different ports for each run of your program). Here we use ServerSocket.accept() to establish multiple connections from clients; by testing this out with a single command line argument like "java SimpleServer 501", it should open up on the same port, and listen indefinitely
+        // Create server socket (bind method creates local endpoint) - using specified IP address & listening at that specific Port.    Threaded mode is used to accept multiple connections but we are now only connecting with localhost so just keep everything as above...   ServerSocket(int port).socket()  returns a new datagram socket and binds it onto the created server sockethook
+        // create an inputstream for reading data from client, then write back response. This is done in two steps: first read bytes into bytebuffer; second use getOutputStream().write to send them   BufferedReader/InputStream(new FileInputStream("mystery_file"))  and serverSocket accept() method return sockets that implement the complete protocol of TCP or IP, here a socket with new stream for communication.
+        ServerSocket ss=null;    //Declare Socket accepting connections... Declaring serversockethook is same as in client side using bind function   PrintWriter out(socketacceptednewconnectionestablished()),outtoServer(),thestringwrittenin()  are all used to send and receive data on server socket
+        try{ ss= new ServerSocket (501); System.out.println ("Waiting for connection at port "+ss.getLocalPort () +"...") }catch(IOException e){System . out . println("Could not listen on port 501");    return;   }}

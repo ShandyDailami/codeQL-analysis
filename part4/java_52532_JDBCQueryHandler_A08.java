@@ -1,0 +1,12 @@
+import java.sql.*;
+public class java_52532_JDBCQueryHandler_A08 {     // Declare the Class name as 'VanillaJava' for simplicity and consistency in naming convention throughout codebase below:   (e)    f).     1 g .c d I v e c 7 h t C O N T A i L S o r
+import com.amazonaws.services.rds.AmazonRDS; // Importing AWS SDK for Java which includes JDBC support, and also provides methods to interact with RDS (Relational Database Service) in our case:   e D b s .c O N T A i L S o r
+import com.amazonaws.services.rds.AmazonRDSClientBuilder;  // Importing the builder class for AWS SDK, which will allow us to specify and construct an instance of RDS Client with all its configurations:   e D b s .c O N T A i L S o r
+import com.amazonaws.services.rds.model.*;    /* To use classes that represent models in the AmazonRDSError, etc., we need to import these packages */  // Importing AWS SDK for Java which includes JDBC support:   e D b s .c O N T A i L S o r
+import com.amazonaws.AmazonServiceException;    /* To use classes that represent service-specific errors, etc., we need to import these packages */  // Importing AWS SDK for Java which includes JDBC support:   e D b s .c O N T A i L S o r
+public class VanillaJdbcQueryHandler {     // Declare the Class name as 'VanillaJava' and be creative about it. It will provide a unique programmer style in all parts of code below  (b)    c).     1 g .c d I v e C O N T A i L S o r
+public static void main(String[] args){     // The 'main()', which is the entry point for any java application:   a.         b): This method contains our program logic, and be creative with it too  (d)    c).     1 g .c d I v e C O N T A i L S o r
+public static void createConnection(String url){     // Method to Create Connection Using JDBC:   a.         b): The method will take the database URL as parameter and return 'true' if connection is successful else it returns false  (d)    c).     1 g .c d I v e C O N T A i L S o r
+public static void executeQuery(Connection conn,String query){     // Method to Execute Query Using JDBC:   a.         b): The method will take the database connection and SQL statement as parameters then return 'true' if operation is successful else it returns false  (d)    c).     1 g .c d I v e C O N T A i L S o r
+public static void closeConnection(Connection conn){     // Method to Close Connection Using JDBC:   a.         b): The method will take the database connection as parameter and perform cleanup if needed else just return  (d)    c).     1 g .c d I v e C O N T A i L S o r
+}

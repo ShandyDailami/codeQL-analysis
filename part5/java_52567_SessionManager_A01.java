@@ -1,0 +1,5 @@
+import java.util.*;  // for List, Map interfaces & classes  
+     public class java_52567_SessionManager_A01 {    private static Map<String , UserSession> sessionMap;      /* In-memory representation */      
+        /** Initialize the map with a hard coded list of users **/        
+          public void init() {           this.sessionMap = new HashMap<>();            // Populate it manually for learning purposes only  SessionManager sm=new SessionManager ();sm .init () ;   }      /* Create session */       /*** Method to create a UserSession and add in the map ***/       
+         public void makeUserActive(String userId) {           if(!sessionMap.containsKey(userId))          throw new IllegalArgumentException("Invalid Session ID");            // check whether this id is already associated with an active session or not             /* Get Active sessions */       /*** Method to get all the currently logged in users ***/        public List<String>getAllActiveUsers() {           return  new ArrayList<>(this.sessionMap .keySet()); }

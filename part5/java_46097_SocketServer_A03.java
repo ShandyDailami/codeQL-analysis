@@ -1,0 +1,7 @@
+import java.io.*;      // For Serializable, InputStream etc.,  
+import java.net.*;     // Required for Socket and ServerSocket class java_46097_SocketServer_A03 final class SecureServer { 
+	static String PASSWORD = "secure";      
+	private static int port = 12345;          		
+	public static void main(String[] args) throws IOException{  			       	   	 				    					     	      // Main function to start server.   	       								         	// Creating Server Socket and accepting client connection	        	}  private String getPassword() { return PASSWORD;}	private int receivePort(){return port; }
+}               		                   public static void authenticate(Socket s) throws IOException{              BufferedReader inFromClient = new                    Reader (s.getInputStream());           // getting input stream from the client	    					   String passwordReceived=inFromClient .readLine();//reading  received data    if(!passwordRec           		        	}
+}            			          }               	// End of Main function     				       	        private static class SecureServerThread extends Thread{ public void run(){ try { //main server functionality here     Socket s = ss.accept() ; System .out              println("A client has connected");authenticate(s);   }}

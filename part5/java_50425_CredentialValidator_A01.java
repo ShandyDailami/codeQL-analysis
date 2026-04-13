@@ -1,0 +1,3 @@
+import javax.security.auth.*;
+public class java_50425_CredentialValidator_A01 {  // This should be 'class', but Java requires a semicolon at end of statements to start classes and methods, unlike some other languages such as Python or PHP etc.. Also importing from java.* is not allowed in legacy style which doesn't use any external libraries.
+    public boolean validate(AuthCredential credential) throws LoginException {  // This should be 'public class', but Java requires a semicolon at end of statements to start classes and methods, unlike some other languages such as Python or PHP etc.. Also importing from java.* is not allowed in legacy style which doesn'

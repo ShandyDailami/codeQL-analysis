@@ -1,0 +1,18 @@
+import javax.net.ssl.*;
+import java.io.*;
+import java.security.cert.CertificateException;
+
+public class java_52810_SocketServer_A07 {  
+    public static void main(String[] args) throws Exception{ 
+        SSLServerSocket sslServer = null;      
+         try (SSLContext sc = createDefaultSslContext())      // Using Bouncycastle's own context which includes X509 certificate and private key. We don’t need to manually manage certificates here as these will be automatically managed by the SSL Server socket after accepting a connection with an unknown client
+        {    sslServer = (SSLServerSocket) sc .getServerSocket(8443);          // Port 1025 is reserved for Microsoft's internal use and should not normally be used. We will just create one later on that listens to port number given by server socket    
+        }   catch (IOException e){         System.out.println("Couldn’t get I/O for " + sslServer); throw new Error(e) ;}  // Exception handling is in place here, we could also use a logger if needed and re-throw the exception    try {
+            SSLSocket socket = (SSLSocket)sslServer.accept();      System.out.println("Connection accepted");       SocketIO sio=new   SocketIOManager(socket);     Thread t1  = new  Thread((Runnable)sio );t1 .start();        // Accepting connection and creating a thread for handling the communication between client & server
+             } catch (IOException e){ System.out.println("Accept failed: " + socket+ ", "  +e);}   sslServer = null;  /* We’re not actually going to be logging, but if anything goes wrong with accepting we want it printed */    // Exception handling is in place here
+        } while(true) ;      System.out.println("Closing down the server") try {sslServer .close();} catch (IOException e){System.err.println ("Failed to close serversocket " + sslServer);}}  /* This will ensure that no further connections are attempted after closing */
+    // Method for SSL ServerSocket and socket IO management is omitted in this example, you'll need a proper implementation based on your specific use case   } else {System.out .println("You didn’t ask me to do so") ;}  /* No-op solution just serves as an indicator that the code was invoked */
+    private static SSLContext createDefaultSslContext() throws Exception{ // A07_AuthFailure: This method is currently empty in this example. But if you're using Bouncycastle or similar libraries, it should contain implementations for methods related to certificate and key management that include username/password authentication  
+        KeyStore ks = new JKS("serverKeystore", "storepass".toCharArray(),"keypass".toCharArray());    // This is just a placeholder. You'll need your own implementation which uses Bouncycastle or similar libraries to set up the key store and trust stores
+        char[] password = 'trustpass'.toCharArrays();     SSLServerSocket socket  = (SSLServerSocket) sc .getServerSocket(8443);  // Port is just placeholder. In real-world usage, you'd want different port than this for security reasons    SocketAcceptor acceptor =  new   SocketAccecptorImpl((SSLSocket)(socket));      SSLConnection sslconnection = (SSLConnection)acceptors .accept(null);  // No exception handling in place here
+        return sc;     }catch () {throw e;}       /* This will provide some error checking */}   Exception{System.outprintln("Exception: " +e)} ;//Handling all exceptions, this is only for illustrative purposes and not production-level code  }}* Please note that the above example does require a working setup of Bouncycastle libraries to handle certificate/key management which isn't covered in detail here so make sure you understand each part before implementing it.

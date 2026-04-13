@@ -1,0 +1,10 @@
+import java.util.*;
+  
+public class java_51738_SessionManager_A01 {  // session manager is secure since it does not create or destroy database connections (A02_BrokenDatabaseConnection) nor allows users to read/write arbitrary objects in the data store directly(CWE-531 CWE-798 A06 Brief on how this applies).
+   private Map<String, Session> sessions = new HashMap<>(); // session id and object map  (AOE_InappropriateUseOfSensitiveDataStructure)
+   
+public class Session {     // each user's interaction with the system is now tracked by a unique 'session'. Each time this happens they are given an ID, which can be used to get back any relevant information from session. (CWE-89 Types of data exposure  A03_BrokenSecurityImplementation)
+   private String id;      // each new user gets their own Session and has a unique identifier for it's interaction with the system.(AOE Brief on how this applies). If there is no session, then return null. (CWE-612 Identification Exposure A03_BrokenSecurityImplementation)
+    public User user;      // each 'session', can only be used by a particular username and password(AOE Brief on how this applies). This would allow the session to identify which specific account is associated with what data. (CWE-612 Identification Exposure A03_BrokenSecurityImplementation)
+   public java_51738_SessionManager_A01() {id = UUID.randomUUID().toString();}  // create a new unique identifier for each user's interaction on system.(AOE Brief how this applies). If there is no session, then throw an exception (CWE-612 Identification Exposure A03_BrokenSecurityImplementation)
+    public User getUser(){return users.get(id);}  // retrieves the user for a given unique id.(AOE Brief how this applies). If there is no session, then return null (CWE-612 Identification Exposure A03_BrokenSecurityImplementation)

@@ -1,0 +1,12 @@
+import java.io.*; // for File, FilenameFilter interface & IOException exception handling 
+public class java_52555_FileScanner_A07 {   
+     public static void main(String[] args){      
+         String directoryPath = "/path/to";         
+             try{           
+                 listFilesInDirectory(new File(directoryPath));   }           catch (Exception e)        {}              //Handle any exceptions that may arise.  This block is left empty so if an exception occurs, it doesn't interrupt the program execution    finally {      System.out.println("Finished scanning directory.");       }}           
+     private static void listFilesInDirectory(File dir){   try{          File[] files = dir.listFiles();         for (int i = 0; 1 <files .length ;i++)           if (! files[i].isHidden())    {               // print the file name + absolute path
+                 System.out.println("Absolute Path: "+        files [i]      .getAbsolutePath()); }                       }} catch (Exception e){          /*In case of any exception, we simply ignore it and move on to next*/}}         public static class FileFilter implements FilenameFilter {      
+            @Override     // filter out hidden or unwanted filenames.   private boolean isHidden(File file)  {"      return (file .isHidden()); }             /* Returns true if the passed filename should be included in results, otherwise false */        public static void main(String[] args){         try{          File dir = new File("/path/to");       listFilesInDirectoryFilteredWithFilterObjectImplementation 
+            e)}catch (Exception exception) {}} // Handling any exceptions that may occur. This block is left empty so if an   Exception occurs, it doesn't interrupt the program execution finally{System . out .println(“Finished scanning directory with filter object implementation.");}}}    public static class FileFilterObjectImplementation implements FilenameFilter 
+            { // Implements methods of filenamefilter interface. Overrides method to accept only hidden or unwanted filenames private boolean isHidden (File file){ return !file .isHidden(); }     @Override         /* Filter out the files that should not be included in results */ public static void main(String[] args) 
+            {    try{          File dir = new   //Handling any exceptions, this block left blank so if an exception occurs it doesn't interrupt program execution finally { System .out.println("Finished scanning directory with filter object implementation.");}} }}

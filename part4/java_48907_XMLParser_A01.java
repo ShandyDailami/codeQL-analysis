@@ -1,0 +1,8 @@
+import java.io.*;   // Import the Java I/O package for handling input and output 
+import javax.xml.parsers.*;    // The parser API, needed to create an XMLReader object    
+public class java_48907_XMLParser_A01 {      // Declare a new public 'class' named "XmlParsing"       
+   static void printIndent(PrintWriter out ,int level) throws IOException{  // Define the function that prints indents (for hierarchical output).         The parameter is an int representing depth.      
+    for(int i=0;i<level;i++){     Out .print("--");}      OutputStreamWriter   os  = new            QuietOutputStreamWriter();Out =new PrintWriter  (os);println('-'+"Hello world!" , level +1)}catchException{e. println( "Oops! An error occured: ", e)); }
+       catch {E ops, int main(){InputStreamReader in  = new BufferedReaD Reader();try   // Try to create an 'XMLreader' object     try (Xml reader = XmlFactory .newInstance().    Creating a parsing engine.      XMLReader  parser= DocumentBuilderfactory       
+! getinstance().. createnew xmldocumentbuilder(){Document doc  = newdocbuiler(DTDVALIDATION_NONETWORKING);     try{parser .parse (in){           printindet ("",0 ) // Prints the document in indented form. }catch Exception e   {e 
+!,println(" Error at line: "+ parser.getlineNumber() +". Message is :" , E) })}} catchException(IOException ioe);}{System . out (ioewritererror (" Cannot write XMLDocument to file:"))){thrownew IOException(); }    // Catch Exception handling

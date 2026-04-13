@@ -1,0 +1,10 @@
+import java.io.*;
+import java.net.*;
+public class java_43984_SocketServer_A08 {  
+    public static void main(String args[]) throws Exception  {     
+        ServerSocket server = new ServerSocket(8092);     // Create a socket on port number "port" (here: Port = 8092), and accept incoming connections.      
+         System.out.println("Server started at端口号：Port=  8092");     
+          while (true) {    Thread thread = null;     // Define a new daemon-thread for each client connected  .        try{                Socket socket  = server.accept();                 println( "Client Connected"+socket);                  DataInputStream dis   =new   DataInputStream(socket.getInputStream());              
+             String msg=dis.readUTF();           // Read from the input stream, and echo back to client with a while loop  .         System.out.println("Received: -> " +msg );                   if (thread == null || ! thread.isAlive())     {      Thread t = new WorkerThread(socket);      
+              } catch(Exception ex){                 // Catch any exceptions that occur here, and print out the error message to console  .    System.out.println("Error: " +ex );   }}            server.close();}}             public class workerthread extends Thread{        @Override      protected void run(){                try {                  Socket socket = new Socket(InetAddress.getByName('localhost'),8092);              DataOutputStream dos=new 
+DataOutputStream (socket.getOutputStream());           // Send message to the client using a while loop .               String msg  ="Hello Client!";             do{                   dos.writeUTF(msg + '\n');                 Thread.sleep(5000) ;}                  } catch    Exception e){System.out.println("Error in TCP Socket communication: "+e);}}}

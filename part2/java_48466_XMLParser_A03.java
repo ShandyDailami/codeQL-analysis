@@ -1,0 +1,6 @@
+import java.security.*;  // For SecureRandom, NoSuchAlgorithmException exception handling  
+...     
+public class java_48466_XMLParser_A03 {    ...     public static void main(String[] args) throws Exception{       Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());            try (InputStream is = new FileInputStream("test.xml")) {               XMLParser parser;                DOMParser dp=null; 
+        // Create a default SAXReader with no namespaces and CDATA sections enabled             Reader rd = null;}  
+         ...       } catch(Exception e){}      try (SAXReader reader =  new SAXReader()) {           Document doc  =reader.read(is);                   Element root=doc.getRootElement();                 System.out.println("root name: "+     root.getName());                     for(@SuppressWarnings("unchecked") List<Element> list = (List)   
+         ...               // Use xpath to navigate the xml tree and print out all element names} catch(Exception e){}}}  at least try/catch block can be used here too, it depends on what you want if exception occurs.   I added `org.bouncycastle` provider for Bcrypt hashing requirement by using SecureRandom

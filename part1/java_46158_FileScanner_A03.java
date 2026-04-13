@@ -1,0 +1,6 @@
+import java.io.*; // Importing required classes from library  
+import java.nio.file.*; // To work with file and directory paths in Java 8+ libraries   
+import java.util.*;//Import the utilities class java_46158_FileScanner_A03 we can use its functions    
+import static com.google.common.primitives.Ints.asList;     
+static int totalSum = 0, uniqueFilesCount= 1 ;   // Initialize variables globally for ease of access in method calls    (Static variable to keep track)  } else { ...}            if(fileInfo instanceof Directory){     directoryToProcess = pathname;}       FileVisitor<Path> fileProcessor= new SimpleFileVisitor<>(){         @Override public boolean visitFile(Path file, BasicFileAttributes attrs) throws IOException{           totalSum += Files.size(file);             uniqueFilesCount++;          return super.visitFile(file ,attrs ); }};      System.out .println ("\nTotal files size : " + (totalSum/1024));     // Print the sum of all file sizes divided by 8 for a more user-friendly format  
+System. out . println("\tUnique Files Count: \r"+ uniqueFilesCount );} else {... }            };    if(directoryToProcess != null) findAllInDirectoryRecursively ( directoryToProcess , fileProcessor);     ... // Continue the code for other cases also as required.

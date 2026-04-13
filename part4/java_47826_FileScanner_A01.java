@@ -1,0 +1,12 @@
+import java.io.*; // Importing required classes from Java framework libraries  
+    import javax.swing.filechooser.*; //Import FileDialog for choosing a directory and file within it (A01_BrokenAccessControl)    
+public class java_47826_FileScanner_A01 {      
+//Main Method     
+ public static void main(String args[]){         
+  String userDir = System.getProperty("user.dir");       
+   createFileScanner();    //Calling the method to scan files and sub directories         }           catch (Exception ex)                  
+                      {{              FileIsNotSelectedError: ' +                 e .getMessage())}                  }}          };      public static void  checkDirectory(String dir){ try { DirISelectedErrror :   new Exception("The directory is not selected. ") ; DirectoryInfo =new java.io.*;                       //getting the info of a certain file or folder in                         
+the system                     File f=                    new                      Java . io.,                           Path s,                         Info   =                        } 1047283659+   if (f!=  null)       {      try     to    open it as directory           {" + userDir  + "/"             +  dir +  " /. *.*"},                                                           
+null}, FileFilter{}); catch(Exception e){}}catch  Exception ex ){ }} } //End of method checkDirectory        public static void createFileScanner(){try {   for (int i = 0;                int n = c .length ;i++)      if ((c [n] is Directory))
+checkDirectory                 (" +              dir                    + "/"              +  c[n].getName());  //Calling the method to check and open directories        }}catch(Exception e){}}          }    catch ( Exception ex ){//End of Method createFileScanner                public static void FileIsNotSelectedError(){throw new                   
+   Error("The file is not selected. ");           try { setDefaultCloseOperation(javax .swing               .JFrame             ):     JButton bt =new         javax              ..ui..button ();        add                   (' Quit ')};}} catch      Exception e    } //End of Method FileIsNotSelectedError            public static void DirISelectedErrror(){throw new Error("The directory is not selected. ");           try { setDefaultCloseOperation(javax .swing               .JFrame             ):     JButton bt =new         javax              ..ui..button ();        add (' Quit ')};}} catch      Exception e    } //End of Method DirISelectedErrror

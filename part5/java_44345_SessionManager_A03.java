@@ -1,0 +1,4 @@
+public class java_44345_SessionManager_A03 {  
+    public static void main(String[] args) throws Exception{    	        		       
+            // Start a session, we won’t actually connect to anything yet. This is just for our demonstration purposes of the code         	       				     					       } 	 	   			                .getSession();                   									}catch (Exception e){e.printStackTrace()}   }}    	        		       
+public class SessionManagerImplJavaLegacySecureExample{    public static void main(String[] args) { try,OpenConnection(){ Connection con = DriverManager..  getConnec…}} catch .. }                    .getSession();                       	}catch (Exception e){e.printStackTrace()} }}

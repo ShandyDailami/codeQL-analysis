@@ -1,0 +1,11 @@
+import org.xmlparserlib.*; // assuming XMLParser is in a library, change accordingly if not
+// import your own custom parser like - javax.* or similar based on where you find one 
+
+public class java_45917_XMLParser_A07 {    
+    public static void main(String[] args) throws Exception{        
+        String xml = "<root><element>Your content here! Authentication sensitive operation. </element> <other_elems> 2nd element, authentication error case study...  </ other_elem >";             // Sample XML string 
+    	try {  		   			     					// Try block for security-sensitive operations         	   
+        	if(xml == null || xml.length() == 0){                  					       	       							      
+                throw new Exception("XML content cannot be empty");                  }               else{                                                                                            // if not, proceed with processing  otherwise print error message                     try catch           				    	            			   		     	   	 	      }, {                    System.out.println(e);}};                         SecurityManager sm = new javaxSecurityManager();                          SecureElement se  =new   orgXMLParserLib().parse("sample",sm) ;
+          }  finally {} // Protects against potential leaks in the "try" block, no effect if we're not inside a try/catch clause.                  		   	    			            	 	   				        	} catch (Exception e1){System .outprintln(e);}};                         private static class javaxSecurityManager extends  java SecurityManager { // Our own security manager that overrides default behaviour }
+}                 });   }} ; };});}; System out nulll, print message "XML content cannot be empty";}}}                     if (xml == null || xml.length() == 0) throw new Exception("Content is not allowed to be Empty!");     try {  SecurityManager sm =new javaSecuritymanager(); orgXmlParserLib p=orgNew XMLPArserLiB ("Sample",sm ) ;   } catch(Exception e){System outprintln (e.getmessage());}}

@@ -1,0 +1,12 @@
+import java.io.*;  // Import of Input/Output Streams and their related classes  
+import javax.crypto.*;     /* For encryption */   
+import sun.security.x509.*;        /** for X509Certificate **/     
+import java.net.*;            /* Needed to use InetAddress & ServerSocket  */      
+public class java_51953_SocketServer_A08 {   // Begin of Main Class Section - Starts the server program   
+     public static void main(String[] args) throws Exception{           //Main Method begins here       
+         int port = 6001;                                                 /* Declare and Initialize Port No. */ 
+          ServerSocket welcome = new ServerSocket (port);                /* Create a Socket on the given ports*/  
+             while(true){                                           		   	/* Starts server in an infinite loop to accept incoming client requests until program is stopped manually by user or via error conditions like connection was lost etc. */             			      	        									    	}  }        public static String getHash (InputStream input) throws IOException {   // Function that generates hash using SHA-256 algorithm   
+          MessageDigest digest = MessageDigest.getInstance("SHA-256");      /* Create a instance of Digests */                                                                           	                                       			    	}  private static void processRequest(Socket connectionSock) throws IOException, NoSuchAlgorithmException {           // Function that processes the request from client and then sends back response using SHA hash function  
+          DataInputStream dis = new DataInputStream (connectionSock.getInputStream());      /* Create a data input stream to read message sent by user */                                                                              				    	}  try{                                                          	// Try block for exceptions in case of any failure               		                	        			                    	        } catch(Exception e){                          // Catch blocks are used here when an exception occurs            
+              System.out.println ("Error: " +e);                       /* Print error message if there is one */   				    	}  finally {                            	// This block ensures whether the operation was successful or not, it will always be executed after try and catch has run                    }                           	                    		        	        }} // End of Main Class Section

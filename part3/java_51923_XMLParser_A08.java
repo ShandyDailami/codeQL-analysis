@@ -1,0 +1,17 @@
+import java.io.*;
+import javax.xml.parsers.*;
+import org.w3c.dom.*;
+import org.xml.sax.*;
+public class java_51923_XMLParser_A08 {  
+    public static void main(String args[]) throws ParserConfigurationException, SAXException{ 
+        // Create a new factory for the parser configuration and parse it with an XML document (pass file to constructor of this Factory).
+	File xmlfile = new File("sample.xml");	//replace 'SampleXML' accordingly if your .txt is not named sample.text or any similar name, change '.xml'(extension) too depending on how sensitive you want the data 
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();   //This will be used to create DOM objects for parsing our XML document using their factory methods and APIs respectively such as newDocument(), loadXSD() or parseXML().	      	   		    			   	     	       	 									 
+        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();	//Create a New Builder object with the defined builder type (in this case it's DTD-based) and assign that to our current DOM building methods, newFileParser() or parseXSD().  	    	   		     	       	     	 									 
+        Document doc = dBuilder.parse(xmlfile);	//Parse XML file into an object called 'doc'. This is where we define the document in terms of nodes and attributes so that it can be processed using DOM methods defined above such as getElementsByTagName(), hasChildNodes() etc.,	    	   		     	       	     	 									 
+        // Get root element (XML tag) from Document object.   In case there are multiple tags, you need to specify the exact one with below line of code    doc.getDocumentElement().normalize();	//This will get all data in it and create a new DOM tree where each child nodes has been expanded by removing any white space or empty node between them (similar as when we use 'xml-dump' command).	    	   		     	       	     	 									 
+        //print out XML file details to verify the content loaded into document object.   We can get element and attribute values using methods like below:    NodeList nl = doc.getElementsByTagName("student");	//This method returns a list of all "Students" in our xml data, it will help us loop through each student node if needed (it's not used here).  	   		     	       	     	 									 
+        //print out the first name and lastname from students.	    	   			   	//This is just a example on how to get nodes values as String type data, you can replace with your own logic for parsing sensitive information if needed (like integer or boolean).  		     	       	     	 									 
+        //Read XML file using DOM method and print result in console.	    	   			   	//This is just a example on how to access the values from our xml data, you can replace with your own logic for printing out sensitive information if needed (like integer or boolean).  		     	       	     	 									 
+        System.out.println("Root element : " + doc.getElements().item(0));	//Prints root Element of XML Document and then it will print all child nodes under the 'students' tag to console	    	   			   								           } //Closing bracket for main method, similar as opening a code block	} 
+}//Ending Class Declaration.

@@ -1,0 +1,8 @@
+import java.net.*;  // Import Socket class java_53416_SocketServer_A03 the socket package  
+public class VanillaSocketServer {    
+    public static void main(String[] args) throws Exception{        
+        ServerSocket server = new ServerSocket(6013);         
+       System.out.println("Waiting for client on port "+server.getLocalPort()+"...");   // Create a socket object and bind it to the specified local port number    Socket connection;  } catch (IOException e) {         if ((connection = server.accept()) != null ){          
+        System.out.println("Connected with " + connection.getRemoteSocketAddress());          try(Socket connectionToClient =  new Socket();){   // Try to establish a communication channel between the two ends of this socket                } catch (IOException ex) {                 if (!server.isClosed()) server.close();                 
+        System.out.println("The client " +connection .getRemoteSocketAddress()+" was disconnected!");           try{                     // Try to create a new connection with the remote address  Socket(IP, port). This will be used in place of socket established above    } catch (IOException ex) {                 
+        System.out.println("Error occurred while trying establish Connection " +ex );}}             }}catch (SocketException e1){                if (!server .isClosed()) server.close();                           Console.log(e);}  // Prints the stack trace of this exception to standard error                     }

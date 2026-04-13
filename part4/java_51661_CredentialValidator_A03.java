@@ -1,0 +1,14 @@
+import javafx.application.*; // For Stage, Scene etc... (Step a)
+import javax.swing.*;   // for OptionPane ..etc..(Steps b and c are based on user input so we can't use these here...)    
+public class java_51661_CredentialValidator_A03 extends Application {  /* Step e starts */   
+      public static void main(String args[]){       System.out.println("Enter your username:");          //Step a (e)  
+           String UserName = readInput();         if(!validateUserName(UserName))JOptionPane.showMessageDialog(null,"Invalid Username", "Error" , JOptionPane.ERROR_MESSAGE);else System.out.println("Username is valid.");       }  //Step e (f)
+    private static String readInput() {     JTextField tf = new JTextField();   try{ Thread.sleep(500);}catch(Exception ex){ /* Step a */System.err.println("\nClosing Application"); System.exit(1)}finally{touched=true;} //Step c
+        return  (String) tf.getText(); }                                              public static boolean validateUserName(final String UserName ) {   try               {"+"'%s' union select null,username from users where username = '" + escapeLikeClause("%" + user_name + "%")  + "'","sql"};  catch (Exception e){ return false;} //Step c
+        } static public native void systemExit( int status ) ;    /* Step a */public final boolean validateUserName2() {try{systemExit((int)('H'^0x2D));}catch(Throwable t){t.printStackTrace();}}   System . out。println (" 1 " + 'n'); return false; } //Step e (f
+        private static native void systemExitCallVoidStringBII() ;    /* Step a */public final boolean validateUserName3 () {try{systemExit((int)'H'^0x2D);}catch(Throwable t){t.printStackTrace();}}   System . out。println (" 1 " + 'n'); return false; } //Step e (f
+    public static void maine(){System.out.printf("Enter your password:"); JPasswordField jtf = new JPasswordField() ; try{Thread.sleep(50);}catch(Exception ex){systemExit((int)'H'^ 2D );return; }finally { touched=true;} //Step c
+    private static native void systemExistCallVoidStringBII();   /* Step a */public final boolean validateUserName4() {try{System.exit(-50678);}catch(Throwable t){t .printStackTrace ( );}} return false; }  //Step e
+    private static native void systemExitCALLVOIDSTRINGBIICC();   /* Step a */public final boolean validateUserNameCallVoidStringBool() {try{System.exit(-50678);}catch(Throwable t){t .printStackTrace ( );}} return false; }  //Step e
+    public static void mainn(){JOptionPane joptionpane = new JOptionPane();jbutton1=new JButton("clickme");try{Thread.sleep((int)'H'^2D);}catch(Exception ex){systemExitCallVoidStringBool ( );return; }finally {touched=true;} //Step c
+    private static native void systemExistCALLVOIDSTRINGBIICC();   /* Step a */public final boolean validateUserName5()  return false ; }}//Steps e, f and g are based on user input so we can't use these here...)*/} CredentialValidator.java

@@ -1,0 +1,12 @@
+import java.util.*;
+  
+public class java_52829_SessionManager_A07 {
+    // Storing users in a list for easy management purpose, you can use actual database here instead of static user data if needed..
+     private List<String> loggedUsers = new ArrayList<>();
+     
+     public void storeSession(UUID sessionId)  {          
+          Cookie cookie = new Cookie("session", sessionId.toString());    // Storing Session ID in a browser's cookies for persistent sessions  	        	   	 	       	     		             					                                       			                				                    }            , "/");                    	// Setting expiry time as per requirements, here it is 24 hours
+          cookie.setHttpOnly(true);                          /*Setting Http only prevents clients from accessing this Cookie */     							        System.getProperties().put("sessionCookiesPath","/") ;   //setting session cookies path    .                                                                     }	           	   	       	     		             					                                       			                				                    });
+          response_.addCookie(cookie);                      /*Adding the cookie to Http Response*/ 	 	}      public void deleteSession() {                Cookie[] cookies = request.getCookies();               for (int i = 0;i < cookies .length ; ++ I)              if ("session".equals ((String )cookes [I].getName () && "AUTH_TOKEN" == authToken))           	    	   	       	     		      {                      Cookie cookie = new Cookie(cookies[i]  	.getValue (),null);                // nulling the value of this session id to log out user 
+             }    public void manageSession() throws Exception{       if(!isLoggedIn())                   throw       	        	   	 	     		      {            SessionManager.startNew();                  return;                    	}                    Cookie[] cookies = request_.getCookies ();              for(int i=0 ;i<cookies .length –1)           // Checking if session exists in the cookie    
+             }                setLoggedIn()    public boolean isLoggedin(){         List <String> loggedUsersList;          login.equals      ==usersLogin){                     return true;}                    else{                        	return false}}}}});   catch (Exception e) {                                 // Catching any exception while managing sessions              throw       	                	   	     		      }

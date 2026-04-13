@@ -1,0 +1,5 @@
+script
+class java_47914_SessionManager_A03 { //1. Define the session object with its name only for security-sensitive operations related A03_Injection; also add an ID and a value, just like in PHP code above: B25_SessionManagerExample)
+    constructor(name){   this._data = {};  }    
+        setItem (key , val ){       if(!this.hasOwnProperty('get')) throw new Error("Cannot access private property 'get'.");      //throw exception for A03 injection prevention; also ensure the key is a string with length of at least one, because otherwise it would be considered as invalid 
+        this._data[key] = val;}    getItem(keys){   if(!this.hasOwnProperty('_dat')) throw new Error("Cannot access private property '_dat'."); return keys in _data ? data : undefined; } //A03 injection prevention, ensure the key is a string

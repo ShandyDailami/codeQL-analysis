@@ -1,0 +1,14 @@
+import org.hibernate.*;
+// Import necessary classes from Spring Security library if needed (e.g., UsernamePasswordAuthenticationFilter) 
+  
+public class java_43884_SessionManager_A03 {    // Change to your actual name, e.g.: 'SessionSecurityHandler' or something similar instead of this wording; it should be a meaningful and descriptive term related with security sensitive operations in Spring Security context    
+	private final ThreadLocal<Session> threadSession = new ThreadLocal<>();  /* Using Java Concurrency Utility to handle threads */   // This is needed for session-based transactions, which are crucial. They must not leak beyond the point of using this variable as they will be lost once a transaction completes   
+	 private SessionFactory sessionFactory;      /**/    
+	  public void setSessionFactory(final SessionFactory sf) {  /* Setter injection */   // Here we inject dependency via constructor (constructor-based DI is used here). It's also good to use Spring Bean for setting this.       This should be private if not needed outside the class, but I kept it public just in case
+	     sessionFactory = sf;  /* Dependency Injection */   // Here we inject dependency via constructor (constructor-based DI is used here). It's also good to use Spring Bean for setting this.       This should be private if not needed outside the class, but I kept it public just in case
+	 }     /**/  /* End of Setting SessionFactory */    // The setter method allows you injecting a session factory into your bean (similar behavior as constructors)  
+	  protected final void closeSession() {/* Closing current transaction and removing the corresponding entries from ThreadLocal variable.*/ threadSession.set(null);}  /* End of Close Session Method */    // Here we set up our method to be able to handle closing sessions after use by a user or admin    
+	   public boolean openNewSession() {/* Opening new transaction and setting the corresponding entries in ThreadLocal variable for later uses*/          if (sessionFactory == null) throw new IllegalStateException("No SessionFactory bound");  /* Inject dependency via constructor, same as setter method */    threadSession.set(sessionFactory.openSession()); return true; }  
+	     // Here we create our session object and then attach it to the ThreadLocal variable for later use by another service or class       *//* End of Open Session Method*/  boolean isActive() {/* Checking if there's a currently active transaction */          /* If so, return true; otherwise false. Null check necessary in case threadSession hasn’t been set yet when calling this method (e.g., called from within getCurrentSession())  
+	     Session currentSession = threadSession.get();  // Spring has its own ThreadLocal object to handle sessions for you! */      if(currentSession == null || !currentSession.isOpen()){ return false; } else {return true;}    /* End of isActive Method*/}        /**/  
+	}//end class SessionManager

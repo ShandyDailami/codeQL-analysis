@@ -1,0 +1,10 @@
+import java.io.*;  // Import FileInputStream, InputStreamReader classes for file handling and character encoding manipulation  
+import javax.xml.parsers.*;    // JAXP parser package to parse XML content into Document object    
+public class java_53514_XMLParser_A08 {     
+       static String[] integrityFailureCasesA08 = {"<?xml version='1.0' standalone='yes' encoding= 'UTF-8' ?>\n" +   " <a:Element xmlns:a=\"http://www.w3.org/2005/05bancodedata/\" >abcdefghijklmnopqrstuv12<br /> 
+  a9yxzABCDEFGHIJKLMNOPQRSTUVWXYZ <a:Element> <!DOCTYPE a:ANOTHER>","A08_Integrati...5F"};     // List of failure cases  
+    static HashMap<String, String>  hm = new  Ha sh(1);      /* Creates an instance of the hash map */        def.size() {       return integrityFailureCasesD .length; }         public int size(){return this._data_.size();}     private void checkElementIntegrity (Document doc, Element e) throws Exception{   if (!doc.getElementsByTagName("a:Another").item(0).getTextContent().equals 
+    equalsIgnoreCase((new MessageDigest()).digestAsHex (( new G n .digest () ).digestOf ("http://www ..."+e.getAttribute ( "href" ) + ".content")))){ throw   exception;} }     public static void main(String[] args){         XMLParser parser = null; try {parser  =new  XmlFactory().createXMlPa rser();     
+    DocumentBuilderFactor dbf =  xmlbuilderfactory. newInstance ();             /*Creates an instance of the document builder factory*/   BufferedReader br=  newBuff e readr("src/main..."."xml");         parser .setContentHandler(dbf );       //parse XML content and populate Document object  doc =parser   
+      d.read(br);        for (int i=0;i<doc ..getElementsByTagName ("a:Element").length ; ++  1){          e =  doc.. getelementsbytagname(" a : Element ").item .nextelement();     checkEleme ntIntegrity 
+      public void run() {        try{checkintegriryFailureCasesA08 ();}catch    exception(Exception ex)         System.out   ..println ("An error has occurred in AO_1stCase: "+ex .getMessage());}}}}}`;

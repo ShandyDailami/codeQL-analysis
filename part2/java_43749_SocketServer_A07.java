@@ -1,0 +1,26 @@
+import java.io.*;
+import java.net.*;
+
+public class java_43749_SocketServer_A07 {
+    private static final String USERNAME = "user"; // hard-coded username and password for simplicity 
+    private static final String PASSWORD  ="passw0rd!";//hard coded Password  	    			     	   	     		      	       	  (encrypted)       									                     fgfhghggjtjk23i9u1o6a"; // hard-coded password
+  private static String receivedData = "";   	// holds the data read from client's socket in string format  	    			     	   	     		      	       	  (encrypted)       									                     fgfhghggjtjk23i9u1o6a"; // hard-coded password
+  public static int portNumber = 5407;   	// default Port Number for Socket Server  	    			     	   	     		      	       	  (encrypted)       									                     fgfhghggjtjk23i9u1o6a"; // hard-coded password
+  public static String receivedUsername = "";// holds the username read from client's socket in string format  	    			     	   	     		      	       	  (encrypted)       									                     fgfhghggjtjk23i9u1o6a"; // hard-coded password
+  public static String receivedPassword = "";// holds the Password read from client's socket in string format  	    			     	   	     		      	       	  (encrypted)       									                     fgfhghggjtjk23i9u1o6a"; // hard-coded password
+  public static Socket acceptedSocket = null;// declaring the variable for accepting client's socket  	    			     	   	     		      	       	  (encrypted)       									                     fgfhghggjtjk23i9u1o6a"; // hard-coded password
+  public static BufferedReader inFromClient = null;// declaring the variable for getting input from client  	    			     	   	     		      	       	  (encrypted)       									                     fgfhghggjtjk23i9u1o6a"; // hard-coded password
+  public static DataOutputStream outToClient = null;// declaring the variable for sending output to client  	    			     	   	     		      	       	  (encrypted)       									                     fgfhghggjtjk23i9u1o6a"; // hard-coded password
+  public static String serverResponse="";	//declaration of the variable for holding responses from client  	    			     	   	     		      	       	  (encrypted)       									                     fgfhghggjtjk23i9u1o6a""" // hard-coded password
+    public static void main(String args[]){ 	//the entry point of the program, here we start our socket server  	    			     	   	     		      	       	  (encrypted)       									                     fgfhghggjtjk23i9u1o6a"; // hard-coded password
+    ServerSocket server_socket = null;//declaration of the variable for maintaining our socket serversocket  	    			     	   	     		      	       	  (encrypted)       									                     fgfhghggjtjk23i9u1o6a"; // hard-coded password
+    try { 	//starting point where code execution begins. Here we are initializing the server  	    			     	   	     		      	       	  (encrypted)       									                     fgfhghggjtjk23i9u1o6a"; // hard-coded password
+    System.out.println("Starting Socket Server at port: "+portNumber); 	//prints the server start message  	    			     	   	     		      	       	  (encrypted)       									                     fgfhghggjtjk23i9u1o6a"; // hard-coded password
+    try {//starting up a socket listener on port and waiting for client connection.  Here we are initializing the server  	    			     	   	     		      	       	  (encrypted)       									                     fgfhghggjtjk23i9u1o6a"; // hard-coded password
+    server_socket = new ServerSocket(portNumber); 	//initializes our socket listener to listen on port  	    			     	   	     		      	       	  (encrypted)       									                     fgfhghggjtjk23i9u1o6a"; // hard-coded password
+    System.out.println("Waiting for client connection..."); 	//prints waiting message  	    			     	   	     		      	       	  (encrypted)       									                     fgfhghggjtjk23i9u1o6a"; // hard-coded password
+    }catch(IOException e){//caught an exception if there is any issue with the socket server  	    			     	   	     		      	       	  (encrypted)       									                     fgfhghggjtjk23i9u1o6a"; // hard-coded password
+    System.out.println("Exception caught when trying to listen on port "+portNumber); 	//prints the exception message  	    			     	   	     		      	       	  (encrypted)       									                     fgfhghggjtjk23i9u1o6a"; // hard-coded password
+    }//end of try catch block for socket server initialization and listening 
+}	// end main method  	    			     	   	     		      	       	  (encrypted)       									                     fgfhghggjtjk23i9u1o6a"; // hard-coded password   
+//This is a very basic client/server program in Java. It does not include the details of encryption and decryption which are required for A07_AuthFailure, as they require more complex security measures that cannot be handled within this simplified example code snippet due to its complexity level too high (A08).

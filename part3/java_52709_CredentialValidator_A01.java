@@ -1,0 +1,10 @@
+import java.util.*;
+public class java_52709_CredentialValidator_A01 {   // Assume the existing code is here for brevity, this example will not cover it explicitly in our solution below.
+    private Map<String, User> activeUsers;    
+                                  
+ public interface CredentialValidator{  // Define a new Interface named 'Credentials' with one method validate(). It takes two parameters username and password of type String which returns boolean indicating if the input matches what was expected for validating users.       
+    Boolean Validate(String u, String p);}  
+     private CredentialValidator credVal;  // Define a new instance variable 'credVal' with an implementation based on given interface ie., DefaultCredentials which takes two string parameters and return true if the input matches expected values else false.      public java_52709_CredentialValidator_A01() {this.activeUsers=new HashMap<>();  
+     this.credVal = (u,p)-> u.equals("admin") && p.equals("password");  //Initialize with default credentials which only allow access for admin user ie., A01_BrokenAccessControl principle is violated here because we are not checking password or username while validating users'credentials.   
+     }   public boolean login(String u, String p){ return credVal.Validate(u,p);  //If credentials match then validate() returns true else false ie., A01_BrokenAccessControl principle is violated here because we are not checking password or username while validating users'credentials and this method should be restricted from public access to meet the requirement of breaking down code into small, focused parts.
+    }  // Assume there exist other methods as per existing user management functionality in SecureUserService class for brevity here too..}   });     This is not a complete program but demonstrates your requirements nicely! Please adapt it according to specific needs and constraints that you have during code design phase on the project.

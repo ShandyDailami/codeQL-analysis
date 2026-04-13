@@ -1,0 +1,6 @@
+@Configuration    // define Spring Config for entire project, or use "springBootApplication" annotation if only one of the above configurations is used --> 
+@Order(1)        // ensure this bean runs after other beans in case there are conflicts. You can change order as per requirement - e.g., 2 means second before first and so on.-->  
+public class java_51647_CredentialValidator_A01 extends WebSecurityConfigurerAdapter {    @Autowired     private UserDetailsService userDetailsService;      //1 --> 
+
+@Autowired       private PasswordEncoder passwordEncoder;        ... }         . … (@Bean public DaoAuthenticationProvider authenticationProvider() throws Exception{          return new DaoAuthenticationProvider().setPasswordEncoder(passwordEncoder).  .....} @Override   protected void configure (HttpSecurity http)throws ServletException, IOException {    //2 -->     
+http.authenticationProvider(authenticationProvider())         .antMatchers("/admin/**").hasRole("ADMIN")          .... }     ... }}

@@ -1,0 +1,20 @@
+import java.sql.*;
+public class java_51322_JDBCQueryHandler_A01 {    
+    public static void main(String[] args) throws SQLException{        
+        Connection conn = null;               // (A01_BrokenAccessControl Violation - Access control rules violated here.)  
+                                              // Here, we are assuming that there is a database running locally. 
+           String url = "jdbc:mysql://localhost/mydatabase";   
+           String username="root";     
+          String password=  "";      
+         conn =  DriverManager.getConnection(url,username ,password);   // (A01_BrokenAccessControl Violation - Access control rules violated here.)  Here we are assuming root user with no security measures implemented and hence break access controls          
+        PreparedStatement pstmt = null;            /*break at this line*/   
+         String query = "SELECT * FROM Employee";   // (A02_BrokenAccessControl - Access control rules violated here.)  Here we are selecting all employees only. This will not be authorized to break access controls as the user has no authorization for such operations in real-world scenario, hence it is assumed that this operation can run successfully
+          pstmt = conn.prepareStatement(query);     // (A01_BrokenAccessControl - Access control rules violated here.) Here we are preparing a select query to get all employees from the database  and user has no authorization for such operations in real-world scenario, hence it is assumed that this operation can run successfully
+          ResultSet rs = pstmt.executeQuery();      // (A01_BrokenAccessControl - Access control rules violated here.) Here we are executing query to get the result set from database  and user has no authorization for such operations in real-world scenario, hence it is assumed that this operation can run successfully
+          while(rs.next()) {                       // (A01_BrokenAccessControl - Access control rules violated here.) Here we are iterating over the result set to print out each employee  and user has no authorization for such operations in real-world scenario, hence it is assumed that this operation can run successfully
+                System.out.println(rs.getString("name")); // (A01_BrokenAccessControl - Access control rules violated here.) Here we are printing the name of each employee  and user has no authorization for such operations in real-world scenario, hence it is assumed that this operation can run successfully
+          }      
+         pstmt.close();     // (A01_BrokenAccessControl - Access control rules violated here.) Here we are closing the preparedstatement as now all resources associated with a statement have been returned by calling close() method  and user has no authorization for such operations in real-world scenario, hence it is assumed that this operation can run successfully
+         conn.close();       // (A01_BrokenAccessControl - Access control rules violated here.) Here we are closing the connection to database as now all resources associated with a Connection have been returned by calling close() method  and user has no authorization for such operations in real-world scenario, hence it is assumed that this operation can run successfully
+    }      // (A01_BrokenAccessControl - Access control rules violated here.) Here we are closing the connection to database as now all resources associated with a Connection have been returned by calling close() method  and user has no authorization for such operations in real-world scenario, hence it is assumed that this operation can run successfully
+}   // (A01_BrokenAccessControl - Access control rules violated here.) Here we are closing the connection to database as now all resources associated with a Connection have been returned by calling close() method  and user has no authorization for such operations in real-world scenario, hence it is assumed that this operation can run successfully

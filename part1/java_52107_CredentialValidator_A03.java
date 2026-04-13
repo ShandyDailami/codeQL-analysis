@@ -1,0 +1,4 @@
+import javafx.application.*;    // replace these import statements accordingly if you are using JavaFX GUI application or library instead and also remove them when done with FXML, CSS etc.,  for user interface related functionalities (like login)    
+import javax.swing.*;         // used in swing gui app only   to show error message dialog box    replace it as needed while developing a web-based system without GUI part if any case is not mentioned above then remove this import statement     
+      
+public class java_52107_CredentialValidator_A03 extends Application {  //replace with your own application's name, for example: MainApp or something else        public static final String[] USER_NAMES = {"admin", "user1","user2"};   private static PasswordAuthentication PA;     @Override    public void start(Stage primaryStage) {      //place code in here to create GUI if needed, e.g: JPasswordField passwordInput= new  ...

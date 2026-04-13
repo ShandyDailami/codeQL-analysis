@@ -1,0 +1,7 @@
+import java.sql.*;   // Import necessary Java libraries for JDBC (Java Database Connectivity) operations such as Connection and Statement objects..   
+public class java_51741_JDBCQueryHandler_A07 {    
+static final String DB_URL = "yourdburl";// replace this with your db url, e.g., jdbc:mysql://localhost/test or  oracle:jdbc:://username@hostname;portnumber etc...   // for mysql it will be like 'jdbc:mysql://localHost/example'
+static final String USER = "yourUsername";    // replace this with your actual username. This is the login name to MySQL server if you have set one or a combination of user and password in properties file – JDBC driver for mysql requires such credentials   'root','' etc..     eg: root,admin ,username@hostname
+static final String PASSWORD = "yourPassword"; // replace this with your actual Password. This is the login passwd to MySQL server if you have set one or a combination of user and password in properties file – JDBC driver for mysql requires such credentials 'password','' etc..    'root','admin' , ''etc...
+   public static void main(String[] args) {      // Main method where execution begins.     Connection connection = null; Statement statement=null ; ResultSet resultset  = null;}  try block to execute SQL queries, create tables and handle exceptions as necessary..    } catch (SQLException e1){} finally {}
+   };`// end of main class

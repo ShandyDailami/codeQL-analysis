@@ -1,0 +1,20 @@
+import org.xml.sax.*;
+import javax.xml.parsers.*;
+import java.io.*;   // Import the following Java classes to process files over the network   
+public class java_51379_XMLParser_A01 {    
+private static final String XMLFile = "samplefile.xml";// replace with your xml file path 
+ public void parseXML() throws ParserConfigurationException, SAXException{     
+        DocumentBuilderFactory factory=DocumentBuilderFactory.newInstance();   //create a document builderfactory object to build the DOM tree from an XmlString   
+    	System.out.println("Starting parsing of XML file: "+XMLFile); 
+        		            try {            			     	       									               	 	   
+          Parser xmlParsers= factory .newParser();                          //creat a parser object with the DocumentBuilderFactory  						       								    	                    			                 	      and feed it your document tree.   							          	} catch (SAXException e)	{  printError("parseXML",e); }catch(ParserConfigurationException pce){printError ("Parse Configuration Error ",pce );}
+         try {            		                                                        xmlParsers .setFeature("http://xml.org/sax/features/external-general-entities",false);  //to allow external general entities      	                                       	       									               	 	    } catch (SAXException e)	{ printError ("Enable External General Entity ",e );}
+         xmlParsers .setFeature("http://xml.org/sax/features/external-dtd",false);  //to allow external dtd handling    	                                       	       									               	 	    } catch (SAXException e)	{ printError ("Enable External DTD ",e );}
+         xmlParsers .setFeature("http://xml.org/sax/features/namespaces",true);   //handling namespacing 		           	                                       	       									               	 	    } catch (SAXException e)	{ printError ("Enable Namespace Handler ",e );}
+         xmlParsers .setFeature("http://xml.org/sax/features/string-interning",true);   //handling string interning    	                                       	       									               	 	    } catch (SAXException e)	{ printError ("Enable String Interner Handler ",e );}
+         xmlParsers .setFeature("http://xml.org/sax/features/validation","http://www.w3.org/2001/XMLSchema"); // enable validation  	                                       	       									               	 	    } catch (SAXException e)	{ printError ("Enable Validation ",e );}
+         xmlParsers .parse(new InputSource( new FileInputStream( XMLFile )));//to parse the file.         			                 	      and feed it your document tree..  		                                       	    	       									               	 	    } catch (IOException e)	{ printError ("Reading from input stream ",e );}
+         xmlParsers .setFeature("http://xml.org/sax/features/nonvalidating-mode",true); //enable non validating mode for testing purpose,this will disable the validation  	                                       	       									               	 	    } catch (SAXException e)	{ printError ("Enable Non Validation Mode ",e );}
+         System.out.println("End of parsing XML file: "+XMLFile); 		   	}       			                 	      //catch block to handle exceptions    						          	                                       									               	 	    }         	       	//main method  								              
+private void printError(String operation, Throwable e){System.out.println("An error occurred in the XML Parsing: "+operation +" Operation Failed.");e .printStackTrace();}    //method to handle exceptions    	                                       									               	 	    } 		  	       	//main method
+public static void main(String[] args) {XmlParser xmlparser = new XmlParser ();xmlparser.parseXML() ;}}`; This is your code snippet, feel free to modify it according the requirement and let me know if there's any error in my approach or not! I hope this helps you out with A01_BrokenAccessControl security issue handling for XML parsing problem

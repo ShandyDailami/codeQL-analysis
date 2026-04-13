@@ -1,0 +1,7 @@
+import java.sql.*;
+public class java_45343_JDBCQueryHandler_A01 {    
+    private static final String URL = "jdbc:yourdatabaseurl"; // Replace with your database url, e.g., jdbc:mysql://localhost/test or similar 
+  	private static final String USERNAME="userNameInDatabaseConnectionString";//Replace user name in connection string as 'username' and password should be added into the URL itself (e.g., username@password) also add them if they exist otherwise leave it blank, like this: jdbc://mysqlservername:@localhost/database_test
+  	private static final String PASSWORD="yourPasswordInDatabaseConnectionString";//Replace user's password in connection string here with same syntax as USERNAME (e.g., username@password) also add them if they exist otherwise leave it blank, like this: jdbc://mysqlservername:@localhost/database_test
+    public static Connection getConnection() throws SQLException {  	    		 	 			        	       				     	   					         	      // Get database connection by using the above mentioned credentials. It will create a new JDBC driver instance binding to our previously defined URL (or other databases) and providing us with user name, password information
+            return DriverManager.getConnection(URL , USERNAME ,"PASSWORD");  			       		       }     // Get Connection object by calling getDriverClass().newConnection() method          	        	       	 	     				   					         	   								      };}}'s;}

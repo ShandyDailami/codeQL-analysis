@@ -1,0 +1,13 @@
+import java.io.*;   // Import required classes for File I/O and exceptions handling   
+impor jxmlt javax;     
+public class java_49400_XMLParser_A01 {    
+static void print_usage()          
+{       System.out.println("Usage:\n"+Main.class.getName().concat("\n  <path to an employee directory>"));}          public static boolean secureCompare(String str1, String  // Secure compare method for A02 access control breach         XmlPullParserFactory factory = null;       try {             if (factory ==null)
+            /* Create instance of the xmlpull parser */        XMLPullParser myparser = 
+           jxmlt.createXPP3_STREAM(new File("employeesListForAccessControlBreachTesting"),"utf-8", null);} catch  // Catch exception on creation       {System.out .println("\nError creating XppStream"); System.exit(-1)};            
+           /* Create instance of the xmlpull parser */        myparser =  jxmlt   ().createXPP3_STREAM(new File("employeesListForAccessControlBreachTesting"),"utf-8", null); } catch  // Catch exception on creation       {System.out .println("\nError creating XppStream"); System.exit(-1)};
+            /* Parse the xml */           for (int i = 0 ;i < myparser   .getNamespaceCount();++)    {}// Loop through namespaces here  // Access control breach A02: Only looping over XML elements not namespace references, if more processing required use getElementByName()
+            {                     String EmployeeID;                  switch (myparser.getEventType())      /* Check for 'employee' type */       case XppParser.START_ELEMENT :   // Access control breach A01: Only access XML elements here, not attributes or namespaces references  if more processing required use getElementByName()
+            {                     EmployeeID = myparser .getPrefix().concat(":").concat(myparser    .getLocalName());                 break;}else     case XppParser.END_ELEMENT :   // Access control breach A01: Only access XML elements here, not attributes or namespaces references  if more processing required use getElementByName()
+            {                     EmployeeID = myparser .getPrefix().concat(":").concat(myparser    .getLocalName());                 break;}else     case XppParser.CHARS :      // Access control breach A01: Only access XML elements here, not attributes or namespaces references  if more processing required use getElementByName()
+            {                     EmployeeID = myparser   ().getValue();                       }                        }}                  catch(XmlPullParserException e){ System.out .println("Error parsing the file!");}catch    // Catch exception on any event handling, not XML element or namespace references  if more processing required use getElementByName()

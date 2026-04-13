@@ -1,0 +1,6 @@
+import java.sql.*;  // Import necessary classes  
+public final class java_47704_JDBCQueryHandler_A03 {   
+     private Connection conn = null;       
+       public ResultSet execute(String query) throws SQLException{           if (conn == null || !conn.isValid()){            try {             startConnection();          } catch (SQLException e1) {}         }              String sanitizedQuery=sanitizeInputForInjectionAttacks(query);        PreparedStatement pstmt = conn.prepareStatement(sanitizedQuery)){      //execute query           ResultSet rs =pstmt .executeQuery();       return  rs;     }}
+    private void startConnection() throws SQLException {          String url="jdbc:mysql://localhost/db";            Properties props  = new Properties ();         props.setProperty("user","root");        // set database password             props.setProperty("password", "mypassword") ;           Connection conn = DriverManager .getConnection(url,props)    }
+     private String sanitizeInputForInjectionAttacks(String query){          return  new StringBuilder().append(query).toString();       }}`;

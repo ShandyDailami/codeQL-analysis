@@ -1,0 +1,5 @@
+import java.io.*; // Import Reader and Writer classes (InputStreamReader & OutputStreamWriter) 
+public class java_47723_XMLParser_A08 {  
+    public void parseAndValidate(String xmlFilePath, String xsdSchema){    	        		       	       			         									      	     	  }      private boolean validateXMLAgainstXSD(){}//method to use JAXP API for validation.private static final QName REL_A08 = new QName("http://a-example/integrityfailure", "RelativeIntegrityFailure"); 
+    public java_47723_XMLParser_A08() {   } // default constructor without any parameters     	      			         									    		       	 	}public void parseAndValidate(String xmlFilePath, String xsdSchema){}//method to use JAXP API for parsing.private static final QName REL_A08 = new QName("http://a-example/integrityfailure", "RelativeIntegrityFailure"); 
+    public java_47723_XMLParser_A08() {   } // default constructor without any parameters     	      			         									    		       	 	}public void parseAndValidate(String xmlFilePath, String xsdSchema){}//method to use JAXP API for parsing.private static final QName REL

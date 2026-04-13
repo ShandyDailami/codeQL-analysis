@@ -1,0 +1,9 @@
+import javax.servlet.*;
+import java.io.IOException;
+// Include the HttpServletRequest, also known as Servlet Request and Response objects which will be used throughout our example 
+class java_47266_SessionManager_A03 implements Servlet {   // Declare a class for session management using interface of servlets only (no need to extend any other classes)         
+    private String id;                          // We are keeping track in string variable called 'id' that represents the unique ID we use as key when storing and retrieving sessions 
+     public void init(ServletConfig config) throws ServletException {                  // Initialize method. Called first before service() Method           
+        System.out.println("Initializing Session Manager");                                // Prints a message on console, for demonstration purposes only              }         
+    @Override                                                           // Overriding the doGet and set methods from servlets      public void destroy(){// Destroying method called lastly before service() Method            };         System.out.println("Destroyed Session Manager");                      return this;}                int getId(String id){             for (int i = 0;i<id_.length();++) {if (!Character.isLetterOrDigit((char)(getId_(1 + ((long )random().nextInt % 26))))) //Randomly choosing a letter and then checking if it's not digit
+                }return id;}                                                             public void setId(String string){this .id = getID (string);}public String doService() throws IOException{       ServletRequest req=request;SetCookie cookie1=  new Setcookies("JSESSION ID",getId());req.setAttribute ("myattribute","data for my attribute");return "Success";}}

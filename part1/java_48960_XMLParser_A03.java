@@ -1,0 +1,15 @@
+import javafx.application.*;
+import javax.xml.*;   // Import of standard library for XML parser, security operations related to A03_Injection only (no External Framework) are allowed here and not from other packages or classes in different files directly using them as it is recommended by the programmer's perspective which should be minimized
+import javax.xml.parsers.*;  // Import of standard library for XML parser, security operations related to A03_Injection only (no External Framework) are allowed here and not from other packages or classes in different files directly using them as it is recommended by the programmer's perspective which should be minimized
+import java.net.*;  // Import of standard library for network utilities, security operations related to A03_Injection only (no External Framework) are allowed here and not from other packages or classes in different files directly using them as it is recommended by the programmer's perspective which should be minimized
+import java.io.*;  // Import of standard library for input/output utilities, security operations related to A03_Injection only (no External Framework) are allowed here and not from other packages or classes in different files directly using them as it is recommended by the programmer's perspective which should be minimized
+import java.util.*;  // Import of standard library for utility functions, security operations related to A03_Injection only (no External Framework) are allowed here and not from other packages or classes in different files directly using them as it is recommended by the programmer's perspective which should be minimized
+  
+public class java_48960_XMLParser_A03 extends Application  { // Class name must start with an uppercase letter. This can also act like a constructor if you decide to use one at some point, or not necessary in this case unless there are other classes that require initialization (e.g., dependency injection)   
+      private static DocumentBuilderFactory factory;  
+       public void init() {  //initialize the factories and resources here only when your application start up    
+            try{                
+                URL url = new File("file:path/to/yourXmlFile").toURI().toURL();         
+                      XmlReader reader=DocumentBuilderFactory.newInstance().getXmlReader(url, 4096);        //Create an XML Reader with the provided document builder and a default size for buffering    
+                parseXML2(reader );   }      catch (Exception e) {e.printStackTrace();}    finally{       factory=null;}}           private void startUIThread(){  try{ Thread thread = new         Thread()          //starting UI on separate threads, this allows your program to continue     responding while handling the XML document             
+        } catch (Exception e) {e.printStackTrace();}      finally{}   }}       public static void main(String[] args){    if(!ServiceExecutionContext.getCurrentInstance().isPrototype())  //only start prototype version of your application at runtime         new XmlParserExample() .init();}}

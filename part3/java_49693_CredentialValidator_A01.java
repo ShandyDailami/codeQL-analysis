@@ -1,0 +1,3 @@
+public class java_49693_CredentialValidator_A01 {     //start of program         A01_BrokenAccessControl   S3729458  I am sorry for any confusion caused by my previous responses due to lack of contextual information. Please provide as much detail or clarification about the topic you are referring too, so that we can better assist in your request!
+public class UserCredential {          //start defining a new type     A01_BrokenAccessControl   S3729458  I am sorry for any confusion caused by my previous responses due to lack of contextual information. Please provide as much detail or clarification about the topic you are referring too, so that we can better assist in your request!
+public class User {                   //start defining a new type     A01

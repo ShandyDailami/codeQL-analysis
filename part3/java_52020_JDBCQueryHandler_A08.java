@@ -1,0 +1,8 @@
+import java.sql.*;    // Import required Java libraries for database connectivity  
+    
+public class java_52020_JDBCQueryHandler_A08 {      // Define a public main method named 'Vanilla Jdbc Query Handler' which starts with "Java" keyword and encapsulates all the code 
+        private static final String URL = "jdbc:mysql://localhost/test";   // Database connection string   
+      	private static final String USERNAME="root";     		    	// Username for database connectivity, replace 'username' according to your MySQL server setup. Replace with actual username if it varies from the one in mySQL set up 					         	
+        private static final String PASSWORD = "password123$%^&*()_+"; // Password or user password for database connectivity, replace 'password' according to your MySQL server setup. Replace with actual pass if it varies from the one in mySQL set up 					         	
+      	private static Connection connection;  			    			// Declare a private instance of Connections which will be used later on        	 				     	    // (Static variable)                                                                           
+           public static void main(String[] args){             	       	     							    }            								                  */               /* Starts here.                                                       Static method to establish database connection    		//*/  			/* Closes Here                                                End of Code                     *//*  Sorry, I am not sorry                      Removing the comment

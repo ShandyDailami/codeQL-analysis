@@ -1,0 +1,14 @@
+import java.util.*;
+public class java_43649_CredentialValidator_A03 implements Iterable<String> {
+    private List<UserRecord> users; // Assume this is a custom user management system, not from external source or framework like Spring/Hibernate  
+     public Map<UUID, UserCredentialInfo>  credentialsStore = new HashMap<>();  /* Use UUIDs as keys */     
+      
+public java_43649_CredentialValidator_A03(List <UserRecord> users) { this.users=Users; } // Initialization using external source or framework like Spring/Hibernate    Users is a list of all registered user in our system  
+     public UserCredentialInfo get (UUID id) {  return credentialsStore .getOrDefault("id",null);}// assuming that we use UUIDs to look up users and the 'credentials' are stored as Map/HashMap.   
+       @Override /* Start of Iterable implementation */   // Override for user iterating on creation with external source or framework like Spring / Hibernate  public Iterator<String> iterator() { return new ListIterator(users); }// Assume list is made from users in our system and can be added/removed dynamically   
+       private class ListIterator implements Iterator < String >{ // assume we have a way to get next user by index.   public UserRecord next(){return null;}  /* Implement iterable methods */public boolean hasNext() { return false; }      };     void add(UUID id,UserCredentialInfo creds){ credentialsStore .put("id",creds);}
+    // Assume we have a method to remove user from our system.//   public UserRecord getByIdAndPassword (String uuid , String password)  { /* Implement this based on requirements */ return null; }     void changeUserCredential(UUID id, Credentials newValues){ add("id",newValues);}
+    // Assume we have a method to validate users' credentials//   public boolean isValid (String uuid , String password)  { /* Implement this based on requirements */ return false; }     void changePassword (UserCredentialInfo user, UserRecord newpassword ){ add("id",newValues);}
+    // Assume we have a method to generate users' credentials//   public boolean regenerate(UUID uuid , out String password){ /* Implement this based on requirements */ return false; }     void changeEmail (UserCredentialInfo user, UserRecord newemail ){ add("id",newValues);}
+    // Assume we have a method to validate users' emails//   public boolean isValid(UUID uuid , in String email){ /* Implement this based on requirements */ return false; }      };  void removeUser (String id) {/* assuming the removal of user from our system*/ add("id",null);}
+    // Assume we have a method to logout//   public boolean doLogOut(UUID uuid ){     /* Implement this based on requirements */ return false; }      };  void removeAll(){users.clear();credentialsStore .clear ( );}}` CredentialValidator example in Spring/Hibernate style

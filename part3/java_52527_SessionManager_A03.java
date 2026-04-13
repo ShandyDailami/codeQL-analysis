@@ -1,0 +1,5 @@
+import java.lang.*;  // No need when we only write simple programs, otherwise include all the necessary packages here   
+public class java_52527_SessionManager_A03 {    
+       StringBuilder sb = new StringBuilder();         
+        public org.hibernate.Session openSession() throws Exception{                 
+            return (org.hibernate.Session) getTransaction("open");                   // Return session for a transaction and not started transactions                    }                       @SuppressWarnings({"unchecked", "deprecation"})                          public void close(Object o){                         if(!sb.toString().equalsIgnoreCase((String)(o))) throw new ExceptionInInitializerError(); sb = null;}}  // No need for a session or transaction in this method, it's just to make sure the SessionManager is working }

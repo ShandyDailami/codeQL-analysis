@@ -1,0 +1,13 @@
+import javax.net.ssl.*;
+import java.io.*;
+import java.net.*;
+
+public class java_52237_SocketServer_A07 {
+    private static SSLServerSocket serverSocket;  // Server socket used to accept incoming connections from clients via ssl  
+    
+    public void start(int port) throws IOException{      	         	 	       		       	   			     									        	     								             						               							                 .                                                                               (Port Number:1234)) {                                        Socket clientSocket = server.accept();                                      BufferedReader inFromClient;                                                             DataOutputStream outToClient;                                   try 
+    ... }   // end of the method            	          	 				    			      		                    					        	       	   	     								                            TLS/SSL secureChannel=(TLS/SSL)clientSocket .getInputStream();          BufferedReader input= newBufferedreader (new InputStream Reader((securechannel)));
+    ... }   // end of the method            	          	 				    			      		                    					        	       	   	     								                            Tls serverCertificate =...                                        try {..} catch(IOException e){e.printStackTrace();}}                                                                                           }}                          });  .catch (SocketException ex)           
+    ... }   // end of the method            	          	 				    			      		                    					        	       	   	     								                            SSLServerConfiguration serverconfig= newSSL Server socket ((newInetAddress(port));      return;                             for (;;) {..}          try  .catch (IOException e)                 
+    ... }   // end of the method            	          	 				    			      		                    					        	       	   	     								                            TLS/ SSL serverSocket.accept();              DataInputStream inFromServer = newDataInputStream(secureChannel...                   BufferedReader input=newBuffereDr reader((inFroClient)); ... 
+    // end of the method            	          	 				    			      		                    					        	       	   	     								                            TLS/ SSL securechannel.getOutputStream().write("Hello from server". getBytes());          } catch (IOException e) {..} }}                                      });   .catch(SocketException ex){ex...}}}

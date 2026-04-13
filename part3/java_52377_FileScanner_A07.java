@@ -1,0 +1,16 @@
+import javax.security.auth.*;
+import java.io.*;
+
+public class java_52377_FileScanner_A07 {
+    private static final String FILE_PATH = "path-to-yourfile"; // replace this path by the actual one of your file on disk (b) and c). make sure to protect it properly, don't forget proper exception handling for invalid paths or files. 
+    
+	public static void main(String[] args){  
+	    FileScanner fs = new MyFileSecurityManager(); //MyCustomSecuredFS is a class that implements the interface with custom security operations (e) and comment it out until you implement your own filesystem in Java to use instead of standard library. 
+	     try {   		        			     	     									  	   	 	       								       							       fs = new MyFileSecurityManager(); //replace this line by yours using the real file system implemented from java security manager interface (a) and c). make sure it is secure as per your needs, don't forget proper exception handling for invalid paths or files.
+	     } catch(InvalidParameterException e){  									   			 										     	   	     	       	 							       System.out.println("Caught Invalid Parameter Exception: " +e);} // Catching exceptions (b) and c). Make sure to handle these types of errors in a proper way, don't forget exception handling for other unforeseen error cases as well
+	     fs = new MyFileSecurityManager(); 									   			     		  	 	       	     	   							        System.out . println ("Caught File Not Found Exception: " + e);} // Catching exceptions (b) and c). Make sure to handle these types of errors in a proper way, don't forget exception handling for other unforeseen error cases as well
+	     fs = new MyFileSecurityManager(); 									   			     		  	 	       	     	   							        System.out . println ("Caught Access Denied Exception: " + e);} // Catching exceptions (b) and c). Make sure to handle these types of errors in a proper way, don't forget exception handling for other unforeseen error cases as well
+	     } 	   		     			   	     					  	 	       							        fs = new MyFileSecurityManager();	//replace this line by yours using the real file system implemented from java security manager interface (a) and c). make sure it is secure as per your needs, don't forget proper exception handling for invalid paths or files.
+	 } 	   		   	     									  	 	       								        fs = new MyFileSecurityManager(); //replace this line by yours using the real file system implemented from java security manager interface (a) and c). make sure it is secure as per your needs, don't forget proper exception handling for invalid paths or files.
+	} 	   		   	     									  	 	       								        fs = new MyFileSecurityManager(); //replace this line by yours using the real file system implemented from java security manager interface (a) and c). make sure it is secure as per your needs, don't forget proper exception handling for invalid paths or files.
+} 	   		   	     									  	 	       								        fs = new MyFileSecurityManager(); //replace this line by yours using the real file system implemented from java security manager interface (a) and c). make sure it is secure as per your needs, don't forget proper exception handling for invalid paths or files.

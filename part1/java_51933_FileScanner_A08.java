@@ -1,0 +1,8 @@
+import java.io.*; // for File etc...
+// import javax.*; - uncomment below line to include packages needed in the solution (like BufferedReader)  
+public class java_51933_FileScanner_A08 {   
+     public static void main(String[] args){     
+         String directoryPath = "/path/to/directory";      
+          try{  //try-catch block for handling exceptions, optional.        if not using exception then comment the below line too             File dir = new File (Directory path);            assert fileExists : "The specified   Directory doesnt exist"     ;    else {      throw e; }         return false;}          
+          catch(Exception ex){ //catch block for handling exceptions, optional.        if not using exception then comment the below line too             System . out .println (ex Message);       }}  - closes try-catch   public class SecurityCheck{     private static final Logger logger =    org.apache.logging.log4j.LogManager.getLogger(SecurityChecker..class) ;            @Test //uncomment this line to run the test case, if not using Maven then uncommnet below one too           void securityIntegrityFailure() {      String directoryPath   = "/path/to"Directory";     File dir = newFile (directory path);    assert   fileExists : "The specifed Directory doesnt exist." ; else  throw e; }
+          catch(Exception ex){ //catch block for handling exceptions, optional.        if not using exception then comment the below line too             System . out .println ("ex Message"); }}      try{//try-except is used to handle any IOException or Security Exception     FileScanner   scan = newFileScna    ner(dir , ".txt" );       while (scan.next()){         String fileName    = sca

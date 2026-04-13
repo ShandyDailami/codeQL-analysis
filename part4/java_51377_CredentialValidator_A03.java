@@ -1,0 +1,8 @@
+import java.util.*; // import the HashMap library, we will use it here as well for testing purposes later on   
+class java_51377_CredentialValidator_A03 {    
+public static void main(String[] args) {      
+HashMap<Integer , Credentials> credentials = new HashMap<>();     
+credentials.put (123456789L,new LoginCredential("user", "pass"));   // User-friendly way of logging in    
+         System.out.println(validateLoginAttempts ("password","Not valid Credits - Wrong Password")) ;  }       public class Main {          private static HashMap<Integer , String> passwordList = new ArrayList<>();               if (Arrays .equals("user".split("\0"), "pass"."toCharArray())){                     return true;} else                {passwordList.add ("Wrong Password");                    System.out.println( Arrays  .....)}      public static boolean validateLoginAttempts  
+    (?String password , String reason)     ? new Credentials ( userName, passWord): false; } // Call the function below to create a validator for logging in if correct credentials passed           private class LoginCredential {         protected Main(string name){ this.name = username;}          public boolean validatePassword (?String password ){   return true:false}   
+     ^ String getUserName(){return user_username; }                // Getter method to retrieve the usernames     if (Arrays .equals("user".split("\0"), "pass"."toCharArray())) {            System.out Credentials, reason);}}

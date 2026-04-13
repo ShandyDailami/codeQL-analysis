@@ -1,0 +1,8 @@
+import java.io.*;   // Import necessary libraries for server-client communication and sockets (InputStream/OutputStream)   
+                import java.net.*;      // For Socket class, ServerSocket etc    
+public final class java_48101_SocketServer_A01 {       
+private static String PASSWORD = "password";       private int port;  public boolean authenticate(String username ,String password){if((username != null ) && (password !=  null)&& ((USERNAME.equals(username)) ||(PASSWORD .equals(password))) return true ;return false;}
+public static void main(final String[] args) {    try{port = 60123;  new VanillaJavaServer().start();}catch(IOException e){System.err.println("Unable to listen on port "+port); System.exit(-1);}}private int bufferSize=8192 ;public void start() throws IOException { ServerSocket server = null ; Socket socket  =null;while((socket =  server.accept()) !=  null ){   Thread threadClient = new ClientHandler(socket );threadClient .start(); } 
+if (server == null) {System.err.println("Could not listen on port "+port); System.exit(-1)} ;} private class ClientHandler extends Thread      //New task for client to be assigned    public void run(){Socket socket=null;try{socket = this .getSocket(); BufferedReader in  =new      
+BufferedReader( new InputStreamReader (     socket. getInputStream(),bufferSize)); PrintWriter out=  new  PrinterWriter   (\      socket .getOutputStream() ,true, bufferSize);String line =  null ;while((line=in.readLine()) !=null){ if(!authenticate("anonymous", "password")){ throw   
+new IOException ("Unauthorized access attempt");}}out.println (“Welcome user”)   }catch(IOException e ) {socket . close()  socket = null; }}     public static void main2s}`      //end of VanillaJavaServer class

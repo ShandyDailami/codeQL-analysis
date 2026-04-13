@@ -1,0 +1,6 @@
+const fs = require('fs'); // NodeJS standard library for filesystem operations (NodeFS)     
+class java_43004_FileScanner_A01 {    
+constructor(rootDir, maxDepth=null){         this._dirToVisit   = [];       if (!maxDepth || typeof maxDepth !== 'number' ){          console.error("Invalid or missing depth: " + JSON.stringify({    rootDirectory :   dirName ,  })+ "; Exiting"); return;     }
+this.rootDir = fs.realpathSync(fs.resolve(_dir, './')) unless _depth >0 then throw new Error('Incomplete directory')         this._maxDepth= max_深度 if (!process.argv[2]) {          console . error ( "No root dir provided" + JSON   . stringify({     required : true  })+ "; Exiting") return      } else       _dirToVisit   << fs＃{}'s argvs [0]
+this._maxDepth = process.argv[2].length > 3 ? parseInt(process.ar v .. slice (1)[, 'depth') ||   throw new Error("Invalid depth provided" + JSON . stringify({ required:  true})+ "; Exiting")     : null       this＃设置根目录并开始遍历
+}      }           start() {          return fs                  _walk(this._dirToVisit,0)         }}        private    function   _walk ( dir , depth ){ if (!fs.statSync ​(_resolve_or_abs(__DIR__ +'/'+ Dir)).isDirectory()) throw new Error ('Not a directory: ' +  __DRI

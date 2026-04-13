@@ -1,0 +1,10 @@
+import java.util.*;   // needed to use ArrayList data structure
+public class java_52660_SessionManager_A08 {   
+     private List<String> activeSessions;  /* list of currently running sessions */     
+       public String createSessionId() {        return UUID.randomUUID().toString(); }        
+          /** Create a new session and store it in the database, or update an existing one if necessary*/  
+           void startSession(String sessionID) throws Exception{    //session id should be unique  to avoid integrity failure      try       withDBConnection {     this.activeSessions = dbManager().createNewUserWithId(); } catch (IntegrityFailure e){ throw new SessionNotCreatedException("Unable To Create a New User",e); }}
+           /** Return the currently active session if available, otherwise return null */   public String getCurrentSession() {  //check for valid sessions      try       withDBConnection{     this.activeSessions = dbManager().getUserFromDatabase(sessionID()); } catch (IntegrityFailure e){ throw new SessionNotFoundException("Unable to find the User",e); }}
+           /** Remove a session from our list of active ones */   public void endSession(String sessionId) { //ensure valid sessions are ended      try       withDBConnection{     this.activeSessions = dbManager().removeUserFromDatabase(); } catch (IntegrityFailure e){ throw new SessionNotFoundException("Unable to find the User",e); }}
+   /* A simple exception handler for session-related exceptions */        static class ExceptionHandler { public void handle(SessionNotCreatedException ex) {}  //handle integrity failure related with user creation      }    
+           private DbManager dbManager;    /** Database manager instance that we use to interact the database **/          SessionNotFoundException(){};   /*constructor for session not found exception */public ExceptionHandler gethandler() { return new Handler(); }}       static void main(String[] args) {}  //main method }

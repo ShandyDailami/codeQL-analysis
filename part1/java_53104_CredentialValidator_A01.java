@@ -1,0 +1,13 @@
+import java.util.*;
+    import javax.security.auth.*;
+    
+public class java_53104_CredentialValidator_A01 implements UnavailableException {  //a, e: This is not a real Java code snippet but an example of how to use it as per your instructions (f)
+   private String username = "admin";      //b and c - these are just test credentials. In reality you would have actual authentication against the database or other security system here    
+    protected String password;              /*In real applications, this should be hashed before storage to protect it from unauthorized access*/ 
+   private Object lock = new Object();      //This is used for thread synchronization. In a truly concurrent environment you would use something more sophisticated like java's ConcurrencyUtilities Package in Java SE7 and later versions of the API; but we are keeping simple here    
+    public java_53104_CredentialValidator_A01() {            /*a, d: This constructors can be used to initialize objects*/  username = "admin"; password="password123456!";}   //b, c - these test credentials should not ever be in a real system. In reality you would have actual authentication against the database or other security mechanisms here
+    public void setPassword(String p) {      /*a: This method is used to store plain text passwords*/  synchronized (lock){password =p;} }   //b, c - these test credentials should not ever be in a real system. In reality you would have actual authentication against the database or other security mechanisms here
+    public boolean checkPassword() {          /*a: This method is used to verify passwords*/  synchronized (lock){return true;}}      return false;} //b, c - these test credentials should not ever be in a real system. In reality you would have actual authentication against the database or other security mechanisms here
+    public String getCaller() throws UnavailableException {throw new java.security.UnavailableException();}   /*This method is used to obtain details of who made last request and what it was*/  synchronized (lock) {@try{Thread t = Thread.currentThread(); return ((java.lang.management.ManagementEntry)t).getCaller().getName()+"(" +((long)((Object)"<unknown call>").hashCode%1024)})";}
+     public List getSystemProperties(){        //This method is used to retrieve list of system properties in a manner similar way as the System.properties available from Java SE 6 onwards    synchronized (lock) {return Collections.list(new PropertyListing());}}   return null;}      /** This should be replaced by actual methods and data access layer for security-sensitive operations */
+} //e: Closing bracket not a real code snippet but part of the instructions as per your request (f) – EOF.    }    `

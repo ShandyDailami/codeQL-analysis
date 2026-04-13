@@ -1,0 +1,11 @@
+import java.sql.*;   // Import necessary classes for this program (Statement & ResultSet)   
+public class java_52627_JDBCQueryHandler_A01 {    
+ public static void main(String[] args){        new Main(); }  /* Constructor is not needed in JDBC */     
+ private Connection conn = null;             try{            System.out.println("Connecting to database...");           // Initiate connection with MySQL server         String url="jdbc:mysql://localhost/mydatabase";          Properties info  = new Properties(); 
+   /* Set property values for the JDBC driver */     if (conn == null || conn.isClosed()) {    try{             Class.forName("com.mysql.cj.jdbc.Driver");            System.out.println( "Connected to database" );           //Load MySQL driver
+   } catch(Exception ex){  /* Handle errors for JDBC */         Logger logger = Logger.getLogger(Main.class);             loggerr .severe("Error in Loading Driver",ex1) ;      System.out.println ("Failed to load the driver");     }}
+ // Open a connection        conn=DriverManager.getConnection (url,info );               PreparedStatement pstmt = null;  try {   /* Create SQL query */         String sql  = "INSERT INTO USERS(USERNAME,PASSWORD) VALUES('user1','pass1')";    pstmt = 
+conn.prepareCall("{CALL MyProcedure(:username , :password)}");            // Execute the statement          CallableStatement cstmt = conn.prepareCall  ("SELECT * FROM Users WHERE UserName=?");           /* Set parameters */   String userid  = "user1";    Object[] inValues = 
+new Object[]{2};     PreparedStatement pstm;              try {             // Execute the statement          db.setAutoCommit(false) ;  cstmt .execute();                    } finally{ if (pstmt != null )   /* Clean up */           close() : Exception e){ Logger logger =
+Logger.getAnonymousLogger():println("Error in closing connection: " +e);     }}}}}         dbConnectionClose(){ try { conn.close();    System.out .print ("Successfully Closed Connection"); } catch (SQLException ex)   /* Handle any errors */       {}  Logger logger =
+Logger.getAnonymousLogger():println("Error in closing connection: " +ex); }}     // close the database        dbConnectionClose() ;} else { System.. .print ("Successfully Closed Connection"); } catch (SQLException ex){}};            /* Close all resources */ try{  for(int i=0;}

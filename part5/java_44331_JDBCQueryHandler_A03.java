@@ -1,0 +1,5 @@
+import java.sql.*;   // Import required Java packages   
+public class java_44331_JDBCQueryHandler_A03 {  public static void main(String[] args) {     try{         String url = "jdbc:mysql://localhost:3306/testdb";      Connection con=DriverManager.getConnection (url, <username> ,<password> );        Statement smt=con.createStatement();   // Create a statement   
+       ResultSet rs;     try {           String query = "SELECT * FROM Users WHERE id = 2 ";          rs =smt.executeQuery(query);      while (rs.next()){             System.out.println("ID :" +rs.getString("id"));            } con.close();   smt.close();  // Close the connection          
+     }} catch (SQLException se){se.printStackTrace();}    /* Catch exception */        if(con != null) { try{ con.close();         }catch (SQLException se){          System.out.println ("Error in closing connections");   }  // End of program and clean up    
+       resources      }}`;// Close the connection pool with JDBC-CP, which will take care if there were any pending queries    finally{ SFAutoServiceRegistrar._clear();}}}));         System.out.println("The end!!")} // End of program and clean up

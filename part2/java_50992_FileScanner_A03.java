@@ -1,0 +1,13 @@
+import java.io.*; // Import the necessary classes for handling files & directories      
+public class java_50992_FileScanner_A03 {        
+    public static void main(String[] args) throws IOException{           
+        File file = new File(".");            
+           System.out.println("\nReading all Files and Folders:");    
+          scanDirContentsRecursive(file);  // Call the method to print content of a directory recursively     
+         }  
+       private static void scanDirContentsRecursive (File dir) throws IOException {        File[] files = dir.listFiles();           if (files == null){            return;          }              for (int i = 0; i < files.length ;i++ ){                // If the file is not a directory, print it out     
+                    System.out.println(files[i].getAbsolutePath());             FileScanner fs = new FileScanner();            if (!fs.fileIsInjectionSafe(new java.io.FileInputStream ( files[i]))) {        // If the file is not safe, print an error message     
+                        System.out.println("WARNING: "+files[i].getName() +" may contain security-sensitive operations related to A03_Injection.");            }                else{                     PrintWriter writer= new  java .io .PrintWriter(System.out);             // If the file is safe, print out its content     
+                             BufferedReader reader =new   BufferedReader (     new InputStreamReader ((FileInputStream )files[i]));        String line;              while((line  =reader.readLine()) != null){                writer .println(line);             }                     writer.close();          }}           // Call the method to print content of a directory recursively for nested directories     
+               scanDirContentsRecursive (files[i].to   Directory());}}  try {fs = new FileScanner() ;     fs.fileIsInjectionSafe(new java .io    .FileInputStream ("test"));} catch       (Exception e) {} // Try-catch for exception handling     
+        }            private static class FileScanner{         public boolean fileIsInjectionSafe   (java  io, InputStream input){             try {input.close(); false;}     catching any exceptions return true;}}    }}`          The code above will print out all the files and folders in a given directory recursively with warning for certain security-sensitive operations related to injection attacks A03_Injection if found inside it, otherwise nothing is printed

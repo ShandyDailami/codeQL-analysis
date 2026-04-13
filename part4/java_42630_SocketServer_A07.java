@@ -1,0 +1,11 @@
+import java.io.*;   // Importing InputStream, OutputStream classes (part of Java SE API)
+import java.net.*;    // Net classes which include Socket class java_42630_SocketServer_A07 create TCP socket connection and InetSocketAddress for IP & Ports 
+                     /for Server-side connections only .ServerSocket is a separate part that allows server applications in addition or replacement the TCP listening role of existing sockets by creating new listeners.  
+    
+public final class AuthFailure {    // Name your program based on its main purpose (A07_AuthFaile) 
+             private static boolean flag=false;     	// Authentication failure Flag, Default is false till we get the response from authentication server      
+        public static void authenticate(Socket socket){    	  		    // Method for checking if client needs to be authed. (A07_AuthFailure) 			        					                 				            	     	    }      private AuthFailure(){}	// Private Constructor prohibiting new instances of this class                  	 
+       public static boolean isAuthenticated(){return flag;}	  		    // Method for checking if client has been authenticated. (A07_AuthFaile) 			        					                 				            	     	    }      private AuthFailure(){}	// Private Constructor prohibiting new instances of this class                  	 
+public static void main(String[] args){    	  		    // Main Method where the execution starts from here (.main method in java is a starting point for any Java program) 			        					                 				            	     	    }      private AuthFailure(){}	// Private Constructor prohibiting new instances of this class                  	 
+public static InputStream getInputStream(Socket socket){    	  		    // Method to return the input stream from provided Socket. (A07_AuthFaile) 			        					                 				            	     	    }      private AuthFailure(){}	// Private Constructor prohibiting new instances of this class                  	 
+public static OutputStream getOutputStream(Socket socket){    	  		    // Method to return the output stream from provided Socket. (A07

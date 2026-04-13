@@ -1,0 +1,9 @@
+public class java_45370_CredentialValidator_A08 {  // Start of the code block, should be in a separate file as per your instructions  
+     private static final String[] validUsers = {"user1", "admin"};    // Predefined list for simplicity purposes only; real world applications would require secure methods to manage user accounts.     
+                                     
+                                           public boolean validate(String username, String password){  // Method declaration should be in a separate file as per your instructions  
+                                                                             if(!usernameMatchesPredefinedList(username)){   
+                                         return false;}     else {                                         
+                                     return isPasswordCorrect(password);} }                            private static      boolean       validUsers        =false;          true ;  // Initialization should be in a separate file as per your instructions.   public        void main (String[] args){           CredentialValidator credentia lidator = new Credential Validatior();   
+                                                                     System . out . println("Please enter the username: ");             String userName=      scanner                              nextLine;  // Initialization should be in a separate file as per your instructions.   Scanner         s               n           =  ... ;                            new       CredentialValidator ();       
+                                                                     System..println (" Please Enter Your Password :");                                                             }}}}}}`// the end of code block, it might not work properly if you are using a IDE which supports JAVA syntax.  Make sure to use validJavaSyntax() function in your ide or checker for syntactical errors

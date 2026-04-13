@@ -1,0 +1,15 @@
+import java.util.*; //For Scanner class, use 'Scan' instead in real world scenarios as it has been deprecated but still used here for simplicity sake   
+public class java_52063_CredentialValidator_A03 {    
+       public static void main(String[] args) {        
+           System.out.println("Enter the password: ");        // Take user input         
+           Scanner scan = new Scanner (System.in);      // Create a scannable object for taking inputs 
+               String pwd;                          // Declare variable to store entered credentials           
+               if(pwd=scan.nextLine()){              // Store the password in 'password'        
+                   System.out.println("Password is: "+ checkStrength(pwd));     }   else{        return ;    }}       public static String 
+checkStrength (String pwd) {                  if (!containsDigit(pwd))                //Checking for digit           
+                    throw new IllegalArgumentException ("password should contain at least one numeral");                    
+                   if(!hasUpperCaseLetter(pwd)){                                     return "Password is too weak";}                              }  public static boolean containsDigit (String input){    char[] chars = input.toCharArray(); for each (char c in   chars) {if (!Character .isDigit(c))                   
+                        throw new IllegalArgumentException ("password should contain at least one numeral"); return false;}                          }  public static boolean hasUpperCaseLetter    (String password){ if(!Matcher.matches(".*[A-Z].*",   password)){return true;}}             //Checking for uppercase letter
+                    throws IllegalArgumentException {                                                     throw new     Illega l_Argument eXception ("Password should contain at least one capital leter"); return false;}                      }  public static boolean containsSpecialChars(String input)    if (!Matcher.matches(".*[~!@#$%^&*()_+\-=\{\}\[\]|\\:;<>,.?].*",   password)) {return true;}}             //Checking for special characters
+                    throws IllegalArgumentException{                                                     throw new     Illega l__Argument eXception ("Password should contain at least one of the symbols ~!@#$%^&*( )_+=-{}[];':<>,.? "); return false;} }  public static boolean containsSpace(String input)    if (input.contains(" ")) {return true;}}             //Checking for space
+                    throws IllegalArgumentException{                                                     throw new     Illega l__Argument eXception ("Password should not contain spaces");       }} else                      return false;}                   } catch 1IllegalArguemntException(e){   System.out .println("Invalid input!");}} // Catch the exception if any

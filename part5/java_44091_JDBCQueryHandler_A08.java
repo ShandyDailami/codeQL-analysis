@@ -1,0 +1,4 @@
+import java.sql.*;  // Import required Java libraries for database interaction (SQL) and other functionality using JDBC  
+public class java_44091_JDBCQueryHandler_A08 {    public static void main(String[] args){     String url = "jdbc:mysql://localhost/company";     
+       String username="root", password= "";  Connection connection;          try{         // Open a database连接          
+             connection =  DriverManager.getConnection(url,username ,password);        System.out.println("Connected to the company DB");     } catch (SQLException e){            Echo out an error message and exit program              printStackTrace();      return;   }}  // End of main method

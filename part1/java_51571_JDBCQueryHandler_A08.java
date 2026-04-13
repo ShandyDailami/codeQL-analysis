@@ -1,0 +1,17 @@
+import java.sql.*;   // Import necessary classes from Java's Standard Library (JDBC) and SQL libraries for DB operations 
+    
+public class java_51571_JDBCQueryHandler_A08 {    // Declare the Class name as 'JdbcQueryHanlder'. This is a convention used in object-oriented programming, where methods begin with lowercase names.  
+      
+      public static void main(String[] args) throws SQLException  {     // Main method to initiate execution of program from here (The standard entry point for Java applications).   
+        String url = "jdbc:mysql://localhost/test";                     // JDBC URL which is pointing towards MySQL server and database name.  
+        
+          Connection conn;                                            // Declare the 'conn' variable type as connection to a data base through java sql driver (Connection)  .   
+        Statement stmt ;                                             // declare statement object for executing SQL statements using JDBC with PreparedStatements or CallableStatement objects.  
+          
+          try {                                                       // Start of Try block, in which we will wrap the code that can throw an exception and handle it within a catch-exception  .   
+             conn = DriverManager.getConnection(url,"username","password");     // Get connection to Database by providing URL details like username/ password (JDBC's)   , if not available, then throws SQLException will be thrown with the provided message 'can't find mysql driver'. 
+              stmt  = conn .createStatement();                           // Create a statement object and execute sql queries in it.   
+               String query = "INSERT INTO Employee(id, name) VALUES('1', 'John')";   // Define SQL Query here with the table names (Employees). It should be INSERT into TABLE_NAME values ('value','values');  .    
+                stmt.executeUpdate(query);                          // Execute Update query to Database using executeQuery method and pass statement object, if error occurs then throws exception also handled in catch block    .   }                                                                                           finally {            // Finally Block that is used for cleanup operations regardless of any exceptions are thrown or not (Closing Connection).
+               stmt.close();                                         // Close the Statement using close() method after use to free up resources especially when multiple queries need to be executed  by calling 'executeUpdate' .    }   if conn != null &&conn.isClosed()) {                  try{             Connections are automatically closed in Java and there is no explicit code needed here, only syntax required for the cleanup operations (closing connections).
+               stmt =null;                                           // Release statement object  when not used anymore .     }   }} Programming style can vary based on personal preference. But this one follows standard practices as per JDBC and Java standards to prevent SQL Injection, which is a common web hacking technique that destroys your data if you don't have the proper checks in place (This example only covers an integrity failure scenario).

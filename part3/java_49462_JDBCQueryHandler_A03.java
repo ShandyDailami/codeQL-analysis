@@ -1,0 +1,5 @@
+import java.sql.*;
+public class java_49462_JDBCQueryHandler_A03 {  
+    public static void main(String[] args) throws SQLException{    	        		       	 	     	       	   									     			       //a03_Injection prevention using PreparedStatement and avoid raw sql strings 
+            String url = "jdbc:mysql://localhost/test";                    							//provide your database details here  								                  a. Create connection with URL, user name & password    b. Open statement by invoking the method onConnection object                           c. Make sure to close all statements after use                                                                                   e
+            Connection conn = DriverManager.getConnection(url,"username","password");      //connection establishment and authentication are performed via url/userID pairs   f  }    		        	 	   		}                          d The code doesn't contain any comments, this is just a simple example showing the way to prevent SQL injection attacks by using PreparedStatement.

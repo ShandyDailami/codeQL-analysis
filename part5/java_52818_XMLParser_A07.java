@@ -1,0 +1,14 @@
+import javax.xml.parsers.*;  //for SAXParser, DocumentBuilderFactory and InputSource   
+   import org.xml.sax.*;     //SAX constants & interfaces             
+      public class java_52818_XMLParser_A07 {      
+        private static final String XSD_FILE = "authfailureMessageSchema-1.0.xsd";        
+ 	    SAXParser saxParser;            
+          DocumentBuilderFactory factory;  
+           
+           @SuppressWarnings("deprecation")     //SaxHandler was deprecated     
+	       public class MySAXHandler extends DefaultHandler {        private String lastElementLocalName=null ; 	   	 		   				public void startDocument()        	{ System.out.println ("Start of Document"); }                @Override            	       	//Elements and attributes are read          										void startElement(String uri,           		String localname ,    
+                  String qName, Attributes atts)                     { lastElementLocalName =localname ;  				}              public void endElement (String uri,         		   	  string localname,      	   	      //Validation is done here.            										void endElement(String uri,        		String 	//removed comment
+                  String qName )              	{                    if(!lastElementLocalName .equals("AuthFailure")){     System.out.println ("Invalid XML in file: Auth Failure not found"); }              lastElementLocalname = null;  				}        public void characters(char ch[], int start,	int length) {  //prints content of element        		if (!lastElementlocalName .equals("AuthFailure")){     System.out.println ("Invalid Content: " + new String (ch ,start ,length)); }    }}
+             private class MyDocumentBuilder extends DocumentBuilderFactory     	{ public synchronized IDocumentBuilder createInstance(String pURI)            { return this;  				}         		public final InputSource getInputSource()        	       	   			//Reads an XML file and returns a Tokenizer.       	     	 	return new SAXParser().getXMLReader(); }} 
+              public java_52818_XMLParser_A07() { factory = DocumentBuilderFactory .newInstance (); saxParser =  Factory   //Sax parser is created here   		saxParser=(SAXParser)factory	.createDocumentBuilder() ; }     @SuppressWarnings("unused") protected void parseXMLFile () {      try{saxParser.setFeature ("http://xml.org/sax/features/external-parametrization", false);  //Sets the feature of SAX parser        saxPar   mer .parse(new FileInputStream ( "authfailureMessageTest" ), Handler ); } catch     
+              Exception e { System.out.println ("Problem parsing XML file: \n");e     StackTraceElement [] stack  =    //Handling exception and printting the corresponding line number        for       ;           			printStackTrace(); }} public static void main (String args []) 	{ new Main().parseXMLFile () }

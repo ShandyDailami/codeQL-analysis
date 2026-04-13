@@ -1,0 +1,12 @@
+import java.util.*;   // Import ArrayList and HashMap classes for List/map functionality 
+                      // Also import Secure class java_52164_SessionManager_A07 in authentication operations below     
+public class SessionManager {   
+     private static Map<String, String> loginCredentials = new HashMap<>();       // Define a map to store username-password pairs  
+                                                            /* For security sensitive operation related A07_AuthFailure */                     
+  public void authenticateUser(final Object principal) throws AuthException {     
+     if(!isPrincipalAuthenticated((String)principal)) throw new AuthException("Authentication Failed");       // Call authentication method to check the validity of user credentials  
+ }    private boolean isPrincipalAuthenticated ( final String username ){          /* For security sensitive operation related A07_AuthFailure */           try {            if(username == null || !loginCredentials.containsKey(username)) throw new AuthException("User not found");        // If the user name doesnt exist in our login credentials, authentication failed 
+         } catch (final Exception e){             System.out.println ("Auth Failure: " +e);              return false;          /* Return true if auth fail */            }    try {           String password = loginCredentials.get(username).toLowerCase(); // Try to get the hash of user's provided pass     
+         byte[] bytesOfPassword=password.getBytes("UTF-8");       System.out.println (Arrays.toString((new MessageDigest()).digest(bytesOfPassword)));        /* If password doesnt match with stored value, authentication failed */           } catch (Exception e1) {             return false;          // Return true if auth fail 
+         try{            String savedPass = loginCredentials.get("salt");     System.out.println ("Saved Password : " +"Password is not correct due to: Authentication Failed with password -> User provided pass="+password);    return false;} catch (Exception e) { //Return true if exception occurs
+         }  finally{        /* Cleanup resources after operation */          try     {            System.out.println("Log out user " + username );      }}catch(final Exception ex){       printStackTrace();}           throw new RuntimeException()   ;    return false;}} catch (AuthFailure e) {} // Do nothing if already authenticated

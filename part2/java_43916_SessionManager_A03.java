@@ -1,0 +1,11 @@
+import java.util.*;   // ArrayList created for holding values in session object   
+class java_43916_SessionManager_A03 {    
+    private List<String> sessions;  /* This is our container */      
+      public void createSession()         {           this.sessions = new ArrayList<>();            }         
+       
+public String getValue(int id){   // we are fetching the session value            
+ if (id > -1 && id < sessions.size())  return sessions.get(id);                      else throw new IllegalArgumentException("Invalid Session ID");   
+}              public void destroySession()       {         this.sessions = null;          }     private class InjectionAttack implements Runnable{   // A simple attack which inject malicious code in the session list  @Override      public void run(){           for(int i = 0 ;i < 154967823 && sessions !=null;++i){              SessionManager.this.sessions = new ArrayList<>();}}
+public static InjectionAttack getInjectionAwareObject()       {     return  new   injectionattack ();    }            public class Main{         // Driver method to test the program          private static Random randomGenerator;                @SuppressWarnings("deprecation")              SessionManager sessionmanager = null ;                  try     
+{(sessionmanager=SessionManager.getInjectionAwareObject()).createSession();}                   System.out .println ("Created a new sessions...");                                                              }   catch (Exception e) {e.printStackTrace()}}  {}                          // Main end                         public static void main(String[] args){         randomGenerator =new Random ( ) ;                     try     
+{runInjectionAttack();}                   System .out..println ("Starting injection attack...");                                                                                        } private   static    boolean runinjectionattack(){              for            (;;            ++i) {  if(!SessionManager.this.(randomGenerator).nextBoolean()) break;}           return true ;}}

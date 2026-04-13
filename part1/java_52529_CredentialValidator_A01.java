@@ -1,0 +1,7 @@
+public class java_52529_CredentialValidator_A01 {     // Store the credentials as public variables.   You should hide them with proper access modifiers like private or package level if needed in a real application, this is for demonstrating purpose only.   
+        String password;       // The actual stored credential doesn't need to be shown here  (You may want it hidden).          For simplicity we are just storing the plain text version of credentials  
+      public java_52529_CredentialValidator_A01(String password) {     /* Create a constructor for creating an instance with specific username and/or encryptedPassword */         this.password = UtilsEncryptionAndSecurityChecker().encryptData("SHA256", "Default"+password);    }  //Example of using SHA encryption to encryp password here
+}     /* End Credentials class*/  
+      
+public interface IUserCredentialValidator {      /**/        public boolean validate(String username, String encryptedPassword );         default void setNextChain(ICredentialFilter next);    }  //Interface for handling validation chain (a01_brokenAccessControl)          /* End Interface */     Credentials creds = new Credentials("mypassword");  
+       public class UtilsEncryptionAndSecurityChecker {      private static final String ALGORITHM  = "SHA256";         //Use SHA  Encrypt it        /**/            public synchronized String encryptData(String algorithm,String data){ /*Add your encryption logic here*/             return "";}    }     Credentials creds = new   Credentials("mypassword");

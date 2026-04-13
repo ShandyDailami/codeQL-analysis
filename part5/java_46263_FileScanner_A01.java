@@ -1,0 +1,7 @@
+import java.io.*; // Import Input Stream Class (InputStream), also for file handling in general purpose such as File not Directory Traversal etc.. 
+public class java_46263_FileScanner_A01 {  
+    public static void main(String[] args) throws IOException{    
+        String directoryPath = "/path/to/directory";     
+         BufferedReader br  = new BufferedReader (new InputStreamReader (openInputStream(fileName))); //Buffering the file read operation to improve performance. 
+                   for (;;) {   int b;    if ((b=br.read())==-1) break ;     }                    StringBuilder buffer = new StringBuilder();//Use a string builder instead of directly concatenating strings, it's faster and more memory efficient .buffer the input reading operation to enhance performance 
+                   br.close() //Close BufferedReader in finally clause so that its resources can be closed properly after use is done or if an exception occurred before attempting close().     }      private InputStream openInputStream(String path) {       File file = new File (path);   try{ return new FileInputStream (file).getChannel();  //Returning the channel to read from, you could also do this in a non-block setting like select or poll instead .}catch (FileNotFoundException e){ System.out.println("The given path " + file +" was not found");throw e;} }

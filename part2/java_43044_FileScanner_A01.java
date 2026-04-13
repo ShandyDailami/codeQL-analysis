@@ -1,0 +1,66 @@
+import java.io.*; // Import required classes here for file I/O and IOExceptions handling  
+public class java_43044_FileScanner_A01 {    
+    public static void main(String args[]) throws IOException  {     
+        String currentDir = new File(".").getAbsolutePath();         
+            printFilesInDirectoryRecursive(new File(currentDir));          
+       }         private static boolean isHiddenFileOrFolder (final File f){    return !f.canRead() ||   // Can't read file, eh?      if (".".equals(f.getName()) ||  "..".equals(f.getName())) { 
+                                                                              // No way to hide files or folders...        } else{             boolean isHidden = f.isHidden();                  return (null == name) ||   new File("test/.hidden").setName(".a." + fileOrFolder).exists()||new java.io.File(fileORfolder+"2/..%0z~1 " ).mkdirs () && isDirectory; 
+            } catch (Exception e){ return false;}                   // handle IOException, etc...         if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.io .File(fileOrFolder+"2/..%0z~1 " +
+            }  catch (Exception e){ return false;}             // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java
+!.io .File(fileOrFolder+"2/..%0z~1 " +e);  catch (Exception e){ return false;}             // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.io .File(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +
+! ".io ." e); catch (Exception E){ return false;}} // handle IOException, etc...          if ("".equals((fName = fPath))) {return true ;} else{ File fileToCheck=new   java.net .URI(fileOrFolder+"2/..%0z~1 " +

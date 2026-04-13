@@ -1,0 +1,14 @@
+import java.util.*;   // Importing the utilities package, which contains classes such as List, Set etc., used in this program    
+class java_51691_SessionManager_A08 {    // Defining a class called 'Session Manager' with methods and data members below it     
+ private Map<String , String> userMap;  // Creates an empty Hashmap named "user map" to store usernames & passwords.   It can be used for any lengthy task in the future, hence chosen as a minimalist style    
+ public SessionManager() {    // Constructor of class that will call on creation and initialize userMap  with initial capacity - O(1) operation is allowed (constant time complexity ie; constant).      'user map' can store upto max.capacity elements in the worst case scenario, where maximum size=total number of users  
+     this.userMap = new HashMap<String , String>();  // Creates an empty hashmap and assigns it to user Map using a constructor   
+ }     
+ public void addUser(String username , String password) {      
+        if (!this.userMap .containsKey (username))   // Checking whether the key already exists in 'Hash map' or not     "Contains Key" is used here for O(1)/constant time complexity operation  - to check existence of a particular user, and storing/fetch data from it by its username
+        {          this.userMap .put (username , password);   // If key does NOT exist in the 'Hash map' then add new entry ie; "Put" is used for adding an element at specified position  or with given keys & values    }      else       System.out.println ("The user already exists!");    
+}        public String getPassword(String username) {         // Function to retrieve password of a particular Username from the 'Hash map'. It uses "Get" method which has O(1)/constant time complexity operation for retrieving data by key or name  here.    return this .userMap .get (username); }     
+}        public static void main (String [] args) {          // Test function, used to check if everything is working fine ie; a test driver method that runs the program         SessionManager sm = new SessionManager();   "New session manager object"    
+    System.out.println ("Adding users...\n");      for(int index = 0 ;index < 15  ; ++index) {        String username  = UUID .randomUUID ().toString () + "_user";       // Generate random user names and passwords to add in our session manager    
+    sm.addUser ("username"+Integer.toHexString(new Random().nextInt()), "password");      }          System.out.println("Done adding users! \nStarting login operations...\n ");         for (int index = 0;index < 15 ; ++index) {            // This loop is to simulate the user logging in and checking if they are able access their data   
+   String username = UUID .randomUUID().toString() + "_user";      sm.getPassword(username); }     System.out.println ("Done login operations!" );  }}  `

@@ -1,0 +1,12 @@
+import org.hibernate.*;    // For SessionFactory & session object  
+                            /*} Hibernate's auto-generated API */
+    
+public class java_51826_SessionManager_A03 {                           /* The "app context" (container) for Spring beans*/
+ private static final String PERSISTENCE_UNIT_NAME = "MyPersistenceUnit"; // Persistance unit name – should match the persisting.xml file in your project's resources folder  
+    
+    /** SessionFactory: provides a factory method to get Hibernate session and also ensures thread safety */      private static SessionFactory _sessionFactory;        /* Singleton instance of this class (thread-safe)*/  // This is our only place where we setup the persistence unit. We do not allow external code or users elsewhere in your application, therefore making it safe for multithreading environment
+     @SuppressWarnings("deprecation")    public static SessionFactory getSessionFactory() {           if (_sessionFactory == null)                 _sessionFactory = new Configuration().configure(MyAppContext.class.getResource("/persistence.xml")) // Load the persisting unit from our resources folder
+             .buildSessionFactory();          return _sessionFactory;       }      public static void main (String[] args ) {  Session session=null;}   /* The application's entry point */        private java_51826_SessionManager_A03() {}         /** Called by Hibernate when setting up the persistence unit, and it is only called once per JVM.
+     // This method will run as soon a singleton instance of this class (MySessionFactory)  can be loaded or created in our context*/      static { System.out.println ("Creating Sessionfactory"); getSessionFactory();} }   /* End Singletone */    public void save(String arg0, String arg1){
+     // ...Your logic here to persist a User object...        session =getSessionFactory().openSession() ;  try{session .beginTransaction ();          Object user= new MyUserPOJO();           setters for fields......         }catch (HibernateException e) {e.printStackTrace( );} finally {}       // Commit the transaction after all operations are complete
+     /* The code above assumes you've a User object with getter and setter methods,  which I am not aware of in your question */    session .getTransaction ().commit () ;          }      private MyAppContext create() { throw new UnsupportedOperationException(); }} // In an MVC project this method would return the current instance if one exists or otherwise null

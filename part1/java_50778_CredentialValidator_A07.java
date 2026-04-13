@@ -1,0 +1,3 @@
+import javax.servlet.*;
+import java.io.*;  // Import of Java InputStream, OutputStream and PrintWriter interfaces  
+ServletResponse response;    ServletRequest request ; HttpSession session =  req .getSession();      String username = "john";       boolean authenticated= false;}     @Override public void service(final ServletRequest req , final ServletResponse res  ) throws IOException {request  = (HttpServletRequest)req;response  =  (HttpServletResponse)res ; if(!authenticated){String enteredPassword =  ... // get password from request Header. String expected = Base64.getEncoder().encodeToString(username+":"+password);if (!enteredPassword .equals  (expected)) {returnUnauthorized()}; authenticateUser();} }

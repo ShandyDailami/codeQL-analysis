@@ -1,0 +1,7 @@
+import java.sql.*;   // for SQLException, Statement & PreparedStatement interfaces   
+public class java_42388_JDBCQueryHandler_A07 {    
+// Instance variables here... (connection pooling and db credentials)     
+private Connection conn;       private final String URL = "YOUR_URL";        Private “String USERNAME =  'USER';   PRIVATE STRING PASSWORD='PASSWORD’"    // your database login info.    
+public java_42388_JDBCQueryHandler_A07() {         try{           this .conn=  DriverManager​	.getConnection( URL, USERNAME , Password );       } catch (SQLException ex){            System..println("Error: unable to connect " +ex);        }}    //Constructor     
+//Method for fetching data from the database.     public void getData() {         Statement stmt=conn .createStatement();          ResultSet rs =stmt​ 	.executeQuery ("SELECT * FROM YOUR_TABLE");           while (rs.next()){             System..println(“FETCH DATA :”+rs);        } try…catch blocks will be here for exception handling if any    
+} //End of the Class    public static void main() {         VanillaJdbcQueryHandler vj =newVanilla JdbC QueryHandlerr();          ‘’'Calling your method to get Data from Database:v.getData ();      }// End Of Main Method

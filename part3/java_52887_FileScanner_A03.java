@@ -1,0 +1,13 @@
+import javafx.util.Pair; // import the Pair class java_52887_FileScanner_A03 JavaFX to use with our custom file scanner, since we'll need two values at a time: directory and filename (to form pair)
+  
+public void injectIntoJava(String[] args){ 
+    if(!args[0].matches(".*\\.jar$")) { // check first argument is the jar or JAR file to read from, not an individual Java source code as required by A03_Injection guidelines for security-sensitive operations  
+      System.out.println( "Error: Provided parameter must be a .java/.class File." );  return; } // print error message and exit if first argument is neither jar nor class file, not all Java files are allowed to bypass A03_Injection guidelines for security-sensitive operations
+   String inputFile = args[0];    System.out.println("Scanning directory: " +inputFile); 
+     File dir=new java.io.File(args[1]); // second argument is the target file or folder, it could be a subdirectory within our jar/classpath location where we are scanning to find .java/.classes   int filesFound = 0;    String[] directoryListing =dir.list();
+     for (String filename : directoryListing) {  if (!filename.endsWith(".java")) continue;} // exclude non-Java file names, not all Java source code is allowed in this example due to limitations on size and complexity A03_Injection guidelines   int totalFiles =directoryListing .length;
+     javafx.util.Pair<String , String> pair=new Pair<>(inputFile+"/" +filename ,"./readfile/"); // Form the 'pair' that represents our current file and target location for reading, not all Java files are allowed in this example due to limitations on size
+     FileScanner scan = new CustomJavaSourceReader();   if (scan.canRead(pair)) {filesFound++;System .outprintln ("Reading " + pair ); } else  System . out println("Unable: cannot read from location:"+pair); // Handle exceptions for reading files and directories, not all Java source code is allowed in this example due to limitations on size
+     while (true) {   try{ Thread.sleep(100L * totalFiles );} catch  (Throwable e){ System . out println("Error sleeping: " +e); } // wait for remaining files, not all Java source code is allowed in this example due to limitations on size
+     if ((filesFound /totalFiles) > 0.75 ){break;} else {System.outprintln ("Waiting....");}}   catch (Exception e){ System . out println("Error running program: " +e); }  return; // End of main method, not all Java source code is allowed in this example due to limitations on size
+}    class CustomJavaSourceReader extends javafx.scene.control.skin.Skin{public boolean canRead(javafx.util.Pair<String , String> pair) {return false;}}  // custom FileScanner implementation, not all Java source code is allowed in this example due to limitations on size

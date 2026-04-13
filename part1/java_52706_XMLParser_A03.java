@@ -1,0 +1,17 @@
+import org.xml.sax.*;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;  
+    import java.io.File;
+    
+public class java_52706_XMLParser_A03 implements SAXHandler {
+       private StringBuffer buffer = new StringBuffer();  // this is a string that gets appended to for every tag encountered in the document: each level of nesting will add another "item" (e.g., attribute, element) into it's current item list and when we reach top-level tags all items are collected at once by SAXParser
+    public boolean startDocument() {return false;}  // not used here   if you want to handle document is well defined in your use case or may come from a different source this would be implemented differently. In my example, I'm just returning true and discarding the new information which could have been passed up
+    public boolean startElement(String uri , String localName ,  String qName) { buffer . append ( "\n\nStarting element: " +qName);} //each time a tag is encountered add to current item list. It's called for each level of nesting on your XML document
+    public boolean endElement(String uri, String localName ,  String qName) {buffer . append ( "\nEnd Element :"+localName ); }  	// call this when you are about finish parsing a top-level tag. It's called for each level of nesting on your XML document
+    public void characters(char[] ch, int start , 	int length ){ buffer	.append("\"" + new String (ch ,start ,length)+"\"");} // call this when you are about a character data between tags. This is what we do for each tag in our example scenario and save to the stringBuffer
+    public void fatalError(String msg){ System . out  .println ("Fatal Error : " +msg ); }  	// if anything bad happens, like an I/O error or there being a syntax error etc it will call this method. It's not called in my example scenario but can be used to handle things you want the program to do when something unexpected occurs
+    public void endDocument() { System . out  .println ( buffer   .toString () ); } //each time is about finishing parsing document and all work done so far has been saved into a StringBuffer. It's called for each new top level tag encountered in the xml file this will print your results
+}   	    
+public class XMLParser {  public static void main (String[] args) throws ParserConfigurationException , SAXException{   File inputFile =new File ("sampleinputfile_A03.xml"); // replace with name of actual source or location to a xml file you want parsed, and the parser will read this
+    MyHandler myhandler  = new 	MyHandler ();    	// create handler for handling data from XML document   SAXParserFactory factory =SAXParserFactory .newInstance();     	 		          // get an instance of saxparserfactory which allows us to easily setup our parseren. Setup the parser with Handler and settings
+    SAXParser  myparser  =	factory	. newSAXParser (inputFile ,myhandler );      	// create a simple text handler, set it up on some data source we've chosen above then start parsing that input file   }    	}`} end of code. Please note this is very minimalistic approach and does not take into account all possible security-sensitive operations related to A03_Injection such as Cross Site Scripting (XSS) prevention, SQL Injections etc..

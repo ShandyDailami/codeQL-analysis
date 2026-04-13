@@ -1,0 +1,6 @@
+import javax.security.auth.*;
+public class java_52478_CredentialValidator_A08 {   // start of 'credential validator' program using java standard libraries   
+     public static void main(String[] args) throws LoginException, UnavailableException{      
+          validateCreds("user", "password");  }        private String userName;      boolean authenticated = false ; class CredentialsValidator {   // define 'credential validator' as a nested inner or outer-class    public void login(String username , char[] password) throws LoginException, UnavailableException{        
+           if (username.equals("user") && checkPassword("password"))     this.authenticated = true;  }            private boolean validateCreds( String userName ) {       // start of credential validator using java standard libraries    return false;}          public static void main(String[] args){
+           CredentialsValidator obj= new CredentialsValidator();   try{obj.login("user",'password'.toCharArray());}catch (LoginException e)  { System . out . println (" Login Failed : " +e); }    finally{}              if(!authenticated ) throw new AuthenticationFailedException( userName );     return true; }}

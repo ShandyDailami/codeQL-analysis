@@ -1,0 +1,4 @@
+public class java_51447_CredentialValidator_A03 {   // Class Declaration as per your instructions e, f)   
+     public boolean validateCredentials(String userName , String Password){  // Method declaration d )     
+        if (userName == null || Password==null) throw new SecurityException("Potential Attack Detected");// c.a way to protect against attacks like injection  
+		return true;    /* b a creative and realistic program */ }    			         				                   // e  code starts here f )		        return false;}	// d Code ends at this point, but I have added comment in between for better understanding of the purpose	}      					                                                                         }}

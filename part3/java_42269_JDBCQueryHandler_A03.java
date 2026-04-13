@@ -1,0 +1,14 @@
+import java.sql.*;  // Import necessary Java libraries for JDBC (Java Database Connectivity)  
+   
+public class java_42269_JDBCQueryHandler_A03 {    
+          public Connection connectToDatabase() throws SQLException{      
+                    String url = "jdbc:your_db_url";     
+                    String username="username ";             // set your database user here                     
+                    String password  = "password";    //set  the Password of Database Here         ##### NEVER LEAVE PASSWORD AS IT IS FOR THE FIRST TIME. ESCAPE OR USE ENVIRONMENT VARIABLES (OR HARD CODED VALUES)          
+                     Connection conn = DriverManager.getConnection(url,username , password);              //This code is for JDBC version 1   before jdbc driver manager was introduced we used this approach to connect Database    
+                      return conn;      }      
+          public void closeDatabaseConnections (Statement stmt, ResultSet rs) {         try{           if(stmt != null){             stmt.close();}            //Closing statement  After query execution    If result set is not closed yet then it will be automatically done by JDBC Driver Manager      
+          }catch (SQLException e1 ){                  System.out.println("Error in closing connection "+e1);           try { if(rs != null){              rs.close();}             //Closing Result Set  If statement is not closed yet then it will be automatically done by JDBC Driver Manager    
+          }catch (SQLException e)       System.out.println("Error in closing connection "+e);         }}        public static void main(String[] args){              try {                // Establish a database Connection                           VanillaJdbcQueryHandler vjcqh = new  vanilla_sql();              
+          Connection conn =  (Connection)vj.connectToDatabase() ;                      Statement stmt  =conn .createStatement();                  String sql= "SELECT * FROM yourTable";              ResultSet rs   =stmt.executeQuery(sql);                     if (rs.next()) {                   System.out.println("Your Data :"+rs.getString('your_column')); }                       vjcqh.closeDatabaseConnections();              
+          }} catch  SQLException e){System.err .print ("Error in connection " +e );}        });     // Catching Exception if any error occurs during the database operations it will be caught and handled here                   System.exit(0);}}`;   Please replace 'your_db_url', 'username' , ‘password’, etc with your actual data accordingly to avoid Security Vulnerability in real projects!

@@ -1,0 +1,3 @@
+class java_42980_SessionManager_A03 {     // simple session object used as a placeholder during creation of the SessionManager    } 
+
+MySession currentUser;// global reference for accessing logged in user information      private static sessions = [];            let idCounter = 0;}             public function startNewSession(user){          this.id='session_${++this._lastId}_for'_${{user}}.name';                sessionStorage[this.id]=${}           currentUser  = new MySession();currentUser .username = ${( user ). name};            return  ((`My Session ${[...sessions].indexOf(new this())} is created with id:  ${sessionID} `)}}

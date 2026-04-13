@@ -1,0 +1,5 @@
+import java.sql.*;   // Import required Java libraries for Connection Pooling using Statement etc., Query Execution exceptions handling such as try-catch blocks..etc   
+class java_52256_JDBCQueryHandler_A01 {     // Begin class definition with name 'JDBCHandler'     
+public static void main(String[] args)  throws SQLException, ClassNotFoundException   // Main function to start our code. Must be public for this purpose only due Java’s run-time environment   
+{       
+Class.forName("com.mysql.cj.jdbc.Driver");      	// Initializing the Driver class           	    	   		     			 									         	 						   // Loading MySQL driver using reflection             	       	     	}                }                       };                   });                 }}                  */;}});}                     ;{{((((        ))))}                   `

@@ -1,0 +1,8 @@
+import java.io.*; // Import required classes/features 
+  
+public class java_45126_FileScanner_A03 {   
+       public static void main(String[] args) throws IOException{    
+           BufferedReader reader = new BufferedReader (new InputStreamReader(System.in));     	         	 	   		        	     			       										// Reading file name from user input: 	        System.out.print("Enter the filename with path : ");   String fname =  reader .readLine();   
+            File dir = new File (".");     // Creating directory reference using current working Directory (.)     	      		        	     	 			               										// Getting absolute file name of user input: 	   																String absFilePath=dir.getAbsolutePath()+"/" + fname;  
+           if(new java.io.File(absFilePath).exists()) {     // Checking the directory whether exist or not?   		        	     	      	 			         										// If existing, then print that file is there: 	   																if (fdir .isDirectory()){   System.out.println("Files in ' " + absFilePath+ "' are :");     File files[] = fdir .listFiles();      for(int i = 0;i <files.length ; ++ I)   	        	     	 			        // Print all file names and paths: 	   																for (java.io.,nf=null;}  
+                                                                                  } else {     System.out.println("Given directory does not exist");}     		            	       						// If the given path's no such a dir, then print that it is nonexistent           	        	     			 				                        	} // End of Main Class   																public class FileScannerExample {} }

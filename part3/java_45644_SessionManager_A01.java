@@ -1,0 +1,8 @@
+class java_45644_SessionManager_A01 {
+    private String name;  // we don't use getters or setter in this example, but you should make sure these are properly protected for security reasons. This is just a simple simulation of what could happen when trying access something that shouldn’t be done (like accessing another user).  
+    
+}
+class AccessControl {  //A01_BrokenAccessControl: create interface here with methods to check if the calling object can perform an action or not. If it returns false, throw Exception; otherwise allow them in method implementation below this point..   
+       public boolean isAuthorizedToPerformAction(User user) throws BrokenAccessException {   //Throw exception when returning true as broken access control mechanism will be here...  }});//This would handle the situation where a non authorized User tries to perform an action.      return false;}}};}   
+interface AccessControl_Interface{     public boolean isAuthorizedToPerformAction(User user) throws BrokenAccessException {   //Throw exception when returning true as broken access control mechanism will be here...  }});//This would handle the situation where a non authorized User tries to perform an action.      return false;}}};}
+class SessionManager{     private AccessControl_Interface securityMechanism = new SecurityMechanisms();   //Create instance of our Mechanisim (Security mechanism)    public void doWork(User user){ if (!securityMechanism.isAuthorizedToPerformAction(user)) {throw  Exception("Not Authorised to perform action");}}//If not authorized, throw exception else continue; }}

@@ -1,0 +1,15 @@
+import java.io.*; // Import the required Java package or modules  
+    import javax.swing.*;// For JOptionPane dialogs, not necessary here but may be useful for other contexts in a larger program      
+public class java_52341_FileScanner_A08 {                    
+     public static void main(String args[]) throws IOException{     
+         String directoryPath = "C:/Users/YourDirectory";  // Enter the path of your target folder              
+                  try (FileScanner scanner =  new com.sun.nio.fs.FilesPrincipalImpl()) {   
+                      File fileOrDir=new java.io.File(directoryPath);                  
+                     if (!fileOrDir.exists()){   // check whether the specified path exists or not              
+                         JOptionPane.showMessageDialog(null, "The directory does NOT exist");  /*If it doesn't*/              return;            }               
+                      scanner .probeAndPrintFileStructure("./",true);                 if (fileOrDir.isDirectory()) {   //check whether the specified path is a Directory or not              
+                       String [] children = fileOrDir.list();             for(String child :children)  /*looping over all contents of this directory*/            scanner .probeAndPrintFileStructure("./"+child,true);          }}catch (UnsupportedOperationException e){   //If the FileSystem is not enabled              JOptionPane.showMessageDialog(null,"This environment does NOT support file system operations");} 
+                 }                  catch ((DirectoryNot Found Exception DNF_e ){ /* If there's no such directory */            System .outprintln("The specified path couldnt be found "); }}                       try { JFileChooser fc = new JOptionPane.filechooser();//To handle file selection dialog box for user   //JOptionpane in java is used here, not required but may help with larger program context     
+                          if (fc .showOpenDialog(null) == null){  System outprintln("User canceled the open");return;}       else {File selectedfile = fc.getSelectedFile();               /*Getting File from user's selection*/                  PrintWriter pw=new PrintWriter ("selected file name + '.txt', "UTF-8") ;        //Creating a new text writer for this specific .java class          
+                          try (BufferedReader br = new Bufferedreader(                                             */  /*For reading the contents of selected files - not required but may be useful in larger program context*/                        );) {                 char [] buffer=new          character [1024];int bytes_read,written;   //Declaring variables to hold read and write operations              
+                          while ((bytes-read = br .read(buffer)) !== - 1){ /*Reads the contents of selected file*/                   String        currentline ;         for (currentLine in buffer)          pw.println     */                  }}catch {//To handle exceptions if any, like wrong permissions to read a specific File   JOptionPane      .showMessageDialog(null,"You do NOT have permission or cannot open the specified directory");}}}

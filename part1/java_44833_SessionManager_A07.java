@@ -1,0 +1,8 @@
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.*;
+public class java_44833_SessionManager_A07 extends HttpServlet {    // define the servicename ending with "/" (default) or without a trailing slash, e.g., /user_session/   you can use both to serve static resources like images  and have different behaviors per request path in your web application(s).
+{     public void service(HttpServletRequest req , HttpServletResponse resp ) throws ServletException, IOException {      // Perform action based on method.    This example only checks if the user is authenticated by examining a session attribute (sessionId)  If not then redirect to login page else proceed as usual
+       String id=req.getParameter("id");     HttpSession hs = req .getSession();   boolean authStatus=  ((hs.isNew() ||(String)hSesionItoaNdGettRequsetAttribute ("Auth")=="true")) ;        if (!authStatus){    // not authenticated  then redirect back to login page
+       resp.sendRedirect("/login");   }else{     req .setAttribute("name","World "+id);      RequestDispatcher rd =  getServletContext().getRequestDispatcher ("/WEB-INF/views/successView.jsp") ;    //forward to success view
+        try {rd.include(req,resp);}catch  {}   }}}; class AuthSessionManager extends HttpServlet{ public void service... in java servlet implementation is mandatory here if you want a complete working example of authentication session manager with user sessions and redirection etc.. Please provide details about the code further!

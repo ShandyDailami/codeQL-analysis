@@ -1,0 +1,12 @@
+import java.io.*; // Import Java's standard library packages  
+class java_48812_FileScanner_A01 {   
+      public static void main(String args[]) throws IOException{       
+            int totalBytesRead = 0;    
+               if (args.length != 2){       System.out.println("Usage: java Filescan <file> <dir>"); return;}          BufferedReader in = null ;    try {         File dirFile= new File( args[1] );   // Create a file and print its name          
+              if (! (  dirFile .exists() && dirFile.canRead())){ System.out.println("Usage: java Filescan <file> <dir>"); return;}          in =new BufferedReader     ( new FileReader(args[0]));      // Open the file for reading           
+             do {           String str ; int bytesRead;    try  {str=in .readLine(); if ((bytesRead= in. read()) > -1) totalBytesRead+=  bytesRead;}while ( str != null);}catch(IOException e){ System.out.println("I/O error"); }finally{if ( in !=null )  try {  
+              /* This block of code is to close the BufferedReader */in .close();       }}// Close it finally;     if (( totalBytesRead /1024) > 50)){ System.out.println("File was read " +(totalBytesRead/1024 )+" KB");}}else {System. out. println (" File reading time is too long.");}}}  
+class  FileScanner3{    public static void main (String args []) throws IOException {}      try     // Open a random access file for writing          RandomAccessFile raf = new         /* Here, I've made the program less secure by allowing null or uninitialized variables */           NullPointerException { } catch(SecurityException se){System. out .println (" Access is denied " +se);} finally{if (raf !=null) try 
+             // This block of code will close random access file         raf .close();}}      }}// Close it if possible;   private FileScanner3(){ /* The program still has BAC, please use this for demonstration purposes only */ }     public static void main(String args []) {}        try { 
+            // Attempt to create a new directory          String dirName = "NewDir";      Directory dir        = Files.createDirectory (Paths .get("."),dirname);    }}catch}{System outprintln (" Cannot make the file");}finally{ if(Files !=  null) try {    
+            // Attempt to delete an existing directory        /* Here, I've made this less secure */ Directory.delete  (DirectoryS       e ){} catch(){ Systemout . println("Cannot Delete ");}}   }// Close it finally; }}

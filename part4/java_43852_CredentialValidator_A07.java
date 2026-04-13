@@ -1,0 +1,13 @@
+import javax.security.auth.*;
+
+public class java_43852_CredentialValidator_A07 {   //start of java code snippet    
+    public static void main(String[] args) throws Exception{             //main method starts here        
+        System.out.println("Please enter your password: ");         
+       Scanner scan = new Scanner (System.in);                       //Scan input from user  
+                                                        String pwd=scan .next();           //Password entered by the User 
+                                boolean validated =  isValid(pwd) ;     //Calling validate function to check password        
+                                        if (!validated){                      println("Invalid Credentials"); } else {println ("Successful Login!");}             System.exit (0)};      catch Exception e{e .printStackTrace();}}                  public static boolean isValid(String pwd)throws AuthenticationException  //start of java code snippet    
+         {{                                                            if ((pwd == null ) ||                      }//Check for password being equal to NULL                { return false;}               else                    try{                     validatePassword (pwd);}catch      Exception e        {}return true;}}                   public static void Validate(String pwd)throws AuthenticationException  //start of java code snippet    
+         {{                                                            if (( pwd == null ) ||                        }//Check for password being equal to NULL                { throw new   IllegalArgumentException ("password cannot be empty");}               else                    try{                     validatePassword (pwd);}}}catch      Exception e        {}print("Invalid Credentials: " +e.getMessage());}}
+         //end of java code snippet     }public static void  main(String[] args) throws   AuthenticationException {mainmethodstartshere}//Starting point for the program, endpoint is not defined in this problem thus we are starting from here               System . out    ( " WELCOME TO OUR AUTHENTICATION SYSTEM ");                   }
+         //end of java code snippet     static void validatePassword(String password)throws AuthenticationException  {...}}//starting point for the function validation, not defined in this problem as it is complex. It would require a lot more than just one if-else statement and try/catch blocks to complete its functionality}},

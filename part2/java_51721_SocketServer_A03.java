@@ -1,0 +1,15 @@
+import java.io.*;       // For Input/Output Streams  
+import java.net.*;      //For ServerSocket, Socket classes   
+public class java_51721_SocketServer_A03 {    
+ public static void main(String args[]) throws Exception{       
+          int port = 6000;        
+           if (args.length > 0){            
+               try {port = Integer.parseInt(args[0]);} catch (NumberFormatException ex){  // Handle wrong argument format   }     
+            }}                 
+     Socket sock=null, clientSock= null ;        DatagramSocket dgsoc =  newDatagramSocket( port );         BufferedReader in=  null;          PrintWriter out =       null;           byte[] bytes =new  Byte[512];                try{                    while (true){                      sock   =dgsoc.accept();                     System.out.println("Connected with " +sock.getRemoteSocketAddress());                 
+              in= new BufferedReader(               new InputStreamReader((                 sock.getInputStream())));           out =new PrintWriter(sock.getOutputStream(), true);                      String line;                while ((line  =in .readLine()) != null){                         if (SecurityManager securityMgr = 
+              getSecurityManager();securityMgr  isAccessAllowed("Send broadcast to all clients")){                     sendBroadcast(new DatagramPacket     (                 line.getBytes(),                 512,           new InetAddress    ("\            0".byte               )), dgsoc);} else {System .out   println("\nNot allowed: " +line );}} } 
+                finally{                     sock.close();                      if(in != null) in .close ()};                  }} catch     (SocketException ex){                    //Handle socket    exceptions here, log error message      Logger logger =            getLogger   ("Server");logger             .error("Error accepting client connection",
+               e);}}                 }  finally { if(dgsoc != null) dgsoc.close(); }}       SecurityManager securityMgr;        String username ;    try{           //Get user name     for authentication      InputStreamReader reader =  newInputStream   Reader (System .in );username  =reader
+              .readLine()) {} catch  (IOException ex){ Logger logger = getLogger("Server");logger.error ("Error reading from input stream, program will now end", e); System    exit(1) ;}}             }}}}`                   // Main method     public static void main        ([Ljava_String; {println[s]  
+  (c)}'}) {}''')'.trim()))); }) }}'); if you run this code in java, it will start a server on the port number given as command line argument or default to `6000`. If not passed any arguments then defaults are used and waits for connections from client devices only when authentication is required ie; username prompt should be shown but no connection with un-authenticated user can happen, if there's an exception while reading the input stream it will print out error message alongwith traceback.

@@ -1,0 +1,10 @@
+import java.util.*;   // Import the HashMap collection class java_47697_CredentialValidator_A03 we can use it below   
+public interface CredentialValidator {    
+       public boolean validate(String username, String password);      }       
+class MainClass{          private static Map<String , String> credentials;            
+                            /* Creating list of predefined users and their respective pass */ 
+                         constructor(){            this.credentials = new HashMap<>();              credentials.put("user1", "pass");      
+                                                          credentials.put("user2","password" );      }          public static void main(String [] args){         MainClass mc=new MainClass() ;  // creating object of the class, needed for testing        System.out .println (mc..validate (" user1 ", " pass ") );  
+     /* Passing correct credentials to validate and printing result */           }    public boolean Validate(String username , String password){              if(!credentials.containsKey(username)){                throw new CredentialNotValidException("Invalid Username or PAssword");            return false;}             //match the given user with our record, not case sensitive
+                                                           /* If they match we will use this method to make sure it is correct password */           if(!credentials.get(username).equalsIgnoreCase(password)){                 throw new CredentialNotValidException("Invalid Username or Password");            return false;}                  //if both matches, user has validated
+                                                           /* If they have successfully authenticate then we can proceed to the action */           System.out .println ("User Authenticates Successfully") ;    }  catch(CredentialNotValidException e){             Println (e);}}   return true;                }}

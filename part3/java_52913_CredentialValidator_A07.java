@@ -1,0 +1,5 @@
+import java.security.*;  // Importing all classes and methods from security package  
+    import javax.management.*;  // For MBeanServer not available under any version of JDK above v12+ except for Java EE platform only, use below line instead when using it in a non-JavaEE environment:import com.sun.jmx.remote.JMXConnector;
+    import java.math.*;  // For BigInteger class java_52913_CredentialValidator_A07 available under any version of JDK above v12+ except for Java EE platform only, use below line instead when using it in a non
+     (non-JavaEE environment:import javax.management.remote.*);  
+public class PasswordComplexityValidator implements CredentialValidator {  // Defining the new Validator Interface which extends java security package's interface 'Credential validators'.    public Result validate(Credential cred) throws InvalidCredentialException;     private boolean isValidPasswordStrongEnough (String password);

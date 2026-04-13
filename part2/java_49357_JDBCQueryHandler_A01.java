@@ -1,0 +1,17 @@
+import java.sql.*; // Import necessary classes from standard library package  
+class java_49357_JDBCQueryHandler_A01 {   
+     public static void main(String[] args) throws SQLException{      
+          String url = "your_databaseURL";  // Provide your database URL here     
+          String username="username";        //Provided User's credentials          
+          String password="password";         //providing user’s credential            
+     Connection conn  = DriverManager.getConnection(url,username, password);   
+       Statement stmt =conn.createStatement(); 
+      ResultSet rs =  stmt.executeQuery("SELECT * FROM your_table");  
+        while (rs.next()) { // Start of access-control checks}          
+             String columnValue  = rs.getString(1);    /* Accessing data by Column name */        
+          }  else{     System.out.println ("No Such Name Exists in the Database or Table is Empty");       return;}   if (conn != null) conn.close(); // Closing Connection      stmt . close() ;//Closes statement    rs. Close () and finally block can be used to wrap code that may throw an exception, such as closing a database connection in order not to leave resources unclosed
+  }     public static void main(String[] args) { System.out.println("Enter your SQL username");      String inputUsername = scannerObj .nextLine();         //Input from user   char [] password;       if (inputPassword != null && "password".equalsIgnoreCase(new String(decrypt(Arrays.copyOfRange
+  }     public static void main() { System,outprintln("Enter your SQL Password");      Scanner inputScan = new scanNER();            //Input from user        char[] password;         if (inputPassword != null && "password".equalsIgnoreCase(new String(decrypt(Arrays.copyOfRange
+  }   println ("You entered wrong credentials!");}}     finally block can be used to wrap code that may throw an exception, such as closing a database connection in order not to leave resources unclosed}catch (SQLException ex) {conn .close();       stmt. close() ;//Closes statement    rs. Close () and }   catch(IOException e){     //Close the stream for reading from keyboard if it is an IOExceptiOn  scannerObj = new Scanner obj;      String inputUsername=scannerobj .nextLine();         System,outprintln ("Please enter your SQL password");        char []password ;       }   catch (IOException e){//Close the stream for reading from keyboard if it is an IOExceptiOn  scannerObj = new Scanner obj;      String inputPassword=scannerobj.nextLine();         System,outprintln ("Please enter your SQL password");        char []password ;       }
+   catch (SQLException e){ //Protected operation can throw a checked exception such as SQLEXCEPTION if the database connection fails or any other unchecked exceptions like IOException    conn .close() stmt. close();      rs. Close ()  return;}     finally {conn. close( ) ;stmt,rs.Close ();}
+ } // End of main method}}//End class definition   Note: This is a simple and basic example which doesn't include all security considerations such as SQL Injection prevention techniques or password hashing methods used in real-world applications for brevity sake – always consult best practices when working with databases. Also, make sure to handle exceptions appropriately everywhere you can happen into production code where errors may occur unexpectedly and the system is not able to continue running correctly due to an error situation

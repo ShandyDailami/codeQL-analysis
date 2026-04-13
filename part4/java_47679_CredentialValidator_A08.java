@@ -1,0 +1,9 @@
+import java.util.*;
+// import necessary libraries here... Spring Security and A08_IntegrityFailure related classes or packages  (e.g., User)
+public class java_47679_CredentialValidator_A08 {   // Change 'Credential' to the name of your credential object/class, e.g.'UsernamePasswordAuthenticationToken', etc..
+     private final Object principal;    /* A reference for storing user */      
+         public boolean supports(Class<?> authentication)  { return true;}      // Method should be overridden by implementing classes to indicate which credentials types they support  
+          /** Perform the actual credential validation. If successful, a CredentialsMatcher and UserDetails objects are created **/       protected Authentication createSuccessAuthentication(Object principal){        /* A reference for storing user */ return null;}     // Return an authentication object (e.g., new SuccessAuthentication())
+          public void setAuthenticated(Authentication auth) throws IllegalArgumentException {throw new UnsupportedOperationException() ;}  *//* Override if you know when authentication has failed*/        protected Object getPreAuthCredentials(){return null;}       // Return an object the pre-authentication should retrieve (e.g., credentials in token, database etc.)
+          public boolean supports(Class<?> clazz) { return true; }           /* Override if type of authentication object changes */  protected Object getPostAuthCredentials()	{return null;}       // Return an credential that can be presented at a later stage (e.g., encrypted token, database etc.)
+}   public class CustomRealm extends CredentialValidator {     private final User user;      /* A reference for storing users */  @Override protected Authentication createSuccessAuthentication(Object principal){    return new SuccessAuthentication();/* Return an authentication object with 'Authenticated' status*/ }       // Create and start a session using the supplied credentials

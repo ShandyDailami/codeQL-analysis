@@ -1,0 +1,5 @@
+public class java_52088_SessionManager_A07 {  // Define the Session entity here, this is just a placeholder for now...   }
+import org.hibernate.*;    // Import Hibernate EntityManager & Query Here ...}
+private static final String PERSISTENCE_UNIT = "samplePU";     /* Persistence Unit Name */         private AuthSession session;  /** Session Object to hold the authentication information, this is just a placeholder...   }
+public void createAuthSession(String username) {                // Method that creates and holds Authentication Information ...}    try{                                          Hibernate.getServiceRegistry().createPersistenceUnitInfo("samplePU") .setClassLoadHelper()..persistRootEntityInformation();       session = new AuthSession ();            }
+catch ........... /* Handle any exceptions in a catch block */   return this;     // Return the Session for further operations ...}    public static void main(String[] args) {             createAuthSession("Username");              ......}}

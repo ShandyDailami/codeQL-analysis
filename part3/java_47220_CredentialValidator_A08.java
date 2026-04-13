@@ -1,0 +1,8 @@
+import java.util.*;   // For ArrayList, LinkedList etc., we will use these classes from the 'Collections' package of standalone JAVA library    
+public class java_47220_CredentialValidator_A08 {   
+ArrayList<String> validUsers = new ArrayList<>(Arrays.asList("John", "Paul","Mary"));  // Storing list with legacy users  
+ArrayList<Integer>  hashCodes  =new ArrayList < Integer > ( Arrays . as List (92,186,0));    //Stored the hashed version of 'password' for each user. For this example I have hardcoded these values in an ideal scenario it would be fetched from a secure source like database
+     public boolean validate(String username , Integer password) {   /* We are using integer here because we can’t perform hash on int type*/    if (username==null || validUsers.indexOf(username )<0){  //Invalid Username Check      return false; }        else{       String hashedPassword=Integer.toString((password));//Get the Hashed Password        
+if(!hashedPassword .equalsIgnoreCase ((String) hashCodes.get (validUsers.indexOf ( username)))){    /* if passwords does not match then returning False */     return false;}  else {return true;}}   } public static void main( String args[] ){      LegacyCredentialValidator credential=new      
+LegacyCredentialValidator(); System . out . println (" Enter user name : "); Scanner scan = new         Scanner (System. in );String uname   =scan. nextLine() ;  // Getting User Name          if(credential   .validate     (uname,92186)){   
+       } else { System ..println("Invalid Credentials");} }} /*End of Program*/

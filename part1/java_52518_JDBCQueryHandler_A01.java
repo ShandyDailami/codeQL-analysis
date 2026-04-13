@@ -1,0 +1,11 @@
+import java.sql.*; // Import the necessary Java libraries for database connectivity and handling   
+   public class java_52518_JDBCQueryHandler_A01 {      
+      private static final String DB_URL = "jdbc:mysql://localhost/test";          
+      private static final String USERNAME="root";       
+      private static final String PASSWORD  = "";         // Empty password, not recommended for production         
+  
+     public Connection connectToDatabase() {  try{            return DriverManager.getConnection(DB_URL ,USERNAME ,PASSWORD); } catch (SQLException ex){             System.out.println("Error connecting to database: " +ex);              return null;}    }          
+      
+      // Method for retrieving passwords from the DB     public String getPassword() {   Connection conn = connectToDatabase();         try{                 PreparedStatement stmt=conn.prepareStatement("SELECT Password FROM Users WHERE Username = ?" );             stmt.setString(1, "John");                ResultSet rs =  stmt.executeQuery();                     if (rs.next()) {                    return rs.getString("Password") ; }                 else{                      System.out.println("No password found for user John.");               return null;}} catch (SQLException ex)             {System.err.println(ex);  // Handle any SQL Exception that might occur                    
+         finally        {}           }}              public static void main(String args[]){ VanillaJdbcQueryHandler vj = new VanillaJdbcQueryHandler();               try{                   if ((vj.getPassword()) != null) {                      System.out.println("User John's password is: " + (vj.getPassword())); } else             
+             {}  // Handle the exception or any other condition in case of failure to get a user’s details           }} catch(Exception e){System.err.print(e);}}`     Here, 'A01_BrokenAccessControl' refers to accessing sensitive data (like password) without necessary authentication mechanisms and this is handled by the above code snippet which demonstrates using JDBC in a minimalist way while keeping security-sensitive operations away from standard libraries.

@@ -1,0 +1,13 @@
+import java.io.*;  // Import necessary Java classes (like File, InputStream)
+import java.nio.file.*;  // For handling files system paths & directories like Path or DirectoryStream  
+import java.security.*;  // for SHA-256 hashing algorithm and MessageDigest class java_48023_FileScanner_A07 create hash of user's password input   
+import java.util.*;     // To use HashMap data structure (key, value pairs) in this program only         
+
+public final class A07_AuthFailure {       /* Declaring the main driver/executable function */ 
+   public static void main(String[] args){         Run Program }      private String hashUserPasswordInput;        // The password input by user.            HashMap<Integer, byte []> database = new Hashmap<>();             Loading users' data into local hashed and stored in a .txt file */   
+  public void loadUsersDB() {          try (BufferedReader reader =  Files.newBufferedReader(Paths.get("usersDatabase")))        String line; ByteArrayOutputStream baos = new   BufferingWriter();      while ((line=reader.readLine()) !=  null){              // Hash each user's password and store in a file for comparison        
+     MessageDigest digest  = MessageDigest.getInstance("SHA-256");           hashUserPasswordInput =  new String(digest .digest((new  BufferingWriter()).write (line).getBytes()));    database.put   ((int)hash , baos);          }        catch (IOException | NoSuchAlgorithmException e){             System.out // printing error message to console           
+       ;      }} private boolean checkUserPassword(String userInputted, String storedHash ) {         return  !storedHash .equals    (user   Inputtted password );}     /* Main function that will run the program */          public static void Run Program () throws IOException{        // Create a file scanner for current directory and subdirectories          
+       FileScanner fs = Files.newFileScanner(Paths.get("."), ".*\\.(txt|bin)$");         A07_AuthFailure obj =  new  A07  =  Auth Failure();          while (fs .hasNext()) {             Path path  =   
+       fs .next().toAbsolutePath() ;     try(Scanner scan =      // Scanning through each file in current directory and its subdirectories for data.         BufferedReader reader =  Files   (.newBufferedReader  (path));String line;        while ((line=reader..readLine()) !=  null){              if (!obj .checkUserPassword(scanner    read, obj hash)) {                  // Checking authentication failure           
+      System     ..println ("Auth Failure at: " + path);                      }                        }} catch (Exception e) {}                     });}}  /* End of Main function */

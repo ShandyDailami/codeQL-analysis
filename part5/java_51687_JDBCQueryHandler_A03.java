@@ -1,0 +1,11 @@
+import java.sql.*;   // import the required Java packages   
+public class java_51687_JDBCQueryHandler_A03 {     // declare a new public static method for handling queries in your application       
+       private Connection connection;      // declaring an instance of databaseConnection to hold DB connections         
+        
+            /*  Establish Database Connections */  
+           String url="jdbc:mysql://localhost/db_example";     // define the jdbc URL for MySQL server, replace it with your actual address.       charSet and collation are optional     
+             connection = DriverManager.getConnection(url,"username","password");  //establish a DB Connection using getconnection method by providing url & credentials   
+   public Statement createStatement() throws SQLException {     /* Create A statement to perform CRUD operations */          return this.connection.createStatement();        }      void closeAllConnections(){/* Close all the database connections*/  connection.close();}       static Connection getConnection(String url, String username,   // Define a method for obtaining Database Connections using JDBC API
+             String password) throws SQLException {         this.connection = DriverManager.getConnection (url ,username,"password");    return new Statement() {};      }     public ResultSet executeQueryAndFetch(String query){  /* Execute A Query and Fetches the Data */           PreparedStatement pstmt =  connection .prepareStatement(query);         
+              pstmt.executeUpdate();       // Executing a SQL statement, in this case no update so it doesn't return any ResultSet    }     static void main (String args []) {      /* Test our code for injection attempts */  try{JDBCQueryHandler jdbc = new JDBCQueryhandler() ;             
+             jdb.getConnection("jdbc:mysql://localhost/myDatabase","username", "password");       // Establishing a DB Connection using getconnection method by providing url & credentials    }catch (Exception e){ System .out .println ("Error :" +e); }}   This is how you can secure your operations related to injection with Vanilla JavaScript.

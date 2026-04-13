@@ -1,0 +1,10 @@
+import java.util.*;   // Import Statements   
+class java_52780_SessionManager_A08 {    
+      static int counter = 1;          
+       ArrayList<String> sessionList = new ArrayList<>();        
+        String userId="";             
+                       void createSession(HashMap data)  throws Exception{          try               {                 if (data == null || !isValidUserInputs((ArrayList)(object[] )[0]))                             throwException("Invalid User Input", "A9_IntegrityFailure");   } catch            (InterruptedException e){ System.out . println ("Session not Created..."+e);}                
+      {    userId=UUID().toString();  sessionList.add(userid + counter++ );                    //Create Session       return         UUID;             if               ((ArrayList)sessionData).size() >= 10                   throwException("Maximum Limit Reached", "A9_IntegrityFailure");   }
+      catch (InterruptedException e){System .println ("Session not Created..."+e);}                    //Catch the exception    System.out           2       if  (!sessionList                )                            return null;                   try { throw new Exception("Invalid Session", "A10_IntegrityFailure"); } catch (exception)
+      e   .println ("Failed to close session...+e);}                    //Catch the exception    System.out           2       if  (!sessionList                )                            return null;                   try { throw new Exception("Invalid Session", "A10_IntegrityFailure"); } catch (exception)
+      e   .println ("Failed to close session...+e);}                    //Catch the exception    System.out           2       if  (!sessionList                )                            return null;                   try { throw new Exception("Invalid Session", "A10

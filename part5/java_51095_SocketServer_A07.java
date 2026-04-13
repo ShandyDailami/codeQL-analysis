@@ -1,0 +1,16 @@
+import java.io.*;
+import javax.net.ssl.*;
+import java.util.logging.*;
+  
+public class java_51095_SocketServer_A07 { 
+       private static final Logger LOGGER = Logger.getLogger(SecureSocketServer.class .getName());    
+        public static void main (String [] args) throws Exception{        	         		     	       	     	   	 					   			             				           	}  
+private int port;                                      protected SSLServerSocket serverSocket ;  private Socket clientSocket;                                       	private BufferedReader inFromClient;                                     PrintWriter outToClient;                                       boolean running = true;                       String clientInput, response;                   	         		       public java_51095_SocketServer_A07(int p) {port=p;}                         
+   @Override protected void finalize(){running = false ;  serverSocket.close();      clientSocket.close();     inFromClient.close();         outToClient.close(); }       	public static void main (String[] args) { new SecureSocketServer(8081);}          	
+   public java_51095_SocketServer_A07(int port) {              SSLServerSocketFactory sslServerSocketfactory =          SSLEngineFactory.getDefaultSSLServerSocketFactory(new javax.net.ssl.SSLParameters(TLSParametersSpecifiedInMethodOnly()));        try { serverSocket= (SSLServerSocket)          
+   sslServerSocketfactory .createServerSocket  ( port ); LOGGER      =  Logger      .getLogger("Secure Socket Server"); } catch     (IOException e){LOGGER.log(Level         .SEVERE,"Io exception caught",e);}        while    (running) { try{ clientSocket = serverSocket  
+	.accept(); inFromClient= new BufferedReader  (*newInputStream(clientSocket      .getInputStream())); outToClient =  *           NewPrintWriter     (.       getOutputStream()); LOGGER.info("Accepted connection from " +        
+	                                                                            ClientSideAddress       +" port:    Port number is :  12790");} catch (IOException e) {LOGGER  .log(Level            `SEVERE,"Io exception caught",e); continue;}          do{ try       {clientInput =  inFromClient.readLine(); LOGGER     
+		.info("Received    Message :" + clientInput ); response = "Hello, Client"; outToClient     .println (response)); } catch(IOException e)   {LOGGER  .log         Levels `SEVERE,"Io exception caught",e); continue;}}          try{outToClient.close(); inFromclient   
+		.close() ; clientSocket      .close()) )}          				           	}      					        }'               		                 '    			             ''' 	       	   	 	      ''   -'''- ----- --- -- /..-. ...../../.-.' '/.... .../.// ./--. '-./---/-.--'/ ....
+    The above is a very basic example of how you can create an SSL server in Java using the javax library only (no external frameworks). It does not include authentication related operations like user and password validation, but it should serve as a starting point for your real-world implementation. For security reasons this code needs to be adjusted according to specific requirements such as database access or other sensitive data handling if necessary .

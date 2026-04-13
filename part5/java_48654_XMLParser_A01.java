@@ -1,0 +1,13 @@
+import org.xml.sax.SAXException;
+import org.xml.sax.XMLReader;
+import org.xml.sax.helpers.XMLReaderFactory;
+import java.io.File;
+import javax.security.auth.callback.UnsupportedCallbackException;
+
+public class java_48654_XMLParser_A01 {   // Start of code snippet ---------------------------------------^--v--->    (Remove Comment)
+     public static void main(String[] args){       		//Starts here..// ^---->  Remove comment in both start and end, as per instructions.     		        			               									         	        }   // End of code snippet ------------------------------------------------------------^--v--->    (Remove Comment)
+     public static void parseXML(String fileName){      		//Starts here..// ^---->  Remove comment in both start and end, as per instructions.     		        			               									         	        }   // End of code snippet ------------------------------------------------------------^--v--->    (Remove Comment)
+     public static void parseXMLUsingSAX(String fileName){      		//Starts here..// ^---->  Remove comment in both start and end, as per instructions.     		        			               									         	        }   // End of code snippet ------------------------------------------------------------^--v--->    (Remove Comment)
+     public static void validateAccessControl(){            	 		// Starts Here .//                 ^^                                                    Remove comment in both start and end, as per instructions.     		        			               									         	        }   // End of code snippet ------------------------------------------------------------^--v--->    (Remove Comment)
+     public static void checkFilePermission(){           	 		// Starts Here .//                 ^^                                                    Remove comment in both start and end, as per instructions.     		        			               									         	        }   // End of code snippet ------------------------------------------------------------^--v--->    (Remove Comment)
+}`; END OF CODE SNIPPET ------------------------------------------------------------------------ -End-of-(SAXParser Example)-Starts Here .// ^---->  Remove comment in both start and end, as per instructions.     		        			               									         	        }   // End of code snippet ------------------------------------------------------------^--v--->    (Remove Comment)

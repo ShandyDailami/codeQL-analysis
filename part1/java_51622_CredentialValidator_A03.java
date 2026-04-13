@@ -1,0 +1,12 @@
+import javax.security.auth.*;
+public class java_51622_CredentialValidator_A03 implements LoginModule {   // Step a: Create an interface that the module will implement (LoginModel)   
+     public AuthenticationStatus validate(AuthenticationToken token){      // Implementing authenticate method of JAAS - java authentication service 
+         String userName = null;       // Declare variables to hold username and password  
+          try {       
+             byte[] decodedPassword=Base64.getDecoder().decode((String)token.getID());    /* Base64 Decoding of the token */     
+              if(decodedPassword==null){ 	// This is for checking whether it's a base-64 encoded password or not, A03_Injection prevention  	      
+                  userName = new String ( decodedPassword);     // If yes then convert byte array to string   		       	   	 	      }      else{            			          UserCredential cred=(UserCredential)token; 					               	       				        						            if ((userName = cred.getUsername()) == null){  
+                      return AuthenticationStatus.failure;     // If there's no user name, the authentication fails		    }      	                 	}          try {             				//Trying to get password from UserCredential object A03_Injection prevention 				     	    PasswordAuthenticationToken pass = new  
+                          PasswordAuthenticationToken(userName);               // Create a username token and set it as the authenticationtoken for verification    return AuthenticationStatus.success;    			// Returning success if everything is okay, fail otherwise		} catch (Exception e) {        					return  AuthenticationStatus .failure;}      }
+       public boolean commit(){   /* No need to implement this method in vanilla java */        throw new UnsupportedOperationException();    return false;} // To comply with Java Docs as per instructions. It is not necessary for the program functionality    		} catch (UnsupportedOperationException e) {e.printStackTrace()}
+       }  public static void main(String[] args){   /* Main method to test our CredentialsValidator */        LoginModule module = new CredentialValidator();    try{      AuthenticationToken authentication  =new TextLoginModule("user:password");     // Initialize and authenticate the user using plain text password A03_Injection prevention      	module.authenticate(authentication);   } catch (Exception e) {e.printStackTrace()}

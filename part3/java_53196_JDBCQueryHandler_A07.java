@@ -1,0 +1,11 @@
+import java.sql.*;   // Import Java database connectivity classes   
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;     // For password hashing, BCrypt is used as an example of a stronger algorithm than MD5 in Spring Security's security context 
+public class java_53196_JDBCQueryHandler_A07 {   /* Define the program */   
+private static final String DB_URL="jdbc:mysql://localhost/test";      // Database URL (Change with your database)    
+private static final String USERNAME = "root";       // User Name for MySQL Connection  - Change it according to actual user in mysql.  
+// password is assumed here, you should use Spring Security's DefaultPasswordEncoder if not using the provided code snippet   
+/* Note: Please replace 'password_here' with your real database Password */      private static final String PASSWORD = "root";     // Database User Name for MySQL Connection - Change it according to actual user in mysql.  
+private static final String DRIVER="com.mysql.jdbc.Driver";    /* Define the driver class name and location, if not using Java 8+ version then define as 'null' */ null;      // Location of Driver for MySQL DB    
+public java_53196_JDBCQueryHandler_A07() {/* Constructor to Initialize connection*/   try { Class.forName(DRIVER); } catch (ClassNotFoundException e) {} /* Exception handling, if class not found throw exception  */    Connection con = new DriverManager().getConnection(DB_URL ,USERNAME , PASSWORD );     
+// Create a statement object using the connection     Statement stmt=con.createStatement();   // Execute simple SQL query on database with 'stmt' Object       String sql; /* Define your Query */    } catch (SQLException se) {/* Exception Handling, If something wrong throw exception  */     
+//se.printStackTrace() ;     try { stmt=con.createStatement();   // Execute simple SQL query on database with 'stmt' Object       String sql; /* Define your Query */    } catch (SQLException se) {}          con .close () ;}catch(SQLException ex){ex.printStackTrace();}

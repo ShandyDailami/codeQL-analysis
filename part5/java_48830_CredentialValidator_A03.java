@@ -1,0 +1,8 @@
+public class java_48830_CredentialValidator_A03 implements CredentialValidator {    
+    // Verify user credentials by calling a service that checks against an external database, such like OAuthService or LDAP Service. 
+   private UserValidationResult validateUser(String username) throws SQLException{        
+       /* Sample method to call the checkCredentials of some server */         
+        if (username == null || !isValidUsernamePattern().matcher(username).matches()){             return new InvalidLoginAttempt();            }              // Check user credentials           SrvService.checkUserPassword("user", "pass");  return UserValidationResult.*;         case NOT_FOUND:              
+       /* Return an error message */          throw new SQLException((new StringBuilder()).append(messages["DBError"]).toString());   default :       
+    // Handle other cases like not matching passwords, expired credentials etc.            }              return UserValidationResult.*;         }}  , if the username or password is incorrect it returns IncorrectUsernamePasswordCombination;          case NOT_FOUND:               throw new SQLException((new StringBuilder()).append(messages["DBError"]).toString());   default :          
+    // Handle other cases like not matching user name and/or Password.            }              return UserValidationResult.*;         }}  , if the username or password is incorrect it returns IncorrectUsernamePasswordCombination;          case NOT

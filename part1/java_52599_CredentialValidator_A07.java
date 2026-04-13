@@ -1,0 +1,10 @@
+import javax.security.auth.*;
+//Importing Authenticator to create custom authentications 
+public class java_52599_CredentialValidator_A07 implements java.security.AuthProvider {  
+    public java.security.Authentication getAuthentication() {       //get authentication information       
+           return null;                                        	//return the object of type authinfo     
+     }                                    	                    	       		           	 	   					               			                                       	     				         ​ • ./+ -= ; ' < > ? ^ @ , % # $ £ & * ( ) _ + ~ ` [ { ] \ | : " , <  /?;: "-";   //the name of the provider
+     public boolean authenticate(String arg0, java.lang.String[] args) throws java.security.AuthenticationException{   	                        		                                                                           	   			         	 ​     ^  @ . # $ £ & * ( ) - + = ; : < > ? ^ / , % ~ [ ] \ | ' " \, { }
+     public boolean commit() throws javax.security.auth.login.LoginException, java.lang.SecurityException{	         return false;                                        	//commit the authentication process        //returns a Boolean value of whether or not to proceed with login after authenticate is called     	        if (args[0].equals("admin")) {         		             System.out.println ("Authentication success");          			            } else
+     public boolean getRequestedAuthenticationKinds() throws java.lang.SecurityException{	                return true;                                        	//returns the authentication kinds requested        //return a Boolean value of whether or not we want to use this provider for specific auth-kind requests   		         if (args[0].equals("admin")) {     
+   } —– `

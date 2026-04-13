@@ -1,0 +1,7 @@
+import java.sql.*;   // import necessary libraries; no external framework needed here   
+public class java_51125_JDBCQueryHandler_A03 {    
+ public Connection con = null ;      private String url=null, userid=null , password  =null;        try{           this .url=  "jdbc:mysql://localhost/test";            /*this.userID =  */         //your username here 	   	  	 										// your Password
+   		    	this.password ="root1234567890@@##$$%MMmmm";              this . userid= "sachinTendulkar", password=  "tendulkarsingh@gmailcom"@#$%%^&*();:I<{}|?>+~`[]{}'\,.<>/?";
+	    	//provide credentials and url for database connectivity    con = DriverManager . getConnection(url, userid ,password) ;  //creates connection to the Database        }catch (SQLException e){e.printStackTrace();}            catch (ClassNotFoundException ex ) {ex. printstacktrace()}}
+			public ResultSet executeQueryHandler(){           try{            	   String query="SELECT * FROM EMPLOYEE WHERE AGE > ?";              PreparedStatement pstmt = con .prepareStatement(query);         // Preparing the statement for execution            pstmt.setInt (1,20) ;//passing parameter in its place
+			pstmt.executeQuery();           }catch (SQLException e){e.printStackTrace()}        finally {          if (pstmt  != null ) try{              con .close();} catch( SQLException ex) {}    System.out.println("Closing connection");}}; //closes the Connection

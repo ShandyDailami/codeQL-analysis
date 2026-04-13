@@ -1,0 +1,15 @@
+import java.sql.*; // Import the necessary classes for handling databases in your program here i'll use 'PreparedStatement', which is a type of statement that helps to interact with data, as well be used by JDBC (Java Database Connectivity) library inside Java language like MySQL etc.. 
+public class java_44056_JDBCQueryHandler_A03 { // Declaring the name for your program. In this case 'Vanilla' because it is minimalistic and creative in nature! This will allow me to write more unique code as per instructions above...  
+    public static Connection connection;// Defining a variable that holds our database connections.. 
+      
+      // Method To Establish the Database Connectivity (Connection) ..(Creating A New SQL Server Instance Using JDBC API).        
+        private void establishDbConnect() {    
+           try{            
+               Class.forName("com.mysql.cj.jdbc.Driver");  // This line is used to register our MySQL driver with the Java Database Connectivity (JDBC) library..               
+                   connection = DriverManager.getConnection( "jdbc:mysql://localhost/dbname", "username","password" );              
+           }catch(ClassNotFoundException e){            ConsoleLogger_A03InjectionRulesForSQLServerInstance("Cannot locate MySQL JDBCDriver class, Please check the library's configuration.",e);   return;}  // This line is for handling exception if unable to find 'mysql-connector/java.sql'-library or not properly set up in your project..
+            }catch(SQLException e){                    ConsoleLogger_A03InjectionRulesForSQLServerInstance("Failed connecting MySQL Server.",e);    return;}               // This line is for handling exception if unable to connect the database server... 
+             void consoleLogErrorAndExit (String errorMsg, Exception ex) {     System.out.println(errorMsg + " -> Exiting Application..."+ex );   System.exit(-1); }   
+              public static void main( String[] args ){ // Declaring the 'main' method for your program         establishDbConnect();        try// Start of a Try block to wrap our database operations..  {           PreparedStatement preparedStatement = connection .prepareStatement("SELECT username, password FROM users WHERE id=?");           
+               prepareStatement.setInt(1,234567890) // This line is setting the parameter value for 'id' inside a SQL statement to get user details..  PreparedStatement preparedStatement = connection .prepareStatement("INSERT INTO Users (username , password ) VALUES ('user', md5('pass'))");          
+               int affectedRows=preparedStatement.executeUpdate(); // This line is executing the query and returning count of rows modified or inserted by SQL statement in database..   }catch(SQLException e){consoleLogErrorAndExit("Failed Executing Query.",e)}finally {if (connection !=  null) try{ connection .close() ;} catch(SQLException ex){ex.printStackTrace();}}// This line is closing the Database Connection if any exception occur..  }}

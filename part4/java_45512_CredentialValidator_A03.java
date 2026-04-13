@@ -1,0 +1,10 @@
+import java.io.*; // InputStream and PrintWriter are part of Java's std library for reading from streams such as URLConnection or BufferedReader used in HttpURLconnection etc., which is not necessary here because we will be using StringBuffer/StringBuilder instead    
+public class java_45512_CredentialValidator_A03 {  
+    public static boolean validate(final String password)  // Method to check if the given input matches specific criteria. Here, it checks for a sequence of characters in certain predefined string ie "Password@" . You can use any conditions according your needs and requirement or you may even make this more complex by creating custom classes/methods that perform these tasks (like checking against database etc.).
+    {  // Check if the password contains specific character sequences, here it checks for 'P' followed then a '_', e.g., "Password@" which can be replaced with your requirement based on A03_Injection principle  
+        final String check = new StringBuffer("Checking whether Password matches pattern: ") // Start creating the string to print out after validating if it contains certain sequence of characters, you may use any other specific condition/pattern as per requirements. Here we are checking for 'P' followed by '_'.  eg., "Password@"
+        .append(password)   /* append password here */    // Check against the inputted string    
+       .toString();      /* create a String using above buffer ie, check if it contains certain sequence of characters. Here we are checking for 'P' followed then '_'.  eg., "Password@" which can be replaced with your requirement based on A03_Injection principle */   // Create string from the appended content   
+       return (check .contains("Password")); /* Check if it contains certain sequence of characters, here we are checking for 'P' followed then '_'.  eg., "Password@" which can be replaced with your requirement based on A03_Injection principle */   // Return true or false depending upon the check   
+       }    
+}// End class CustomCredentialValidator.

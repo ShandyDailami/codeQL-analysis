@@ -1,0 +1,10 @@
+import java.util.*;  // Provides access to ArrayList, HashMap and other classes/interfaces in Java Standard Library (JSL)  
+                  
+public class java_47764_SessionManager_A08 {
+    private Map<String, Integer> sessionIdToCount;     // Maps a user's id from the login request onto an integer for tracking purposes.
+                                                       // This is usually stored within your database as well when you create or retrieve sessions (A01_DataIntegrity) 
+     
+    public java_47764_SessionManager_A08() {                           // Constructor to set up map/database if needed; otherwise, can use default constructor and initialize in init method below.   A24a(initialize data structures here).        }                                  void main(){                  Setup the session manager (A08_IntegrityFailure)
+      SessionManager sm = new SessionManager();    // Creates a singleton instance of this class, which means all calls to getInstance() will return same object.  A24a(make sure only one instance exists at any time).   void init(){                     Initializes the session manager and maps user ids onto integers (A01_DataIntegrity)
+      sm = SessionManager.getInstance();             // Gets our singleton instance, setting up map/database if needed otherwise can use default constructor to initialize in method below. A24a(make sure only one instance exists at any time).  void reset(){                      Resets the session count and clears all sessions (A08_IntegrityFailure)
+      sm = SessionManager.getInstance();              // Gets our singleton instance again, this should return same object as before if not called init or otherwise will call methods in below A24a(make sure only one instance exists at any time).  void close(){                     Closes down the session manager and clears all sessions (A08

@@ -1,0 +1,4 @@
+public class java_52704_CredentialValidator_A03 {    // Starts with 'Java' and ends by removing the comment    
+                       public static void main(String[] args) throws Exception {}         
+}                  }                   The program always starts in a `Main` method which is Java-style.     
+                                   This ensures that this code can be run as standalone application,  not an API or JAR file            If the user does NOT provide valid arguments to your main(), then it will cause runtime error and show message like "Terminated unexpectedly (core dumps)" on Unix/Linux systems using 'ulimit -c unlimited' command.

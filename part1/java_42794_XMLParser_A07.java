@@ -1,0 +1,4 @@
+// Start with 'package', followed immediately by your package name, e.g., "com.mycompany"
+public class java_42794_XMLParser_A07 {   // Root element of XML document    	
+	public string a07_AuthFailure=null; 	// Auth failure details   		        
+	}					      			          				      }                    	   								         	  .                            							        };                          						                                                   }}              e                        	};                                  t                                                                                               f                      o                  p                                          r   k               v     c             n. a               1 i                 b g j s z  A07_AuthFailure

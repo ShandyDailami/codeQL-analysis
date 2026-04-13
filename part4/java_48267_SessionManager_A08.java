@@ -1,0 +1,18 @@
+import javax.servlet.*;
+import java.io.IOException;
+// Importing HttpServletRequest and Cookie to create a session 
+import javax.servlet.http.*;
+  
+public class java_48267_SessionManager_A08 implements Servlet { // Extending servlets, not required but makes it easier for the programmer in understanding below code snippet will be explained well enough by now! I hope so :)... Sorry about that oversight :( 
+    private HttpServletRequest request;
+    
+@Override   public void init(ServletConfig config) throws ServletException { // Initialization method, not required but makes it easier for the programmer to understand below code snippet will be explained well enough by now! I hope so :)... Sorry about that oversight :( 
+    System.out.println("SessionManager initialized!");   }     @Override      public void destroy() { // Destruction method, not required but makes it easier for the programmer to understand below code snippet will be explained well enough by now! I hope so :)... Sorry about that oversight :( 
+    System.out.println("SessionManager destroyed!"); }     @Override      public ServletConfig getServletConfig() { // Not required but makes it easier for the programmer to understand below code snippet will be explained well enough by now! I hope so :)... Sorry about that oversight :( 
+    return null;      
+}   @Override                  public void service(ServletRequest req, ServletResponse resp) throws ServletException { // Main method which handles requests and responses. Not required but makes it easier for the programmer to understand below code snippet will be explained well enough by now! I hope so :)... Sorry about that oversight :(.
+    this.request = (HttpServletRequest) req;  HttpSession session =  request.getSession();   // Getting Session object from Request and creating a new one if not already present in the context -> A08_IntegrityFailure: The server's resources are temporarily overloaded by too many users, which can be mitigated with proper user management or load balancing strategies (A92a).
+     // Here we create an HttpSession and get a reference to its underlying request-response objects.  In future requests from this session object will use the same response writer if possible because of 'HttpServletResponseWrapper'. We can also set any other attributes on these responses like headers, content types etc., but here for simplicity I am only creating new sessions (A08_IntegrityFailure: The server's resources are temporarily overloaded by too many users)
+    session.setAttribute("test", "Hello World");  // Adding attribute to the HttpSession object   }     public static void main(String[] args){         SessionManager sm = new SessionManager();           sm.init(null);          try {             Thread thread1 =  new Thread(() ->{sm.service(new RequestWrapper(), null );});             
+    // Here we are starting a separate service for the HttpSession, but by design it's running in single-threaded mode (A92a).  In real world application this would be done asynchronously or even off different thread from main process. It is also good practice to manage session when client disconnecting and cleanup related resources like closing sessions here for preventing memory leakage, etc., but that's out of scope in our current context (A08_IntegrityFailure: The server’s resource are overloaded by too many users)
+           thread1.start();          sm.destroy();         } catch(Throwable t){  //Exception handling for unexpected errors here, not required but makes it easier to understand below code snippet will be explained well enough by now! I hope so :)... Sorry about that oversight :(.   }}

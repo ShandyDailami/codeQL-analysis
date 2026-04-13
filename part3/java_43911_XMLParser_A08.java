@@ -1,0 +1,19 @@
+import java.io.*;  // Input/output streams, FileReader etc... (A01_Security)
+import javax.xml.parsers.*;   // XML parser interface and implementation classes(es A08_IntegrityFailure), JAXP SI A23 Scope Exposure in use by classloader of the code.(Biolib: Java 7u45+, BIO-19)
+import org.xml.sax.*;   // Simple API for XML (SAX/XML reader)(A08_IntegrityFailure), used to parse xml documents(JavaSE A23 Scope Exposure in use by classloader of the code.) 
+
+public class java_43911_XMLParser_A08 {   
+     public static void main(String[] args) throws ParserConfigurationException, SAXException{   // (A04_Security - no XML parser library for this case A23 Scope Exposure in use by constructor of the code.) 
+           String inputFilePath = "path/to/input.xml";    // Replace with your file path(Biolib: Java7u5, BIO-16) (A04_Security - no XML parser library for this case A23 Scope Exposure in use by constructor of the code.)
+           String outputFilePath = "path/to/output.xml";  // Replace with your file path(Biolib: Java7u5, BIO-16) (A04_Security - no XML parser library for this case A23 Scope Exposure in use by constructor of the code.)
+           
+           File inputFile = new File(inputFilePath);   // Replace with your file path.  Check if exists and readable, otherwise throw exception (Biolib: Java7u5)
+                    OutputFile outputFile=new OutputFile("path/to/outputfile");   		//Create an object of the class 'Output' by passing input parameter to its constructor   // Replace with your file path.  Check if exists and writeable, otherwise throw exception (Biolib: Java7u5)
+            DocumentBuilderFactory dbFactory = null;    		       									     			               	// Define a factory for context   	((A01_Security - no XML parser library for this case A23 Scope Exposure in use by classloader of the code.)  )   //(Biolib: Java7u5)
+           DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();    			// Use factory to create a new document builder    ((A01_Security - no XML parser library for this case A23 Scope Exposure in use by classloader of the code.)  )   //(Biolib: Java7u5)
+           Document doc = dBuilder.newDocument();    			// Use Builder's newDocument method to create a empty document    ((A01_Security - no XML parser library for this case A23 Scope Exposure in use by classloader of the code.)  )   //(Biolib: Java7u5)
+           doc.setXmlStandalone(true);    			// Set xml stand alone true    ((A01_Security - no XML parser library for this case A23 Scope Exposure in use by classloader of the code.)  )   // (Biolib: Java7u5)
+           dBuilder.setOutput(outputFile);    			// Set output to Output object    ((A01_Security - no XML parser library for this case A23 Scope Exposure in use by classloader of the code.)  )   // (Biolib: Java7u5)
+           dBuilder.parse(inputFile,handler);    			// Use Builder's parse method to read your input file    ((A01_Security - no XML parser library for this case A23 Scope Exposure in use by classloader of the code.)  )   // (Biolib: Java7u5)
+        }     			                    		               	// end main(String[] args).    	((Biolib: No such BIO-16, only used for commenting purpose))    ((A08_IntegrityFailure - no XML parser library in use A23 Scope Exposure on constructor of the code.)  )   // (Biolib: Java7u5)
+}       			                    		               	// end class definition.    	((Rationale and Approach to prevent this from being identified as possible reuse is one primary goal when writing clean, maintainable & modularized JavaScript/Java Code - A10_IntegrityFailure). )    ((Biolib: No such BIO-53 or Java7u6+ required for the comment purpose.))

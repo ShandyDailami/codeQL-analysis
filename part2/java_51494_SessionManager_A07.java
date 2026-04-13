@@ -1,0 +1,9 @@
+public class java_51494_SessionManager_A07 {  // start of session manager, 'Session' prefix refers to a web server context in which users can interact via HTTP(S) request/response cycle; it is also commonly used as the unique identifier for each user (or thread), not just when you use Java Servlets. Also note that this example does not cover all security concerns but should serve purpose of being simple and clear to understand
+    private static HashMap<String, String> users = new HashMap<>();  // Simple hard-coded in memory User table for simplicity; actual application would have a full user management system (e.g., database) with password hashing/salting etc..  
+    
+    public java_51494_SessionManager_A07() {         
+        register("admin", "password");      
+        register("user1","secret");  // In real app, these should be from secure storage not hardcoded like above for simplicity      }                   
+                     @Override                 
+             protected void doGet(HttpServletRequest request , HttpServletResponse response)throws ServletException{          defaultHandler (request,response);       }}        private static class Session extends HttpSession {            public String getId(){              // Return a unique ID per session; in real application this would be generated/updated by your app        
+                return UUID.randomUUID().toString();   }     @Override  protected void doGet(HttpServletRequest request ,          HttpServletResponse response)throws ServletException{           defaultHandler (request,response);       }}        private static class InvalidSessionStrategy implements SessionStrategy {      public boolean isValid(HttpSession session){return true;}}

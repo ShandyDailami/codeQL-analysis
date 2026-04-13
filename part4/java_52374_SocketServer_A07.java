@@ -1,0 +1,26 @@
+import java.net.*;  
+import javax.net.ssl.*;   
+public class java_52374_SocketServer_A07 {    
+ public static void main(String[] args) throws Exception{     
+        SSLContext sslcontext = SSLContext.getInstance("TLS");         
+         FileInputStream fis =  new FileInputStream("/path/to/yourcertificatefile" );   // path to your certificate file   
+	 trustManagerFactory=  JKSFileHelper().loadTrustStore(fis);     
+  KeyStore keyStore=null;     int port =45678 ;// the server will listen on this Port.      
+        sslcontext .init((KeyStoreUtils).loadClientKeys("clientkeystore", "password"),    // client side keys and password  
+          new String[] {  "SSL_CLIENT_AUTH" }, null);         SSLServerSocket serverSocket=null;      Socket socket =null ;     boolean authFailureEncountered  = false;       try{              sslcontext .setNeedClientAuth(true) // enable client authentication in TLS  
+        KeyManagerFactory kmf =  (KeyStoreUtils).loadKeyManagers("keystore", "password");         serverSocket= new SSLServerSocket     (port,kmf.getKeyManagers(),sslcontext ,1000);          socket =serverSocket .accept();       System.out.*;       
+           // create a buffered reader and writer for the network transport   SocketReader sr=  null;    BufferedWriter bw=null ;  try {                  if(!(socket instanceof SSLSocket)) throw new IllegalStateException("Expected SSL socket but got "+     (new          UnknownHostException()).getClass().getName());
+                // here we should really have a real user and password, this is just for demonstration purposes   sr =    ((SSLSocket)      socket).getSocketReader();        bw= new BufferedWriter(sr);           if((socket.getRemoteSocketAddress() .toString()).equals("127.0
+           0.0") || "localhost".equalsIgnoreCase     (new String         (.split("/", "[:.]+",    // split ipv6 and v4   string )[3])))  authFailureEncountered=true;                }while(authFailed);             println("Client" + socket .getRemoteSocketAddress()  + "authenticated");     while((socket =server Socket.accept()) !=  null) {
+                 // here we should also have real user and password, this is just for demonstration purposes   try{                     if(!( ( new SSLSocket    ((SSLSocket ) socket).getSession().isValid() )) throw      new IllegalStateException("Expected valid ssl session but got invalid") ;println ("Client" +socket. getRemoteSock     etAddress ()+ "authenticated"); }catch          
+        AuthFailureExcepti on       e) { println(e .getMessage()); authFailed = true;      // we encountered a failure so   break;}             if(!authFai lureEncounterred ) throw new IllegalStateException("Auth failur not found" );     finally{ sslcontext.shutdown(); serverSocket    !=null && 
+        }catch (SSLHandshakeException e) { println(e .getMessage());} catch      (IOException ex){println ("Error occurred in communication with: " + socket   .getRemoteSocketAddress()  +" \nReason:"+ex.getMessage()) ;}}     finally{ sslcontext    !=null && serverSock el == null; } 
+        System out(e); println("Client not found");}}} // end of SocketServer class }}      catch (IOException e) {println ("Error occurred in communication with: " + socket .getRemoteSocketAddress()  +" \nReason:"+e.getMessage());}}     sslcontext    !=null && serverSock el == null; }
+        println("Closing down the now closed connections");  // closes all active resources      for(int i = 0 ;i<activeConnections .size()   ,++){try{ conn = a c o n       if (conn!     instanceof    SSLSocket) {((SSLSocket )c).close();}}catch        
+        e.getMessage());}}} catch 
+                // here we should have real user and password, this is just for demonstration purposes      } finally{ sslcontext != null && serverSock el ==null; }}   println("All connections are closed");    System .out (e);}}     if(true){System.exit(-1)} 
+catch          ((SecurityException e) {printlne ("Error in setting up the SSLContext: " +      e.getMessage()));}}} // end of SocketServer class }}   try{println("Waiting for connections on port :"+port); ServerSocket    sock=new     ServerSocket(port );while((socket    =sock .accept()) !=  null) { 
+// here we should have real user and password, this is just      //for demonstration purposes.                   SSLServerConnection conn; try{if(! ( socket instanceof   SSLActionSocket)) throw new IllegalStateException("Expected an instance of     SSLAction    Socket but got "+socket .getClass().getName()); 
+SSHLa‌​ment ssl = ((SSLAction)       socket).getSsl(); conn=      SSLServerConnection(ssl); try { if (!conn.isConnected()) throw new IllegalStateException("Expected connected state    for the Socket but got " +   (new UnknownHostException()).toString()); println     ("Client"+socket . getRemoteSocketAddress()  + 
+!authenticated");} catch      AuthFailureExcepti o e){printlne(e.getMessage()) ;}}while(( socket=sock    .accept())) !=  null) {}}}catch (IOException ex ){println("Error in communication with: "+socket   .getRemoteSocketAddress()  + "\nReason:" +ex    
+!Message());}}) }} // end of SocketServer class } catch(Exception e){ println ("Unexpected exception occurred"     +e.getMessage()) ;}}  finally { if (sslcontext != null) sslContext    .shutdown(); serverSocket   el ==null;}' prints "All connections are closed"; System out!

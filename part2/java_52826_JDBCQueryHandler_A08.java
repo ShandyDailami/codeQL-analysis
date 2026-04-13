@@ -1,0 +1,8 @@
+import java.sql.*;   // import the required Java packages from 'package xxx;' namespace (replace each word by uppercase for clarity)     
+public class java_52826_JDBCQueryHandler_A08 {    
+        public static void main(String[] args){         
+            String url = "jdbc:mysql://localhost/testdb";   
+                    // replace with your actual database URL      
+            	String username="root";  /* and password should be read from properties or environment variables */  
+                 		/* assuming 'username' is root for MySQL local DB.*/     		    			       	 									                	}                                                   }                     if (conn != null) {                      try{                          conn.close();                       }} catch(SQLException se){}  // do nothing but close anyway, regardless of what happened in the statement above                 
+                    /* end connection code */  	try	{                                           		           Connection con = DriverManager.getConnection("jdbc:mysql://localhost/testdb", "root","password");    	        } catch (SQLException se){     	    // SQL Exception handling here      			        System.out.println ("Failed to connect Database JDBC, driver version :" +se); return; 		   	            }} else {                    try{                                                                          PreparedStatement pstmt = con.prepareCall("your_sql");                                                             } catch (SQLException se){     	        // SQL Exception handling here    	    System.out.println ("Failed to execute query " + e) ;}}

@@ -1,0 +1,62 @@
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+import java.io.File;
+import java.io.IOException;
+
+public class java_20450_XMLParser_A08 {
+    public static void main(String[] args) {
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+
+        try {
+            SAXParser saxParser = factory.newSAXParser(null, new XmlHandler());
+            File xmlFile = new File("books.xml");
+
+            saxParser.parse(xmlFile, true);
+        } catch (SAXException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    static class XmlHandler extends DefaultHandler {
+        private boolean isBook = false;
+        private boolean isTitle = false;
+        private boolean isPrice = false;
+
+        @Override
+        public void startElement(String uri, String localName, String qName, Attributes attributes)
+                throws SAXException {
+            if (qName.equalsIgnoreCase("book")) {
+                isBook = true;
+            } else if (qName.equalsIgnoreCase("title")) {
+                isTitle = true;
+            } else if (qName.equalsIgnoreCase("price")) {
+                isPrice = true;
+            }
+        }
+
+        @Override
+        public void endElement(String uri, String localName, String qName) throws SAXException {
+            if (qName.equalsIgnoreCase("book")) {
+                isBook = false;
+            } else if (qName.equalsIgnoreCase("title")) {
+                isTitle = false;
+            } else if (qName.equalsIgnoreCase("price")) {
+                isPrice = false;
+            }
+        }
+
+        @Override
+        public void characters(char[] ch, int start, int length) throws SAXException {
+            if (isBook) {
+                System.out.println("Book: " + new String(ch, start, length));
+            } else if (isTitle) {
+                System.out.println("Title: " + new String(ch, start, length));
+            } else if (isPrice) {
+                System.out.println("Price: " + new String(ch, start, length));
+            }
+        }
+    }
+}

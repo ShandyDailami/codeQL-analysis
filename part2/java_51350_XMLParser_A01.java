@@ -1,0 +1,6 @@
+import javafx.application.*; // Importing JavaFX classes to launch application (only if you want a GUI) 
+// import com.*;     **** Uncomment this line and replace it below only when using standard library for security sensitive operations in real projects   ****/     
+public class java_51350_XMLParser_A01 extends Application { /* Define your App */ } // JavaFX's main application method must extend 'Application', e.g., public static void Main(String[] args) 
+private final XMLParser xmlp = new XmlPullParserFactory().newPullParser();   private String currentElement;    boolean inOuterXmlDeclaration, isInsideRootElement ,isEndOfFile=false ;// Variable Declaration & initialization.     public static void Main(String[] args)
+{ /* Java Application's entry point */  } // You should never call the following method directly as it can lead to an infinite loop in case of error, instead use launchApp() here and then catch exceptions at 'launch').   private XMLParser xmlp = new XmlPullParserFactory().newPullParser();
+boolean endOfFileReached=false;  boolean securityViolationDetected  = false ;// Variable Declaration & initialization. public static void Main(String[] args) { launchApp() } // You should never call the following method directly as it can lead to an infinite loop in case of error, instead use main().

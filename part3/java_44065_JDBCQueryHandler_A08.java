@@ -1,0 +1,10 @@
+import java.sql.*;   // import the necessary classes    
+class java_44065_JDBCQueryHandler_A08 {   
+       public static void main(String args[]) throws SQLException{       
+             String url = "jdbc:mysql://localhost/test";     
+	         Connection conn=null;                     
+               Statement stmt=null;                    // Declare the variable for statement  		    	   			 	 									   														                                                                                            							           	     
+              try {                                    	// Try block to establish a connection with database. If any exception occurs, it will be caught and handled in catch blocks         	      	        }                                finally{                              if (stmt != null) stmt.close();                     // Close statement  			    	   									   														                                                                                            							           	     
+              try {                                    	// Try block to establish a connection with database     		         conn = DriverManager.getConnection(url, "username", “password”);        if (conn == null) return;                   	      	        } catch (SQLException ex){                   // Catch and handle SQLExceptions  			    	   									   														                                                                                            							           	     
+                 System.out.println("Failed to connect database");     		         printStackTrace(ex);                    	return;}                  finally {                            if ((conn != null) && (stmt instanceof Statement)) conn.close();                   	      	        }  // END OF TRY-CATCH block  									   														                                                                                            							           	     
+        }}

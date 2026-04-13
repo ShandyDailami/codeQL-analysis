@@ -1,0 +1,19 @@
+import java.io.*;    // Import the Java File I/O and Serialization classes     
+class java_43973_FileScanner_A03 {    
+         public static void main(String[] args) throws Exception{             
+             String dir = "/path_to_your_directory";         
+                     try (FileScanner fscan=new FileWalker().withDirectory(dir).start()){   // Create a file scanner to get the list of files and directories inside specified directory    
+                         while (fscan.hasNext()) {     
+                             Path p = fscan.nextPath();       
+                                 if(!p.toString().endsWith(".txt") && !p.toString().endsWith(".exe")){   // Check file's extension whether it is not .text or .exec   
+                                     System.out.println(p);     
+                             }         
+                         }} catch (Exception e) {    
+                     println("Error occurred: " +e );      
+                 };  fscan.close();         }}        // Close the scanner after usage}  
+                class FileWalker extends FileVisitorImpl<FileAttributes>{      @Override public Result visitResult(Path p){    if (p == null) return Result.COUNTEREMIT; else { String s ="";  try     {@interface java.nio.file.Files .ReadDirectoryStream<Path>  rds= Files::newDirectoryReader((java.nio..File   Path),StandardOpenOption.*;         
+                                                                              // create a Directory reader to walk directories and list all files inside the given directory    s = String(rds) + p;} catch (IOException e){  println("Error while reading: "+e); } return Result.COUNTEREMIT;}}      public FileVisitResult visitFileFailed(Path file, IOException exc){         if   ((file==null)) {println ("Exception caused by accessing:"    + 
+                                                          ExcellentExcEcC e).accept (new java .util.. ActionListener()  {{@Override    @interfacejava... }});return Result.COUNTEREMIT;}});} else return super.visitFileFailed(file, exc)}}      public FileVisitResult visitFile(Path file , BasicFileAttributes attrs){       if   ((p==null)) {println ("Exception caused by accessing:" + ExcellentExcEcC e).accept (new java .util.. ActionListener()  {{@Override    @interfacejava... }});return Result.COUNTEREMIT;}}}}}
+Here, we are only reading the files and printing their paths to console but not performing any operation on them as per your requirement of A03_Injection ie., executing an arbitrary command or saving it into a variable if necessary for further security-related operations in real use cases.  In this program file extension is also ignored which may be related from injection attack and only files are shown to the user, no commands/actions can happen on them at present due A03_Injection concept not yet realized by using File IOS API's (like writing into a txt or exe etc.) 
+This program serves as an example of how one might approach such tasks in Java. Adjustments to the code based upon security requirements may be necessary, but this will require further consideration and understanding on attacker behavior with file system interactions compared to database operations like reading data from files/directories or executing commands through a shell (like 'exec' command). 
+Please replace "/path_to_your directory" by your actual path.   This program may not be perfect as real world scenario might require more complex code and error handling, but it will serve to illustrate the concept of Java File I/O operations while adhering strictly security-related measures based on A03 Injection prevention concepts such file extensions being ignored etc.,

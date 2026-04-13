@@ -1,0 +1,16 @@
+import java.io.*;
+import javax.net.ssl.*;
+import java.util.Scanner;   // Import Scanner class java_46675_SocketServer_A03 read input  (Optional)    
+public class SocketServer {   
+// Main method of this program for initializing socket and accepting multiple client requests simultaneously using multi-threading support in Java standard library is not supported, hence we are only including basic functionality here. For the advanced versions you would use a server framework or platform like Netty which includes these features outofbox (like pooled threads)
+public static void main(String[] args){    
+try {  
+    SSLServerSocket sockets = null; // Initialize socket  for listening on port:8445. Insecure, use only in development environments and remove/obfuscate before production!     
+        try{sockets= (SSLServerSocket) new SSLServerSocket(8445);}catch(IOException e){System.out.println("Failed to setup the server socket: "+e.getMessage()); System.exit(-1); } //Initialize   SSLLocalPort and set up an endpoint for client connections
+        while (true) {  try{    
+            SSLSocket newSock = sockets .accept();//Accepts a connection from one of the clients, returns socket if successful     
+                            PrintWriter out=new PrintWriter(newSock.getOutputStream(), true);   //Get Output Stream    Socket's input stream is already open and ready for read or write operations  but must be closed explicitly to release system resources     Writer in = new BufferedReader (in .getInputStream());      
+                            String clientmessage;      try {clientmessage=in.readLine();}catch(IOException e){e.printStackTrace() ; continue;} //Read the data sent by client and print it    out.println("Client says: "+clientmessage);   echo back to all connected clients  System.out.println ("Received :" + (char)Integer.parseInt(clientmessage));      
+                            }catch (IOException e){System.err.println((e.getMessage()));}     //Exception handling is done for simplicity and readability purposes, you should handle exceptions properly in production environments         catch block ends here      try {sockets .close();}  finally{}    System.out.print("\n Server has been stopped"); }catch (IOException e){System.err.println(e);}}
+public class Main{ // The client side code can be as follows:     public static void main(String[] args) throws Exception {         SSLSocket sock= null;        try{(sock = new SSLSocket("localhost", 8445))}catch (IOException e){System.out.println ("Failed to connect "+e); System.exit(-1)} ;// Initialize socket with provided parameters for the server's IP and port
+    // The following code is used only if there are multiple commands on a single line separated by spaces     while ((in = new BufferedReader(new InputStreamReader ( sock .getInputStream()))) != null) {      String userInput;   try{userInput=  in.readLine();}catch(IOException e){e.printStackTrace () ; continue;} //Read a line of text and echo it back to the server     System.out.println ("Sent :" + (char)Integer .parseInt ((clientmessage))));  sock = new SSLSocket("localhost",8445); } catch(IOException e){System.err..printStackTrace(); }}

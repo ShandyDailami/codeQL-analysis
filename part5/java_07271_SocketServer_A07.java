@@ -1,0 +1,46 @@
+import java.io.*;
+import java.net.*;
+
+public class java_07271_SocketServer_A07 {
+    private static final int PORT = 1234;
+
+    public static void main(String[] args) throws IOException {
+        ServerSocket serverSocket = new ServerSocket(PORT);
+        System.out.println("Server started on port: " + PORT);
+
+        while (true) {
+            Socket socket = serverSocket.accept();
+            System.out.println("Client connected from: " + socket.getRemoteSocketAddress());
+
+            // Start a new thread to handle communication with the client
+            new Handler(socket).start();
+        }
+    }
+}
+
+class Handler extends Thread {
+    private Socket socket;
+    public java_07271_SocketServer_A07(Socket socket) {
+        this.socket = socket;
+    }
+
+    public void run() {
+        try {
+            // Create input and output streams
+            DataInputStream in = new DataInputStream(socket.getInputStream());
+            DataOutputStream out = new DataOutputStream(socket.getOutputStream());
+
+            // Read message from the client
+            String message = in.readUTF();
+            System.out.println("Received: " + message);
+
+            // Send response back to the client
+            out.writeUTF("Server received your message: " + message);
+
+            // Close the connection
+            socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

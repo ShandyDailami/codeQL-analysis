@@ -1,0 +1,11 @@
+import java.io.*;   // For Serializable, InputStream and OutputStream interfaces   
+import java.net.*;   // For ServerSocket class java_46176_SocketServer_A07 listening to incoming connections...    
+public class SecureServer {      
+// create a server socket at port number:40567     
+private static final int PORT = 40567;  private boolean stop = false ;    public static void main(String[] args) throws Exception{   SecurityManager sm= new SecurityManager();     sm.setAction("log", "accesscontrol");       ServerSocket serverSock=new ServerSocket(PORT,1, null);        System.out.println("\n\t*** SERVER STARTED *** ");    while(!stop){      Socket sock =serverSock .accept ( );           Thread t   = new Thread ( () =>{            try {    
+                            //create input stream from client socket  InputStream in=sock.getInputStream();          BufferedReader br= 
+                             new BufferedReader(new InputStreamReader   ((SocketInputStream)in));      String str;int i ;        System.out.println("\n\t*** CLIENT CONNECTED *** ");    while (!((str =br .readLine()).equals ("end")) ){          // read the message from client and display on console        
+                            if(i==0) {System.err.print("User:");  System.out.println("\n\t*** USERNAME REQUIRED *** ");continue;}else       i++;            }        try   {      DataOutputStream out = new    DataOutputStream (sock .getOutputStream());           //send the response to client        
+                             if(i==1){System.err.print("Password:");  System.out.println("\n\t*** PASSWORD REQUIRED *** ");continue;}else        i++;          }catch   (IOException e) {e . print stack trace();}     // catch the exception and display error message on console        
+                              setDefault(sm);      if (! sm . authenticate ("client", "user")){            System.out..println("\n\t*** AUTH FAILURE ***");           return;    }       else {System. out. println("Connection accepted from: \t" + sock     .getRemoteSocketAddress());}
+                             // close the connection and exit while loop      break;}catch (Exception ex)   {}  serverSock_.close();}}}          }}

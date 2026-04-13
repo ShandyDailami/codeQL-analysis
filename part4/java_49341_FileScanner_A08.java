@@ -1,0 +1,16 @@
+import java.io.*; // Import Java I/O package
+public class java_49341_FileScanner_A08 { 
+    public static void main(String[] args) throws IOException{  
+        FileScanner("C:\\Users\\Username", "");      /* Pass the directory path and file extension (leave it empty for all files in a folder). */     // Replace '\' with '/' if you are on Windows. 
+    }            
+       public static void FileScanner(String dirPath, String ext) throws IOException {  
+           BufferedReader reader;      /* Create buffering character input stream (reader), which is equivalent to the InputStream */     // Reader in Java acts as a bridge between char-streams and nodes. 
+        try{      
+            File file = new File(dirPath);    /** Declare your directory path here **/             
+                if (!file.exists()) {               /* If it does not exist, report an error */         // exists() method in Java is used to check whether the given location contains a valid physical storage or not (like: file / folder). 
+                    System.out.println("The specified directory doesn't exist");    /** Print statement for missing/inaccessible directories **/     return;   /* Exit from main function */      }       if (!file.canRead()) {               // If the physical storage is inaccessible to us, report an error (permission denied)
+                    System.out.println("The directory you are trying to read doesn't have enough permissions");    /** Print statement for missing/inaccessibility directories **/        return;      }       reader = new BufferedReader(new InputStreamReader(                 /* Reader in Java acts as a bridge between char-streams and nodes */    
+                    file.listFiles()[0].getAbsoluteFile().toString())); // listfile method returns the array of Files from folder/directory, here we are just interested to files (not folders).  reader will read data using buffering character input stream(reader), which is equivalent                /* Print statement for missing directory **/          return;      }      
+            String line = null;               // Declare a string variable 'line'. This acts as buffer in reading file.   Data reads from the InputStream, and stores it into this Buffer  BufferedReader reader1=new                 /** Comment */     Readers(reader); /* Here we are using Reader to read data through buffering character input stream (like FileInputStream).
+            while((line = reader.readLine()) != null){              // Declare a string variable 'str'. This acts as buffer in reading file  Data reads from the InputStream, and stores it into this Buffer BufferedReader   }                  /* Comment */      return;       writer(file);     /** Print statement for missing directory **/
+        catch (Exception e) {          // Catch block to handle Exceptions. Any exception that occurs in code below will be caught by the Exception Handler  System outprintln("An error has occurred");    }         FileScanner function */   return;       }} **Comment**           });     /* This is a comment, only visible if you have enabled comments highlighting (File -> Settings/Editor ->  Comments) in your IDE.

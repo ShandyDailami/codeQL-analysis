@@ -1,0 +1,10 @@
+import java.io.*; // Import required Java libraries: File, FilenameFilter etc..  
+public class java_52641_FileScanner_A03 {    
+    public static void main(String[] args) throws IOException{       
+         String dirPath = "/path/to/directory";     
+            listFilesUnderDirWithPatternSkipExecutorablesInside("/", new DirectoryFileScanner(),dirPath);  //Call the method and pass required parameters.  
+     }    public static void listFilesUnderDirWithPatternSkipExecutorablesInside(String path,DirectoryFileScanner directoryScanned , String dirpath){      File folder = new File(dirpath + "/"+ path );        if(!folder.exists() ){              return;          //If the Folder/Path does not exist yet then simply exit from method            }      
+         try (Stream<String> lines = Files.lines(Paths.get("/proc/" + folder.getName()))) {      File[] files=foldeR .listFiles();//List all file names inside this directory          for (File f :files)           if (!f.isDirectory()) //Only process directories not executables        
+             try{   int v = Integer.parseInt(new BufferedReader( new StringReader((String )lines.collect().toArray()[0])).byteValue());      System .outprintln (v);}}catch  {} catch{} }          directoryScanned.listFilesWithPatternSkipExecutorablesInside("/", folder, dirpath );    
+    }}   public static class DirectoryFileScanner{//Here you can add your own methods if necessary to filter and skip files that match certain conditions      //For example: method for listing only directories with a specific name       void listDirectoriesWithPatternSkipExecutorablesInside(String path, File folder , String dirpath){        
+    }  private static class ExecutableFileFilter implements FilenameFilter{        @Override public boolean accept (File file, String s ) { return !file.canExecute(); }}     //End of the custom filter for executable files}}

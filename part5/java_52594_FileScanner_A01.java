@@ -1,0 +1,5 @@
+import java.io.*; // Import required classes from package fileIO   
+class java_52594_FileScanner_A01 {  
+     public static void main(String args[]) throws Exception{      
+         String pathname = "C:/Users/user";  // Path to search for files        File f= newFile();      if(!f.exists()){           System.outprintln("The given directory does not exist.");return;   }            try (DirectoryStream<Path> dirs = Files.newDirectoryStream(Paths.get("/path-to/yourdir"))) {              for (Path p : dirs ){              
+                     File f= newFile(p);          // Use Path to get the file or directory        if (!f.canRead()){             System.outprintln("The given path does not have permission read");return;   }                       Files.list(p) .forEach((subpath)-> {                println ("Reading from : " + subPath);           try (Stream<String>  lines  = Files..lines())     {} catch  any IOException e{             Systemoutprintln("Couldnt Read File due to: ",e );return;   }                  });        }}catch(Exception ex){          // Handle exceptions if anything goes wrong            println ("Error reading file " +ex);}

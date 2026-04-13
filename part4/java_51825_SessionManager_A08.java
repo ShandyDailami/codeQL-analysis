@@ -1,0 +1,14 @@
+import java.util.*;   // Importing the required classes for HashMap, and utilities like Iterator etc..   
+public class java_51825_SessionManager_A08 {     
+     private Map<String , Object> map;       // Declaring a hashmap to store session ids & objects .          
+        public static final int MAX_SIZE = 10 ;   // Defining the maximum size of sessions. 
+            /* This could be modified as per requirement or added according for load balancing scenario */     
+          private static SessionManager sm = null;       // Declaring a singleton instance variable to maintain Singletons state    .    
+         public void init() {        map= new HashMap<String, Object>(MAX_SIZE); }  /* Initialize the hashmap with maximum size as defined above */     
+           private java_51825_SessionManager_A08() {}   /** Private constructor for preventing instantiation of class from outside.**/       // Restricts object creation by enforcing Singleton concept .    public static synchronized SessionManager getInstance() { if (sm == null) sm = new SessionManager(); return sm; }    
+               /* Method to add a session */      protected void putSession(String id, Object obj){ map.put(id ,obj);   System.out.println("Adding : " + "\n ID: \t"+ (ObjectSinks)map.getKey() +  ", Value:\t\t  Obj:"+  ((UserDetails )map .getValue()) ); }     
+                /* Method to get a session */ public Object getSession(String id){ return map.getOrDefault(id, null);   System.out.println("Getting : " + "\n ID: \t"+ (ObjectSinks)  ((UserDetails )map .key()) +  ", Value:\t\t Obj:"+  ((UserProfileInfo)(((HashMap<String , Object> ).get(id))))); }   
+                 /* Method to remove a session */ public void closeSession ( String id){ map.remove(id); System.out.println("Closing Session : " + "\n ID: \t"+ (ObjectSinks)map .key()) ;     if (map.isEmpty() ) sm = null;  }  
+                /* Method to check whether there is a session or not */ public boolean containsSession(String id){ return map.containsKey(id);    System.out.println("Contains Session : " + "\n ID: \t"+ ((UserProfileInfo)map .key()) );     if (sm == null ) sm = new  // Removing the session from hashMap and closing it
+                /* Method to get all sessions */ public void listSessions() { Iterator<String> iter= map.keySet().iterator(); while(iter.hasNext()) System.out .println("Session ID: " + (UserProfileInfo)  ((Hashmap < String , Object > ) ).get((Iterable)) );    }
+                 /* Method to update a session */   public void UpdateSession(){     //TODO : Implementation as per requirements, this example just simulates integrity failure. }}*/*/}}//*/-*}/** End of code *///      if (sm == null) sm = new SessionManager(); return sm; }

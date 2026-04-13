@@ -1,0 +1,25 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class java_05819_SessionManager_A08 {
+
+    private Map<String, String> sessionMap;
+
+    public java_05819_SessionManager_A08() {
+        this.sessionMap = new HashMap<>();
+    }
+
+    public void createSession(String sessionId, String userId) {
+        sessionMap.put(sessionId, userId);
+    }
+
+    public String getUserId(String sessionId) {
+        return sessionMap.get(sessionId);
+    }
+
+    public void deleteSession(String sessionId) {
+        sessionMap.remove(sessionId);
+    }
+
+    // Add more methods for other operations as needed
+}

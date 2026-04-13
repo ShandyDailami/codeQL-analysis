@@ -1,0 +1,8 @@
+public class java_53697_CredentialValidator_A08 {   // Class name should be meaningful, e.g., CredentialValidator in this case.
+    private String validUsername = "admin";      // Valid credentials for testing purposes only! Change these to suit your needs.
+    private String validPassword ="password1234567890!";  //Valid passwords also, change as per requirements (don't share them!)	  
+    
+public class CredentialValidator {            //Class name should be meaningful and relevant to the context of this problem. e.g., SimpleCredentials in above example.   	   
+        public boolean validate(String username, String password){  /*Add parameters as needed for your specific use case*/         	  		     			    	     				        	 					       // The method should return a Boolean indicating whether the credentials are valid or not */            if (username != null && username.equalsIgnoreCase(validUsername)
+        {                                                                                    String encryptedPassword = passwordToEncryptedSha256Format(password);// Calling Encryption function to get hashed version of Password	         //Check against Valid user and valid pass for comparison in a secure way 		     			    	     				    if (encryptedPassword != null &&
+        encryptedPassword.equalsIgnoreCase(validPassword)) { return true; } else{return false;}       /* Return Boolean accordingly */}});   }}//End of class body	}}} //Close the java block	 	}	//Main Method 		     	    };	        Sorry for not being clear earlier, but as per your requirements and providing a minimalist style to avoid using external frameworks like Spring or Hibernate.

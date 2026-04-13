@@ -1,0 +1,11 @@
+import java.io.*; // For File I/O classes and interfaces 
+import javax.security.auth.* // for AuthFailedException & CallerPrincipal context
+
+public class java_52567_FileScanner_A07 {  
+    public static void main(String[] args) throws Exception{    	      		        
+	        ScanDirectory(".", true);       	    }          			         									 	 															      private static boolean recursive = false; // To use in case of sub directories.            	private static File fileToCheck ;  	// The current directory or a filename to check              	public static void main(String[] args) throws Exception {        	SecureFileScanner sfs= new SecureFileScanner();       	sfs . recursive = true;     // To use in case of sub directories.     	    }         
+}  ScanDirectory(".",true);    }}// Ending curly braces for the class             private static void scan(String dir) throws IOException{              String[] listOfFiles=      	         { ".",".." };                File        d = new            java           .io.   file (dir){
+if  ((list   =d).    isDirectory() )      then     if((recursive))          for(f in lst)             scan("lst[i]");              else return;               }                  listOfFiles=         d       .lis‌t();                ints i = 0 ;            try        { 
+for (   File f :listOF           FILES )    //For every file or directory      if(f.isDirectory())     continue;}                 Logger lg =LoggerManager             .getLoge          r         g("FileScanner");              for       i=0;i< listOfFiles 
+{               String p‌hName          =  f        ..getName();                File    tF            new      Filer   (p‌hNam){     @Override                     public boolean canRead() {          return true;}                   }         if(!t       .canRea( ) || !((AuthCallerPrincipal)`auth.getCalle  Princ─Name())){              lg            
+      Logger   log = Loge    r           Manager     . getLog‌egr        (f               );                            }}}catch          e){l                     OCCursionException:            if(i!=0) throw new       EccursoinExce  ption;                 }}

@@ -1,0 +1,7 @@
+import javax.xml.parsers.*;
+import org.w3c.dom.*;
+import java.io.*;   // Import InputSource class java_53191_XMLParser_A08 read data from a file URL and Reader for reading characters encoded in UTF-8 format, etc., (Use FileInputStream -> BufferedReader) – For example: new InputStreamReader(new FileInputStream("inputFile"), "UTF-8")
+import javax.xml.transform.*;   // Import TransformerFactory & Changes on Source and Result DOM tree to print the parsed XML elements in desired format ie, pretty printing etc (Use StAX Parser) – For example: OutputFormat for HTML or XHTML -> IndentingPrettyFlatPrinter
+import javax.xml.transform.dom.*;   // Import DomSource & StreamResult objects which are used to print the parsed XML elements in desired format ie, pretty printing etc (Use StAX Parser) – For example: new DOMSource(doc),new StreamResult("/path/to/destination_file")
+import javax.xml.transform.stream.*;   // Import OutputStream for writing results into an output stream e.g., FileOutputStream -> BufferedWriter, etc (Use StAX Parser) – For example: new PrintWriter(outputFile),new StreamResult("/path/to/destination_file")
+import javax.xml.validation.*;   // Import SchemaFactory and DatatypeConfig for XML schema validation to ensure the data is in line with a given set of rules (Use SUN JAXP Validator) – For example: Shema validator instance,DatatypeValidator datavalidator etc

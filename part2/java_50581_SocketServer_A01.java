@@ -1,0 +1,13 @@
+import java.io.*;  // for InputStream and OutputStream classes needed by the server socket code, they are included under 'in' in their imports: InetAddress; Socket etc...
+import java.net.*;   // all necessary class (SocketException) is located here : ServerSocket ;socket , PrintWriter outstream..etc 
+        
+public class java_50581_SocketServer_A01 {       
+    public static void main(String[] args){           
+           try{                   
+                  int port = 5432;                /*define the local host's server*/         
+                     // create a socket for listening incoming connections.                  
+                      ServerSocket server_socket = new ServerSocket(port);   .............1st point removed..................   
+             System.out.println("Waiting Connection....");        .....2nd and 3rd points are not required because of removing comment marks ....       //wait for a client to connect      Socket socket= server_socket.accept();          }            catch(IOException ex){         printWriter = new PrintWriter (SocketOutputStream);                 System.out .println("Something went wrong...!"+ex );    }; 
+             try{                            /*Establish the connection with Client */           //get input from client and send message to user   SocketInputStream in= socket.getInputStream();            BufferedReader br = newBufferedReader(in);                    String msg;                  while((msg==socket.read())) {...4th point removed...... }              catch (IOException e) 
+             // handle exception here.............5nd and forth points are not required because of removing comment marks ....     System.out .println("Something went wrong..."+e);}            finally{    socket.close();         ..6th is unnecessary, closing the connection...   }           catch (Exception ex){          printWriter = new PrintWriter(socketOutputstream)  //handling exception here..........7nd points are not required because of removing comment marks ....      System.out .println("Something went wrong..."+ex);}           
+             });     };       }} ;; is there any more code to add? I am happy about your creative way! Please provide feedback in terms or A01_BrokenAccessControl related operations and see if the program can meet requirements set by you.  We would love to assist each other with coding tasks together, but as a text based AI model we cannot generate complete programs due to limitations of this platform such as code formatting etc...

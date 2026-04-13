@@ -1,0 +1,12 @@
+import java.io.*; // Import the File class, its methods etc., here to read files in our program: e.g.; new File(String path)
+
+public final class java_43527_FileScanner_A08 {  
+    public static void main (final String[] args) throws IOException{      
+        scanDir("./src/main");  /* You can replace this with the directory you want, like "/home/" or "C:/" */     
+     } // end of `Main` method.               
+                                                
+   private final static FileFilter TXT_FILES = new FileFilter() {   
+        public boolean accept(final File pathname) {              return (pathname.isFile() &&  pathname.getName().endsWith(".txt"));     } };      // end of `Txt file filter`};            },});                                                  });                        }}                                      */       /* This is a recursive function to go through all files in the directory, and its children directories        
+   private static void scanDir(String dir) throws IOException {                   File d = new File (dir);                                                                             if (!d.exists()) throw new IllegalArgumentException("Source Directory not exist!");                        // If source does NOT exists then it will be a message to user                     try                                with                             files in the directory and its sub directories 
+   {                           for(File file : d.listFiles()){                                           /* looping through all .txt (and other type) content inside these folders */                  if(!file.isDirectory())                                             // If line contain a folder then it will go to that     } else                            new FileScanner().scan();                                                                       }} catch(SecurityException e ){
+                    System.err                     `print stack trace on console: `println (e);  },}};                                                   */                                  /* This is exception catching block for handling any exceptions like security-sensitive operations and file access errors    it will print the error message to user   } };                  }}                                      // Close catch statement because our code might throw an unhandled SecurityException or IOException.

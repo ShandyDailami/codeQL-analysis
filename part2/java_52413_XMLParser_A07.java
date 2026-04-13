@@ -1,0 +1,5 @@
+import javax.xml.*;
+impoort org.w3c.*namespaces; // For NamespaceSupport for XML constants and operations on namespaces    
+public class java_52413_XMLParser_A07 {    private static final String DEFAULT_ENCODING = "UTF-8";   public void parseXML(String fileName) throws ParserConfigurationException, SAXException  {      DOMConfigurator.configure(); // Using JDOM for parsing XML files    
+            InputSource is =  new FileInputStream (fileName);    DocumentBuilderFactory dbf  = DocumentBuilderFactory .newInstance().setValidate(false).allowNonWellFormedDocumentBuildings()   ;         
+        }  @Override public void startElement       // Security-sensitive operation related to A07_AuthFailure      {     if (element.getQName    (.equals("user")))           securityManager .checkOperationAuthorization ("read")         ________; endif;} });   }}end of check`

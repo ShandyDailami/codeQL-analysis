@@ -1,0 +1,12 @@
+import java.sql.*;   // Import required libraries, standard ones are sufficient in modern Java applications like JDBC Connection Pooling etc., you don't need any specific driver for SQLite or MySQL here as it will be handled by your application itself (database connection). 
+                   
+public class java_50626_JDBCQueryHandler_A08 {                     
+    public static void main(String[] args)   //Main method where the execution begins.     
+            throws Exception{       
+    	try {                           			        		      	       	 	   	     				              					                                      	//Try block for database operations          
+                  Class.forName("com.mysql.jdbc.Driver"); 								                                            						               							                       ^    //Loads the MySQL driver  
+                   Connection conn = DriverManager.getConnection( "jdbc:sqlite:/mydatabase.db", null, null );        					                                                    			                                                                         	   				              	           } catch (Exception ex) { System.out.println("Error connecting to database");}  //Catch block for exceptions  
+    	        try{       										   						                     							                   	//Begin of a transaction operation here            
+                  PreparedStatement pstmt = conn.prepareStatement( "INSERT INTO users (username, password) VALUES (?, ?)" );        			                                                    ^                                                                                      									                                       	                       	    //Prepare statement for insertion     } catch {System.out.println("Error while creating table");}
+      	}   finally{   										 						                                   							                 	//Ensures the database connection is always closed here, regardless of whether an error occurred or not            
+              conn.close();        	                                                       					                                       				                   ^      //Closes Connection at end           } catch (SQLException e) {e.printStackTrace()}     }} 		   f;`    - `-' ^ '+'./',,'.'~','!,@,-,.=.. .(... )

@@ -1,0 +1,9 @@
+import java.sql.*;   // Import the necessary Java libraries for JDBC and SQL types, enums etc...   
+public class java_52566_JDBCQueryHandler_A01 {     // Class name is a convention in object-oriented programming  that classes have to start with an uppercase letter as per best practices of coding standards (Java Coding Style guide)  
+ public static void main(String[] args){      // Main function where the program execution begins   
+       String url="jdbc:mysql://localhost/test";     // JDBC URL for MySQL database  - Change accordingly based on your actual setup. Please ensure this matches with you DB server configuration settings  
+        String username = "username_here";          // Your Username here, also change according to real scenario   
+       String password="password_here";             //Your Password Here, Again follow best practices for security sensitive operations as per your project requirements.  Please ensure this matches with actual DB server configuration settings  
+     try(Connection con = DriverManager.getConnection(url,username,password);     
+         Statement stmt=con.createStatement()) {          //Use 'try-with resources' to close the connection at end of execution    } catch (SQLException ex)  ... handle exceptions as needed   ){        String SQLQuery ="SELECT * FROM USERS";       ResultSet rs;     try {rs =  stmt .executeQuery(SQLQuery);      // Execute a query on your database         while(rs.next()){            System.out.println("ID=" + rs.getString("id") );           } 
+   catch (Exception e)                   ... handle exceptions as needed...    }}          This code will select all records from the USERS table in MySQL Database; you can replace this SQL query with your own requirement and execute accordingly to get data of interest..    `                  }; `      // closing bracket for main method

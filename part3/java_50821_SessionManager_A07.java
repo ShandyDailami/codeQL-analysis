@@ -1,0 +1,9 @@
+import javax.security.auth.*;
+ 
+public class java_50821_SessionManager_A07 {   // Define a new Java Class named "SecureSessionManager"    
+    private static Authenticator auth;      // Declare an authenticator to use for authentication in the session management process, which is initially null because we haven't used it yet.      
+ 
+public void startAuthentication() throws AuthFailureNotSupportedException {        // This method will be called before any operation involving a secure user context     if (auth ==null)   auth = new Authenticator();      }    public boolean authenticate(String username, String password){          return true;}}         else{                System.out.println("Authentication Failed: Incorrect Username or Password");              // Printing an error message in case of authentication failure    
+  if (auth != null) {                      auth = new Authenticator() ; }}   }       public boolean isAuthenticated(String username, String password){          return true;}}         else{                System.out.println("Authentication Failed: Incorrect Username or Password");              // Printing an error message in case of authentication failure    
+  if (auth != null) {                      auth = new Authenticator() ; }}   }      public static void main(String[] args){          SecureSessionManager ssm =new SecureSessionManager();                try{                          ssm.startAuthentication();                                               // Starts the authentication process                        
+  if (!ssm.isAuthenticated("user", "pass")) {                  System.out.println("\n\tError: User was not authenticated!\n");}} catch (AuthFailureNotSupportedException e) {                     SysOutPrintln(e);} }                   // Try block to handle any exceptions thrown during the authentication process

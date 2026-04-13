@@ -1,0 +1,8 @@
+import java.io.*; // Import the necessary classes for handling streams of data, including FileStreams & Buffered Streams  
+public class java_47773_FileScanner_A08 {   
+ public static void main(String[] args) throws IOException{    
+        String directory = ".";  /* Get current dir */     
+         // Create a new file scanner for the given filename and open it as an InputStream.       return ScanResults object           FileInputStream in=new   java .io。File输入流 (directory +fileName );          PrintWriter out   =null ;try{     if(!in·isDirectory()) {                   throw 新异常("无效的文件或目录"); }             while ((line = reader.readLine) !== null){                     line=UTF-8编码解码器 .newDecoder().decode(reader).toString();                Systemoutprintln("\""+fileName + "\"大小为" fileSize);              //prints the read bytes            int n; try {
+                  while ((n = in.read()) !– -1)         out_.write((char)(line .getBytes (“UTF-8”).length));  Systemoutprintln("将文件名写入到磁盘" + fileName);       }catch(Exception e){                   //Handle any exceptions that may occur    
+                  if(!in.isDirectory() || !fileInputStream ){throw new Exception ("无法读取或创建输入/输出流： "+e .getMessage ());}   Systemoutprintln("捕获到异常" + ex 。getMesage()); }finally {             try– //确保无论是否成功都关闭了资源     if(in != null) in.close();         
+              out! =null;      }} catch（IOException e1）{//处理I/O操作异常catch (Exception 2){throw new Exception ("无法读取或创建输入流"+e .getMessage());}   }finally {if(out != null) out.close();}}     //Main method

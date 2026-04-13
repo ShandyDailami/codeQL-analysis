@@ -1,0 +1,16 @@
+import org.xml.sax.*;
+import org.xml.sax.helpers.DefaultHandler;
+
+public class java_44450_XMLParser_A08 extends DefaultHandler {    
+    public void startDocument() throws SAXException {}   //a empty method for handling SLAVE START_ELEMENT event 
+                                                                       
+	public void endDocument()        throws SAXException{}      //an empyty mehtods in the handler of END DOCUMENT events.           
+	                                                     
+    public boolean startElement(String uri, String localName,           String qName) throws SAXException  {     return false; }       /* Returns False to indicate that we are going      handle this event */   //Handles START_ELEMENT and PARENT-CHILD events.             if your xml has a tag then returns true else it will not consume the start element, so our parser is safe   
+                                                                        public boolean endElement(String uri, String localName ,  String qName)throws SAXException { return false; }      //Handles END_ELEMENT event by returning False.              if you want to handle a tag then returns true else it will not consume the End element hence parser is safe
+                                                                        public void characters(char[] ch, int start,int length ) throws  SAXException {}     /*Empty Method for handling Character Data*/       //Handles CHARACTER DATA and empty space.            if you want to handle some data then return true else it will not consume the character (data) thus parser is safe
+                                                                        public void ignorableWhitespace(char[] ch, int start,int length )throws SAXException {}     /*Empty Method for handling Ignorable Whitespaces*/ //Handles IGNORABLE_WHITESPACE events.           if you want to handle whitespaces then returns true else it will not consume the ignorable spaces thus parser is safe
+                                                                        public void warning(SAXParseException e) throws SAXException {}   /*Empty Method for handling WARNINGS*/      //Handles ERROR and FATAL_ERROR events.           if you want to handle error or fatal errors then return true else it will not consume the warnings thus parser is safe
+                                                                        public void error(SAXParseException e) throws SAXException {}     /*Empty Method for handling INFORMATIONAL ERROS*/ //Handles ERROR and FATAL_ERROR events.           if you want to handle informational errors then return true else it will not consume the warnings thus parser is safe
+                                                                        public void fatalError(SAXParseException e) throws SAXException {}   /*Empty Method for handling INFORMATION ALERT*/ //Handles ERROR and FATAL_ERROR events.           if you want to handle informational alerts then return true else it will not consume the warnings thus parser is safe
+}

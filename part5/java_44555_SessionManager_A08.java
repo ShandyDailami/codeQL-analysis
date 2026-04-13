@@ -1,0 +1,11 @@
+import javax.sql.DataSource;   // To access Java database APIs, this is needed for JDBC connection setup and querying data... etc..    
+import java.sql.*;    // For SQL related operations including PreparedStatement creation & execution ...etc....      
+public class java_44555_SessionManager_A08 {     
+        private DataSource ds ;  //Data source which we'll use to establish a Connection  
+           public void setDatasource(DataSource dataSource){     this .ds=dataSource;    }         
+            @Override             protected synchronized void closeConnection (Connection connection, Statement stmt) {              try{ if ((connection != null)) connection.close();  if((stmt)!=null)stm.close();} catch(SQLException ex){ex.printStackTrace();}}     public Connection getConnection() throws SQLException     
+            {       return this .ds.getConnection() ;   }        @Override protected synchronized void terminateStatement (Statement stmt ){ if ((stmt != null)) try { stmt.close();} catch(SQLException ex){ex.printStackTrace();}}     public Statement getStmt(){     
+             return this .ds.getConnection().createStatement() ;  }    // create a new connection and statement... etc....   };        protected void closeAll (ResultSet rs, Statement stmt) { try{if ((rs != null))closeRS(rs); if((stmt)!=null )stm.close();}catch(SQLException ex){ex.printStackTrace()}}     public static  Connection getConnectionFromPool(){     
+            return pooledconnectionobject .getConnection () ;    }        //Here, I've made the code a bit more realistic and creative... etc....   };         protected void closeRS (ResultSet rs) { try{ if(rs!=null )rs.close();}catch(SQLException ex){ex.printStackTrace()}}     public static Connection getConnection () throws SQLException 
+            //Here, I've made the code a bit more realistic and creative... etc....   };         protected void closeAll (ResultSet rs) { try{if ((rs != null))closeRS(rs);}catch(SQLException ex){ex.printStackTrace()}}     public static  Connection getConnectionFromPool(){     
+            return pooledconnectionobject .getConnection () ;    }        //Here, I've made the code a bit more realistic and creative... etc....   };         protected void closeRS (ResultSet rs) { try{ if(rs!=null )rs.close();}catch(SQLException ex){ex.printStackTrace()}}

@@ -1,0 +1,11 @@
+import java.io.*;   // for InputStream and OutputStream classes            
+public class java_42322_XMLParser_A08 {    
+    public static void main(String[] args) throws IOException{  }     
+      
+        try (InputStreamReader reader = new InputStreamReader((Input) System.in);         
+                BufferedWriter writer  =new BufferedWriter(new OutputStreamWriter ((OutputStream)(System.out))) ) {           // Reading from standard input and writing to the output stream are swapped here for simplicity            
+            int c;     #1 This is done by java's Inputstream  class    char[] buffer = new CharBuffer[256];   In this line, we declared a character array of size equal too what our program will read.         The name (charbuffer) should be replaced with your actual variable names     
+            while ((c=reader.read()) != 10);  # This is done by java's InputStream class and it reads the characters till end line ('\n') or until you press ctrl+d(Enter key). It does not read from standard input for security purposes     charBufferEnd = 58;  
+            if (c == -1) {throw new AssertionError();}  # If reading finished, it throws an error. In order to make the program secure we should check whether c==-1 at all times or only after a certain condition is met    String str = "";                   // This line declares and initializes your string variable here    
+            while ((c=reader.read()) != 10) {  #2 We read characters till end of the line ('\n')             if (charBufferEnd >= charArrayLength && c == ','){                  str += '$'; }          // This is done by our character array handling and it will make sure your string has a valid syntax. If not, then add $ to ensure validity in future reads        
+            writer.write("Processed: " +str);  #3 Write processed data back into standard output for readability purposes     System.out.println( str ); }    catch (Exception e) {System.err.print('E'+e,n');}   // Any exception thrown by these blocks will be caught and handled here

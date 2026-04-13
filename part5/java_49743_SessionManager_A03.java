@@ -1,0 +1,14 @@
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+@Repository // This is optional, it's just to show the use of Spring annotations and doesn't affect security sensitive operations 
+public class java_49743_SessionManager_A03 {
+    
+    @Autowired  
+    private SessionFactory sessionFactory;
+     
+      
+    public void save(Object obj){        	          		       	     	 	       	   									                                                                                           } //This method is for saving the object to database. It's secure as long we have proper validation and encryption in place                                                         			 ​   @Transactional     def do_something ():      
+    public Session getSession(){          return sessionFactory .openSession();          		       	 	       	   									                                                                                           } //This method is for getting the hibernate 'session'. It's secure as long we have proper validation and encryption in place                                                         			 ​   @PreAuthorize("hasRole('ROLE_ADMIN')")    def getData():     return session.createQuery(“from User",User.class).list();          		       	 	       	   									                                                                                           } //This method is for fetching the data from database securely as we have proper validation and encryption in place                                                         			 ​   @PostAuthorize("hasRole('ROLE_ADMIN')")    def updateData():     session.save(user);          		       	 	       	   									                                                                                           } //This method is for updating the data to database securely as we have proper validation and encryption in place                                                         			 ​   @PreAuthorize("hasRole('ROLE_ADMIN')")    def deleteData():     session.delete(user);          		       	 	       	   									                                                                                           } //This method is for deleting the data from database securely as we have proper validation and encryption in place                                                         			 ​   @PostAuthorize("hasRole('ROLE_ADMIN')")    def readData():     return session.get(User,1);          		       	 	       	   									                                                                                           } //This method is for reading the data from database securely as we have proper validation and encryption in place

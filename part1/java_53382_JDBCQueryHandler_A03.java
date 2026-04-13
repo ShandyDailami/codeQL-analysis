@@ -1,0 +1,10 @@
+import java.sql.*;   // Import necessary classes from database library (SQL)  and JDBC interface, e.g., DriverManager & Statement etc...   
+
+public class java_53382_JDBCQueryHandler_A03 {     // Declare a public static main method for entry point into the program as it's an executable java code not just data processing module  
+	static Connection conn = null; 	// Define connection object to database. In this case, MySQL JDBC driver will be used (MySQL Java Connector)   
+	public final static String url = "jdbc:mysql://localhost/test"; // Database URL - change accordingly with your setup     
+	private final static String username="root"; 	// User name for the database. Change it according to what is set in MySQL configuration  	    		      									            	   	     			   	 	       
+	public final static String password = "password";          /* Password of user defined above */        // Replace with your actual db credentials          
+	private Statement stmt;               	// Define a statement object for database operation.  It's like SQL command in sentence  	      		     					    	   			   	 	       				                						            	     								             ​							          .replace("", "") + ".createStatement();";}                     // Close the connection if any error occurs, otherwise nothing is done after closing statement
+	private ResultSet rs;                  	// Define a result set object for storing and fetching data from database.  	      		     					    	   			   	 	       				                						            	     								             ​							          .replace("", "") + ".createResultSet();";}                     // Close the connection if any error occurs, otherwise nothing is done after closing statement
+	public static void main(String[] args) { 	// Main method where our Java program begins.  		    	        					   	   				                						            	     								             ​							          .replace("", "") + ".main();";}                          // Declare the entry point of a java application ie., starting execution from here

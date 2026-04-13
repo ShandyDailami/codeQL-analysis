@@ -1,0 +1,4 @@
+import java.io.*; // Import necessary Java Libraries 
+class java_46633_FileScanner_A07 {     // Create a class named 'Main'.  
+    public static void main(String[] args) throws IOException{         // Define your function to read and write files in the same line of codes (line breaks are optional).      
+        File file = new File("C:/Users/Your_filepath");  /*Create an instance for a specific directory*/     // Create a variable named 'File' which represents any existing or non-existing location.  	        		     	 	   	     									   			          } Driver program to execute the Main Class (main function) and test file processing in Java

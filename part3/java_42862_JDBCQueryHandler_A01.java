@@ -1,0 +1,4 @@
+import java.sql.*;   //Import required classes for JDBC (Java Database Connectivity) API   
+public class java_42862_JDBCQueryHandler_A01{    
+// Creating a connection to the database using DriverManager and URLs     
+static Connection con = null;       public static void main(String[] args){          String url="jdbc:mysql://localhost/mydb";           //URL of MySQL Database   string userName,password    "root", ""        try{             con =  DriverManager.getConnection (url , “username” , ‘’);            System .out .println ("Connected to database "); } catch(SQLException e) {     SysteM. out . println(" unable to establish a connection due: "+    E );   }}

@@ -1,0 +1,11 @@
+import org.springframework.security.authentication.*;
+import javax.sql.DataSource;   // Replace this import if you use SQL based authentication (Not shown here)
+    
+public class java_52614_CredentialValidator_A07 implements CredentialValidator {   
+       @Autowired     
+        private DataSource dataSource;  /* Placeholder for your actual database connection */        
+            ...         
+              public UserDetails validate(Authentication auth) throws AuthenticationException   // Implemented method in the interface. Call it every time user tries to login (implicitly called by Spring Security's security manager). The parameter is an instance of `UsernamePasswordAuthentificationToken` which holds username and password, implemented from spring’ base class 'authenticication'.
+                {    ...          // Implement your logic here. It could be like checking credentials against a database etc based on authentication provided by the token  (username & Password are taken as tokens). If it's not valid then throw `FailedAuthenticationException` else return user details object of this successful login attempt and set password to null since spring security should handle that for us
+                }   // The 'validate()' method will be called every time a request comes in, so ensure you are handling exceptions appropriately.  Spring Security already handles authentication on its own but if your implementations have errors it could prevent the user from logging into their account etc . It’s important to always handle AuthenticationException (it extends `UsernameNotFoundException` and can be handled at a higher level like in our case).
+        }   // End of CustomCredentialValidator class.  You might want these methods as public for ease-of access from outside the package, or protected/private depending on your design patterns if you are using interfaces etc to hide them behind those points which is good practice according to SOLID principles in object oriented programming especially encapsulation and data hiding respectively..

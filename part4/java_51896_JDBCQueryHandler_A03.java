@@ -1,0 +1,9 @@
+import java.sql.*;   // Import necessary classes from SQL package to create connection and execute queries 
+public class java_51896_JDBCQueryHandler_A03 {     // Declare the main Class Name as 'JDBCQuery'   
+ public static void main(String args[])// Main method of Program is declared which accepts command line parameters.     
+{   if (args.length != 3){System . out .println ("Please provide username, password and database url"); System . exit (1);}  // Checking the number arguments provided by user   
+        String USER = args[0];     /// storing into variables because it is not allowed to modify command line parameters in java.  
+         String PASSWORD=args [1] ;//storing password from CLI parameter as well, similar with username  .      string URL=  args [2].    //Stored Database Url on the basis of array passed by user into Command Line arguments at run time.     try { Connection conn = DriverManager . getConnection (URL , USER , PASSWORD );
+             Statement stmt  =conn.createStatement();  /// Creating statement object from connection   and execute queries    System . out .println ("Connected to DB");      String SQL="select *from Employee";     ResultSet rs =stmt.executeQuery(SQL); // Execute the query, similar with echo in PHP
+             while (rs.next())  {System .out .print("ID : " + rs.getString ("Id"));    System . out .println("\t Name Note: "+ rs.getString("Note") ); }      conn.close();     // Closing connection and statement object after use   }} catch SQLException se 
+{se_message="Cannot connect to DB";System.out.println(se_message);}}catch (ClassNotFoundException cnfe){ System . out . println ("Driver Not Found");}`finally { DriverManager . driversfound();}}} // If any exception occurs at least one of the finally block is executed

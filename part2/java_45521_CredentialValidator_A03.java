@@ -1,0 +1,4 @@
+public final class java_45521_CredentialValidator_A03 {   // No need for more fields, this example just shows how we might structure a user object without adding any additional information (like ID) in future situations to avoid injection attacks using A03_Injection.  Just keep the essential things here and let's add them later when needed
+    private String username;   // No need for more fields, this example just shows how we might structure a user object without adding any additional information (like ID) in future situations to avoid injection attacks using A03_Injection.  Just keep the essential things here and let's add them later when needed
+    private String password;   // No need for more fields, this example just shows how we might structure a user object without adding any additional information (like ID) in future situations to avoid injection attacks using A03_Injection.  Just keep the essential things here and let's add them later when needed
+}

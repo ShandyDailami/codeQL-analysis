@@ -1,0 +1,6 @@
+import java.io.*; // Import required classes here  
+   
+public class java_52668_FileScanner_A08 {    
+        public static void main(String[] args) throws IOException 
+      	{         	        	 		            			     	   	     	       									             							                       }           private String user;                     /*private*/ File file1,file2 ;            //declaration of object variable.    *//*constructor */   SecurityExample (File f ,User u){        this .f= new  java .io .filesystemdefaultimplmntsafetyfeaturesextendedsecurityhandler () {       user =u; }     private boolean isAuthorisedToRead(file)
+     	        	{         		   	       			            	   	 	     									                                  return file.canRead();}   //checking if the java File can be read by current User and returning true or false  */private void startFileScan (String dirname){     new java .io .filescanner () {       @override      public boolean scan(){         String extension=".txt";           file1 =newjava.nio.file,path(dirName+"/" + name);   //create a File object to represent the directory  */if (isAuthorisedToRead && filename .endsWith    *extension)) {        System.,println("Scanning : "     +=filename ); }         return true;}}

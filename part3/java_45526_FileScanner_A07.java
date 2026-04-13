@@ -1,0 +1,4 @@
+import java.io.*; // for File class java_45526_FileScanner_A07 (don't forget importing the other required classes)  
+public final class Main {    
+    public static void main(final String[] arguments){       
+      try{        	      		         	       	   	     	 									           			  }catch{}                   catch(){}                 finally {}           // This code will be executed no matter what happen in the last block, like 'finally' clause for Java.                      return;              }}                                                               `}}}// Please replace "fileName" and directory with your file name or path to get correct result

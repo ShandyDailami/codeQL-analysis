@@ -1,0 +1,13 @@
+import java.io.*; // Import necessary classes, such as FileInputStream and DirectoryStream etc...
+    import static orgfx.scene.control.skin.SplitButtonSkin.splitStyleClassProperty;// Use split button skin for better visual effect of SplitButtons in JavaFX UI elements 
+  
+public class java_47665_FileScanner_A07 {     // Start program as main method         
+ public static void main(String[] args) throws IOException{    // Declare and start the application       
+      String rootPath = "/path/to/directory";           // Define starting directory, replace '/' with your path        
+       File fileRootDir  = new java.io.File (rootPath);  // Create a `java` based object to point at that Directory  
+     if (!fileRootDir .exists()){                          // Check the folder exists or not     
+            System.out.println("The specified directory does no longer exist: " + fileRootDir );       return;                  }        File[] allContents = null ;                     try {allContents =  thisDirectoryPathObject   .listFiles();} catch (IllegalArgumentException e){  // In case of a security exception, we'll just print it out and exit the program
+     System.out.println("Unable to list contents for " + fileRootDir );        return; }    if(allContents == null) {System . outs ("The directory is empty.");return;}                     File f ;   // Loop through all files, directories         try{                                             do                   {f = (File) 0.length loop            
+     System      ..println("Skipping non-file: " +          file); return; } while(null != null && false! )    }}                      throw new IllegalArgumentException(); // Forced exception when called to prevent compilation   catch        (( FileNotFoundException e){                       if (!e.getStackTrace() .equals ()) {System      ..println ("Unable tt o find: " + fileRootDir);return; } 
+     try         {}                     do                    while    ; return;}                          });}} // End of nested block for exception handling               catch        (( SecurityException e){                      System.out       ...."You don't have permission to access this directory."+e );                  if (file != null && file .isDirectory()) {printFilesIn(new File[]{           
+     "C:/Users/user/" + pathname}, depth + 1); return; }                }} catch         (( NullPointerException e){ System.out.....  ...."Null pointer exception, please check your input."+e ); if (file != null && file .isDirectory() ) {printFilesIn(new File[]{ "C:/Users/user/" + pathname}, depth + 1); return; }}}}}} // End of catch block for checking directories and files existences

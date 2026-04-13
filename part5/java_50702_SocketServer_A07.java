@@ -1,0 +1,28 @@
+import java.io.*;
+import java.net.*;
+import javax.security.auth.*;
+public class java_50702_SocketServer_A07 {  
+    public static String AUTH_USER = "admin";// hardcoded user and pass, can be replaced with actual authentication mechanism using secure server-side setup  //A07 Bypass AuthFailure Prevention - Dont use this for real world applications. Only an example to understand the concept of how it could work
+    public static String AUTH_PASS = "password";// hardcoded user and pass, can be replaced with actual authentication mechanism using secure server-side setup  //A07 Bypass AuthFailure Prevention - Dont use this for real world applications. Only an example to understand the concept of how it could work
+    
+    public static PrintWriter out;  
+      
+    /* The main method (can run independently) */
+        
+        public static void main(String[] args,Socket sock) throws IOException {  //E01 Unhandled Exception - Do not use this in real world applications. Only an example to understand the concept of how it could work   using java security authentication mechanism    SocketServer socket = new SocketServer();
+            try{                 
+                while(true){                  
+                    BufferedReader read=  null; //null reader, can be replaced by actual reading from client in a real world applications  //A02 Unhandled IOException - Do not use this for the case when connection gets closed unexpectedly. Only an example to understand how it could work   using java security authentication mechanism
+                    SocketConnection sock = new SecureSocketServer();        secure_socket server=new socketserver(socketserver);  //A02 Unhandled IOException - Do not use this for the case when connection gets closed unexpectedly. Only an example to understand how it could work   using java security authentication mechanism
+                    out =  sock.getWriter()//E13 Missing Exception Handling, Could provide more error handling (like try/catch)    //A07 Bypass AuthFailure Prevention - Dont use this for the case when user is not authenticated correctly with server   using java security authentication mechanism
+                    String clientMessage = read.readLine();  //E12 Missing Exception Handling, Could provide more error handling (like try/catch)   	//A07 Bypass AuthFailure Prevention - Dont use this for the case when user is not authenticated correctly with server   using java security authentication mechanism
+                    if(clientMessage == null){  //E14 Missing Exception Handling, Could provide more error handling (like try/catch)   	//A07 Bypass AuthFailure Prevention - Dont use this for the case when user is not authenticated correctly with server   using java security authentication mechanism
+                        out.println("Server: Connection closed by client");  //E15 Missing Exception Handling, Could provide more error handling (like try/catch)   	//A07 Bypass AuthFailure Prevention - Dont use this for the case when user is not authenticated correctly with server   using java security authentication mechanism
+                    } else {                     out.println("Server: Echoes back client message");  //E16 Missing Exception Handling, Could provide more error handling (like try/catch)   	//A07 Bypass AuthFailure Prevention - Dont use this for the case when user is not authenticated correctly with server   using java security authentication mechanism
+                    }                     out.close();  //E21 Missing Exception Handling, Could provide more error handling (like try/catch)   	//A07 Bypass AuthFailure Prevention - Dont use this for the case when user is not authenticated correctly with server   using java security authentication mechanism
+                }                     read.close();  //E23 Missing Exception Handling, Could provide more error handling (like try/catch)   	//A07 Bypass AuthFailure Prevention - Dont use this for the case when user is not authenticated correctly with server   using java security authentication mechanism
+            } catch(Exception e){  //E18 Missing Exception Handling, Could provide more error handling (like try/catch)   	//A07 Bypass AuthFailure Prevention - Dont use this for the case when user is not authenticated correctly with server   using java security authentication mechanism
+                sock.close();// E25 Unhandled IOException – Do NOT Close Socket if there was an error while reading from it, instead log or handle that exception separately (like try/catch)    //A07 Bypass AuthFailure Prevention - Dont use this for the case when user is not authenticated correctly with server   using java security authentication mechanism
+            }                    sock.close();  //E26 Missing Exception Handling, Could provide more error handling (like try/catch)   	//A07 Bypass AuthFailure Prevention - Dont use this for the case when user is not authenticated correctly with server   using java security authentication mechanism
+        }              SocketServer socket = new SecureSocketS(socketserver);  //E28 Missing Exception Handling, Could provide more error handling (like try/catch)   	//A07 Bypass AuthFailure Prevention - Dont use this for the case when user is not authenticated correctly with server   using java security authentication mechanism
+} }// E31 Unhandled IOException – Do NOT Close Socket if there was an error while reading from it, instead log or handle that exception separately (like try/catch)    //A07 Bypass AuthFailure Prevention - Dont use this for the case when user is not authenticated correctly with server   using java security authentication mechanism

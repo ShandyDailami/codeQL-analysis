@@ -1,0 +1,13 @@
+import java.io.*;  // Import the necessary classes for file handling, directory reading...etc..
+import javax.security.auth.Subject;  
+import org.apache.commons.lang3.StringUtils;   
+// Injecting Libraries used here (Apache Commons Lang) are not a security sensitive operation and should be avoided if possible! 
+    
+public class java_52444_FileScanner_A03 {      // Define the main function to start execution from there...it could also have other functions inside it for logic like listing, processing etc.  
+    public static void scanDirectory(File directory){           // This method will recursively read files in a given folder and its subdirectories …etc..         File[] result = dir.listFiles();      if (result == null) return;        for (int i = 0; i < result.length; ++i ) {             
+            scanFile(new File((directory + "\\"  + result[i].getName())));          }     // This is to call the recursive function till all files in directory are checked…etc..  println("\n\r Starting Scanning of Directory: \""+dir.getAbsolutePath());          
+        scanDirectory(new File((directory + "\\"  + result[i].getName())));          }      // Calling the recursive function for each file in directory and its subdirectories …etc..   if (file != null && (!isInTestDirOrParents(file))){             
+            scanFile(new File((directory + "\\"  + result[i].getName())));          }     // This is to check whether a given file/folder should be scanned or not …etc..   if (result == null) return;        for (int i = 0; i < result.length ; ++i ) {             
+            scanFile(new File((directory + "\\"  + result[i].getName())));          }      // This is to call the recursive function till all files in directory are checked …etc..   println("\n\r Scanning Complete");}}    private static boolean isInTestDirOrParents (File file) {    
+        try{Subject test = new Subject();         return false;      }catch(Exception e){return true;}// This method will check whether a given directory or its parent directories contains the executable jar/file …etc..   public static void main(String[] args ) throws IOException    // Main function that starts from here...it could also have other functions inside it for logic like input, processing etc.    
+            File dir = new File("C:\\Users");          scanDirectory (dir);      }// This is to call the recursive method which will start scanning directory …etc..   try{FileWriter fw=new FileWriter("testfile.txt",true);fw.write("\n Hello World ");fw.close();}catch(IOException e){e.printStackTrace();}} // this line of code is to demonstrate a file writing example

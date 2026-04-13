@@ -1,0 +1,12 @@
+import io.jsonwebtoken.*;
+
+public class java_44852_CredentialValidator_A01 {
+    // This is a sample key which should be stored securely in real application, preferably as an environment variable or secret storage system such as AWS Secrets Manager etc.. for example: 'mySecretKey' 
+     private static final String SECRET_KEY = "mySampleSymmetricEncryptionKe";  
+      public boolean validate(String token) {    // JWT is passed in string format, must be encoded before sending	in header or as paramenter. It will return decoded payload only		 	// If token is invalid (expired), it throws ExpiredJwtException and if not signed at all then SignatureNotFoundException
+        try {    // Get the body from the request   JWT Token must be passed in header parameter or http param "token" can also be used. In this example, we are just checking one thing so I am passing token here 	System.out.println("Token is: " + token);
+            Claims claims = Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token).getBody();   //Here you can set secret key and also provide your issuer, expiration period etc for parsing the jwt	System.out.println("Successfully parsed token");
+            return true;	//If everything went fine in controller then we are returning success message/false based on our logic or result of action which is handled by restcontroller			  } catch (SignatureException e) {    //Invalid signature - very rare situation but happen when there's problem with the signing string, change this to log something more appropriate	System.out.println("Failed at SignatureVerification");
+            return false;  	}catch(MalformedJwtException mje){ 	//The token does not matter and do nothing about it } catch (ExpiredJwtException e) {      //Expiration date of the jwt - very rare	System.out.println("Token is expired.");return false;}
+        catch (UnsupportedJwtException une)       System.out.println(une);catch (IllegalArgumentException ie){    	//null or empty string		  }            return true;//Continue with next middleware if this was not a JWT request, you can put it here	System.out.print("Not validating Request");return false;}
+}   //End of class CredentialValidator}; endregion Java code to validate the token using jwt and symmetric encryption key is given below:  (

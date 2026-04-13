@@ -1,0 +1,12 @@
+public class java_47696_CredentialValidator_A07 {  // replace 'My' with whatever fits into this context, e.g., CredentialValidatorManager etc (Avoid using generic names like ArrayList/List)  
+    private String username;    
+    private char[] passwordDigest;     
+      
+    public static final int MAX_PASSWORD = 1024;  // assuming max length is 32 characters. Adjust as needed for your use case (Avoid using generic numbers like ArrayList/List)  
+         
+    MyCredentials(String username, char[] passwordDigest){      this.username = username;}     public String getUsername() {return new StringBuilder().append(this.username).toString();}  // return a copy of the string or create an immutable version if needed (Avoid using generic methods like toLowerCase)  
+          @Override    public boolean equals(Object o){if (!super.equals(o))       return false; MyCredentials other = ((MyCredentials) o);      {return this.username == null ?  // Checking for username equality as per A07_AuthFailure (Avoid using generic words like 'null')  
+          true : this.getUsername().equals(other.getUsername());}       }     @Override    public int hashCode(){if (!super.hashCode()) return super; // Return a hashed version if needed  e.g., use md5 or something similar (Avoid using generic methods like toLowerCase)  
+          MyCredentials(String username, char[] passwordDigest){this((MyCredentials) new StringBuilder().append("username").toString(),passworddigest);} // a constructor with default values if needed  e.g., set all fields for testing purposes (Avoid using generic methods like toLowerCase or create an immutable version of the object as per A07_AuthFailure  
+          return new MyCredentials(this, passwordDigest).hashCode();} } // a static method that creates and returns another copy if needed  e.g., make sure you do not modify it (Avoid using generic words like 'static')    public void mainMethod(){MyCredentialValidator validator = ...;      MyCrendentials creds1= new CredentiaLds("user", "password".toCharArray());     // Test equals method  
+          System.out.println(validor.validatePasswordMatch((creds2)));  }    public static void main (String[]args){mainMethod();}`

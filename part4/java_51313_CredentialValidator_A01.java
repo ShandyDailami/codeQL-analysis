@@ -1,0 +1,15 @@
+import java.security.*;  // Importing Security Manager to implement Credential Validator interface in our CustomValidator class.  
+                      // Also, import classes that we will be using throughout validation process (PasswordHandler and DigestInfo).   
+                      
+public class java_51313_CredentialValidator_A01 implements CredentialValidationResult {    
+       private final String username;  // This is the user who attempts to access a resource or service on our system.  
+      public boolean authenticated = false ;// Variable for storing authentication status true when an attempt has been made and successfully validates credentials, else it's not available/false in default state..   
+       private final String msg;  // This is the message that we will include with this CredentialValidationResult. It can be set by our program to indicate whether or why authentication failed (if so).  
+          public boolean success = false ;// Variable for storing status of validation operation true when a successful attempt, else it's not available/false in default state..   
+      // Constructor that sets the username and msg.  This can be overridden if you want to set these fields more directly (for example setting them on an object instance).  
+       public java_51313_CredentialValidator_A01(String userName) {     this.username = userName ;this .msg=" ";}   
+      // The CredentialValidationResult interface methods:  These are called by the Java Security Manager to indicate whether or not a password and username match, provide additional message details if they don't (if so), etc...  
+       public boolean successful(){return this.success ;}     Public String getMessage() { return msg; }    // This is where we set our own custom error messages for failed attempts.. 
+      @Override// The CredentialValidationResult interface method: These are called by the Java Security Manager to provide additional information about an unauthorized attempt.   public void setSuccess(boolean success){this .success = successfully ;}    // This is where we can store whether or not a successful authentication has occurred.. 
+      @Override// The CredentialValidationResult interface method: These are called by the Java Security Manager to provide information about an unauthorized attempt.   public String getMessage(){return msg;}     }`public class MyCustomValidator extends GenericPasswordCredential implements PasswordHandler, DigestInfo {       
+  // Here we implement both interfaces because they're needed for our custom Credentials Validator..    static final Logger log =LoggerFactory.getlogger(MyCustomervalidators);       private volatile   Hashtable<String , UserDetails> cachedUsers;     public java_51313_CredentialValidator_A01() {cachedUser=new HashTable<>();}

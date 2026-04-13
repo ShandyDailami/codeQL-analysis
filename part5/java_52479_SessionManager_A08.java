@@ -1,0 +1,17 @@
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.*;
+// import necessary classes here if not using standard libraries only (e.g., Request, Response)
+
+public class java_52479_SessionManager_A08 implements Servlet {
+    
+    // HttpSession is the abstraction for managing sessions on a server-side platform in Java 
+	private HttpSession session;  		// holds an active HTTP session object which can be used to set attribute and get attributes values.		     			                  									        	 	     	    Holds information about user's client’ such as IP address, port number etc., expiration time of a cookie is not specified thus it gets destroyed when the browser tab closes or server restarts
+	
+    // constructor  for initializing session object using request and response objects. This method will be called whenever there are any requests from clients to our servlet container through which we'll pass on these httpServletRequest (request) & HttpServletResponse(response). The methods of the Request, Response class must not throw IOException if you do I/O operations here 
+	 public void init(HttpServletRequest request , HttpServletResponse response){			   		  									        	 	     	    session = request.getSession();	}      // This method is called by servlet container upon instantiation of the object, to initialize it and set up any initial attributes or listeners that are required
+	 public ServletConfig getServletConfig(){  return null; }	// returns a configuration instance if one exists (if not in case above) then throws IllegalStateException otherwise should be implemented. This method is called by servlets as part of their initialization process to indicate the minimum space requirement for any resources that your class requires, such minutae storage or memory allocated
+	 public void service(ServletRequest req , ServletResponse res )throws IOException{		   	    // calls init() followed by destroy(), finally and other life-cycle methods.  It's called whenever there is a request/response transaction between client & server for the servlets respectively on our container, using HttpSession object set up in initialize method above
+	 public String getServletInfo(){ return null; }	// returns information about this particular Servlet (e.g., version details) to be displayed by developers if any – not necessary or useful with a basic example like here but very informative for larger projects and understanding the functionality of our servlets in general, i/o exception handling is also covered
+	 public void destroy(){ session = null; }			// This method will clean up resources such as database connections before being closed out.  Called when HTTP request processing ends (closes) or a client disconnects from server at any point of time to ensure we close all the openned sessions and prevent memory leaks
+}	     // Servlet Interface extends this class for more functionalities ie like doPost,doGet etc., which will be used by servlets. 		   	   	       									        	 	     	    Holds information about user's client’ such as IP address, port number etc., expiration time of a cookie is not specified thus it gets destroyed when the browser tab closes or server restarts

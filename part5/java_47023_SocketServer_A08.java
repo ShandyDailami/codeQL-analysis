@@ -1,0 +1,3 @@
+import java.io.*; // for Input/Output Streams and their Writers & BufferedReaders  
+import java.net.*; //for ServerSocket,Socket etc., along with its classes (such as InetAddress) to get the local IP address of a machine running this program using an Socket  socket= new ServerSocket(port); It accepts connections from clients through sockets and handles data transmission by writing bytes on these streams.
+import javax.crypto.*; // for encryption & decryption related operations with AES algorithm    (Cipher cipher = Ciphers.aes_256())  {...} For the sake of example, let's assume that we have a secret key and no user data is shared among clients using this method

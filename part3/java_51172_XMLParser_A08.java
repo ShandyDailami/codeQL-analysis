@@ -1,0 +1,12 @@
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
+public class java_51172_XMLParser_A08 extends DefaultHandler {   // custom handler to handle events of the XML document 
+    boolean bName = false,bAge=false,bCity=false;     // flags indicating presence in current element's data (node) is required or not. Set them according to your requirements by checking conditions while parsing xml file via SAX parser .  
+                                                                          You can set condition based on security sensitive operations like A08_IntegrityFailure, etc  if you are sure about the presence of these details in XML document then only we should use boolean flag. If not possible to determine from given data or structure assume false and do your best with SAX parser .
+                                                                          Please note this is a simple example just for demonstration purpose rather than full-fledged security related code, it might have issues if used against actual systems as real world parsers usually need more advanced features such encryption handling. 
+    String currentElement;   // stores the name of currently visited element (node) to check condition correctly while reading xml file via SAX parser .      You can replace these with your requirements or conditions based on A08_IntegrityFailure context, etc as per need in real world scenario and this should be done.
+    @Override  //SAX Parsing begins here  
+     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {       currentElement =localName;      if (currentElement .equals ("name")) bName= true ;        else if (currentElement. equals("age") )bAge  =true ;        
+                                                                                  // set other condition here as per requirement and according to A08_IntegrityFailure context, etc  for your security sensitive operation related operations like checking presence of name or age in XML document by SAX parser   }    .      Similarly startElement() method is defined. Use this methods when you want read xml file via sax parsers so that no external library required as per requirement and using built-in java libraries only for the above example purposes rather than Spring, Hibernate etc..

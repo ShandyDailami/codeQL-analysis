@@ -1,0 +1,8 @@
+import java.io.*; // Import required Java packages  
+class java_42831_FileScanner_A01 {    
+    static void scanDir(File dir, String startPath) throws Exception{     
+        if (dir == null || !dir.exists()){             throw new IllegalArgumentException("Directory does not exist: " + dir);          }         else  for (File file : Optional.ofNullable(dir.listFiles()).orElseThrow(() ->new IllegalStateException())) {               File nfile = new File((startPath == null ? "" : startPath)+"/"
+                    + file.getName(), ".*");              if (!nfile.isHidden() && !nfile.canRead()) throw   // Security risk! Check the readability of a potentially dangerous resource  (only for those that understand what's going on).             {                  try{                   FileScanner scan= new
+                     FileScanner();                    println("File found: " + file);            }catch(Exception e){e.printStackTrace()}        }}     });      static void main(){try  // Ensure the starting directory exists and is accessible then start recursive search, else throw exception          {              if (new File("/Windows/System32").isDirectory())   scanDir      
+                     new    javaFile("C:\\WINDOWS");}     catch(IllegalArgumentException e){println ("Invalid argument" +e.getMessage());}} }  // End of Main method and recursive file scanning starts here        }}`;java'+code ends after the exception handling as follows `catch (Exception  
+                     e) { println("An error occurred in scanner: "    .concat(Arrays.toString     ((e).getStackTrace()))); }}}  // End of code block with '

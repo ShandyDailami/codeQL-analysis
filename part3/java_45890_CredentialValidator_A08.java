@@ -1,0 +1,13 @@
+import javafx.application.Application;
+import javafx.stage.*;
+import javafx.scene.*;
+import javafx.scene.layout.*;
+import javax.swing.*;
+public class java_45890_CredentialValidator_A08 extends JFrame implements java.awt.event.ActionListener {  //Creating the Framework Class using JavaFX for GUI Design, AWT (java standard) is used to handle Events in this case    private String username;        private char[] passwords = new char[10];
+public void init()         {     JLabel unameLbl=new  	JLabel("UserName: ");      //Creating Label for User Name 		 setLayout(new GridLayou t (5,2));           add(uname    Lb);        username = "admin";       JOptionPane.showInputDialog          ("Please Enter Your Username");
+passwords[0]='a'; passwords [1 ]=  'r'_'-  '_'];	passwords [3] = 54;		     add(new JPasswordField   (2));    //Creating Label for Password with asterisks as placeholders,      setLayout
+!temTextFiled is created to hide passwords       getChildren().clear();          JOptionPane.showMessageDialog  (! "Enter your user name and press enter",null ,JOptionPane . INFORMATION_MESSAGE);     }    public void actionPerformed(ActionEvent ae)
+{        username = unameTextFiled.getText ( );       if      ((username== null )||   //Checking whether the field is empty or not, then check passwords match else give alert message to user 	(!passwordMatcher()    &&     JOptionPane .showConfirmDialog ("Password didnt Match" ,null," Error",JOptionPane.WARNING_MESSAGE)!=0))
+{             setVisible(false);            System.exit (1) ;   }      else {           showStatus("Logged in successfully"); 	    //Showing successful login message if passwords match         	}     }}`java    protected void finalize() {} public static boolean getCredentials(){ `JOptionPane .showConfirmDialog ("Are you sure?","Exit Application", "Yes No" , JOptionPane.WARNING_MESSAGE)!=0)
+!== 1;       if(result == 2){ System,exit (9);}   } return result;} public static void main    (String [] args ){ //Main Method to launch our app     CredentialValidator cv = new           CredentialVali      Dtor();cv.init() ;         JFrame frame=new             
+JOptionPane("Your program has started",                    JOptionP emeOptions.INFORMATION); } `java`  //End of the code}}}}}//EOF! This is a very basic example and it does not include any error handling or security measures that you should expect in real-world applications, such as SQL Injection attacks etc

@@ -1,0 +1,9 @@
+import java.io.*; // Import required classes from library
+     import javax.imageio.ImageIO;    // To handle Image I/O operations, you may also use another one like BufferedReader for string reading etc. but this is not necessary here  
+     
+public class java_43858_FileScanner_A08 { 
+       private static final String FILE_NAME = "C:\\Users\your-user-\Desktop";    // Put the path of your file location, replace '\"' with '/'. The folder must be accessible by Java. If it is not you might need to add read/write permissions or user authentication if applicable
+       private static final String FILE_EXTENSION = "jpg|jpeg|png";  // Assign any extensions that should trigger the scan, for example: jpg png etc.. Replace '\' with '/'. This is not necessary here and can be replaced by FileFilter.accept(File pathname)
+       private static final String FILTER = "."+FILE_EXTENSION;  // Assign file extension name to the filter, this will scan files ending in '.jpg' or any other extensions as defined above   (Replace '\' with '/')        public void execute() throws IOException {    File folderToScan  = new File( FILE_NAME );     
+     DirectoryStream<Path> directoryStream = Files.newDirectoryStream((folder), "glob:*"+FILTER);  // Create a scanner that will find all files in the specified path ending with any of defined file extensions (Replace '\' as well)   for each( Path p :directoryStream ) {        
+       if(!p.toString().endsWith("." + FILTER)){ continue; }     File f =    // Instantiate a new javaFile and set it to the current path in our directory stream, this will allow us access info about files   (Replace '\' as well)      p  };

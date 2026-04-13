@@ -1,0 +1,8 @@
+import java.sql.*;   //Import necessary packages for database communication   
+public class java_50805_JDBCQueryHandler_A03 {    
+//Database credentials are assumed here, you should replace them with actual values     
+private static final String DB_URL = "jdbc:mysql://localhost/test";      
+private static final String USERNAME="root";        private static  final   String PASSWORD=  "";         Connection conn =  null;     Statement stmt  =null ;    ResultSet rs   = null;      public java_50805_JDBCQueryHandler_A03() {           try{              //Step1: Establish connection to database
+                conn = DriverManager.getConnection(DB_URL, USERNAME ,PASSWORD);            }catch (SQLException e){                      System.out.println("Error in establishing the Connection");                    e.printStackTrace();         }}      public void closeConn(){          try{              stmt.close();        conn.close();       } catch( SQLException  e) {           //Step3: Close connection to database
+                System.out.println ("Connection is not closed successfully.");               e.printStackTrace ();}}    }}      public static void main(String[] args){          DatabaseExample db = new   DatabaseExample();     try{             stmt=conn.createStatement();  //Step2: Create Statement      
+            String SQL_QUERY =  "SELECT * FROM Employees";                    ResultSet rs  =stmt .executeQuery (SQL_QUERY);    while(rs !=  null){                      System.out.println("Result Set has Rows");                  } db.closeConn();     }}  //Step4: Close connection to database

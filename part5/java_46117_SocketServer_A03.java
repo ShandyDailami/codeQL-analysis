@@ -1,0 +1,12 @@
+import java.io.*;
+import java.net.*;
+public class java_46117_SocketServer_A03 {  
+    public static void main(String args[]) throws Exception{ 
+        ServerSocket ss = new ServerSocket(12345); // creates a server socket at port number 6789, allowing multiple clients to connect simultaneously using infinite loop (non-blocking mode).         
+       while(true){  
+           Socket s=ss.accept();      System.out.println("Connection established with "+s.getRemoteSocketAddress());//Accept client connection and create a socket object 'c'.  //Server waits for the next request from connected clients using accept method of ServerSocketcLASS only when no data is available in inputstream on s to be read, then it becomes non-blocking by default if there are not any incoming requests.   
+           PrintWriter out= new PrintWriter(s.getOutputStream(),true);//write message into the socket using getInputStream and OutputStream  //send response back via this output stream     Writer is created on Inputstream of s, which has been overtaken by server side accept method call in while loop only when no data available to write out at 'out' from above line.
+           BufferedReader br = new BufferedReader(new InputStreamReader (s.getInputStream())); //read the message received and print it using getOutputStream on socket s, which has been overtaken by server side accept method call in while loop only when no data available to read at 'br' from above line 
+           String clientMsg = br.readLine();//Read incoming request    System.out.println("Client says :" +clientmsg); //Print the message received on Client socket and prints it, server responds back by printing out stream     PrintWriter is created once a connection has been established with s using getInputStream or OutputStream methods call in while loop only when no data available to write at 'out' from above line.
+           System.out.println("Received client :"+clientMsg);//Print the message received on Client socket and prints it, server responds back by printing out stream  //This will keep running until an exception occurs or a disconnect happens for any reason (like network failure etc).    }      ss.close();  
+       }}

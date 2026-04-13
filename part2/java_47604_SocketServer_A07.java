@@ -1,0 +1,25 @@
+import java.io.*;  // Import Input/Output Stream packages  
+import java.net.*;    // For ServerSocket class java_47604_SocketServer_A07 create socket server port, accept connection on that specific ports are required for creating a Socket object and then read from or write into it respectively    
+import javax.security.auth.*;      //For the security manager 
+      
+public final class AuthServer {  
+        private static String DEFAULT_USER = "guest";    /* default user */            
+        public SecurityManager sm;                      /* instance of secure manger for authentication & authorization rules*/    
+        
+           protected void init() throws Exception{      //method to initialise the object's properties  i.e., security manager,   etc .         
+                System.out.println("Initialising...");    Security.addProperty("user.name");       sm= new com.sun.net.httpserver.SecurityContext["UserRealm"]();      //create user realm    
+           }        /* end init */ 
+            public SocketAcceptedListener() throws Exception {   super( );init (this ) ;}    protected void finalize() { System . out . println ("Auth server shutting down...");super.finalize () ;};         
+         @Override      //override of Object class's toString method          
+             public String toString()                                                     {return "UserName: Guest";}}       /*end user name*/     int port = 8095;    Socket sock = null, newSock=null ;  InputStream in ,OutputStream outStrm  =  null,'Hello'.getBytes();        
+        // Create a socket to listen on the specified port.              try{sock  =new ServerSocket(port);}catch (IOException e) {System . err Println("Could not open port " +    Port );return;}  while(( newSock= sock.accept()) !=  null){             System ..println ("Connection accepted from: "+    
+        // get peer IP, and its socket details                try{ in =newInputStream(sock .getInputStream());}catch (IOException e) {System..err Println("Error occurred while reading the stream"); continue;}  String str="";   int bytes = 0;char[]    buffer  = new char[1024];        
+        // read characters from socket, and store them in string          do{bytes =in.read(buffer);}while (bytes ! -1 );             System..println ("Received: "+new String(buffer));           try {   outStrm= sock .getOutputStream(); } catch      IOException e) 
+        //     {System ..err Println("Error occurred while writing the stream"); continue;}            else{outStrm.write('A'. getBytes());}                  System..println ("Sent: " +'A');           try    {Thread.sleep(10); } catch (InterruptedException e) 
+        //     {System ..err Println("Sleep Interupted");}}            sock .close();   /* end the socket */             return;}          public static void main         (String[] args){try{new AuthServer().runService( );}catch      Exception    E              
+       } catch …...        // Catch block to handle any exception that may occur while execution of above code.     System . err Println("Exception Occurred: " +E);}}            sock =null;   /* end the socket */              public boolean runService() throws Exception {         try{sock  =new ServerSocket(port );}catch (IOException e) 
+       //    then      return false;}          while(( newSock=           SocketAcceptedListener .accept()) !=  null){             if("guest".equalsIgnoreCase   (! sm.getSubjectCredentials     ("UserName")){System..println                "Wrong password"); continue;}}              try {outStrm = sock 
+       //   `OutputStream();} catch IOException e)         then      return false;}          }            @ServerSocketAcceptedListener public class SocketAcceptedListener implements Handler     /*this should be replaced by a proper handler*/        run()                      {}             System..println ("Connection accepted from: "+getPeerIP(sock));try    {Thread.sleep 
+       //   (10);} catch      InterruptedException e)          then{System ..err Println("Sleep interrupted");}}}                  sock .close();return true;}         private String getPeerHostName()throws Exception     /*this should be replaced by a proper method*/ {String hostname = java.net 
+       //   `.InetAddress.getByName(java `Net/.HostAddress[]).hostName; return                  ((InternalListener)listeners[0]      ).getRemoteSocketAddress().toString();}}public static void main     (String args []) {try{new AuthServer() .runService  () ;} catch Exception E
+       //   then System.. err Println ("Exception Occurred: " +E);}}}               sock =null; /* end the socket */              public boolean runServicemain( String[] arge) throws Exceptiom {try{socl= new Socket("localhost", 8095 );}catch (IOException e){System..err    Println ("Exception Occurred: " + E);return false;}}

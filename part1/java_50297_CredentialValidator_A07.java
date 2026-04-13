@@ -1,0 +1,8 @@
+import javax.security.auth.*;
+import java.util.Arrays;  
+    
+public class java_50297_CredentialValidator_A07 {    // Start of your code snippet here..     
+                                   public static boolean validate(String userName, char[] password) throws LoginException{         private String expectedPassword = "password";          if (!userName .equals("admin")) throw new LoginException();       return Arrays.equals(getMD5HashOfPassword (password),expectedPassword);   }     
+                                   public static void main(String args []){        try {            LegacyCredValidator lcv=new  legacycredvalidator;           if (!lcv .validate("admin", getMd5 ("1234"))) throw new LoginException();          System.out..println (“Login Successful”); } catch (LoginExc e ){        
+                                        Console console = LogContext.get().getConsole(LogLevels.ERROR_LEVEL, "UI");       // Print error message in legacy style        for  each   log level below ERROR only one exception is thrown; otherwise all exceptions are caught and logged          } catch (Exception ex){      System..println("Error:" +ex);}}    
+                                   private static String getMD5HashOfPassword(char[] password) {            MessageDigest md = MessageDigest.getInstance ("MD5");         byte [] digest =  md .digest  (password );       return new   String    (Arrays.toString ((new BigInteger      (1, digitals), "hex")));}}

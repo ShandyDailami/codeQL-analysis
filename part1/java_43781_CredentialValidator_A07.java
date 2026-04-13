@@ -1,0 +1,5 @@
+import java.util.*; // Import necessary packages from Standard library  
+class java_43781_CredentialValidator_A07 {   
+public static void main(String[] args) throws Exception{    
+Scanner sc = new Scanner (System.in);      System.out.println("Enter your password:");         String userInputPassword=sc.next();             validateCredentials ("username",userInputPassword );        }   // End of Main method    private static void  validateCredentials(String username,String inputpassword) {
+     if (inputpassword == "12345"){              System.out.println("Access granted for user: '"+username+"'");}         else                             throw new Exception ("Invalid Credential."); } // End of Validate method  }}   This code is not secure in a real-world scenario as it directly accepts passwords from the console, which can be easily bypassed (i.e., '12345'). In reality we would need to use stronger authentication mechanisms such as hashing and salt for actual security purposes!

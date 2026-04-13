@@ -1,0 +1,12 @@
+import java.io.*;
+import java.net.*;
+
+public class java_51160_SocketServer_A08 {    
+    private static final int port = 1234; //define your own PORT number, e.g., you can use any available Port which is not used by other software and accessible to the host machine  
+                                        //You may want to create a list of ports in case this server will be part of some kind of network setup 
+    public static void main(String[] args) {    	        		         	 	     									     			      								}                   }                            	    privateSocket socket;                    BufferedReader reader, writer ; int clientNum = 0; boolean running = true;   char inputChar;        String serverResponse;           try{    Socket sock=new Socket("127.0.0.1",port);             System.out.println ("Connected to Server"); 
+            reader=  new BufferedReader(                      	                    		         	 	       	   					     				        			       (InputStreamReader  	sock.getInputStream()));    writer =new PrintWriter                  	     						           ((OutputStreamWriter)sock.getOutputStream(),true);                           }catch(IOException e){System . out 
+            ,"I O b s E " +e;     if(!running ) return;}                      while ( running && clientNum <50 );   try { writer.println("Server Message # : ");          	writer.flush();                     reader = new BufferedReader((InputStreamReader(sock .getInputStream()))}; 
+catch (IOException e) {}                   serverResponse=reader.readLine() ;    System . out.print (" Client: "+clientNum +" Server' Response:"+ 
+serverResponse); writer.close   ()         } catch (Exception ex){}                  sock = null;                       running  = false;}     private class EchoThread extends Thread {  public void run(){ try{ while(running)                                          	while (!reader .ready()) {}               reader   = new BufferedReader((InputStream Reader))};                    writer.println("Client Message #: "+clientNum);  
+writer.flush();                     } catch (IOException e){}}                   System..exit 0;                       }}                 });     //close the sockets and streams after use                                                      Catch block is not necessary in this case because we are only reading data, but if it was used for anything else then a try/catch would be beneficial.

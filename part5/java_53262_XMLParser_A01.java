@@ -1,0 +1,11 @@
+import javax.xml.parsers.*;
+import org.w3c.dom.*;
+import java.io.*;
+public class java_53262_XMLParser_A01 {  
+    public static void main(String[] args) throws ParserConfigurationException, IOException{    	
+         // Step-1: Load the xml document using DocumentBuilderFactory and parse it to a DOM tree       		 	   			     	 										}
+          @SuppressWarnings("unused")   private java_53262_XMLParser_A01() {}    public static void main(String... args) throws Exception {          	System.out::println;        	      // Step-2: Creating an instance of DocumentBuilderFactory    		 	    ParserConfigurationException, IOException p = new Processor();	p .getOptions().setToDebug(true);     
+          Document doc=p   .parse("myfile");      	       	 		// Read file into DOM tree   			        System.out::println;        	      // Step-3: Creating an instance of XPathFactory and use it to select nodes from the document          		 	    W3C_DOM p2 = new orgW3cDom() ;p .getOptions().setToDebug(true);     
+          DocumentType dt=new Document();        	     // Step-4: Creating an instance of DOM tree       			    System.out::println;   } 			// Do not forget to close your resources, e.g., CloseableFileInputStream in the finally block or use try with resource statement for autocloseable input streams
+          DocumentBuilderFactory db = null ;// Step-5: Create instance of DOM tree       	 	     // do something here }   catch(Exception ex){ System..println; 			}}}}            	       	     	// Close resources at the end or in try with resource statement. }}     	   			    dbfactory=db .newDocumentBuilder();        
+          Source source = new StreamSource (System.in);        // Step-6: Create instance of XMLStreamReader and use it to read file from user input          		 	        System..println; } catch(Exception ex){  	    	 	// Catch exception here }} try { Document doc=dbfactory .newDocument("");         DTD dtd = new DTD("/home/user/.xmltest.dtd") ;        // Step-7: Create instance of XMLStreamReader and use it to read file from user input } catch(Exception ex){ System..println; 			}}}}

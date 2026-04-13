@@ -1,0 +1,8 @@
+import org.xml.sax.*;
+import org.xml.sax.helpers.DefaultHandler;
+
+public class java_50318_XMLParser_A01 extends DefaultHandler {  // extend the default handler to handle SAX events    }     static int count = 0 ; public void main(String args[]) throws Exception   { XmlReader reader = null ; try{reader=XmlReaderFactory.createXMLReader();       XML_URL urlObj;        if (args !=null && 
+             args .length >1){urlObj  = new URL("file", UrlNormalizer.normalize(new String(args[0])) ); } else { System.out.println ("Usage : MyXmlParser xmlFile");System.exit(-2);}   ;    reader.setContentHandler (this) 
+           // Set the property to ignore element declarations and CDATA sections       XMLReaderProperties .getInstance().setIgnoringElementDeclarations(true )        /*reader . setValidationMode(XMLReader.VALIDATION_STRICT);*/      }catch SQLException e1     { System.out.println ("SQL Exception caught : " +e2) ;
+           //   return;  }; catch (FileNotFoundException fnf){System.err .....}    try{ reader . read();             writer = new FileWriter("output"+count++);      }catch(IOException e1 ) { System..println ("IO Exception caught: " +e2) ;
+           //   return;  }; finally {}     public void startDocument() throws SAXException{}public boolean startElement (String uri, String localname ,    String qName){System.out .print("Start Element :"+qName);return true;}       ... rest of the methods ..... }

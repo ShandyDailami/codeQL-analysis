@@ -1,0 +1,8 @@
+import java.util.*;
+public class java_47593_SessionManager_A07 {
+    private Map<String, String> store = new HashMap<>(); // we use a simple hashmap for simplicity here - in real world applications it would be session storage from some external service or database system like Redis etc., which is considered more secure against concurrent access. 
+   public void put(String key , Object value) {     /* create method to store the data into map */       }     
+    public <T> T get ( String key, Class<T> type ){ // this function will read a stored object from HashMap by its name and return it as requested datatype.  If there is no such value we throw exception or handle in our method accordingly   /* Create the reading part of code */ }
+    public void delete(String key) {                 /** Method to remove session data **/}      // Simple hashmap doesn't support deleting, so handling that manually here . This might be useful if you implement Session invalidation strategy.  Here it is just a placeholder for now without any functionality: /* Create the deletion part of code */ }
+    public boolean has(String key){                   /** Method to check whether session data exists or not**/   // Simple hashmap doesn't support this, so handling that manually here . This might be useful if you implement Session persistence strategy.  Here it is just a placeholder for now without any functionality: /* Create the existence checking part of code */ }
+}

@@ -1,0 +1,15 @@
+import java.io.*;  // Importing InputStream, OutputStream classes from Java Standard Library  
+                // For reading and writing in streams of bytes (characters).    
+import java.net.*;    //For networking functionalities such as accepting connections via ServerSocket class java_52941_SocketServer_A03...     
+public class TCPServer {        
+        private static int PORT = 9876;  /* Port for communication */  
+       public static void main(String[] args) throws IOException, ClassNotFoundException{    
+            System.out.println("Server started");    //Print statement to confirm server is running      ServerSocket and Socket will be null in this section as it's a new instance of the classes for each connected client 
+       try (ServerSocket welcomeSocket = new ServerSocket(PORT);) {   /*Creating main listening socket */    
+        while (true){    //Run until user stops server. You can also use ThreadPoolExecutor      here, but we will stick with basic loop structure in this example for simplicity's sake 
+                Socket connectionSocket = welcomeSocket .accept();       //Accept incoming client requests   ConnectionSocket represents a single communication link between the sender and receiver of data     BufferedReader is used to read input from sent/received clients, PrintWriter would be used write back into connected socket.   
+               try (PrintWriter out =  new PrintWriter(connectionSocket .getOutputStream(), true);      //Get Output Stream  For sending information through TCP connection   InputStream for reading server's response or any other client request     BufferedReader in =new BufferedReader(new InputStreamReader(connectionSocket.getInputStream())); ) {   
+                     String message, response;        /*Declaring Variables*/      try{       //Trying and catching Exception to prevent NullPointerException from input stream   if((message=in .readLine()) != null){         System.out.println("Received client: " + message);          }else {  throw new IOException();}    
+                     response = processInput(message );    /*Processing the received information*/           out.println (response);       //Sending back to connected socket, after processing input   if(!out .checkError()){         System.out.println("Sent: " + message);          }else {  throw new IOException();}    
+                 }} catch(IOException e) {} finally{}    /*Ensuring cleanup regardless of how the try block ended*/       connectionSocket.close();      welcomeSocket.close();}} // Closing all sockets when server shuts down to prevent resource leaks   }catch (Exception ex){ex .printStackTrace()}
+         private static String processInput(String input) { /*Replace this with actual logic related A03_Injection */       return "Server: Hello, client. The received message is -> \"" +input+"\".";}}  //This will simply echo back whatever comes in   }

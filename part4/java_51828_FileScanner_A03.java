@@ -1,0 +1,6 @@
+import java.io.*; // Importing file handling classes  
+implicit public class java_51828_FileScanner_A03 {   
+// Imports of necessary utilities    
+static void listAllFiles(File directory)      throws IOException        {         if (!directory.exists())          return;           try (Stream<Path> paths = Files.newDirectoryStream(       Paths.get(dirName)))              for (final Path path : paths){             String name=path.toString();            // Use the file's string representation, which is a directory or filename+extension
+if (!Files.isDirectory(path))          {               System.out.println("File '" +name+  "'");}           } catch (Exception e)      {}         listAllFiles((Path)file);       }}     // Call the recursive method for directories and files   FileList filelist=new
+// Java program to demonstrate how a user can find all Files in directory using java 8 streams.    int main(String[] args){          String dirName = "C:/Users/user";         try {              listAllFiles((File)Paths.get("dir"));       } catch (Exception e ){           System.out.println ("An error occurred");}   }}

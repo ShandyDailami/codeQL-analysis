@@ -1,0 +1,8 @@
+import java.sql.*;    // for Java Database Connectivity API, JDBC driver name is included in the package declaration only when using OracleDriver etc..
+                    /* and there are other similar constructs available as well like MySQLJDBCDriver but they will not be used here */  
+public class java_43936_SessionManager_A08 {  // replace with your actual type if different. For example, UserSessionManger or SecuritySuspector...   
+     private static final String driver = "com.mysql.jdbc.Driver";      /* and there are other similar constructs available as well*/      
+     private static Connection con=null;                            
+         //  the actual database url would go here (e.g., jdbc:mysqldb://localhost/mydatabase)             
+   public java_43936_SessionManager_A08() {    if(con==null){      try{            Class.forName(driver);           Con = DriverManager .getConnection("your_dburl", "username","password");       }catch (Exception e1 ){  System.out.println ("Error Occured: Unable to open database" );e1.printStackTrace();}     }}
+      public Connection getSession(){    return con;   //the actual operation of returning session will be dependent on the requirement and not shown here, like beginTransaction(), commit() etc..  }       @Override protected void finalize () { if(con != null) try{ Con.close();} catch (Exception e){ System.out.println ("Error in closing connection: "+e); }}

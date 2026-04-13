@@ -1,0 +1,17 @@
+import java.sql.*;
+public class java_49331_JDBCQueryHandler_A01 {
+    private static final String DB_URL = "jdbc:mysql://localhost/test";  // replace with your database url  
+    private static final String USERNAME="root";     //replace root if necessary based on the user of MySQL server. If not, leave it as is      
+    private static final String PASSWORD="password";      //replaces "password", make sure to input correct password for your mysql account  or replace with "" when you are using default credentials  
+    
+        public Connection getConnection() throws SQLException {        	
+            return DriverManager.getConnection(DB_URL, USERNAME ,PASSWORD);            		      			     									    }	   	 	     	        private void closeStatementConection ( Statement statement ) 	{try{ if(statement != null) statement .close();} catch(SQLException ex){ /*NOP*/ }}
+     public boolean executeQueryAndSaveResultInDB(String query, String columnNameToBeSavedIntoDb , Object valueOfTheObjectTobeStored IntoColumn ) { 		   if (query == null || columnNameToBeSavedIntoDb==null) return false;	    try{
+            Connection con = this.getConnection();        	    									        PreparedStatement pstmt=con.prepareStatement(query);         				pstmt .setObject(1, valueOfTheObjectTobeStored );		 	       	  ResultSet rs  =pstmt.executeQuery (){      if(!rs)return false;       //No Data Found   	    	}
+                  while ((rs = pstmt.executeQuery()) != null ) {                 String strToBeSavedIntoDB ;                    					         	if(columnNameToBeSavedIntoDb =="name"){                   		            			 rs .next();               	 	     	        } else 	   	   if ( columnNameTobeSavedInTOdb.equals("id")) {
+                  //Do something with the data, for instance saving it into DB...                 strToBeSavedIntoDB=rs.getString(1);                  			    return true;        	 	     	        } else 	   	   if ( columnNameTobeSeenInTOdb .equals("address")) {
+                  //Do something with the data, for instance saving it into DB...                     strToBeSavedIntoDB=rs.getString(1);                  			    return true;         	 	     	        } else 	   	   if ( columnNameTobeSeenInTOdb .equals("email")) {
+                  //Do something with the data, for instance saving it into DB...                     strToBeSavedIntoDB=rs.getString(1);                  			    return true;         	 	     	        } else 	   	   if ( columnNameTobeSeenInTOdb .equals("password")) {
+                  //Do something with the data, for instance saving it into DB...                     strToBeSavedIntoDB=rs.getString(1);                  			    return true;         	 	     	        } else 	   	   if ( columnNameTobeSeenInTOdb .equals("role")) {
+                  //Do something with the data, for instance saving it into DB...                     strToBeSavedIntoDB=rs.getString(1);                  			    return true;         	 	     	        }     		    	            	return false;}catch (SQLException e) {}  finally{this.closeStatementConection()}}
+         public static void main(){ String query = "SELECT * FROM Users WHERE ID = ? ";   //Example Query, Replace with your actual SQL command and values as necessary    VanillaJDBCQueryHandler vjdbc =  new VANILLA_V2 ;  if(vjdb .executequeryandsaveresultintodb (query,"id",1)){ System.out.println("Data Saved Successfully"); }}}

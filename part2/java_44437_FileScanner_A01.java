@@ -1,0 +1,13 @@
+import java.io.*;  // Import the File class, Path and Filename...  
+                   // for handling file paths & names..
+class java_44437_FileScanner_A01 {      
+    public static void main(String[] args) throws Exception{        
+        String directoryPath = "/path/to/directory";     
+            
+            try (FileScanner scanner =  new FileSystems.newFileScanner(          // Use a Java 8 feature, the "try with resources" syntax...  
+                Paths.get(directoryPath),                                  
+                 StandardFileAttributes.maskIncludes(StandardFileAttributes.of(FileAttribute.Basic.isSymbolicLink)),    
+                  true)) {                                           
+                    while (scanner .scansNext())  // A FileVisitResult represents the decision to continue or halt file iteration...  
+                if (! scanner .identify().equals(""))         then        System .out .println ("Encountered -- " +             Paths.get(directoryPath)+ "/" + 扫描器。属性 ()) ;               }              catch java exceptions  // Catch any exception that may occur...
+                finally {                     println ("Scanning completed.");     };   });      System out .println("File Scan finished");    }}`// Closing statement to end program.

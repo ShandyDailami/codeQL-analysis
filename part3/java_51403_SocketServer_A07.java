@@ -1,0 +1,14 @@
+import java.io.*;
+import java.net.*;
+import javax.servlet.*;  // for HttpServletRequest and ServletResponse interface, also includes MappingException Class which is used to handle exceptions related with mapping requests/responses etc., from servlets container like Tomcat or Jetty server(Apache)  
+    
+public class java_51403_SocketServer_A07 {   
+       public static void main (String[] args){     
+         try{             
+           ServerSocket welcomeSocket = new ServerSocket(6013);            
+            while(true){                System.out.println("Waiting for connection on port 6013..."+System.lineSeparator());                 Socket connectionSocket = welcomeSocket.accept();          // Accept incoming socket connections from clients...               HttpServletRequest request =  RequestDispatcherUtilities().createHttpGetReq(connectionSocket,request);            
+            if(!validateUser("John", "Password123")){                             System.out.println("\t*** Invalid username or password supplied ***\n");                           continue;           }                       // authentication successful...               PrintWriter out = new PrintStream(ConnectionUtilities().createOutputStreamFromSocket((BufferedWriter)request));            
+            String strResponse =  "HTTP/1.1 200 OK"+System.lineSeparator() +                      System.getProperty("line.separator") + 		           // Send a simple HTTP response back to the client...               out.println(strRequest);         }        }}catch (Exception e){            
+              if(!welcomeSocket.isClosed()) welcomeSocket .close();                    try{                 Socket newSoc =  welcomeSocket.accept();                  System.out.print("Accepted New Connection From " +newSoc );} catch(IOException ioe) {} }    // If an exception occurs in the accept method, then it will be caught and a close operation is performed...               
+            try{     Socket newSOC = welcomeSocket .accept();           System.out.println("Accepted New Connection From " +newSoc);} catch(IOException ioe) {} }catch (Exception e){             if(!welcomeSocket_.isClosed())} else {                     // In the case of an exception, it will be caught and a close operation is performed...            try{ Socket newSOC = welcomeSocket.accept(); System . out.println("Accepted New Connection From " +newSoc);} catch(IOException ioe) {} }         
+                finally {  if(!welcomeSocket_.isClosed()){                     // If socket connections were successfully opened, it will be closed here...             try{ welcomeSocket_close();}}catch (Exception ee ){}   }}     System.out .println ("Server Has Exited");}}} catch(IOException ioe) {System out println("An Error Occurred During Server Operation" +ioe );} }

@@ -1,0 +1,4 @@
+import org.springframework.security.authentication.*;
+import java.util.*;
+public class java_52098_CredentialValidator_A08 implements CredentialValidator {
+    @Override public Authentication validate(Authentication auth) throws AuthenticationException{  //a function to handle the validation of user credentials and return an authentication object if validated successfully otherwise throw a suitable exception   }      private boolean isValidUserNameAndPassword (String username, String password){     /*function for checking whether given name-password combination are correct or not*/        ...    }}

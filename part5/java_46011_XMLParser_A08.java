@@ -1,0 +1,18 @@
+public class java_46011_XMLParser_A08 {   // Define a public XML Parser Class called "XmlParser"
+     private String xmlContent;    // Declare an attribute to hold our parsed content.      
+      List<Element> list = new ArrayList<>();          // A simple way of storing all the nodes in memory for later use 
+       
+   /* Create a constructor method that will accept XML Data and set it as instance variable */     public java_46011_XMLParser_A08(String xmlContent) { this.xmlContent=xmlContent;}    private class Element { String name; List<Element> children = new ArrayList<>(); }      // Define an inner element inside the parser
+      
+   /* Parse your content into nodes (make sure to remove white space from each line) */  public void parse() throws Exception{         try { list=new XmlParser(xmlContent).parseNodesFromXmlToList("");} catch (Exception e){e.printStackTrace(); }    List<Element> elements = new ArrayList<>(), element, child;
+       for (String line : xmlContent.split("\n")) if ("".equals((line=line.trim()))) continue else {      // Split by lines and remove any empty ones 
+           Element e = createNewChild("root"); list.add(e); elements.clear(); element =  null;       for (String s : line.replaceAll("\t", "").split("")) if ("".equals((s=s.trim()))) continue else {          // Split by spaces and remove any empty ones 
+               switch ((char) Integer.parseInt(Integer.toString('\'' + s),1,5)) {"true": e = createNewChild (e,"value"); break; "false" : element =  new Element () ;break;"null"@":"element=new Element();((Element)element).name= 
+                   StringUtils.substringBetween(s,'@'+"'",StringUtils.substringAfterLast("/")); e = createNewChild (e, s); break; }               // Create a switch statement for values  and other attributes ("true","false" or "null") to assign them proper attribute name
+           }} List<Element> list_= new ArrayList<>(); String xpathQuery1=  "/root/child",xquery2 ="/parent[@name]"; element.children =  getChildren(element,list_);   // Use the XPath and create a query  string for retrieval of data from XML tree
+        }    /* Create method to generate new child */ public Element createNewChild (Element parentNode , String textValue){ return addAttributeToXmlnode ("name" + ++count_+ "" ,parentNode,textValue);}   // Add attribute and value with recursive call  for each node. This is done by calling a function called "addAttributetoxmlnodeparam".
+    }       /* End of XML Parser class */ public Element addAttributeToXmlnode (String name ,Element parentNode, String textValue){ try {   // Create new xml elements and set attribute for them  if required. This is done by recursive call until it finds its destination node or else return the current element
+           createNewChild(parentNode,"",textValue); list_.addAll (list_); }catch{ e = parentElement; }} try {   // Get all data from XML tree using XPath query  if required. This is done by calling a function called "getChildren". The result of the call returns in form array/List
+    List<String> getChildElements(xmlContent, xpathQuery1); } catch (Exception e) {} /* Create method to parse content into nodes */ public void startParser() throws Exception { // Call your parser here and pass xml data. This is done by calling a function called "startParse" or similar name
+       try{   this("<root><child>a value </value> <parentname='test'/> 08_IntegrityFailure  <true / >false null@ 'nullValue' @\"integrITYfailURE.xml \"/ >  "); startParser(); }catch (Exception e){e . printStackTrace() ;}}  // Example data provided in the constructor for testing purposes
+}

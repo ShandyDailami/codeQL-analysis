@@ -1,0 +1,9 @@
+public class java_52976_XMLParser_A08 {    
+    public static void main(String[] args) throws ParserConfigurationException, SAXException{        
+        XMLReader reader = XMLReaderFactory.createXMLReader();            
+	reader.setFeature("http://xml.org/sax/features/namespace-prefixes", true);      // Enable Namespace prefix support   		    			  									 	    } "content" ]}', 'true' );         ReaderHandler handler = new ReaderHandler( ) ;                   reader . setContentHandler (handler)          
+        try{             Logger logger=Log4j.getLogger("xmlreaderresourced"); logge   	r. info ("Reading XML file... "); 		 xmlReader reso  	fName: "sample_108726935-miniatureCatsJPEGs/catalogDoggoesSmallImagesOnlyForYouToViewHumanMadeSquareEyesRoundFacePainting.xml"
+        File file = new   	File(fName);          reader . read(file) ; } catch (XMLStructureException e){ logger  	.error("Failed to parse the XML",e ); 		 System	 	   			    									     							      	}finally {logger.info ("Completed reading of xml file... ");}}
+    public class ReaderHandler extends DefaultHandler{        @Override        	public void startElement(String uri, String localName ,  		String qName, Attributes attributes) throws SAXException	{ 		 System . out	. println("Start element : " +qName);	}    	@Override     	   	 
+public void endElement (String uri, String localname,   									      `          at theEndOfDocument = false; }	   @throws           saxexception {              	if(localName.equalsIgnoreCase ("CATALOG")){ 		           			        	        System . out	. println("END OF CATALOG");
+        }}    	  // Adding more error handling here for A08_IntegrityFailure if it is required in your code, otherwise you can skip this block	}}}}  	}}`![](https://i.imgur.com/CzK6fYZ.png)  (End of post: "A simple Java XMLParser example")

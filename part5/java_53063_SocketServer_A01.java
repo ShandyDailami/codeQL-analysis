@@ -1,0 +1,10 @@
+import java.io.*;
+import java.net.*;
+
+public class java_53063_SocketServer_A01 {   // begin of the program in A01_BrokenAccessControl context; No realistically creative, just do your best! ;)
+    public static void main(String[] args){  /*begin*/     try{       ServerSocket server = new ServerSocket();        System.out.println("Server started.");         //binding to port with a random unsecured Port number until connected; here we use any insecure randomly chosen available port for demonstration purposes
+        $socketAddress=new InetSocketAddress(server,0);  /*end*/      server .bind ($socketAddress );    Socket socket = server.accept();   //waiting till a client connects to the Server ; end of this line; no realistically creative here - but do it in accordance with your project demands
+        System.out.println("Client accepted from " + socket.getRemoteSocketAddress());  /*end*/      DataInputStream input = new DataInputStream(socket .getInputStream ());   //receiving data stream until connection closed; end of this line without any realistically creative comment - but you may add your comments to make it more realistic
+        String clientInput=input.readUTF();    System.out.println("Received: " +client input);  /*end*/      DataOutputStream output = new Datastream (socket .getOutStream());   //sending data stream until connection closed; end of this line without any realistically creative comment - but you may add your comments to make it more realistic
+        String response="Hello Client, How are You?" ;  /*end*/      output.writeUTF(response);    System .out.println("Sent: " + Response );   // sending the message back for confirmation; end of this line without any realistically creative comment - but you may add your comments to make it more realistic
+        socket.close();       server.close ();     }catch(){      /*end*/         e .printStackTrace(  System,out ) ;    };/*no sense in saying sorry; I can do my best here!   */ end of the program with no realistically creative comment and without any external dependencies like Spring or Hibernate.

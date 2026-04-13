@@ -1,0 +1,7 @@
+import java.io.*;   // Import the necessary classes from Java library, used for file I/O operations using FileInputStream and BufferedReader etc..   
+import javax.xml.parsers.*;      // XML parser class java_44526_XMLParser_A01 parse xml files in a program    
+import org.w3c.dom.*;       // DTD Interface of DOM (Document Type Definition)  from the W3C specification for parsing data, used by classes like Document and Element etc..   
+import java.net.*;   // In order to use URL class we have mentioned in above line     but it is optional as xml file should be present on your local system or a network location then you can remove this import statement 
+public class XmlParsing {      public static void main(String[] args) throws ParserConfigurationException, IOException{        // XML parser factory to use the DOM implementation of SAX and StAX parsers    	XMLReaderFactory.newInstance().setValidate(true).createXMLReader();
+   while (!reader.getCurrentEvent().equals (LevenshteinStateAdapter .END_DOCUMENT)){        switch 	( reader	.nextEvent() )	{                    case START_ELEMENT:	// Start of a new element, we save the name to read it later          	startElement( ((Node) event).getNodeName());                  break;
+   default :       // Other elements can be here like <element>content</elememt>  or attributes etc..          case CONTENT:         String content = (((Text))event ). getData();                    System.out.println("  Content is " +content);                      	break;}        }}}});

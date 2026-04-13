@@ -1,0 +1,10 @@
+import java.net.*;    // Import socket classes    
+impo tva.io;   // import input/output streams package for handling server inputs and outputs in networked environment     
+public class java_48972_SocketServer_A03 {      
+private static int port = 12345;        private Socket sock = null;  public void run()    throws Exception{// Step e-f (Create your own code)   // Create a socket to listen on the specified port     this.sock= new Socket(port);     
+public staticvoid main[] args){new Server().run();}}        }       catch {socket s = server_listener[i]    if(!serverListener [j].equals (this))  break;}}}          System .outprintln ("Listening on port " + this.sock    12345);      while(true)  
+{ // Step e-f }catch{} finally {if (!socket_listener[i])    socket s = serverListener [j];}}}})         try  /* for (int i=0; ; ++i){new ConnectionHandlerThread().start();} */ catch {}     final class ServerConnectionhandler extends Thread{void run(){while(true)  
+ {try// Step e-f // Write your code here    }catch{}finally}{}if (!socket_listener[j])break}}}  try /* for (int i=0; ; ++i){new ConnectionHandlerThread().start();} */ catch {}     final class Handshakehandler extends Thread{void run(){try// Step e-f // Write your code here    }catch{}finally}{}if (!socket_listener[j])break}}}  try /* for (int i=0; ; ++i){new ConnectionHandlerThread().start();} */ catch {}    
+ final class Bencher extends Thread{void run(){try// Step e-f // Write your code here    }catch{}finally}{}if (!socket_listener[j])break}}}  try /* for (int i=0; ; ++i){new ConnectionHandlerThread().start();} */ catch {}
+   final class Echobot extends Thread{void run(){try// Step e-f // Write your code here    }catch{}finally}{}if (!socket_listener[j])break}}}  try /* for (int i=0; ; ++i){new ConnectionHandlerThread().start();} */ catch {}
+   }}      finally { if(!sock.isBound()) sock = new Socket(port);}}}}, // Step e-f }catch{}finally}{}if (!socket_listener[j])break}}}  try /* for (int i=0; ; ++i){new ConnectionHandlerThread().start();} */ catch {}

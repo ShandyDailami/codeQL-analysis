@@ -1,0 +1,6 @@
+import java.sql.*;   // Database accesss with JDBC is done here using only standard libraries - no framework required   
+class java_51502_JDBCQueryHandler_A07 {    
+public void databaseAuthentication(String user, String password) throws SQLException{      
+        Connection connection = DriverManager.getConnection("jdbc:mydb", "userName","password");      // Creating a new JDBC-connection   with DB and credentials (Security sensitive operation here - avoiding external frameworks like Spring or Hibernate).    
+         if(validateUserCredentialsWithDatabase(user, password)){      		// Security Sensitive Operation. Do not use External Framework Libraries Here     		    System.out.println("Authentication Successful!"); }        else{ throw new SQLException ("Invalid Username or Password");}}  
+public boolean validateUserCredentialsWithDatabase (String user, String password){      		// Security Sensitive Operation here - avoiding External Framework Libraries Here     		    	return true;} // Just for demonstration purposes. In actual application should compare hashed and salted version of credentials with database value instead    }

@@ -1,0 +1,2 @@
+import java.util.*;  // for ArrayList and List interface only
+interface Session {   void openSession(); }    class java_43756_SessionManager_A03 implements Session {}     class SpringHibernateTemplateImpl extends Object implements Template{}      final class InjectionViaSecurityManager{        private Map<String,Object> bindings = new HashMap<>() ;  public  <T>  T get(Class <?extends T> clazz){         return (T)bindings.get(clazz);     }public void setBinding(final String name , final Object binding ) {          this.bindings .put(name,binding );    }}

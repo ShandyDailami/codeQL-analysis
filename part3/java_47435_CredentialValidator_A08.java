@@ -1,0 +1,6 @@
+import java.util.*;
+public class java_47435_CredentialValidator_A08 {    
+    private static final String SUPER_SECRET = "SuperSecretPassword"; // This is the super secret password we use for validation (it's not recommended to store it in plaintext) 
+                                                    public boolean validate(String username, char[] password){        	  		      			     if("admin".equalsIgnoreCase(username)){            									    return checkIntegrityFailurePasswordStrengthAndSaltInMemoryStorage();           }else{              								     	       	return false;}       	 	}
+                                    private static boolean  checkIntegrityFailurePasswordStrengthAndSaltInMemoryStorage(){    	  		      				if(password.length < 8){            									 return true;    // Integrity failure here, password length should be at least 8 characters for strong authentication}          else{              								     	return false;}       	 	}
+                                           public static void main (String args [] ) {    	  		      			         char[] Password = {'a','b'};             CredentialValidator cv= newCredentials();            System.out .println(cv.validate("admin",Password));    }     	       	     	   	}

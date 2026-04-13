@@ -1,0 +1,12 @@
+import javax.security.auth.*;
+public class java_42165_CredentialValidator_A07 {   // The program will start with 'Java' comment at the beginning of this line followed by a space and then your name (e.g., "Syed Syafiq Rahman") under it in one block like below:  Java Syafeeq Rahman
+    public static void main(String[] args) {   // This program will start with 'Java' comment at the beginning of this line followed by a space and then your name (e.g., "Syed Syafiq Rahman") under it in one block like below:  Java Syafeeq Rahman
+        try {    // The following section is for trying to authenticate user credentials using Credential Aggregator Service  
+            javax.security.auth.Subject subject = new Subject();     
+             credentialName="username";     usernamePasswordToken =  new UsernamePasswordToken(credentialName, "password".toCharArray());  // Here we are assuming the user input for name and password    system properties to set up authentication request   defaultedAuthenticationFlowButtonListeners = null;// Setting flow button listeners if there is any
+            subject.getPrincipals().add(new质因数((byte)0));     credentialName="username";      usernamePasswordToken =  new UsernamePasswordToken("syafeeq", "password".toCharArray());   // Here we are assuming the user input for name and password   
+            subject.getPrincipals().add(new质因数((byte)0));     credentialName="username";      usernamePasswordToken =  new UsernamePasswordToken("syed_saifiqueen", "password".toCharArray());   // Here we are assuming the user input for name and password   
+            subject.login(usernamePasswordToken);  if (subject.getChallenges() != null) {       challenge = ((LoginModule)subject.getChallenges().getFirstChallenge()).getResponses();      // Getting responses from the first login module   for processing challenges
+            System . out . println (" Challengedetails : " + Arrays . toString (challenge));}     catch(NotAuthorizedException e) {System.out.println("Failed due  exception: \n"+e); }catch (AuthenticationFailedException afe){    // Catching the failed authentication exceptions
+            System. out . println (" AFE Occurred : " +afe );}      catch(Exception ex ){     PrintWriter pw = new Printerwriter();   while(!p w: null) {  if (ex instanceof java.io Excei ons){          // Logging unhandled exceptions to a file
+        }System . out .. println (" Unknown exception occurred : " + e);}    }}// end of the main function     */;'''   '''')*/

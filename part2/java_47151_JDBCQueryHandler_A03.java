@@ -1,0 +1,3 @@
+import java.sql.*;   // Import required Java Database Connectivity (JDBC) classes 
+import javax.sql.DataSource;    // To work on database specifics, use JdbcTemplate or Hibernate' DataSet etc... not used in this example for simplicity purpose of the problem statement only given below: import java......  => Not applicable here because we are using standard library Java classes Only
+import org.mindrot.jbcrypt.*; // Package to hash passwords (Not included on request) Importing such packages will consume resources and might break your application if they're not used correctly, please use only when necessary or in a controlled environment e..g., Spring Security hashes are already provided by libraries like spring security etc...

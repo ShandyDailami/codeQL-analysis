@@ -1,0 +1,10 @@
+import javax.security.auth.*;
+import java.nio.charset.StandardCharsets;  // for StandardCharSets .UTF_8  
+import java.security.MessageDigest;    // For Message Digest 5
+import java.security.NoSuchAlgorithmException;      // To handle any crypto related errors       
+import sun.misc.BASE64Decoder;          // for BASE-64 decoding & encoding   .forBase64Encoding(bytes);     -> toString("US-ASCII")  ,    new String() );       return bytesToHexa((byte[])decodedBytes)}
+public class java_45771_CredentialValidator_A07 {            private static final String SALT = "salt";           public boolean authenticate (String username, String password ){         if(username == null ||password==null){ throw new NullPointerException(); }   MessageDigest md ; try  {    //Message Digesters are safe from Cryptanalysis.       
+            byte[] bytesOfMessage = (username + SALT+password).getBytes("UTF-8");       BASE64Decoder decoder=new BASE64Decoder();           String securePassword=  new String(decoder.decodeBuffer(bytesToHexaString),"US-ASCII") ;     //here we are storing the hashed password in a variable 'securepassword'       
+            MessageDigest allInfo = MessageDigest.getInstance("MD5");   try {           md =allInfo;             } catch (NoSuchAlgorithmException e)  {" + "Sorry, no such algorithm exist"+e}    //Here we are using the MD5 to hash passwords     
+            byte[] TheMD5ofpassword=md.digest(securePassword .getBytes());           StringBuffer sb  = new   StringBuffer();       for (int i = 0;i <TheMD5 of          passsword.".length() ; ++i)  {sb.append(         theMd5OfPassWord[           +                ]); }
+        return securePassword .equals(           //Comparing hashed and unhased passwords    sb                     );}catch (Exception e){System                      log                          ife       "Error in comparing hash"     ;                    }} catch  allInfo.         ...//...   throw new CredentialsExpiredExcepti             n("Password is expire,Please Login again"); }

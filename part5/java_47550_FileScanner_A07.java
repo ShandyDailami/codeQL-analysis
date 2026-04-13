@@ -1,0 +1,16 @@
+import javax.swing.*; // For FileDialogs we use this API from Swing library which provides access to file dialog boxes such as Open, Save and Select files in a directory tree using JFileChooser (file open & save option).  It is used for accessing OS dependent functionality like reading/writing directories or files on the disk.
+import java.io.*; // For handling exceptions we use this API which helps us to catch exception during execution of program flow and so, makes our code robust against different types errors such as IOExceptions etc., in Java Exception Handling mechanism is used for catching checked (user-defined) and unchecked(runtime system related issues/exceptions).
+import java.util.*; // For handling exceptions we use this API which helps us to catch exception during execution of program flow, so it includes data structures like LinkedList or ArrayList etc., in Java Exception Handling mechanism is used for catching checked (user-defined) and unchecked(runtime system related issues/exceptions).
+import java.nio.*; // For handling exceptions we use this API which helps us to catch exception during execution of program flow, so it includes data structures like ByteBuffer etc., in Java Exception Handling mechanism is used for catching checked (user-defined) and unchecked(runtime system related issues/exceptions).
+public class java_47550_FileScanner_A07 {  // Create a new file scanner.  
+    public static void main(String[] args){    
+        JFileChooser chooser = new JFileChooser();     
+            int option;        
+           do{            
+               if((option=chooser.showOpenDialog(null))==JFileChooser.APPROVE_OPTION) {                 // Show Open Dialog for selecting files, and get user choice                }                 
+              File file = chooser.getSelectedFile();       /* Getting the selected directory or file */  if (file != null){           String content;      try{                    
+               BufferedReader br =  new BufferedReader(new InputStreamReader((InputStream) file)); // Reads text from a character-input stream   
+                while ((content =br.readLine())!=  null ) {   /* read line, and so on until there is nothing left to be consumed */  System.out.println("Content : " + content); }}                   catch (IOException e)                  // Exception handling when reading the file fails            }            
+         finally{              if(chooser !=null){               chooser = null;          try {                    FileWriter fw =  new FileWriter ("AuthFailureFile.txt", true );                      BufferedWriter bw  =  new BufferedWriter (fw);                     String textToAdd  = "Authenticated user";   
+                   bw .write("\n" +textToAdd+ "\n");           // Write data to file using a buffering writer, and appends it.  fw.close();              } catch(IOException ex){                System.out.println("Error while writing in AuthFailureFile.");             }}   
+        else{                     JOptionPane.showMessageDialog (null,"Please select valid File","Invalid Selection",JOptionPane.WARNING_MESSAGE);  //Show Error message if file not selected }}}while(option!= JFileChooser.APPROVE_OPTION );   }}

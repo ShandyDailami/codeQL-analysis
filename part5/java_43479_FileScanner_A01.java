@@ -1,0 +1,10 @@
+import java.io.*; // Import the IOException class java_43479_FileScanner_A01 handle errors
+   import javax.sound.sampled.*;// For Sound API Operations, these classes need Java SE or Android SDK installed and properly set up in your project    
+class Main {   
+        public static void main(String[] args) throws UnsupportedAudioFileException , LineUnavailableException  //Main method     
+            {       System.out.println("Program started");         File f = new File("/Users/yourusernamehere/.Trash: /YourFolderPathHere/*.*") ;            
+                        if (f.exists())   /* check whether a file or directory exists at the given path */  //Checking for existance of folder       {     System.out.println("File Exists");              File[] files = f .listFiles();          try         {//Iterating over all items in Folder           
+                    if (files != null)           /* Check whether there are any file names at the given path */  //Checking for existance of directory       }catch(Exception e){System.out.println("An error has occurred");e .printStackTrace();}         try{          FileReader fr = new    
+                        FileReader("/Users/yourusernamehere/.Trash: /YourFolderPathHere/*.*") ;             System. out  (fr);                     }catch(Exception e){System..outprintln("An error has occurred");e .printStackTrace();}         // Main method     
+                    if (!f.exists()) {              /* Check whether a file or directory does not exist at the given path */    printf ("File/Directory %s Doesn't Exist", f ) ;            } else  System out ( "Folder exists" );        }}     catch(Exception e){System..outprintln("An error has occurred");e .printStackTrace();}            
+                    // Program ended          /* Print program end */      printf ("Program Ended")    return;       };        `//end of main method  }

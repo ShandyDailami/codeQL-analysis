@@ -1,0 +1,20 @@
+import java.io.*;
+import java.net.*;
+import javax.crypto.*;
+public class java_47546_SocketServer_A07 {  
+    private static final String ALGORITHM = "AES"; //Algorithm to use with AEAD mode (such as aes_256) – This should be replaced by your algorithm of choice in production code, but for testing purposes here we'll stick with simple encryption.  
+    private static Key key;    
+      
+        public java_47546_SocketServer_A07() {      // Constructor that will initialize the crypto keys        
+            try {                 
+                key = KeyGenerator.getInstance(ALGORITHM).generateKey(); 
+             } catch (NoSuchAlgorithmException e) {              System.out.println("Error while creating " + ALGORITHM);               return;    //TODO: handle exception     }        try{            Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
+             key = KeyGenerator.getInstance(ALGORITHM).generateKey(); 
+         }}                public static void main (String args []) { SocketServer server; try{server= new   //Socket Server instance      socket("localhost",4056); }catch    any problem,print it out and quit the program. println(Arrays . deepToString ((socket .getInetAddress(). getHostAddress()))});            Thread thread =newThread ((){try { while 
+             true ; // server will run indefinitely until an exception is thrown by user code   socketconnection.close(); } catch    any problem,print it out and quit the program      });         try{server .accept ()}. start ();}}       public void Start() throws IOException{} private static Cipher c;
+  if(c == null){try {Cipher            ((SecretKey) key).init(Cipher.DECRYPT_MODE,key );   //Decrypt using same secret Key         }catch    any problem ,print it out and quit the program     }} try{sendString (socketconnection,"HELLO FROM SERVER");} catch {println("Error while sending String") println ("Exception : " + e.toString());}}// Receive string from client
+  public void run () {} } // This function will be called when a new connection is accepted    private static InputStream inputstream;   Cipher c1 = null ; if(c ==null) { try{Cipher     ((SecretKey ) key).init (Cipher.ENCRYPT_MODE,key );     
+  }} catch          any problem ,print it out and quit the program}    // Decrypt data received from client   InputStream inputstream = socketconnection .getInputStream(); BufferedReader in=newBuffeRder(inputstrea        m); String line; try{ while((line  =in.readLine()) !=  null){ c1   = Cipher          ((SecretKey) key).wrap    (c, GCMParameterSpec     builder().iv(ByteQue        0x243f6d85e79b11dec6ec6abbeaefdefffefffffffcdef') .digestAlgorithm("SHA1").tagLength      
+          / 16).build()); }catch any problem,print it out and quit the program} System.out    .println(line);}}public static void sendString (SocketConnection socketconnection , String     string){ try {socketconnec        tion      .getOutputStream().write((string + '\n'). getBytes())} catch 
+          any problem,print it out and quit the program} }}}}catch    //If something goes wrong with setup close down all connections. Print a message to user here on console or log file for debugging purposes}}     }} public void Start () throws IOException{} private static Cipher c; if(c == null){ try {Cipher ((SecretKey)key).init (Cipher .ENCRYPT_MODE, key); } catch any problem ,print it out and quit the program} // Send data to client    InputStream inputstream = socketconnection.getInputStream(); BufferedReader in=newBuffere     Reader(inputstream); String line; try { while((line  =in.readLine()) !=  null){ c1   = Cipher ((SecretKey)key).wrap (c, GCMParameterSpec builder().iv       
+          .byteValue('\x243f6d85e79b11dec6ecabbeaefdefffefffffffcdef').digestAlgorithm("SHA    1").tagLength / 16).build()); } catch any problem,print it out and quit the program} System.out .println(line);}}}}}catch    //If something goes wrong with setup close down all connections print a message to user here on console or log file for debugging purposes

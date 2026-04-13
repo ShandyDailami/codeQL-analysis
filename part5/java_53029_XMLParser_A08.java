@@ -1,0 +1,15 @@
+import java.io.*;   // Import InputStream and OutputStream classes to read/write files in Java   
+import javax.xml.parsers.*;  // To parse XML    
+
+public class java_53029_XMLParser_A08 {     
+         
+        public static void main(String[] args) throws ParserConfigurationException, IOException{      
+                String filename = "/path_to_yourfile";   // Put your file path here    (assume the xml is in project folder or provide full paths).  Replace with real location.     if (!xmlFileIsValidXml(filename)) {      System.out.println("XML File not valid."); return; }
+                parseAndPrintDocument(filename);       // Parse XML file and print it to console    documentElement = domParser->getDocumentElement();   String tagname=documentElement - > getTagName ( );  printf ("%s",tagnames.c_str());     std :: string stylesheetContent;     
+                XPathFactory xpathfactory  =XPathFactory . newInstance () ;       // Instantiate the factory object to create a path expression    IXPath   *xpath =          xpathfactor ->createXPath ();  nodeList= documentElement- > selectNodes(xpathString)    
+                for(int i = 0;i<nodeList.getLength(); ++i){         // Iterate over selected nodes and print their names to console    printf ("%s\n",((Node   ) -> getTextContent ()).c_str()  ); }      setStylesheet (stylesheet, xpathString);     std :: string result = applyStylesheets(xsltemplate , stylesheet) ;        
+                printResultantXMLData("result.xml"，结果数据长度）；        // Save the parsed xml data into a new file       }  private void parseAndPrintDocument (char *filename){ ...    /* Implement your parsing and printing code here */}   boolean isValidXmlFile(String filename) {...    
+/* Add more security-sensitive operations related to A08_IntegrityFailure below this point.*/        if (!validateXMLSchemaAgainstXSD (xmlschema, xsdfile))      System . out .println ("Provided XML does not validate against the schema"); return false;    } private void setStylesheet(std :: string &stylesheetContent , std::string stylesheet){... /* Implement your XSLT transformation code here */}  
+/* Add more security-sensitive operations related to A08  _IntegrityFailure below this point.*/     if (!xmlFileIsValidXml (filename)) { System . out .println ("XML File not valid."); return false; }    private std::string applyStylesheets(std :: string &stylesheetContent , const char *xsltemplate){... /* Implement your XSLT transformation code here */} 
+/* Add more security-sensitive operations related to A08_IntegrityFailure below this point.*/      printResultantXMLData ( "resultingxmlfile"， result); return true; }   private bool validateXMLSchemaAgainstXSD(std :: string &xsdschema , std::string xsdfile){... /* Implement your schema validation code here */} 
+/* Add more security-sensitive operations related to A08_IntegrityFailure below this point.*/      } // End of main function   private bool xmlFileIsValidXml(char *filename) { ...     return true;}}}}} end section }} /*End Of C++ Code snippet */

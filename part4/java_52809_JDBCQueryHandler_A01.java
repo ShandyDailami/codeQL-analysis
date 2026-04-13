@@ -1,0 +1,3 @@
+import java.sql.*;  // Import the required Java libraries - JDBC, SQLExceptions etc...  
+public class java_52809_JDBCQueryHandler_A01 {    /* Start of Program */    
+       private static final String url = "jdbc:mysql://localhost/test";      public static void main(String args[])         throws Exception        // Main method.  Here we're using try-catch for exception handling...   }           @Override             protected Connection getConnection() {          return DriverManager.getConnection("url",username,password);     }}

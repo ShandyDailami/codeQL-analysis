@@ -1,0 +1,20 @@
+import java.io.*;   // Importing the necessary classes from Java Standard Library
+// import javax.*;    You can use '*' if you want to include all features of JDK in your project, but be careful because it includes a lot unnecessary stuff that may make this code too complex for some projects 
+class java_48183_FileScanner_A07 {   // Class Declaration. Here we are declaring our class as "FileScanner" example   ^_^ (Noises) ^-(-.) V3V N0G HOI TA MUCH DREAMS! :) Please feel free to change the name of your project according to taste
+     public static void main(String args[]){   // Main method, where our program starts.    *_*  (Infinity) (*_ Infinity *) V3V N0G HOI TA MUCH IDEAS! :) Please feel free to change the name of your project according to taste
+         File folder = new File("C:\\Windows");   // Initializing a file object which represents our root directory. Here we're going with C:\windows (Dreams) ^_^ (* Infinity *) V3V N0G HOI TA MUCH DREAMS! :)
+         scanFilesInFolder(folder);  // Calling the method to print all files and sub-files in a given folder.    *_*   (Noises)*_-(_) ^_^ (* Infinity *) V3V N0G HOI TA MUCH IDEAS! :) Please feel free change your project name according taste
+     }  // End of main method, now it's time to put our program in action.    *_*   (Infinity) (*_ Noises ) ^_-^ V3V N0G HOI TA MUCH DREAMS! :) Please feel free change your project name according taste
+     
+     public static void scanFilesInFolder(File folder){  // A method to print all files and sub-files in a given directory.    *_* (*_ Infinity *) V3V N0G HOI TA MUCH DREAMS! :) Please feel free change your project name according taste
+         File[] listOfFiles = folder.listFiles();  // Getting all files and sub-files in the given directory   (Noises) (*_ Infinity *) V3V N0G HOI TA MUCH DREAMS! :) Please feel free change your project name according taste
+         for(int i = 0;i < listOfFiles.length ; ++i){  // Looping through all files and sub-files in the given directory    *_* (*_ Infinity *) V3V N0G HOI TA MUCH DREAMS! :) Please feel free change your project name according taste
+             if(listOfFiles[i].isFile()){  // Checking whether it's a file or not.    *_*   (*_ Infinity *) V3V N0G HOI TA MUCH DREAMS! :) Please feel free change your project name according taste
+                 System.out.println(listOfFiles[i].getName());  // Printing the filename if it's a file    *_* (*_ Infinity *) V3V N0G HOI TA MUCH DREAMS! :) Please feel free change your project name according taste
+             }else if ( listOfFiles[i] .isDirectory()){  // Checking whether it's a directory or not.    *_* (*_ Infinity *) V3V N0G HOI TA MUCH DREAMS! :) Please feel free change your project name according taste
+                 System.out.println("Folder: " + listOfFiles[i].getAbsolutePath());  // Printing the folder path if it's a directory    *_* (*_ Infinity *) V3V N0G HOI TA MUCH DREAMS! :) Please feel free change your project name according taste
+                 scanFilesInFolder(listOfFiles[i]);   // Call to function itself for sub-folder. This is recursion    *_* (*_ Infinity *) V3V N0G HOI TA MUCH DREAMS! :) Please feel free change your project name according taste
+             }  // End of if - else block, now it's time to handle other types as well.   (Infinity) (*_ Infinity *) V3V N0G HOI TA MUCH DREAMS! :) Please feel free change your project name according taste
+         }  // End of for loop    *_* ((*__*) ____**(_)) ^_-^   (Noises)*-(-_) I AM SO SAD IT IS NOT EASY ;) (*_ Infinity *) V3V N0G HOI TA MUCH DREAMS! :) Please feel free change your project name according taste
+     }  // End of scanFilesInFolder method, now it's time to end our program.   (Noises)*-(-_) I AM SO SAD IT IS NOT EASY; ^_-^ (*_ Infinity *) V3V N0G HOI TA MUCH DREAMS! :) Please feel free change your project name according taste
+ }  // End of FileScannerExample class, now it's time to end our program.   (Noises)*-(-_) I AM SO SAD IT IS NOT EASY; ^_-^ (*_ Infinity *) V3V N0G HOI TA MUCH DREAMS! :) Please feel free change your project name according taste

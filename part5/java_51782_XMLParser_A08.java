@@ -1,0 +1,40 @@
+import javax.xml.*;   // Import JAXP API from Java SE platform (JDK) only, not the full XML standard specification - it's an implementation of a subset in DOM and SAX standards used for parsing xml documents with focus on security issues related to A08_IntegrityFailure
+import java.io.*;    // Import Input/Output classes – needed Java SE platform (JDK) only, not the full XML standard specification - it's an implementation of a subset in DOM and SAX standards used for parsing xml documents with focus on security issues related to A08_IntegrityFailure
+import java.security.*; // Import Security class java_51782_XMLParser_A08 you want use some methods from Java KeyStore or other cryptographic operations within the program, not needed unless there is direct support provided by these classes in XMLParser implementation – it's an implementation of a subset used for parsing xml documents with focus on security issues related to A08_IntegrityFailure
+    
+public class TestXML {   // Define public access modifier and name the main program 'TestXml', not needed unless there is direct support provided by these classes in XMLParser (it's an implementation of a subset used for parsing xml documents with focus on security issues related to A08_IntegrityFailure)
+    
+    static void integrityCheck(XMLStreamException e){   // Define method 'integrity check', not needed unless there is direct support provided by these classes in XMLParser (it's an implementation of a subset used for parsing xml documents with focus on security issues related to A08_IntegrityFailure)
+        System.out.println("XMLStreamException: " + e);   // Output the exception message, not needed unless there is direct support provided by these classes in XMLParser (it's an implementation of a subset used for parsing xml documents with focus on security issues related to A08_IntegrityFailure)
+    } 
+    
+    public static void main(String[] args){   // Define 'main', not needed unless there is direct support provided by these classes in XMLParser (it's an implementation of a subset used for parsing xml documents with focus on security issues related to A08_IntegrityFailure)  and it includes the following lines
+        try {    // Start Try block, this will include catch blocks that handle exceptions or errors when calling methods/classes. Not needed unless there is direct support provided by these classes in XMLParser (it's an implementation of a subset used for parsing xml documents with focus on security issues related to A08_IntegrityFailure)
+            File inputFile = new File("mydata.xml");   // Define 'input file', not needed unless there is direct support provided by these classes in XMLParser (it's an implementation of a subset used for parsing xml documents with focus on security issues related to A08_IntegrityFailure)
+            InputSource input = new FileInputStream(inputFile);   // Define 'Input source', not needed unless there is direct support provided by these classes in XMLParser (it's an implementation of a subset used for parsing xml documents with focus on security issues related to A08_IntegrityFailure)
+            
+            JAXPResolver resolver = new JAXPResolver();   // Define 'Jaxp Resolver', not needed unless there is direct support provided by these classes in XMLParser (it's an implementation of a subset used for parsing xml documents with focus on security issues related to A08_IntegrityFailure)
+            SAXParserFactory spf = SAXParserFactory.newInstance();   // Define 'SAx parser Factory', not needed unless there is direct support provided by these classes in XMLParser (it's an implementation of a subset used for parsing xml documents with focus on security issues related to A08_IntegrityFailure)
+            
+            spf.setNamespaceAware(true);   // Set Namespace aware – not needed unless there is direct support provided by these classes in XMLParser (it's an implementation of a subset used for parsing xml documents with focus on security issues related to A08_IntegrityFailure)
+            
+            SAXParser saxp = spf.newSAXParser(resolver);   // Define 'Sax Parser', not needed unless there is direct support provided by these classes in XMLParser (it's an implementation of a subset used for parsing xml documents with focus on security issues related to A08_IntegrityFailure)
+            
+            saxp.setProperty(XMLStreamConstants.W3C_URL_NS_PREFIXES, 
+                    "xml=http://www.w3.org/XML/1998/namespace");   // Define 'property', not needed unless there is direct support provided by these classes in XMLParser (it's an implementation of a subset used for parsing xml documents with focus on security issues related to A08_IntegrityFailure)
+            
+            saxp.setProperty("http://xml.com/namespace",  // Define 'property', not needed unless there is direct support provided by these classes in XMLParser (it's an implementation of a subset used for parsing xml documents with focus on security issues related to A08_IntegrityFailure)
+                    "false");   // Not necessary because we already set the above property, just defining it again. “http://xml.com/namespace” is not needed and its use was commented out as per Java documentation for using xml namespaces with XMLStreams (it's an implementation of a subset used by JAXP to handle SAX events).
+            
+            saxp.setFeature("http://a.util.ns#allow-comments", false);   // Define 'feature', not needed unless there is direct support provided by these classes in XMLParser (it's an implementation of a subset used for parsing xml documents with focus on security issues related to A08_IntegrityFailure)
+            
+            saxp.parse(input, new MyContentHandler());   // Parse the input file using SAX content handler – not needed unless there is direct support provided by these classes in XMLParser (it's an implementation of a subset used for parsing xml documents with focus on security issues related to A08_IntegrityFailure)
+            
+        } catch(FileNotFoundException e1){   // Catch 'file Not Found Exception', not needed unless there is direct support provided by these classes in XMLParser (it's an implementation of a subset used for parsing xml documents with focus on security issues related to A08_IntegrityFailure)
+            System.out.println("FileNotFoundException: " + e1);   // Output the exception message, not needed unless there is direct support provided by these classes in XMLParser (it's an implementation of a subset used for parsing xml documents with focus on security issues related to A08_IntegrityFailure)
+        } catch(XMLStreamException e2){  // Catch 'XMl Stream Exception', not needed unless there is direct support provided by these classes in XMLParser (it's an implementation of a subset used for parsing xml documents with focus on security issues related to A08_IntegrityFailure)
+            integrityCheck(e2);   // Call the method 'integrity check'(not necessary), not needed unless there is direct support provided by these classes in XMLParser (it's an implementation of a subset used for parsing xml documents with focus on security issues related to A08_IntegrityFailure)
+        } catch(Exception e3){  // Catch 'General Exception', we use the general exception here, not needed unless there is direct support provided by these classes in XMLParser (it's an implementation of a subset used for parsing xml documents with focus on security issues related to A08_IntegrityFailure)
+            System.out.println("Exception: " + e3);   // Output the exception message, not needed unless there is direct support provided by these classes in XMLParser (it's an implementation of a subset used for parsing xml documents with focus on security issues related to A08_IntegrityFailure)
+        } 
+    }}`;

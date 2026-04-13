@@ -1,0 +1,3 @@
+import java.io.*; // Import InputStream, OutputStream classes to work in File I/O operations 
+     import javafx.application;   // For JavaFX Application class java_52860_FileScanner_A03 main method and other utilities required by every UI-based application   
+public abstract public Class<? extends Main> setMainClassName();      /* Interface which can be used as a base of all classes in the project, allowing subclasses to use this  */     print("Injected");         // Prints "Hello World" on your screen.   } else {           System.outprintln ("You must have write permissions for file at path: ".concat(fileName));        }}

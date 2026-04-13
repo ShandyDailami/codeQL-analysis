@@ -1,0 +1,11 @@
+import java.sql.*;   // Importing required classes from the 'java.*' package   
+class java_53409_JDBCQueryHandler_A07 {     // Main class of our application to perform operations on a MySQL server using Statements and ResultSets in preparation for SQL queries     
+ public static void main(String[] args)  throws Exception{      
+   Connection connection = null;        // Declaring the 'Connection' object         
+    try {             // Begin block: Create new connections, if not already created           
+     Class.forName("com.mysql.cj.jdbc.Driver");      // Loading MySQL database driver into Java Virtual Machine (JVM)          
+   connection = DriverManager.getConnection(       "jdbc:mysql://localhost/mydb?useSSL=false",         // Database URL and credentials       
+    "username","password" );     // Credentials to connect the server         
+ } catch (SQLException e1) {      /// If we are not able, print an error message.                Echoing exception details in console       echo("Connection failed: ");           System.out.println(e);        throw new ExceptionInInitializerError();         // Exiting main() method by throwing the 'exception'          } catch (ClassNotFoundException e) {      /// If we are not able, print an error message and exit program            
+     System.err.println("Database Driver is not found!!" );           Environment.getExitDirectory().list(new java.io.PrintWriter(System.out));  return;         }          // End block: Create new connections if they haven't already created       try{            PreparedStatement preparedstatement = connection .prepareCall ("SELECT * FROM Employee WHERE ID=?");          
+      System. out.println("selecting employees by id");        int employeeid = 102;     /*  Call the 'executeQuery() method */         ResultSet resultset  = preparedstatement.executeQuery();            while (resultset .next()) {              String name =          // Getting values of columns returned from database       System.out.println(name);           }      connection	.close ()

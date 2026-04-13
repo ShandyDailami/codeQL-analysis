@@ -1,0 +1,13 @@
+import javax.sql.DataSource;  // Import required library, Data Source interface in Java provides methods for obtaining the data sources(connection pool) details like url etc from a given source  
+public class java_47205_JDBCQueryHandler_A08 {   
+     private static final String URL = "YOUR_DATABASE_URL";      
+     private static final String USERNAME="USER_ID", PASSWORD="PASSWORD";  // Assuming the database credentials are already set in environment variables or properties file.   Replace with your actual values   
+     
+	 public DataSource getDataSource() {         
+		 DriverManagerDataSource dataSource = new DriverManagerDataSource();      
+         dataSource.setDriverClassName("com.mysql.jdbc.Driver");     //Set the driver class  (MySQL JDBC driver) for your DB   Replace with actual MySQL or any other database    jdbc:mysql://localhost/test?useSSL=false -DnameDb
+         dataSource .setUrl(URL);      // Set Database URL here           e.g "jdbc:mysqldb://myserverurl"  (Replace 'com' in above url)   Replace with actual MySQL or other DB details    jdbcurl?username&password, username & password will be provided by your system
+         dataSource .setUsername(USERNAME);     // Set the database user name and Password here      Here you can set using environment variables / properties file  (replace 'user_id' in above with actual ID)   Replace "username" below, this should match exactly on DB credentials.       
+         dataSource .setPassword("PASSWORD");    //Repeat the setting for password           As per username given before and replace it accordingly..     JDBC will connect to database using these values (userid & pass).  This is a very simple example of how you can do integrity checks, be creative!
+         return dataSource;   }        public void runQuery(String query) {      // Open the connection with DB by calling getDataSources() method     Connection con=null    try{con =dataSource.getConnection();       Statement stmt  = null ;if (query == null ) throw new IllegalArgumentException("Null statement"); else 
+		{          if(true){throw new Exception ("An error has occurred while executing the query"+e);}           }         finally {            // Always close connections     con.close()})    }}`;      String testQuery = "Your SQL Query Here";   runQuery (testquery)} catch block of code to handle exceptions and manage errors in JDBC connection operation is not covered here, it depends on what you have done with your database operations before this function call

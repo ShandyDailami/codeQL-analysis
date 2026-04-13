@@ -1,0 +1,31 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class java_05207_SocketServer_A03 {
+    public static void main(String[] args) throws Exception {
+        ServerSocket server = new ServerSocket(8080); // Listen on port 8080
+        System.out.println("Server started on port 8080");
+
+        while (true) {
+            Socket socket = server.accept(); // Wait for client connection
+            System.out.println("Client connected");
+
+            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+
+            String message;
+            while ((message = in.readLine()) != null) {
+                System.out.println("Received: " + message);
+                if (message.equalsIgnoreCase("exit")) {
+                    break;
+                }
+                out.println("Hello, client!"); // Echo back the message to the client
+            }
+
+            socket.close();
+        }
+    }
+}

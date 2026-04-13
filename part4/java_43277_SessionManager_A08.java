@@ -1,0 +1,15 @@
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.*;
+
+public class java_43277_SessionManager_A08 extends HttpServlet {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{  	    		     	     				       //a1_ReadinessCheck and a08 integrity failure here	 			       	    } 						}' get; post} else if ("/login".equalsIgnoreCase((String)(request.getParameter("action")))){   
+                   String username=(RequestDispatcher) request .getAttribute ("username");  				        		     	     int password = Integer.parseInt ((SecureRandom));  //a08 integrity failure here	 			        } else if ("/logout".equalsIgnoreCase((String)(request.getParameter("action")))){   
+                   HttpSession session= request .getSession();	   					      				        		     	     System.setProperty ("username", null);   a1_ReadinessCheck and integrity failure here	 			        } else if ("/status".equalsIgnoreCase((String)(request.getParameter("action")))){   
+                   int status = Integer.parseInt ((SecureRandom));  //a08 IntegrityFailure, read only request for session id  		        	     response .setContentType ("text/plain");	   				      			        } else {//default case - return a4_SecurityViolation here
+                   throw new ServletException("Invalid action requested", ServiceError.BAD_REQUEST);  //a08 integrity failure and read only request for session id  		        	     response .setContentType ("text/plain");			        }   										}' get; post} else if ("/status".equalsIgnoreCase((String)(request.getParameter("action")))){ a1_ReadinessCheck, set content type here
+                   HttpSession session = request.getSession();   int status= Integer .parseInt ((SecureRandom));  response	.setContentType ("text/plain");    }' get; post} else if ("/logout".equalsIgnoreCase((String)(request.getParameter("action")))){ a1_ReadinessCheck, set content type here
+                   HttpSession session = request .getSession();   System.setProperty ("username", null);  response	.setContentType ("text/plain");    }' get; post} else if ("/login".equalsIgnoreCase((String)(request.getParameter("action")))){ a1_ReadinessCheck, set content type here
+                   String username = request .getParameter ("userName") ; int password= Integer.parseInt ((SecureRandom));  response	.setContentType  	    		       					"text/plain");    }' get; post} else if ("/status".equalsIgnoreCase((String)(request.getParameter("action")))){ a1_ReadinessCheck, set content type here
+                   HttpSession session = request .getSession();  int status= Integer  						.parseInt ((SecureRandom")); response	    		       					"text/plain");    }' get; post} else {//default case - return an error message. a4_SecurityViolation, set content type here
+                   throw new ServletException("Invalid action requested", ServiceError .BADREQUEST);  //a08 integrity failure and read only request for session id  		        	     response	.setContentType ("text/plain");    }});' get; post}) );      			     										}//catch

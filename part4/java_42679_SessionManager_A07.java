@@ -1,0 +1,11 @@
+public class java_42679_SessionManager_A07 {   // Class name should be meaningful, e.g., UserSessionManager or AdminSessionManager in an enterprise style project   
+     private static SessionFactory sessionFactory;      // Define a global variable for the Database Connection Pooling manager       
+      
+           public void init(){          // Initialize method        
+                 Configuration configuration = new Configuration();             // Create and configure settings object  
+                 
+                         configuration.configure("hibernate.cfg.xml");            // Configure hibernated to use xml config file              
+                          sessionFactory =  configuration.buildSessionFactory();  // Construct the service registry with it          .                   }      public void close() {           if (session != null)             session.close( );         }}       Session getCurrentUser(){        return this;    }   private static final AuthSession instance = new AuthSession();    
+                  System.out.println("----Hibernate Java Config Example----"  ) ;      // Initialize the Hibernated and create a User object          .                   public synchronized static AuthSession getInstance() {             return (AuthSession)instance;   }       protected SessionFactory getsessionfactory(){        
+                          if(session == null){                           session = this.getCurrentUser().openSession();           }}        private Session openNewSessionForThreadBorrowing(){            // Open a new Session from thread pool              .                   try{ return (Session) instance;  }catch Exception e { System.out.println("Error" +e);  
+                          throw new HibernateException( "Cannot open session."); }}          public void close()    if ((session != null))             session.close();         // Close the Session and remove from thread pool              .               return (Session) instance; }}}  catch Exception e { System out println("Error" +e); throw new HibernateException( "Cannot open sessions");}}}

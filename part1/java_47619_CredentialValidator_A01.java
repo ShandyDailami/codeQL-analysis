@@ -1,0 +1,16 @@
+import javax.security.auth.*;
+        import javax.security.auth.login.LoginException;
+        
+public class java_47619_CredentialValidator_A01 {    
+    private String userName = null, password=null ;      //user credentials         
+            AuthPermission[] permList  = new AuthPermission[1];          
+ 
+ public void setUser(String name)   throws LoginException{              this.userName =  (name == null ? "" : name); }       
+   
+public boolean authenticate() {                return true;       //returning True implies successful authentication, False otherwise               throw new AuthenticationFailedException("Authentication failed");  }}          if(this.authenticated)                      System.out .println ("User "+ this.userName +" is already logged in..!");         else{                                          
+            try {                                  LoginContext logCon = null;                            AuthPermission perm  = new    AuthPermission ( "Admin_Perm");                                   //Creating a permission object              Logins the user to get login context and then binds permissions       if(this.userName !=null )          System .out  .println ("Enter Password For User:   " + this.userName);       
+            password = javax.security.auth.login.LoginContext.getDefault().accessTokenToString((javax.security.auth.Subject)logCon (password));                  permList [0]  =     perm;          logCon =  LoginContext .createLoginContext(new   java.security.Principal("Administrator"), null,null);   
+            ((java.util.prefs.Preferences)  new javax.security.auth.login.LoginContext (logCon).getSubject().getPrivateCredentials()).addPermission((AuthPermission)"Admin_Perm");              logCon .login();          System out   .println ("User " + this.userName+" is now logged in..!");    
+    } catch(Exception e) {                  return false;               //Returning False implies failed authentication, exception will be caught and printed                 throw new AuthenticationFailedException("Authentication Failed:  ");        }}          public boolean getPermission(String permission) throws LoginException{            permList [0] =  (new AuthPermission    (" " +permission));             
+           return true;                          }     //returning True implies the user has this particular   Permission               else                       false}}             };      class Main  {         static CredentialValidator credent = new          CredentialValidator();            public static void main(String[] args){    try{                 callMethods ();}catch       
+              Exception e)                {}           }public boolean     login(){return true;   //Returning True implies the user is successfully logged in, False otherwise               throw         new LoginFailedException("Login Failed:  ");      }}          public static void main(String[] args){    try{                 callMethods ();}catch        Exception e)                {}           }

@@ -1,0 +1,23 @@
+import java.sql.*;   // Import necessary classes for JDBC operations here eh? I hope not! Just remember that these are standard libraries only and you cannot use Spring or Hibernate in this context ☺️🌍‍♂️¯\_(ツ)_/¯
+public class java_51991_JDBCQueryHandler_A07 {   // Change name to suit your needs here, eh? I hope not! Just remember that these are standard libraries only and you cannot use Spring or Hibernate in this context ☺️🌍‍♂️¯\_(ツ)_/¯
+    public static void main (String[] args) {   // Change name to suit your needs here, eh? I hope not! Just remember that these are standard libraries only and you cannot use Spring or Hibernate in this context ☺️🌍‍♂️¯\_(ツ)_/¯
+        String url = "jdbc:mysql://localhost:3306/test";   // Change URL to suit your needs here, eh? I hope not! Just remember that these are standard libraries only and you cannot use Spring or Hibernate in this context ☺️🌍‍♂️¯\_(ツ)_/¯
+        String username = "root";   // Change user to suit your needs here, eh? I hope not! Just remember that these are standard libraries only and you cannot use Spring or Hibernate in this context ☺️🌍‍♂️¯\_(ツ)_/¯
+        String password = "password";   // Change pass to suit your needs here, eh? I hope not! Just remember that these are standard libraries only and you cannot use Spring or Hibernate in this context ☺️🌍‍♂️¯\_(ツ)_/¯
+        try {   // Change name to suit your needs here, eh? I hope not! Just remember that these are standard libraries only and you cannot use Spring or Hibernate in this context ☺️🌍‍♂️¯\_(ツ)_/¯
+            Class.forName("com.mysql.cj.jdbc.Driver");   // Change driver name to suit your needs here, eh? I hope not! Just remember that these are standard libraries only and you cannot use Spring or Hibernate in this context ☺️🌍‍♂️¯\_(ツ)_/¯
+            Connection con = DriverManager.getConnection (url, username , password);   // Change connection parameters to suit your needs here! I hope not but just remember these are standard libraries only and you cannot use Spring or Hibernate in this context ☺️🌍‍♂️¯\_(ツ)_/¯
+            
+            String query = "SELECT * FROM users WHERE id = 1";   // Change SQL Query to suit your needs here, eh? I hope not but just remember these are standard libraries only and you cannot use Spring or Hibernate in this context ☺️🌍‍♂️¯\_(ツ)_/¯
+            Statement stmt = con.createStatement();   // Change name to suit your needs here, eh? I hope not! Just remember that these are standard libraries only and you cannot use Spring or Hibernate in this context ☺️🌍‍♂️¯\_(ツ)_/¯
+            ResultSet rs = stmt.executeQuery (query);   // Change name to suit your needs here, eh? I hope not but just remember these are standard libraries only and you cannot use Spring or Hibernate in this context ☺️🌍‍♂️¯\_(ツ)_/¯
+            
+            while (rs.next()) {   // Change name to suit your needs here, eh? I hope not but just remember these are standard libraries only and you cannot use Spring or Hibernate in this context ☺️🌍‍♂️¯\_(ツ)_/¯
+                System.out.println (rs.getString ("id") + " - " +  rs.getString("username"));   // Change print statement to suit your needs here, eh? I hope not but just remember these are standard libraries only and you cannot use Spring or Hibernate in this context ☺️🌍‍♂️¯\_(ツ)_/¯
+            }   // Change name to suit your needs here, eh? I hope not but just remember these are standard libraries only and you cannot use Spring or Hibernate in this context ☺️🌍‍♂️¯\_(ツ)_/¯
+            con.close();   // Change name to suit your needs here, eh? I hope not but just remember these are standard libraries only and you cannot use Spring or Hibernate in this context ☺️🌍‍♂️¯\_(ツ)_/¯
+        } catch (Exception ex) {   // Change name to suit your needs here, eh? I hope not but just remember these are standard libraries only and you cannot use Spring or Hibernate in this context ☺️🌍‍♂️¯\_(ツ)_/¯
+            System.out.println ("Exception thrown");   // Change print statement to suit your needs here, eh? I hope not but just remember these are standard libraries only and you cannot use Spring or Hibernate in this context ☺️🌍‍♂️¯\_(ツ)_/¯
+        }   // Change name to suit your needs here, eh? I hope not but just remember these are standard libraries only and you cannot use Spring or Hibernate in this context ☺️🌍‍♂️¯\_(ツ)_/¯
+    }   // Change name to suit your needs here, eh? I hope not but just remember these are standard libraries only and you cannot use Spring or Hibernate in this context ☺️🌍‍♂️¯\_(ツ)_/¯
+}   // Change name to suit your needs here, eh? I hope not but just remember these are standard libraries only and you cannot use Spring or Hibernate in this context ☺️🌍‍♂️¯\_(ツ)_/¯

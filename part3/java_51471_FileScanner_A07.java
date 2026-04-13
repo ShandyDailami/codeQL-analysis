@@ -1,0 +1,7 @@
+// This is just an example of how you can scan files.  You should always use best practices to protect against errors and edge cases in your actual code, like:
+import javafx.scene.control.*; // for AlertDialogs instead standard dialogues etc..  
+public class java_51471_FileScanner_A07 {    
+    public static void main(String[] args) throws Exception{        Scanner scan = new 	Scanner (System.in);          System .out .println ("Enter the directory path: ");           String dirPath=scan	.nextLine();      try       //create File object        
+  			{File file1  =new java.io .File(dirPath)};//file,directory and parent must exist                      catch (Exception e)  {e.printStackTrace() ;}          alert("Directory not found");return;}        Scanner scanDir = new      	Scanner   	(file1  	.getCanonicalPath () + "\\*.*" );           while(scanDir .hasNextLine())    
+{String fileName=scanDir 		==.nextline();         try      {File f  =new java..io ..File (dirpath  + "/" + 	filename);          if(!f	.isDirectory() && !fileName  			    .endsWith(".txt") )        //checking the type of files to be read or not and only txt is checked, 
+			{System.out    					      	    .println( fileName );}}         catch (Exception e) {e	                        	     	.printStackTrace();}                   }                        scanDir  			     	 	       				    close() ;}}}//this will prevent garbage collection from running until all threads have completed execution

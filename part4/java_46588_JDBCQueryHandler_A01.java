@@ -1,0 +1,7 @@
+import java.sql.*;   //We use Java's built-in classes/interfaces related to SQL like Connection, DriverManager...etc   
+public class java_46588_JDBCQueryHandler_A01 {    
+private static final String DB_URL = "jdbc:mysql://localhost:3306/testdb";  ///provide the correct URL here   //username and password are not provided in this example for brevity. Replace with actual values    private static final String USERNAME="root", PASSWORD="password";
+private Connection con;    
+public java_46588_JDBCQueryHandler_A01() {      super(); }  ///constructor        try to create a connection here   //In reality, we should avoid using magic numbers in our code. We'd rather use constants for this purpose and make sure that these values are securely set up as per best practices (like through environment variables or configuration files)
+{     if(con==null || !con.isValid()) {      try  //Try to create connection here   ///provide the correct code    con = DriverManager.getConnection("jdbc:mysql://localhost/fruits", "root","password"); } catch (SQLException e){e.printStackTrace();}
+       if(con==null || !con.isValid()) {      throw new ExceptionInInitializerError("Cannot initialize connection!");  ///provide the correct code    //We can also use try-with resources to ensure our connections get closed once they're no longer needed   } catch (SQLException e)

@@ -1,0 +1,9 @@
+import java.sql.*;   // Import the required classes  for database operation using JDBC   
+class java_46833_JDBCQueryHandler_A01 {     // Start of main class where execution starts here     
+public static void main(String[] args) throws SQLException{       //Main function to execute sql query at start up         
+//Step1: Creating a connection.         newConnection() method is in java DatabaseMetaData instance        DriverManager are used for connecting with database like MySQL JDBC driver (which you can add by adding this dependency into your build file)   Class.forName("com.mysql.cj.jdbc.Driver"); 
+Properties prop = new Properties();       //step1_a: Connection property, we'll use it to connect our DB    Database URL and other details will be stored in these properties      String url="jdbc:mysql://localhost:3306/mydb";        String userName= "root", password= "";  
+Connection con = DriverManager.getConnection(url,userName ,password);  //step1_b:(this method is to establish a connection with DB)    Connection object will be used for all the database operations     System.out.println("Connected successfully..."+con );        String sql="select * from student";
+Statement stmt = con.createStatement();   /*Step2: Create statement (SQL query builder). We'll use this to execute SQL queries at runtime */           ResultSet rs =  stmt.executeQuery(sql);     //step 3_a:(this method is used for executing sql and getting the result)   
+while (rs.next()){          /*Step2: A loop that will go through each row in a database table after SQL query execution */            System.out.println("ID : " + rs.getString(1));           //step3_b:(this method is used to get the string from column)
+System.out.println ("Name  : " + rs.getString (2 ));    }     con.close();   /*Step4: Close connection */      }}`;//end of main function and class definition, which are all in one block ie a single line code for above mentioned functionality)

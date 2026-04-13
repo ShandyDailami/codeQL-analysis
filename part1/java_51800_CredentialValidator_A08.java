@@ -1,0 +1,7 @@
+import java.util.*;
+public class java_51800_CredentialValidator_A08 {  
+    public static void main(String[] args) throws Exception{    	      		     	   	 									        }                      			               private String correctPassword="password";                  UserCredential user;        	       	      if (validateUser()) throw new SecurityException("Invalid password");  else System.out.println ("Access granted!!");         
+private boolean validateUser() {    // this method validates the entered credentials against stored information    		     	      			          	 	// assuming correctPassword is hard-coded here, in real world scenarios it should be fetched from database/storage 	        try (Scanner s = new Scanner(System.in))       	     	   
+{                             System.out.println("Enter password: "); String entered_password=s.nextLine();     	       if (!Objects.equals(enteredPassword,correctPassword)){    return false;} else {return true;}}catch (InputMismatchException e){throw new Exception ("Invalid input format",e);}
+   }  // end of validateUser() method                    public static void main(){ System.out.println("You cannot run this code directly"); }}        The above example is a starting point, you can add more complexities and complexity as per your requirements according to the project requirement/s!    For instance: validating user against multiple users stored in database or using hashing algorithms for password storage etc., 
+   } // end of CredentialsValidator class.

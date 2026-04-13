@@ -1,0 +1,10 @@
+import java.io.*;
+import java.net.*;
+import javax.security.auth.*;
+class java_52918_SocketServer_A01 {   //Client Class will be using this to send and receive messages from Server    }
+     public static void main(String args[]){        new ClientThread();             try{            Socket s=new Socket("localhost",4201);              BufferedReader br =           (BufferedReader)(new InputStreamReader(s.getInputStream()));               PrintWriter pw =  (PrintWriter) (new OutputStreamWriter 
+      (s.getOutputStream()    ) );            String message;                  while((message=br .readLine())!=null){                    System.out.println("\nMessage from server: "+       message); }                           s.close();                   }catch(Exception e){               e.printStackTrace();              }}
+     class ClientThread extends Thread {    public void run()  try{           Socket socket =  new      Socket("localhost",4201 );             BufferedReader br = (Buffered Reader)(new InputStream       reader   (socket .getInputStream())); PrintWriter pw=(Print Writer)    
+         (new Output Stream writer    (Socket.OutputStream)); String message;  while((message =  br      .readLine()) ! null){               System          out!println("\nMessage to server: "+           messa   ge); } socket       .close();                             }}catch(Exception e ){e            
+     printStackTrace()            ;}    };//Client Class. End of the Server         class ClientThread extends Thread {        public void run(){try  //Read & Write Access Violation Exception          Socket s = new      Socekt("localhost",4201 );               BufferedReader br= (Buff     Reader)(new InputStream       reader   (socket .getInputStream())); PrintWriter pw= 
+         (Print Writer)             (new Output Stream writer    (Socket.OutputStream)); String message; while((message =          br      .readLine()) ! null){                            System out!println("\nMessage to server: "+           messa     ge); } s       .close();                             }}catch(Exception e ){e printStackTrace()             ;}}//Main Class Ends

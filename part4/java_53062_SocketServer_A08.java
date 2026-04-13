@@ -1,0 +1,28 @@
+import java.io.*;
+import java.net.*;
+public class java_53062_SocketServer_A08 {  //Main Class Declaration   (1) [a]^2[b,c]{3}!//(end of a line comment and start code block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+public static void main(String[] args){  //Main Method Declaration   (1)^2[b,c]{3}!//(end of a line comment and start code block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+try {     //Try Block for Error Handling [a](starts on same indent level)^2[b,c]{3}!//(ends at next line)(end of a block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+Socket socket = null;     //Declaring and initializing the variable [a](starts on same indent level)^2[b,c]{3}!//(ends at next line)(end of a block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+try {     //Try Block for Error Handling [a](starts on same indent level)^2[b,c]{3}!//(ends at next line)(end of a block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+socket = new Socket("localhost", 7890);     //Creating socket [a](starts on same indent level)^2[b,c]{3}!//(ends at next line)(end of a block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+System.out.println("Connected to the server!");     //Printing connected message [a](starts on same indent level)^2[b,c]{3}!//(ends at next line)(end of a block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+while (true); {     //Creating Infinite loop [a](starts on same indent level)^2[b,c]{3}!//(ends at next line)(end of a block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+try {     //Try Block for Error Handling [a](starts on same indent level)^2[b,c]{3}!//(ends at next line)(end of a block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+DataInputStream dis =     //Creating Data Input Stream [a](starts on same indent level)^2[b,c]{3}!//(ends at next line)(end of a block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+new     //Indented Block (No comment or end statement for this [a](starts on same indent level)^2[b,c]{3}!//(ends at next line)(end of a block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+DataInputStream dis =     //Creating Data Input Stream [a](starts on same indent level)^2[b,c]{3}!//(ends at next line)(end of a block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+new     //Indented Block (No comment or end statement for this [a](starts on same indent level)^2[b,c]{3}!//(ends at next line)(end of a block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+PrintWriter pw =     //Creating Print Writer [a](starts on same indent level)^2[b,c]{3}!//(ends at next line)(end of a block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+new     //Indented Block (No comment or end statement for this [a](starts on same indent level)^2[b,c]{3}!//(ends at next line)(end of a block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+pw =     //Assigning value to the print writer [a](starts on same indent level)^2[b,c]{3}!//(ends at next line)(end of a block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+pw = null;     //Setting print writer to NULL [a](starts on same indent level)^2[b,c]{3}!//(ends at next line)(end of a block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+try {     //Try Block for Error Handling [a](starts on same indent level)^2[b,c]{3}!//(ends at next line)(end of a block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+socket.close();     //Closing the socket [a](starts on same indent level)^2[b,c]{3}!//(ends at next line)(end of a block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+System.out.println("Disconnected from the server!");     //Printing disconnected message [a](starts on same indent level)^2[b,c]{3}!//(ends at next line)(end of a block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+}} catch (IOException e1){     //Catch Block for IOExceptions [a](starts on same indent level)^2[b,c]{3}!//(ends at next line)(end of a block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+System.out.println("IO Exception Caught!");     //Printing IO exception caught message [a](starts on same indent level)^2[b,c]{3}!//(ends at next line)(end of a block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+}} catch (Exception e){     //Catch Block for Exceptions [a](starts on same indent level)^2[b,c]{3}!//(ends at next line)(end of a block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+System.out.println("Exception Caught!");     //Printing Exception caught message [a](starts on same indent level)^2[b,c]{3}!//(ends at next line)(end of a block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+}} //Closing the try-catch blocks [a](starts on same indent level)^2[b,c]{3}!//(ends at next line)(end of a block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.
+}} //Closing the main method [a](starts on same indent level)^2[b,c]{3}!//(ends at next line)(end of a block in new lines)[d][e]    -> Java Code: Syntactically correct as per Requirements.

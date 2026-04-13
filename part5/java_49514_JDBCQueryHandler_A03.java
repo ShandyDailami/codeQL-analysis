@@ -1,0 +1,9 @@
+import java.sql.*; // Import necessary classes for JDBC and DB operations like Connection, PreparedStatement etc..
+public class java_49514_JDBCQueryHandler_A03 {
+    public static void main(String[] args) throws SQLException{    	
+        String url = "your_url";  			// Database URL here			 	 	   	      // Example: jdbc:mysql://localhost/testdb;user=root;password=secret.        									          
+                                                                                                      .// Create Connection Here         
+       try (Connection conn =  DriverManager.getConnection(url)) {                   	     // Get connection from the manager                                                  	       		 	 	      }   catch (SQLException ex)       	    ....             ...   
+      .....               if (!conn.isClosed())           System.out.println("Connected to database"); else          throw new SQLException( "Failed connecting Database" );                     	     // If connection is not closed, then print message                     .// Close Connection Here   }  catch (SQLException ex) { ...    ....     
+                                                                                                  	}      			.	 	     	   	// Execute Statement here using PreparedStatement or other method depending on use case.        			                    System..println(result);     // Print result set rows, if any        .// Close ResultSet and statement objects          } catch (SQLException ex) { ...    ....     
+                                                                                                  	} 	.........             	// Program Ends here...  		                                    	   	 	      .....                            (.…./././..../'java';'''. ',' '' ',, '.': '', . ,,,.,','');    `;.'

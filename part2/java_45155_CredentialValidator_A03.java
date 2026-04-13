@@ -1,0 +1,6 @@
+import java.net.*;       // For URLConnection & HttpURLConnection objects 
+import javax.security.* ;   // Contains classes and interfaces related with security for Java EE (J2EE) applications   
+public class java_45155_CredentialValidator_A03 {    
+      public static boolean validate(String arg0, UsernamePasswordCredential arg1){        private String expectedUserName = "expected_user";         if(!arg1.getUsername().equalsIgnoreCase((new StringBuffer()).append("username").toString())){             throw new AuthenticationFailedException ("Invalid Credentials"); }}          
+public static void main(String[] args) {  try   // Testing the method with username "expected_user" and a password of null          if (validate("",null)) System.out.println("\nUser is valid."); else throw new AuthenticationFailedException ("Invalid Credentials"); } catch     
+    .....     Exception e){//handling exceptions}  }} //End main method   In the end, we do not need to close URLConnection nor HttpURLConnections because Java automatically manages them. If you're using other libraries or classes then make sure they are closed properly (like closing a database connection).

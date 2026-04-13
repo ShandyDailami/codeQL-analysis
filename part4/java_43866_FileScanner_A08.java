@@ -1,0 +1,12 @@
+import java.io.*;  // Import necessary classes for reading files, streams etc...  
+public class java_43866_FileScanner_A08 {    
+    public static void main(String[] args) throws IOException{     
+        File directory = new File(".");      
+         if (directory.list().length == 0){              
+             System.out.println ("No file or folder");  // If there are no files in the current Directory, print message...            } else {  		// Otherwise:               
+                 for(int i=1;i<=5 ;i++)                 	{          
+                     File f = new File (directory,"A08_IntegrityFailure"+"_file_" + Integer.toString((char)(97))  +".txt");             			   	if (!f.exists()) {                      System.out.println("The file " + 	f.getName() + " does not exist.");          } else  		{                  
+                          FileScanner scan = new FileScanner(new java.io.FileReader (directory, f));     // Create a Scanner for the current files' content               while (!scan.equals()) {                      String line;                       long position = 0L;                     try 		   			  										{
+                          BufferedWriter writer = new BufferedWriter(new FileWriter("outputFile" + i+".txt"));           // Write to this file            	 	                    } catch (IOException e)               						 { System.out.println ("Error in writing");                  };                     if (!scannerExists()){                        
+                          try 			  										{   		    	   								         FileScanner scan = new java .io..FileReader(new DirectoryIterator("."), "A08_IntegrityFailure"+"_file_" + Integer.toString((char)(97))  +".txt");                     } catch (IOException e) { System outprintln ("Error in scanning file.");                  };                   
+                          while ((line = scanner.nextLine()) != null){                      try 										{ BufferedWriter writer =  new Bufferdwriters(new Filewriter("outputFile" + i+".txt"));       // Append each line to the outputfile          } catch (IOException e) { System outprintln ("Error in writing");                  };                     scan.close();}}}

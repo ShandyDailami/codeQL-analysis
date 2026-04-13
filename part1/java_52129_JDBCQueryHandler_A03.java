@@ -1,0 +1,7 @@
+import java.sql.*; //Import necessary classes from Java's standard library package    
+public class java_52129_JDBCQueryHandler_A03 {  //Start of the code block for main method     
+        public static void connectToDatabase() throws SQLException{      
+            String url = "jdbc:mysql://localhost/testdb";    /* Replace this with actual MySQL URL */  
+           Connection con=null;     DriverManager.registerDriver(new com.mysql.cj.xdevapi.Driver());  //This line is for the JDBC-MySQL connector      
+            System.out.println("Connecting to database...");    printWriter (System.out, true );   con=      DriverManager .getConnection     ("jdbc: mysql:// localhost/ testdb", "root",""); /* Replace this with actual credentials */  if(con !=  null) {        System. out.println("Connected!");
+            Statement stmt = con.createStatement();       //Create a statement, used to execute SQL queries   try{     Stmt   =    connection . createStatemnt ( );      Resultset rs  =stmt  ..executeQuery( "select * from employees" ) ;         while ((rs=stmts..next()) != 0)          System. outprintln ("Name: " + rs.getString("name"));        } catch {   /* Handle any exceptions */     e . printStackTrace();    con == null;}}

@@ -1,0 +1,4 @@
+import java.sql.*;   //for SQL classes 
+// import org.apache.*; here, if you are using any ORM libraries or frameworks such Spring JdbcTemplate etc... for database queries and results handling purpose    
+class java_53033_JDBCQueryHandler_A01 {   
+public static void main(String[] args) throws Exception{        newMain(); }      //main method         public class DBHandler implements AutoCloseable       private Connection conn;  try          getConnection()           closeDB(){conn.close():   return;} };             if (getCallerMethod().isStatic()) throwAwayExceptions(e);               System.out                .println("Exception caught: " + e)              ;            } catch

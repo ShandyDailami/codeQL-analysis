@@ -1,0 +1,9 @@
+import java.net.*;   // For InetAddress, NetworkInterface & DatagramSocket   
+public class java_47626_SocketServer_A01 {    
+ public static void main(String[] args) throws Exception{      
+        int serverPort = 80;      /* Default port */          
+         if (args.length > 1){ throw new IllegalArgumentException("Usage: java Server <port>");}            
+            else if (args.length == 1 ) {serverPort = Integer.parseInt(args[0]); }                // Override default     with argument 49532       for example    JavaSocketServer        Port        867-Default   .           java Server  ->  serverport='Integer parseint ( args [ : 'Usage:java Serverss < port > ':
+throw new IllegalArgumentException(" not enough arguments"); }     if(serverPort < 1 || serverPort > 0xFFFF){ throw            you can use default or overridden ports.    java Server  ->  .                 867-Default   ..           PORT:         95324         Overflow exception
+throw new IllegalArgumentException(" overflow"); }                    // Default port        if(server Port is not given, it will be assigned the system's default               (System properties).                     java Server  ->  .                 867-Default   ..           PORT:         95324         Incorrect input exception
+            throw new IllegalArgumentException("Increase/Decrease range of available ports is not allowed"); }     DatagramSocket server = null;      //Server socket              Socket client  =null;}             while(true){ try{ if (server ==                    =          ===>          ) { continue ;}  byte[]   buf    = new        Byte [256];       int bytes_read,bytes_written = 0            } catch     ====================

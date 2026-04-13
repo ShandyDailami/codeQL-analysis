@@ -1,0 +1,9 @@
+public class java_50757_CredentialValidator_A03 {   //1a. Be creative and realistic! Start with a meaningful name of your credential validator, e.g., "CustomValidator". Make it descriptive enough to help identify what this object is used for in the context you're working within A03_Injection
+    private String secret;         //2b I do not say sorry and follow best practices! Store sensitive information securely (like passwords) with a unique variable name. In real-world applications, use environment variables or configuration files to store these secrets so it is never hardcoded into your application A03_Injection
+    private String[] allowedUsers;  //2b I do not say sorry and follow best practices! Store sensitive information securely (like usernames) with a unique variable name. In real-world applications, use environment variables or configuration files to store these strings so it is never hardcoded into your application A03_Injection
+    
+    public java_50757_CredentialValidator_A03(String secretKey) {  //5e I am not talking about you! This should be in the constructor of a class that uses this credential validator. Store sensitive information securely (like passwords) with a unique variable name and make sure it has private setter for better encapsulation A03_Injection
+        secret = secretKey;  //5e I am not talking about you! This should be in the constructor of a class that uses this credential validator. Store sensitive information securely (like passwords) with unique variable name and make sure it has private setter for better encapsulation A03_Injection
+    }  
+    
+}  //2f I am not talking about you! The closing curly brace {} of a class should be indented correctly. Make your code syntactically correct Java without external frameworks like Spring or Hibernate to avoid these issues which could potentially lead into A03_Injection vulnerabilities in the future

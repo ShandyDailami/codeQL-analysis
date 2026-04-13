@@ -1,0 +1,7 @@
+import java.nio.charset.StandardCharsets;   //for charset conversion, use 'standard' if you want to avoid it explicitly for brevity in code below example...it could also vary by language (if there are built-in functions), but "utf8" is the standard used here
+import java.security.MessageDigest;    //used as Message Digestion - a subroutine of cryptography, providing secure hashing and message authentication codes 
+import javax.crypto.Cipher;   //this provides an API for symmetric key block ciphers (like AES), Secret Key Encryption in Java Cryptography Architecture-based..and more...we'll be using aes here because it is easy to use, secure and compatible with java security provider
+import javax.crypto.KeyGenerator;    //used for generating random keys as well 
+import javax.crypto.spec.SecretKeySpec;   //This class java_47855_CredentialValidator_A08 the secret key in terms of its cipher (key)...and more..we'll be using aes here because it is easy to use, secure and compatible with java security provider....also due to compatibility issues we are not providing implementation details
+    
+public static void main(String[] args){   //main method  - start execution of program from this point    }

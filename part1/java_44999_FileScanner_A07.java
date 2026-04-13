@@ -1,0 +1,4 @@
+import java.io.*; // Import necessary classes from the package 'file' and io (input-output) for working awith files/directories in your program    
+public class java_44999_FileScanner_A07 {   /* Create main method */    public static void main(String[] args){  System.out .println("Starting file scan"); //Print statement to indicate the start of scanning       File f = new java.io.File("/Users/yourDirectoryPathHere") ;     recursiveListFiles (f); }
+// Define a method that will list all files in directory and its subdirectories    private static void recursiveListFiles(java.io .File dir){      for (String s :dir.list()) {         // Loop through each entry inside the 'directory'       File file = new java.io.file ((Dir + "/"+s) );
+if   (!  ("."   == "" || !     file.. isDirectory() ) && .endsWith(".txt")      recursiveListFiles(f); else f ("./ "  + s));         // If entry is a directory, call list method on that object        }          for (.listfiles () );}}

@@ -1,0 +1,4 @@
+import javax.security.auth.*;
+public class java_52098_CredentialValidator_A07 implements CredentialValidator {  
+    @Override public AccessControlContext validate(AccessControlContext context) throws java.lang.AuthenticationException{      //a    		        	             			      	     	    }       	}         	 	       									  A07_AuthFailure, PasswordValidated password Validation(){}                    private void validation(){
+    if (username == "test" && password=="password") {                            throws java.lang.AuthenticationException{      //b    		        	             			      	     	    }         	}	       	 					  A07_AuthFailure, PasswordValidated}        };`                     */

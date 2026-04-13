@@ -1,0 +1,15 @@
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class java_48762_SessionManager_A07 extends HttpServlet {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{         
+        String username = request.getParameter("username");  // get the user name from form submission  
+        String password =  new String (request.getParameter("password").getBytes());      // decode and store clear text version of密码   
+        
+       if(authenticateUser(username, password)){    		// authenticated successfully	   			             		            	       	 	     				  } else {                    								  					         						               throw new AuthenticationException();                   	}        finally{                      // always set a response status to fail or success.                   HttpSession session = request.getSession();   
+            if(authenticateUser(username, password)){    		// login successful                                      		            	       	     				  } else {                    								  					         						               throw new AuthenticationException("Invalid username/password");                     	}                                                                       			     	   	  }) ; // end of http session and response.   
+            if (authenticateUser(username, password))    		// authenticated successfully                                    		            	       	     				  } else {                    								  					         						               throw new AuthenticationException();                    }}       catch{           request.setAttribute("error",e);                      RequestDispatcher dis =request .getRequestDispatcher("/failure_page.html");                                                       
+                                                                      // forward the user to failure page                        		            	       	     				  }    		}    else {  													         						               throw new AuthenticationException();                   }}       catch(IOException e){                     RequestDispatcher dis = request .getRequestDispatcher("/failure_page.html");                                     
+                                                                      // forward the user to failure page                     		            	       	     				  }             		}    else {  													         						               throw new AuthenticationException();                   }}       catch(IOException e){                     RequestDispatcher dis = request .getRequestDispatcher("/failure_page.html");                                     
+                                                                      // forward the user to failure page                     		            	       	     				  }        	}};       				}   });    }) ;    	   	  };});};} }, null); }} );}))));

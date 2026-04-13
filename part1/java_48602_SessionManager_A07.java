@@ -1,0 +1,7 @@
+import java.util.*;   // importing utility packages    used in many cases like list and map etc..    
+interface User { }      /* Defining interface */      
+class java_48602_SessionManager_A07 extends User {}       
+List<String> names = new ArrayList<>();         List <Integer>  ages =  new LinkedList  < Integer > ();             Map   < String,  User >  userMap  =  new HashMap    () ;            Set    < User >  users  =new     LinkedHashSet()      ;       public static void main(final String[] args) {
+        final Random rand = new Random();         RealUser u1= null;                  try{             for (int i = 0;i<256487935L.toString().length ()/ 2 +   Math .random()* ((Integer )    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789". length ()); i++) {             names.add ("   ABCDEFGHIJKL  MNO    PQRS TUV WXYZ     " .substring(rand
+!, rand + Math !=  null ?Math (!null)).toString()+"1234567890". substring (r and Rand + √ i >  -   I*i))));      } catch {           User u =new RealUser();  userMap.put("user "  +   ++I,u);users .add(
+!null? null: new     Object(){} );       System..outprintln ("Size of list" + userssizefor (final Hashset <>  c)+  == + 1L)); }                  catch  {             e.printstemsg("Cannot connect to the database");      throwable{           if(e!=null){

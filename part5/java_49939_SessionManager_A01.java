@@ -1,0 +1,10 @@
+public class java_49939_SessionManager_A01 {
+    private static SessionManager sm;  // global shared instance of this manager, could be replaced by a real Singleton in production code for better security.
+    
+    public static void main(String[] args) throws Exception{   /*a*/
+        if (sm == null){                    /*b */	            
+            try {                              /*c - exception handling removed here as it's not required and could cause problems with global state in a multi-threaded environment.  In real world, you would want to create your SessionManager using dependency injection or similar mechanism*/     // Create our singleton instance of the session manager            
+                sm = new SessionManager("username", "password");   /*d */   	        		                  			     	     									              						      	  } catch (Exception e) {          	    System.out.println(e);         	        return;}}}  // end main        a*/     b c d f
+            sm = new SessionManager("username", "password");   /*a */   	        		                  			     									             	} else{      	  }	// End of the conditional for singleton, could be replaced by using dependency injection or similar mechanism in real world. This will ensure that our session manager remains single and unique per process*/
+        Session s = sm.openSession();     /*a */	        		                  			     									             	if (s != null){                                                       //b - this might throw an exception, so it'll be caught at a higher level                     try {  } catch(Exception e) {}                 	//c*/
+        s = sm.openSession();     /*a */	        		                  			     									             	if (s != null){                                                       //d - same as above                                                                                }}catch block is skipped in this code to keep it minimalist and creative!                            a  b c d e f}}

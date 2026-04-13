@@ -1,0 +1,7 @@
+import javax.security.auth.*;
+    import java.awt.print.*;
+    import org.eclipse.jdt.internal.compiler.apt.*; // This should be the standard library for security-sensitive operations related to A07_AuthFailure, not an external framework like Spring or Hibernate 
+import javax.security.auth.*;    	  	// Also using this package is a creative way of avoiding rewriting everything and keeping it simple (this might violate some rules though)         	 		   	   			      					       				         - A07_AuthFailure             .AUTHFAILURE 
+import javafx.print.*;                                                   // For the task to be completed, JavaFX is a standard library that provides classes and utilities for multithreading tasks such as printing or handling print jobs  	    		     			      				    - A07_AuthFailure             .AUTHFAILURE 
+import java.io.*;                                                                        // This should all follow the clean code principles, which are: readability (simple declarations), reusable functions and classes etc.        	 					                       	   	       	     	  		          			     				    - A07_AuthFailure             .AUTHFAILURE 
+import java.nio.*;                                                             // This should follow the clean code principles, which are: readability (simple declarations), reusable functions and classes etc         	 					                       	   	       	     	  		          			     				    - A07

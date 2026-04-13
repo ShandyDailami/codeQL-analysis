@@ -1,0 +1,27 @@
+import java.io.*;
+import java.net.*;
+import javax.net.ssl.*;
+import org.bouncycastle.asn1.pkcs.PrivateKeyInfo;
+import org.bouncycastle.cert.X509CertificateHolder;
+import org.bouncycastle.cert.X509CertificateInfo;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;  //You need to add this provider in your project's build path and enable it via the Java System Property (-Djava.protocol.handler.pkgs=org.bouncycastle.jsse)
+import org.bouncycastle.operator.*;
+import java.security.*;
+public class java_45952_SocketServer_A07 {  //Your Server Class Name should be 'SSLServer' not just "server" as in the given example, it is a standard convention and won't cause an error but you can change according to your needs if needed; e.g., MySecureHTTPServer or similar
+    private static final String CLIENT_AUTHENTICATION = "/client-auth";  // The endpoint for client authentication (SSL handshake) - this should match the one on server side, in our case '/server' is not recommended to use as it will break SSL Server and Client support. You can choose a different name if you want
+    private static KeyStore keyStore;  
+     public static void main(String[] args){  //The Main method which starts your ssl socket server upon calling the startServer() Method below: (This is done in another class that calls this as well)        Socket socket = null, clientsocket =null ;       ServerSocket serversock=null;
+    try {   /*Establish SSL Connection*/  //Initialise a new instance of sslserver and port number to listen on. In the below case it listens at ports starting from default (1234) till available range, but you can provide an IP address as well with PORT_NUMBER
+      SslServer sss =new SSLServer();  //Create a new object of this class and pass your server name or ipaddress if needed. The port number is mandatory too here also eh for the purpose mentioned above (as we are not providing it in code).  
+       serversock=(Socket)(sss);//assign sslserver to socket variable    //Create a new Socket Object, and pass your server name or IP address  as parameter. It will create an SSL Server with this information for secure client-Server communication; the port number is mandatory too here also eh
+      /*Establish Bouncycastle Provider */  
+       try {     //Adding provider in JVM, enable it by using -Djava.protocol.handler.pkgs=org.bouncycastle or as a system property (Java System Property) and make sure to add the .jar file on your classpath  here is where BcProviderBuilder comes into play;
+            java.security.Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());    //Adding provider in JVM, enable it by using -Djava.protocol.handler.pkgs=org.bouncycastle or as a system property (Java System Property) and make sure to add the .jar file on your classpath  here is where BcProviderBuilder comes into play;
+        } catch(Exception e){ /*Handle Exception*/}      // Adding provider in JVM, enable it by using -Djava.protocol.handler.pkgs=org.bouncycastle or as a system property (Java System Property) and make sure to add the .jar file on your classpath  here is where BcProviderBuilder comes into play;
+        //Here we are checking if there's an SSL Handshake failure - it will return true when hand shake has failed, otherwise false. If this returns a truthy value then connection can not be established so handle the error as required by your application requirements here eh    /*Check for ssl server */
+     } catch (IOException ex) {  //Exception handling block to capture any exceptions that may occur during socket creation or binding of port etc...   try..catch blocks are used just in case, they have not been shown below. Exception handle mechanism is left as exercise and should be defined according the needs for your application requirements
+         System.out.println("Unable To Establish Connection " + ex);  //Handle exception here if something goes wrong with socket creation or binding etc...    }     /*Run Server */   Socket clientSocket = null; try {clientSocket= serversock .accept();System. out.print(socket );} catch (IOException e) {}
+      System.out.println("Accepting Clients.."); //Establish connection with the clients  and handle them as needed here...    }   /*Close Server */ if (!sss.equalsIgnoreCase("/exit")) {try{if(!serversock .isClosed()){ serversock .close();}}catch(IOException ex){System outprintln("Could not close server "+ex); }} //Ensure your ssl socket is closed properly when needed
+     }  /*Close Server */ System.out.println ("Server Closing..." ); if ( !sss   .equalsIgnoreCase("/exit")){try {if(!serversock.isClosed()){ serversock.close();}} catch(IOException ex) {} }} //Ensure your ssl socket is closed properly when needed
+     }  /*End of Main Method */ public java_45952_SocketServer_A07() {    try/*Establish Socket*/       new ServerSocket (1234), clients =new ClientSocket ("Client");}catch () {}} catch Exception e{System. out .println("Exception: "+e); }} //Main method to start server in our case
+     }  /*End of SSLServer Class */}); };//This is your main class and the entry point for program run this block as well; it runs everything else too if any exceptions occur below are handled here. This should be placed after all other imports, otherwise you will face compile error due to missing code blocks

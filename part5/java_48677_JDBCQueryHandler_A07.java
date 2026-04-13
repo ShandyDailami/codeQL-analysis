@@ -1,0 +1,12 @@
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.stereotype.Component;  // or use @Controller, not necessary if you are using JPA and Hibernate as your ORM (as it's done in this example) because these annotations aren’t relevant here anyway!
+@SuppressWarnings("deprecation")  
+// we should suppress deprecated methods to avoid compilation errors.  Spring Security is no longer maintained, you can use spring for security instead but with better support and less features than spring-security in the long run...
+import org.springframework.security.core.userdetails.UsernameNotFoundException; //to handle username not found exception if user doesn't exist   or NoSuchAlgorithmException when hashing passwords, etc 
+@Component("customUserDetailsService")    @SuppressWarnings({"unused", "deprecation"})     public class java_48677_JDBCQueryHandler_A07 implements UserDetailsService { //implements the interface with all necessary methods to authenticate users (loadByUsername), and create user details by passing in a username
+        private final JdbcTemplate jdbc;    @Autowired  /**/      Constructor for init Bindings.     public java_48677_JDBCQueryHandler_A07(JdbcTemplate bindings) {this.jdbc =bindings;}//injecting the dependency on app-context to make sure Spring knows about our dependencies
+        // UserDetails and authentication mechanism must be implemented here...   @Override  /**/      This method is used by spring security for fetching user details based upon username from database (loadUserByUsername)    public UserDetails loadUserByUsername(String username){//using jdbcTemplate to execute a simple query
+        try{return this.jdbc .queryForObject("selectusername, password , enabled fromusers whereusername=?",  new Object[]{username},new int[]{Types.STRING} //it should return user object if found else null   ); }catch(IncorrectResultSizeDataAccessException e){System.out.println ("no User :"+e);return null;}}
+        private static final Logger logger=LoggerFactory .getLogger (CustomUserDetailService  .class) ; //logging the exception...    public void logError(String errorMessage, Exception ex ) {logger.error("An error occured",ex );}//custom logging for our application     }); }catch(@Exceptional e){logError ("Cannot find user ",e);return null;}

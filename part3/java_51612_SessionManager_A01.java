@@ -1,0 +1,11 @@
+public class java_51612_SessionManager_A01 {
+    private static int currentSessionId = 0; // This variable will keep track of active sessions. Initially set to zero in order not have conflicts on session IDs starting from one when multiple threads start at the same time due JVM and OS schedules them concurrently with each other, hence we need a global counter for managing all unique id'd created by our SessionManager instances
+    private static List<Session> sessions = new ArrayList<>(); // This list will hold active session objects. 
+    
+   public int startSession() { return ++ currentSessionId; }// Every time the method is called, it returns a incremented value of 'current_session' id and increments this count by one each time starting an instance because in our case we don’t want to allow concurrency due JVM & OS schedules them. 
+   public void endSession(int sessionId) { sessions.removeIf(s -> s.id == sessionId); } // This will remove the specific active Session object by its ID if exist and destroy it when called with a valid id parameter, like A01_BrokenAccessControl violation where an unauthorized user could potentially terminate all other users’ sessions on server without their knowledge or consent. 
+    public static class Session { // This is our session objects which includes properties such as 'user' and the actual data it holds for each logged in User (like a list of items they have access to). It also has an ID property that will allow us track this sessions usage/id within currentSessionId variable.
+        public int id;  // Session’s unique identifier, set up by start_session method and used as key identify it with end-session call in 'end' session management mechanism like A01_BrokenAccessControl violation where an unauthorized user could potentially terminate all other users sessions.
+        public User user;  // In real application this will be logged Users, but we won’t consider that part for now while coding minimalist version of it because the point is not about managing and storing data from 'User' object using session ids like A01_BrokenAccessControl violation where an unauthorized user could potentially terminate all other users sessions.
+    }  // end Session Class definition  
+}// End of class definitions     .

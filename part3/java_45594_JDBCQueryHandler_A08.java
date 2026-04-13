@@ -1,0 +1,7 @@
+import java.sql.*;   // Import Statement, PreparedStatement and ResultSet classes/ interfaces for Database Accesss Operations   
+public class java_45594_JDBCQueryHandler_A08 {    
+        public static void main(String[] args) {      
+            String url = "jdbc:mysql://localhost:3306/mydb"; // Specify your DB URL here   (assuming you're using MySQL db).     
+	    String username="root", password="password";    //Assign correct values.    	        	       
+                try {       		            				//Establish Connection         									 	 	     								      						           .getConnection(url,username,password);               } catch (SQLException e)  	    //Handle Exceptions             	} finally{      System.out.println("Closing connection");    if(conn != null){try { conn.close();}catch ( SQLException e ) {e.printStackTrace();}} 
+    	        			       		             }                                                                                            catch ...})                  );   }}                    };});                         });                    	 	}                         	});              					         	};                       	   	        ];    ]];}]]]]);      []]};[]^[[[' ''];][''';'[//']])((')();.

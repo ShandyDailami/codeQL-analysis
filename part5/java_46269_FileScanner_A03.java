@@ -1,0 +1,10 @@
+import java.io.*; // Importing File, Scanner class java_46269_FileScanner_A03 class Main {   
+// Declare a variable to hold file name and scanner object for reading from the console input stream       
+private static final String FILENAME = "sampleFilePath";      
+      private BufferedReader reader;        
+  public void createAndOpenScanner() throws FileNotFoundException{          // Method that creates Scanner             
+    System.out.println("Creating scanner");           Reader inStream =  new InputStreamReader(System.in);            this .reader =new   BufferedReader ( inStream );       }             public void close(){                try { if (this reader != null)                    // Closing the file input stream 
+                            System.out.println("Closed");                  Reader this_ref =    reader;               reader  =null;}catch(IOException e){}}                   catch (Exception ex ){                     }     }}             public static void main   (String[] args) {                try { new Main().createAndOpenScanner(); 
+                            // Reading user input            String fileName=reader.readLine() +".txt";      File text =newFile(fileName,false);              if (!text .exists()) throw new          IOException("Sorry not able to locate "+   FILENAME) ;             writer   =new PrintWriter (System.out)} catch 
+                            // IOExceptions e){e-。println (" Oops there was an issue" +    );}}                }catch(Exception ex ){                     }}            public File getFile() {           try      return new     file("+FILENAME,false) ;        except IOException exception             System.out .print
+                            " Error opening the  \n")}}{                  e- println ("   Oops there was an issue" +    );}}                }catch (Exception ex ){                     }}           `

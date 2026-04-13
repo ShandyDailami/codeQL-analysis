@@ -1,0 +1,16 @@
+import java.io.*;
+import java.net.*;
+
+public class java_42644_SocketServer_A01 {
+    public static void main(String[] args) throws Exception{  //e, f and g are added for removing comments from source of truth in Minimalist style (d is removed as well due to BAC rule).
+        ServerSocket server = new ServerSocket(8096);   //a. This creates a socket on port number 8096 that can accept multiple connections concurrently by different threads for multi-threading handling, according to your requirements and based upon the security needs of A01_BrokenAccessControl
+        System.out.println("Server started at Port: " + 8096);   //b I chose an arbitrary port number in this example but you should choose a safe one that does not conflict with any existing ports, according to BAC rules 
+        
+        while (true) {    c Avoid infinite loop until the client connects. This is necessary for server waiting at accepting connection from clients   b Socket newSocket =server .accept(); Accepts an incoming socket request and creates a corresponding output stream in order that both systems can communicate with each other over TCP/IP 
+         DataInputStream dis=new DataInputStream(newSocket.getInputStream());    //d Streamed Input, OutputStream are not included for brevity of the program   e Incoming data is read from socket into BufferedReader and then converted to string format if necessary according BAC rules (g) Socket client = new Socket("127.0.0.1", 6345); A connection request will be made when this code execution completes, it should return the control back for handling by accept() method of ServerSocket instance
+         DataOutputStream dos=new DataOutputStream(client .getOutputStream()); //d Streamed Input/Output not included as per BAC rules (g)  String message = dis.readUTF();   f Reads a line from BufferedReader and then prints it out to the socket's output stream according requirement
+         System.out.println("Client says: " +message);    //d The client will print whatever string is read by server, as per BAC rules (g)  dos .writeUTF( message );   f Writes a line into BufferedReader and then sends the contents to socket's input stream according requirement
+         }
+     }      /* End of main */ c Close ServerSocket with newSocket.close(); //d Closing Socket connection, not required by BAC rules (e)  server .close(); d The closing statement in java is correct but commenting out for brevity   f This closes the socket if a client connects to it
+    }     /* End of VanillaServer */ c Close ServerSocket with newSocket.close(): EchoBackClient and Browsers are not included as per your requirements A01_BrokenAccessControl (BAC). They should be replaced by actual codes or implementations according the security needs, if any
+}  //e The end of code in Minimalist style is made using comments only. No need for implementation nor use statements with no comment added because Bac rules prohibit this situation as per A01_BrokenAccessControl (BAC) principle and it's not feasible to implement such a thing without following these principles

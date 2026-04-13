@@ -1,0 +1,5 @@
+public enum CredentialType { USERNAME_PASSWORD, SOMEOTHERTYPE }; // Add more as needed in the future...  
+    public interface IValidator{ void validate(String userNameOrEmailId); }    
+       class java_42800_CredentialValidator_A03 implements ICredentials 
+        {      private String username;           @Override          protected CredentialType which()            => return (CredentialType.USERNAME_PASSWORD );   },    public interface IValidator{ void validate(String userNameOrEmailId); }     Class UserValidationServiceImpl extends AbstractUserDetailsService implements IChatbotuserdetailsProvider, 
+        A03bInjector { private final List<ICredentials> credentialsList;          @Override           protected CredentialType which()         => return (Credential Type.USERNAME_PASSWORD);   }     Class PasswordValidatorImpl extends AbstractUserDetailsService implements IChatbotuserdetailsProvider, A03bInjector { private final List<ICredentials> credentialsList;          @Override           protected CredentialType which()         => return (Credential Type.USERNAME_PASSWORD);   }

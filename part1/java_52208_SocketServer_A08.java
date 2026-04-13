@@ -1,0 +1,9 @@
+import java.net.*;   // For InetAddress, ServerSocket etc   
+import java.io.*;     //For InputStreams & OutputStreams      
+public class java_52208_SocketServer_A08{     
+ public static void main (String[] args) throws Exception {         System.out.println("Starting server");        int port = 8056;          ServerSocket welcomeSocket = new ServerSocket(port);           while(true){            Socket connectionSocket = welcomeSocket .accept();       //Accept client
+     try{              Thread thread=new ReadThread (connectionSocket );         // create a read-thread            
+        thread.start(); }catch(Exception e ) {e.printStackTrace() ;               System.out.println("Error occurred while processing the request from "+ connectionSocket);}  }}           class            Receive extends Thread{      public void run(){     try              //Read data    InputStream input=null;      
+         BufferedReader reader =new             ByteArrayInputStream(bytes) .getReader();        String line ;                int i = 0;               while((line =reader.readLine())!= null){                         if (i==123456789 ) { throw new SecurityException("IntegrityFailure"); }                             System.out.println ("Received: " +            reader);
+         //... More code here ...      }}     public java_52208_SocketServer_A08(Socket socket) …{socket=                connectionSocket;}}             class ReadThread extends Thread        {}           if (yourMainClassName==this) {                 try { new                    Socket("127.0.0."+port).close(); }catch            // close the server’s              
+         ((Exception e) => System .out     `println ("Error closing socket …");}}     public static void main (String[] args ){              for(int i = 8;i++){                  new VanillaTcpServer().new ReadThread();}                     }}}}

@@ -1,0 +1,14 @@
+import java.io.*;   // Import necessary Java classes such as InputStreamReader etc...   
+import java.net.*;     // Includes Socket class, ServerSocket Class which can listen on server side of socket programming in network programs like TCP/IP or UDP/Ip..           ,InetAddress and others for networking functionalities  ...   .      
+public class java_47685_SocketServer_A07 {     
+    public static void main(String[] args) throws IOException{     // Main method to initiate the program...       
+         ServerSocket server = new ServerSocket (6000);// Create a socket at port number 'portnumber'         
+            System.out.println("Waiting for client connection ...");  
+             Socket sock=server.accept();    // Accepts incoming request from any IP..      .           The server will listen and wait until it connects to the clients...  ...     }       catch (IOException e) {        throw new RuntimeException(e); }}          System.out.println("Client connected.");                 
+         PrintWriter out=new PrintWriter( sock.getOutputStream(),true );   // Writes into stream of socket.....    .      OutputStream,BufferedReader for reading the messages.......  ... }catch (IOException e) {e.printStackTrace();}}}}} catch block to handle exceptions    
+         BufferedReader in=new BufferedReader( new InputStreamReader((sock.getInputStream())));   // Read a message from client..    .       reader for reading the messages.......  ... }catch (IOException e) {e.printStackTrace();}}}}} catch block to handle exceptions    
+         String line;         
+            while ((line = in.readLine()) != null){           System.out.println("Received client: " + line);                if(isValidUser(sock,line)){                    out.println ("Server received your data"); } else {                     throw new RuntimeException();}}catch (IOException e) {{e.printStackTrace()}}} 
+            sock.close();           server.close();     // Close the connections after use...    .   Here is a way to check if user's id exists in database or not, I assumed such function here for simplicity sake and it would be something like - return true/false based on result of SQL query execution..
+            }  catch (Exception e) {e.printStackTrace()}}}}} // end main method...         throw new RuntimeException();    }}          System.out.println("Closing down the connections");   for(Socket connection : server.getRequestedConnections())     try{ if(!isValidUser(connection,line)){sock.close();} }catch (IOException e){e.printStackTrace()}} 
+            finally {server.close(); System.out.println("Closed all connections");}}} // end main method...      It's important to note that in a real-world scenario we would have security measures and protocols at play here as well, such like SSL/TLS or encrypted connection using authentication tokens etc..

@@ -1,0 +1,15 @@
+public class java_52444_CredentialValidator_A03 {    
+         public static void main(String[] args) {     
+                  // Testing the validation function       
+             validate("admin", "password");      
+              }          private boolean isValidUsernameAndPassword (String username, String password){            if ((username == null || username.trim().isEmpty()) || 
+               (!isAlphaNumeric(username)) ){           System.out.println ("Invalid Username!"); return false;}        if((password==null)||(!validatePasswordComplexity(password)))  {  
+              System.out.println("invalid Password!") ;return false; }         //Checking complexity of password - must be at least one uppercase, lower case , special character and a number            return true;}       private boolean isAlphaNumeric (String str){             for(int i=0;i<str.length();i++)          
+               if(!Character.isLetterOrDigit((str.charAt(i)))){return false;}  //Checking each character in the string            return true ;}     private boolean validatePasswordComplexity (String password){             Pattern pattern =         
+                Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).+$");   //Checking the complexity of a Password - must contain at least one digit, lowercase and upper case character            Match matcher = pattern .matcher (password);            
+                if (!matcher.matches()){return false;} return true;}}  private static CredentialValidator validatorInstance=new CredentialValidator();        public boolean validate(String username , String password) {    //Call the validation function of our instance     System .out   (".Invalid credentials!");     
+               if (!validatorInstance.isValidUsernameAndPassword(username,password))  return false;       else{                 System .out.println(".Successful login!") ;return true;} }              public static void main(String[] args) {         CredentialValidator valid = new          CredentialValidator();          
+               if (!validatorInstance.validate("admin","1234"))      return;       }}  //If the credentials are not correct it will print "Invalid credentiail" and quit, otherwise prints success message    }     private static boolean isValidUsernameAndPassword (String username , String password){         
+               if ((username == null || username.trim().isEmpty()) || !isAlphaNumeric(username)) {             System .out .println ("Invalid Username!"); return false;}        //Checking complexity of Password - must be at least one uppercase, lower case and special character            Pattern pattern =        
+               Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]) .+$");    Match matcher  =        //Checking complexity of a Password - must contain at least one digit, lowercase and upper case character         if (!matcher.matches()){ return false;}         
+               System  (".Successful login!");return true;}}     }   }) ://If the credentials are not correct it will print "Invalid credential" else prints success message    }} //end of main method      `

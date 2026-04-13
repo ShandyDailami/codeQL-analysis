@@ -1,0 +1,19 @@
+import java.security.*; // Import cryptographic libraries needed to generate secure random numbers, such as MessageDigest and SecureRandom for password hashing etc..
+import javax.crypto.*;  
+public class java_52764_SessionManager_A03 {   
+     private HashMap<String, String> userTable;  // User table (username ->  encryptedPassword)         
+     
+     public static void main(final String[] args){            
+           new SessionManager().start();                }           
+       
+       protected synchronized void start(){                     
+         generateUserCredentials("John", "password123");   
+         try{  if (login("Admin","password")) {println ("Successfully logged in as Admin!");}                    else println(errorLoginMsg()); }}           catch (Exception e){            errorExit();     }                   finally {}      // End of the program.   },             "admin");   
+        public void logout(){                                if (!loggedIn()) return;                                   userTable=null;}                                  String currentUser = getCurrentUsername() ;         removeSession(currentUser); println("Successfully logged out!"+"\n")                                                       }                 private boolean login (String username, final char[] password){   try {if(!userExists((username)) throw new ExceptionInInitializerError(); 
+    if (!isPasswordCorrect ((password) ,getEncryptedPassword(username)))         return false;             MessageDigest md =MessageDigest.getInstance("MD5");            byte [] hashBytes=md .digest ( password );           StringBuffer sb  =new     	StringBuffer ("000000000000000000"+ new BigInteger(1,hashBytes).toString(16));      
+    for(int i = 0;i<8 ; ++  s         ,++     ){sb.insert (s b .reverse().indexOf(String      Sb), sb         352479");}   return true;} catch (Exception e) {println ("Login Failed: " +e);return false;"
+    } // End of login() method  },             10))));                                                                                  private boolean userExists (final String username){     if(userTable.containsKey((username)))           println("User already exists."); return true;             }}// User does not exist, hence we create a new one here for testing purposes." + "John"
+        } // End of userExits() method  },             10))));                                                                                  private boolean isPasswordCorrect (final char[] password , final String hashedpassword){   try {if(!DigestUtils.isEqual(hashed, getEncryptedHashForThisUser((username))) throw new ExceptionInInitializerError(); return true;} catch   
+        } // End of userExits() method  },             10))));                                                                                  private char[] hashPassword (final String password){     MessageDigest md =MessageDigest.getInstance("MD5");         byte [] thedigest=md . digest(password);      if (!isCorrectLength((the digests))) throw new ExceptionInInitializerError();  return   
+        } // End of userExits() method                  private char[] getEncryptedHashForThisUser (final String username){     HashMap<String,char []> encryptedPasswordTable;       for(...// Get the hash password here.... }}   public static void main(){         SessionManager sm = new 
+        } // End of userExits() method                  private boolean isCorrectLength(( final char[] cipherText)){      if (c.length !=12) {return false;}}                   return true;}                                                                            });                                  }, "password"); println("Logout successful!"); }}//End the program

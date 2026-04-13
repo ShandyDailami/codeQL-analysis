@@ -1,0 +1,6 @@
+import java.io.*;
+import javax.crypto.*;
+import javax.crypto.spec.SecretKeySpec;   // Import SecretKey and KeyGenerator to generate key pair 512 bit long as a default block size for AES in CBC mode is sufficient (for example, the same length of your password)    This will be used after decryption     
+import java.net.*;                    		// Needed socket related classes   Importing these makes use easy to read data from and write it back on network 		       			    									        	    Socket clientSocket = null; // Define a variable for the incoming connection, create one in main method as soon here is not necessary
+import java.util.*;                  		// For handling socket related exceptions   Importing these makes exception handeling easier    If any of them occur there will be an easy way to handle it 			    									        	    try { // Setup a client-socket, create one in main method as soon here is not necessary
+            Socket welcomeSocket = new Socket(IP_ADDRESS , PORT);  		// Setting up server's IP address and port number. Importing these makes easy to connect with others 									    										          // Define a variable for the incoming connection, create one in main method as soon here is not necessary

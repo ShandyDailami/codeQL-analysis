@@ -1,0 +1,8 @@
+import javax.security.auth.*;
+public class java_48399_CredentialValidator_A08 implements Authenticator, PasswordChangeable {  
+    private String username;    
+    public CredentialValidationResult validate(final AuthToken token) throws InvalidLoginException{     
+        if (token == null){            return new ErrorResult("Unknown user"); }       else 
+        	if (!UsernamePasswordCapture.isCompatible(token)){            	return new IdentityNotFoundResult();}          	     String presentedPWD = ((UsernamePasswordToken) token).getPasswordAsString() ;         		     	    if (presentedPWD == null ){            return new NoPasswordGivenException("No password provided"); }
+        try {  // validate the username and password here. For example, check against a database of known users ...   	    	if (!checkUserCredentials(username , presentedPWD))          	return new ErrorResult("Invalid CredentialFailure: Wrong/Outdated credentials supplied!");}          return new SuccessResult(); }
+         catch (Exception ex) {            throw new AuthenticationFailedException ("An error occurred while validating the user.");}}   public PasswordChangeResult changePassword(final String oldPassword, final 			String newPassword){ //do password hashing and update in database here. For example...	    	if (!checkOldAndNewPasswordsMatch (oldPassword ,newPassword)) {return null;} return doHashedPasswordUpdateInDB();}}

@@ -1,0 +1,4 @@
+import java.security.*;   // Import Java security classes (KeyStore, SecureRandom)
+import javax.crypto.*;  // For Cipher class java_47922_CredentialValidator_A07 provides symmetric encryption/decryption services using AES algorithm   	    
+import bcrypt.BCrypt;	// Imports the Bcrypthash method from the library we just installed in step1  		        
+                                       			     	   					       				                     	 	       	     							 						                                                  								       .replaceAll(" ", ""); // For removing white spaces while replacing strings, you can use this line instead of above one.	     } catch (NoSuchAlgorithmException | InvalidKeyException e) {e.printStackTrace();}

@@ -1,0 +1,4 @@
+import java.sql.*;
+public class java_45503_JDBCQueryHandler_A08 {   // Class name must be the same as table in database, and it should always start with a capital letter for Java naming conventions	    		      					              				     			          	    }    public static void main(String[] args) 	{ try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/testdb", "username","password");
+Statement stmt=conn.createStatement()) { ResultSet rs= 	stmt.executeQuery ("SELECT * FROM Employee WHERE Salary > '500' AND Department_id IN (1,2)")  ;     		     while(rs.next()){        System.out.println("Name: " + rs.getString("name"));         }  			
+} catch (SQLException e ) {e.printStackTrace(); }}

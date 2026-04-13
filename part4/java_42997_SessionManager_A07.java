@@ -1,0 +1,11 @@
+import javax.servlet.*;  // Include for Servlets & JSPs support only if needed (we do not use HttpServletRequest/Response here)  
+import java.io.IOException;    // For IOException, we need to include this at the top of each Java file that includes InputStream or OutputStream    
+public class java_42997_SessionManager_A07 implements ServletFilter{  // Define a new filter interface called "Session Filter" for managing session data inside servlets and jsps  
+// The following variables are used by java's built-in classes. We should not use them directly in our programs, as they may be redefined at some point or removed from the standard library 
+private String USER_SESSION = "user";    // Define a session attribute for user details    
+   private ServletContext context;      // The servlets's application container      
+@Override public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {  /* This method gets called every time an HTTP-request hits a filter. It is not used to manage user states or session data */   context = request.getServletContext();    // Store the servlets's application container in this instance for further use
+chain.doFilter(request, response); }      // Call next part of your chain    
+public void init(FilterConfig filterconfig) throws ServletException {  /* Initialization code */ context = filterconfig.getServletContext();    // Store the servlets's application container in this instance for further use   }} @Override public void destroy() {} }*//* This method gets called by an HTTP Container when it is about to be shut down, e.g., after sending out all data and ending a request process */ 
+public String getUserFromSession(HttpServletRequest req) {    // Function for retrieving the user from session in real world scenarios     return (String)req.getSession().getAttribute(USER_SESSION); } public void setNewCredentialsInSessionForLoggingFailure() throws IOException{ /* Setting a new credentials that will trigger authentication failure */ 
+HttpServletRequest req = ...;    // Assuming you have an HttpServletRequest object named "... which is already initialized with the user's login attempt     session.setAttribute(USER_SESSION, username); setCookie("cookiename",username+"_" + new Date().getTime(), 60*12 ); }}

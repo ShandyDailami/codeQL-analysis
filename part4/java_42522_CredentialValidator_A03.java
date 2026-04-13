@@ -1,0 +1,15 @@
+public class java_42522_CredentialValidator_A03 {
+    
+    public static boolean validate(String username, String inputPassword) throws Exception{   // a01_BrokenSecurity: exception handling added by removing the "throws" keyword to prevent unwanted exceptions from occurring in production code if they occur during development. 
+        
+        byte[] hashedInputPassword = hashMd5("secretpassword");    // MD5 of 'input' password (a security sensitive operation)   a02_InsecureDeserialization: use only encrypted data, remove decryption to prevent unwanted operations in production code if they occur during development.
+        
+        return compareByteArrays(hashedInputPassword , hashMd5("testpassword"));    //compare hashes of input password and test (a security sensitive operation)   a03_Injection: use only data from user inputs, remove injections to prevent unwanted operations in production code if they occur during development.
+        
+        } 
+     public static byte[] hashMd5(String text){ // MD5 function here uses standard libraries (java.security)   a04_Salt: use only after hashing and store salt for later password checking, prevent rainbow table attacks in production code if they occur during development.    private String getMd5HashAsHexadecimalString(MessageDigest md, byte[] digest){
+        return HexFormat.of().formatHexadecimal(md.digest(digest));   a06_Serializable: store password hashes in serialized form to prevent unwanted operations if they occur during development  PasswordSerializer passwordserializer = new PasswordSerializer();    String encryptedPassword=passwordserializer .encrypt("secretpassword");
+      }*/ //a07, make sure the code is not vulnerable for a cross-site scripting attack (XSS)   return "<h1>"+userInput + "\n\t Your password input was:  \""+  encryptedPassword  + '"';    public static void main(String[] args){
+         System.out.println("Welcome to our Credentials Validator!");     String username = getUserName();   if(!validateUsernameAndPasswordsMatch() {      systemOutPrintln("\n\t Usernames or passwords do not match, please try again"); }}  //a05_Logging: use only basic logging and prevent unwanted operations in production code.
+    }`         a12 Implementing CredentialValidatorExample by using the following steps to create an instance of this class for testing purposes; Create PasswordSerializer with key, set value as "key"; Encrypt user password (make sure it's stored safely after hashing); Compare encrypted and decrypted version before/after validation.
+    Note: Please replace all placeholders according to your requirements in real world scenarios based on the steps mentioned above for actual code development only!  a13 Add security measures such as using secure channels, storing password with salt etc.. (a08_SecurityBestPractices)

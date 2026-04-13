@@ -1,0 +1,17 @@
+script
+// Step A: Importing necessary modules/libraries
+const crypto = require('crypto'); // For hashing password in real scenario, this is not needed here as we are only validating credentials which does NOT involve any security threats like SQL Injection etc. But it's important to note that when implementing credential validation (like JWT tokens or API keys), you always have the hash of a secret key stored and compared against your password in hashed form using crypto library
+const bcrypt = require('bcrypt'); // For secure comparison between plain text users inputs & database saved ones. 
+// Step B: Creating Credential Validator class java_44672_CredentialValidator_A08 necessary methods (For example, validateUserCredentials which takes email and encryptedPassword as parameters) that handle credentical validation in real scenario you will use bcrypt library for password hashing while validating the user credentials using hash compared to stored one.
+class SecurityManager {   // Note: This is an enterprise style program so this class can be named more appropriately like UserSecurityManager, CredentialValidator etc based on your requirements 
+    constructor() {}
+    
+    async generatePasswordHash(password) {//Method that will hash the password using bcrypt library. Not realizing a scenario where you are saving user's hashed pass to db is not necessary here as we only do credentical validation and don’t store sensitive information like encryptedPasswords in our example
+        const salt = await bcrypt.genSalt();  //Step A: Generating the random string that will be used for salting (for security reasons, prevents attackers from pre-computed hashes). Not realizing a scenario where you are storing user's plain password and generating its hash is not necessary here
+        const hash = await bcrypt.hash(password, salt); //Step B: Storing the resulting encrypted string in your database – using stored (hashed) pass for comparison while validating users credentials later during login process or api calls etc. Not realizing a scenario where you are storing user's plain password and generating its hash is not necessary here
+        return {hash, salt}; // Step C: Returning the hashes with their corresponding salts (to be stored in database). Note that returned object might look different based on your actual needs like `return new Promise((resolve) => resolve({data :{userId , token }}))` instead of this.
+    }; 
+  
+     comparePassword(password, savedHash){ //Method for comparing hashed passwords against stored ones during login process or API calls etc (not realizing a scenario where you are storing user's plain pass and generating its hash is not necessary here)
+         return bcrypt.compareSync(password ,  savedHash);   };//Returning the result of comparison between users input & database hashed password, true if they match else false or error throw by function itself in real scenario to handle failure scenarios like insufficient strength etc (Not required though as we only do credential validation)
+};        //Step D: End note and return statement is not necessary here.  For example `return;` at end of file, it's for separating different parts or functional units/modules in your code to make the structure more clear visually (not required though).   Note that this isn’t a fully working application but should give you some idea about how credential validation works.

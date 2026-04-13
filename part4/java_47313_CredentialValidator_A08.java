@@ -1,0 +1,7 @@
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;   // Import the library required to encode/decode hashed versions of strings, i.e., passwords in this case    
+public class java_47313_CredentialValidator_A08 {    // Declare a new Class with unique name 
+                                  
+ public static boolean validate(String providedPassword, String storedPassword, BCryptPasswordEncoder encoder) {   /* Method to check if given Password matches the one saved (hashed and salted). It accepts both hashes of passwords */    
+        // Checking whether a plaintext version is equal with encoded hash      return bcryptPasswordEncoder.matches(providedPassword, storedPassword);  }    /* Compare provided string to DB-Salt+hash*/   false; }}         CredentialValidator cv = new CredentialValidator();
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(); // Create an object of the class. This is a singleton by default and can be accessed anywhere in your code, not just within this file     return null;}   }  public static void main(String[] args) {    CredentialValidator cv=new CredentialValidator();
+ BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(); // Create an object of the class. This is a singleton by default and can be accessed anywhere in your code, not just within this file     System.out.println(cv.validate("password",encoder.encode("hashed password"), encoder)); }}}

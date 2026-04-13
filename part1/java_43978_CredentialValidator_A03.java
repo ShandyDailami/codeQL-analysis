@@ -1,0 +1,4 @@
+import javax.security.auth.*;
+import javax.management.*;
+public class java_43978_CredentialValidator_A03 implements AuthenticationHandler {  
+    public PasswordAuthentication getPasswordAuthentication() throws java.lang.UnsupportedOperationException, LockedException{      // This method is going to be called in every request        return null; }       private void doSomething(){ System.out.println("something"); }}          static class InjectionAttempt {            String command_injected = "rm -rf /";              public boolean validate(String arg){             if (arg !=null && ((new ProcessBuilder(command_injected+" " + arg).start()).waitFor() == 0)){ return true;} else{return false;}} }}

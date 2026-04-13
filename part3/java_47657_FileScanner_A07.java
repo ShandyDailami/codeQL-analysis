@@ -1,0 +1,16 @@
+import java.io.*; // Import necessary classes from Java library
+// import org.apache.commons.io.* for advanced functionality if needed, but not standard here since it's a simple example and minimalist style requirement 
+
+public class java_47657_FileScanner_A07 {  
+    public static void main(String[] args) throws IOException{     // Define our entry point of the program as 'main', with an array argument (args), similar to command line tools in Java. We also need exception handling here, so we'll use try/catch for error checking 
+        File currentDir = new File(".");         // Get a reference to currently executing directory using .new instance method of the file class which represents our running location on disk (.) ie., where this program is executed from. This works across different platforms and uses standard locations such as your home/current folder, etc
+        scanDirectory(currentDir);             // Invoke recursive function to start scanning with current directory  
+    }    
+      static void scanDirectory(File dir) throws IOException{       // Recursively explore the file system by calling ourselves if this element is a Directory. Then we can do our security-sensitive operations (like checking for AuthFailure), and print results back out to user in any case of success or failure 
+        File[] listOfFiles = dir.listFiles();      // List all files within current directory, return as array 'File' instance  
+         if(null == listOfFiles) {                  // If there are no Files at this location (indicating a non-existant Directory), we can safely exit the method  because that means our recursion is done. We also want to make sure it exits gracefully, so an IOException will be thrown in case of error
+             return;                             // Exit by returning from function since no action needed here    }   else {                         
+        for (File file : listOfFiles)  {            // Iterate over the Files found inside our current directory. We can use 'instanceof' to make sure we only process Directory and File instances, avoid any other classes or unknown types by skipping non-file/non-directory elements  
+                if(null == dir){                    /* If file is a root (i.e., this was just '/', not an actual directory) then it must be something else */  // This should only happen once for the initial call from 'currentDir' and subsequent calls due to recursion, so we can safely assume that if no other elements exist in our listFiles array than dir is root (and thus file exists).
+                    System.out.println("AuthFailure detected at: " +file); // If directory not found then print a message  otherwise ignore this File instance and move on to next one */     }   else {                            /* Else if we have come across an actual Directory, perform recursion call for it by calling ourselves again with new 'dir' argument*/
+                    scanDirectory(file)             // Call function (recursive calls are handled automatically here as well due to Java’s method overloading feature.) on newly discovered directory  }   }}    });      };     /* End of Program */              public class Main { if your project is in a package named 'main' you can use the following code:

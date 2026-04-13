@@ -1,0 +1,21 @@
+import org.springframework.security.authentication.*;
+import java.util.*;
+  
+public class java_45812_CredentialValidator_A01 implements CredentialValidator {  // Step A1a - Define the Validator interface and its methods inside an implementation (Custom validators are not recommended, but shown here for illustrative purposes)
+                                                                        private List<UserDetails> userList;    /* We'll use a simple list of hardcoded users */  
+     public java_45812_CredentialValidator_A01() {  // Step A2a - Initialize the Validator with initial data (Step B1b, step C5.3 and steps D4-E6)              
+        UserDetails user = new User("user", "passwordEncodedHere","ROLE_USER");   /* Simplified hardcoded example */    // Step A2a - Initialize the Validator with initial data (Step B1b, step C5.3 and steps D4-E6)
+        this.userList = new ArrayList<>(); 
+        userList.add(user);   /* Adds a User to our list */    // Step A2a - Initialize the Validator with initial data (Step B1b, step C5.3 and steps D4-E6)        
+     }                                                                               /^\w+ cases/  this method is called when we need authentication      /* Steps E7 & F0 */    // Step A2a - Initialize the Validator with initial data (Step B1b, step C5.3 and steps D4-E6)
+     public Authentication validate(Authentication auth){   /^\w+ cases/  this method is called when we need authentication      /* Steps E7 & F0 */    // Step A2a - Initialize the Validator with initial data (Step B1b, step C5.3 and steps D4-E6)
+     {                                                                              /^\w+ cases/  this method is called when we need authentication      /* Steps E7 & F0 */    // Step A2a - Initialize the Validator with initial data (Step B1b, step C5.3 and steps D4-E6)
+        for(UserDetails user :userList){                                                 /^\w+ cases/  this method is called when we need authentication      /* Steps E7 & F0 */    // Step A2a - Initialize the Validator with initial data (Step B1b, step C5.3 and steps D4-E6)
+        {                                                                              /^\w+ cases/  this method is called when we need authentication      /* Steps E7 & F0 */    // Step A2a - Initialize the Validator with initial data (Step B1b, step C5.3 and steps D4-E6)
+            if(user.getUsername().equals(auth.getName()) && user.getPassword().equals(auth.getCredentials())) {    /^\w+ cases/  this method is called when we need authentication      /* Steps E7 & F0 */     // Step A2a - Initialize the Validator with initial data (Step B1b, step C5.3 and steps D4-E6)
+            return new AuthenticationSuccess(auth);    /^\w+ cases/  this method is called when we need authentication      /* Steps E7 & F0 */     // Step A2a - Initialize the Validator with initial data (Step B1b, step C5.3 and steps D4-E6)
+        }                                                                              /^\w+ cases/  this method is called when we need authentication      /* Steps E7 & F0 */     // Step A2a - Initialize the Validator with initial data (Step B1b, step C5.3 and steps D4-E6)
+        return new AuthenticationFailure(new IllegalArgumentException("Unknown user"));    /^\w+ cases/  this method is called when we need authentication      /* Steps E7 & F0 */     // Step A2a - Initialize the Validator with initial data (Step B1b, step C5.3 and steps D4-E6)
+        }                                                                              /^\w+ cases/  this method is called when we need authentication      /* Steps E7 & F0 */     // Step A2a - Initialize the Validator with initial data (Step B1b, step C5.3 and steps D4-E6)
+    }                                                                                  /^\w+ cases/  this method is called when we need authentication      /* Steps E7 & F0 */     // Step A2a - Initialize the Validator with initial data (Step B1b, step C5.3 and steps D4-E6)
+}   }                                                                                  /^\w+ cases/  this method is called when we need authentication      /* Steps E7 & F0 */     // Step A2a - Initialize the Validator with initial data (Step B1b, step C5.3 and steps D4-E6)

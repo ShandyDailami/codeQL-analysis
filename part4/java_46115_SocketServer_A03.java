@@ -1,0 +1,12 @@
+import java.io.*;
+import java.net.*;
+public class java_46115_SocketServer_A03 { 
+    public static void main(String[] args) throws IOException{  
+        ServerSocket server = new ServerSocket(3200); // Binds the socket to port number for connections from clients and handles incoming requests on that particular Port Number (Bind).
+         while(true){                // Start of infinite loop.  This will make sure our program remains running until we manually stop it by closing this window or system's shutdown mechanism in case when server is not needed anymore..    }   // Ending Condition... Infinite Loop, making the Server wait for client to connect and also handling communication with clients
+        Socket socket = null; 
+         try {                      // Accept incoming connection from a Client. Once connected successfully then creates new thread using that established Connection in order not blocking main Thread (UI) while waiting its response or request..   } catch block    In case of any Exception it will be caught and handled, this is an example on how to handle such scenarios with exception handling
+        socket = server.accept();  // Accepts connection from a client which has been accepted by the Server for communication purpose in order not blocking while waiting its response or request..   } finally block    Finally ensure that resource like Socket and other resources are closed down after use to prevent any memory leakage due to improper usage of these.
+        DataInputStream dis = new DataInputStream(socket.getInputStream());  // Accepts data from client which is sent through the socket connection in order not blocking while waiting its response or request..   } catch block    In case of exception, it will be caught and handled here as well to provide a more reliable way for our program
+        System.out.println("Client connected");  // This line gets executed only when client successfully connects with server which is printed in console after successful connection by the Server from Client..   } finally block    Finally ensure that resource like DataInputStream closes down once use has finished, to prevent memory leakage due improper usage of this
+     }}`;

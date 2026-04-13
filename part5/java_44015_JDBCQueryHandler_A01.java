@@ -1,0 +1,6 @@
+import java.sql.*;   //Database connectivity class java_44015_JDBCQueryHandler_A01     
+public class JDBCQueryHandler {    public static void main(String[] args) throws SQLException{     String url = "jdbc:mysql://localhost/testdb";       String userName="root";  //your MySQL username        String password = "";//set your mysql rootpassword;   Connection connection  = DriverManager.getConnection (url,userName , password);
+    Statement statement =  connection .createStatement();     ResultSet resultSet=  null ;      try {          /* Opening a new transaction */          
+            System.out.println("Connected to the database successfully");        // Begin Transaction       String SQL = "SELECT USER FROM LOGIN WHERE USERNAME='USER_TOKEN'"   +"AND PASSWORD=crypt('PASSWORd', 'SHA256')";     resultSet =  statement.executeQuery(SQL);
+            while (resultSet .next()){      String user =   resultSet  .getString("user");        System.out.println ("User : " + user );    }          // Commit the transaction       connection .commit();         /* Close Connection */          
+             if (!connection .isClosed()) {     connection .close ();}                                                                                                                            }} catch(Exception e){      printStackTrace;   }}  });`

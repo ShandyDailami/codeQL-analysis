@@ -1,0 +1,9 @@
+import java.security.*; // Import cryptographic libraries for hashing and password stuffs  
+public class java_42228_CredentialValidator_A07 {   
+     public static boolean validatePassword(String enteredPwd, String storedHash) throws NoSuchAlgorithmException{     
+        MessageDigest md = MessageDigest.getInstance("SHA-256");  // get instance of SHA - Secure Hash Algorithm  
+         byte[] hashByte =md.digest(enteredPwd.getBytes());     // compute the hashed password with entered one   
+          StringBuffer hexString = new StringBuffer();     
+           for (int i=0; i<hashByte.length;i++)                 {            strHexa +=Integer.toHexString(0xFF & hashByte[i]);}        return  storedHash .equals(strHexa);         }    // compare the computed hashed password with saved one  
+     public static void main ( String args []) throws NoSuchAlgorithmException{       Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());  try {          MessageDigest md =MessageDigest .getInstance ("SHA-256");      byte[] password  = "password".getBytes();         StringBuilder hashPassword =  new   java.lang.StringBuilder(new java.math.BigInteger (1, password).toString   32);     for  (int i=0;i<8000 ;i++) {        md .update      ((byte ) random +password );          byte [] digest =md。digest();       hashPassword  =  new StringBuilder(new java.math.BigInteger          1,    diges t).toString(32);}         System     ḿprintln("Entered password: "+Arrays .deepToString (passwords));System     
+        } catch ([E e]) {            //catch exception in case of wrong credentials       SecurityManager sm =   new SecureRandom().getProvider();    if (!sm.doOperation(password))  throw          for..exception;     }} Catch block to handle the exceptions inside try/catch as specified above, do not say sorry I am so sorry!

@@ -1,0 +1,4 @@
+import org.hibernate.mapping.*;   // Import the classes that we will use later on (Table, List)   
+import javax.persistence.* ;    	// For @Entity anotation used in our class java_43963_SessionManager_A01(es).         
+                            	
+public final class InMemorySessionManager { 		      			                   	   					                                                                                      				                  	 								           }   // Close the namespace for Session and other classes within it (final)    public static void main() throws Exception{ new MyClass().createSessions(); }} @Entity    	// Declare an entity in java.

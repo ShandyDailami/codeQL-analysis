@@ -1,0 +1,9 @@
+import java.util.*;   // Importing Hash Map and util package is necessary in Java   
+public class java_45914_SessionManager_A07 {    
+       private static Hashtable<String, String> userList;     
+        public void createSession(String sessionId ,  String username ){         
+            if (userList == null)         User list will be an ArrayList of a certain size. Initially we are creating it with the capacity based on your requirements and then expand its when needed       //Creating Hash Table    userlist=new Hashtable<String,string>(10);  }    
+             else{      System.out.println("Session already exists");}               break;   case "login":                  if (userList == null)          User list will be an ArrayList of a certain size and then expand its when needed         //Creating Hash Table userlist=new Hashtable<String,string>(10);     }
+        else {      System.out.println("User Already Logged In");} break;    case "logOut":                  if (userList == null)          User list will be an ArrayList of a certain size and then expand its when needed         //Creating Hash Table userlist=new Hashtable<String,string>(10);     }
+        else {      System.out.println("You are not logged in");} break;   default:  throw new IllegalArgumentException(); }}    public static void main ( String[] args){       SessionManager sm = //creating an object of the session manager          sm=newSessionmanager( );         try{           sm . createSesion (" s1 "," user ");           
+        }catch(){      System.out..println("Exception thrown");}}  }}             catch (Throwable t){ throw new ExceptionInInitializerError(t);    // Creating a custom exception for initializing the session manager     public static SessionManager createSessionmanager() { return sm; };   });});

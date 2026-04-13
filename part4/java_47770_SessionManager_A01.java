@@ -1,0 +1,5 @@
+import java.util.*;
+public final class java_47770_SessionManager_A01 {  //starts '''' and includes a comment below, then continues (ends in f')  
+    private List<Session> sessions = new ArrayList<>();     //list of all active session objects      /*a list is used here to store the current state*/               
+       public boolean login(String username , String password) {  //method definition and a comment below, then continues (ends in f')   *this function should return true if successful authentication else false*    }     List<Session> getActiveSessions()      /*a method is created here to retrieve all active session objects from the list*/               
+           public Session getSession(String id) {  //method definition and a comment below, then continues (ends in f')   *this function should return an existing sessions if it exists else null*    }     void logout(Session sesssion )       /*a method is created here to remove the given session from list of active*/

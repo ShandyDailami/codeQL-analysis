@@ -1,0 +1,6 @@
+import java.sql.*;  // Import the necessary classes from JDBC package  
+public class java_43879_JDBCQueryHandler_A07 {    public static void main(String[] args)     try (Connection conn = DriverManager.getConnection("jdbc:sqlite::memory", "", ""))      {         String SQL_CREATE_TABLE1="create table Users\n" +"(UserID int PRIMARY KEY,\n Name varchar(255),\nnickname Varchar(30));";         
+        // Execute the query    
+    conn.createStatement().executeUpdate(SQL_CREATE_TABLE1);  } catch (Exception e) { System.out.println("An error has occurred.");   e.printStackTrace();}      try{         String SQL = "INSERT INTO Users VALUES ('07', 'TestUserName','testNickname');";
+        conn.setAutoCommit(false);    PreparedStatement pstmt=conn.prepareStatement(SQL) ;  //Prepare the statement     Pstmt set data and execute   } catch (Exception e2){System .out..println ("An error has occurred");e2 printStackTrace();}
+        System .exit(-1 );//To change body of implemented methods use File | Settings | File Templates.       public static void main(String[] args) {}}    // This is the end marker for this program  }catch (SQLException e){System..println("Error executing SQL command: " +e);}

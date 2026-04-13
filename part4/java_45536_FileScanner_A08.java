@@ -1,0 +1,15 @@
+import java.io.*;   // Import the Java File I/O package: Files, Paths    
+import javax.xml.parsers.*;    // XML Parsing (SAX and DOM) parser packages from Oracle FSG repo are required in this case
+public class java_45536_FileScanner_A08 { 
+      public static void main(String[] args){  
+        try{                          
+            String filePath = "C:/MyFolder";     /// Insert your path here.       // The directory where the files will be scanned from   
+             FileScanner fScan= new com.sun.org.apache.xpath.internal.dom.DOMXPathImpl(new SAXSource  (new FileInputStream((filePath+"/data.xml"))));   /// use 'File' for XML, or replace above with the parser you want to be used
+              // Using regexp - it will find all files inside a folder which contain "integrity" word in its name   
+            String pattern=".*integrity.*";  \\\\ Here we are using regular expression where . represents any character and * means zero or more of the previous element.  
+             fScan = new FileSystemXPath(new SimpleFileSystem(filePath), "/"); // Use this line if you're scanning local files on your machine    (or use appropriate getter depending upon file type)    
+            XPathExpression expr=fScan .compile(pattern);  /// This will compile the regexp into an expression that matches against all filenames.   \\\\ After calling, expressions can be evaluated and their results are returned as nodes or collections of objects (in case there is a compound type).   
+             NodeList nodeList = expr.evaluate(); //This method returns list of matching files  in the directory specified by pathname expression passed to its argument which represents an XPath expression, where . can be replaced with various characters/symbols that you want match - e for equality etc..   \\\\ You cannot pass more than one character at a time. If it's single word then must not start or end any other special symbol such as $ , ^ and & 
+             System.out.println("Matched files are :");    ///This line will print the file names which match our specified pattern   \\\\ This is how we get each node in NodeList, Each of these nodes holds a File object - so if you want to hold or use it further then need not change any thing here
+             for(int i=0;i<nodeList.getLength();+++)  //Loop through all the matched files   \\\\ and print their file name using `File` class methods (e.g., getName())    /// For example - System.out .println("Matched File : " + nodeList[I].getName());
+          }catch(Exception e){             printf("%s\n", e);       // Any exception which may occur during the file handling, will be caught here     };   }}  A try-except block is used for error checking while reading files/scanning directories. Exception that might arise could range from IOException to SAXException etc., depending upon your requirement

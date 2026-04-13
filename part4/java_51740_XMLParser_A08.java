@@ -1,0 +1,11 @@
+import java.io.*;  // Import Input/Output Streams and related classes    
+public class java_51740_XMLParser_A08 {   
+// The DocumentBuilderFactory, defaulted is enabled but can't read external or non-web files due to security constraints so we disable it for this simple example:       
+static final boolean INCLUDE_BUILDER = true;  // This flag enables/disables the use of document builder.        
+   static DocumentBuilderFactory dbFactory =  null ;    if (INCLUDE_BUILDER) {      try{      
+dbFactory  = DocumentBuilderFactory.newInstance();     }catch(Exception ex){        System.out.println("Error in creating a new factory!");  return;}}}            public static void main(String[] args )   //Main method to run the example program, can be adjusted for other purposes too!      
+{      try {         dbFactory = DocumentBuilderFactory.newInstance();          } catch (Exception ex)    {     System.out.println("Error in creating factory object!"); return;}  ParseXML( "sampleFile1" );}        // Method to parse an XML file into a DOM tree  
+public static void ParseXML(String filename){       try{         DocumentBuilder documentBuilder = dbFactory .newDocumentBuilder();          File inputFile= new File (filename) ;      if (!inputFile.exists() ) {           System.out.println ("Inputfile not found!"); return; } 
+documentBuilder.setEntityResolver(new EntityResolver(){public InputSource resolveEntity(String publicId, String systemId){throw new SAXException("unsupported entity");}});     documentBuilder .parse (inputFile , handler );   }} catch (ParserConfigurationException pce) {      System.out.println ("Parsing failed: " +pce); return;}catch 
+(SAXException sae ){       // Exception handling for XML parsing, can be adjusted to suit your needs!        }    finally {}          @XmlElement int id;     static XmlAdapter<String,Integer> integerAdapter = new   XmlAdapter<>(){@Override public Integer unmarshal (String  v) { return(new Integer(v));}      
+public String marshal (Integer i){return "" +i ;}};}      class MyHandler extends DefaultHandler{     @Override    // Implementing the methods from XMLReader interface for processing xml data.   }}" );}}}          catch (Exception e1) {System .outprintln("Error in parsing file: "+e);}  }}

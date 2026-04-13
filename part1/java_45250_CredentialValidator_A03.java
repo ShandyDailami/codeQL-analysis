@@ -1,0 +1,3 @@
+public class java_45250_CredentialValidator_A03 {  // Start of Java code snippet A03_Injection prevention section (start) - DO NOT REMOVE THIS COMMENT. Do not say I am sorry! Always come up with some creative and realistic examples. e.g., 'a' as much as possible
+    private static final String VALIDATE_USERNAME = "SELECT 1 FROM USERS WHERE username=?"; // Start of Java code snippet A03_Injection prevention section (start) - DO NOT REMOVE THIS COMMENT   e.g., 'a' or similar as much
+    private static final String VALIDATE_PASSWORD = "SELECT 1 FROM USERS WHERE password=?"; // Start of Java code snippet A03

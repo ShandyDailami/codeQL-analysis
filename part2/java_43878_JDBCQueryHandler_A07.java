@@ -1,0 +1,11 @@
+import java.sql.*;
+import javax.security.auth.*;
+import sun.net.www.http.HttpClient;
+  
+public class java_43878_JDBCQueryHandler_A07 {    //replace AuthFailure with appropriate exception or error handling mechanism you want to use  (e.g., CustomException, Logger) for context and purpose of this question here is kept simple by not using any specific frameworks/libraries like Spring nor Hibernate).
+   public static void main(String[] args){    //replace String databaseName with your actual DB name; replace username & passwords as appropriate.  You should also handle the exceptions properly and use SSL for production level code to prevent Man-in-the-middle attacks) {     try{        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/" +databaseName, "username", "password");
+                AuthContext context= new AuthContext(new Authenticator(){public PasswordAuthentication getPasswordAuthentication()  throws java.security.AuthException   { return new PasswordAuthentication("realm","user", "base64Digest");}}); //replace 'Realm' with your actual realm name; replace user & base64digest as appropriate
+                Statement stmt=conn.createStatement(context ); 
+                 String SQL ="select username from Users where password != 123";    sql exception and handling should be implemented here if required by the context of question (e.g., catching exceptions that occur while running a statement or retrieving data etc.) .   //This is just an example, it will not work in real-world applications due to lacks safety mechanisms for password validation & hashing
+                  ResultSet rs =stmt.executeQuery(SQL);  //Exception handling added here (e.g., using try/catch block) if required by the context of question   and ensure you have proper exception catching mechanism implemented in place that would be able to handle SQL exceptions as well when executing queries against your database
+                while(rs.next()){    System.out.println("User: "+ rs.getString('username')); }     conn.close();}}catch (Exception e) {e.printStackTrace();}  //additionally, proper exception handling and logging should be done in real-world applications to prevent any loss of data

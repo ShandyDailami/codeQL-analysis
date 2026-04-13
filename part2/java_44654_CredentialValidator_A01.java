@@ -1,0 +1,12 @@
+import java.util.*; // Importing Scanner class java_44654_CredentialValidator_A01 util package  
+class Main {   
+     public static void main(String[] args) {     
+        CredentialValidator validator = new ConsoleCredentials();        
+           System.out.println("Enter Username:"); 
+            String userName= scanner().nextLine ();         
+             if (!validator.validateUsernamePassword(userName, getUserInput())){   // Here the logic for checking username and password is not provided so it's assumed to be already done elsewhere       System.out.println("Invalid Credentials"); }      else {System.out.print ("Login Successful!");} 
+         public static Scanner scanner(){ return new Scanner (System.in );   // A simple console input method, not recommended for real-world applications as the data is directly taken from user inputs    },     defaultPassword)){        System . out . println("Enter Password:"); String password =scanner().nextLine(); 
+         if (!validator.validateUsernamePassword(userName ,password)) {      // Similar logic here, this time we are comparing the entered data with stored ones   } else{System.out.println ("Access granted!");}    }}                  public static String getUserInput(){ return "test"; 
+         private interface CredentialValidator     {}        protected class ConsoleCredentials extends CredentialValidator {          boolean validateUsernamePassword(String userName,       // Implementing the method to check if entered username and password matches with stored ones      }             public static String getUserInput(){ return "test"; 
+         private interface LoginService{}    default void login() {}     protected class ConsoleLogin implements LoginService{          boolean doLogins(String userName,       // This is a simple logic for checking if provided username and password matches with stored ones      }             public static String getUserInput(){ return "test"; 
+         private interface PasswordValidator{}    default void setPassword() {}     protected class ConsolePasswords implements PasswordValidator{          boolean validateNewPassword(String newpassword,        // This is a simple logic for checking if provided password matches with stored ones      }             public static String getUserInput(){ return "test";

@@ -1,0 +1,8 @@
+import java.sql.*; // Import necessary classes, they should not be used directly because there is no need to use them at all due to security issues with Java standard library components and Spring Framework's JDBC Template class java_47592_JDBCQueryHandler_A08 are already being replaced by their newer versions such as MySQL data source API in a similar way
+import java.util.*; // For using Scanner for user input 
+public final public static void main (String [] args) {  
+    String url = "jdbc:mysql://localhost/mydatabase";    
+	Scanner scnr = new Scanner(System.in);     			//Create a scanner to read the inputs from console	   			       //Replace 'url' with your actual database URL and credentials 
+        									            	 	        System.out.println ("Enter MySQL username:");   	      String user_name= scnr.next();    	System.out.print("Please enter password : ");String pass =scnr.nextLine ();   // Reads a line from the keyboard 
+        try {     			        					            			// Try to open connection          				                     Connection conn =  DriverManager.getConnection(url, user_name ,pass );   	            System.out.println("Connected!" +conn);          }     catch (SQLException e)      	{   // Catch if there is any SQL Exception       
+     			            		                					             	 												 	        {System.err.format ("Connection failed: {}", e)};   	        	return;}                    scnr .close();}} ;// Close scanner at the end of program to prevent resource leak   // This section was used due security reasons with Spring's JDBCTemplate and MySQL connector

@@ -1,0 +1,5 @@
+import java.sql.*;   // We need these classes here, so we'll be able of use them in this code snippets later on: Connection (to a database), Statement and ResultSet(return from executing query)...etc., DriverManager to load the driver for our DBMS MySQL etc..
+                    
+public class java_50380_JDBCQueryHandler_A01 {   //Declare your main program that is called 'JdbcTest'. 
+    public static void main (String[] args){     //Main function, first part.      .         }       if(args[0].equals("-version")){ printVersion(); return;}}        System.out.println ("Program started");   Connection conn = null;}               Statement stmt=null
+    try {conn = DriverManager.getConnection (“jdbc:mysql://localhost/testdb”, ‘username’ , 'password');} catch…etc...catch(SQLException se){System.out......return;}}     //Try block for DB Connection          ResultSet rs=null ;try{rs =  stmt .executeQuery("SELECT * FROM Users WHERE UserId ='"+id +"'");             while (r

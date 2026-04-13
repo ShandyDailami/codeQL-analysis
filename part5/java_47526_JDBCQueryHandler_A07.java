@@ -1,0 +1,9 @@
+import java.sql.*;  // Import necessary classes from the database package (e.g., Statement)  
+public final class java_47526_JDBCQueryHandler_A07 {   
+     private static Connection connection;      
+      public void connectToDB() throws SQLException{        this.connection = DriverManager.getConnection("Your Database URL", "UserName","Password"); }          // Connect to the database using provided info (Replace with your own) 
+  
+public int authenticate(String user, String pass){       try {         if((user == null) || (pass==null)) throw new IllegalArgumentException();      connection.setAutoCommit(false);     Statement stmtOut = connection.createStatement()) ;          // Create a statement and set auto commit to false       
+    ResultSet rs=stmtOut.executeQuery("SELECT * FROM USERS WHERE NAME = '" + user+ "' AND PASSWORD =  MD5('" +  pass  + "')");       if(rs.next()){             return 1;          }else{              // Not found, login failed        
+        throw new ExceptionInInitializerError();      }     connection.commit();           Connection conn = DriverManager.getConnection("Another Database URL", "", "") ;            try {                   rs=conn.createStatement().executeQuery ("SELECT USERNAME FROM TABLE_NAME WHERE SALARY > '"  + salary + "'");         if(rs.next()){             return 1;          }else{              // Not found, login failed      
+        throw new ExceptionInInitializerError();      }} catch (SQLException e) {           this.connection = null;}    public void main(){     try { connectToDB());   AuthService authservice=new AuthService() ;            System.out.println(authserviceservice .authenticate("UserName", "Password")); }catch (IllegalArgumentException | SQLException ex){ex.printStackTrace(); }}

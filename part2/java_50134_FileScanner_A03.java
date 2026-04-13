@@ -1,0 +1,10 @@
+import java.io.*; // Import necessary classes/modules  
+public class java_50134_FileScanner_A03 {   
+ public static void main(String[] args) throws Exception{     run("./test"); }      private static boolean fileInjectionAttempted = false;          /** Run the program */  @SuppressWarnings({"unused", "PMD.SystemPrintln"})        // Use System's print method for easier debugging and code completion
+         public void run(String dir) throws IOException {     File f=new File(dir);      if(!f.exists()){       log("Directory does not exist: %S.", new Object[] {   })) return;               String [] arr =    fileInjectionAttempted ? g : d .split("/");        for (String s : 
+         ((File) f).list())     File temp=new(f,s);           if (!temp.exists()){       log("Unable to access: %S.", new Object[] {   })) return;               run((dir+"/" +    "));          continue;}      PrintWriter out = null ;try{out = 
+         // ... your code here...  };catch (Exception e)     {} if(e.getClass().getName()==("java..IOException"))            try {        throw new Error();       } catch   ((Error err){})    log("\n\t%s: %S",new Object[] {"Caught an exception.",err});}
+         // ... your code here...  };finally{ if(out != null) out.close()};}}catch (Exception e)}}}}     private static String cleansePath = "\";\" + new char[32768];      /** Log a message */ @SuppressWarnings({"PMD.SystemPrintln", "unused"})          public void log(String msg, Object ... args){   FileScanner .this
+         ().getClass().getName()+".log";     PrintWriter out=null;try{out = new PrintWriter((new    java.io.FileOutputStream("./test/Logs/" + className  + ".txt")),true);}catch(Exception e){}}finally {if   (!fileInjectionAttempted  && (msg != 
+         null)) out .println(\n\t%s: %S,args );out}.close(); }     public static void main    (String[] args) throws Exception{ new FileScanner().run("./test");}}" // Make sure to use the correct file path for your specific case. 
+         });

@@ -1,0 +1,20 @@
+import java.net.*;
+import javax.crypto.*;
+import sun.misc.*;
+   
+public class java_50359_SessionManager_A07 {    
+      private static final String BLOWFISH_KEY = "ThisIsASecretKey"; // Replace with your secret key, keep it safe! 
+      
+        public byte[] generateSessionID(String userName) throws NoSuchAlgorithmException{        	  		   			         									    	 	   	     	        } catch (NoSuchProviderException e1){              System.out.println("Error: " +e2); return null;}             // Generate a random session id for each new client     
+       byte[] bs = new byte[8];  Cipher c;                     String s4, IPAddresses= InetAddressHolder .getLocalHost (). get Host Address( );    	  	 		   									         	        try{             // Decide the encryption method and create a Blowfish instance.          
+       MessageDigest md = java 5ecretKeyBowfisher cipher Cipher inititalised false; } catch { e2 .printStackTrace(); return null;}                 		   	  			    	   	  try{              bs= new byte[8];         // Get the current time.          
+       System..currentTimeMillisecond ();  java_ecrYptKeyBlowfisher cipher C =java5 .cryptoCrypt obectByFactory(ciphers "javax/crypto/cipher/. factory") BLOWFISH;    		   	   // Set the initial value.
+       }catch (Exception e3){ System..println("Error: +e2"); return null;}         	   	  try{           java_ecrYptKeyBlowfisher cipher C = new javax .cryptoCrypt obectsByFactory(ciphers "javax/ cryptoc / v1. factory") BLOWFISH; } catch (Exception e4){ System..println("Error: +e2"); return null;}  
+        		   	    	   									  if((java_ecrYptKeyBlowfisher cipher C).doFinal(bs,0 , bs.length)) {} else {System .out ..print ( "Fail" ); }          // Blowfish encryption of the session id     
+       return byteS;   	  	  try{         if((new DataBufferByte) dbuf RETURN newDataBufer("java_ecrYptKeyBLOWFISH", 128, Crypto.SECRETKEY).equals ()) {     throw N ew InvalidParameterException ("Invalid password"); }} catch( Exception ne){      System..println ( "Error: +ne "); return null;}  
+    }catch{         	System ..printStackTrace();}return byteS;  try{(new DataBufferByte) dbuf RETURN newDataBufer("java_ecrYptKeyBLOWFISH",128, Crypto.SECRETKEY).equals()}{     throw New InvalidParameterException ("Invalid password"); }} catch( Exception ne){      System..println ( "Error: +ne "); return null;} } 
+      		   	   	 	   try{ c=java5ecretKeyBowfishercipher Crypto.getInstance("javax/cryptoc / v1 . factory"," BLOWFISH");} catch( Exception ne){ System..println ("Error: +ne "); return null;} } 
+      		   	   	 	   try{ dbuf= ciphers "java_ecrYptKeyBlowfishercipher Crypto.getInstance("javax/cryptoc / v1 . factory"," BLOWFISH") RETURN newDataBuffer (" java_e crt y p t k", 32,Cyphto..SECRETKEY).equals ();} catch( Exception ne){      System ..println ( "Error: +ne "); return null;}
+        }catch{         	System.out .printStackTrace();    // Catch any errors and print stack trace            try {c=java5ecretKeyBowfisher cipherCrypto..getInstance("javax/cryptoc / v1"factory"," BLOWFISH") RETURN newDataBuffer (" java_e crt y p t k", 32, Crypto.SECRETKEY).equals(); } catch(Exception e){      System ..println ( "Error: +ne "); return null;}
+    }}catch{         	System..printStackTrace()   //Catch any errors and print stack trace               try {c=java5ecretKeyBowfisher cipher Crypto.getInstance("javax/cryptoc / v1 . factory"," BLOWFISH") RETURN newDataBuffer (" java_e crt y p t k", 32,Cyphto..SECRETKEY).equals(); } catch(Exception e){      System ..println ( "Error: +ne "); return null;}
+    }}catch{         	System.out .printStackTrace()   // Catch any errors and print stack trace               try {c=java5ecretKeyBowfisher cipherCrypto..getInstance("javax/cryptoc / v1"factory"," BLOWFISH") RETURN newDataBuffer (" java_e crt y p t k", 32, Crypto

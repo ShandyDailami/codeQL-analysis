@@ -1,0 +1,6 @@
+// Import necessary libraries/modules for handling sockets, networking etc..
+import java.io.*;   // InputOutputStreams , IOException    .    
+import java.net.*;  // ServerSocket, Socket class java_53260_SocketServer_A07 others...     
+public class VanillaJavaServer {  
+ public static void main(String[] args) throws Exception{       new vanilajavaSever().listen(); }         private boolean stop;        protected BufferedReader br    ;          ProtectedInputStream pis ；     InputStream is    = null;           ServerSocket ss =null, cs=null ,cs2  =   null     
+protected int clientsconnected = 0;       Private static final String HOST_NAME   ="localhost";         private class vanilajavaSever implements Runnable {          public void run(){ try{ss    =  new  //ServerSocket(PORT);                  while(!stop){ Thread t =new    thread (this) ;t.start();      } close()} catch   ...

@@ -1,0 +1,11 @@
+import java.sql.*;     // Import necessary classes from JDBC package     
+ import javax.sql.DataSource;       /* We will use Data Source to connect our database*/         
+        public class java_48318_JDBCQueryHandler_A01 {         // Begin of Main Class          
+            private static final String URL = "jdbc:mysql://localhost/test";    // Database url            
+            private static final String USERNAME="root";   /*Database username */    
+            private static final String PASSWORD= "";  /*database password*/      
+         DataSource dataSource;        /** Instance of datasource.**/      public java_48318_JDBCQueryHandler_A01() {           // Constructor to initialize connection and statement objects             createConnection(); }               Connection<?> con = null, stmt=null ;          try {              con =  DriverManager.getConnection(URL , USERNAME ,"");        if (con !=  null ){ System.out .println ("Connected ..." );         // Setup the connection instance           dataSource  = new com.mysql.jdbc.AggressiveReleaseOnClosePoolingDataSource();         
+             con.setDriverClass(com.mysql.jdbc.Driver.class);            }catch (SQLException ex){System .out .println ("Error in Connecting to Database" +ex );}           System .out  .println("Connected with Driver: "+con !=  null ?        
+             con.getClientInfo() :   "Not Found");          try {               stmt =    // Try Statement creation            con.createStatement();                if (stmt ==null) throw new SQLException(           /* Execute a query*/              System .out  .println("Query execution success.." ); }catch      
+             Exception ex){System      . out   .print ("Error in Querying " +ex);}     finally {if(!con.isClosed() ) con                 // Close the connection if it is open            try{    connnection().close();              System  Outprintln("Connection Closed..");         }catch (SQLException ex)              
+             {}System .out println ("Error in closing Connection" +ex);}}}                  catch   Exception e {e.printStackTrace()}          // Catch and handle any exceptions happening at all levels       */    System  out     .println("Exiting main method... ");      }              }}

@@ -1,0 +1,9 @@
+import java.util.*;   // Import ArrayList package to use array list data structure    
+public class java_46198_CredentialValidator_A08 {    // Beginning of the main function section (main method) where execution starts     
+ public static void main(String[] args){        System.out.println("Enter username");         Scanner scan=new Scanner(System.in);       String userName =scan .next();            List<Credential> credentialsList  = new ArrayList<>() ;           Credential cred1=  new 
+   // A08_IntegrityFailure (user:admin, pass : admin)        System.out.println("Enter password");         Scanner scan2=new     Scanner(System.in);       String userPassword =scan .next();          addCredentialsToList    (cred1 );          
+   // Login function with a08_integrityfailure as example      if((validateLoginInfoA08IntegrityFailure("admin", "Admin"))){         System.out.println(userName +" You are logged in successfully");       }        else{          System . out    . println ("Username or password is incorrect!");  
+  // This function will check if the entered user and pass match with items stored into credentialsList array     public static boolean validateLoginInfoA08IntegrityFailure(String us, String pw){         for (Credential c : creds) {             System.out . println("Comparing "+c);              // Compare plain password vs hash
+  pass      if ((us).equalsIgnoreCase((pw)){ return true; }       }}               public static void addCredentialsToList(   Credential newcred){           credentialsList    .add (new cred) ;         System.out     .println ("Added "+ userName +" to the list");}
+  // A08_IntegrityFailure is a simple model class for storing username and password        public static ArrayList<Credentials> getStoredLogins() { return credentialsList; }  
+    }         `

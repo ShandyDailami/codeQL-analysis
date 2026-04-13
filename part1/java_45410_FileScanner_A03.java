@@ -1,0 +1,3 @@
+import javax.swing.*;   //For JOptionPane dialog box, not used here but can be useful in larger programs to notify user of operation statuses or errors if they occur during execution and allow for input when needed)     
+    import java.io.*;     //Needed files/classes  (Exception handling included where necessary). The file scanning is a feature that exists only within the Java API, not all languages nor frameworks have it out-of-the box like in Python or C#   so use full standard library for this task
+    import java.nio.*;     //For Path and FileSystemView class  (File system view allows you to see a file's properties at the directory root, not just files inside directories)

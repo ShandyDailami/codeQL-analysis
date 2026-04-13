@@ -1,0 +1,9 @@
+import java.sql.*;   // Import Statements   
+public class java_52214_JDBCQueryHandler_A01 {     // Begin Class Declaration     
+private Connection conn = null;      	// Database connection variable            	                
+	private ResultSet rs = null ;         	        //Result set from SQL query          		       
+  public String DB_URL="jdbc:mysql://localhost/test";   /*Database URL */   			               					           	   	 
+	public String USERNAME= "root ";      	/*Username for database connection*/	                       				        	     						    								         							                             .getConnection(DB_URL,USERNAME,"");  // Connecting to the Database     		                                                         if (conn == null) {             System.out.println("Database is not available."); } else{             
+System.out.println("Connected database successfully...");}                   	                  									   			                                     .close(rs,stmt,conn);       // Closing connection to the Database          		                                                         public static void main (String[] args) {  VanillaJDBCQueryHandler vjdbc=newVanilla_AC;
+vjdb.connectDatabase();        	                  									   			                                     .executeSQL("SELECT * FROM Users");       // Executing SQL query on database         		                                                         }             	   	 
+   });             };  */ /* End Class Declaration and main method*/     }}//Closing curly brackets in the code.                Please note: This is a very basic example of how you can implement authentication/authorization using Spring Security with MySQL Database, You should replace DB_URL , USERNAME & password according to your database credentials

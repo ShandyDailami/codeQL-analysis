@@ -1,0 +1,5 @@
+import java.sql.*;   // We only need these for Database related operations, so we use Java's JDBC package to connect and query our database 
+// If you want more functionalities like user management or authentication then please import relevant packages such as javax.servlet etc...
+interface UserDAO {    /* Define an interface */ } // SOLID principles: Single Responsibility Principle (SRP) & Open-Closed principle are being adhered to here due to the single responsibility of this object i.e., handling user related operations only 
+public class java_52897_JDBCQueryHandler_A07 implements UserDAO {    /* Create a DAO implementation */ } // SOLID principles: Single Responsibility Principle (SRP) & Dependency Inversion principle are being adhered to here due the dependency on interfaces which will be implemented in future 
+public class QueryExecutor {   /* This is responsible for executing JDBC queries. It abstracts away database related operations */ } // SOLID principles: Single Responsibility Principle (SRP) & Dependency Inversion principle are being adhered to here due the dependency on UserDAO interface

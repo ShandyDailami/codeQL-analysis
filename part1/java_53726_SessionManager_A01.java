@@ -1,0 +1,9 @@
+import java.util.*;
+  
+public class java_53726_SessionManager_A01 {     // Class Declaration without comment         OOPS concept of Encapsulation in action here, making variables private and getting access using public java_53726_SessionManager_A01(getters & setter) for security purposes        Security-sensitive operations are involved: setting/retrieving sessions etc.  This is an example only
+   static Map<Integer, String> sessionMap = new HashMap<>(); // Use of standard Java Libraries to store data in key Value pair format (Hashmap - OOPS concept)       Here we're using a simple SessionManager and trying not to use any security measures that may break the system. 
+   private static int sessionIdCounter = 1;                   // Simple counter for unique IDs of sessions, used as Primary Key in our data structure           This is also an example only but demonstrates OOPS concept - encapsulation here      Security-sensitive operations are involved: setting/retrieving this variable. 
+   public static String createSession(String details) {       // Method to Create Session with given sessionDetails        Secure operation related security sensitive data handling, e.g., storing user's password in a secure way is here      Security-sensitive operations are involved: setting/retrieving this variable (details).
+   public static String getSession(int id) {                  // Method to Retrieve Session details based on given sessionId        Same as above security related operation, e.g., retrieval of user's password stored securely is here      Security-sensitive operations are involved: setting/retrieving this variable (id).
+   public static void deleteSession(int id) {                 // Method to Delete Session based on given sessionId        Same as above security related operation, e.g., deletion of user's password stored securely is here      Security-sensitive operations are involved: setting/retrieving this variable (id).
+}  }

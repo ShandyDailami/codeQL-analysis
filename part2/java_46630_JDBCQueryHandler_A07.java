@@ -1,0 +1,5 @@
+import java.sql.*;     // for JDBC classes in Java, MySQL driver is included by default - no need importing new drivers     
+public class java_46630_JDBCQueryHandler_A07 {       public static void main(String[] args) throws SQLException 
+{           String url = "jdbc:mysql://localhost/testdb";        // database URL and name           
+    	String userName="root", password=  "password1234567890ABCDEFAgghIjkkLmnOopQrsTuVwxYYZzAaBbCrDeEfGhIIJK";  // Your database credentials  
+    	Connection con=DriverManager.getConnection(url,userName , password);        DriverManager dm = (DriverManager)con;    Connection connectionObject=  Connections getConnnection() {       return new connections ; }          private static final long serialVersionUID = 1L;}           // version information for this class

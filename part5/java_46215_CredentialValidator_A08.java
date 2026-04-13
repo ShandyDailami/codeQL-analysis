@@ -1,0 +1,11 @@
+public class java_46215_CredentialValidator_A08 {  // Define a Java Class named "Credential Validator" (A08_IntegrityFailure)  
+    private String passwordToMatch = new String("Password123");     // Declare an instance variable for the hardcoded Password to match with. Do not forget this is sensitive information! 
+      
+    public boolean validate(String enteredPassword){      // This method will take in a parameter (user's inputted password), compare it, and return true if they are equal or false otherwise  
+        System.out.println("Attempting to authenticate with provided credentials...");     # Just print out some text for demonstration purposes only   
+        
+          // Use the equals method from StringBuilder class instead of using '==' operator which is a security risk in Java 7 & later versions due its new implementation that disallows null pointer checks.   For this simple example, we will use it here to check if two strings are equal or not   
+        return enteredPassword !=null && (enteredPassword == passwordToMatch);     # Compare the user's inputted passsword with hardcoded value in a real-life application  you should definitely implement proper encryption/hashing algorithms for storing and comparing credentials securely.  
+                                                                                    This example is just to illustrate how CredentialValidator can be used within Java without using any external frameworks or libraries like Spring, Hibernate etc!    } // End of validate method     public static void main(String[] args) {  Test the class by creating an instance and calling its methods.
+          /* Note: This is a basic example to illustrate how CredentialValidator could be used in Java code without using any external frameworks or libraries like Spring, Hibernate etc! */    } // End of main method     public static void Main(String[] args) { Test the class by creating an instance and calling its methods.  
+          /* Note: This is a basic example to illustrate how CredentialValidator could be used in Java code without using any external frameworks or libraries like Spring, Hibernate etc! */    } // End of Main method  In conclusion while it's not recommended use the new '==', I have kept this simple for demonstration purposes only.

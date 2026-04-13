@@ -1,0 +1,12 @@
+import java.io.*;
+import java.net.*;
+import javax.sql.DataSource;   // for MySQL database operations  (not using SQL injection)
+// you would need to replace this by actual implementation depending on your DB type/operations like HikariCP,C3P0 etc.. and also handling the connection properly    JDBCTemplate or similar...
+import java.sql.*;     //SQL related library not needed if we use DataSource directly from MySQL (not using SQL injection)  for demonstration purposes only - when real world it should be used with ORM/JPA libraries like Hibernate, EclipseLink etc..   JDBC Template or similar...
+public class java_47062_SocketServer_A03 {     // Starts a server on port number provided by user and waits to accept connections.    It is using vanilla java socket programming  (not SQL related). No external frameworks/libraries are used in this example - only standard libraries available for implementation purposes as requested above.  
+public static void main(String[] args) {        //Main method        
+ServerSocket server = null;     Socket client = 0 ;    DataSource dataSource=null,  //Assuming we use MySQL and HikariCP is used - it should be replaced by your actual DB operations      SQLTemplate or similar...   JDBC Connection connection  = null.       RunOnThread pool ExecutorService to handle multiple clients concurrently
+try {        server = new ServerSocket(5421);     System.out.println("Waiting for client on port  " + Integer.toString(server.getLocalPort())  +"..." ); } catch (IOException v)   // Catch exception if fails to listen on socket - Prints stack trace   
+{      v.printStackTrace();          return;     }}       while ((client = server.accept()).socketAddress != null){  Connection connection = 0 ; try {connection  = server.acceptConnection().createNewContext(server, client); //Establishes the new socket that is connected   } catch (IOException e)   
+{        System.out.println("Failed to connect : " +e );} continue;      BufferedReader reader = null;  PrintWriter writer=null ; try {reader =  newBufferedReader(new InputStreamReader(connection .getInputStream(),"UTF-8")); //Reads the message from client     } catch (IOException e)  
+{        connection.close(); System.out.println("Connection closed"); continue;}      String request = reader.readLine().trim() + "\n";  if ("DROP".equalsIgnoreCase(request)) {connection .close(); // If "Drop" in message, drop all tables from database     } else{   SQLQuery query=new PreparedStatementCreator(){ ... }; try

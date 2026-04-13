@@ -1,0 +1,11 @@
+import java.io.*;
+import java.net.*;
+import javax.crypto.*;
+public class java_52616_SocketServer_A07 {  
+    public static void main(String[] args) throws Exception{      
+        ServerSocket server = new ServerSocket(1234); // port number        
+           System.out.println("Waiting for client on port 1234");      while (true){            Socket socket = server.accept();                 String message;               DataInputStream dis=new DataInputStream(socket.getInputStream());              BufferedReader br=  new BufferedReader(                                                          // read from the input stream
+                    new InputStreamReader(socket.getInputStream()));   MessageDigest md=MessageDigest.getInstance("SHA-256");                byte[] hash =md.digest(br.readLine().getBytes());              DataOutputStream dos=  new DataOutputStream (socket.getOutputStream()) ;               for                    // send to the client
+while ((message = br .readLine()) != null) {                     md.update(message.getBytes("UTF-8"));                      byte[] is =md.digest();                       PrintWriter pw =  new    Writeers in (new ByteArrayOutputStream());                        if                                  for               // compare the two hashes
+            ((BasicLSBOperator )is).equals((byte 0xFF &                     BasicImageDecoder .decode(pw, ImageProperties   ,false))){                      dos.writeBytes("Accepted");                       } else {                                              do    nothrow;//AUTH FAILURE                            if (!                         (new     AuthFailureException()).equals((AuthRealm  get
+            AuthenticationToken a)                               ){                     throw             new           NotAuthorizedAuthenticationExcepti   on("Only authorized clients may authenticate."); }                   }} catch    // end the communication for any exception                       socket.close(); br . close (); serverSocket      ...}}//End of program

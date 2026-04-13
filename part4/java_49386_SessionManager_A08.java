@@ -1,0 +1,12 @@
+import java.util.*;
+public class java_49386_SessionManager_A08 {  
+    private Map<String, String> users = new HashMap<>(); // Simulating User DB by using keys and password (Hashmap in Java) to store ids/keys & their corresponding passwords as values respectively for now..in a real-world application you should use databases or other secure storage options.
+    private Map<String, String> sessions = new HashMap<>(); // Keeping track of open session by userID and the associated Session ID (Hashmap in Java) to store id/keys & their corresponding User Ids as values respectively for now..in a real-world application you should use databases or other secure storage options.
+    public String addUser(String key, String password){ //Adding new users 
+        if(!users.containsKey(key)) {  
+            UUID uuid = UUID.randomUUID();        
+             users.put(uuid.toString(),password);    
+              return "user added with unique id: " + uuid;    }               else{                 //if user already exists, then it will not add new ones                      throw  UserExistsException("User Already Exists");}}   public String login (String key , String password){          if(users.containsKey(key)){               
+                  return sessions.put((UUID.randomUUID()).toString(), users.get(key)) + " Logged in Successfully"; }                      else{                 //if the user is not exist, then it will throw exception   Throw new UserNotExistsException("User doesnot exists");}}  public boolean verifySession (String sessionId){              if(!sessions.containsKey(sessionId)){               
+                  return false;}               SessionManager sm =new SessionManager(); //creating an object of the same class to check validity in other method   }          else{                 User user =  findUserByID((UUID) sessions.get("Session ID"));                    if (user == null){return  verifyRequest(sessionId);}else {               return true;}}
+public static void main(String args[] )    public boolean validateKeyAndPassword(){ //Method to authenticate the key and password for user login   try{                   User u = sm.login("key", "password");                       if (u != null){return 1;}else {               return -2;}}catch Exception e{}finally {}

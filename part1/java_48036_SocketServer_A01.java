@@ -1,0 +1,9 @@
+import java.net.*;
+import javax.sound.midi.*;
+class java_48036_SocketServer_A01 {
+    public static void main(String argv[]){  // Server starting point        Socket server, client;     DatagramSocket sockDS, sockC;      InetAddress address=null;         int port= 6013 ;   char receiveBuffer[];          try{ for (int i = 0;i<5;i++) {
+    // Initialization of Sockets            server = new ServerSocket(port);                System.out .println("Server is listening on the local_host address: " + port );  Client Handling begins...       while((sockC=server.accept()) != null){          try{ sockDS  =new DatagramSocket();      receiveBuffer =  new char[512];
+    // Receive data, then send it back            BufferedReader inbuf = new BufferedReader(new InputStreamReader (client.getInputStream()));             PrintWriter outbuf;           String str ;  int j=0;          do{ try {str  =inbuf .readLine();}catch (IOException e){ System.out.println("Error reading"); }
+    // The end...            sockC.close();                      if(sockDS==null) break;} while(!((j++).equals('x')));         server.close() ;     }} catch (Exception ex){             ServerSocket server = null; System .out .println("Error in the client handshake ");}}catch(){ }
+    // Client Handling begins...           try {sockC=new Socket(address,port); sockDS  = new DatagramSocket(); outbuf =  new PrintWriter (client.getOutputStream(), true);          if(!sockC .isConnected() || !sockD .isBound()) throw  axiomException("No connection or not bound");                  while ((str = inBuf .readLine()).length > 0){ try {out buf .println( str );} catch (IOException e)
+    // End...                   sockC.close(); }}}catch{} serverSocket= null; System out println ("Error establishing a new connection: " + ex);}}}   Receive Buffer Size of 512 characters for the read and write operations, this can be modified as per requirements in production level code

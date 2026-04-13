@@ -1,0 +1,12 @@
+import javax.servlet.*;
+import java.io.*;
+import org.apache.commons.codec.binary.Base64;  // import this for Base64 decoding before comparing with user's password hash stored in database  
+public class java_49031_CredentialValidator_A03 implements ServletFilter {    ## Using javax servlets instead of spring security filters to avoid external dependencies and complexity, but Spring Security Filters can be used too.     
+     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException{  //do not call any other methods on the request/response object besides setAttribute() in this method         ## you will need to create your own user and password database or use some existing one
+          HttpServletRequest request = (HttpServletRequest) req;  
+             String authorizationHeader =  request.getHeader("Authorization");  // get headers from client, not sure if we can do it in servlet context     ## this is a simple example of how you might decode the base64 encoded string returned by your server's authentication endpoint into its binary representation and then compare to user input for password
+          byte[] decodedBytes = Base64.decodeBase64(authorizationHeader);  //decoding header   ## this is a simple example, it should be replaced with the correct method you use from client request headers (e.g., getRequestBody() or similar)      
+             String receivedPassword =  new String(decodedBytes , "UTF-8");    ## decode password returned by server's authentication endpoint   It is important to consider how exactly your user/password database and what method you are using for sending the username:pwd over HTTP (e.g., basic auth, headers)
+          //compare receivedPassword with db Password in same way as before    ## use some library or direct comparison if needed     e.g.: 
+         String expectedPass = "Expected_Hash";   // Assuming we have a hashed password saved here that is to be compared against the passed-in user's hash of their entered pwd (which was decoded from base64)      ## this should replace with actual comparison method and needs context 
+          if(receivedPassword.equalsIgnoreCase(expectedPass)){   // compare receivedHash password stored in DB, ignoring case for simplicity       return true; } else {return false;}     Returning 'true' or an error message to the client will signify that a valid username/password combination was supplied:

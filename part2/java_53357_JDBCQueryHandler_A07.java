@@ -1,0 +1,5 @@
+import java.sql.*;   // for the Connection class, PreparedStatement & ResultSet classes...etc;
+// Import any exceptions you might want to handle like DBException (for example)....also using 'throws' if we use them in a method declaration and catch at call site..  or JDBC driver exception as well.
+import java.sql.SQLSyntaxErrorException;   // for SQL syntax error handling...etc, usually handled by checking the connection parameters instead of running raw queries directly on DB(instead run PreparedStatements) etc., just like in above example but here we are not using it anywhere else and have used exception so that can be ignored if you're coding according to your requirements.
+// If necessary then add import statement for any other exceptions or classes needed...etc 
+import java.util.*;   // Import Deque, Queue & Stack in case required....also could use LinkedList instead of ArrayList etc., based on requirement as well.....

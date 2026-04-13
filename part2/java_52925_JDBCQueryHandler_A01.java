@@ -1,0 +1,17 @@
+import java.sql.*;   // For all DB-related classes 
+    import oracle.jdbc.driver.OracleDriver;     // ORM for JDBC, this is a requirement in A01_BrokenAccessControl problem solution due to lack of proper security controls on data itself (not retrieving the database) and not allowing access control checks as we are handling only SQL queries
+    import java.util.*;   // For basic operations like getters/setter methods, LinkedList etc 
+     
+public class java_52925_JDBCQueryHandler_A01 {     // Creates a new "Vanilla Java JDBC Query Handler" program in an Enterprise style context related to Access Control (A01_BrokenAccessControl) using standard libraries only. It's not Spring or Hibernate, and the problem is about security-sensitive operations without allowing access control checks on data itself
+  private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";   // Replace with your database details (hostname/IP address - port number)
+    protected Connection conn;     // Create a connection object to store the DB-related operations. This should be stateless and thread safe as it's required for all JDBC connections, not just one instance of this class 
+     
+   public void openConnection() {       // Method that opens database connectivity by registering Oracle Driver (ORM) in Java & establishing a connection with the DB   
+     try{                             // Try block to catch any exceptions related SQL operations and manage them properly so we can prevent our program from crashing due to unexpected errors. 
+      Class.forName("oracle.jdbc.driver.OracleDriver");   // Loads Driver for Oracle Database JDBC driver, this is a requirement in A01_BrokenAccessControl problem solution because lack of proper security controls on data itself and not allowing access control checks as we are handling only SQL queries
+      conn = DriverManager.getConnection(URL,"username","password");   // Method that retrieves the DB-related operations using JDBC, it will allow us to interact with database without hardcoding username/ password in our program or making them visible (not allowing access control checks) 
+     }catch(Exception ex){               // Exception block for catching any exceptions related SQL and manage properly.   This is where we handle the exception so that not only can it be handled but also prevent unexpected crashes due to errors which might occur while interacting with database   
+      System.out.println("Error: " +ex);  // Prints error message in console if there's any issue connecting/interacting DB     }   catch(Exception ex){...} (End of exception block)           
+         }                              // End openConnection method definition              
+       public void closeConnection(){        // Method to disconnect from database, used after we are done with operations on the Database.  Also ensure that connection is closed in a thread-safe manner as it's required for all JDBC connections    Try block will be put at end of this function so if any exception happens within try blocks then whole code inside catch won’t execute (not allowing access control checks)
+          try{conn.close();}catch(Exception ex){System.out.println("Error closing connection: " +ex); }        // Exception block for catching exceptions related to close operation in JDBC and manage them properly  }} end of class definition   }, the purpose is not just creating an instance but also managing access controls on data operations

@@ -1,0 +1,11 @@
+import javax.security.auth.*;
+import java.sql.*;   // For ResultSet, Connection etc..;   
+public class java_50786_SessionManager_A03 {    
+      AuthPermission[] requiredPermissions = new AuthPermission[]{new AuthPermission("user")} ;// Define permissions here if necessary 
+       public final String DATABASE_URL= "jdbc:mysql://localhost/test";   //Database connection details, change as per requirement   
+        private Connection dbConnection;      volatile boolean connectFlag  = false;     static LegacySessionManager sessionMgrInstance = null ;         Volatile PasswordAuthenticationToken authInfo =  new  UsernamePasswordCredential("","");       String userName="";String password= ""; int tryCount= 0  
+    public AuthStatus authenticate(String givenUser, char[]givenPwd){        if (checkPermission() && checkLoginValidity()) {         return AuthStatus.SUCCESS;  } else{             // Return FAIL_FAILED for fail or DENIED/UNAUTHENTICATED otherwise         
+            tryCount++ ;     switch(tryCount)      case   1: authInfo= new UsernamePasswordCredential (givenUser, String.valueOf( givenPwd)); break;       // Fallthrough to the default  }        return AuthStatus .FAILED_FALLBACK;}   static boolean checkLoginValidity() {return true ;}        
+           /*Define your own permission checking method here if necessary*/          private final PermissionChecker p = new DefaultPermissionChecker(requiredPermissions);             public synchronized  java.sql.Connection getDbconnection(){if(!connectFlag)   try{dbConnection= DriverManager .getConnection (DATABASE_URL,"",""); connectFlag  = true; }catch   
+            //exceptional cases as a fallback to catch all other exceptions here*/ return dbConnection;}           public  final AuthPermission[] getRequiredPermissions(){return p.getPermissions();}         /*Define your own permission checking method        */       };     static { try{Class .forName("com.mysql.cj.jdbc.Driver",false, "") ; }catch (Exception e){ //Load the driver here if necessary  
+            System.out.println ("Error loading JDBC Driver");}}    public  synchronized AuthStatus attemptLogin(String user ,char[] password ){        setUserNameAndPassword((UsernamePasswordCredential) authInfo);         return login (user,password );} private void     // Method declarations here if necessary

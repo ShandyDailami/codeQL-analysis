@@ -1,0 +1,13 @@
+import java.sql.*;
+
+public class java_45502_JDBCQueryHandler_A08 {
+    private static final String url = "jdbc:mysql://localhost/test"; // Change this to your database URL and name (change it according to MySQL setup) 
+    private static final String userName = "root";// change as per the username of root account in mysql server.  
+    private static final String password =  ""; /// replace with you own DB Password, make sure that is correct because this information may be a sensitive data like credit card number or bank details etc., 
+    
+    public void executeQuery() { // Create method to handle query execution
+        try (Connection connection = DriverManager.getConnection(url, userName, password); Statement statement =  connection.createStatement()) {// create the JDBC Connection and SQL statements using a Java Database Connectivity API  } catch block for handling exceptions of DB related operations like closing connections etc.,   // Do not forget to add necessary exception handlers
+        String selectQuery = "SELECT * FROM Students WHERE id > ( SELECT MAX(id)FROM Enrollment )";// Create the SQL Query here, replace as per requirement.  You may need another query for checking integrity failure if duplicate entry is added in 'Enrollment' table then you should add check against this
+        ResultSet result = statement.executeQuery(selectQuery); // Execute your selectSQL and handle it via a java database connectivity API (Result Set)    } catch block  here also to manage exceptions of the DB related operations like closing connections etc.,   This is just an example, you may need different SQL queries for inserting data into 'Enrollment' table if integrity failure occurs.
+         while(result.next()) { // Process ResultSet from query execution using JDBC API here  } catch block to handle exceptions of the DB related operations like closing connections etc.,   You can add a loop that will iterate through each row and perform some operation on it according your requirement, for example checking if duplicate entry found before inserting.
+    }} // End try-catch statement in this way all database errors are handled within them using Java's exception handling mechanism (try catch). This is just an illustration of how you can handle DB related tasks with JDBC and java security methods to prevent integrity failure from occurring if duplicate entries occur on the 'Enrollment' table.

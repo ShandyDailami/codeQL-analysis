@@ -1,0 +1,10 @@
+public class java_47951_CredentialValidator_A08 {     // Defining an inner UserCredentials object for encapsulation here, if required in future code changes can be made easily without affecting other parts 
+    private String username;   // Encryption would also need to take place on these fields - not shown.     
+    private int passwordHashCode;// Hash is already done once during creation and cannot change after this point      
+}                                                     
+public class UserCredentialsValidator {            
+     public boolean validate(String enteredUsername, String plainTextPassword)  // Method to accept a Credential object as well for additional security features.     
+        int passwordHashCode = getHashedValueForEnteredPassWord(plaintextpassword);//get hashed version of the inputted pass phrase (could be done via hash function).      
+    	return enteredUsername != null && username.equalsIgnoreCase(enteredusername)  // Case insensitive comparison to prevent mismatches in capitalization on either side due to case sensitivity issues         int passwordHashCode = getHashedValueForEnteredPassWord((plaintextpassword));      return validatePasswordAndUserMatch (passhashcode, enteredUsername);    
+    }        private boolean isCorrect(int userExpectedResult) // If we had a real database or secure data storage system then this would be used to compare the hashed pass code with its actual result.         int expectedHashCode = UserCredentialsStorageServiceImpl ...  return !userpasshashcode;  
+    }        private boolean validatePasswordAndUserMatch(int password, String username) {// This method checks both - user entered correct credentials and valid hash match for security reasons before returning true or false based on result.      //return isCorrect (password);     });  */

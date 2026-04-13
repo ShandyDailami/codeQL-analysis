@@ -1,0 +1,9 @@
+public enum DBType { MYSQL, ORACLE } // Simple database type enumeration for illustration purposes only; actual implementation may use different tools (e.g., Hibernate) or libraries 
+  
+// This would be a DatabaseConfiguration object - it is not provided here to keep the code simple and clear:
+public class java_53573_SessionManager_A03 {     public static final String DRIVER_NAME = "com.mysql.jdbc.Driver";    //MySQL JDBC Driver, replace this with your driver; e.g., 'org.apache.derby.jdbc.ClientDriver'  }  
+      
+public class SessionManager {      private static DBType dbtype=null ; public void setDbConfig(String type)     if ( "mysql".equalsIgnoreCase(type))    {          System.load("com.mysql.java_sql_driver");             drvClass = Driver;            } else 
+      `if ("oracle".equalsIgnoreCase(dbType)){System . load('ojdbc6'); dbname='jdbc/XE';} // Oracle JDBC driver, replace this with your connection details e.g., 'com.mysql.cj.xdevapi'.Driver   } public Connection connectToDatabase() throws SQLException {      return DriverManager.getConnection(dburl , username ,"password");   
+    `public void closeConnectioin (java .sql .. Conncetion con){ if ((con != null) && (!con.isClosed())){ try..   // Closing database connection }catch...}} public Session openSession(){ Connection conn = connectToDatabase();       return new MySesssions(conn);}`
+    ^ The code provided here is minimal and focuses on creating the basic structure of a session manager in Java. It does not include methods for managing transactions, caching or security-related operations like SQL Injection attacks as per your instructions but should give you an idea about how to start writing such functionality using standard libraries only (without relying too heavily upon external frameworks).

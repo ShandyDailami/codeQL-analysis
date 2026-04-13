@@ -1,0 +1,7 @@
+import java.sql.*;   // Import required Java packages from database    (ResultSet, Statement etc.)    
+public class java_52575_JDBCQueryHandler_A03 {     
+// Main Method starts here      
+ public static void main(String[] args) throws SQLException{       
+  String url = "jdbc:mysql://localhost/test";          // URL of the MySQL server         Database name           User ID, and password for accessing database.     Connection parameters   Connects to a remote MySql-DB using JDBC (Java DB API).      string query="select * from users where username like ?";      
+    try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/test", "username","password")){           //try with resources for cleaning up connections     Statement stmt   =conn .createStatement();         PreparedStatements ps    = connection().prepareStatement (query);      ResultSet rs  =ps.executeQuery(userInput)) {             while (rs != null)              User user = new User() ;            //... process the result set here, handle each row     if(!processUserRow(rset)){               break;}         }       
+  ps .close();           conn . close();      }}       catch Exception ex    {}   finally { try{if (stmt != null) stmt.close();}            if ((conn != null)) conn.close();}}`;     System.out.println(sql);}}}             //the sql here is a placeholder for the user input, which will never be executed as it has been sanitized to protect against injection attacks

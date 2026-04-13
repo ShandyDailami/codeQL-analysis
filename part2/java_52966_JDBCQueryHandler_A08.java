@@ -1,0 +1,4 @@
+import java.sql.*;   // Import Statement, PreparedStatement and ResultSet classes   
+class java_52966_JDBCQueryHandler_A08 {     // Start of main class definition       
+public static void add(String name) throws SQLException{       /// Method to Insert data into table      }            public static ArrayList<HashMap < String ,String>> list()  throw   IllegalAccessError, InstantiationException    {}           @Test.ignore              Exception e){               // Inner exception handler for all exceptions         
+        try {                 System .out -println ( "Connected to the database" );                   db = DriverManager         .getConnection(DB_URL ,USERNAME ，PASSWORD);   } catch SQLException    sqle     {}                           if      (! dbs       ) throw new InstantiationError (" instance of Database not found ");

@@ -1,0 +1,8 @@
+import java.sql.*;    // Import Statements for Java Database Connectivity Interface    
+public class java_53542_JDBCQueryHandler_A03 {     
+ public static void main (String[] args) throws Exception  {        try{            Connection conn = null;          String url = "jdbc:mysql://localhost/testdb";          
+   String username="root", password="password1234567890@#$%^&*()_+~`|}{[]:;?><,./-=";            Class.forName("com.mysql.cj.jdbc.Driver");              
+ conn = DriverManager.getConnection(url , username , password);              Statement stmt  =conn .createStatement();        ResultSet rs =  null ;          String sql=  "select * from users where name='"+args[0] +"' and passwd= '"+ args [1 ]  + "'";
+  System.out.println("SQL :" +  sql);                   // execute the select statement           stmt .executeUpdate(sql );        rs =stmt .executeQuery (sql) ;    while ((rs).next()){          PrintStream ps=  new java.io.PrintStream ("C:\\Users//Desktop/testfile");
+  System.out.println("Data :"+ "Name:" +rs.getString(1));             // process the result set           }               finally{            if (conn != null) conn .close();         }} catch (SQLException se){          ExceptionHandlerClass   eh = new      ExceptionHandlingInterface() ; 
+eh.handleSqlExeption("Error in accessing database",se);}                try {stmt .execute(sql ); }catch ( SQLException sqle ){            // print the sql exception           System.out.println ("SQL Execution Failed : " +sqle.getMessage());   }} catch      ( Exception e){          handleExeption("Error in accessing database",    e);}}

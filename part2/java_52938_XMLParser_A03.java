@@ -1,0 +1,8 @@
+import org.xml.sax.*;
+import javax.xml.parsers.*;
+import java.io.*;
+public class java_52938_XMLParser_A03 {  
+    public static void main(String[] args) throws Exception{    	        		         									        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) 				{      // Create the SAX parser          								               SAXParserFactory factory = 					                                                   SAXParserFactory.newInstance();  
+                                  System.out.println("Enter XML data: ");    				    String input;       while ((input = reader.readLine()) != null) {         		                if (input.equalsIgnoreCase("exit")) break;}        // Parse the document          			            SAXParser parser  = factory .newSAXParser();
+                                  System.out.println("\nParsing data...\n");      					parser.parse( new InputSource(					         		 	  input, "UTF-8") );     }      catch (FileNotFoundException e) {              // Handle exceptions by printing a message to stderr                  			        System.err .print("Error: File not found!");  
+                                  }}catch (ParserConfigurationException pce){            	        	// handle configuration errors		         									    System.err.println( "Fatal Error Configuration" );       } catch (SAXException e) {               // Handle exceptions by printing a message to stderr                    			        System . err . println ("Error: Parsing failed");  }}

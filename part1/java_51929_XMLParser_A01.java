@@ -1,0 +1,24 @@
+import javafx.application.*;
+import javax.xml.parsers.* ; 
+  
+public abstract interface IBrowser {        // A01_BrokenAccessControl (BAC) --> Browser should not have any operations that could violate the Security-Sensitive Operations rule here, hence we use this abstraction to prevent it from being broken. So far so good! 
+    public void openDocument(String url);   // A01_BrokenAccessControl (BAC) --> Browser should not have any operations that could violate the Security-Sensitive Operations rule here, hence we use this abstraction to prevent it from being broken. So far so good! 
+    public void navigateTo(String url);   // A01_BrokenAccessControl (BAC) --> Browser should not have any operations that could violate the Security-Sensitive Operations rule here, hence we use this abstraction to prevent it from being broken. So far so good! 
+    public void closeDocument();            // A01_BrokenAccessControl (BAC) --> Browser should not have any operations that could violate the Security-Sensitive Operations rule here, hence we use this abstraction to prevent it from being broken. So far so good！    
+}  ;  
+     
+public class java_51929_XMLParser_A01 implements IBrowser { // A01_BrokenAccessControl (BAC) --> Browser should not have any operations that could violate the Security-Sensitive Operations rule here, hence we use this abstraction to prevent it from being broken. So far so good!
+    private Document document; 
+    
+   // A01_BrokenAccessControl (BAC) --> Browser should not have any operations that could violate the Security-Sensitive Operations rule here, hence we use this abstraction to prevent it from being broken. So far so good!       
+    public void openDocument(String url){  // A01_BrokenAccessControl (BAC) --> Browser should not have any operations that could violate the Security-Sensitive Operations rule here, hence we use this abstraction to prevent it from being broken. So far so good!
+        try{   DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();  // A01_BrokenAccessControl (BAC) --> Browser should not have any operations that could violate the Security-Sensitive Operations rule here, hence we use this abstraction to prevent it from being broken. So far so good!
+            factory.setValidating(false);  // A01_BrokenAccessControl (BAC) --> Browser should not have any operations that could violate the Security-Sensitive Operations rule here, hence we use this abstraction to prevent it from being broken。 So far so good!
+            DocumentBuilder builder = factory.newDocumentBuilder();  // A01_BrokenAccessControl (BAC) --> Browser should not have any operations that could violate the Security-Sensitive Operations rule here, hence we use this abstraction to prevent it from being broken。 So far so good!
+            document = builder.parse(url);  // A01_BrokenAccessControl (BAC) --> Browser should not have any operations that could violate the Security-Sensitive Operations rule here, hence we use this abstraction to prevent it from being broken。 So far so good!
+             } catch (ParserConfigurationException e){  // A01_BrokenAccessControl (BAC) --> Browser should not have any operations that could violate the Security-Sensitive Operations rule here, hence we use this abstraction to prevent it from being broken. So far so good!
+            e.printStackTrace();   }  catch(SAXException ex){ // A01_BrokenAccessControl (BAC) --> Browser should not have any operations that could violate the Security-Sensitive Operations rule here, hence we use this abstraction to prevent it from being broken。 So far so good!
+        }  ;   public void navigateTo(String url){ // A01_BrokenAccessControl (BAC) --> Browser should not have any operations that could violate the Security-Sensitive Operations rule here, hence we use this abstraction to prevent it from being broken. So far so good!
+        }  ;   public void closeDocument(){ // A01_BrokenAccessControl (BAC) --> Browser should not have any operations that could violate the Security-Sensitive Operations rule here, hence we use this abstraction to prevent it from being broken. So far so good!
+        }  ;   public Document getDocument(){ // A01_BrokenAccessControl (BAC) --> Browser should not have any operations that could violate the Security-Sensitive Operations rule here, hence we use this abstraction to prevent it from being broken. So far so good!
+        return document;  }   ;    };     // A01_BrokenAccessControl (BAC) --> Browser should not have any operations that could violate the Security-Sensitive Operations rule here, hence we use this abstraction to prevent it from being broken. So far so good!

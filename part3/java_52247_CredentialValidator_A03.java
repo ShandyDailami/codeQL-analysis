@@ -1,0 +1,9 @@
+import javax.servlet.*;
+import javax.servlet.http.*;
+public class java_52247_CredentialValidator_A03 extends HttpServlet {    
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{        	  		      	     	       	   	 			      } 									          private static final String USER = "admin";                 	private static final String PASSWORD = "password123"
+     };    public class CredentialValidator extends Httpservle { ...}}; // This will not compile due to missing HttpServlet declaration, as per A04_Injection principle. 	   private java_52247_CredentialValidator_A03(username and password) in post request: String username = reuqest .getParameter("user");    			String passowrd=request	. getparametre ("password")
+    };      if(USER.equalsIgnoreCase(usename)) {if(!PASSWORD_MATCHES)}; else{response,println("\nYou are not authorized to view this page\u2639."); 	redirect ("/loginerror");}}}) // If the username and password match redirect user back in case of incorrect login.
+     response . sendRedictrect("/Welcome" + usename); } else { responde,println("\nYou are not authorized to view this page\u2639."); redit ("/loginerror");}}}))  // if the username and password do no match redirect user back in case of incorrect login.
+  	response . sendRedirect("/Login_Page")}); }//If none of above conditions satisfy, then it sends a get request to "/lOginpage". So this is where we are going with our Credentials validation as per the A03 injection principle – against user provided input.
+  	}}; //closing curly braces because there was no opening brace in first code line above, again it matches a1nst your principles of preventing injections and making use secure connections only if required (as mentioned earlier). I hope this helps! Let me know for any further requirements or assistance.

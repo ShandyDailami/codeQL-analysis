@@ -1,0 +1,17 @@
+import org.xml.sax.*;
+import javax.xml.parsers.*;
+public class java_52696_XMLParser_A08 {  
+    public static void main(String[] args) throws ParserConfigurationException, SAXException{    
+        String url = "http://example/badfile"; //Replace with a bad file URL for testing integrity failure case 
+        
+       try {            
+            XMLReader reader=null;          
+               readXMLFileWithSAX(url);   } catch (ParserConfigurationException e) {    System.out.println("Failed to create SAX parser due to: " +e );}catch (SAXException ex){System.out.println ("Parse failed : "+ex.getMessage()); };
+     }}  //End of Main method        public static void readXMLFileWithSAX(String url) throws ParserConfigurationException, SAXException{   XMLReader reader=null;    boolean bStop = false ;       String currentElement="";               try {                   if (!bStop){                    Logger.getLogger("readXml")
+                         .info("Starting Read Operation...");                     }                       reader =  XMLReaderFactory.newInstance().getXMLReader();  // create a new SAX parser   DOMHandler handler =    ...                 (...)     ;               while(reader.hasNext()){      try {                   currentElement="";
+                         if (!bStop)                            Logger.getLogger("readXml") .info ("Parsing XML document : " +url);                    }                       reader.setContentHandler((SAXHandler) handler );  // set contenthandler            (...)     ;               while(reader.hasNext()){      try {                   currentElement="";
+                         if (!bStop)                            Logger.getLogger("readXml") .info ("Parsing XML document : " +url);                    }                       reader.setEntityResolver((DefaultHandler) handler );  // set entityresolver         (...)     ;               while(reader.hasNext()){      try {                   currentElement="";
+                         if (!bStop)                            Logger.getLogger("readXml") .info ("Parsing XML document : " +url);                    }                       reader.parse("http://example/badfile");  // start parsing     (...)     ;               while(reader.hasNext()){      try {                   currentElement="";
+                         if (!bStop)                            Logger.getLogger("readXml") .info ("Parsing XML document : " +url);                    }                       reader.setContentHandler((SAXHandler) handler );  // set contenthandler         (...)     ;               while(reader.hasNext()){      try {                   currentElement="";
+                         if (!bStop)                            Logger.getLogger("readXml") .info ("Parsing XML document : " +url);                    }                       reader.setEntityResolver((DefaultHandler) handler );  // set entityresolver         (...)     ;               while(reader.hasNext()){      try {                   currentElement="";
+                         if (!bStop)                            Logger.getLogger("readXml") .info ("Parsing XML document : " +url);                    }                       reader.parse("http://example/badfile");  // start parsing     (...)    };                catch(Exception ex){System.out.println("\nCaught exception: ",ex );};}}

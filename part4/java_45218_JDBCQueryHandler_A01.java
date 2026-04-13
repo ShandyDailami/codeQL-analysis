@@ -1,0 +1,9 @@
+import java.sql.*;  // Importing necessary classes from JDBC library  
+public class java_45218_JDBCQueryHandler_A01 {   
+        public static Connection getConnection(String dbURL, String userName, String password) throws SQLException{    
+            return DriverManager.getConnection(dbURL ,userName ,password);       }  // Returns the connection object     
+        
+   public ResultSet executeReadOperation (Connection con, String query )throws SQLException {    try {          Con = getConnection("jdbc:mysql://localhost/test", "root","");        Statement stmt=con.createStatement();     return stmt .executeQuery(query); }  finally {}     
+         public void executeWriteOperation ( Connection con , String query ) throws SQLException{       try {          Con = getConnection("jdbc:mysql://localhost/test", "root","");        Statement statement=con.createStatement();     statement.executeUpdate(query );}    }  finally {}  
+         public static void main(String[] args){      ResultSet rs;             String query ; try {            Con = getConnection("jdbc:mysql://localhost/test", "root","");                Statement stmt=Con .createStatement();           Querying for all employees : select * from EmployeeQueryHandler.Employees        }catch (SQLException se){         //Handle exceptions here    }}
+  Note that this is a simplified version of the problem, it doesn't cover everything like security measures used in production environments such as prepared statements/parameterized queries and using connection pooling for performance optimization etc.. But hopefully you get an idea about how to approach Java with JDBC. Please replace "jdbc:mysql://localhost" & credentials according your database details

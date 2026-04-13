@@ -1,0 +1,8 @@
+import java.io.*;
+import java.net.*;
+public class java_43886_SocketServer_A08 {  
+    public static void main(String[] args) throws Exception{    	        	 	     		       	       	    }      private int port;          BufferedReader in = null, out=null ; Socket sock  = null  ServerSocket servsock   = null; boolean running      				=  true ; // flag for the server thread
+   @Override public void run(){ try {servsock    = new ServerSocket(port); while (running){Synchronized((new OutputStream(){(out = new BufferedWriter(                      		                    	       	        	    }), sock= servsock.accept())){ out .println("Hello, client!" ); 
+Out .flush();                    //Echo back a string to the connected socket   Socketclient    =servsock    	.create                             			       	  new InputStreamReader(Soc                                       		                                                                                    	         } catch (IOException e) {e.printStackTrace()} finally{ if(!running){ servsock .close(); out != null ? 
+Out-.println("Closing down the connections.") : ""; // Close everything nicely   running = false; System   					.exit(0);}}}catch                    	    		      (IOException e) {e.printStackTrace()}}}; } catch                           (Exception ex){ex . println                   					                 StacktraceElement              
+!=null? "Caught an exception." : "";  // Catch any exceptions that may occur   running = false; System   					.exit(0);}}}            `                                                                         }}          ;// Test the code                main.class:38:-1 }catch (Exception e){e .printStackTrace()}}

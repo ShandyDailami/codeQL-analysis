@@ -1,0 +1,8 @@
+import java.io.*;   // Importing the required Java classes from 'package' namespace to use FileStream, Directory Streams etc..   
+class java_50079_FileScanner_A01 {     //Defining a main class which contains our execution start point ie., public static void method and other necessary constructors for this file like below 
+public static boolean isReadable(String path)   throws IOException{//Method definition of checking if the given directory or files are readble by current user. It will take in parameter as a string which represents any absolute/relative paths, returns true when it can be opened and false otherwise based on whether we have permission to access that file 
+    File f = new File(path);     // create an instance of the class 'File' for given path  
+        return (f.canRead());      /// method call which will check if this specific java object has read permissions or not, it returns a boolean value true when permission is granted else false 
+    }                                  // we are using canread() function to get whether file exists and the user who created/modified that path have right on them   based upon Java File Permissions system. This will be useful for checking access rights of files in any directory as well ie., Read, Write etc...    
+public static void main (String[] args) {  //Method definition to execute our program which starts from here and we are not providing logic inside this method so it is left empty   }      ///Ending line defining the class. This whole code will be runnable as long in java environment, no matter how old or new you have JVM installed on your system 
+}

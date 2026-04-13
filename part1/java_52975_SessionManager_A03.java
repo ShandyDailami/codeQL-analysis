@@ -1,0 +1,11 @@
+import java.sql.*;   // Importing necessary classes from the SQL package   
+public class java_52975_SessionManager_A03 {    
+        private String url;      // Database URL - this would typically be retrieved as a property file in an application-wide way, rather than hardcoded here for simplicity 
+         public Connection connection = null ;      
+           try{               
+            Class.forName("com.mysql.jdbc.Driver");        }     catch (ClassNotFoundException e){    System.out.println ("Unable to find the driver!");      return;   }          // Create a new MySQL database connection  if it is not available yet then create one      
+           this.url = "jdbc:mysql://localhost/testdb";        Connection con=null ;     try{con  = DriverManager .getConnection(this.url,"root","password");      System.out.println ("Database connected successfully...");    }catch (SQLException se){   // SQL Exception handling here 
+             printSQLexception(se)       return;         }        DatabaseMetaData dbm = con.getMetaData();     String Server_Version  = null ; try {            Server_Version          = dbm .getDriverVersion() ;      System ..println ("Driver Version : " +Server_Version);   }catch (SQLException e){ printSQLexception(e)  return;       
+    // Add a new user to the database. The example below creates an admin role with no users assigned     try{            String SQL ="INSERT INTO USERS (USERTYPEID,USERNAME ,PASSWORD, EMAIL, CREATEDATE ) VALUES (1,'admin', 'password','email@testmail.com',"+new Timestamp(new Date().getTime()) +")"; con .createStatement().executeUpdate(SQL);           }catch 
+    // SQLException m   {printSQLexception(m) ;}         return;       printStackTrace(); }}// End of Main Method          catch (PrintStackTraceInterface i){i.printStackTrace()}}}}}`                  Here's the part where we handle exceptions using a helper method `public void 
+    // ExceptionHandler   public static final Logger LOG = LogManager .getLogger ("Session Manager Example") ; private PrintStream ps;        try {ps= new PrintStream (new FileOutputStream("D:/Log.txt" )); } catch(IOException e)         printSQLexception(-1 ,e,null ,"Exception handling test log file", null)}    // End of Exception Handling Method}}

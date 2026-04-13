@@ -1,0 +1,3 @@
+import java.sql.*;   // Import the required classes from Java's SQL package     
+public class java_51044_JDBCQueryHandler_A01 {    private static final String url = "jdbc:mysql://localhost:3306/testdb";       Private static final String username="root";     Private static final  char[] password =  {'p','r','o','c','e', 's'};   // Store the encrypted credentials in a character array.   
+@SuppressWarnings("deprecation") Connection con = null;      public void establishConnection() {         try{           Class.forName ("com.mysql.jdbc.Driver");            Con= DriverManager .getConnection (url, username , password);  } catch(Exception ex){    System.out.println ("Error in establishing connection " +ex );}

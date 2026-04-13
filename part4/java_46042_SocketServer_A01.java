@@ -1,0 +1,10 @@
+import java.io.*;  // Importing the Input/Output streams and Serializable classes
+import java.net.*;   //Importing Socket class java_46042_SocketServer_A01 networking package for TCP connections        
+public class VanillaSocketServer {     // Defining a new server program (class) called "VanillaSocket"   
+                                   public static void main(String[] args){ 
+// Server setup and connection           System.out.println("Waitng on port:80");      int clientPort = 9527;          Socket acceptedClient = null;         try {            //Set up server socket              
+ServerSocket welcomeSocket  = new ServerSocket (clientPort);             while(true){                 ClientHandler ch=new 
+ClintentConnectionhandlerthread();                Thread t =    new ThreatdThread   ("server-side thread: "+i,ch );         try {        //Accepting client connections                         Socket acceptedClient =  welcomeSock.accept ();               if(welcomeSocket==null) throw e;
+System .out.println("Connected to a client");             } catch  any exception that needs handling then close all resources and print message for debugging   exceptio n}    System. out -println ("Closing down the now used resources" ); welcomeSock..close ();        ch.... Close();        
+// Server logic goes here... e.g., reading from client, sending data back etc          // Maintaining server connection and listening for any incoming requests  }   catch(IOException ex){ System .out -println ("Error in communication");    }}             public class ClientHandler implements Serializable {     private static final long serialVersionUID =1L;     
+// Implementing Runnable to manage the client's request, sending and receiving data etc.         // Maintaining server connection with a specific user/client  } catch (Exception ex){ System .out -println ("Error in communication"); }}    });

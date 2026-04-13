@@ -1,0 +1,11 @@
+public class java_48618_CredentialValidator_A03 {  // start with 'java', no comments, and make it syntactically correct java (remove the comment).  
+    private static final String SALT = "this is salt";                  // add some randomness to prevent rainbow table attacks. The same password will always produce different hash values for a given input so that hashing collisions are impossible because of salts and nonce, also no need in real app (use UUIDs as the userID or other more unique identifiers)
+    
+    public static String createHash(String plainText){                 // Create new password. When it is time to store a hash value use this method when storing pass values for users' login credentials – must be secure so that if someone gets access they can’t get back into your application the data stored in memory without being logged out or else there could potentially leave them with an impersonal account
+        return DigestUtils.sha256Hex(plainText + SALT);              // Use a well-established hash function and add some randomness to prevent rainbow table attacks (use UUID as salt). The same password will always produce different hashes for the given input so that collisions are impossible because of salts, but no need in real app.
+    } 
+    
+   public static boolean validate(String plainText, String hash){       // Verify an entered pass against its stored version (HashPassword() must be used when retrieving) with a hashed password to prevent rainbow table attacks and the same input will always produce different results for given inputs. It’s not needed in real app as it is more about learning than anything else but still included
+        return hash.equals(createHash(plainText + SALT));              // Use an established method (hash function) to compare both hashes and check if they match or the password was tampered with during storage/update process – must be secure as it is impossible for someone who gets access on your app, now logged out from memory.
+    }  
+}                                            // end of CredentialValidator class (no comment)                 start new Java Class                java`

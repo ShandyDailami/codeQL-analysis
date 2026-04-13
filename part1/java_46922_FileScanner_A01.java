@@ -1,0 +1,14 @@
+import java.io.*; // Import necessary classes  
+
+public class java_46922_FileScanner_A01 {    
+    public static void main(String[] args) throws Exception{        
+            File dir = new File("path/to/directory");            
+                 if(!dir.exists()){                            
+                        System.out.println('[' + "ERROR"+ ']' +  "'Directory does not exist." );              return;                }              
+                     // If directory exists, then list down all files in it                   
+            File[] arrayOfFiles = dir.listFiles();                  if(arrayOfFiles == null) {                 System.out.println('[' + "ERROR"+ ']' +  "'No file or folder found." );              return;             }                // If directory has some content, then read it                  
+            for (int i = 0 ;i< arrayOfFiles .length  ; ++   i) {                     File temp =arrayOfFiles[1];                       if(temp.isFile()){                      System.out.println('[' + "INFO"+ ']' +  "'Reading file: ", strFileName);                   
+            }              //Read all files in the directory             for (int  count = 0; array of Files .length >count ; ++ Count ) {               File temp =arrayOfFiles [Count];           if (!temp.canExecute())                                                        throw new SecurityException ("Unable to read file: " +  
+            temp.getAbsolutePath());                 }                          //Checking the permissions for each files        try{                                                                                PrintWriter out  =newPrintWriter("path/to/"+strFileName,true);             FileReader in=newFilereader(temp . getcanonical path()));              BufferedReader bin = newBuffere
+- Reader (in );                                                    char[] buffer =newchar[1024];           int bytes = 0;                       while ((bytes  =bin.read(buffer)) !=  - 1) {                   out . write (buffe    r,  0 , bufferedreader in);                  }                      bin . close();                     out .close() ;                                                                                System.outprintln('[' + "SUCCESS"+ ']' +  "'File read completed." );                   
+            }}                                                           catch(Exception e){                                        // Catch any exception that might occur while reading the file              println("Error Occured: ",e);     }                       return;        }) ;  This section is not related to A01_BrokenAccessControl, but rather a security-sensitive operation.

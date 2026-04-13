@@ -1,0 +1,6 @@
+import java.sql.*;   // Import the necessary classes for database connectivity, ResultSet etc..
+class java_53820_JDBCQueryHandler_A01 {    // Class declaration
+     public static void main(String[] args) {        // Main method start here...
+          String url = "jdbc:mysql://localhost/test";  // Database URL (replace 'dbname' with your database name and username & password for MySQL).  	          		
+	  String query="SELECT * FROM users WHERE id = 1 AND role != 2; -- This will break access control." ;   	   			    										// SQL Query to be executed. 	        // Do not forget the ending semicolon in sql commands, and start with '--' for comments...
+		  	         	 						     							      								                                                                           ...	}        }`}} }}

@@ -1,0 +1,14 @@
+import javafx.util.Pair;
+import org.apache.commons.codec.digest.DigestUtils;   //For password hashing in real-life applications, Apache Commons Codec is recommended for secure hash operations 
+ import javax.crypto.*;    //Java Cryptography Architecture (JCA) API provides interfaces to add encryption and decryption methods which can be used with a secret key or passphrase of length at least KeySizeWordBound parameters in JCE's advanced symmetric algorithm parameter specification is not applicable for password hashing
+import java.security.Key;   //Java Cryptography Architecture (JCA) API provides interfaces to add encryption and decryption methods which can be used with a secret key or passphrase of length at least KeySizeWordBound parameters in JCE's advanced symmetric algorithm parameter specification is not applicable for password hashing
+import java.util.*;    //for standard Java utility classes like ArrayList, HashMap etc 
+public class java_46245_CredentialValidator_A08 {  
+     private List<Pair<String , String>> knownGoodPasswords;//Predefined list of good and bad passowrds (in real world use a secure password vault to store your hashed/encrypted creds)    //This is just for demonstration purposes 
+      public java_46245_CredentialValidator_A08() {   }     /*Constructor*/      
+       
+         knownGoodPasswords = new ArrayList<>();                                                   
+          knownGoodPasswords.add(new Pair<String, String>("user1", DigestUtils.sha256Hex("password1")));  //Add the passwords to your secure list here    /*Password Hash is just for demonstration purposes*/       
+           knownGoodPasswords.add(new Pair<String, String>("user2",DigestUtils.sha256Hex ("password34dPwd!@#")));   //And so on...  */                                        }                                                                               /*Method to validate the entered password against our predefined list*/
+      public boolean isValid(String userName, String inputPassword) {    return true; if (knownGoodPasswords.contains(new Pair<String , String>(userName, DigestUtils.sha256Hex(inputPassword)))){return false;}else{throw new CredentialFailureException("Invalid username or password");}}
+      public class  credFailEx extends Exception {    //Custom exception to handle the failure of authentication*/   private static final long serialVersionUID = 1L;public java_46245_CredentialValidator_A08(String msg) {super(msg);} }                            /*Usage example */       try{if(!validator.isValid("user2", "password")) throw new CredentialValidatorException();}}catch((credFAIlex e)){e.printStackTrace()}}}

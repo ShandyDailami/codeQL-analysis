@@ -1,0 +1,9 @@
+import java.security.*;   // Import Java Security Manager API classes   
+public class java_51907_SessionManager_A01 {    
+// The security manager used to verify access rights for our users     
+private MySecurityManager sm = new MySecurityManager();       
+         public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeySpecException  // Main Method         
+       {                System.out . println ( " Accessing Security Manager" );              SimpleSecurityManager ssm=  null;           try{ssm= new   SimpleSecurityManager(); }catch    ( Exception e){System. out .println("Caught exception: ",e);}             if( ss m ! =null )       System  .out . println ("Access granted "); else              
+         Security.addProvider(new     java.security.provider.JavaKeyStoreProvider());          //Adding provider      for Java Key Store        sm= new    MySecurityManager();                ssm=  null;             try{ssm =   (MySecurityManager)  Security .getSecurity( ) ;}catch
+         Exception e){System..println("Caught exception: ",e); }                      if       // Checking access right for user Alice              sm.checkAccess ("Alice", "password" ); else          System .. println (" Access Denied ");   return;             };  true        false,     (byte)1 ,false}              
+         public boolean checkPassword(String passw){return    ... ; }                 // Method to validate password using SHA-256 hash function              static byte[] getSHA256Hash( String input ) { .......}};  return hashedValue;}        .equals (getSHA256Hash     ("password"));}

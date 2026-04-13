@@ -1,0 +1,14 @@
+import java.io.*; // For Input/Output Streams, Reader and Writer classes  
+import javax.xml.parsers.*;// Java API for XML Parsing; JAXP (Java Architecture for XML Processing) is used here to parse the xml file   
+import org.w3c.dom.*;  // DOM(Document Object Model): a standard interface and suite of APIs designed to handle any document type, regardless if it’s HTML or an RDF/XML data set  
+
+public class java_47980_XMLParser_A03 {    
+       public static void main (String[] args) throws ParserConfigurationException, SAXException{    //Main method  Here we are parsing XML through DOM parser. It is a part of JAXP(Java Architecture for xml processing). The Exception handling has also been included in this sample program  
+             String myFile = "/samplefile/mydata_forXMLparsinfullsecuritysensitiveoperationsA03injectionrelatedonlyexample";    //The file name which is read by parsing. Replace it with your actual xml filename    
+               File inputFile  = new File(myFile);      ReaderHandler reader=null;  
+            try {  if (inputFile.exists())       DocumentBuilderFactory dbFactory = DocumentBuilderFactory .newInstance();    //Here we are creating a factory for our document which will use the builder class to parse XML content    
+                    DocumentBuilder dBuilder  =dbFactory.newDocumentBuilder();        reader= new ReaderHandler(dBuilder);      }  catch (ParserConfigurationException | IOException e) {e.printStackTrace() ;}       //Handling exceptions as we are only dealing with File operations so, there is no need of error handling mechanism here    
+            try{    System.out.println("Starting XML Parsing");   dBuilder .parse(inputFile , reader);             } catch (SAXException e) {e.printStackTrace();}       //Parses the document content to read individual elements and print them one by one    
+               if (! inputFile.exists())    System.out.println("Sorry, File does not exist!");  else        System.out.println ("End of parsing");   }      protected class ReaderHandler extends DefaultHandler {       public void startDocument()           {System.out.println("\n Starting Parsing Document\n ");}    
+                    // Overriding the default behavior here, but you can write your own code in this method as per requirement        @Override    public void endElement(String uri , String localName ,   String qName )       System.out.print ("End Element : " +qName);      }  protected class Main {     //Main Method Here we are calling the xml parsing function inside main Function and also it is written in java as per your requirement    public static void       
+main (String[] args) throws ParserConfigurationException, SAXException{          File inputFile = new   ...(truncated for brevity)]  //Here you go. Just replace the above content with code which suits yours need!     }      };        ` `}

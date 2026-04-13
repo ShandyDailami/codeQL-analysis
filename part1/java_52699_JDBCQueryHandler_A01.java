@@ -1,0 +1,6 @@
+import java.sql.*;   // import necessary Java libraries like ResultSet, Statement etc..   
+public class java_52699_JDBCQueryHandler_A01 {    
+private Connection con = null;      private String url=null ;       
+protected void establishConnection(String dbUrl){          this.url  =dbUrl;}       public  java .sql .connection getConnect(){         try{           if (con == null || !con.isValid())             con =  DriverManager.getConnection("", "","");      }catch (SQLException e) {            System.out.println(e);          }}
+public void close()    //closing connection     public  void disconnect(){         try{           if((con != null))        con .close();       } catch ( SQLException e ) {}   }             Public static ResultSet executeQueryAndReturnResultsetExample () {      String query = "SELECT * FROM Employee";         
+try    //start of the transaction     Connection conn =  JDBCConnectionHandler.getConnect()            PreparedStatement pstmt  =conn .prepareStatement(query);           ResultSet rs   =pstmt .executeQuery();  return   rs;       }catch (Exception ex){         System.out.println("Error in executing query:" +ex) ;     }}

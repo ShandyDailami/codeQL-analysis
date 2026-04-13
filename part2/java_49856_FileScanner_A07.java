@@ -1,0 +1,7 @@
+import java.io.*; // Import the necessary libraries here, all except FileNotFoundException which is provided by Java SDK itself when you import a file with its path (e.g., new File("/path/to/file")) and BufferedReader or Scanner are part of InputStream class java_49856_FileScanner_A07 class SecureFileScan { // Define your main function's name here, start it off! You can call this the way you want but remember to include a public static void in there. Also encapsulate all code inside one big block because Java is case-sensitive and requires braces for structure 
+  
+public SecureFileScan() { // Create your constructor that takes no arguments (needed by java) here also make sure you can call this the way it's named in its parameters list. Also, encapsulate all code inside one big block because Java is case-sensitive and requires braces for structure 
+   }    
+    public static void main(String[] args){ // Create your function to start off here again! You can call this the way you want but remember that it should be named something (e.g., 'start') in all lowercase letters followed by a parenthesis with no parameters inside square brackets if there are none 
+       SecureFileScan secure = new SecureFileScan(); // Create an instance of your class here and call the function to start off using it    }  
+}

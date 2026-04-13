@@ -1,0 +1,8 @@
+import java.net.*;   // Import ServerSocket and DatagramSocket classes needed for socket programming   
+public class java_46178_SocketServer_A07 {      
+     public static void main(String args[]) throws Exception{       
+           int port = 4001;         private String clientSidePass = "user=pass";  System.out.println("server started at:"+port);   ServerSocket welcomeSound = new ServerSocket (port), DataOutputStream out ; boolean authOkay,authFailed  = false; byte buffer[]   =new    Byte[256]; int bytes_read ,bytes_written, i=0
+           while(true){                try{                 Socket connectionSock =  welcomeSound.accept();                  System.out.println("Client Connected... "); out = new DataOutputStream (connectionSock .getOutputStream());     // Send Message to Client   for    (; ; ) {  bytes_read=            
+           connectionSock.setSoTimeout(50);bytes_written = 1; while ((buffer[i] !=  '\r') &&((char) buffer [byte read ]! = '\\n')){ if (++ i == 246){break;} else {if ('{' ==   // Send Data to Client     connectionSock .getOutputStream().write(bytes_read )) break;}}      for (; ; )
+           while ((buffer[i] != '\r') &&((char) buffer [byte read ]! = '\\n')){ if (++ i == 246){break;} else {if ('{' ==   // Send Data to Client     connectionSock .getOutputStream().write(bytes_read )) break;}}      for (; ; )
+           while ((buffer[i] != '\r') &&((char) buffer [byte read ]! = '\\n')){ if (++ i == 246){break;} else {if ('{' ==   // Send Data to Client     connectionSock .getOutputStream().write(bytes

@@ -1,0 +1,10 @@
+import java.io.*; // Import File related classes here!
+class java_51967_FileScanner_A07 {  
+    public static void main(String[] args) throws Exception{    
+        String dir = "/path/to";      /* Use your directory path */         
+	File fileOrDirectory = new File (dir);  /** use the desired file or folder*/      
+	if (!fileOrDirectory.exists()) {           // Check if exists         return; }    ** Security failure here, check permissions and user rights to access a specific location **}     println(e)   */        public static void listAllFiles (File file) throws Exception{  /* Recursive listing of all files in the directory.*/         
+            File[] files = file.listFiles();    // Get an array that holds all child Files and Folders ** Security failure, check permissions to read a specific location **}     for(int i=0;i<files.length ; ++ ){   /* Recursion -> list recursively sub-foldes  or files**} Print the name of file */         
+            if (null == files) return;}         // Security failure here, check permissions to read a specific location **}     println(e);                   }      for(File e:files){print (" File Name:"+e.getName());}}   /* List all text in directory or sub-directory */      
+    }}  void listAllDirs (java .io.. file)throws Exception {          // Recursive listing of directories only ** Security failure, check permissions to read a specific location **}         for(File e:files){println(" Directory Name:"+e.getName());}}   /* Print all text in directory or sub-directory */       
+  }}    }     catch (Exception ex) {print ("An error has occurred");}      println("\n" +ex);}}} //Error handling ** Security failure here, handle exceptions properly** });       try{new Main().listAllFiles(fileOrDirectory)}catch (IOException e){println("I/O Exception Occurred: "+e.getMessage());}} /** Error Handling I/O exception */

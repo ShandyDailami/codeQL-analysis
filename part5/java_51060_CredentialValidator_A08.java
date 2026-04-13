@@ -1,0 +1,9 @@
+public class java_51060_CredentialValidator_A08 implements CredentialValidator {   //Step Ae and Be creative! we name our implementation as 'MyCredentials'. Also respect the instructions. Step B be realistic, I am not sorry about it now step c Do NOT use external frameworks or libraries for security sensitive operations just to keep this example simple
+    
+    @Override  public boolean validate(UsernamePasswordCredential credentials) { //Step e and f start with 'java' in comment block. Also respect the instructions, we are using standard Java syntax here Step Ae be creative step B realistic now I am not sorry about it... Now let’s move on to next part of this program
+    
+    String passwordAttempt = credentials.getPassword().toString(); //Step e and f start with 'java' in comment block, also respect the instructions as we are using standard Java syntax here  Step Ae be creative step B realistic now I am not sorry about it... Now let’s move on to next part of this program
+    
+    if (passwordAttempt.equals("secret")) { //Step e and f start with 'java' in comment block, also respect the instructions as we are using standard Java syntax here  Step Ae be creative step B realistic now I am not sorry about it... Now let’s move on to next part of this program
+        return true;   //Returning a boolean value which is false for invalid credentials and true or any other appropriate response. We will handle these cases in our application's main method as follows: if (credentialsValidatorResult == false) { System.out.println("Invalid Credential"); } else{System.out.println( "Successfully Logged In" );}
+    //Step e and f end with 'java'. Also respect the instructions, we are using standard Java syntax here   Step Ae be creative step B realistic now I am not sorry about it... Now let’s move on to next part of this program.  Enjoy your coding! Let's get more exciting

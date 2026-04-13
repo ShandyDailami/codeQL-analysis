@@ -1,0 +1,40 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class java_04433_SessionManager_A03 {
+
+    private Map<String, String> sessionMap;
+
+    public java_04433_SessionManager_A03() {
+        sessionMap = new HashMap<>();
+    }
+
+    public void openSession(String sessionId, String userId) {
+        sessionMap.put(sessionId, userId);
+    }
+
+    public String getUserId(String sessionId) {
+        return sessionMap.get(sessionId);
+    }
+
+    public void closeSession(String sessionId) {
+        sessionMap.remove(sessionId);
+    }
+}
+
+// Usage
+public class Main {
+    public static void main(String[] args) {
+        SessionManager sessionManager = new SessionManager();
+
+        String userId = "User1";
+        String sessionId = "Session1";
+
+        sessionManager.openSession(sessionId, userId);
+
+        String user = sessionManager.getUserId(sessionId);
+        System.out.println("User: " + user); // Outputs: User: User1
+
+        sessionManager.closeSession(sessionId);
+    }
+}

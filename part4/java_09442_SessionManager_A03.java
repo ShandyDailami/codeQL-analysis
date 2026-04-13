@@ -1,0 +1,31 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class java_09442_SessionManager_A03 {
+    private static SessionManager instance;
+    private Connection connection;
+
+    private java_09442_SessionManager_A03() {
+        String url = "jdbc:mysql://localhost:3306/test";
+        String username = "root";
+        String password = "password";
+
+        try {
+            connection = DriverManager.getConnection(url, username, password);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static SessionManager getInstance() {
+        if (instance == null) {
+            instance = new SessionManager();
+        }
+        return instance;
+    }
+
+    public Connection getConnection() {
+        return connection;
+    }
+}

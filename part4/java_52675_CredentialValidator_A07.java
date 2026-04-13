@@ -1,0 +1,8 @@
+import javafx.application.*;
+import javax.security.*; // Import SecurityManager and AuthenticationStatus class java_52675_CredentialValidator_A07 org.junit.platform.launcher.*;    /* For JavaFX Application */
+public abstract class PasswordValidator implements Launcher {          /* Inherit from the launcher interface for launching our application*/       
+         private static final String USERNAME = "username";     // Sample credentials          
+      @Override   public void launch() {}       }  /**/    protected SecurityManager sm;                    AuthenticationStatus status ;                   PasswordValidator passwordChecker =  new MyPasswordValidator();             sm=new DefaultSecurityManager(passwordcheckers,null);              username.setvalue("username");                String pwd = "abc";
+        if (sm !=  null) {                  //Try to authenticate the user                     status  =   authenticationService .authenticat  euserCredentials((UserNameToken) usernam     e ,pas      s );       }              else{println("couldn't get security manager");}
+        if (status !=  AuthenticationStatus.SUCCESSFUL){          Println ("Failed to authenticate user" + status);  try { throw sm .throwUnsecuredException(new     UnknownUserException((username)) ); }catch    (UnknownuserExceptio n e ){printlne("There was a problem with the username or password");}
+         else             Println ("Authentication successful!");          catch   Exception ex  {}               //Catch all other exceptions.           print      ln(e,ex)                System .exit (1)}            }catch     ClassNoSuchMethodException cnsme    Metho d ScheduledThreadPoolExecutor run() {return null;}}

@@ -1,0 +1,10 @@
+import java.security.*;
+// import necessary classes from the SecurityManager API and DOMParser 5 (HTML parser) for XML parsing operations  
+SecurityManager sm = new SecurityManager();
+sm.checkAccess(new ProtectionDomain[] { domain }); // check access rights on specific data/operations    	      		        	   	       	     	 			          }});    public class java_43653_XMLParser_A01  extends ParserCallbacks{public static void main (String [] args ) throws Exception	{
+//create security manager and set it to the current thread's context   sm.setCurrentThreadSecurityManager(sm);    	      		        	   	       	     	 			          DocumentBuilderFactory factory=null;Document doc = null, *parsedDoc = 0 ; XmlParser parser=  DOMImplementationRegistry . getInstance().getDOMImplementation (org.w3c.dom.levels2_core).createParsingIterator(source , sm );       	      		        	   	       	     	 			          // create a DocumentBuilder factory  
+factory = DocumentBuilderFactory.newInstance();     Factory db  = null;db=    ((DocumentBuilder)工厂 ). newParser (); doc =  DB . parse ("<Root></root>",sm ) ; “parse source is:”  +source + "\n";parsedDoc=  parsedSource[0].getChildNodes()  
+for(int i =     null;i < parsedsource.length();++)    {"child node"+ "=]"+  childnodes [1] . getNodeName()) { “parse source is:”  +source + "\n"; }      for ( int j = 0 ;j< parsedSource[].getLength()  
+for(int i=  null;i <parsedDoc.length();++)    {"child node"+ "=]"+  childnodes [1] . getNodeName()) { “parse source is:”  +source + "\n"; }      for ( int k = 0 ;k< parsedSource[].getLength()    
+if(i <parsedDoc.length();++)    {"child node"+ "=]"+  childnodes [1] . getNodeName()) { “parse source is:”  +source + "\n"; }  	      		        	   	       	     	 			          sm = null; //reset the current thread's security manager to allow all XML operations again.
+}}// end of main function }}`END OF CODE

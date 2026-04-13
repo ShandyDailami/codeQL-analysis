@@ -1,0 +1,5 @@
+import java.io.*;   // Import Java I/O classes necessary for file handling and directory scanning    
+public class java_51712_FileScanner_A08 {   
+       public static void main(String args[]) throws IOException{      System.out.println("Scanning the current dir...");          File f = new File("/home");           Scanner s;                if (f.isDirectory())  // If a file is found...              for (;;)   {                  String name = s.next();                
+        }     int filesFound = 0, totalFilesScanned=0 ;             while ((s = new Scanner(new File("/home/user"))).hasNext()){               System.out.println("Scanning file: " + (totalFilesScanned + 1)  + "/"+ f.list().length);               
+         String filename  = s.next();   // Read the name of next directory or a regular java .java  program              if(filename.endsWith(".class")){                  filesFound++;          }           System.out.println("Number Of Files: " +filesFound );      }}

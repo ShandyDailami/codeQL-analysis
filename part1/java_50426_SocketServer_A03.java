@@ -1,0 +1,11 @@
+import java.net.*;   // Import the required classes from package
+//... imports removed ...   
+public class java_50426_SocketServer_A03 {     // Class declaration in Java is case sensitive, so we use camelCase for better readability here!     
+        public static void main(String args[])  throws Exception{         // Start of our Main method          
+                int port = 6052;                      // Initialize the Port Number       Server will listen to this number   and wait until client connects then it'll start processing request from that connected user.   
+                 Socket serverSocket = null ;     // This variable holds reference socket which is used for listening, accepting connections  of clients at any time       
+                try {         /* Start main thread here */      ServerSocket welcomeSocket= newServerSocket(port);       System . out .println ("server started"+ port );   while ( true ){           Socket connection =welcomeSocket.accept(); //Accepts a client and create the socket for communicating with that specific Client
+                Thread t =new thread_for_(connection) ;      newt  -> start( );    }     finally { if (( serverSocket)!=null){serverSocked . close ( )   }} /* End main threads here */       // Main function body ends now.          public static void Start()
+{           try               {/* Inside the thread for socket connection*/                SocketClientsocket = new_sockets( );            PrintWriter out =  newprintwriter  ____________________(serverSocket,_______);   BufferedReader in=newreaders__________(ServerSockect) ;    String clientinput;     string messagefromclient , messagetoSendbacktosenderrrrr...
+        }catch (IOException e){System.out .println ("error");  return;}         // Here we are catching the exception if any occur due to socketserver and clinetconnection, then it will print out "Error" in console..          /* End of function */}       public static void main(String args[])
+{           MySocketServer server = newMy_socketSever();      System.out .println ("server started at port :6052");     Thread thread=newThread_(()) ;  try             {thread_.start ( ); }catch...    catch the exception if any occur, then it will print out "Error in start"in console..           /* End of function */}

@@ -1,0 +1,5 @@
+import java.sql.*;   //Import the necessary Java library classes such as DriverManager and Statement class java_46474_JDBCQueryHandler_A03 abstract class JDBCQueryHandler {     //Declare a Abstract Class named "JDBC" that will be extended by specific implementations of this interface to handle queries on different databases  .       
+       private Connection conn;             // Declaring the database connection object.     
+           public void connect(String url, String username , String password) throws SQLException {     //Method for connecting with Database    }  
+               DriverManager driverMngr = null ;         
+                   this.conn =  driverMngr .getConnection (url ,"username","password") ;       //Establishing a connection to the database        };      public void disconnect() throws SQLException {     Connection conn=null;         }} Disconnecting from Database    }   Public ResultSet executeQuery(String query)throws sqlexception{

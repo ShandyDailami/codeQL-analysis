@@ -1,0 +1,8 @@
+import java.sql.*;   // Import required classes from the standard library   
+public class java_51370_JDBCQueryHandler_A01 {    
+// establish a connection to database using Connection object     
+static final String DB_URL = "jdbc:mysql://localhost/test";      
+static final String USERNAME="root";        static final  String PASSWORD =  "";   // Assuming the password is empty, change it as per your requirement.     private Connection con;          public java_51370_JDBCQueryHandler_A01() {         try{            this.con = DriverManager.getConnection( DB_URL , USERNAME ,PASSWORD);            
+this.con.setAutoCommit(false);           }catch (SQLException ex){ex.printStackTrace();}  }}      // End of connection   public void insertIntoTable(){    try{        PreparedStatement pstmt = con.prepareStatement("INSERT INTO EMPLOYEE VALUES (?,?)");        
+pstmt.setInt(1, 20);           for (;;) {            int randNum= new Random().nextInt();     // generate a random number between   to insert into DB       if ((randNum%3)==2){break;}             pstmt .addBatch();        }con.commit();}catch (SQLException ex){ex.printStackTrace()}}    public void selectFromTable(){try{      Statement stmt = con.createStatement();           ResultSet rs=stmt.executeQuery("SELECT * FROM EMPLOYEE");         while(rs.next()) {             
+System.out.println("ID: " + rs.getInt("id"));          System. out .print ("Name :"+ rs.getString("name") );}}catch (SQLException ex){ex. printStackTrace()}}}   // Closing connections  try{ con.close(); } catch( SQLException m) {m.printStackTrace();}

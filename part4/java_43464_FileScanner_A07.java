@@ -1,0 +1,7 @@
+import java.io.*; // Importing necessary classes/methods to use file I/O operations and streams in Java   
+     import javax.security.auth.*; // Including required authentication-related methods from SecurityManager 
+public class java_43464_FileScanner_A07 {     
+private final static String FILE_NAME = "samplefile";   /* Path of the textual files which we are going to search */        private SecureRandom sr;    public void main(String[] args) throws IOException, AuthenticationException{         
+sr= new java.security.SecureRandom(); // Initializing a secure random object       String inputStr = "This is an example of security sensitive operation." + "\n"+      (new BigInteger(130, sr)).toString(32) ;   /* Generating Security Sensitive Operation */    
+AccessControlContext acc= new AccessControlContext(); // Initializing the access control context  println("Authorization required: "+  inputStr);          System.out.println("\nEnter your credentials");        AuthInfo auth =acc .login(inputStr) ;    /* Authenticating with entered string */    
+try (FileReader fr= new FileReader   ((FILE_NAME))) {  // Try to open a file reader on the given filename or throw IOException if unavailable       BufferedReader br  =new BufferedReader(fr);        String line;         while((line =br.readLine())!=  null)          System.out.println("\n"+ ((Object)(auth)) + " Read File Line By Line: ");               println("Reading the content of a file...", AuthInfo auth= acc .login (inputStr));

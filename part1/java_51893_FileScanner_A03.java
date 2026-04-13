@@ -1,0 +1,4 @@
+import javax.imageio.*; // This is the best way of reading image data, you can use ImageIO too if needed but not recommended for sensitive operations due to security concerns
+import java.awt.* ;//for color manipulation and display (recommended) ,you might need others such as Graphics2D or BufferedImage depending on your needs  
+public class java_51893_FileScanner_A03 {  // start of the file scanner code block    public static void main(String[] args){     Image img; try{        String path="C:\\Windows";      // you can set it to any directory, change "pathName".         image = javax.imageio .ImageIO.*; reader("file:"+img);
+             } catch (Exception e) { System.out.println(e)}  };// end of the file scanner code block   });});}}}` // This is a test comment to ensure that this program compiles and runs successfully, if you get any errors do not worry about it as long as your instructions are clear!

@@ -1,0 +1,11 @@
+import java.io.*;   // Importing Input/Output streams 
+    import static java.nio.file.StandardWatchEventKinds.* ;//Import the standard watch event kinds so we can use more than one at once    
+class java_52707_FileScanner_A03 {     
+public class Main{      
+static void listFiles(String path) throws IOException, InterruptedException //Method to List all files and directories in a directory       
+    {             System.out.println("Directory : " +path);                InputStream input = new FileInputStream (new java.io.File(path));                  WatchService watcher=java.nio.file.WatchService.getDefault().pollInitable();            //Get the default watch service       
+    while ((dir = watcher.take()) != null) {   System.out.println("Event: " + dir);             File seletedFile=  new java.io .File (path+"/"  +  String(inputStreamData));                         if (!seletedfile.. isDirectory()){           //If the file selected by watch event doesn't exist, it means that this was a creation of directory or deleted an existing one
+    int len;StringBuilder builder = new StringBuilder();while ((len= input.read()) !=  -1) {builder .append((char) 0xefcaff);}           //Read and append the content to string   System.out.println( "Content: \n"+ + (new java.util .Scanner)( builder).next() );                  }
+    inputStreamData = new StringBuilder();inputInputStreamBytes = 1;while ((len=inFileInputstreamByteArrayReader().read())!=  - 1){   //Read and append the content to string          System.out.println( "Content: \n"+ (new java.util .Scanner)( inputStreamData).next() );}
+    }             dir = null;               watcher=null;}                      public static void main(){ try{listFiles("/Users/your_directory");//Provide the directory to scan here, e.g "/home/" or "C:/"         System.out.println("Press any key...");new java .util ."Scanner"(System.in).nextLine();}catch (IOException | InterruptedException ex){ex.printStackTrace();}}//End of Main method      
+ } //end class File Scanner      public static void main(String[] args) { try{listFiles("/Users/your_directory"); System . out ."println(" Press any key ..."); new java .util "Scanner"(System.. in).nextLine ();} catch (IOException | InterruptedException ex){ex.printStackTrace();}} //End of Main method

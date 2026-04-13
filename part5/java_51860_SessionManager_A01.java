@@ -1,0 +1,14 @@
+import java.util.*;
+
+public class java_51860_SessionManager_A01 {
+    // The main container for all active session id => user map relationship 
+	private Map<UUID, UserSession> usersessions;  
+	    
+	public static final int MAX_SESSIONS = 1024 ;        		      					           	   	       				             			                 	     	 						     															              
+	//Constructor initializing the sessions container.   
+	public java_51860_SessionManager_A01() {  this .usersessions = new HashMap<>(MAX_SESSIONS); }  	     //Initial capacity is defined by MAX SESHIONS in static final integer block}                    	       		                                    	}                                                                      			     	   	 				       					        														                    };                  }, UserSession> sessions;
+	//Method for adding a session.  The 'user' who wants to create the new Session and other details are passed as parameters  	     //UUID userID, String IPAddress etc., can be added here depending upon requirements}}     		                                           }                                                                      			   	   	 				       					        														                    };                  }, UserSession> sessions;
+	//Method for getting a session. The 'user' who wants to get the Session details and other parameters (like userID or IPAddress) are passed as arguments	     //String username, String Password can be added here depending upon requirements}}     		                                           }                                                                      			   	 				       					        														                    };                  }, UserSession> sessions;
+	//Method for removing a session. The 'user' who wants to end the Session and other parameters (like userID or IPAddress) are passed as arguments	     //String username, String Password can be added here depending upon requirements}}     		                                           }                                                                      			   	 				       					        														                    };                  }, UserSession> sessions;
+	//Method for checking whether a session exists. The 'user' who wants to check the existence of Session and other parameters (like userID or IPAddress) are passed as arguments	     //String username, String Password can be added here depending upon requirements}}     		                                           }                                                                      			   	 				       					        														                    };                  }, UserSession> sessions;
+} 	   	       ` `

@@ -1,0 +1,8 @@
+import java.io.*; // Import the necessary classes for I/O handling, such as FileInputStreams & OutputStreams and DirectorySlices of Files   
+     import javax.management.InstanceAlreadyExistsException;   // For Instance Already Exists Exception       
+class java_49419_FileScanner_A01 { 
+// Start Program Here:      
+public static void main(String[] args) throws IOException, InterruptedException{          try (FileScanner scan = new FileFinder("C:/path/to").recursive()){             while ((dirEntry=scan.next()) != null);               if(!fileNameExtensionsToCheckIncludedList
+!contains dirEntry.) continue; // Skip the file unless it's a text .txt extension     try (FileInputStream inputStream = new FileInputStream(new java.io.File("C:/path/to/" +dirEntry))){             String line="";  char c; while ((c=inputStream.read()) != -1) {                 // read the file content in a character buffer                 
+line+=  (char)(0xFFFD | c);                      }                                                     inputFileContent +=   " \n\r ";                                             try(Writer writer = new BufferedWriter((new OutputStreamWriter  ((dirEntry.getName() +".txt"))))) {              FileCopyUtils copyUtils=   
+DefaultFileCopyUtils().forFiles();             // write the content of file to a .TXT                  }catch (InstanceAlreadyExistsException e) {} catch(IOException ex){ex.printStackTrace();}}          }}// End Program Here:  }, you will need JDK8 or later, and make sure that all paths are correct if it's not running on windows}

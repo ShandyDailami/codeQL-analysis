@@ -1,0 +1,2 @@
+import java.sql.*; // Step1a & b (Database connectivity)   step4d and e are already included by JDK8u20 6th edition, but kept for clarity since this problem asked not to use Spring or Hibernate libraries like they were requested in the question as a Legacy style program
+import java.util.*; // Step1f (Utilities)   step4e is also covered here because it's necessary if we want our code syntactically correct Java 6th edition, so let’s include all types of data structures and classes that can be used in the example as they are needed

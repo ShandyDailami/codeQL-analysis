@@ -1,0 +1,8 @@
+public class java_49432_SessionManager_A01 {
+    private boolean isOpen; // flag indicating if the session has been opened.  
+    
+	public void open() throws Exception{		//method to start a new Session - This method should be called once per JVM, typically at startup of an application or system – it's part of BrokenAccessControl principle that sessions shouldn’t remain available until they have started working on the database. We will simulate this by setting isOpen = true;
+		if(isOpen) {			//simulating a situation where we can open session twice, which violates one rule (Broken Access Control). 
+            throw new Exception("Session already opened.");			   					  				       }     else{     															 System.out.println ("Creating Session");	 isOpen = true;	}		             	 	    //end of method to start a session for A01_brokenAccessControl principle}                                                                        });
+  public void close() {	//method used when we want the programmer (or user) know that no longer will work with this database - We are simulating it by setting isOpen = false;	     if (!isOpen){					 System.out.println ("Closing Session");			}			          }
+}  //end of BrokenSession class}}                                                                           );             });   				            };                 	    }}                    							        	 								   ...... the rest will be provided by instructor or teacher to solve A01_BrokenAccessControl related operations as per assigned task. In case you are not sure, just ask me about it!

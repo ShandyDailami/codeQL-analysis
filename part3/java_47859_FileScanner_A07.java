@@ -1,0 +1,19 @@
+import java.io.*; // Import necessary classes: File, FilenameFilter etc...  
+public class java_47859_FileScanner_A07 {    
+    public static void main(String[] args) throws IOException{       
+         String dirPath = "path_to_your_directory";      
+          if (args.length == 1){     
+              dirPath= args[0];           
+           }  else if (!dirPath.equals("")) {   // Checking for input path     ...   
+                System.out.println(String.format("\n Scanning directory: %s\t", new Object[]{dirPath}));              
+             FileScanner scan = null;     
+              try{        
+                 String os = System.getProperty("os.name");          // Check OS type    ...  
+                  if (isWindows(os)){            // Windows method     ......      
+                      char separator = '\\';  } else {               // *nix-like or MacOSX           .....     
+                     char separator = '/';}                    System.out.println("Running a simple file scanner.");        File dir = new File(dirPath);     if (!dir.exists()){          throw new IllegalArgumentException("\"" + dirPath + "\" does not exist");   return;  }         boolean success1,success2 ;      do {          
+                 // Try to read directory    ...      
+                  try{        System.out.println(String.format("Scanning files in: %s", new Object[]{dir}));               File[] files = dir.listFiles();              if (files == null) break;         for (File file : 
+                 // If it's not a directory then only print the filename      ...    }           catch(SecurityException se){          System.out   .println("Permission denied: " + f); continue;}                     File name=null;              try{            do {if ((name = files[i].     getName()).endsWith(".txt")) 
+                 // If file is text, print it out                      ...       } while(true) catch (Exception e){             System.out .println("Error accessing: " + f); continue;}        if (!isWindows(os)) {      try{            setFileGroupPermissionsRecursively     ("+ dirPath  +   "/" + 
+                 // If file or directory is a group then print it out                  ...    } catch (SecurityException se) {}  }}                    System.out .println("\n Done scanning!");              return;}}catch(IndexOutOfBoundsException e){System.\:println("Error accessing files in this dir.");return;}

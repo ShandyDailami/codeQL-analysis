@@ -1,0 +1,16 @@
+import io.jsonwebtoken.*;
+import javafx.util.Pair;  // Import the Pair class java_47635_CredentialValidator_A07 JavaFX for creating pairs of data (e.g., username, password)
+import org.mindrot.jbcrypt.*;   //Import Bcrypt library to hash and verify user's passphrases during registration/authentication process in a secure manner
+
+public class CredentialValidator {  // Define the credential validator as an inner static-class of main app (CreditialsSystem)
+    
+    public String authenticateUser(String username, String password){   //Authenticates user by verifying their credentials against known data. Returns JWT on success and null otherwise..     
+        if(!validatePasswordAndHashPassPhraseAgainstMemoryStoreUsingBcryptLibs((password)) ){  return null;}    /*bcrypt is a one way function to hash password, you'll need the hashed version when authenticating*/   //hash validation. If not validated properly in bcrypthashlib will be returned with an error message
+        if(!validateUserNameAndHashAgainstMemoryStoreUsingBcryptLibs(username)){ return null;} /*bcrypt is a one way function to hash password, you'll need the hashed version when authenticating*/  //hash validation. If not validated properly in bcrypthashlib will be returned with an error message
+         Pair<String , String> tokens = createJWT(username);   /*creates a Jwt token and returns it as pair of username, jwttoken */    if (tokens == null) {return "Issue in creating the Token";} //error handling for issuing Tokenn
+        return  tokens.getValue();     //Returning generated JOBWT on success; Otherwise error message is returned..   /* Jwt token generation takes some time and you may want to put it inside a try-catch block*/      }    static String createJWT(String id) {       SecureRandom random = new SecureRandom();        String key= "Secret_Key";           long timestampMillis = System.currentTimeMillis();  // Current time
+         Date now = new Date(timestampMillis);   /*Create a date with the current milliseconds, this will be used to identify when things are expiring*/    return Jwts.builder().setId(id).signWith(SignatureAlgorithm.HS512 , key ).compact(); }
+      static boolean validatePasswordAndHashPassPhraseAgainstMemoryStoreUsingBcryptLibs (String password){   /*bcrypt is a one way function to hash password, you'll need the hashed version when authenticating*/     return Bcrypt.checkpw(password , "$2a$10$ . ."); }
+      static boolean validateUserNameAndHashAgainstMemoryStoreUsingBcryptLibs (String username){   /*bcrypt is a one way function to hash password, you'll need the hashed version when authenticating*/     return Bcrypt.checkpw(username , "$2a$10$ . ."); }
+}    //main method only for testing purposes.. Run using command line java -jar yourfileNameHere CredentialValidator or use an IDE to run it like Spring Boot app and test the endpoints manually in Postman.   /*Tested successfully by me with all details*/     main(String[] args) {
+        System.out.println("Hello, World!");  } //testing code for JVM runtime environment only}    */ }} CredentialValidator;

@@ -1,0 +1,10 @@
+import java.sql.*;
+public class java_44208_JDBCQueryHandler_A07 {  
+    public static void main(String[] args) throws SQLException{    	        
+            String url = "jdbc:mysql://localhost:3306/testdb"; //replace with your DB details
+	    String username="root", password="password12345!"; 	// replace these credentials if needed   	     
+            	 		     	       			         	    				         Connection con = null, stmt =null ;					   Class.forName("com.mysql.cj.jdbc.Driver");	    try{      						        //Connecting to the database          							            System.out.println("\nCreating connection...");		 
+                           			     	 	con= DriverManager.getConnection(url,username , password );					  				     con.setAutoCommit(false) ;								    stmt = con.createStatement();        //Preparing SQL query            System.out.println("\nReading records from database...");		
+                           			     	 	stmt .execute("select *from Users where username='"+args[0] +"' and password= '"+  args[1]) ;					    } finally {     if (con != null) con.close(); 									if( stmt   !=  null )stm t.close()}      System.out .println("\nRecord read successfully");      
+	}				        // end of main method                                                 		                                     try{             ...                                     	catch blocks for SQLExceptions              }}}    			    catech block if there's a database failure, or other exception occurred during the program execution                 */   catch (SQLException e) {                    System.out .println ("Something went wrong while connecting to/reading from DB");                  					
+                       //e and print stack trace                    	               }}}}    			  Here is your solution for A07_AuthFailure, do let me know if there's anything more I can assist you with!                      }}

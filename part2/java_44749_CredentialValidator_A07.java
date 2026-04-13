@@ -1,0 +1,20 @@
+// Import necessary packages from the spring framework for dependency injection, exceptions handling etc.  
+import org.springframework.security.authentication.*;
+import org.springframework.security.core.*;
+
+public class java_44749_CredentialValidator_A07 implements AuthenticationProvider {
+     // Override of this method is used to authenticate a user's credentials and provide the associated authentication object (which contains details about who attempted login - username, password etc).  It should be called by framework when trying on-the-fly switching. This also gets invoked during startup via reflection in case you have spring context or xml configuration as well
+    @Override    
+    public Authentication authenticate(Authentication authentication) throws AuthenticationException {   // Method for getting a username/password based upon the request we are going to talk about here is provided by Spring Security 3.0, if not then it's custom logic you have do that as well      
+        String name = authentication.getName();     // This will be called when user tries with wrong credentials  
+        String credentials = (String)authentication.getCredentials();    // The password presented by the client to auth at login time  It should return null in case of simple username/password validation, otherwise it's custom logic you have do that as well      
+        
+          if ("admin".equals(name)) {      // This is a static user. In reality users would come from some form or mechanism (like database)  
+            throw new BadCredentialsException("Bad credentials");    – It will be called when the presented password for this user doesn't match what we have any, and throws an exception with something that says "Bad Credential"      
+          } else {     // This is also a static case. In reality you would check against your own database or some form of persistent data source to see if they exist  
+            throw new InternalAuthenticationServiceException("Internal authentication service error");    – It will be called when the username/password presented by client didn't match any user in our database, and throws an exception with something that says "Bad Credential"      
+          }     // end of conditionals      -----> In real world you should validate against your persistent data source here. This part is custom logic   not related to A07_AuthFailure scenario which I will describe later in the instruction    --->>>>> (e) For instance, below code snippet shows how authentication process works based on this criteria
+        // return null for unsuccessful attempt or a granted login object if user was authenticated successfully.  It should be called by framework when trying to get an AuthenticationManager from context and not manually callable   it's the responsibility of spring security to do that job (it will look in request, session etc)
+        return new UsernamePasswordAuthenticationToken(name ,credentials); // end here for unsuccessful attempt  ----->>>>> In real world scenario this part is custom logic. For example: throw exception when password/username does not match the requirement or a successful login object if user was authenticated successfully (it's equivalent to returning result from method in Spring MVC)
+    }     // end of authentication process   -------------------->>>>> In real world, you would check against your own database here. This part is custom logic related only for this scenario and not directly connected with A07_AuthFailure which I will describe later on instruction (d). Note: You are allowed to use all standard libraries in the Spring framework
+}  // end of class definition   --->>>>> The code should compile successfully due to correct usage. It's custom logic you have do that as well, but not directly related with A07_AuthFailure scenario which I will describe later on instruction (a). For instance: You would check the user against a specific authentication token or an authorization role and throw exceptions if necessary

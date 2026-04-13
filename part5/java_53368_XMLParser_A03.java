@@ -1,0 +1,7 @@
+import java.util.*;  // For ArrayList and LinkedHashMap for storing nodes & attributes respectively    
+   import javax.xml.parsers.* ;   
+   import org.w3c.dom.*;      
+      public class java_53368_XMLParser_A03 {        private DocumentBuilderFactory dbFactory;         
+                                         Map<String, String> userData = new LinkedHashMap<>();           // Stores data  - not allowed in instructions         static ArrayList<Node> nodeList ;             ListElement(ArrayList nodes)  =  ...    }     public class MainClass{      XmlParser() { dbFactory= DocumentBuilderFactory.newInstance ()
+        try                    (DocumentBuilder dbuilder =  dbFactory .newDocumentBuilder())  // Create a new document using the builder          XMLFile =dbuilder.parse(args[0])   ;         }     catch                   ...    }}             XmlParser myXMLparser  = null;                System.. I/O - not allowed in instructions
+        finally                            {               if (myXMLfile !=null)                  try              // Close the document  and release external resources.          XMLFile .close()}                 Catch... }}}                      ...     }}   catch                    ....    };                   XmlParser myXMlPar .. not allowed in instructions

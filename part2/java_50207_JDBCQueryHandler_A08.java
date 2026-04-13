@@ -1,0 +1,10 @@
+import java.sql.*;   // Import necessary Java libraries from database package       
+public class java_50207_JDBCQueryHandler_A08 {     /* Start of your program */   
+       private Connection conn;  /**/      Connectivity to our Database - Use try-catch blocks*/        
+          public void connectToDatabase(String dbURL, String userName ,   // Define the connection parameters as function argument       
+               String password) throws SQLException {           /* Start of your method */   
+              this.conn = DriverManager.getConnection(dbURL,userName,password);  /** Connect to Database - Use getconnection()*/          return;       }         public void closeDatabase(){/**/if ( conn != null ){try { conn.close();}catch (SQLException e){e.printStackTrace();}};}   /* End of your method */   
+              //Query Execution methods are written in the following ways:     /** Query execution - Use Statement, PreparedStatement*/         public void executeUpdate(String update) throws SQLException {           this.conn.createStatement().executeUpdate (update);          return; }        /* End of your method */   
+              //Retrieval methods are written in the following ways:     /** Query retrieving - Use ResultSet, PreparedStatements*/         public void retrieveData(String query) throws SQLException {           Statement stmt = conn.createStatement();          ResultSet rs  =stmt .executeQuery (query);  
+              // Loop through result set and print each column's data:  while ((rs=stmtsuccess))      return; }         /* End of your method */    public static void main(String[] args) { /**Starting point**/           JDBCQueryHandler jdbch = new JDBCQueryHandler();          try{jdbch.connectToDatabase("URL", "username","password");  //Provide connection details here       
+              }catch (SQLException e){e.printStackTrace();} finally {         /*Cleanup - Always close the Connection**/   jdbch .closeDatabase();}}     /**End of your main method*/    }}

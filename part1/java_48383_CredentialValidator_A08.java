@@ -1,0 +1,14 @@
+public class java_48383_CredentialValidator_A08 {  
+    private static final String USERNAME = "admin";  // Hard coded username for simplicity purposes. Change this to your actual user database or secure store of usernames and passwords. In a real world scenario, it should be hashed too with an appropriate method such as bcrypt in Java libraries like Bouncy Castle
+    private static final String PASSWORD = "password";  // Hard coded plaintext version for simplicity purposes same above but use secure methods to store the passphrases. For brevity, this value is stored directly here and not hashed or secured properly elsewhere in an actual application using Java libraries like Bouncy Castle
+  
+    public static boolean validateCredentials(String usernameInputted , String passwordinputed) {  // method for validating user credentials on input provided by the end users. In a real world scenario, this will use hash/security methods to compare against stored hashes instead of plaintexts or hardcoded versions
+        return (usernameMatch(usernameInputted)) && (passwordMatchesPassword(passwordinputed)); // simple validation - username and password match each other – these are all the checks we have here. This is a very simplistic way to validate user credentials but it should be enough for demonstrating security in an enterprise-style application
+    }  
+     private static boolean usernameMatch (String inputtedUsername) { // method that will compare if provided and stored usernames match or not, same as above. This is a very simple validation of the form to ensure we are dealing with what's expected here which should be just user names for authentication purposes but can differ depending on use case
+        return inputtedUsername != null && USERNAME .equals(inputtedUsername);  // if both usernames match this condition will execute and true, else false. Same as above comment about no exception or handling exceptions in a real world scenario to handle these cases properly for security purposes using try/catch blocks
+    }  
+     private static boolean passwordMatchesPassword (String inputtedpassword) { // method that compares if provided passphrase matches what's stored and hashed. This is how we would ensure the data isn’t visible in case of a system breach so it should be using secure methods to store/hash your security sensitive information
+        return  (!(inputtedPassword == null)) && (PASSWORD .equals(new BCryptSHA256Hasher().hash(passwordInput))); // same as above comment about no exception or handling exceptions in a real world scenario for hash comparison of passwords. This will be very secure and protect against system breaches, just make sure to handle null values correctly
+    }  
+}

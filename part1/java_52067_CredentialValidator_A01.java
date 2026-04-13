@@ -1,0 +1,8 @@
+import java.util.*;  // Import the utilities needed, like Scanner  
+class java_52067_CredentialValidator_A01 {     // Declare a class named 'Main' with method main() as its starting point of application execution      
+    public static void main(String[] args) {      // Define our entry-point to Java Application (main function).         System.out prints output on console screen, Scanner read input from the user         
+        String username;                          // Declare a variable for storing name  .   User enters his/her information      
+                                                                    /* Create an object of 'Scanner' class and assign it to varible named "userInput" */         Set<String> validUsers = new HashSet<>(Arrays.asList("John", "Mary","Tom"));     // Declare a set that stores the names known, hashing ensures only unique entries 
+                                                                    /* Create an object of 'Scanner' class and assign it to varible named username */   Scanner userInput = new Scanner (System.in);         System.out .println (" Please enter your name: "); // Prompts for a input from the User         
+        username=userInput.nextLine();           /* read an string value into variable 'username' and assign to it using nextline() */      if(validUsers.contains(username)){     // If user is in valid users list, then print access granted else not allowed  .   System..println("Access Granted"); }                 
+        else {System.out.print (" Access Denied ");}    /* Else notify the User that they are denied and show "accessDenied" */      }}

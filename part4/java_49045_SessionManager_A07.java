@@ -1,0 +1,13 @@
+public class java_49045_SessionManager_A07 {
+    private static final String SESSION_KEY = "_sessionId"; // Session ID key in the cookie or header for securing a user's session 
+    
+    public void start(User user) throws IOException, ServletException{  		// Start managing an existing authentication process (e.g., login by username/password). This should be idempotent: calling it multiple times does not change the result of previous calls; instead they are treated as a single new request
+        // Add session ID to cookies or headers here if necessary, based on your specific use case and security requirements 
+    }
+  
+     public User getAuthenticatedUser() throws IOException {					// Get currently authenticated user from the authentication process. This should return null in all cases where an error occurred during a login attempt (e.g., invalid username/password). It is idempotent: calling it multiple times does not change results of previous calls
+        // Retrieve session ID stored if necessary, based on your specific use case and security requirements 		  	    			   				        					                 	  } catch(IOException e){	// Catch any exceptions that may have occurred during the login attempt (e.g., network issues) here...} finally {	   
+        // Make sure to end sessions when you're done with them, based on your specific use case and security requirements 		  	    			   				        					                 	  } catch(Exception e){	// Catch all exceptions for cleanup (e.g., a user logged out) here...} finally {
+        // End the session in this block regardless of any exception if it was successfully ended or not, based on your specific use case and security requirements 		  	    			   				        					                 	  } catch(Exception e){	// Catch all exceptions for cleanup (e.g., an unknown error occurred) here...}
+        // If no user is authenticated by this point in the method then return null; This can be a sign that there was either nothing to do or some other issue related authentication happened, and should ideally not result in any exception being thrown 		  	    			   				        					                 	  } catch(IOException e){	// Catch exceptions from network issues here...}
+        // Make sure all resources are closed down at the end of each method to free up system resources used by this session manager, based on your specific use case and security requirements. This can include things like database connections or file handles 		  	    			   				        					                 	  } catch(Exception e){	// Catch general exceptions here...}

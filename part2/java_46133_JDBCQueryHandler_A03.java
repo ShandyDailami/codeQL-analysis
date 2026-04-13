@@ -1,0 +1,12 @@
+import java.sql.*;   // for connection, statement and result set related codes   
+     import org.mindrot.jbcrypt.*;  //for password hashing (not used in this example)
+public class java_46133_JDBCQueryHandler_A03 {  
+       private Connection conn;//declare the variable to hold database connect information     
+        public void openConnection(String url, String username , String pwd ) throws SQLException{    
+              DriverManager.registerDriver(new com.mysql.jdbc.Driver());  // Register JDBC driver   
+               this.conn = DriverManager.getConnection (url + "?user="+username  +"&password=" +  pwd );   }      public void closeconnection() throws SQLException{     if ((this.conn != null) && (!this.conn.isClosed())) { 
+                this.conn.close();    }}       //method for closing connection to database when it is no longer needed        static final String URL ="jdbc:mysql://localhost/test";      private volatile Connection conn;   public synchronized void openConnection(String url,String username , byte[] password) throws SQLException {         if (conn == null || conn.isClosed()) 
+                // If connection is not established or closed then establish a new one       this.conn = DriverManager .getConnection ("jdbc:mysql://localhost/test", "root" ,   PasswordEncryptor().encrypt(new String("password")));      }     public static void main (String[] args) { 
+                //Testing the above code to establish connection and close it if already established    VanillaJavaJdbcQueryHandler handler = new VanillaJavaJdbcQueryHandler();   try{handler.openConnection ("jdbc:mysql://localhost/test","root" , "password"); }catch(SQLException e){ System .out - 
+                .println (e);}finally { if ((null != conn)) closeconnection (!conn ); }} //Ensure that connection is closed no matter what happens.      private class PasswordEncryptor{ public String encrypt(String password)   { return JBCrypt.hashPassword((password)); }
+        Public and Private method declarations remain the same, you can add them as per your requirement!  Also remember to handle exceptions in a real-life scenario so that we don't leak sensitive information like database connection errors which could be critical for production environment or should have proper error handling.   }}

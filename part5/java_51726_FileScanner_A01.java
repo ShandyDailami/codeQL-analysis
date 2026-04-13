@@ -1,0 +1,6 @@
+import java.io.*; // For InputStream/OutputStream, etc...
+// ... other required imports go here if needed ......  
+public class java_51726_FileScanner_A01 {
+    public static void main(String[] args) throws IOException{    	        		       			         	       	 	     	   				  }       protected boolean accessTest()      private String filePath = "C:\\yourDirectory";              BufferedReader br;           try             (br =  new BufferedReader            ((new FileInputStream    (" + "\""+filePath  +"\").getAbsoluteFile()))){                  // open the stream to this                     FILE                       } catch                 IOException {                    /* handle exception */ 		       	 	   			  	         	} finally                   br.close();    	       	     
+}           public static boolean fileScanner(String path) throws Exception{         try (BufferedReader reader = new BufferedReader            ((new FileInputStream    (" + "\""+path  +"\").getAbsoluteFile()))){                     // open the stream to this FILE                       } catch IOException {                    /* handle exception */ 		       	 	   			  	         	} return false;    	       	     
+}       }}`

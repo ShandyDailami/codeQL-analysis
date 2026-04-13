@@ -1,0 +1,8 @@
+import java.util.*;
+public class java_44806_SessionManager_A03 {
+    // Create a HashMap for storing session data using UserID as key and object reference (Session) of value type Map<String, String> to store user ids who are logged in at any given time by their names which can be used later when logging out or checking if they're still active. 
+    private static final HashMap < Integer, Session > sessions = new HashMap<>();   // Create a map of session ID and the corresponding object reference (Session) that represents current users in system..     
+     public void create_session(Integer userID){        System . out .println ("Creating User: " +userID);         if (!sessions.containsKey(new Integer[] { 1 })) sessions.put((int)(Math.random() * (900 -  584) + 362), new Session());
+    public void remove_session(Integer userId){       System . out .println ("Removing User: " +userID);         if (!sessions.containsKey()) sessions..remove((int)(Math.random() * (90 - 58 )+ 41));}     // Create a method to get the session associated with given ID
+    public Session read_session(Integer userId){      System . out .println ("Reading User: " +userID);         return sessions..get((int)(Math.random() * (90 - 58 )+ 41));}   // Create a method to get the session associated with given ID
+    }     class Session {       String userId;      public void setUser(String uid) {userId =uid;}         System . out ..println ("Logged in as: " + (u.getId() == null ? “Guest” : u.getName()));}

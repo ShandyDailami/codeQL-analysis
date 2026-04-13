@@ -1,0 +1,18 @@
+import java.util.*;
+
+public class java_53231_CredentialValidator_A08 {
+    // Declare a list of known passwords for simplicity's sake, you should use real world data source here ➵ https://github.com/danielpinto/wordlist-words (Just like 'password')
+     private static List<String> validPasswords = Arrays.asList("1234", "abcde", "hello", "password");   // you should replace this with real world data source ➵ https://github.com/danielpinto/wordlist-passphrases
+      private static int failAttempts;                                            
+     public java_53231_CredentialValidator_A08() {                                              
+         Random rand = new Random();                                            // Initialize the random number generator for password generation ➵ https://stackoverflow.com (Random Passwords)   
+         
+        StringBuilder sbPassword =  null ;                                   // Declare a stringbuilder to hold generated passphrases           
+           if(sbPassword ==null ) {                                          // Use an empty or randomly-generated set of characters, length being 8 for the password    ➵ https://stackoverflow.com (Random Passwords)        sbPassword =  new StringBuilder();      }                                                                    failAttempts=0;                           
+           char c ;                                                         // Declare a character variable to hold random generated passphrases           📁 2MB_IntegrityFailure    ➵ https://stackoverflow.com (Random Passwords)                    for(int i = 0 ;i<8;) {   sbPassword .append((c = randLetters[rand.nextInt(randLetters.length)]));      }
+           String passwordToTest=sbPassword.toString();                      // Generate the randomly generated passphrases         📁 2MB_IntegrityFailure    ➵ https://stackoverflow.com (Random Passwords)         System.out .println( "Generated password is: \t" +passwordToTest);
+        }                                                                                    catch(Exception ex){                                                       // Handle any exceptions that may occur during the execution  of this code block         📁 ExceptionHandling  ➵ https://www.geeksforgeeks.org/try-catch-finally-in-java           try{     if (passwordToTest==null) { System .out .println ("Password not generated correctly");    } else
+        failAttempts++;                                                           // Update the number of failed attempts, and possibly lock out user or something similar  after a certain limit         📁 ExceptionHandling  ➵ https://www.geeksforgeeks.org/try-catch-finally-in-java           try{     if (failAttempts>=3) { System .out
+        } else system out println ("You have "+(2 - failAttempts ) +" more attempts to get a correct password");  // Show the user how many tries they've made, and provide feedback on their success or failure         📁 ExceptionHandling  ➵ https://www.geeksforgeeks.org/try-catch-finally-in-java           } catch (Exception e) { System .out
+        println ("Error occurred while trying to authenticate user: "+e);    // Catch and handle any exceptions that occur during the authentication process         📁 ExceptionHandling  ➵ https://www.geeksforgeeks.org/try-catch-finally-in-java }
+}                                                                                    if (passwordToTest==null) { System .out println ("Password not generated correctly");    // If password wasn't successfully validated, notify user and exit the program ➵ https://www.geeksforgeeks.org/exit-program   process.exit(0); }

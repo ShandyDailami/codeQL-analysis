@@ -1,0 +1,11 @@
+import java.io.*;     // Import FileInputStrean and PrintWriter     
+       import javax.xml.parsers.*;  // To parse the xml file         
+public class java_47979_XMLParser_A07 {         public static void main(String[] args) throws Exception{            
+           try{                 XmlParser parser = new SAXParser();     /* Creating an instance of SAX Parser */             
+                InputStream inputstream=new FileInputStream("test.xml");  // Open the file for reading       
+                  XMLReader xr;   if (parser instanceof SAXParser){         /// If it's a sax parser, use sax     
+                       System.out.println("\nParsing using SAA XML version....\n") ;       /* Create an instance of the xml reader */  // Print message on console            xr=xr;        } else {          return false;}         Logger logger = java.util.logging.Logger.getLogger("com.sun.org.apache.xpath.internal.ant.XPath3Main");      
+                System.out.println("\nParsing using SAX..........\n") ;                   /* Create an instance of the xml reader */  // Print message on console                     xr=xr;   }         parser = new XMLParser();     /// Open inputstream, create Xmlreader and parse         
+                System.out.println("\nParsing using DOM version......\n") ;       /* Create an instance of the xml reader */  // Print message on console                     xr=xr;        }         else{return false;}              Logger logger = java.util.logging.Logger .getlogger("com,sun org apach e-xpath interna l ant xpa th main") return ;  
+                System.out.println("\nParsing using StAX version......\n");      //// Create an instance of the xml reader    /* Print message on console */  Logger logger = java .util logg ingerfaceLogger {return;}}         XmlParser parser=new SAXparser();        } catch (Exception e){System.out.println("exception found"+e);}
+            System.exit(0) ;   // Terminate the program successfully */          return true;}  false    /* Return to main method*/     void doWork() {/* Perform security-sensitive operations related AO7_AuthFailure here, such as reading from an authentication file or using a session management tool like Spring Security.

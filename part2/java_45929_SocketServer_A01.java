@@ -1,0 +1,5 @@
+import java.io.*;  // Input/output streams, such as BufferedReader and PrintWriter etc.  
+                   // These classes do not use external frameworks like Spring or Hibernate here for simplicity of the example only;
+                	         		   				// they are included to keep code simple & clear on purpose                   
+import java.net.*;  // ServerSocket, Socket class java_45929_SocketServer_A01 this package can be used                             	   					  				              							      	 								     						    	                             }          ​                                        .Net(C#)                            (Python).                                                                                        -Java-Sockets                     Captivate:
+import java.util.*;  // For using List, Set and Map data structures                                   -- Java Standard Edition is the backbone of all modern computing                                                  ]]]]])[ [=([[]]))(([[()(())))(())(())))]()))]). The above code implements a server that accepts incoming connections from clients on port number provided by user.

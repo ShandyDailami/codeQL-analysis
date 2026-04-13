@@ -1,0 +1,8 @@
+import org.xml.sax.*;
+import org.xml.sax.helpers.DefaultHandler;
+
+public class java_43619_XMLParser_A03 extends DefaultHandler {  
+    public static void main(String[] args) throws ParserConfigurationException, SAXException{    	        		 			     	 	     									        }	        // Constructor - No Argument required because we are extending the default handler.         	   																// Parse method is called when parser's element starts with '<tag>'.
+    public void startElement(String uri, String localName, String qName) throws SAXException {			      	    		 // Called whenever an XML tag opens (start). Replace the code inside this function accordingly. 	   																		// endElement method is called when parser's element closes ('</tag>'). Remove or add as per your requirement here too
+    public void characters(char[] ch, int start, int length) throws SAXException {			     	    		 // Called whenever an XML tag contents are available (i.e., 'text inside tags' in xml). Replace the code inside this function accordingly. 	   																		// DefaultHandler interface is implemented by all classes that parse SIMPLE, simple or strict document parsers which can also provide a default implementation of these methods
+    // You will need to implement other required method as per your needs here too like endElement etc...	  			    		 } 	   																		// Add exception handling logic where necessary. For example: try-catch block for XML Parsing and SAX Events are provided below with comments above them in code snippet

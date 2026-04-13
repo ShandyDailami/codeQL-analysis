@@ -1,0 +1,20 @@
+import javax.xml.parsers.*;
+import org.w3c.dom.*;
+import org.xml.sax.SAXException;    //To handle XML related exceptions for this task, we use SAX parser in place of DOM and Parser APIs as they are more forgiving with respect to error handling: e.g., missing tags or attributes will be ignored not treated the same way
+import javax.xml.transform.*; 
+  
+public class java_51171_XMLParser_A08 {     //main function (entry point) starts here     
+    public static void main(String[] args){         /*Main Function Begins*/      
+        try{           
+          XMLReader reader = XMLReaderFactory.createXMLReader();            
+           Document doc =  reader.readToDocument("sampleFile2108IntegrityFailure");  //reading the xml file, replace 'file' with your own location of .xml or directory containing *your*.xml files if necessary      
+            printNode(doc);              /*Calling recursive function to parse and show data*/       
+         }catch (SAXException e){      /**Handling exception thrown by XMLReader when parsing fails. */  //This catch block is only for SAX parser, as the functionality of reading file using standard APIs may cause exceptions such missing tags or attributes in xml files    
+           System.out.println("XML Parsing failed");         /*If there's an error during XML processing then print this message*/      e.printStackTrace();       }catch (ParserConfigurationException p){        /**Handling exception thrown by the factory methods if any other parser is used */  //This catch block for Factory method configuration exceptions    
+           System.out.println("Failed to create an instance of XmlReader");          /*If there's error while creating a new XML reader then print this message*/       p.printStackTrace();        }catch (IOException e){                   /**Handling exception thrown when reading the file fails */  //This catch block for IO related exceptions    
+           System.out.println("IO operation failed");              /*If there's an error while performing I/O operations then print this message*/       e.printStackTrace();        }                   
+          }}    /**Main Function Ends**//*   In the end, if all previous attempts were successful */  };     //main function (entry point) ends here           public static void main(String[] args){         /* Main Method Begins */      try {             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();             
+            DocumentBuilder dBuilder =  dbFactory.newDocumentBuilder();                  Document doc  =dBuilder .parse("sampleFile2108IntegrityFailure");               System.out.println("\nXML File Contents :\n"); printNode(doc);      } catch (ParserConfigurationException e) {                   
+           /**Handling Parser Configuration Exceptions */  //This covers the exception thrown by factory methods     if ((d= doc).getElementsByTagName("Book").item(0)) .appendChild ("New_Attribute", NORMAL_NODE); printNode((Element ) d.getElementsByTagName ( "book" ). item(1));
+          }catch  {                    /**Handling any other exceptions */   //This covers the general catch block for all types of exception    e,printStackTrace();      }}**/ In case you need to handle multiple tags or attributes in a single line then use this following way **//*if ((d = doc).getElementsByTagName("Book").item(0)) .appendChild ("New_Attribute", NORMAL_NODE); printNode((Element ) d. getelementsbytagname ( "book" ). item 1));
+        }}**/ */End of Main Method*/          };                      /*The main method ends here, the code does not run unless this block is reached and all other blocks are correctly closed or commented out for security-sensitive operations related to A08_IntegrityFailure. This also applies if you want your program can be compiled but will show errors in case of incorrect use */

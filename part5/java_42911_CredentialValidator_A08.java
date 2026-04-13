@@ -1,0 +1,10 @@
+import javax.security.auth.*;
+import java.rmi.RemoteException;   // I will use exception handling here, as we're not dealing with remote objects A96a)    	
+public class java_42911_CredentialValidator_A08 implements CredentialValidator {   	// We define the interface and implement it in our own way (A08_IntegrityFailure). 		
+	public boolean validate(AuthenticationToken arg0){  			 // I will use exception handling here, as we're not dealing with remote objects A96a)	    									
+       try {   																// Exception Handling for Null Tokens (A78_NullTokensException). 		     						         
+            String username = arg0.getIdentifier();   // Assigning the value to a variable named 'username' and assign type of data as string A96a)	    									      							   			       									} catch(RemoteException e){	//Handling Remote Exceptions (A78_DataAccessExcpetions). 		
+	        char[] password = ((AuthenticationToken)arg0).getPassword(); // Assigning the value to a variable named 'password' and assign type of data as characters A96a )	    									      							   			       									} catch(Exception e){  	//Handling Exceptions (A78_DataAccessExcpetions)
+            System.out.println("Invalid Credentials"); // In case credentials are incorrect, print a message to the console A96a )	    									      							   			       									} 		         return false;   }	// If exception occurs then it will be caught and handle as per our requirement (A08_IntegrityFailure).
+	    public boolean getSupported(AuthenticationToken at) { // Method to check if the object is supported A96a )	    									     			       			} 	return false; }   try{   	 	// Exception handling for null tokens. This block will be executed only when exception occurs and handled as per requirement (A08_IntegrityFailure).
+	    // No code provided by user, please provide if necessary A96a )	    									      							 			       			} catch(Exception e) {   	// Handling Exceptions. This block will be executed only when exception occurs and handled as per requirement (A08

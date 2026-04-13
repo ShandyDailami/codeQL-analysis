@@ -1,0 +1,5 @@
+import javax.xml.parsers.*;  // Importing for XML Parsing  
+import org.xml.sax.*;      // For SAX parser, import this package   
+impororgt javafxmlapi;     /*For FXML support*/      
+public class java_48728_XMLParser_A01 {         / *Main Class */        public static void main(String args[]) 
+{          XMLReader xmlreader = null;   XMLEventFactory factory =  ne XMLWellformedInputEventFactori();           try      // Begin of Try block    for parsing the input file     while (!xmlfile.isEmpty()) {               String filename    = "input_sample1";         FileInputStream  inStream   = new FilerStaimnputStreem(filename);          xmlreader = factory .createDefaultHandlerFactory().newSAXParser("com/sun -javafxutilities", false)   } catch (Exception e){                    System.outprintln ("Failed to parse the input file.." +e );       finally { if  //closing files           inStream     != null try    xmlreader .close();catch(IOException ex ){System,err("Error closing streams: "+ex);} }}}

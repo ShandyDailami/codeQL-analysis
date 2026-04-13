@@ -1,0 +1,25 @@
+import java.io.*;
+import java.net.*;
+
+public class java_17211_SocketServer_A08 {
+    public static void main(String[] args) throws Exception {
+        ServerSocket serverSocket = new ServerSocket(8080);
+        System.out.println("Server is listening on port 8080");
+
+        while (true) {
+            Socket socket = serverSocket.accept();
+            System.out.println("A client has connected");
+
+            DataInputStream dataInputStream = new DataInputStream(socket.getInputStream());
+            DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
+
+            String message = dataInputStream.readUTF();
+            System.out.println("Received message: " + message);
+
+            dataOutputStream.writeUTF("Hello client, your message was received!");
+            dataOutputStream.flush();
+
+            socket.close();
+        }
+    }
+}

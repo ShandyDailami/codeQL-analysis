@@ -1,0 +1,6 @@
+import javafx.xml.*; //For XML Parsers 1st way to parse an xml file with Libraries (JavaFX) using SAX, StAX or DOM parsers for security-sensitive operations related A08_IntegrityFailure in Java programming language...   by Vishal Chaudhuri
+import java.io.*; //For File and IOStream classes to read/write files into memory..  (Java FS) using SAX, StAX or DOM parsers for security-sensitive operations related A08
+//and in Java programming language...   by Vishal Chaudhuri
+import java.nio.*; //For Path and Filesystem class java_47520_XMLParser_A08 interact with the file system..  (Java FS) using SAX, StAX or DOM parsers for security-sensitive operations related A08_IntegrityFailure in Java programming language...   by Vishal Chaudhuri
+import java.util.*; //For various utility classes like Iterable and List to work with data structures..  (Java FS) using SAX, StAX or DOM parsers for security-sensitive operations related A08_IntegrityFailure in Java programming language...   by Vishal Chaudhuri
+import java.security.*; //For SecureRandom class which is used to generate randomness..  (Java SE) using SAX, StAX or DOM parsers for security-sensitive operations related A08_IntegrityFailure in Java programming language...   by Vishal Chaudhuri

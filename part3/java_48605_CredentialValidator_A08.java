@@ -1,0 +1,12 @@
+public class java_48605_CredentialValidator_A08 implements javax.security.auth.credential.Credential {
+    private String username; // this will hold the actual credentials supplied by a caller of login method in real world applications
+    
+   public void setUsername(String un) {//setter for providing usernames to CredentialsValidatorImpl  (in order not allow unauthorized users with wrong passwords )        
+        this.username = new String(un);          }    //this is the method that will be called by an authentication framework in real world applications after a caller of login()   was made, to set up any attributes associated      (in order not allow unauthorized users with wrong passwords )        
+     public String getUsername(){  return this.username; }//getter method for retrieving user names and hence the credentials presented by an authentication framework in real world applications after a caller of login() was made, to set up any attributes associated (in order not allow unauthorized users with wrong passwords )
+      @Override   //provides details about how this Credential should be used.  In essence it says "this credential must go in the form ..."   
+     public String getRequestingPrincipal() {return null;}//returns principal name which is not required for A08_IntegrityFailure scenario (Data integrity)   - but will give an idea about how this works.  It's a placeholder and does nothing here as it won’t be used in real world application
+     @Override //provides details about purpose of the Credential object, not necessary for A08_IntegrityFailure scenario (Data integrity)   - but will give an idea on how this works. It's a placeholder and does nothing here as it won’t be used in real world application
+     @Override //provides details about expiration time of the Credential object, not necessary for A08
+    public String getPassword() {return null;}//returns password which is needed to authenticate user (in order allow users with wrong credentials)   - but will give an idea on how this works.  It's a placeholder and does nothing here as it won’t be used in real world application     .
+}    //end of class MyCredentialValidator implements Credentials interface... which is not necessary for A08_IntegrityFailure scenario (Data integrity)   - but will give an idea about how this works.  It's a placeholder and does nothing here as it won’t be used in real world application

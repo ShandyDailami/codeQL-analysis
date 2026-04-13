@@ -1,0 +1,4 @@
+import java.util.*;   // for using HashMap & RandomUUID to generate unique IDs   
+public class java_42948_SessionManager_A03 {    
+       private Map<String , String> userSession;      public Set < UUID > activeUsers ;          static{         instance = new SessionManager ( ); }  @SuppressWarnings("unused")   // for Eclipse users       
+                                                                            Private constructor to prevent multiple instantiation from outside this class.             private java_42948_SessionManager_A03() {           super(); userSession=new HashMap<>( ) ; activeUsers  =new HashSet< >( ) ;     }         public static SessionManager getInstance(){ return instance;  }}   //end of our Singleton Class

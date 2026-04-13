@@ -1,0 +1,5 @@
+import java.sql.*;   // Import Statements from standard library 1st step in JDBC program to include SQL connection related classes such like DriverManager, PreparedStatement etc...   
+public class java_45349_JDBCQueryHandler_A07 {     // Start of Java Class Declaration (Note: Pascal case is recommended)     
+//Step #2 and Step#3   using the MySQL connector for java by adding appropriate JDBC driver to your project.  For example, you can use 'mysql-connector-java' from mysql official site or any other available options if necessary     // Driver Manager      
+public Connection getConnection() {      // Declaration of Method - Get a connection instance  
+    String url="jdbc:mysql://localhost/dbname";  // Replace localhost and db name with your MySQL server details. This is the database URL you'll use to connect     return DriverManager.getConnection(url,"username","password");      }       void close() { try{con.close();}catch (SQLException se){}, catch (Exception e) {}  // Always remember closing resources which were not closed properly in your code }}

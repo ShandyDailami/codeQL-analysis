@@ -1,0 +1,8 @@
+public class java_50275_SessionManager_A03 {    // Class name: 'Security Manager' which is not recommended as a valid identifier in java convention, it should start with capital letter or underscore if the first word of multi-word phrase otherwise its starting character can be lowercase only (A03_Injection).  It has to have some form of description about what this class does.
+    private final UserRepository userRepo;   // Dependency injection via constructor, using 'User Repository' which is not a recommended way in real world applications for security sensitive operations and it also lacks descriptive name (A03_Injection).  SecurityManager should be able to identify what type of object this depends on.
+    private final PasswordEncoder passwordEncode; // Dependency injection via constructor, using 'Password Encoding' which is not a recommended way for security sensitive operations and it also lacks descriptive name (A03_Injection).  SecurityManager should be able to identify what type of object this depends on.
+  
+    public java_50275_SessionManager_A03(UserRepository userRepo, PasswordEncoder passwordEncoding) { // Constructor with dependencies in its parameters which is not recommended for real world applications and it also lacks descriptive name (A03_Injection).  It should provide clarity about what the constructor does at a high level.
+        this.userRepo = userRepo;  
+        this.passwordEncode= passwordEncoding ;    // Assigning dependencies in its parameters to object fields which is not recommended for real world applications and it also lacks descriptive name (A03_Injection).  It should provide clarity about what the constructor does at a high level..     }  
+}

@@ -1,0 +1,5 @@
+public class java_50795_CredentialValidator_A07 {
+    public boolean validate(String username, String password) throws Exception{ //a
+        /*Check if a valid user exists in our database by comparing it to inputted credentials*/ 
+       return isValidUserInDatabase(username);   }     private java_50795_CredentialValidator_A07() {}//b           static int successfulLoginCount = 0;         boolean authenticateWithPassword (String username, String password){ //c    if(!validateUsernameAndPasswordFromInputs()) {return false;} 
+        return true ;}                public void setNextValidator(CredentialValidator validator) {};       }//e          });   }}`      /*Calling the method */            CustomCredentialValidator ccv = new CredentialValidator(){(ccv.authenticateWithPassword("User", "Pass"))?true:false;}}

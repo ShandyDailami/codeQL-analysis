@@ -1,0 +1,9 @@
+import java.util.*;   // Import Hashmap etc...   
+class java_50208_SessionManager_A07 {     // Define a Session object with username & password as well..       
+public String name;      // Username of the session holder        
+}      
+ArrayList<UserSession> userSessions = new ArrayList<>();  /* Store all sessions */             
+boolean isValid(String u, String p)   {    /return true or false if credentials are valid.     return (u=="admin") && (p=="password"); }            public static UserSession login(String username, String password){             // Login function...                System.out.println("Attempting to log in as " +username);              
+if(!isValid(username, password)){                  /* Check if credentials are valid */                    return null;                   }                             else{                                            for (int i = 0 ;i < userSessions .size(); ++ ) { // For every session..                            UserSession us =userSessions.get((Integer) i);    
+if (!us.name.equals(username)) continue;}              /* If the username in a Session object doesn't match our request, just go to next one */                  else{                                                     return  userSessions . get (i );                   }          }}                public static void logout(){            // Log out function...                                                                  
+for (;;) {                              // Infinite loop until we find & remove the session object..                                         System.out.println("Attempting to exit");                                             /* If there's no active sessions, print a message and return */                                            if (userSessions .isEmpty())                     {{  }} else{                            userSessions .remove(0);                             }}}}

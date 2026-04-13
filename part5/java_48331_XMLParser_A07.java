@@ -1,0 +1,14 @@
+import javax.xml.parsers.*;
+// import necessary classes if using SAX or DOM parser instead of built-in XMLParser class 
+/* Import Listener interface */ // Useful when you want to perform actions on different parts of the document (e.g., authentication failures)   
+public void parseXML(String filename, String protocol){  
+     DocumentBuilderFactory dbFactory;//factory object for building builder     
+     SAXParserFactory spFactory = new SAXParserFactory(); //Sax parser factory      
+         if ("http".equalsIgnoreCase(protocol)) {  /* Use http (or https) only when using built-in XML Parser */   }    else{          dbFactory =  DocumentBuilderFactory.newInstance() ;     }}      SPARSER = null;        try            //Parsing the xml file          
+         catch (Exception e1){                System.out.println("Error parsing .:");e1.printStackTrace();return;}   /* Catch exception */ 
+             spFactory =  spFactory.newSAXParserFactory() ;     SPARSER =spFactory;    // Create SAX Parser      try              ( XMLReader xr=SPARSER.newSAXReader( )            )           { XmlElement elm_root;}@XmlElement  
+             public void startDocument(){System.out.println("start document");}       /* Call back method */  @Override    // Start Element, Process Attributes and Namespaces          }public        .:     07/29(abridg)        183 bytes     systemcall          4  
+             call stacks (syscall),->void startElement() { System.out..println("start element");} // Call back method       @Override// process characters, Ignore and Default - Use default: the next three methods          }public void endElement(String uri , String localname  . :       +           20 bytes     systemcall          4  
+             call stacks (syscall),->void characters() { System.out..println("characters");} // Call back method       @Override// Process End - Use default: the next three methods          }public void endDocument(){System out . println( "end document ");      }} catch 
+            `... e)        {{e....printStackTrace();}}    finally            { try{ XmlFactory xf = SPARSER.newXMLReader() ; // Use XML Reader for parsing         ((XmlReader)xf).close();}          }catch (Exception ...){ ...... println( "Error Closing ..." );}}}`
+   - This is a simple implementation of an SAX parser to handle authentication failures securely using the Java built-in libraries. It's important that we don’t use external frameworks such as Spring or Hibernate for this task, and make sure our operations are done within standard library only (without any dependencies on these). We also assume A07_AuthFailure is related to authentication failures in XML parsing operation here - which isn't always the case.

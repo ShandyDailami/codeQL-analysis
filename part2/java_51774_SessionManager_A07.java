@@ -1,0 +1,13 @@
+script
+// Importing required modules 
+const crypto = require('crypto'); // Cryptographic operations module in NodeJS stdlib   (https://nodejs.org/api/crypto.html#crypto_crypto)    
+var fs = require("fs");    /* File System Module */         
+/* Browser-friendly secure cookie API which works on both the client and server side using a middleware like express session(http://expressjs.com/)   (https://www.npmjs.com/package/cookie-session)*/ 
+const Session = require('express-session');     /* Middle ware for handling sessions */      
+/* For managing cookies on the client and server side as well, use http only flag or secure one which can be used with HTTPS   (https://www.npmjs.com/package/cookie-signed)  & express session(http://expressjs.com/)*/      // 'Secure' also sets httponly to true so that the cookie cannot accessed via JavaScript
+const exSession = Session({     /* Creating a new middleware instance */   ,    secure: false,        saveUninitialized :true,  resave:'false',cookie:{ maxAge:60000 } }); // Max Age of Cookies set to one minute in milliseconds (1*60sec)
+// Creating Session Variables and methods for session management. In this case we are just validating users' login 
+class java_51774_SessionManager_A07 {    /* Defining a class 'MySession'. */   exSession;        constructor(session){     //Initializing the new instance of express-sessions with an existing one if available or else initiate as empty object {} by default.       this.exSession = session || {}; } 
+/* Checking whether user is authenticated using cookie validation, and then returning true/false accordingly */    checkUser(req , res){     // Here we are just checking that the 'session_user' in request params exists or not (for authentication purpose)        return req.session && typeof req.session.id === "string"; } 
+/* Generating a random string for session and assigning it to user */   generateSession(req, res){     // Here we are generating new SessionID using crypto module's 'randomBytes()', then converting into base64 format (For securing purpose)        var token = Buffer.from((crypto.randomBytes(512).toString('base64')), "ascii").toString("utf8");     req.session.token=token; return this.exSession ; } 
+}      /* Defining a class 'MySession' */    //Creating an instance of My Session and assign it to global variable for access across different functions   var sess = new MySes(req, res);        if(!sess.checkUser){       console.log("You must be logged in"); return false; }  else {     /* Else continue the rest code as required */}

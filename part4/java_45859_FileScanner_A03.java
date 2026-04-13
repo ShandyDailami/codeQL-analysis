@@ -1,0 +1,10 @@
+import java.io.*; // Importing the File class java_45859_FileScanner_A03 standard library; it has methods such as readFile() which are used here to get file content/info 
+    import javafx.util.Pair;//Imported Pair (which is part of JavaFX) for use in our code - useful if you want pair objects, not just simple types like int and long  
+    
+public class Main {      // Class declaration without the main method which will be run by JVM automatically 
+    public static void main(String[] args){       //Main Method Declaration. This is what runs when we start our program (like in C# or Python) 
+        String filePath = "/path/to/file";   //Declaring a variable for the path of input File; you should replace this with your actual InputFile Path   
+         try {     /*Try-catch block to handle any IOException */     
+             scanFiles(new File (filePath));  //Calling our method and passing file as parameter       } catch (IOException e) {}        finally{}   for handling exception at the end of program execution.          if (!isServerRunning())throw new RuntimeException("Cannot find server to connect!");    /*Verifying whether Server is Running */
+         }}//End Of main Method  // Ending our class declaration and method definition with a semicolon; this marks that it's complete       static void scanFiles (File file) throws IOException {   }     private boolean verifyConnection ()throws Exception{return true;}    if (!verifyConnection())throw new RuntimeException("Cannot connect to server!"); //Throwing an exception in case of connection failure
+  This is a basic example and will only cover the given requirements. For real-world use cases, you would need more complex logic for error handling (like what happens when reading from file fails?), thread management etc., using established libraries/frameworks such as Spring or Hibernate respectively can make your life easier in this case too!

@@ -1,0 +1,7 @@
+import java.util.*;   // For ArrayList, Calendar etc.
+    import javax.servlet.*;    
+      public class java_51312_SessionManager_A08 implements HttpSessionListener { }       // Import necessary libraries for managing sessions in HTTP (also known as HTTPS) requests  and manage session life cycle events with listeners that can be notified when a new user accesses the server or if any of existing users disconnects.   You will need to use `setRequestDispatcher` method from Servlet API, which would allow you show views associated by HTTP request in your Java program
+      import java.security.*;    // For creating MessageDigest for hashing password (A08_IntegrityFailure)  and getting random secure token(s).   You should use `MessageDigest` class from the standard library to do this, along with methods like SHA-1 or whatever security level you are happy using.
+      import java.math.*;       // For generating long for creating session id (security measure A08_IntegrityFailure)  and RSA private/public key pairs used in encryption of data during sessions(s).   You should use `SecureRandom` class from the standard library to generate these secure random numbers, which will be helpful when implementing your program.
+    // For setting cookies (A08_IntegrityFailure)  you can utilize a HttpServletResponse object and its method setCookie(). A user's cookie is essentially just one piece of data stored in the browser on their machine during an HTTP request, allowing users to store session-specific information.
+    // For managing cookies (A08

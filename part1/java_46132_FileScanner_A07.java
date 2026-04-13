@@ -1,0 +1,7 @@
+import java.io.*; // For FileScanner & IOException classes, both from Java's standard library packages   
+public class java_46132_FileScanner_A07 {  
+     public static void main(String[] args) throws Exception{        new BufferedReader (new InputStreamReader ((System.in))).readLine();         SecurityManager sm = System.getSecurityManager() ; if (!sm .checkReadFilePermission("file:/path/to/" , "r")) {throw new SecurityException ("Unable to read file"); } 
+    File dir=null; try{dir =  new java.io.File("/home/user/.config") };if ( !(java.nio.file .Files :: exists)(new DirectoryIterator(" /var/log").iterator())) throw IOException ; if(!sm.checkDeletePermission((DirectoryStream<Path>) dir))throw 
+    Exception ("Unable to delete file");} catch (\IOException e){System..println (e); }catch(SecurityException se ){ System . errprint (se );}}          try {BufferedReader br =  new Buffered Reader ((new Input Streamreader((InputStream))) ;String s; while (!br.readLine().equals("")) 
+    if(!sm.checkWriteFilePermission ("file:/home/user/.config/" , "w") ) throw Exception ("Unable to write file"); try { File f = new java .io..File (dir,s) } catch(IOException e){ System ..println (e);}}catch IOException ioe 
+    {System. out println("Error while writing or reading the files: ",i oe );}`     }}  `

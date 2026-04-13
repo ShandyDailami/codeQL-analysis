@@ -1,0 +1,5 @@
+import java.sql.*;   // Import the necessary Java libraries to interact directly with a database through JDBC 1st step: import connection driver and SQL statement classes   
+public class java_53046_CredentialValidator_A03 {     /* Second Step - Define your main method which is our entry point of an application */
+ public static void main(String[] args) throws Exception{        // Third Steps : Create a new instance, get the input from user. This can be done using Scanner or similar methods  for simplicity*/        	            				                    		  			     	 					     }    CredentialValidator cred =new MyCredentials();
+ private Connection connection; /* Fourth Step: Define all necessary variables */       String url="jdbc:mysql://localhost/test"; //Step #5 - Specify the database URL  ,user,password and SQL Statements.  			     	 	     }    public static void main(String[] args) {
+        CredentialValidator cred = new MyCredentials(); /* Creating a object for class */}		      	// Fifth step: Create your own MySQL JDBC driver (Oracle, MS etc.) here using "Class.forName" method and call the constructor of Your Connection in Main Method  }

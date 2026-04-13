@@ -1,0 +1,8 @@
+public class java_47683_SessionManager_A08 {  //1a. This might be a simple session manager, so use standard libraries in this example! No external frameworks used here ¯\_(ツ)_/¯   
+     private String currentSessionId;   // Store the id of currently logged user (SecurityContextHolder is not being utilized)     
+ 
+     public void setCurrentUserName(String name){      
+         if(!isIntegrityFailure() && !hasPermissionToAccessDataBase()) {          throw new SecurityException("Unauthorized access attempt");        }           this.currentSessionId=name;   
+   }             //1b, 2a: Try to avoid using magic numbers here (e.g., `50` for "Integrity Failure"), use meaningful names and comments instead            private boolean hasPermissionToAccessDataBase(){      return currentUserName !=  null && ...permission check...    }         
+     public void endSession(String sessionId){       //1b, 3a: Same as above. Use a more appropriate name here (e.g., `sessionEnded`), use meaningful names and comments instead             if(!isIntegrityFailure() || !hasPermissionToAccessDataBase()) {          throw new SecurityException("Unauthorized access attempt");        }      
+     public boolean isSessionActive(String sessionId){      //1c, 4a: Use more appropriate method naming (e.g., `sessionIsValid`), use meaningful names and comments instead           return !isIntegrityFailure() && hasPermissionToAccessDataBase();    }}        }

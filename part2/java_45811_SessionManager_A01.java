@@ -1,0 +1,8 @@
+import java.util.*; // Importing necessary classes for Map, Set and other data types (like List)  
+public class java_45811_SessionManager_A01 {   
+     private static final HashMap<String , String> userCredentials = new HashMap<>();  /* Storing username & password in a hashmap */      
+      public void addUser(String name, String pwd){        User temp=new User(name);         // creating an object of 'user' class and storing into the map.    }  
+     {          userCredentials.put("username", "password");  /* Inserting Data in Hashmap */      }       public boolean checkLogin(String name, String pwd){        if (Objects.equals((name), getName()) && Objects.equals ((pwd ),getPassword())){    return true;    
+   }} else {            System.out.println("Invalid Credentials");          // Return false in case of incorrect credentials */       }      public static void main(String[] args){  SessionManager sm=new Ses‌​sionManageme~();         for (int i = 0;i < 15 ;  
+    ++) {sm.addUser("user" + Integer, "password");}          System .out ­­println ("Enter your credentials: "); String n = s  c Scanner(System..nextLine());              // Taking input from user for username and password        }         if ( sm ,checkLogin())
+     {            println​("You are Logged in")    else               prin‌cet(. "Access Denied");      }}       private class User{          String name;           public java_45811_SessionManager_A01(String n) {              this.name =n;}   // Constructor of the user }         protected string getName(){ return thi s .getName();}}

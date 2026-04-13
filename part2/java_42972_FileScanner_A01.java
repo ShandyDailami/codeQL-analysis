@@ -1,0 +1,7 @@
+import java.io.*;  // Import required classes from the standard library package  
+public class java_42972_FileScanner_A01 {   
+     public static void main(String[] args) throws IOException{     
+         String directoryPath = "/path/to/directory";        privateFileAccessRestriction();          }       @SuppressWarnings("SameReturnValue")  // This method is supressed in this case to follow CleanCode principles.   return;     }}    void printFiles(String dir) throws IOException {      File startingDirectory = new File (dir);         if (!startingDirectory.exists()) throw new NoSuchFileOrDirectoryException ("Invalid directory"); else{           String[] subFiles =  startingDirectory .list();            for (int i=0;i<subFiles.length ; ++  i) println( "directory/file"+    // Prints all files and directories in the current path to console
+     catch (SecurityException se){se.printStackTrace()} }}}      public static void mainRestrictedFileAccess(){   try { File dir = new java.io.File(".");       String[] list = dir .list();        for(int i=0;i<list.length ; ++  i)     System.out.println ( "Directory/file: " +    // Prints all files and directories in the current path to console
+   catch (SecurityException se){se.printStackTrace()} }}                  } public static void privateFileAccessRestriction(){try{ File dir = new java.io.File(".");       String[] list =  dir .list();        for(int i=0;i< 1 ; ++   ++ ) //We only want to print one file, no need all files in the directory
+   catch (SecurityException se){se.printStackTrace()} }}}             }}

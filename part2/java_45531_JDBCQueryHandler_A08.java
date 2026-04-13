@@ -1,0 +1,8 @@
+import java.sql.*;   // Import the necessary Java packages   
+public class java_45531_JDBCQueryHandler_A08 {     // Declare a public static void main method to test our code in isolation and begin testing        
+        private Connection conn = null;      //Declaring connection variable for database connectivity      
+           …..            
+          } catch (SQLException ex) {   ...    }}             ^ closing brace was cut off. Correct the spelling error here also, it should be '}' not '-'     .Also you can define methods to perform CRUD operations if required instead of connecting directly with database then creating tables and inserting data in them
+         } catch (Exception ex) {  //Catch exception for handling any runtime errors such as SQLExceptions     ^ closing brace was cut off. Correct the spelling error here also, it should be '}' not '-'       .Also you can define methods to perform CRUD operations if required instead of connecting directly with database then creating tables and inserting data in them
+             System.out.println("Error: " + ex);  // This will print out any errors that may have occurred during the execution     }   finally {        try{if(stmt != null) conn.close();} catch (SQLException e){}}     ^ closing brace was cut off here too, correct it if needed
+          }}         public static void main method also closed above with a caret sign ('^'). This will ensure that the JVM starts executing code from this point onwards and ends when completion is reached.  You should remove these lines as per your requirements   .This way you can have clean isolation of operations related to A08_IntegrityFailure in Java applications

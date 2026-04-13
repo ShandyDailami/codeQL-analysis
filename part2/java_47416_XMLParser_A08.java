@@ -1,0 +1,11 @@
+import java.io.*; // for FileInputStream and BufferedReader class java_47416_XMLParser_A08, you need this library at least once when constructing the XmlParser object in order to read XML from a file or an InputStream/OutputStream: org.xmlpull.v1.* packages are necessary if your xml files contain namespaces
+import java.security.*; // for MessageDigest and Mac classes which could be used during security sensitive operations, this library is also needed at least once when constructing the XmlParser object 
+// import javax.crypto; it's not a standard Java package so you need to find or add its corresponding libraries in your classpath (maybe using maven) if necessary: org.apache.commons.* packages are useful for operations related with cryptography like Mac, MessageDigest classes and the functionality of those
+import java.nio.*; // these imports can be used when constructing XmlParser objects to read from or write data into a file in an enterprise style way (like using NIO files) 
+// also javax.* packages are necessary for handling InputStream/OutputStream operations: org.apache.commons and others have more extensive utilities, just check their API docs if needed further details about them  
+import java.util.*; // this package is useful when constructing XmlParser objects to handle collections such as List or Set 
+// also javax.* packages are necessary for handling InputStream/OutputStream operations: org.apache.commons and others have more extensive utilities, just check their API docs if needed further details about them  
+import java.text.*; // this package is useful when constructing XmlParser objects to handle date-time conversions or format the data in an enterprise style way (like using SimpleDateFormat) 
+// also javax.* packages are necessary for handling InputStream/OutputStream operations: org.apache.commons and others have more extensive utilities, just check their API docs if needed further details about them  
+import java.math.*; // this package is useful when constructing XmlParser objects to handle mathematical computations (like BigDecimal) 
+// also javax.* packages are necessary for handling InputStream/OutputStream operations: org.apache.commons and others have more extensive utilities, just check their API docs if needed further details about them

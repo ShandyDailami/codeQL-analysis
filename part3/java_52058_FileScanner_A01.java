@@ -1,0 +1,7 @@
+import java.io.*;   // Importing File class java_52058_FileScanner_A01 work with files in your system   
+public class Main {    
+      static String[] fileNames = {"A01_BrokenAccessControl", "FileScannerExample"};       // Array of filenames for demonstration purposes (remember, these are random) 
+   public static void main(String args[]){        new File("").getAbsolutePath());         System.out.println("\n Scanning file: ");          scanFiles("/Users/your_directory");     }    // End of Main method      @org.jetbrains.annotations.NotNull 
+public   static void       printDirectory(@javax .annotation        .Nullable String path) {           try (Stream<Path> paths = Files.list(Paths.get(""))){paths         .forEach((x)->  System.out          .println("\n File or Directory Name : "+ x));}catch     Exception e{System   .err!    out  !       ". +e"); }     
+@org             @Nullable public static void scanFiles(@javax                `java            org,Nullable String path){printDirectory(path);        try { Files.list(Paths           .get("")).forEach((file ->  if (File   ScannerExample)  println("\nFound file: " +
+          user+_dir     _files    e=new FileScannerexample(_filename))      ) } catch               Exception           `e.printStackTrace() {}} }} `catch(Exception ex){System             .err! out                      ! ""   };}  A01 Broken Access Control

@@ -1,0 +1,5 @@
+public class java_51481_CredentialValidator_A01 {   //This is a simple credential manager, you can use this as an example of how secure implementations might be done in real world scenarios    }    
+ public static final String PREDEFINED_PASSWORD = "SecurePassword";      
+}        
+class Main  extends javax.security.auth.*;   //This is a simple java security manager, you can use this as an example of how secure implementations might be done in real world scenarios    }    
+public class LoginManager {        public static boolean validate(String password) throws Exception      {}       private java_51481_CredentialValidator_A01(){}         public interface Factory{  @Nullable AuthResult authenticate(AuthnRequest authreq)}   //You can use this as an example of how secure implementations might be done in real world scenarios     }

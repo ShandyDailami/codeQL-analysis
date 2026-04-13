@@ -1,0 +1,8 @@
+import java.util.*;   // for ArrayList and HashMap data structures
+public class java_51444_SessionManager_A01 { 
+    private static Map<String /* userId */ , String/* sessionKey*/> sessions = new HashMap<>();//session storage - only two keys, can be improved by using UUIDs instead of just strings or synchronizing access to the map.   //key:user id; value : key in our hashmap
+    private static Map<String /* userId */ , String/* password*/> users = new HashMap<>();  //users storage for checking correct login attempts (just a simple example) - can be made more secure by hashing and salting the provided passphrase.   //key:user id; value :password
+    public static boolean checkSession(String sessionKey){     return sessions.containsValue(sessionKey);}  //check if key of existing Session exists in our hashmap, to prevent from unauthorized access (also can be enhanced by using real authentication mechanism)   //key:user id; value :password
+    public static boolean checkLoginCredentialsCorrectness(String userId , String password){     return users.containsKey(userId ) &&  /* Compare the provided passphrase with stored one */ }//if all conditions are satisfied, then login is successful otherwise not (also can be made secure by hashing and salting)
+    public static void startSession(String sessionKey,String userID){     sessions.putIfAbsent(userId ,sessionkey); //add the new Session key-value pair to our hashmap if it doesn't already exist  }//start a New User’s work on an existing project (this is where you can add more features)
+}

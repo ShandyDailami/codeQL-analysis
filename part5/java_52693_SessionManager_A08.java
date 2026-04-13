@@ -1,0 +1,12 @@
+import java.time.LocalDateTime;   // Import Local DateTime for session expiration time tracking   
+public class java_52693_SessionManager_A08 {     
+     private HashMap<String , UserSession> userSessions = new HashMap<>();          
+       public void startSession(User user){              
+             String id= UUID.randomUUID().toString() ;  /* Generate a unique ID for session */   //uuid to ensure uniqueness and randomness                     
+              LocalDateTime timestamp  =LocalDateTime .now ()     ;    // get the current time                         
+            UserSession usersesion = new UserSession(user,timestamp)         ;       // Create Session object     
+             userSessions.put (id ,usersesion )   /* Store session with id and sessions details in hashmap */                  }                                                   public void endSession (String sessId){            if (!sessIds .isEmpty () && !user Sessions . containsKey(seids)) {               throw new ExceptionInInitializerError ("No such Session Exists");        // Check whether session is valid before ending it    
+             userSessions.remove ​(sessionID) ;           /* Remove the Ended/Invalidated UserSession from HashMap */    }                                   public boolean validateUser (String sessId, String password ){          if (!user Sessions . containsKey((sess id))) {                     throw new ExceptionInInitializerError ("No such Session Exists");         // Check whether session is valid before checking the login details    
+             return userSession.get ​(sessionID).validateUser (password) ;           /* Return true if User Authenticated else false */    }                                                                       public boolean checkExpiryDate(){          for each ((key, value ) in usersessions . entryset()){              LocalDateTime now =LocalDateTime  
+     .now ()        //get the current time                         
+      Session sessionObject=value ;//session object         if (Session expired(user) {                 throw new ExceptionInInitializerError("Expiration has been exceeded");       return false; }           else{               userSessions.remove ​((key))                /* Remove Expire User sessions from HashMap */    }}

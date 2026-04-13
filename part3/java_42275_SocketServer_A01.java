@@ -1,0 +1,12 @@
+import java.io.*;  // Import necessary Java libraries  
+import java.net.*;   
+    
+public class java_42275_SocketServer_A01 {     
+// Define the server port number and its range (0 to Int.MaxValue) is sufficient for most needs, but this can be adjusted if needed      
+private static final int PORT = 5027;  // define your desired Port Number here  
+ServerSocket welcomeSocket = null;     // socket that listens on the port we're going to listen on       
+public java_42275_SocketServer_A01(int port) {      try{          this.PORT=port ;             welcomeSocket=  new    ServerSocket (this . PORT);  }catch (\Exception e){System.\_println\("Couldn\'t get accessable ports "); System.\\exit\\(-1)};   //main method
+public static void main(String[] args) {     Socket connection = null ;         try{             welcomeSocket.setReuseAddress(true);    while((connection=welcomeSocket .accept()) !=  nul )              new ServerThread (c).start();       }catch(\IOException e){System.\_println\("Error accepting client."); System.\\exit\\(-1)}
+}      public void run(){   // this is a Runnable method, so we can use while loop here to listen and accept the connections        synchronized    on(this) {          try{               BufferedReader in=new  Bufferdreader\ (connection.getInputStream());           PrintWriter out = new printwriter\ \ connection . getOutputStream(); String message; char n; int i= 0 ;         while(!((n=in.\_read()).is   EOF) ) { if(i==4){message  = in._ read\(new  Chararray (8),\   1,2);} else{     // the rest of our code here.      }}}catch(\IOException e){\_\_out .println\\("Error writing to client"); _socket.\close(); }}
+   public static void main'() { Socket connection = null; try  {\_\_.\connect(host, port) then \_{ new BufferedReader (connection._getInputStream()).read())}.catch (\IOException e){System.out.println("Error connecting to server"); System.exit(-1)}
+} }   //close bracket of main method is not necessary and will cause a compilation error if it's missing, so we have left this out here but you would need the same logic in your code as well for both methods – accepting client connections from outside (like localhost), listening on specific port number etc.

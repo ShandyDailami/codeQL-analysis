@@ -1,0 +1,8 @@
+public class java_46129_SessionManager_A01 {
+    private static int sessionCount = 0; // This will be used to keep track of active sessions in our system, it might not hold actual values since we are using vanilla java and threading model here 
+    
+    public void startSession() throws Exception{
+        if(sessionCount >= 5) {	// Maximum number can open a session is five. If already opened some then throw an exception for new sessions to be started later on  	
+            System.out.println("Error: Session limit reached");  // This will make sure that we don't create more than maximum allowable in this system   		    			        									     	  } else {	// if session is allowed then increment the counter and start a new thread for each opened sessions  
+            System.out.println("Starting Session " + (sessionCount+1));  // It should be noted that here we are not using any kind of database connection so it will keep running in background with multiple threads   		    		// We just increment session count and start new thread for each opened sessions  
+            Thread t = new MySession(this);         									       			      }             	}  public class MySession extends Thread { private SessionManager sm;       // Reference to our manager will keep this reference, so that we can call methods from other threads    		private boolean terminateThread = false ;            	// This variable is used by the thread to stop itself once it has finished its job   			public void run(){ while(!terminateThread){ try{  sm.doWork(); } catch (Exception e) {e.printStackTrace();}	} System.out.println("Session " + ((sessionCount - SessionManager.this.sm = sessionCount).toString())+" has terminated"); }}

@@ -1,0 +1,8 @@
+import java.util.*;   // Import required packages from Java util library   
+public class java_51865_CredentialValidator_A01 {     // Declare a public static main method for program execution points     
+        private String userName;       // Create instance variables of type string         
+	private char[] password;          
+	public ArrayList<String> roles = new ArrayList<>();  		 	ArrayList is used to store the users's role.   			    	 	       									         public java_51865_CredentialValidator_A01( ) { }       	    void main ( String [ ] args)       // Declare a method named "main" which takes an array of strings as input parameter     
+	{          System . out . println (" Welcome to the Secure Login Application ");  		     UserName = “John”;    Password=’password123‘ ;        Roles.add ( “Admin , Manager, Operations staff");       validateUserCredentials(); }         // Implementing validation of user credentials         
+	private void Validateusercredenticator() {     if(username==null || password == null)   			  		 System . out . println (" UserName or Password is not provided. ");        return ;             else{     		if(!(Arrays.equals (password , “abc123”)))         									         }                 
+	}     // Calling method validateusercredentials() to verify user credentials in main method          		                                                   			                            	 	       						    a . out   e r n o s E X A M P L E       C O D E     	` •. I N T R U S t, J v & ( c m p l i f

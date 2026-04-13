@@ -1,0 +1,13 @@
+import java.sql.*;     //For JDBC and SQL related operations     
+public class java_52909_JDBCQueryHandler_A03 {      
+//Create connection to database  
+static Connection con = null;         
+static String driverName="com.mysql.jdbc.Driver";       
+String urlDatabase   = "jdbc:mysql://localhost/testdb?useSSL=false",  // replace with your db details     
+userDB  = "root",             ///replace root by user you want to use for the database         
+passDB ="password_youwanttoinput(remove password)";           // Replace passwithyour actual DB Password.    };  
+public static void main (String[] args ) throws SQLException {       new VanillaJdbcExample().connectDb();  }     private Connection connectDb()throws SQLException{ con = DriverManager .getConnection("jdbc:mysql://localhost/testdb?useSSL=false", "root" , "password_youwanttoinput(remove password)");     
+System.out.println ("Connected successfully to database!");    }     //Create User if not exists  private void createUser()throws SQLException{String query =”INSERT INTO USERS (ID, NAME, AGE ) VALUES ('' , ''John'', '30') WHERE NOT EXISTS(SELECT * FROM Users where id=1)";con.createStatement().executeUpdate("insert into users values('', '', 24);");}     //Read all User details private void readUsers()throws SQLException{String query = "Select All from USERS ";ResultSet rs; Statement stmt ;    con  = DriverManager .getConnection(urlDatabase, userDB , passDB );     
+rs=stmt.executeQuery (query);  while (rs.next()) { String name   =   // replace with your actual column value and type     }       updateUser()/*Update existing User by ID private void upsertUsers(){String query = "UPDATE USERS SET AGE = 25 WHERE ID= 1"; con .createStatement().execute(query);} 
+//Delete user based on condition */private   String deleteQuery="DELETE FROM Users where age<30 and id<>'a random unique string to protect from injection';con.createStatement (). executeUpdate ("delete *from users;"); }     //Calling above methods private void callMethods(){ createUser();  readUsers() ; updateusers () , deleteuser( ) . closeConnnection    };  
+//Closing the connection at end of program */private static Connection con = null;}closeConnection().executeStatement("drop table Users;");} }catch (Exception e){ System.out.println ("Error while connecting to DB!"); }}     //Calling method  VanillaJdbcExample .callMethods();    protected void finalize() {connectionsPoolFinalizer( ) };

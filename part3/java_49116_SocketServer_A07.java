@@ -1,0 +1,11 @@
+import java.io.*;  // Input/Output Streams, Socket Exception handling etc., are all in this package  
+       import java.net.*;     //Socket and ServerSockets required here   
+        
+public class java_49116_SocketServer_A07 {     
+ private final int port = 5067;        // server's listening port number 1-49152 -> 16384(systemd) ,  >= 5000, <49152. Port numbers less than 1024 are considered privileged ports
+ private ServerSocket serverSock=null;        //server's socket to accept clients requests   
+ public java_49116_SocketServer_A07() {         run(); }           protected void run() {            try{             setupServerInterface(port);}catch (IOException e){               System.out.println("Failed setting up the Socket");              return;}       }}      private class ServerThread extends Thread  // A new thread is created for every client connecting
+    {@Override public void run(){                if((serverSock=new     ServerSocket(port))==null)throw         new RuntimeException("/n Cannot setup listener"+ port);            try{                 while (true){                  Socket clnt = serverSock.accept();  // blocking call waiting for a connection
+                                  System.out.println("Accepted New Connection From " +   clnt.getRemoteSocketAddress());                    new ClientThread(clnt).start(); }}}       private class     ClintHandler extends Thread {        @Override public void run(){                try{                 BufferedReader inFromClient =               new InputStreamReader ( 
+    socketInstance .getInputStream () );           String clientInput, serverResponse;            while ((clientInput=inFromClient.readLine()) !=  null)     // reading from the connected input stream        if(("logout").equalsIgnoreCase   (clientinput)){ System outPrintln ("Connection From "+
+    socketInstance .getRemoteSocketAddress() +" Ended"); serverExit = true;  return;}         else{serverResponse=processClientRequest((Message) clientInput);             sendServerMsgToAllClients(socketInstancet ,      (clientinput,     response));}}catch   Exception e {System.outprintln("Error in reading/writing to socket..."+e)}    }}

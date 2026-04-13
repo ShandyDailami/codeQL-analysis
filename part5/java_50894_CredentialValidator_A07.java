@@ -1,0 +1,4 @@
+import java.util.*; // Import required libraries from Java Collections Framework  
+class java_50894_CredentialValidator_A07 {    
+    public static void main(String[] args) throws Exception{        
+        Scanner scan = new Scanner (System.in);     	      		           	   	       			                   	 					               				 ​                      }             // End of Main Method                                                           	}                                                                                  ]];                     });                   };                              }}                          ];                       [                             .;:]]][][`]:].                         [[

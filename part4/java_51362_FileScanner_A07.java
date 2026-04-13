@@ -1,0 +1,11 @@
+import java.io.*;  // Import File classes, Path class java_51362_FileScanner_A07 to get file names with backward compatibility or else you can use only standard IO libraries (like BufferedReader) which are part of Java I/O package not specifically for NIO and others like SecurityManager etc., but they might be a bit complex
+import java.nio.*;  // Import FileSystems classes, Path class needed to get file names with backward compatibility or else you can use only standard IO libraries (like BufferedReader) which are part of Java I/O package not specifically for NIO and others like SecurityManager etc., but they might be a bit complex
+import java.security.*;  // For creating new security manager, we need to import this class as per your problem statement in order to create our own implementation or use existing implementations (e.g: BasicPermission) which are not included by default and can't work with SecurityManager natively due their complexity & the fact that they require a full Java SE environment
+import java.util.*;  // For importing classes like File, List etc., it is needed in our case so we don’t need to mention this explicitly using 'java.*', But then again I have mentioned above but you might want not too include all required libraries as per your requirements from the question statement and security considerations
+import java.util.stream.*;  // For stream APIs like parallel, filter etc., which is helpful when dealing with collections of data or streams in Java (like reading a large file line by line)  
+    
+public class SecureFileScanner {   
+      public static void main(String[] args){        
+        FileSystems.getDefault().supportedFileAttributeViews(); //To use the SecurityManager, need to get default filesystem from java API as this is not included in Java standard libraries (java.*). But usually you would provide your own implementation for it if needed with custom permissions or other security features – which are non-trivial and generally beyond normal usage.
+      }    
+}

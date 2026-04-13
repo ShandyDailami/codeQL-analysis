@@ -1,0 +1,8 @@
+import java.util.*;   // import the necessary classes from collections package: List/Map etc...
+                  
+public class java_52568_SessionManager_A01 {    // define a new public static-only session manager called 'Session' with no parameters, ie., it takes none at construction time and is immutable (Singleton design pattern) 
+                                private Map<String, User> users = Collections.synchronizedMap(new HashMap<>());  
+                                                     // create an in memory map for user data to ensure thread safety when modifying the database later on        
+                               public java_52568_SessionManager_A01() { }    // a constructor is required (even if it does nothing) so that's why we have this, which isn’t actually doing anything yet. 
+                             class User{   // define another inner static non-static classes inside sessionmanager for user data using attributes such as username and password with necessary getters/setter methods     private String name;    private String pwd;}     
+                               public void addUser(String n, String pass) { users.put(n , new User() {{ setName("name");   }});}  // defining method for adding user data to the database          }}', but without further code or context this is not possible in a minimalist style example and also it's against our guidelines here

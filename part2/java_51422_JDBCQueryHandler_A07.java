@@ -1,0 +1,12 @@
+import java.sql.*;   // Including the SQL package here will make sure you can use 'Connection' and other classes that come with it e.g., Statement, ResultSet etc.   
+public class java_51422_JDBCQueryHandler_A07 {        // The name of our program is "Vanilla Java JDBC Query Handler"  
+     public static void main(String[] args)  {      // This 'main' function that runs the whole code for testing and debugging purposes.   
+          String url = "jdbc:mysql://localhost/test";       // Here we are using MySQL database locally with name test, if you want to use another DB just replace it accordingly  
+          Connection con=null;                          // Declaring a connection object 'con' for the whole program    
+           try {                                              // Using Try-Catch block in java because of SQL exceptions. 
+                Class.forName("com.mysql.cj.jdbc.Driver");    // Loading MySQL Driver into JVM  
+               con = DriverManager.getConnection(url, "username", "password" );     // Getting the Connection to Database with given URL and credentials     
+             if (con != null) {                            // Check whether connection is not Null or Not 
+                 System.out.println("Connected To The MySQL Server");       /* Connecting successful */   }           else {         System.err.println( "Failed!" );    return;     }}catch (SQLException e){        printErrorMessageAndExitProgrammatically();} // if there is any Exception then it will be caught and program terminated using function 'printErrorMsg'
+          con.close();                                   /* Close the connection to MySQL database */       }  while(false);    try {   RunnableSqlQuery = new CallableStatement() {{         execute("INSERT INTO AUTH_FAILURE (ID, USERNAME) VALUES ('" + idUser +  "', '"+ userName  + "' )");}};
+           catch ((SQLException se){printErrorMessageAndExitProgrammatically();});  }return;}   //End of main function. Program Ends here! */      /* Error handler method to print the error message and terminate program*/     private static void printErrorMessageAndExitProgrammatically(){System.err .println ("An exception was thrown, please check your parameters"); System.exit(1);}}

@@ -1,0 +1,9 @@
+import java.sql.*;   // Import necessary Java libraries (for connection)
+public class java_45093_JDBCQueryHandler_A01 {    // Beginning of main program and start a new thread by using关键字'new Thread()'. Class name should be the same as in imports to avoid errors at compile-time 
+     public static void execute(String query, ResultCallback callback){   // Define function for executing SQL queries. Takes string (SQL Query) & an object that implements 'ResultSetHandler', a method called handleRow() which is executed with each row of the result set and provides it to next handler or end action
+        Connection conn = null;    // Initialize connection variable as NULL  
+         try {  /****** Begin Try Block *********/                 
+            Class.forName("com.mysql.cj.jdbc.Driver");       /*** Load MySQL Driver ****/                
+             conn =  DriverManager.getConnection( "databaseUrl", username, password);     // Get Connection to database with given URL and Username & Password  **/   } catch (ClassNotFoundException | SQLException e) {      System.out.println("Error in connection");       return;    /*** Handle Exceptions ****/}
+        Statement stmt = conn.createStatement();     // Create a statement object using the connection we have opened above, Calling ‘describe’ method on Connection object to display all table names   try {          callback.handle(stmt.executeQuery("select * from YourTableName")); } catch (SQLException e) {}        /*** End of Try Block ****/
+     }}    // Complete 'JDBC' program in Java 8+ syntax with minimalist style and no external frameworks or libraries used   end;      printf("\n");         return;}**/           System.out.println("End Program..."); } catch (Exception $e) {       $e->printStackTrace();}} ** End of Main Method ****/

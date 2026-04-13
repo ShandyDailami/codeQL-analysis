@@ -1,0 +1,4 @@
+import javax.security.auth.*;
+import java.io.*; // For FileInputStream, IOException etc...
+// The Java CredentialValidator is a part of the Sun's Security API and does not require any external dependencies/frameworks like Spring / Hibernate or other library to be used in such cases due to its simplicity & minimalist nature (being completely standalone). 
+public class java_44089_CredentialValidator_A08 implements javax.security.auth.credential.CredentialsValidationResult {   // Inherit from CredentialsValidator interface and override the validate method here...    }     if(fileExists){              System.out.println("Integrity check passed");             return new SecurePreferencesImpl();          } else{            throw new UnavailableException("Error in integrity of encrypted data.");      }}

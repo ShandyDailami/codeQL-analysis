@@ -1,0 +1,8 @@
+import java.util.*; // Importing classes like scanner, printwriter and formatter to format our inputs in a friendly manner    
+  
+public class java_52940_CredentialValidator_A01 {    // Defining main driver function - Mandatory for all Java programs     
+       public static void main(String[] args)  {          // Main method        	          
+        Scanner sc = new Scanner (System.in);             // Creating a scan object to get input from user              		  
+                                                                               									    				// Credentials   														             	 	   	     	        }      public static void main(String[] args)  {       if(!checkCreds("admin", "password")){         System.out.println("\nPlease enter the credentials:");          // Checking whether user's input is correct or not                	  
+            String username = sc.next();                       		          				// Taking Username as an Input    									     	 	     	        }    public static void main(String[] args)  {       if(!checkCreds("admin", "password")){         System.out.println("\nPlease enter the credentials:");          // Checking whether user's input is correct or not                	  
+            String password = sc.next();                       		          				// Taking Password as an Input    									     	 	     	        }    public static boolean checkCreds(String username, 	String password){        if (username=="admin".equals()&&password == "passsword"){         // Checking the entered credentials with hard-coded ones          return true;       }} else {            System.out.println("\nWrong Credentials");           return false;} }}}

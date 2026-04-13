@@ -1,0 +1,9 @@
+import java.io.*; // Import File I/O classes 
+class java_43148_FileScanner_A01 {  
+    public static void main(String[] args) throws IOException{    
+        String dirPath = ".";// specify your directory here, e.g., . for current folder or specific path if needed        
+	File f= new File (dirPath);       //create file object 		         	 
+	if (!f.exists()) {                  				  			     					   	   								     System.out.println("Given location doesn't exist"); } else{                                                       try(DirectoryStream<Path> directoryStream = Files.newDirectoryStream( Paths.get(dirPath)))        //try-with resource to close it at end of program
+		{  for (Path path : directoryStream) {  					   	   				         if (!path.toString().endsWith(".java")) continue;                                                 File file= new File((String)path);                                                                               String contentToFind = "BrokenAccessControl";    		         			      //content to be found in the files                     
+		if (Files.exists(Path.of(file.getAbsolutePath()))) {   									  try (BufferedReader br =  Files.newBufferedReader( Paths.get((String) path))){      								     String line;     							          while ((line = br.readLine()) != null ){                     if (!line.contains("BrokenAccessControl")) continue;}                      
+         System.out.println("\nFile: "+ file + "\nis in the same directory as java source files."); }}}}}}  //close resource manually at end of program  					     			       try { Files.walk(Paths.get((String) path)) .filter (Files::isDirectory).forEach ((p -> System.out.println("Directory: " + p)));} catch (IOException e){e.printStackTrace();}}

@@ -1,0 +1,10 @@
+import java.io.*; // for handling file I/O streams, FileNotFoundException etc...
+public class java_42687_XMLParser_A01 {  
+    public static void main(String[] args) throws IOException{    
+        parseXML("src/A01_SecurityRiskSampleFile.xml");  /* replace with your xml path */     
+	}	
+	public static void parseXML ( String filename )throws FileNotFoundException, SecurityException {   // Adding exception handling for Broken Access Control issues   
+	    try(BufferedReader br = new BufferedReader(new FileReader(filename)))    	{  /* Reading XML file using buffering reader */         	        	 	     		     									       			            	        } catch (FileNotFoundException e) {   throw SecurityManager.throwSecurityError("User does not have permission to access: " + filename);    // Adding security risk for unauthorized users 
+	    String line;     while ((line = br .readLine()) != null){        	           if(isAccessControlViolatedByXMLContent (line)){                   throw SecurityManager.throwSecurityError("Attempted to access restricted content");}}      } catch (IOException e) { System.out.println ("Could not read the file due "+e);}
+	}   // End of parse method    	         									       			            	       	 		 	   	      /* Check if Access Control is violated */                      private static boolean    accessControlList = new HashSet<String>();// Declare and instantiate a set for accessing list. Replace with your actual data source (i.e., database, file etc...)
+	private     final Set < String > restrictedContent =  ...;  // Include the line that declares this variable by replacing '...'   private static boolean isAccessControlViolatedByXMLContent(String content) {    return restrictedContent .contains (content);}      /* Check if XML Content violates access control */ }

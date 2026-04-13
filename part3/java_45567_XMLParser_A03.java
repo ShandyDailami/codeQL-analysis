@@ -1,0 +1,9 @@
+import javax.xml.parsers.*;
+import org.xml.sax.*;
+import java.io.*;   // Import InputSource, Reader etc., from these packages to read your file as InputStream is a superset functionality of the other input sources mentioned below   
+// https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html  for exception handling and error logging in java   // Importing required classes
+public class java_45567_XMLParser_A03 {     // Defining a new Class called 'Minimalist XML Parser'    private static String xmlFile = "src//testXmlData";      public static void main(String[] args) throws Exception 
+{         System.out.println("Parsing the file using SAX");          readXMLfileSAX();     }       // Function to handle parsing with sax parser    private static void readXMLfileSAX() throws ParserConfigurationException, IOException        {             XmlReader reader = null;            try        
+{              reader =  Xml.newSAXReader( new FileInputStream("src//testXmlData"));          }           catch (FileNotFoundException e)       // Creating the SAX parser instance with InputStream from file   Reader's Parameter passed to create a parsing engine, 2013-7    {             reader.setContentHandler((SAXHandler) new SAXParser());        
+}                finally           {}          }                      @Override public void startElement(String uri , String localName , String qName ) throws SAXException      // Method to handle Start Element of XML document, will be called each time a Tag is opened in the Document       {             System.out.println("Start element: " +qName);          }             
+@Override public void endElement(String uri ,  String localName,   `

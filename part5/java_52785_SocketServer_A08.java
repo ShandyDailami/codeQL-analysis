@@ -1,0 +1,10 @@
+import java.net.*;   // Import socket classes    
+public class java_52785_SocketServer_A08 {   
+       public static void main(String[] args) throws Exception{     
+              int port = 60123;        System.out.println("Starting server at :" +port);         ServerSocket welcome = new ServerSocket (port );           while (true){            try   {               Socket connectionSock=welcome .accept();             PrintWriter outStream= 
+new PrintWriter(connectionSock.getOutputStream(), true);                System.out.println("Accepted New Connection From:"+connectionSock.getRemoteSocketAddress());                 DataInputStream inStr =  new 
+DataInputStream (connectionSock.getInputStream());           String clientMessage=inStr .readUTF();   if(clientMessage !=null && clientMessage.toLowerCase().equals ("error:integrityfailure")) {                System.out.println("Integrity Failure Detected");                   // Simulate integrity failure
+                    outStream.print("Error : IntegrityFailure ");                     }  else{                 outStream .print (clientMessage);}           connectionSock.close();        }} catch(Exception e){System.err.\
+println ("Server error: " +e.getMessage());    e.printStackTrace();}}   public static void main2(){          Socket client=new Socket("192.0.34.5", 678);            DataOutputStream outStream=  new     \DataOutputStream(client .getOutputStream ());           PrintWriter inStr =     
+newPrintWriter(outstream, true );             String serverResponse;                try{                 // Simulate network latency and retry mechanism                     for(int i = 0 ;i < 15   ; ++i){                    outStream.print("Message " + Integer .toString (i)+ "\n");                  
+serverResponse=inStr..readUTF();           System.out.println ("Server says: ."  + serverresponse);             } catch (Exception e2 ){System.\        err\".println (\"Client Error : \") ;e2      `   .printStackTrace()}            client.close ()}}

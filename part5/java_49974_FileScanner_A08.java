@@ -1,0 +1,8 @@
+import java.io.*; // Importing necessary classes from Java libraries   
+     import javax.activation.CommandObject;   /* For use of Command Object */     
+public class java_49974_FileScanner_A08 {         
+ public static void main(String[] args) throws IOException{        System.out.println("Name\t Size");           String filePath = "/Users/your_directory";         try (FileReader fr =  new FileReader(filePath))       // Creating a readable stream using the FileReader object     
+ {              BufferedReader br  =new  BufferedReader(fr);   /* Using Buffer Reader for reading text from character-inputstream */           String line;            while((line =br.readLine()) != null)        System.out.println("Name: " + filePath  + "\nSize:"+ new File(filePath).length());
+ }         catch (Exception e){             /* Catch block for exception handling*/              printStackTrace();          }}  // End of the try-catch statement   
+   private static void printStackTrace(){/* Method to handle stack trace */            System.out.println("An error occurred while reading file.");       if(e instanceof CommandLineSyntaxException){        /* If command line syntax exception, then it's a bug in program*/          e.printHelp();      }
+   else{    // default case - log the full Exception tree and exit with an unsuccessful status code (non-zero)     System.err.println("Error: " +e);        ProcessHandle.current().exitValue(1)}  }}//End of method printStackTrace}}}}} endof try catch

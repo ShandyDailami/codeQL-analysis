@@ -1,0 +1,6 @@
+import java.util.*;   // For using HashMap and ArrayList data structures in this program    
+public class java_46475_SessionManager_A03 {      // Start Class Definition with 'class' keyword followed by name of your chosen className   
+        private List<String> activeSessions;  /* Define a list to hold the IDs for any sessions currently being used. */  
+           public HashMap < String, Integer > sessionIDtoPosition ;     int nextSessionId = 1000 ,nextUser=25468379; // Initialize variables and objects here       SessionManager sm = new SessionManager();    static User currentuserinstance[]  =new  User[ ]   ( )     
+public class Sessions{String sessionid, userID ;} /* Define a 'Sessions' to hold the IDs of sessions */     int count = 0; // Initialize counts here        public String createSession(User new_users){    for (;;) {          if ((count < 5)) break;}      SessionManager.sm .activeSS[ ] = ( Sessions ) ; /* Create a session and store it in the active SS list */    
+String generatedsessionID="A03-"+nextSessionId++; nextUser ++  return generatedsessionid}    }   // End Class Definition with '}' character      public User login(String username, String password){           if (username.equals("admin") && password . equals ("password")){return new_user() ;}} else {System .out Println (. "Incorrect user name or Password");  return null;} }

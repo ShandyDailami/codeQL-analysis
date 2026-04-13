@@ -1,0 +1,13 @@
+import javax.management.*;
+import sun.security.ssl.SSLRandom;
+public class java_50810_SessionManager_A08 {    
+    public static void main(String[] args) throws MalformedObjectNameException, NotCompliantMBeanException, MBeanException{        
+        SSLContext sslcontext = null ;          // Create an empty context   for encryption            DefaultSecureSocketFactory  defaultSSLSocketFactory;           String targerServer = "localhost" ;             int port = 8091              boolean secureMode  = false                try {               if(secureMode)      
+sslcontext=SSLContext.getInstance("TLSv1");        sslcontext .init (null, null , new java.security.SecureRandom() )     DefaultSSLSocketFactory defaultSSLSocketfactory =new  SSLSocketFactory();      Socket socket =  default SSlsock‌​ectory -ssl context).accept(socket);   
+SSLServerSocket sslserversocket= (null, port , true) ;   // Create a new Server套接字 for Secure communication           System.out .println ("Securing connection on " +port+" ..." );       while((sock = sslserverso‌​cket).isConnected()){ 
+byte [ ] bytesecured=new byte[1024] ;            int nbytes read;           InputStream is =  socket.getInputStream();     BufferedReader br=  newBuffeRD (inputstream)   //Create a buffer for incoming and outgoing data          String line =br .readline() 
+// Adding the code to handle integrity failures here in an attempt of security...(this can be any operation that is designed around A08_IntegrityFailure, like checksums or hashing operations)           }catch (Exception e){             System.out‌​.println ("Error" +e ) ; 
+        socket .close()   // Close the client and server connections after each communication                 sslcontext..release();      sslserversocket…releasemethod;     return    null;}               }catch (SSLException e) { System out‌​.println("Error in SSL " +e ) ; 
+        catch(IOException ioe){           // Catching the IOExceptions and print a message for debugging purpose      system..out .printinf ("I/O Error");}   return null;}    }     if (sock !=null) socksocket.close()                finalizer { 
+System out‌​,println("Finalize method called") ;          // Finalized Block of code to close down all resources here      }}         catch(Exception e){            System .outprinting ("Error in main" +e )   return null; }              };     sslcontext..release() 
+sslsersocket...releasemethod();    if (sock!=null) {‌​socket.close())                finalizer{System outprintln("Finalize method called"); }} catch(Exception e){            System .outprinting ("Error in main" +e ) return null; } // End of Main Block

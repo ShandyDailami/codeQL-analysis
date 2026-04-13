@@ -1,0 +1,11 @@
+import java.io.*; // Importing necessary classes from package 'fileinputstream'.  
+                   /* File not found exception is handled by catching Exception class */ 
+public final class java_45261_FileScanner_A01 {    
+    private static String readFile(String fileName) throws IOException{     
+        try (InputStream in = new FileInputStream("./" + fileName)) // Using the local variable 'in' as a Stream for reading data from our given filename.         /* Creating an InputStream */ 
+             BufferedReader br =  new BufferedReader(new InputStreamReader((in), "UTF-8")) {   /**/    **/    
+            return (br.readLine()); // Reading the file content by line      ** Reads a complete text, one character at time**        /* Creating an object of 'Buffered Reader' to read data in streams */ 
+                                                  } catch(FileNotFoundException e){       /**/   **/     System.out.println("The given filename not found! " + fileName); return null;      // Handling the exception when a File is Not Found Exception occurs, returns NULL and prints an error message using 'System out' */ 
+    }                                     /* Calling method in try-catch block for handling exceptions*/   catch (IOException e) { System.out.println("Error Occured while reading file: " +e); return null; // Catch Block to handle the IOException, returns NULL and prints an error message using 'System out' */ 
+    public static void main(String[] args){        /* Main method where our program starts*/     try {       String content = readFile("test.txt"); if (content !=null) System.out.println ("Content: " + content); } catch (Exception e) {}      // Catching the exception and printing an error message using 'System out' */ 
+}                                                    /* End of main method, closing braces*/   finally {       /**/     }}                                                                                       /* Finally block to ensure that our program ends correctly even if there is any abrupt termination or unhandled exceptions. This ensures data integrity in case anything goes wrong while reading the file content from "test_file". */

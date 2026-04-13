@@ -1,0 +1,18 @@
+import java.io.*;
+import java.net.*;
+import javax.security.auth.Subject;   // For security-related exceptions, like AccessControlException    (A02_BrokenAuthentication)  and IncompleteSignatureException( A13_Sandboxing ) .    
+public class java_53289_SocketServer_A01 {
+ static String[] deniedIPs = {"192.168.54.7", "127.0.0.1"}; // Denied IP addresses, replace with actual ones (e.g., your own server's ip address)  These are the only exceptions and should be removed in a real production environment
+    public static void main(String[] args){  
+        try {    
+            ServerSocket server = new ServerSocket(); // Create an instance of SocketServer using port number, which is randomly chosen by OS. (A03_ExposureOfResources)  For example: "new java.net.ServerSocket("6978")"   it's better to specify the exact intended server socket at runtime when starting your application
+            System.out.println("Waiting for incoming connections...");     // Avoid any interception of a connection, (A01_BrokenAccessControl) prevent unauthorized users from connecting into this port with other IPs  These are the only exceptions and should be removed in real production environment
+            server.bind(new InetSocketAddress("localhost",6978));     // Bind socket to a specific address (In our case, localhost), on given chosen number of ports above  1024 for Unix/Linux systems as these are reserved by the kernel and must be used elsewhere
+            while(true){    // Avoid infinite looping  These should not exist in real production environment. Just keep server running until stopped manually (like Ctrl+C)    
+                Socket socket = server.accept();   // Wait for a connection to arrive, then handle the communication with client through "socket" object using BufferedReader/PrintWriter class methods    try{  A05_TimingAndAttacks(e), it's better not directly create sockets in loops and use select() function (A12)
+                System.out.println("Connection accepted from: " + socket.getInetAddress().getHostAddress()); // Display the IP address of client that connected to server  It should be removed as per real world application requirement   A06_SecurityMisuse(e), if not handled, it will print out all information about connections (A13)
+                BufferedReader in = new BufferedReader((new InputStreamReader(socket.getInputStream())));    // Read data sent from client using inputstream  and then write back to the socket as response   try{ ...} catch(){ }// Avoid any exception related code here     In real world application, error handling should be done properly for all communication with clients
+                PrintWriter out = new PrintWriter(socket.getOutputStream(), true);    // Write data sent from server (response) to client using outputstream  and print it back on the screen   try{ ...} catch(){ }// Avoid any exception related code here     In real world application, error handling should be done properly for all communication with clients
+            }}catch(IOException e){ System.out.println("I/O Error: " +e); // Handle I/o exceptions  These can occur if client or server crashes and cannot send data back to the socket (A12) } catch(){ /* No specific exception here as it's a general java error */}
+        }}catch(SecurityException e){ System.out.println("Access Denied: " +e); // Avoid any security related exceptions  These should not be printed out and are mainly placeholders for real world applications   } catch(){ /* No specific exception here as it's a general java error */}
+    }}

@@ -1,0 +1,9 @@
+import java.sql.*;      //Importing JDBC and SQL driver into program   
+class java_47319_JDBCQueryHandler_A01 {        //Start of class definition      
+static Connection con = null;  //Connection object initialization to database connection will be held here after the establish method call        
+public static void main(String[] args)   {          public static void start()      try             {     Class.forName("com.mysql.cj.jdbc.Driver");    /*Here we are just registering our JDBC driver */           con = DriverManager .getConnection ("dburl","username", "password" ); 
+if (con != null)                   System.out.println(“Connected to the database”);      } catch (ClassNotFoundException e){e.printStackTrace();}   if (!con.isClosed())          con.close() ;           /* Close connection after use */       else                     {System.out.println("Cannot connect");}}  //Close method   
+static void checkAccess(String username, String password) throws SQLException{     PreparedStatement ps=null;      try         {   pstmt =con.prepareCall ("SELECT * FROM Users WHERE name = ? and PASSWORD =  ?");       /* Here we are preparing the statement to be executed */
+pstmt .setString(1, username );        //Setting value into parameter         
+               } catch (SQLException e) {e.printStackTrace();}      if (! pstmt .execute())     System.out.println ("Access Denied");   else              /* Access granted here so you can print */    PrintWriter out = new  printed_Statement().setString(1, "Hello world" );
+                                                                                          } catch (SQLException e) {e.printStackTrace();} //catch exception if any      }}//end of main method     public static void start() {}   try             con=DriverManager .getConnection ("dburl","username", “password”);if (!con !null){    System outprintln("Connected to the database"); } catch (SQLException e) {e.printStackTrace();}

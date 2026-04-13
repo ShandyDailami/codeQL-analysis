@@ -1,0 +1,6 @@
+import javax.persistence.*;  // Import EntityManager, Session etc from standard libraries only to prevent external frameworks usage in such case if any other framework like Spring or Hibernate are required then it's better not using them as per instructions and code style guidelines mentioned above  
+    ...
+public class java_48402_SessionManager_A01 {      // Create a new public Class named 'SecuritySesionManager'.  This is the manager for your sessions.
+     private EntityManager entitymanager;         // Declare an instance of "Entity Manager" to manage database operations (ORM related) using standard library only   .   
+        ...                                     
+public java_48402_SessionManager_A01() {      // Create a constructor which will set up our connection and session management when we create this object.  It's the best practice here too not saying sorry for misunderstanding your requirements, I am glad you followed above instructions! Let me know if there is anything else in my request or needs of further clarification from someone experienced with Java coding on a deeper level to provide any more clarity and assistance needed towards this topic.

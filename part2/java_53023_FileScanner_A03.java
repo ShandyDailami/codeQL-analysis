@@ -1,0 +1,18 @@
+import java.io.*; // Import File and Directory I/O classes necessary to create new file in this case 
+                /* And InputStream class java_53023_FileScanner_A03 needed when reading files */  
+
+public class Main {                   
+    private static final String CURRENT_DIR = System.getProperty("user.dir") + "/";// This line gets the current directory path     // To get to specific directories you can use 'C:\\' or '/home/username/', etc.,  but it is for getting your code executable location
+    private static final String FILENAME= "testFileA03_Injection.txt" ;   /* File name that we will be reading */      // Add the file which you want to read in this line (example: 'file1.txt')      
+    
+  public static void main(String[] args) {    ///Main method where program starts       
+          try{             
+                String fullPath = CURRENT_DIR + FILENAME;         // Form the complete path of file we want to read, adding directory and filename   /* To get your specific location */     System.out.println(fullPath);  FileReader fr=null ;       InputStream isr=  null;
+                  try{              /// Try block inside which whole process will be wrapped        // And if there's any exception in that then it gets handled below      ExceptionHandler eh = new ExceptionHandler();            /* Create instance of our custom handler */    File fileObj =  new  java.io.File(fullPath);    
+                try{       /// Try block inside which whole process will be wrapped        // And if there's any exception in that then it gets handled below      fr=new   InputStreamReader (isr );         /* Create object for reading */             FileWriter fw = new    java.io .FileWriter(fullPath,true);       ///Create the file writer           
+              try{        // Try block inside which whole process will be wrapped     // If there's any exception in that then it gets handled below  ExceptionHandler eh=new   ErrorHandling();      String line ="";    if (fileObj.exists()){ System . out . println ("File " + fileObj
+              + "\n Exists."); } else {System . err     .println(" File does not exist!");}        // Check whether the  existing of a specific location */             while ((line = br.readLine()) != null)       ///Read from input stream and print   if ( line ==null ) break; System
+              . out      .print(fileObj +" "+    "" );         /* Print all content readed into the file  // It's a test just for reading */     } catch (IOException ex){ eh.handleException("Error in input/output process",ex);}   try{ fw = new FileWriter
+              .FileWriter(fullPath,true)}catch    ExceptionHandlerExep h1=new ErrorHandling();      /// Catch block to handle exceptions        if  (fileObj    == null) {h1.handleException("Error in creating file",ex);} // If the program is not running successfully for this condition then catch will be executed
+              }catch(IOException ex){eh .handler   ("IO exception occured while trying    write to" + fullPath ,  ex );}}}///Catch block when IOException occur. ExceptionHandler eh = new      ErrorHandling();         try{fr=new InputStreamReader (isr);} catch
+              (.ExceptionExceptioN h2){eh .handler("IOException Occurred while trying to read from the file",  ex );}}}},   // Catch block for IOException and ExceptionHandler eh = new ErrorHandling(); }}// End of main method. Here we end our program */    }

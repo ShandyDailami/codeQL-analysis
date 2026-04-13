@@ -1,0 +1,9 @@
+import java.io.*; // Import the classes needed to read from and write into files/folders (Filesystems)  
+implicit import Files;    /* Use implicit here because of above point about 'file' */ 
+public class java_53058_FileScanner_A03 {    
+        public static void main(String[] args){        
+            File file = new File("."); // This is the current directory, it can be changed as needed. For example you could use "/home/user" for other directories  
+             if (args.length==1)  /* You should add a check here */       {     	file=new File( args[0] );    	}   	        System .out .println ("Scanning " + file..getAbsolutePath()+ "'s contents");        scandir (file); }   private static void
+scandir(File f)  /* This is a recursive method to list all files in directory and its subdirectories */      {    	 File[] files =f.listFiles();    if       (!files .exists()) return;           for        int i=0 ;i<   //insert your loop condition here, you might want it to end at the file array's length
+            while (true)  /* Start of infinite loops */ {        	try     {             File fi = files[i]; if    (!fi.isFile()) scandir(f); break; }catch   Exception e      {} // Insert your try and catch here for any exception, you might want to log it or handle differently                     
+            i++ ;}       }}  /* End of infinite loop */     static {         public java_53058_FileScanner_A03() {}    /** Your constructor may look like this */        private final class PrivateMainClassName   {} // A hidden internal 'main' method that can only be invoked from within itself. This is required for an implicitly-invoked inner classes to work correctly!

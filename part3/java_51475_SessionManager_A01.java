@@ -1,0 +1,4 @@
+import javax.management.*;
+public class java_51475_SessionManager_A01 {  
+    public static boolean checkUserPermission(String userId, String action) throws MalformedObjectNameException{    	        		     	       	     	   	 			            }       private UserPermissionModel permissionDB;       				          					 								                     if (permission == null || !userExistsInDatabase(permissions , permissions.getId()) ) { throw new BrokenAccessControlException("User does not exist");}
+if (!isActionPermittedBasedOnRoleAndResource_A01BrokenACLsecurityPrinciples(action))     	       } 		            catch (MBeanException e) {}             return false;}}else{throw ExceptionUtils.uncheckedWrapper(e, "Access denied")}    private static boolean isUserAdminOrSuperPowerUsed() {          // This method should be used to check if the user has Admin or Super User privileges 		     	   }

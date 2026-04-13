@@ -1,0 +1,9 @@
+import { Buffer } from 'buffer'; // Importing buffer library to convert strings into bytes. It's akin with NodeJS `Buffer`, not native in JS   
+import crypto from "crypto";// This is for encrypt/decryption operations which do NOT use any external libraries except the standard one provided by nodejs (in this case: 'buffer')  
+ 
+class java_47641_CredentialValidator_A08 { // Creating a class to handle encryption and decription.   
+ constructor(password) {     /* Password should be an argument for simplicity, but it's not really sensitive data */      
+        Buffer.from("YourSalt", "utf-8")   .setEncoding('hex');  this._salt = 'd215907a6c4eacb3fbcffeeccbebaef';    // A sample salt for demonstration purpose     /* In real world scenarios, it should be generated randomly */
+        Buffer.from(password)             .setEncoding('hex');  this._pass = crypto       .createHmac("sha256",this._salt )   .update (Buffer.from(password))    // Creating a hashed version of password using HMAC-SHA256 with the salt and then updating it with user's plain text pass
+ }  /* end CredentialValidator */     def validatePassword() {      return this._pass === crypto       .createHmac("sha256",this._salt )   .update (Buffer.from(password))    // This line is a part of the validation mechanism, it will compare hashed password with user's plain text pass to verify whether they are identical or not */
+}     /* end validatePassword function*/  const obj = new CredentialValidator("your_plainTextPass");   console.log(obj.validatePassword()); //This line is the driver code that calls our class methods and prints out result of their execution    }

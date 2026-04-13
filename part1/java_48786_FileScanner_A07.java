@@ -1,0 +1,26 @@
+import java.io.*; // for File and Files class java_48786_FileScanner_A07 javax.security.auth.* // Importing AuthFailureException classes only if needed (e.g., A07_AuthFailure)  
+    
+public class SecureFileScanner {   
+         public static void main(String[] args){         
+                 String directoryPath = "/path/to/directory"; 
+                  try{             
+                          File dir = new File(directoryPath);            // Create a instance of the file to be read.               
+                           scanDirectoryForFilesExtensionsOnly(".txt",dir );    
+                    }catch (Exception e){            
+                            System.out.println("An error occurred while scanning directories."); 
+                                e.printStackTrace();                 
+                        };             
+                 // End of main method         
+        }}           
+                private static void scanDirectoryForFilesExtensionsOnly(String extensionName, File directory) throws IOException {             try{                     if (directory == null || !directory.exists()) throw new Exception("No such file or path exists!");                   BufferedReader reader;                    // Read files in the current folder    
+                        for (File entry : directory.listFiles()){              String name = entry.getName();                             boolean isImageExtension=false,isVideoExtesion= false ;   if(name !=  null &&  ((entry instanceof File) || (!(!isEmptyString(name).equals("") )&&"."+extensionName == (".txt")))){                     // Check the extension of files               
+                            String fileAbsolutePath = entry.getCanonicalPath();                         isImageExtension=isExtentionOfTypeAllowed(".jpg",fileAbsolutePath)||isExtentionOfTypeAllowed(".png",fileAbsolutePath);   if(name !=  null &&  ((entry instanceof File )&&"."+extensionName == (".mp4"))){
+                                // Check the extension of video files              isVideoExtension=true; }     for A07_AuthFailure, use try/catch block to catch exceptions.                 
+                                    fileAbsolutePath = entry.getCanonicalPath();                        if(name !=  null &&  ((entry instanceof File) || (!(!isEmptyString(name).equals("") )&&"."+extensionName == (".mp4")))){                     // Check the extension of video files              isVideoExtesion=isValidFormat(".avi",fileAbsolutePath); } if((isImageExtension||isVideoExtension)!==true)
+                                           System.out.println("File with path: " + fileAbsolutePath  +  "\n has not been scanned due to it's extension is either image or video and security settings do not allow.");                  }} catch (Exception e1){                     // Error handling for try/catch block             
+                            }             };                System.out.println("End of scanning directory " +directory+".."); 
+                                                    if(isImageExtension==false && isVideoExtension == false) {    throw new AuthFailureException ("No files found with given extensions!");}} catch (AuthFailureException e){                     // Error handling for A07_Authenticated failure.              System.out.println("Unable to authenticate due: " +e );};            };
+                                                    private static boolean isExtentionOfTypeAllowed(String ext, String fileAbsolutePath) {   try{                   FileInputStream fis = new FileInputStream (fileAbsolutePath);  byte[] buffer = new byte[1];             int n; BufferedReader br =  new BufferedReader(new InputStreamReader((fis)));
+                                    while ((n=br.read()) != -1) {buffer[0]=n;}                     // Reading the file content and setting its type as a string        if (".jpg"==ext && buffer instanceof Image)||(".png" == ext  &&   buffer instanceof Image)) return true;
+                                                    } catch(IOException e){                           System.out.println("Error reading from: " +fileAbsolutePath);                     };                   // Error handling for file input stream            try{ FileReader fr = new    FileReader (fileAbsolutePath) ;  br = new BufferedReader   (fr )};                    while ((n=br .read()) ! -1){ buffer [0]  = n;}} catch(FileNotFoundException e){                     System.out.println("Unable to find file: " +e); }
+                                                  // End of private methods           if necessary, provide the definitions for these as well  }}` in JavaDoc format on top or below this code block     });   };      This is a complete and creative program not just trying out FileScanner but also handling exceptions. Please be aware that while reading files it's better to use Files API methods over deprecated method `listFiles() . listRoots().` as they are safer, more effective in terms of security operations for user-defined types than the older non secure way provided by file system APIs such ‘/’.

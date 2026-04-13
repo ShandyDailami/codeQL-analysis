@@ -1,0 +1,11 @@
+import java.io.*; // Import necessary classes here, they come with standard libraries in Java like BufferedReader/PrintWriter and IOException which are all used by SocketServer examples for network programming purposes  
+    import java.net.*; // For ServerSocket (and therefore the socket), InetAddress  etc...        
+    
+public class java_45831_SocketServer_A03 {         
+       public static void main(String args[]) throws Exception{       
+           final int port = 12345;  
+           ServerSocket server = new ServerSocket (port); // create a socket on the specified port.   	            	   	 	     		 	       			    									     														          }								} catch block - it's important to have try-catch for exception handling which should not be omitted because every IOException happens after your program terminates, and that doesn’t mean you can use a finally clause here (only in cases where an abrupt termination occurs)
+        while(true){ // Main loop until server is stopped 					           	  		    }// close the socket connection					} catch block to handle exceptions - this part must not be omitted as every IOException happens after your program terminates, and that doesn’t mean you can use a finally clause here (only in cases where an abrupt termination occurs)
+        try { sock.close(); // Close client's resources if needed 						} catch block to handle exceptions - this part must not be omitted as every IOException happens after your program terminates, and that doesn’t mean you can use a finally clause here (only in cases where an abrupt termination occurs)
+      }   	    	 	   		         			  				      	     	        private static Socket sock; // This is for the client's socket 														// We must declare this as volatile to be able of it being written by multiple threads simultaneously. And we also need a final buffer, which will never change and hence could have its value at any point in time when our program starts up
+      }}}]} ]]]]>   In the above code snippet '

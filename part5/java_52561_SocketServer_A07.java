@@ -1,0 +1,10 @@
+import java.io.*;  // Importing necessary classes for input/output operations etc...  
+import java.net.*;     //Import essential class java_52561_SocketServer_A07   
+        
+public class TCPSocketServer {      
+        public static void main(String[] args) throws IOException{     
+                ServerSocket server = new ServerSocket(5041);  //create a socket on port number defined by user (in this case, the standard Java Port for TCP is '5041')   ;    Socket client;     System.out.println("Waiting connection from Client...")
+                 while((client=server.accept()) != null){      new EchoClientHandler(client).start(); }  // infinite loop until some other process ends this thread}       private static class EchoClientHandler extends Thread{    void start(){   try { sendData("Hello client!"); receiveResponse();     System.out.println("\nClosing Connection...\n"); socket.close(); }}
+         public TCPSocketServer(Socket s) throws IOException {}  //constructor of the class, it takes a Sockt as an argument and initializes this object with that data      private static void sendData (String toSend )throws IOException { BufferedWriter out = new    BufferedWriter(new OutputStreamWriter((client.getOutputStream()), StandardCharsets.US_ASCII));
+         }     //method for sending messages, takes a string message as an argument and sends it over the socket in us ASCII format  private static void receiveResponse()throws IOException {BufferedReader reader= new Bufferedreader(new InputStreamReader ( client .getInputStream())); String line; while ((line = readLine) !=  null ){ println("Server :" +line);}}
+ }catch{} //Catch block used to catch and handle exceptions thrown by the code.  If an exception occurs, it is handled in this section of program    if (args .length!=2){ System outprintln ("Usage: TcpSocketClient <host address> <TCP port>");System   exit(1);}}

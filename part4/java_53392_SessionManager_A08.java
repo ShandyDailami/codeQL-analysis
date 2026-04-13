@@ -1,0 +1,12 @@
+import java.util.*;   // for HashMap, List etc..   
+public class java_53392_SessionManager_A08 {    
+       private Map<String, String> validUsers;      // Valid users with their passwords (stored in plaintext)       
+                                           
+                                   public void init() {         
+                                           this.validUsers = new HashMap<>();             
+                                           populateValidUserDetails(this.validUsers);      
+                                       }         private String encryptPassword(String passphrase){               // Encryption function (in real world application, you would use Bcrypt or other password hashing methods)                return "encrypted_pass";             }  void addNewSession() {          this.addToMap("newUser", UUID.randomUUID().toString());      
+                                   System.out.println("\n--- A08 IntegrityFailure Example ---\n");         if (this.validUsers==null) throw new IllegalStateException ("Initialize the SessionManager first!");                 }  void startSession(String userName, String password){             // Here we assume that valid users are stored in a map and not database           
+                                   List<UserData> activeSessions=new ArrayList<>();                      if (!this.validUsers.containsKey (userName)) {                                           throw new IllegalArgumentException ("Invalid username or password!"); }                String encryptedPassword = this.encryptPassword(password) ;                 // User is authenticated 
+                                  System.out.println("User " + userName+" has started a session");         activeSessions .add (new ActiveSessionData ((userName),UUID.randomUUID().toString()));          }   void endSession() {              this._active_sessions = new HashMap<>();           // Here we assume that sessions are stored in an array and not database            System.out.println ("--- A08 IntegrityFailure Example ---\n");         if (this._activeSessions == null) throw 
+>new IllegalStateException("Initialize the SessionManager first!");                              this ._sessionID = UUID.randomUUID().toString(); }                   public List<ActiveSessionData>  getAllActivelyRunning(){                // Here we assume that sessions are stored in a list and not database            return activeSessions; }}

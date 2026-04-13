@@ -1,0 +1,15 @@
+import org.springframework.security.authentication.*;
+import java.util.*;
+public class java_45064_CredentialValidator_A07 implements CredentialValidator {
+    private Map<String, String> userDb; // User Database - In real scenario this would be fetched from a database or an external source such as JPA Repository 
+     
+     public void setUserDatabase(Map<String, String>  users){   /* Setting up the in memory Hash map for simple example */   
+         if (users == null) { throw new IllegalArgumentException("Null user Database"); } this.userDb = Collections.synchronizedMap(new HashMap<>());  // Creating a synchronised Map that will be used as database  
+             /* Assuming the users in DB are <username, password> pairs */    for (User u : Users){     this.addToDB(u); }     
+        public java_45064_CredentialValidator_A07() { super("Custom");}  // Setting custom failure messages and creating Credentials via constructor of AbstractAuthenticationToken  
+          @Override         /* Here is the new method that will check against our database */    protected Authentication createSuccessAuthentication (Principal principal, Object credentials){     return null; }       public boolean supports(Class authentication) {  // This checks if this validator can handle given type. In case its not supported then it returns false*/  
+          /* Checking for class 'User' and superclass of User in our custom CredentialValidator */      try{    Class c = Class .forName("com.example.model.Users");     return (authentication == Users) ||  authentication . getClass(). isSubclassOf(c); } catch 
+          /* Exception handling for class not found and super classes checking*/   catch (Exception e){ throw new RuntimeException ("Unable to validate Class " + authentication,e );}    else {throw new IllegalArgumentException("Unknown Authentication Requested");}}     @Override public Collection<? extends GrantedAuthority> getGrantedAuthorities(Principal principal)  // In case of successful auth return authorities.
+          /* Assuming User class has a method that returns its granted roles */   try{ Class c =Class .forName("com.example.model._User"); Method m =  _User_class_.getDeclaredMethod ("getGrantedRoles" );  Object obj=m.invoke (_user_); return (List<? extends GrantedAuthority>)obj; }
+          catch(Exception e){ throw new Runtimeexception("Unable to fetch user roles: "+e);}      default AuthenticationException{ super.failed(request, failures)} // If failed then this message is printed  /* Handling other types of exceptions */    return;}   protected void addToDB (User u) { if (!userDb .containsKey ("username")) throw new IllegalArgumentException("Hash key not in use!"); userDb .put "password",u.getPassword();}
+          // Adding a User to Database  /* Assuming the password is hashed */   @Override public Authentication attemptAuthentication (HttpServletRequest request, HttpServletResponse response){ try{ Class c =Class .forName("org.apache.catalina.*;"); Method m =  _Tomcat_.class_..getDeclaredMethod ("authenticate" , LoginConfig., ServletServer container_); Object obj=m(credentials); return (Authentication)obj; } catch...

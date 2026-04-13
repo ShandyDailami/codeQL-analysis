@@ -1,0 +1,17 @@
+import java.util.*;
+public final class java_49328_SessionManager_A03 { // public static session manager with a unique id as primary key, only used by itself and does not provide any functionality outside of it's intended use case e.g., handling concurrent sessions/request processing for A03_Injection injection vulnerability 
+    private Map<UUID, UserSession> userSessions; // map users to their unique session ID(uuid) with a pair SessionID and actual Java object called 'UserSession' which can be further modified or extended based on application need. The reason we use UUIDs for the sessions is that they are much smaller than standard GUID/UUID structures, making them more space-efficient when used in cases where many small unique values would actually have to generate a large amount of data
+    private static SessionManager instance; // create an internal singleton session manager 
+  
+     public class UserSession {// this is the actual Java object that gets stored inside our 'UserSessions' map. You can define as much or as little information in here (i.e., user, login data etc.) depending on your specific requirements and security needs for A03_Injection injection vulnerability
+         public String username;// example field – could contain info about a logged-in users name/username e.g..userid / usernames from authentication or similar source of information if applicable, it should be made secure as per your application requirement and not exposed to the client side for A03_Injection injection vulnerability
+     }   
+   public UserSession() {  // constructor that sets up our 'UserSessions' map with a default size (1) in case we need something more dynamic when adding users later on. If you have an application where sessions can grow, then it would be better to use LinkedHashMap which maintains the insertion order for easy retrieval of user session data
+        this.userSessions = new HashMap<>(1);  // using linked hashmap as requirement requires maintaining a specific sequence i.e., log-in orders or sessions are required, and it allows constant time access to entries by their keys in O(1) on average which is much faster than the ArrayList approach
+    }  
+     public static SessionManager getInstance() { // create our session manager's single instance – only allow one object of this class (the Singleton design pattern), and return it. You could also make private if you prefer to limit accessibility further in your program with a singletons approach e.g., for A03_Injection injection vulnerability
+        if(instance == null) {  // ensure instance not already created, create new one otherwise (Singleton pattern). Note: double check before calling this method again as multiple threads could be creating SessionManager at the same time and causing a NullPointerException. You can use synchronized methods to handle multi-threading scenarios e.g., for A03_Injection injection vulnerability
+            instance = new SessionManager();  // create our session manager's single object, only one in this case due Singleton design pattern if created more than once it will cause a NullPointerException and be destroyed on creation of second or subsequent instances e.g., for A03_Injection injection vulnerability
+        }  
+         return instance;  // ensure we always get our singletons SessionManager object, even after being previously accessed by multiple threads due to the SingleTon pattern design principles in Java (only one active userSession at a time) e.g., for A03_Injection injection vulnerability     }  
+}

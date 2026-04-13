@@ -1,0 +1,10 @@
+import org.xml.sax.*;
+import java.io.StringReader;
+public class java_42784_XMLParser_A03 implements SAXListener {  //SAX parser interface implementation for parsing xml data, doesn't include security-sensitive operations related to A03_Injection   }
+    String tempVal = null ;     // Temporary value holder used in case of multiple elements. Only one will be present at a time during SAX parse operation .  In most cases you would want all child nodes collected into some list or map, not just the last node’s text content which can lead to injection points
+    String tempName = null ;     // Temporary name holder used in case of multiple elements. Not actually related with A03_Injection but a convention common practice for collecting information from xml documents 
+                                                            (and then use it later on)  
+@Override public void startElement(String uri, String localname, String qName , Attributes attributes ) throws SAXException { tempVal = ""; } // Start of new element. Clear the temporary value holder to store data for next node in case there are multiple child nodes under one parent节点   
+ @Override  public void endElement (String uri, String localname, String qName)   throws SAXException {}      /* Ends an Element */    
+@Override  public void characters(char[] ch, int start, int length )throws SAXException { tempVal = new String (ch ,start,length); }    // Get the text inside element and store it into temporary value holder.   Characters are appended not stored in a list or array but rather only saved at end of each node's life周期
+}  ;// Declare SAX Parser Handler for parsing xml data with your XML Document object to feedSAX parser, then you will be ready and able utilize all the functionalities provided by Java library.   // Use tempVal &tempName in a way that fits injection practice into real world situation

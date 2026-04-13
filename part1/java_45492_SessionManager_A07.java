@@ -1,0 +1,5 @@
+import java.io.*;  // for Input/Output stream classes  
+import javax.servlet.*;    // for Servlet class java_45492_SessionManager_A07 HttpServletResponse object    
+import javax.servlet.http.*;// importing servlets from j2ee API in a secure way by using these packages as well...they are provided under the package named http, which contains objects to deal with all sorts of HTTP services that can be used on web applications like GET/POST requests or any other methods
+import java.util.*;  // for ArrayList class  
+// Java collections framework classes    is a part from standard collection API in JDK (Java Development Kit)...So Importing it here as well by using 'java' keyword followed directly without specifying the package name ...Here, I have mentioned all necessary packages which are being used. Also import HttpServletRequest and Cookie

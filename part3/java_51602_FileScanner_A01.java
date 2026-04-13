@@ -1,0 +1,15 @@
+import java.io.*;   // Import File class, BufferedReader class java_51602_FileScanner_A01.,
+public Class Main {    //Start of main method declaration: A01_BrokenAccessControl (A for access control)       
+     public static void main(String[] args){     
+          String dir = "/path/to/directory";  // Set your directory path here. It should be a valid one, otherwise you'll face FileNotFoundException issue :smile:  
+          
+         try {    /*try block to handle exceptions in case of any*/    
+             ClassLoader classLoader= new Main().getClass().getClassLoader();  //To get the reference for current executing file. This line is used when we have a resource that can't be found at runtime, then it throws FileNotFoundException .For example :file_folder:    */     
+             File fileDirectory =new File(dir);     /* creating new directory instance variable*/  //Initialize the object of Directory  
+             if (fileDirectory.exists()) {/*Checking whether specified path exists or not, and then list all files starting with 'A' in a specific folder using Scanner class */     
+                 File[] files = fileDirectory.listFiles(new FilenameFilter()     /*filter to get only the filename startswith A*/    //Using anonymous inner classes for this 
+                     {   @Override public boolean accept (File dir, String name)//This method will call when listfiles function calls it .It accepts two parameters File and string.In our case files is array of file then we can use these parameter to access each element in the directory */     /*We're passing this anonymous class as a argument here for FilenameFilter*/  
+                     {  return name.startsWith("A"); //If filename starts with A, it returns true else false and listFiles function will include that file inside its array so if there is any more files then all are included in our result */    });      /*listfiles method of File class includes the specified directory into a sequence Files*/    
+                  for (File singleFile :  //Iterating through each object present within an Array.The looping variable here will be filename not filepath but only name is used so it's best to make this way, if you want full path then use new File(singlefile.getPath()) */    {    
+                      System.out.println("File Name : " + singleFile); // Print each individual item  or print the list of filenames with their file paths   });      } else{//If directory doesn't exist, this will be executed*/       try {throw new ExceptionInInitializerError();} catch (Exception e) {}    
+              }}catch(Exception Infinity){ /*Ending point where if any exception occurs */    System.out.println("An error occurred."); } //This message is to print the trace when an unforeseen issue happens   });  / End of try-catch block for handling exceptions      };//end main method

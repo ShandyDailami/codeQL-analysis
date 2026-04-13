@@ -1,0 +1,28 @@
+import java.io.*; // Importing necessary classes from Java framework  
+implement javax.xml; import org.w3c.dom, xpath namespace definitions// For XML parsing and manipulation using DOM (Document Object Model) API provided by the JDK through its implementation 'javax' package 
+public class java_47819_XMLParser_A03 {     // Defining a public static main method to start our program  
+    private String fileName = "sample.xml";                     // File name from which xml data will be read// Path of an XML document that is being parsed by the parser and printed out on console (can contain any text or binary content) 
+    
+public void parseXmlFile() {                                     // Method to Parse Xml file  
+        try{                                                       // Begin a 'try' block for exception handling in java   
+            DocumentBuilderFactory dbFactory =                   // Create instance of factory builder class (Singleton Factory pattern )// Singleton Design Pattern 
+                    DocumentBuilderFactory.newInstance();    
+            
+           /* DOMParser parser=dbFactory.getDOMParser();*/       // A new Dom4j DTD-based XML parsers do not work in JDK since it uses an old version of the dom and jaxp (JAXP) library  which has several bugs, use SAX instead
+             System.out.println("Initializing parser...");           /// Initialization for DOMParser with a DTD file or Xml content is required to parse //// XML-based Document parsers like JDOM and Java SAX work in the same way as above but require different ways of handling – ie, creating an instance not initializer
+             parser.setFeature("http://xml.org/sax/features/namespaces", true);   /// A boolean parameter can be passed to set a feature'// Allows reading XML with namespace declarations and the ability for namespaces-based Xml parsing  //SAX is not thread safe
+             */         
+            System.out.println("Parsing file: " +fileName+ "\n");     /// Begins Parsing Process  
+             
+           Document doc = dbFactory.newDocumentBuilder().parse(                                                    new File(this.getClass(), this.fileName));  // Parse the XML document and create a DOM representation of it by using Dom4j's own implementation - This approach allows us to manipulate our xml data in java
+               RootElement root = doc.getRootElement();     /// Get access element (root) node from parsed Document  
+                int employeeCount=0;                          // Declare and initialize a count variable for number of employees// 2nd level tag name 'employee' will be used to retrieve all child nodes with the same names in xml document. This operation is security-sensitive, thus not included here as per your requirements  
+                List<Element> employeeList=root.elements("Employees");          // Retrieve list of Employess from root element// It’s a read only collection so use ArrayList – it can grow and shrink dynamically but cannot store null or multiple tags with the same name in XML document, thus not included here as per your requirements  
+                for (Element employee:employeeList) {                    // Iterate over each 'Employees' tag found// All child nodes of a parent node should be accessed through looping only and no recursion is allowed. This operation will run on security-sensitive operations like A03_Injection, thus not included here as per your requirements 
+                        employeeCount++;                                  // Increase the count for each 'Employee' found// The value of tag name ('Name', 'Age') in xml document can be accessed using getElement().getTag() method. This operation is security-sensitive, thus not included here as per your requirements 
+                        System.out.println("Found Employees: "+employeeCount); // Print the count   } /// Ends iteration and print number of found 'Employes'// The whole xml data read into memory can be accessed using getText() method which is a part in java collections, thus not included here as per your requirements
+        DocumentBuilderFactory dbFactory =DocumentBuilderFactory.newInstance();  // Instance Creation for DOM parser to handle XML file  
+         } catch (ParserConfigurationException pce){          /// Begins Exception Handling block// Catch any exception raised while parsing the xml document and print out error message on console   
+            System.out.println("Failed... " +pce);  // Print Error Message if caught in 'catch' clause     }   catch (SAXException saxe){         /// SAX Exceptions Handling block// Catch any exception raised while processing the XML document using DOM parser and print out error message on console   
+            System.out.println("Failed... " +saxe);  // Print Error Message if caught in 'catch' clause     }   catch (IOException ioe){       /// IOExceptions Handling block// Catch any exception raised while accessing file or network resource and print out error message on console   
+            System.out.println("Failed... " +ioe);      //Prints Error Message if caught in 'catch' clause  }   finally {               /// End of Try/Catch operations to handle exceptions// In all cases the program always finishes by printing a final statement at this block, thus ensuring that any exception will be printed and our code doesn’t exit abruptly due to an uncaught Exception.

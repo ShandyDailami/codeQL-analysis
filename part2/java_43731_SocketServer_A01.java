@@ -1,0 +1,24 @@
+import javax.net.ssl.*;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.security.cert.X509Certificate;
+
+public class java_43731_SocketServer_A01 {
+    public static void main(String[] args) throws IOException, SSLException{
+        ServerSocket server = null;  //SSL socket for secure communication over a TCP/IP connection (port:443). To listen on port 8443 or any other open ports. You can create it with the following line of code "server=new ServerSocket(PORT)" where PORT is your chosen number
+        SSLServerSocket sslServer = null; //SSL socket for secure communication over a TCP/IP connection (port:5001) to bind client connections too using this server. To connect it with the following line of code "sslServer=new SSLServerSocket(PORT,keyManagers, trustAllCerts)" where PORT is your chosen number
+        KeyManagerFactory kmf = null; //To store private key for decryption  and access cipher operations (e.g., encrypt or decryt data) from this factory    To create it with the following line of code "kmf=KeyManagerFactory.getInstance(algorithm)" where algorithm is your chosen encryption/decryption method
+        TrustManagerFactory tmf = null; //To store public certificates for verification purposes (e.g., verify client certificate against a set known CA's) from this factory To create it with the following line of code "tmf=TrustManagerFactory.getInstance(algorithm)" where algorithm is your chosen trust manager method
+        SSLContext sslcontext = null; //Main context for encryption/decryption operations (encrypting and decrypting data). This contains all necessary information such as private key, public certificate etc  To create it with the following line of code "sslcontext=SSLContext.getInstance(algorithm)" where algorithm is your chosen SSL crypto provider
+        
+        // Here you will provide implementation for setting up sslServer and kmf/tmf according to requirements (e.g., providing custom key managers, trust all certs etc)  OR read the certificate file into Certificate object or load from trusted CAs by using a method that suits your needs i.e.:
+        //... here put some implementation ...   like: sslServer = new SSLServerSocket(40123); tmf=TrustManagerFactory.getInstance("SunX509"); kmf=  KeyManagerFactory .getDefaultAlgorithmConstraints();  (Here " Sun X509" is the algorithm for trust all certificates)
+         //Then you can use sslcontext = SSLContextBuilder(kmf, tmf).build() to set up your context and perform operations on data.   You may also want to verify server certificate using methods provided by OpenSSL like:  ct= (X509Certificate[])(chain.getAcceptedIssuers()); for cert verification
+        sslServer = new SSLServerSocket(4321, kmf , tmf ); // Create an instance of Socket in port number "portNo". The argument passed to the method is ServerPort from main class and KeyManager & Trust Manager Objects  here. Here it'll be something like (newSSLserver= new SSLServerSocket(4321,kmf , tmf)).
+         //Here you can get a Client Socket connection as : sock =sslServeer .accept(); then use this socket for communication with client etc...  You will need to handle IOException and complete your program according the given instructions.   (e.g., reading data from stream, sending or receiving message)
+    }     //Here you provide some implementation code..like: int receive= sock.getInputStream().read();// here read a byte of information...  You can convert it to String and handle in your program as per the need like (String str = new String(receive); ) then send or print this received string back using :sock . getOutputStream()..print....
+    }   //Here you provide some implementation code ..like: sslcontext.getProtocol().setDefaultHost("localhost"); and use it to set default host name for SSLContext...  You can also add method calls as per your need e.g., using methods of javax.net etc like :socket .connect(InetAddress address, int port);
+    }   //End here..like: sslcontext= null;sslServer =null;}// Close all the resources at end...  You can use try-catch and finally block as per your needs to handle any exceptions/issues that may occur in program execution. This way you ensure no memory leaks or other unforeseen issues arise during runtime..
+    }   //End here....like: System.out .println("Finished");// End the main method by printing a message and closing all resources etc...  (e,g., using sock.close();sslServer.close() after each line of code; when you close it;) You can do this at end..
+   } //End here....like: public static void Main(String[] args) ...//Here we are declaring a main method and the entry point for our application... It will run your program with all defined requirements.  (e,g., calling sslServer .accept() within loop until condition is met; after closing everything;)

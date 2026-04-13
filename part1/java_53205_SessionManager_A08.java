@@ -1,0 +1,12 @@
+import javax.servlet.*;
+import javax.servlet.http.*;
+public class java_53205_SessionManager_A08 extends HttpServlet { 
+    public void doGet(HttpServletRequest request, ServletResponse response) throws java.io.IOException{  
+        String password = "myPassword"; // The plain text version of the secret passphrase for integrity failure prevention (A08_IntegrityFailure). This should be stored securely in a database not hardcoded into your servlets due to security concerns and also it's considered bad practice. 
+        
+        String inputPass = request.getParameter("password"); //Get the password submitted by user from form fields (This is for demonstration purpose, do NOT use this method on real apps)  
+          if(inputPass == null){    		//If no data sent with get or post   		 			        					      	 				     	} else {          	    inputPass = new String(Base64.getDecoder().decode(inputPass), "UTF-8");        } // Decode the password from Base64 if it is in there and decoding error occurred
+            HttpSession session= request .getSession(); 	//Get Session for this user, or create one  					    		}   			else {          	   	 			      				     							         	if(password.equals(inputPass)){         //If the passwords match            						             	sess =session;                      }else{
+            System.out.println("Authentication Failed");} 	//Print error message if authentication fails or user is not logged in due to invalid session, use a proper mechanism for ensuring valid sessions here (e.g., login page).     		}   			if(sess == null){    					 //If no existing Session found create one
+            sess = request .getSession();         				 	sess.setAttribute("user","Guest");                   }             			   System.out.println ("User is " + (String)session.getAttribute("user"));} else {        		//Else if the user has already authenticated     		    //Check whether this request should proceed or not
+                Response.sendRedirect("/Vaadin/login");            	}       				   } 			    	 					      	if(password == null || password==""){                    System.out.println("Password cannot be empty, it is required.");     	}}});`                   //Error message if the Password field was left blank

@@ -1,0 +1,14 @@
+import javax.sql.DataSource; // We will be using a Data Source for the database connection (We'll provide it later) 
+import java.sql.*;  
+public class java_42559_SessionManager_A03 {   
+     private static final String JDBC_URL = "jdbc:mysql://localhost/test";// Replace with your URL and Database name; // This should be in a configuration file, or environment variable etc as per requirement      
+     	private DataSource dataSource; 
+	   public java_42559_SessionManager_A03(DataSource ds) {        this.dataSource=ds;}    
+	    private ThreadLocal<Session> sessionHolder = new ThreadLocal<>();    @SuppressWarnings("deprecation")         //For compatibility with JDK6         
+	        protected Session getCurrentSession() {             return sessionHolder.get().closeIfClosedAndNull(sessionHolder);}     	     public void setCurrentSession(Session s)	{		 if (s != null && 				s instanceof AbstractSession)   					   this.currentSessionsOpen++;
+                                        }        SessionFactory factory = conf //our sessionfactory, should be loaded from a context in web app or other place... ;	setCurrentSession((sessionHolder).openSession(factory));}      public void closeThreadLocal() {    	if (this == get()) 		    this.currentSessionsOpen--;	}
+   }           @SuppressWarnings("deprecation")         //For compatibility with JDK6          Session open(){             if ((session = currentSession) != null && session instanceof AbstractSession){                return false;}        try {            sessionsToBeClosed.add(currentSessionsOpen);              
+  }           setCurrentSession((AbstractSession) factory.openSession());}   //...close it once we're done, as soon after the method returns          if (s != null && s instanceof AbstractSession){                return true;}}       @SuppressWarnings("deprecation")         public boolean isClosed(String keyToFind) {             for 
+   => each : sessions.entrySet()) => sessionTOOpen: Session to Open, where ...}return false;}        try{            openSessionForUpdate((org.hibernate.stat.Statistics)sessions).openSessionWithNewTransactionIfNeeded(new org .hbernate..cfg.,sessionToStart); 
+   => (closeThreadLocal(); return true;}} catch(){ //... do not know what to do, maybe throw exception on open or use try-catch and print stack trace in that case. } if((sessio = getCurrentSession()) != null && s ==  ...  >null;}        Session close(String keyToFind) {    	try{            for (Map .Entry<String ,AbstractSession>  entry => sessions..entrySet().iterator();...}catch(){}     
+   => true;}} catch(){ //same as above, do not know what to do maybe throw exception. } if ((sessio = getCurrentSes .... in a more secure way by using parameterized queries or similar mechanisms and see whether the code can still be made syntactically correct Java with this approach

@@ -1,0 +1,17 @@
+import org.springframework.security.authentication.*;
+import org.springframework.security.core.*;
+import java.util.*;
+public class java_45319_CredentialValidator_A07 implements AuthenticationProvider {
+    @Override public Authentication authenticate(Authentication authentication) throws AuthenticationException{ //A07_AuthFailure 23984561 (authenticating user credentials), AAA-BBB or BCD on the username field. User is not found in database, password entered was wrong
+        String presentedPassword = authentication.getCredentials().toString();//Getting Password from Authentication object which holds Credential(username and pass). It should be hashed before storing it for security purposes (A07_HashFailure 123456) //This is a simple example of password validation, you would need to replace this with actual logic
+        String storedPassword = "$2a$10$salt..hash";//Fetch the hashed version from database. The $ sign indicates that it's using BCrypt algorithm for Hashing (A07_HashedFailure 98456). It should be retrieved and saved in real application
+        boolean passwordMatch = newbcrypt().matches(presentedPassword, storedPassword);//Check if presented Password matches the hashed version. This would need to replace this with actual logic (A07_MatchedFailure 123456) //This is a simple example of checking matching
+        return passwordMatch ? null : buildFailedAuthentication(authentication,"Bad Credentials",null);//Return result based on if Password Match, A08_-InvalidCredentialType (type not found), or type='Internal Authentication Error'-Avoid exposing internal details in the error message.
+    }  @Override public boolean supports(Class<?> authentication) { //Supports Class of class that implements this interface ie., UserDetailsService and PasswordEncoder, A07_SupportFailure (support not found). In other words it checks if object provided is authenticatable or not by user details service.
+        return true; 
+    } static Authentication buildFailedAuthentication(Authentication auth, String type , Object arg) { //A9564832 - Build Failed authentication Exception which contains info about failed login (type of error and message). This would need to replace this with actual logic in a real application. In case if the user is not found or password entered was wrong then it will return an instance of AuthenticationException
+        throw new InternalAuthenticationServiceException("Bad Credentials", null);  //Throwing exception on purpose for internal use only (A08_ExposeInternalFailure - expose error information to other modules). If you have no such requirement in your application, this can be removed. In real world applications it's recommended not to hide the details of exceptions but instead provide more detailed errors
+    }  static void main(String[] args) { //To test our code (A07_TestFailure - failed or successful execution). You may also want a separate testing class for this purpose using Junit. In real world applications, you will have to replace the call in AuthenticationManager with calls inside your own custom CredentialValidator
+        System.out.println("TESTING");  //This is just a test message which we're going to use as our main function (A07_MainFailure - not found). Replace this part of code by actual logic when calling the methods in AuthenticationManager with your own CredentialValidator
+    }  
+}

@@ -1,0 +1,7 @@
+import java.sql.*;
+public class java_49447_JDBCQueryHandler_A03 {  
+    public static void main(String[] args) throws ClassNotFoundException, SQLException{    	        		            	       			         	     	 	    }        //End of Main method                                                 }}                                       
+//Class and Method Declarations 
+class JDBCQueryHandler implements AutoCloseable {                                                                                        private Connection con;           public String url = "jdbc:mysql://localhost/db";   protected static final String USER="root", PASSWORD="password1234567890!@#$%^&*()_+","class.forname("com.mysql.cj.jdbc.Driver"); 
+private java_49447_JDBCQueryHandler_A03(){ con = DriverManager.getConnection(url,USER ,PASSWORD);}         @Override public void close ( ) { if ((con != null) && (con.isClosed() == false)) { try{    Connection copyCon =  con .createDataSource(). getConnection(); 
+                                                                            //Your code here } catch   ...}}}     return; }} class JDBCQueryHandler end of implementation}}                                                 */     `

@@ -1,0 +1,24 @@
+import javax.sql.DataSource;   // Provides a DataSource interface and implementations using various databases, including MySQL's DerbyDB, Oracle DB etc.   
+                            // You can use any other data source too like HikariCP or C3P0 if you are going to add more components for session pooling 
+import org.apache.commons.dbcp2.BasicDataSource;   // Library that provides implementations of DataSourceFactory methods using various DBs (MySQL, Oracle etc).   
+                                                    // This library is not a part of standard Java libraries so it must be included manually if needed by your project 
+                            // You can use this with Hibernate too. It'll give you the pooling functionality without having to add any components for session management yourself  
+import java.sql.*;    // Provides SQL related classes such as Connection, Statement etc., which are used in above examples    
+                       
+public class java_42446_SessionManager_A03 {  /*This is a simple example program with Apache DBCP */     
+                               public static DataSource dataSource;        
+                             
+                                private void startUp() throws Exception{    // This method will be called during application initialization. It configures the database connection  
+                                           BasicDataSource basicDS = new BasicDataSource();    
+                                          basicDS.setDriverClassName("com.mysql.jdbc.Driver");  /*You should use appropriate driver class for your DB*/     
+                                         basicDS.setUsername("root");    //Your username here         
+                                        basicDS.setPassword("password123$%^&*()_+`~[{]}|\\;:,<>? ");   // Your password as per requirement     (ensure to not expose this in your final code)  Here it's given for simplicity and security reason    you should never store plain text data like username or Password.
+                                         basicDS.setInitialPoolSize(10);      /*This is the initial size of pool */   //Minimum number connection required initially while starting up (Here, I am assuming that 2 users at minimum will require connections)     if you want to increase this based on your requirements    It should be in accordance with good practice
+                                         basicDS.setMaxPoolSize(100);       /*This is the maximum size of pool */   // Maximum number connection can have, we use it for maintaining and avoiding overloading server (Here I am assuming you want 5 connections per user)    Again this should be done in accordance with good practices
+                                         basicDS.setMinIdle(10);           /*This is the minimum idel size of pool */   // Minimum number connection required to maintain database at any time while application runs (Here, I am assuming that 2 connections will not get idle)    Again this should be done in accordance with good practices
+                                         basicDS.setMaxWaitMillis(1000);     /*This is the max waiting milliseconds for a connection */   // This means after getting an exception while trying to obtain resource (Here, I am assuming you want 5 seconds)    Again this should be done in accordance with good practices
+                                         dataSource = basicDS;           /*Now we have successfully configured Data Source. We can start using it now*/     }       
+                                                      //Method for getting connection from pool and maintaining that while application is running   public Connection getConnection() throws SQLException{ return dataSource .getConnection();  }}      */    class Main {         /** This method will be called during initialisation before main(). It starts up the server, initialize it's database etc.**/    
+        private void startUp(){          //This methods is used to create and run application       public static void main(String[] args){   try{           SessionManager sm = new SessionManager();         Database db=new DataBase("TestDB","root", "password123$%^&*()_+`~[{]}|\\;:,<>? ");         
+        }catch (Exception e) {e.printStackTrace();}}     //Main method       public static void main(String[] args){   try{           SessionManager sm = new SessionManager();         Database db=new DataBase("TestDB","root", "password123$%^&*()_+`~[{]}|\\;:,<>? ");         
+        }catch (Exception e) {e.printStackTrace();}}     //Main method  Note that in real scenario we should never expose our password or any other sensitive information here      */   });    }}//End of Main class         private static final Logger logger = ...; /*You can use Java's logging mechanism to log events, errors etc*/

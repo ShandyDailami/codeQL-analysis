@@ -1,0 +1,11 @@
+import javax.sql.DataSource; // standard JDBC data source interface 
+import java.sql.*;   //standard SQL types接口，以及JDBCCallableStatement和CallableStatement方法。   
+public class java_51342_JDBCQueryHandler_A08 {    
+      public static void main(String[] args) throws Exception{        run(); }         private DataSource ds;          /* Here I'm assuming we have a connection pool set up for our database */       // Create and configure the data source 
+private Connection conn = null ;   
+public java_51342_JDBCQueryHandler_A08() {            try {conn  = DriverManager.getConnection("jdbc:mysql://localhost/test", "root","password"); }catch (SQLException e) {e.printStackTrace();}          ds=ConfigureDataSource(ds);  // Configure Data Source    
+      private void run() throws Exception{   try                    (Statement stmt = conn .createStatement())        {           String sql  = "SELECT * FROM table";                   ResultSet rs =  stmt.executeQuery("select query");             while ((rs=stmt.executeQuery(sql)) !=  null){ 
+              System.out.println("\nPrinting each row of the result set: ");               for (int i = 1; i <= rs.getMetaData().getColumnCount(); ++i) {                     String columnName = rs.getMetaData().getColumnLabel(i);                   Logger logger=LoggerFactory.getLogger("VanillaJavaQueryHandler");logger .info("\n\t" +columnName+ ":  \"" + 
+              (rs.getString(i))  + '"');                                                  }                System.out.println();           }}catch    (Exception e){e.printStackTrace()}            finally{         if (conn != null && conn.isClosed()) { try {     rs.close();   stmt.close(); 
+              conn.close();      Logger logger =LoggerFactory .getlogger("VanillaJavaQueryHandler");          logger .info("\n Closing the connection and statement.");         } catch (SQLException ex) {}        }} ; // Main method     private static DataSource ConfigureDataSourc(String driver, String url , 
+      username + password){    try {return   DriverManager.getConnection("jdbc:mysql://localhost/test", "root","password");}catch ( SQLExceptio n) {throw new ExceptionInInitializerError(); }          return null ; }}        // End of VanillaJavaQueryHandler

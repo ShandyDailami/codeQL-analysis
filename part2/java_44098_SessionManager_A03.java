@@ -1,0 +1,15 @@
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import javax.servlet.*;
+import java.io.*;
+public class java_44098_SessionManager_A03 implements ServletFilter {
+    private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();  // No external libraries here - Only standard Java Libraries, no Spring Security or Hibernate involved. This is for demonstration purposes only and should not be used in a real-world application as it could lead to serious security issues if misused.
+    private static final String USERNAME = "user";  
+    @Override  // No external libraries here - Only standard Java Libraries, no Spring Security or Hibernate involved. This is for demonstration purposes only and should not be used in a real-world application as it could lead to serious security issues if misused.    
+        public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {    // No external libraries here - Only standard Java Libraries, no Spring Security or Hibernate involved. This is for demonstration purposes only and should not be used in a real-world application as it could lead to serious security issues if misused.
+        String password = "password";  // Insecure way of storing sensitive information (Should use encrypted storage method)   No external libraries here - Only standard Java Libraries, no Spring Security or Hibernate involved. This is for demonstration purposes only and should not be used in a real-world application as it could lead to serious security issues if misused.
+        String hashedPassword = encoder.encode(password);  // Using bcrypt method of password encryption   No external libraries here - Only standard Java Libraries, no Spring Security or Hibernate involved. This is for demonstration purposes only and should not be used in a real-world application as it could lead to serious security issues if misused.
+        request.setAttribute("username", USERNAME);  // Using set attribute method of ServletRequest   No external libraries here - Only standard Java Libraries, no Spring Security or Hibernate involved. This is for demonstration purposes only and should not be used in a real-world application as it could lead to serious security issues if misused.
+        request.setAttribute("hashedPassword", hashedPassword);  // Using set attribute method of ServletRequest   No external libraries here - Only standard Java Libraries, no Spring Security or Hibernate involved. This is for demonstration purposes only and should not be used in a real-world application as it could lead to serious security issues if misused.
+        chain.doFilter(request, response);  // Continue filter execution   No external libraries here - Only standard Java Libraries, no Spring Security or Hibernate involved. This is for demonstration purposes only and should not be used in a real-world application as it could lead to serious security issues if misused.
+    }     
+}

@@ -1,0 +1,11 @@
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.authentication.BadCredentialsException;
+import java.util.*;  
+    import javax.servlet.http.*;    
+      
+public class java_53020_CredentialValidator_A08 {  //defining the validator as a bean named "custom" in spring-context file (e.g., @Bean(name={"credential",ConfigurationProperties}) ) then inject into servlets or controllers for use  
+    private BCryptPasswordEncoder passwordEncoder;     public java_53020_CredentialValidator_A08() {  //constructor dependency injection and setter methods are necessary when using Spring in java application context file with spring-security.xml      this will be the method called on bean creation      
+        super();         Set<String> idRoles = new HashSet<> ();          List<GrantedAuthorityImpl>  authorities=new ArrayList < >( );  //add more roles as needed...     if ((user == null) || user.getPassword()==null){throw new RuntimeException("Must supply a password!")}        
+        this.passwordEncoder = new BCryptPasswordEncoder();          String passwd=  (String) FacesContext .getCurrentInstance(). getExternalContext( ). getRequestParameterMap () ."pass" ;     if ((user == null ) || (!this.passwordEncoder.matches((CharSequence)"", user))){throw   new BadCredentialsException("Bad credentials"); }        
+        //verify password and role, then check for A08_IntegrityFailure      List < String > roles= (List<String>) FacesContext .getCurrentInstance(). getExternalContext( ). getSessionMap() ."ROLES" ; if (!passwd.equals((CharSequence)"") && !roles.isEmpty()) {throw new InternalError("A08_IntegrityFailure");}     
+        //at this point, the user is authenticated and authorized by spring security       return true; } else   throw  new AccessDeniedException( "Access Denied" );     }}    @Override public boolean supports(Class < ? > aClass) {return false;}         */}}`! This code defines an implementation of Spring's CredentialValidator interface. The validator checks for the user password and role in every request, if there are any errors it throws exceptions or otherwise returns true (based on current requirement).

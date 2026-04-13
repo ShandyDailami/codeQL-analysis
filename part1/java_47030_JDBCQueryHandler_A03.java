@@ -1,0 +1,11 @@
+import java.sql.*;   // Import the necessary classes from JDBC package   
+class java_47030_JDBCQueryHandler_A03 {    
+       public static void main(String[] args) {     
+        String url = "jdbc:mysql://localhost/testdb";//Replace with your database URL and name, e.g., jdbc:mysql://servername/databasename  or if you're using username & password then like below - 'username',password@database_url(s)
+        String user = "root", pass="admin123"; // Replace with your MySQL Username and Password, e.g., root , admin123 (if different from mysql server settings).  OR you can use the below way to set username & password while connecting into database    
+           try {       
+                Class.forName("com.mysql.cj.jdbc.Driver"); // Load MySQL driver    - com.mysql.cj.jdbc . Driver class is present in JDBC package by default, if it's not there then you need to download this from mysql official site (http://dev.mysql.com/downloads/)
+               Connection con = DriverManager.getConnection(url , user , pass); // getting connection object  - getConnection method of the driver class is used here for creating a database link between Java and MySQL server, it returns an instance 'con' which we can use to perform SQL operations like fetching data from db etc  
+               Statement stmt = con.createStatement();        // create statement (statement will be able to execute queries)    - It is used when you want the database connection but not for modifying databases, it should always end with a semicolon  ;     
+                ResultSet rs;     // Create result set object   - This helps us store results from our SQL query into memory. If no matching row found then null will be returned otherwise we can get that data using this 'rs' variable    }       catch (SQLException e) {        System.out.println("Error in Connection " +e);    
+            // Close the connection and release all resources  - It is done when there are not enough operations to do or if exceptions occur during operation          try,finally block used here for resource management             }      finally{       con.close();         System.out.println("Connection closed");}}   catch (ClassNotFoundException e) {e11estemáximo de empleosde la base de datos: com;

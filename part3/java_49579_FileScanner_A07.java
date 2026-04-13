@@ -1,0 +1,8 @@
+import java.io.*; // Import Java IO classes required by the program, such as FileReader or BufferedWriter etc...  
+public class java_49579_FileScanner_A07 {
+    public static void main(String[] args) throws IOException{    
+        String directory = "/path/to/directory";  /* Change this to your target location */        
+		String fileNamePattern  = "*.txt" ;      //Change it if you want a different type of files. e,g., *.* or .* for txt and other types like docx etc...            
+        File directoryFile = new File(directory);          /* Create the instance to work with Directory */   	    		  			 	   	 									      	        // Opening an existing file        							                  	// Reading a line from text, writing on it.      } else {              LoggerUtilities.logError("The directory does not exist!"+directory);        return;}}
+	      File[] files = dirFile.listFiles(new FilenameFilter()  /* Use this if you want to filter file types */   	    		  			         	   	 									      	        { public boolean accept (File dir, String name)           // Adding the listFiler method        						                  
+        return false; }});             }} else {{ LoggerUtilities.logError("The directory does not exist!" +dir);             	return;}  /* If error */}}}}}  	    		   	   	     	       					       /* Callback for when a file is scanned or an exception has occurred, use this to handle errors in the program

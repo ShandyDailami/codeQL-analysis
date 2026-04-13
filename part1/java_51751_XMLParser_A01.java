@@ -1,0 +1,3 @@
+import org.apache.xmlpull.v1.XmlPullParser;
+import java.io.*; // for InputStream, OutputStream and FileReader class  	    		      			     	 									   	   						          									} else if (arg[0].equals("-x")) { … } catch(Exception e){ printHelp(); System.exit(-1);} private static void parseFile() throws Exception{ XmlPullParserFactory factory = XmlPullParserFactory .newInstance(){ InputStream input = 
+    new FileInputStream("/home/user"+fileName + ".xml") … } catch (IOException e) { printHelp(); System.exit(-1);} try(XmlPullParser parser=factory.newPullParser()){ pars...	    		      			     	 									   	   						          									} finally{ if(!inputStream .isClosed())try	{ inputStream	.close ( ); } catch …

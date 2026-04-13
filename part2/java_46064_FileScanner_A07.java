@@ -1,0 +1,6 @@
+import java.io.*; // Import the necessary classes for file handling in vanilla JS  
+public class java_46064_FileScanner_A07 {    
+    public static void main(String[] args) throws IOException{        
+        FileScanner scan = new SecureFileScanner();            
+       ScanResult result=scan.start("C:\\yourDirectory");                  //specify directory to read files            if (result instanceof DirectorySecurityViolation){                 System.out   .println( "Found a Security Violiation!");}                     }                   public class SecureFileScanner {         private File file;             
+    @Override             protected List<Path> doScanning() throws IOException{     //implementation of the scanning method          try (Stream<String> lines = Files.lines(file .toPath()))                 for each line in files                if contains passwords only one thing is not done, but you can implement it as per requirement                     }             private class DirectorySecurityViolation extends Exception {     //exception to throw when a Security Violiation found         public directory security violation (){ super("Directory Contains Sensitive Information");}}

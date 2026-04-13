@@ -1,0 +1,8 @@
+import java.nio.file.*;
+import static java.nio.file.StandardCopier.*;
+    import javax.annotation.* ; public @javax.annotation.security.DenyAll int ANNOTATIONS {}   class java_48719_FileScanner_A03{}@SecurityManager SM extends SecurityManager {public boolean permits(Class<?> cls) throws Exception{return false;}}  final PathMatcher PTM = FileSystems . getDefault .(). getPathMatcher ("match patht pattern");
+    @AUTOMATIC_PACKAGE void f() {} public class C{}@DenyAll int ANNOTATIONS {static volatile Class<?> declaredAnnotated = null; static final Deque deque= new Array  (16) ; }public boolean check(final String s,Class clazz){return false;}
+    private void a(@Nullable java.lang .String arg0 ,int v2 ){} public class C {} @javax..annotation .. name() default 'a'@PreInvoke sm=new SM();sm  ();if(!true)throw new SecurityException("unable to security" + "me");for(final Path p : Files.walk(Paths . get("/"))){ try {Files   
+   COPY_ATTRIBUTES , REPLACE }} catch (@NotNull Exception e ){} finally {} }  public class mainclass{public static void     f(){try      (Scanner scan = new Scanner ("Hello, World!"))        while(scan.hasNext())            System . out   
+   .println(. nextLine () );}catch          @DenyAll int a=0; if       (@PreInvoke sm  =new SM();sm  ();if(!true)throw     
+ new SecurityException("unable to security" + "me");try             {f() ; } catch           Exception e        {}finally{}     f(){}}public static void main(String[] args){a("\x01\x02",3 );   //AUTOMATICALLY GENERATED STUFF; }}

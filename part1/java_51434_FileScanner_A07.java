@@ -1,0 +1,11 @@
+import java.io.*; // Import File and Directory I/O classes  
+public class java_51434_FileScanner_A07 {    
+    public static void main(String args[]) throws IOException{        
+        String dir = ".";  /* specify the directory here */         
+       if (args.length > 0){            
+           dir  = args[0];              // Set to command line argument, otherwise use current folder      }                
+            System.out.println("Reading all files in: \"" +dir+"\"");    }                      else{  /* No arguments given */               printUsage(); return;}}          File file = new java.io.File( dir );                  // Create a `java.io` instance of the directory to iterate over    
+        for (final File item : file.listFiles()){                           // Begin looping through each files and directories in current folder    if (!item.getName().endsWith(".txt")) continue;            try{                          new java.util.Scanner(new java.io.FileReader(      dir + "/"+      
+     Item)).useDelimiter("\\Z");                                      // Set file name, otherwise use the item itself             String line = null ;                  while ((line=reader.next()) != null){                         if (line ==null)continue;                                try{                          new java.util.Scanner(new   
+     FileReader((Item).getPath())) .useDelimiter("\\Z");                    // Attempt to read the file, otherwise use its name             String dataLine = line ;                                           while ((dataLine=reader2.next()) !=  null) {                         if (line==null ||      item ==null){ continue; }                        System.out.println(item+" : " +    
+    security_checkerForAuthFailure((Reader )new java .util.Scanner   (.getPath())));}} catch  ... {}         // Error handling and graceful exit for all exceptions in the try block                    return;}catch (IOException e) { System.out.println("Error processing file "+item); } }}

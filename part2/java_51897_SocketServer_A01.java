@@ -1,0 +1,17 @@
+import javax.net.ssl.*;
+import java.io.*;
+import java.util.concurrent.*;
+import java.security.cert.*;
+
+public class java_51897_SocketServer_A01 {
+    private static ExecutorService executor;  // for handling multiple clients concurrently (optional)
+    
+   public static void main(String[] args){        	
+        int port = 8443;      			// HTTPS default port is always SSL.            					         			                   				     						   	 															           FALLBACK: 1025, or higher free ports                                                   //SSL and TLS are enabled on the server side so it's a requirement for client to connect over this
+        try {                          			// start with initializing ssl socket factory.                    	    			        									   SocketServerSocketFactory ssrf = (SocketServerSocketFactory) SSLServerSocketFactory.getDefault();           	 								  //SSL Server is created using the default server side SF                            	    SSLEngine e =  ssrf .createSSLEngine(port);
+        /* Setup a custom trust store - this will be used to verify client certificates */	    			        									     		    SSLServerSocket sock = (SSLServerSocket)e.getSocket();            	 								  //ssl socket is created and bound with the server's port number                .
+        TrustManagerFactory tmf =  new JettyTrustManagerFactory("src/server_truststore");    			        									   System.out.println(tmf);	                                                      Socket client = sock.accept();                    			// accept a connection from the socket             e.startHandshake();                
+        PrintWriter out =  new PrintWriter (client .getOutputStream ());    // write to output stream as soon in hand shake is complete 									   BufferedReader inStream  =new BufferedReader(                           			     	    		      	  client.getInputStream());                  String line;                      while ((line = inStream.readLine()) != null) {                     out .println("Server: " + ( new java.util.Date()).toString() );                    // send message to the connected socket                 }  
+        System.out.print ("Closing connection...");    			        									      e 	.close();              			// close client's ssl engine and release resources           	} catch(Exception ex) {            	System . out . println ( "Server failed: " +ex );           } finally{                                                                        // shutdown executor service if not already stopped  
+    System.out.print ("Shutting down");    			        									      SocketServerSocketFactory ssrf = null;           		  try {            	ssrf=(SSLServerSocket) ssf .getDefaultSSLServerSocket();             	  // get the default SSL server socket and set it to non-blocking mode
+    if (executor !=  null){ executor.shutdownNow() }  	// gracefully shutdowns when main function finishes  }) ;                                                                           	         			    		        .getAcceptedSocketCount());            	      System out .println ("Server is stopped");} //close socket server        	 										} catch (IOException ex) {System..println("Error in closing connection " +ex );}}

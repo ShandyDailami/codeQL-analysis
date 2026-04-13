@@ -1,0 +1,14 @@
+import org.springframework.security.authentication.*;
+import org.springframework.security.core.*;
+import java.util.*;
+
+public class java_51013_CredentialValidator_A07 implements CredentialsValidator {     // A07_AuthFailure begins here, so we should not throw exception in constructor of this program to prevent authentication failure by the Spring Security's AuthenticationManager 
+                                                                         // (A62) - Refer JASPIC-SPRINGSEC139 for details. The class name 'LegacyCredentialValidator'. This is a placeholder, please fill up with appropriate logic and remove this comment once you have filled it in using actual values  ^_^
+public java_51013_CredentialValidator_A07() {  // A07 Authentication failure begins here - Spring Security's Credentials Validator. (A62) Refer JASPIC-SPRINGSEC139 for details on how to use this class in a real program, the logic of 'LegacyCredentialValidator'.
+}   // A07 Authentication failure ends here - Spring Security's Credentials Validator. (A62) Refer JASPIC-SPRINGSEC139 for details on how to use this class in a real program, the logic of 'LegacyCredentialValidator'.
+@Override   // A07 Authentication failure begins here - Spring Security's Credentials Validator. (A62) Refer JASPIC-SPRINGSEC139 for details on how to use this class in a real program, the logic of 'LegacyCredentialValidator'.
+public Authentication validate(Authentication authentication){  // A07_AuthFailure begins here - Spring Security's Credentials Validator. (A62) Refer JASPIC-SPRINGSEC139 for details on how to use this class in a real program, the logic of 'LegacyCredentialValidator'.
+    // Your validation code goes there...  For example:   authenticationManager = SecurityContextHolder.getContext().getAuthentication(); User user= (User)authentication; String passwordAttempt =  ((UsernamePasswordAuthenticationToken)user).getCredentials(); if(password==null || !MatcherFactory.getDefaultInstance() .matches("{cipher}", new SecretKeySpec((byte[] ) CryptoUtils.decodeHexString("/9j/4AAQSkZJ... (truncated for brevity)..."), "AES"))){ throw new BadCredentialsException ("Invalid password"); } return authentication;
+    // Replace the comment with your validation logic and remove this line ^_^   A07 Authentication failure ends here - Spring Security's Credentials Validator. (A62) Refer JASPIC-SPRINGSEC139 for details on how to use these classes in a real program, the Logic of 'LegacyCredentialValidator'.
+}   A07 Authentication failure ends here - Spring Security's Credentials Validator. (A62) Refer JASPIC-SPRINGSEC139 for details on how to use these classes in a real program, the logic of 'LegacyCredentialValidator'.
+}   A07 Authentication failure ends here - Spring Security's Credentials Validator. (A62) Refer JASPIC-SPRINGSEC139 for details on how to use these classes in a real program, the logic of 'LegacyCredentialValidator'.

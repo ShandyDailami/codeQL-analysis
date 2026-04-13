@@ -1,0 +1,6 @@
+import java.sql.*;      // Import Statement, PreparedStatement and ResultSet classes    
+public class java_52882_JDBCQueryHandler_A01 {         
+       public static void main(String[] args)        {         System.out.println("Connecting to database...");              String url = "jdbc:mysql://localhost/testdb";    //JDBC driver name and database URL     
+               try     {           //Create a connection             Connection conn  = DriverManager.getConnection(url, dbUser , password );          System.out.println("Connected to DB");         String sql = "SELECT * FROM users WHERE username=?";              PreparedStatement pstmt   =conn.prepareStatement (sql);              
+pstmt.setString(1,"userA") ;           //Set the parameter value            ResultSet rs  =   pstmt .executeQuery();             while (rs.next()) {                 System.out.println("Found user");                     String username =    rs.getString ("username" );  println      
+     } catch(SQLException e)        {         //Handle any SQL exception           e.printStackTrace() ;               DriverManager.   disconnect      (conn);          System.out.println("Disconnected from DB")             }}            };`;    CloseableStatement cstmt = conn .createCloseableStatement();

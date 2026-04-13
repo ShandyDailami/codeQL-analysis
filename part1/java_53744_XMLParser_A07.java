@@ -1,0 +1,7 @@
+public class java_53744_XMLParser_A07 {  
+    public static void parse(String xml) throws Exception{    	        		            	 	       	     	   
+        // Remove comments from string      
+        String sanitizedXml = cleanCommentFromXMLStringsInJavaDom("<root>"+xml.replaceFirst("/><?.*", " ?>") + "</root>"); 
+         									     			    	        		            	 	       	   	     ​       }}}});        .*$/.trim());      ^_`;,.,';-('./gimme(s) your real XML response here. If not yet authorized - provide a valid one and replace above code with that
+  // Parse xml string to Document object    	        		            	 	       	     	      public static void main (String[] args){       try {              String myXML = "<root><AuthFailure xmlns=\"http://www.example/authfailure\"/> <userID>1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ <password>ILoveXML</Password><rememberMe /  statusMessage >Not Logged in. Please log on again!  <statusCode> 401 Unauthorized . //Here we are assuming that the authFailure tag exists, but if it doesn't exist then you need to add exception handling for this case too..
+         parse(myXML);   } catch (Exception e) {    System.out.println("There was an error parsing XML: " +e );  }}

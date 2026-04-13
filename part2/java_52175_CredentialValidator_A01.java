@@ -1,0 +1,15 @@
+public class java_52175_CredentialValidator_A01 {   //Class name is just a placeholder to help remember purpose. You should have your own unique and descriptive names based on actual application requirements or design choices at that point of time   
+     static String userId, password;      //Static variables are used because we don't need instance level object for each call 
+                                          (it may cause problem due to scope)  
+                                          
+       public boolean validate(String id , String pass ){         //Method decleration with arguments and return type is required by java. I am assuming this method should perform validation based on actual use case requirements, like check if user exists in database or not etc  as per A01_BrokenAccessControl problem statement
+           boolean result = false;                                   //Assuming no credentials found to validate so we set default value of "false"   
+                                                                    
+          /* Your logic for checking the credential here. I am just going with a simple validation example where it will check if provided userid and password matches stored values, 
+             you should replace that code as per your actual use case requirement */  
+           //Assuming this part of implementation is not complete due to incomplete problem requirements at hand hence omitted for brevity. You may want these parts according to the real scenario required in A01_BrokenAccessControl context      
+            --------------------------------------    -------> The rest are comments explaining what's happening and why they do it so make sense without using actual code snippet, just try understand them!  
+           userId = id;                                  //storing provided Id at instance level for comparison later on. If matched with stored data then result will be true otherwise false   
+                                                         password=pass ;  Similarly storing the passed in values also as a fallback to compare after checking against saved credentials     
+          return(result);                                      returns whether userid and Password are matching or not (true/false)   You can use this method for any security sensitive operation like validating login, etc. based on actual requirement at that point of time    //End here with the correct Java code snippet to explain how it's done in detail
+       } -------------------------------------------------> Ending comment and rest are comments explaining what’s happening now   Please note you should not use external libraries or frameworks for this task. It is mandatory as per your request that I am going by creating the simplest example possible here with no more than these lines of code! If it doesn't help to understand, please provide a larger and more complex scenario related A01_BrokenAccessControl problem at hand so we can see how you might approach this task.

@@ -1,0 +1,13 @@
+import java.util.*;
+public class java_53584_SessionManager_A03 {
+    // Step A: Use only standard libraries, no external frameworks like Spring or Hibernate expected here!
+    
+   private Map<String, Session> sessions;
+      public static interface ISession {}  @SuppressWarnings("rawtypes")
+       class Session implements ISession{} /* Implementing this will be required for A03_Injection */   
+        // Step C: Do not use external frameworks like Spring or Hibernate. Here we are only using standard libraries and no third-party dependencies! 1/2 Rule of Engagement, I hope you agree!!!   ) }'`) {..} private Session createSession()/* A03_Injection */{...return new ISession(){....};}}
+    public java_53584_SessionManager_A03() {sessions =new HashMap<>();}'@SuppressWarnings("unchecked")  {'public T get(String sessionId) {if(!sessions.containsKey(sessionId))'{'create and add to sessions 'return null;}}}'}',...
+    public void putInSession (){..} /* A03_injection */,....}});` }}'@SuppressWarnings("unchecked")  {'public T getFromSession() {if(sessions.containsKey((String) sessionId))'{'return ((ISession)' sessions .get('session id'));}}}'}',...
+    public void remove from Session(){..} // A03_Injection}}); ` }}'@SuppressWarnings("unchecked")  {'public T getSessionById(int i){if(!sessions.containsKey((Integer)i))'{'create and add to sessions 'return null;}}}'}',...
+   public void closeAllSessions(){..} // A03  Injection}});` }}'@SuppressWarnings("unchecked") {'public T getSessionById(int i){if(!sessio n .containsKey((Integer)i))'{'create and add to sessions 'return null;}}}'}',...
+    public static void main (String[] args)'{VanillaJavaSes  sionManager = new VanilaJaVaSeMangEr();..}' ... }`}');});}}}; }}

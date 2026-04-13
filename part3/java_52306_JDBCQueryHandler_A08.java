@@ -1,0 +1,6 @@
+import java.sql.*;   // Import necessary Java libraries/classes   
+public class java_52306_JDBCQueryHandler_A08 {
+     public static void main(String[] args) throws SQLException{      
+         Connection con = null;      // Declare a connection object         
+	 Statement stmt=null, rsStmt=null ; 	//Statement and ResultSet objects  		   
+           try                   	   	 			                 {                          									                                                                                     								                          .                             }                              else                         if (args.length == 0)                   then {}        // No command line arguments         throws SQLException{}          catch(SQLException e){e.printStackTrace();}            finally{if(!con.isClosed()) con.close() ;   rsStmt and stmt are used to manage the result set's transactions,  if they were not closed beforehand then it should be manually managed after use }}}

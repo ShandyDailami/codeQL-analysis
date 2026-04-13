@@ -1,0 +1,26 @@
+import java.util.*;
+public class java_53646_SessionManager_A01 {
+    private Map<String, String> sessionIdToUserName = new HashMap<>(); // Store UserIDs and corresponding Usernames in a secure manner (This is where A01_BrokenAccessControl will be applied) 
+    
+    public void startSession(String user){  
+        UUID uuid=UUID.randomUUID();          //Create session id using universally unique identifier, this would allow for every client to have its own independent Session ID which can't be guessed without knowing the other users (A02_BrokenInputControl) 
+                                          	// Also ensure it is not predictable or reused accidentally. It should also prevent collisions on user login/logout operations in a way that reduces chances of session hijacking attack scenarios as explained below by CWE-798(C).   (A03_BrokenLogicalControl)
+        String secureSessionId = uuid.toString();  // Store the generated UUID into sessionsHashMap and also store username associated with it in another Hashmap, this is where A01 BrokenAccess Control will be applied as session IDs can't directly access user names (AO1_BrokenRepetitionAttack)
+        System.out.println("Starting Session for User : " + secureSessionId);  // This should not show in the output, but it is being used to simulate this scenario by showing where and how session IDs are stored - A02 BrokenInputControl). (AO1_BrokenRepetitionAttack)
+        sessionIdToUserName.put(secureSessionId, user);  // Store UserID against Session-id in a secure manner to prevent unauthorised access and attacks like Repetitive Attacks A03 BrokenLogicalControl   (AO1_BrokenRepetitionAttack)
+    }
+     public String getUserName(String sessionId){  // This method should be secured with the same principle as above. It returns username associated to provided sessionsID, ensuring user name can't ever change by mistake without re-authenticating or logging out (A01_BrokenAccessControl).   
+        return sessionIdToUserName.get(sessionId);  // AO2 BrokenInputValidation: This method cannot accept null inputs and must always validate if the provided id is in our list of allowed sessions, avoiding unauthorized access attempts for attack scenarios (A03_BrokenLogicalControl)
+    }  
+     public void endSession(String sessionId){  // Session should close after some time or when it’s no longer needed. For this case the code is a bit complex because sessions need to be closed, not just accessed but also by user (A02_BrokenInputControl). This would involve checking if username associated with provided id exists and then removing them from sessionIdToUserName map where AO1 BrokenRepetitionAttack & 
+     CWE-798(C) is applied.   // Also ensure it does not allow for unauthorized access (A03_BrokenLogicalControl). It should also close the associated users session by simply removing them from map, preventing any user who was logged in but has now been logoutted or timed out and trying to login again as a breach of AO1 BrokenRepetitionAttack.
+        String username = getUserName(sessionId);  // If found ,then remove the session id - Username is also removed from map (A03_BrokenLogicalControl) & ensure that only when user has logged out, Session ID cannot be accessed or used by someone else in breach of AO1 BrokenRepetitionAttack.
+        if(username != null){ // If username found then session can't end as a result there will always remain some id associated with the name  (A02_BrokenInputControl) & no user named 'null', preventing unauthorized access attempts for attack scenarios AO1 BrokenRepetitionAttack.
+            System.out.println("Ending Session : " + sessionId); // This should not show in output, but it is being used to simulate this scenario by showing where and how sessions are ended -  (A02_BrokenInputControl)   AO1 BrokenRepetitionAttack
+            System.out.println("Session Ended for User : " + username); // This should not show in the output, but it is being used to simulate this scenario by showing where and how sessions are ended -  (A02_BrokenInputControl)   AO1 BrokenRepetitionAttack
+            sessionIdToUserName.remove(sessionId);// Remove user from map using just SessionID avoiding any unauthorized access attempt for attack scenarios like the repeated attacks described above, CWE-798 (C).  It's also ensuring that once a sessions is ended or if it’s not needed anymore session ID cannot be accessed/used by someone else.
+        }else{ // If there was no user associated with this id then only print and end the message - AO2 BrokenInputValidation: This ensures to provide feedback when an invalid input provided for accessing a username is caught (A03_BrokenLogicalControl)   which prevents access attempts unknowingly breaking secure session management.
+            System.out.println("Invalid Session ID");  // If there was no user associated with this id, print and end the message - AO1 BrokenRepetitionAttack & preventing unauthorized sessions by re-authenticating or logging out users (A03_BrokenLogicalControl).
+        }  
+    }     
+}  // This closes class SessionManager. End of code segment with '

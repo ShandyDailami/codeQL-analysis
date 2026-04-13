@@ -1,0 +1,12 @@
+import java.io.*; // Importing necessary classes from Java's I/O package    
+      import javax.security.auth.*; //Import required security related packages like AccessControlContext, CallerPrincipal etc      
+public class java_42699_FileScanner_A01 {        
+private static File file; 
+   private final String SECURITY_VIOLATION = "Security violation!";   
+        public java_42699_FileScanner_A01(String s)     throws IOException{         
+            this.file= new java.io.File (s);               }                   // Constructor            
+       @Override                     protected AccessControlContext getAccessControlContext() {  return null;}              void scan(){                      try                    { FileScanner fs =null;                  if(fs==null)thrownewIllegalStateException("Already opened!" );     else throw new IllegalArgumentException(); } catch (IOException e){            
+        //Do nothing. It is because we have already scanned in previous times                     ;}  @Override           protected FileVisitResult visitFileFailed(Path file, IOException exc){   return null;}}    static Main mainMethod=newMain     Maim      (".");                   try{ new       FILescanner().scan (file);                    } catch
+        any            exception e                      { System.err . println         (. format("Caught an exceotion: %s",e));}                 PrintWriter   pw = null;                     if(p w==null)thrownew IllegalStateException    ("Already Writter");                             try              (PrintStream out= newP          Stream     Syst       em.out);                    e         .print("Hello, World!")} catch 
+        IOException ex {System                  . err      . println(ex               .getMessage()); }}}};}   if(__name__=="main"){synchronized (Main             .class){try           new Main              (".").scan();                     }}catch    Exception e          )     System.err 
+        .println("Exception: "+e);}}}                                                                       catch(SecurityViolationExc! exception) {System..out...   println("\n\t" +exception      ..getMessage());}};printStackTrace()} ;           }                     }; Main         ().run(); }}`    //Code ends here.

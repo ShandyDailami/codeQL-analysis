@@ -1,0 +1,14 @@
+import org.xml.sax.*;   // Import SAX parser library    
+import javax.xml.parsers.*;   //Import XML parser API (Java Standard Edition) from Java SE platform libraries and other modules, for handling different kinds of data sources like files or streams etc.. 
+                            /*SAX is a pull-based parsing method that reads the input xml file one element at a time*/     
+import org.xml.sax.helpers.DefaultHandler;   // Import SAX helper classes from XML parser API    
+    import java.io.FileInputStream;       //Importing File Input/Output Stream for reading and writing an .XML document in Java – IMPORTANT: you must have 'javax.' libraries included to use the following code as they provide functionality that was not present before, particularly on Android platforms (which uses a different library).
+    import java.io.*;                       //Import Input/Output Streams   for reading and writing files in Java    
+public class java_48094_XMLParser_A08 extends DefaultHandler {  /*SAX handler is like an event driven parsing API */      
+      public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException{    //Method to be called when a new element starts.   Receive the URI (the namespace), name of node and its type  as parameters     } /*SAX parser's methods */     
+}         public class TestSaxParser {        private static final String filename = "example_file.xml";//input file          
+public static void main(String[] args) throws ParserConfigurationException, SAXException{          //Main method to start the parsing process       FileInputStream fis=new      InputStreamReader (System .in);     /*SAX parser's methods */    }   private XmlParser myparser; 
+private Source mySource ;           public java_48094_XMLParser_A08() {        try {myparser = XMLReaderFactory.createXMLParser( new File("example_file2148675309xml") ,new SAXHandler() );} catch (FileNotFoundException e) {} }            /*SAX parser's methods */    
+// the setSource method, which sets up a source for parsing.        public void   startElement(String uri, String localName,  //the namespaceURI and qualified name of xpath to select documents in XML-DTD syntax (an optional feature) are passed as parameters         myparser .setFeature("http://apache     .org/xml/features/nonvalidating/strict", false);        }
+}    /*SAX parser's methods */  public static void main(String[] args){          //Main method to start the parsing process       FileInputStream fis=new      InputStreamReader (System .in;//input file           TestSaxParser ts = new     TestSaxP arser();
+}        } /*SAX parser's methods */ public class MyHandler extends DefaultHandl e {   //Default handler for the SAX Parser. Receive an element as parameter          protected void startElement(String uri, String localName,  ...//code is omitted in this example       }}/*end of code*/

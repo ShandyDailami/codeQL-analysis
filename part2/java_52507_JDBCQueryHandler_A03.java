@@ -1,0 +1,9 @@
+import java.sql.*;   // Import the necessary classes from 'java' package   
+public class java_52507_JDBCQueryHandler_A03 {     // Start of main method (must be public) and start a new Java Project      
+// Entry point for your program, here is where you initialize objects     
+static Connection con = null; 
+ Statement stmt =null ;  
+JDBCQueryHandler() {}    static int count = 0;     // Declare global variables to use in the methods.        public static void main(String[] args) { new JDBCQueryHandler(); }       private String url="jdbc:sqlserver://localhost;"+ "user=sa13_injector;" +"password= 92b6e4a7-0cbe-"
+}  // End of the class definition.   The main method (here) is declared as static and public to allow instantiation from outside classes, allowing for a new instance when required in this way: JDBCQueryHandler obj=new JDBCQueryHandler();    }      void connectToServer() { try{ con = DriverManager .getConnection(url,"sa13_injector", "92b6e4a7-0cbe-" +"password"); stmt  =con.createStatement();}catch (SQLException e) 
+// Start of catch block to handle SQL exceptions      }   void executeQuery() { try{ // Execute a query on the database    select * from Employee where id = 123; if(stmt != null){stm tmt .executeUpdate("select count (* )from EMPLOYEE WHERE ID = " +id );}catch (SQLException e) {} } 
+// End of catch block to handle SQL exceptions   }}     // end exception handling code      private static final Logger LOGGER =  LogManager.getLogger(JDBCQueryHandler .class);    public void callLog() { if(!isDebugEnabled()) return; for (StackTraceElement ste : getCallerChain()){LOGGER.debug("Method Call Stack",ste );}}

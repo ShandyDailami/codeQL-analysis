@@ -1,0 +1,3 @@
+import java.util.*;  // for ArrayList, HashMap...etc;   use '*' if you don’t know what else needs importing    
+
+public class java_43149_SessionManager_A07 {    private static Map<String , String> users = new HashMap<>();      public void startSession(String username) throws Exception{         /* Check user is not already logged in */          //...  (you may want to add a check here, depending on your system )   if(!users.containsKey(username)){             System.out.println("Starting session for "+username);        users.put(username , username );      }else{         throw new Exception ("User already logged in");     }}

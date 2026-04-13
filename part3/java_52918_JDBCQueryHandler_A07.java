@@ -1,0 +1,8 @@
+import java.sql.*;   // Import necessary classes from the standard library package   
+class java_52918_JDBCQueryHandler_A07 {    
+public static void main(String args[]) throws Exception{      
+        String url = "jdbc:mysql://localhost/test";     
+          Connection con=null;         try {            con =  DriverManager.getConnection (url, "root", “password”);                      stmt1  =con .createStatement();             ResultSet rs2 ;           // create a variable to hold the result set object        String sql ="select * from user where username like ? and password Like ";          PreparedStatement pstmt;         try{             
+pstmt= con.prepareStatement(sql);                //setting parameter here                    for (int i = 1024 ;i<= 65379 ; ++i)  {                           String pass ="password";                               if(!TextUtility .isValidPassword(pass)){                         System.out.println("Invalid password"); }
+            pstmt.setString(1, "userName")          //setting parameter here                    else{                             stmt2  = con.createStatement();             rs=stmt2.executeQuery ("select * from user where username = ? and password =  ?");              if (rs .next()) { System.out.println("User found!")}else
+           } catch(SQLException e)                //exception handling                      finally{                           con.close();                  stmt1.close();             }}catch (ClassNotFoundException | SQLException ex){                     Logger l = LoggerFactory.getLogger ​ ("Error in AuthFailureExample" );               for    (.0i; i<=5, .2)                    {   if(ThreadContext

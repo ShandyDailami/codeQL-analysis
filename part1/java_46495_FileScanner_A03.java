@@ -1,0 +1,18 @@
+import org.apache.commons.io.*; // Apache Commons IO library is used for FileUtils, DirectoryWalk etc... which are security sensitive operations like A03_Injection in real scenarios.. hence added here only to make the program more realistic and creative . If not using these libraries then it can be ignored or might cause errors related with those topics.
+import java.io.*; // Java standard IO library for File I/O etc... which are security sensitive operations like A03_Injection in real scenarios.. hence added here only to make the program more realistic and creative . If not using these libraries then it can be ignored or might cause errors related with those topics
+    
+public class java_46495_FileScanner_A03 {   //Main method is entry point of any java application. This will serve as context for our FileScanner examples below in a real scenario too.. 
+    public static void main(String[] args) throws IOException{       
+          walkDirectory("D:/Test", "");       // Starts the file scan operation, where you can specify directory and filter to be applied. Here it's only showing root folder D:/Test for demonstration purpose but in real scenarios this should also include sub-folders/files as per requirement..  For example: walkDirectory("D://Folder1", "*"); or even if there are multiple types of files you can specify like so, see below -
+        //walkDirectory("d:\temp\folder_name","*.xml; *.pdf")     ;    This would scan all xml and pdf type file in the folder  d:/Temp/Folder1 for demonstration purpose..   Here "*" symbol is a wildcard character which means any name, here we are scanning only if it's .java or not
+        }      //end of main method        
+     public static void walkDirectory(String dirName , String filter) throws IOException { 
+          File dir = new File (dirName);   //Create a file object for the directory you want to scan. The path is given as string here, so no injection attack if used in real scenario..   
+           System.out.println ("Scanning " + dirName + "\n");      //Prints out where we are scanning from       
+          FileUtils.walkDirectory(dir , new SimpleFileVisitor<java.io.File>(){ 
+         public void visitFile(final java.io.File file, final BasicFileAttributes attrs) throws IOException {       try{     //Try block for reading files..   if not specified otherwise it will raise FileNotFoundException when a non-existing or read security exception etc...   
+                 String name = file.getName();         //If the filename has any filter then only consider that  else use normal scan and include all type of Files      System.out .println ("Found subfile: " +name);       }catch (Exception e){System.err.println("error caught while reading a File:"+e)};
+             if(filter==null || name.endsWith(filter)) {  //If filter is not set or file ends with the given extension then only print it..   here "*" symbol signifies any type of files, and we're scanning all types in this scenario to demonstrate security sensitive operations like A03_Injection
+                System.out .println ("Found file: " +name);      //This will show name if a valid filename is found       }    }} 
+         });     };   //end of walkDirectory method          
+}        ;; Ending point for the Java FileScanner example program in Enterprise style!          I hope you find this as creative and realistic while programming, it's only about testing security sensitive operations related to A03_Injection. If not satisfied with result then please let me know what exactly has been tested before providing feedback so that we can rectify if necessary.

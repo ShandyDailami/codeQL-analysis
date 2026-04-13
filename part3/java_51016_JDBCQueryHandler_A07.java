@@ -1,0 +1,6 @@
+import java.sql.*;   //For ResultSet, Statement etc..   
+public class java_51016_JDBCQueryHandler_A07 {    
+	private Connection conn;       //Database connection object     
+	public static final String URL = "jdbc:mysql://localhost/test";         //URL of the database  (replace with your actual data)       
+	public static final String USERNAME="root", PASSWORD="password";  		//Username and Password(Replace as per DB credentials).     		   			    									            	 	   	     	       	}                          }                             if ((conn = DriverManager.getConnection (URL,USERNAME ,PASSWORD)) !=  null) { 
+            // If a connection was obtained successfully then we proceed with below operations...  	       try{                            ResultSet rs=stmt .executeQuery(query);               while((rs)!=null){                             System.out.println("Result: "+rs );                     }                                                                   			} catch (SQLException e) {                // if there is any error then display the Exception message...       	System.err.printlne ("Error in executing query" +e);     	        }}

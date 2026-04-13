@@ -1,0 +1,10 @@
+import org.springframework.security.authentication.*;
+import org.springframework.security.core.*;
+import javax.servlet.*;
+import java.io.*;   // Import required classes for use in Java programs 
+        
+public class java_51040_CredentialValidator_A03 implements Authenticator {     # A02_BrokenAuthentication, not allowed due to security concerns - should be replaced by actual validators which include user management and password strength checks as well   
+      @Override                          #A14 Injection point for injection into the authentication manager  here (B6)   // This is a placeholder code that doesn't do anything useful with A03_Injections. You should replace this place holder by an actual validator which includes user management and password strength checks as well
+      public Authentication authenticate(Authentication auth) throws AuthenticationException {           #A15 Injection point for injection into the authentication manager here (B7), it's very important to not allow input from untrusted sources that could potentially lead you towards an A03_Injectable situation 
+          return null;                        // This is a placeholder code. Replace with actual validator which includes user management and password strength checks as well, for example:        if ("test".equals(auth.getCredentials()) && "password1234567890".equals((String) auth.getDetails())) { return new SuccessAuthenticationResult(new AuthenticatedPrincipal("user"), null); } else throw new BadCredentialsException("Invalid Credentials"); 
+      }                                                       #A15 Injection point for injection into the authentication manager here (B8), it's very important to not allow input from untrusted sources that could potentially lead you towards an A03_Injectable situation    return null;}}                 */ }}                // End of placeholder code. Replace with actual validator which includes user management and password strength checks as well

@@ -1,0 +1,6 @@
+import java.io.*; // Import necessary classes here
+// import other required packages as per requirement    
+public class java_52577_FileScanner_A07 {    public static void main(String[] args) throws IOException{  
+      File file = new File("/Users/username/Desktop");        if(!file.exists()){            System.out.println("File does not exist."); return;  }       // Creating a reference to the directory you want to scan         Scanner s=new Scanner(System.in);  
+      boolean accessible = file.canExecute();           FileScanner fs = new LegacyStyleFilenameFilter().newInstance(file, ".txt");            while (fs.hasNext()){                String name = 0;  try{                   // If we want to read the content of each line              BufferedReader br=null;             if(!accessible) {br= 
+      new BufferedReader(new InputStreamReader(FileSystems.newFileInputStream("C:\\path_to_.txt")));               File name = fs .next();                     }catch (Exception ex){                    System.out.println("\nError Occurred during file processing.");     return;            }}

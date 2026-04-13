@@ -1,0 +1,5 @@
+import java.util.*;   // To use the ArrayList data structure, HashMap collection and other standard Java classes 
+public class java_45459_SessionManager_A07 {   
+       private List<String> sessions;     /* Stores all active session ids */     
+                                   public Map<String, String>  usersessions ;/*to store userId as key & corresponding token/session Id*/   // To use the HashMap data structure for this purpose 
+                                           boolean flag = false ,flag2=false;}    private java_45459_SessionManager_A07(){          /* Private constructor to prevent instantiation of an object */         sessions =  new ArrayList<String>();        usersessions=  new HashMap<> (); }     public static SessionManager getInstance() {       if(instance == null){            instance  =new  SessionManager();      }}

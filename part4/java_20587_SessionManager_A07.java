@@ -1,0 +1,54 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class java_20587_SessionManager_A07 {
+
+    private Map<String, String> sessionMap;
+
+    public java_20587_SessionManager_A07() {
+        sessionMap = new HashMap<>();
+    }
+
+    public String createSession(String userId) {
+        String sessionId = UUID.randomUUID().toString();
+        sessionMap.put(sessionId, userId);
+        return sessionId;
+    }
+
+    public String getUserId(String sessionId) {
+        return sessionMap.get(sessionId);
+    }
+
+    public void deleteSession(String sessionId) {
+        sessionMap.remove(sessionId);
+    }
+}
+
+public class AuthService {
+
+    private SessionManager sessionManager;
+
+    public java_20587_SessionManager_A07(SessionManager sessionManager) {
+        this.sessionManager = sessionManager;
+    }
+
+    public User authenticate(String userId, String password) {
+        // Simulate authentication failure
+        if (!isValidUserId(userId) || !isValidPassword(password)) {
+            throw new AuthFailureException("Invalid user ID or password");
+        }
+
+        String sessionId = sessionManager.createSession(userId);
+        return new User(userId, sessionId);
+    }
+
+    private boolean isValidUserId(String userId) {
+        // Implement authentication logic here
+        return true;
+    }
+
+    private boolean isValidPassword(String password) {
+        // Implement authentication logic here
+        return true;
+    }
+}

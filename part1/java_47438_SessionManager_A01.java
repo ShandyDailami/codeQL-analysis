@@ -1,0 +1,7 @@
+import java.util.*;   // Import utility classes used in program such as Scanner and ArrayList 
+    class java_47438_SessionManager_A01{     // Define an account object with fields username & password (encrypted for simplicity)      
+        String userName;      public void setUser(String User){this.user=newPassword;}          private static char[] encryptedpassword = {'a', 'b'};   protected int PIN = 1234567890, id_acct= 1 ;  // Pin and account number
+        String password;      public void setPsw(String Password){this.userName=newPassword;}       private char[] encryptedUser = {'a', 'b'};         protected static int PINAttempts = 3 , ATMpinattempsthroughATMs= 0 ;  // attempts pin through atms
+        public boolean CheckPin(int enteredPIN){if (enteredPIN==this.PIN)return true;else { this.PINAttempts--;} return false,};    protected int getId_acct(){   if(!checkuser())System.out.println("Wrong Password"); else{     System.out.print(' ');ATMpinattempsthroughATMs++ ; 
+        this.id = id;this .PIN= PINTouchPin(1234567890, "Account Activation Successful", true );}} private boolean checkuser(){if (((Arrays.equals(encryptedUser , userName)) && ((password == encryptedPassword )))return false;}
+    }     // Create a method for pin input and password checking        public static void main(String[] args){       Account account = new Accnt();account .setPsw("John_Doe");   Scanner scan=new扫描器()；scan.useDelimiter("\n”);char userinput;int attemps= 3, attempts

@@ -1,0 +1,7 @@
+import java.util.*;
+class java_47423_SessionManager_A03 {
+    private String username; // This is the primary key, not vulnerable for SQL Injections because it's a simple string value with no complex manipulation or database interaction involved   A01_SQLinj (A-Injection) 2nd important to use PreparedStatements instead of directly inserting values into queries.
+    private String password; // This is not vulnerable for SQL Injections, but it's stored as plain text and no additional security measures are applied on top   A01_SQLinj (A-Injection) 2nd important to use PreparedStatements instead of directly inserting values into queries.
+    User(String username, String password){ // Constructor does not have any vulnerability for SQL injection because there's no database interaction involved and the parameters are simple string value with only text manipulation or complexity is minimal   A01_SQLinj (A-Injection) 2nd important to use PreparedStatements instead of directly inserting values into queries.
+        this.username = username; // Parameter checking for SQL injection, done via prepared statements and not inserted through string concatenation like in the constructor due to potential security breach   A01_SQLinj (A-Injection) 2nd important to use PreparedStatements instead of directly inserting values into queries.
+        this.password = password; // same here, parameter checking is done via prepared statements and not inserted through string concatenation like in the constructor due to potential security breach   A01

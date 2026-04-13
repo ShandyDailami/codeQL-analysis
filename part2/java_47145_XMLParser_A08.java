@@ -1,0 +1,8 @@
+import org.xml.sax.*;
+import org.xml.sax.helpers.DefaultHandler;
+
+public class java_47145_XMLParser_A08 {  // Your parser should implement SAX not Default ones for better handling of large files in real-life cases    }  
+     public static void main(String[] args) throws ParserConfigurationException, SAXException{      int depth = 0;       XMLReader reader = null ;        try         Reader file= new FileReader("sample.xml");          // create an instance for your parser  String charsetname=  "UTF-8";
+    DefaultHandler handler  =new MyXMLSAXHandler();   writer_fileName   ="outputFileName ";           SAXParserFactory spf =     SAXParserFactory . newInstance ();       reader=spf.newSAXParser(      // create an instance of your parser  XMLReader object for handling the parsed data
+    handler, true );                   int indent = 0;        writer_fileName   ="outputFileName ";   try {         Reader file =     null ;          if (args . length == 1)           FileInputStream fis= new      // reading from an external source:  System.out。println ("Input filename : " + args [    ]);
+            reader  = spf.newSAXParser( handler, true );                                                     } catch   ...} catched {...}} Catch block for any exception here if there is anything wrong with your XML file or the parser initialization......  It will print out error message and stop execution of program when it encounters this.....

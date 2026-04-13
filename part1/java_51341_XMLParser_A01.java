@@ -1,0 +1,11 @@
+script
+const fs = require('fs'); // File system module in node js, used here because of its built-in functionalities like reading files and writing them into a file stream etc.. which is not only safe but also efficient for this demonstration purpose ie no external dependencies are involved except the standard libraries. 
+
+class java_51341_XMLParser_A01 {  
+    constructor() {} // Initialize an instance if necessary in your case we may need it to store data about parsed xml nodes and relationships between them... so initialize instances of that here as well, just don't do anything with those until you have a parse operation going on. 
+    
+    async readXMLFile(filePath) { // Reads XML file synchronously using NodeJS fs module in an "async" way due to the nature and usage requirement for parsing xml data which requires awaiting operations like reading, writing etc... so we use this function here as such a method. The return value is parsed node object (assumed it'd be some XML structure defined by your project).
+        const fileData = fs.readFileSync(filePath);  // Read the xml data synchronously from given path using NodeJS standard library functions, equivalent to Python 'open + read'. As per requirement no error checking is done in this function and only parsed results are returned (assumed it's a well-formed XML structure).
+        return new DOMParser().parseFromString(fileData);  // Parse the xml data using newly defined constructor method. This returns an instance of Document that represents parsing result after calling parse from string with provided file path as argument, equivalent to Python 'read + parse'. Here we assumed it's a well-formed XML structure and not in actual use due because DOMParser is usually used for loading HTML into elements instead or similar tasks.
+    }    
+}  // Class ends here... This class can be extended with more functionalities as per requirement (like parsing nested xml, manipulating parsed data etc..). Here I have only implemented a read operation on an XML file due to lack of requirements and simplifying the demonstration purpose too much into one piece. Real world usages require usage in real projects or large scale systems which might involve complex operations like concurrency handling with multiple files loading at once, error checking for all possible scenarios etc..

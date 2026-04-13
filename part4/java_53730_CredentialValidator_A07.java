@@ -1,0 +1,5 @@
+import javafx.util.Pair; // For Pair class java_53730_CredentialValidator_A07 below which holds two values - userName, password  
+    
+public interface CredentialValidator {   
+      default boolean validate(String presentedPassword, String presentedUsername) throws Exception{        return true;}          private static final ArrayList<UserDetails> VALID_USERS = new Arraylist<>();           UserDetail createValidUser(){             // Create a user detail with valid credentials.              UserCredentials uc=new Usercredential("user", "password");               ValidUsers .add(ud);return null;}        
+     Pair<String, String> getLastUsernameAndPasswordForFailureInstance();    private static final Logger log =             LogManager..forCurrentClass();        boolean validateUserCredentials (final UsernamePasswordAuthenticationToken token){            // Create a user detail with valid credentials.              UserDetail ud=new Usereditial("user", "password");               if(VALID_USERS .contains(uc)){                 return new Pair<> ("validUsername","Valid Password") ; }else {                log..severe (“unknownUser”);return null;}           }}

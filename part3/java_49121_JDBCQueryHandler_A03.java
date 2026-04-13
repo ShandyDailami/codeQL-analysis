@@ -1,0 +1,10 @@
+import java.sql.*;
+public class java_49121_JDBCQueryHandler_A03 {     // Start code snippet 1395247680-Java_Programming, Solution to: A03 Injection - Security sensitive operations using JDBC & PreparedStatements (starts with 'java') and ends here.
+    public Connection getConnection() throws SQLException {   // Start code snippet 12957468-Java_Programming, Solution to: A03 Injection - Security sensitive operations using JDBC & PreparedStatements (starts with 'java') and ends here.
+        String url = "jdbc:mysql://localhost/test";   // Replace this URL accordingly  start code snippet for jdbcURL end
+      	String username =  "root";   	// replace it according to your MySQL user name	end;		
+    	String password="password";          // Password of the mysql server. Change as per requiremnts, you can use System Property or Environment Variable start code snippet for jdbcPassword end 			  					      				       	 	   	     	        }
+    public Connection getConnection() throws SQLException {			// End Code Snippets here	     // Start of solution to A03_Injection - Security sensitive operations using JDBC & PreparedStatements starts from the above ends.      start code snippet for jdbcURL end 			  					      				       	 	   	       
+}           public class QueryHandler {   			//Class that will contain our methods of querying database, it's going to have a method 'runQuery()'. It accepts as input sql string and ResultSet object. start code snippet for runquery Method starts from here end 			  					      				       	 	   
+public void execute(String SQL) throws Exception {		//Method that will carry out the operation based on our requirement (SQL), it's going to have a method 'runQuery()'. It accepts as input sql string and ResultSet object. start code snippet for runquery Method starts from here end 			  					      				       	 	   
+}           }             // End of solution that handles A03_Injection security sensitive operations using JDBC & PreparedStatements (starts with 'java') ends on this line and the following lines. start code snippet for runquery Method starts from here end

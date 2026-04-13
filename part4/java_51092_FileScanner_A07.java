@@ -1,0 +1,8 @@
+import java.io.*; // Importing necessary classes for input/output operations, exceptions etc...
+class java_51092_FileScanner_A07 {  
+    public static void main(String[] args) throws IOException{  /*Starts execution from here*/    
+        if (args.length == 0){//Check whether argument provided or not ie., no command line arguments given means asking user to enter the directory path, then we would get that as input and proceed with our program logic    } else {   //If any directories are passed through cmd args...  for every dir in those passsed ones call fileScanner function
+                File f = new java.io.File(args[0]);     /*To check whether the provided path is valid or not*/      if (!f.exists()){       System.out.println("Sorry, but '" + args[0]+"' does not exist");   return; }  else {        fileScanner (new java.io.File(args[0]) );}}} //End of condition for command line argument
+    public static void fileScanner(File f) throws IOException{     /*Recursive function to find all .txt files in a directory*/      int count = 0;  if (!f.exists()) return ;   File[] list = f.listFiles();//Listing out the content of directories and sub-directories
+    for (int i=0;i<(null==list?0:list).length;++i){ //If there are files in this directory or any under it, process them...      if ((new File(f+"/" + list[i].getName())).isFile() &&  new File((f.getPath()  + "/" +  (fileReaderCount))) { count += 1;}   else{     //Else go inside the directories
+            fileScanner(list[i]);}}}      System.out.println("Number of .txt files: " +count);}}//Printing out number found textfiles in that directory and its sub-directories  }} End Of Main Method */ /*End File Scan Program*/

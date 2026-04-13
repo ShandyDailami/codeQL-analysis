@@ -1,0 +1,8 @@
+import java.util.*;   // For ArrayList and HashMap data structures   
+public class java_50014_SessionManager_A07 {     // Start of session manager definition       
+private static Map<String, String> userDB = new HashMap<>();      // Define the database (User:password pairs)      
+static{         // Fill up our dummy DB with some sample users for testing          
+userDB.put("Alice", "password123");     // Alice's password          User and Password are both case-sensitive       
+userDB.put("Bob", "bobby87");      // Bob is also a registered user         but the passwort it uses has some capitalization   }  public java_50014_SessionManager_A07() {}       static boolean login(String username, String password) {     if (username == null || password==null){return false;}       
+if(!userDB.containsKey(username)){    // If no such User exists in DB         return fail             System.out.println("User not found");} 
+   else{      // compare the input Password with our database's stored one           if (password.equalsIgnoreCase( userDB.get( username ) )) {       SessionManager session = new SessionManager();     }        LogIn successful, create a UserSession         return true;}    public static void main(){String alice="Alice"; String passw0rd123=userDB.get("alice");if (login(username , password )) {System .out.println ("Logged in as " + username);}else{ System. out ..println("\n Login failed!")}; }

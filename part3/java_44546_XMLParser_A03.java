@@ -1,0 +1,9 @@
+import java.io.*;  // Import FileInput/Output streams for reading from file or URLs in a networked environment and PrintWriter class java_44546_XMLParser_A03 writer object (to write on textfiles)  
+import org.w3c.dom.*;    // W3C DOM is the API to read, search, modify XML documents using Java Programming 
+import javax.xml.parsers.*;     // This package contains parsing mechanism in java     
+public class Example {          // Start of main( ) method  
+static void printElementList ( Element element)       // Method for recursive printing the child nodes list       
+{         System.out.print("Child of "+element.getNodeName() +" : "); 
+for(int i=0;i<element.getChildNodes().getLength();i++){     printElementList((org.w3c.dom.Node) element.getChildNodes().item(i)); }      //Print all child nodes recursively           System.out.print("End of Child Nodes for "+element.getNodeName()); 
+}          static void parseXML (String fileURL )     // Method to Parse XML File    public class Main {         DocumentBuilderFactory dbFactory = null;   Reader reader = null ;      try{              dbfactory= DocumentBuilderFactory .newInstance();             Parser parser =  dbfactory.getParser(null, "sample_content");                     document=  parser.parse ( new InputSource (  FileSystems / Standards Edition : Files System ) , XML Constants .IDENTITY , null );     printElementList (( org.w3c.dom .Node)document);             } catch (Exception e){              System.out.println ("Problem parsing the xml file " +fileURL+ ". Exception is ");               e.printStackTrace();          }}  
+}

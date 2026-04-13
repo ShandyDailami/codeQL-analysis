@@ -1,0 +1,11 @@
+import java.sql.*;   // Import the necessary classes from Java's Standard Library (JDBC)   
+class java_44384_JDBCQueryHandler_A08 {     // Start of class declaration        
+public static void main(String[] args){      // Main method to execute code          
+try{        /* Begin try block for error handling */      
+// Setup connection string           
+final String URL = "jdbc:mysql://localhost/test";    final  String USERNAME="root", PASSWORD="password";         Connection conn =  DriverManager.getConnection(URL,USERNAME ,PASSWORD);     //Get the database instance           /* End of try block */       
+System.out.println("Connected to MySQL server.");      Statement stmt =conn.createStatement();       String SQL ;// Define a query             final  int ID = 1;         System. out .print( "Executing update sql queries..." );          // Start the transaction           try {                     conn.setAutoCommit(false);                /* Begin of Transaction */                 stmt =conn.createStatement();
+SQL="INSERT INTO emp (id, name) VALUES ("+ID + ", '"   + NAME  + "')";stmt .addBatch( SQL );                    ID += 1;                                                     if (ID > 30){ conn.commit(); System. out .println("Changes committed."); } else { throw new 
+Exception ("Rollback failed"); }} catch (SQLException se) {   /* Catch and handle exception */              // If there is any error in updating query then print the details         SE.printStackTrace(); conn.rollback(); System out .println("Changes rolled back."); } finally{           if(conn != null){       try{               stmt =null;                 Conn close ();}} catch 
+(SQLException se2) {SE.getMessage();} }} // End of the code block */          /* Close all resources here, end program normally            Failure in one action does not stop entire process     and do no rollback*/   try{ conn = null; }catch    (NullPointerException e){System .out 
+println("This statement is void.");}finally { System.exit(0);}}}}} // End of Main function        /* This should be the last execution block */

@@ -1,0 +1,18 @@
+import java.io.*; // For FileInputStream, BufferedReader and PrintWriter classes
+import javax.xml.parsers.*; // To parse XML files using DOM parser library (JAXP)
+import org.w3c.dom.*; // Allows to manipulate the parsed document through Java APIs  - used in example below with elements by their name, for instance 'getElementsByTagName' method of Document interface provides this functionality
+public class java_52964_XMLParser_A08 {  
+    public static void main(String[] args) throws ParserConfigurationException, IOException{ //main function to create a new parser object and then parse an XML file. 
+        File inputFile =new File("src/sample-file2345689017_AOIUHTNBMLKDSFJVZXWPQRSTUVYADLFIEGHRCMUAACDPEIGCRMNAEFHDEUIREMCNSALDAIEFEIFIMAIEDFAECILSANDLFM.xml"); //specify the location of your XML file
+        DocumentBuilderFactory dbFactory =DocumentBuilderFactory.newInstance();   // to parse Xml document with DOM parser 
+        
+        System.out.println("Parsing complete!\nXML Data extracted from File:\n\n" );//print message when parsing is done   
+             try(FileInputStream fis= new FileInputStream(inputFile);BufferedReader br=  //to read the XML file into a Buffered Reader  
+                 new InputStreamReader(fis, "utf-8")){     ///To convert input stream to string  and parse it with DOM parser.   
+             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();       // Create an instance of document builder        
+              Documents documents=dBuilder .parse(br);        //Create a new Document object using the Builder's buildDOC() method     --> Parse XML file into DOM, default mode is BUILD_ID  (default in jaxp)    ///   &lt;?xml version = "1.0" encoding= 'utf-8' ?&gt;&#x9;
+             //Get the root element of document        Document docElement =  documents .getDocumentElement();     --- Get a list, XML element collection (all sub elements under Root)  and loop over to print all tags & their values   ///    for(int i=0 ;i <docElement.getChildNodes().length; ++I){
+             //Get each child node --> docElement .getChildNode() --- then get the name of that tag using Node Name method (getName()) and use it to print value too  if exists otherwise just a message saying "No Value available for this attribute"   ///      System.out..println("Tag :",docElement.getTags(i),"-->","Value: ", doc Element . getChildNode().getTextContent()); //if there is no text content then it will print an error and skip to next node 
+              } catch (Exception e){    //Catch block for exceptions///   System..println("Parsing failed due to :",e);     --- This handles all the unrecognized characters in XML file, not just integrity failure. You can handle this exception as per your requirements and add more specific handling based on error type 
+              e .printStackTrace(); //Prints out detailed information about what went wrong for debugging purpose   System..println("Parsing failed due to :",e);      }    return;     }}        catch (ParserConfigurationException pce){       print Stack trace and quit the program. Parser configuration exception can occur if xml file is not properly configured, such as incorrectly set or missing schema etc 
+              System..println("Parsing failed due to :",pce); //prints out detailed information about what went wrong for debugging purpose      pce . printStackTrace();     return;   }}`    This program only prints the tags and values of XML file, it does not provide any security-sensitive operations related with integrity failure.

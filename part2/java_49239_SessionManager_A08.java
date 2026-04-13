@@ -1,0 +1,5 @@
+public class java_49239_SessionManager_A08 {  // begin of 'Session Manager' Class  
+    private static ThreadLocal<DatabaseConnection> databaseConnections =  new ThreadLocal<>();     // Declaring a thread local variable to keep track on the Database connection at any point in time by user sessions (users) . This is how we achieve concurrency.       
+       public void startSession(User user){   // Begin of 'Start Session' Method  where User represents session holder/user   
+            try {                   // Try block starts here for Connection Handling and Transaction Management     /*DatabaseConnection db = new DatabaseConnection();*/      databaseConnections.set((new DataBaseConnector()).getDbConnection( user));              } catch (Exception e)   {          System.out.println("Failed to connect with the DB");             //Catch block here for Exception Handling */
+        }    public void closeSession()  {     /* DatabaseConnections will be unbound and set as null*/           databaseConnections.set(null);      }}         /*** Session Manager Class ends Here ***/

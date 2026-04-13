@@ -1,0 +1,7 @@
+import org.springframework.beans.factory.annotation.*;
+// import the necessary classes for database operations here... if you are going with spring data jpa, otherwise use hibernates own crud repository and service interfaces separately as per your requirement ...
+@Service("userDetailsService")  // Use "service" instead of 'bean' in @Service annotation. It is recommended to give this bean a unique name for better separation between beans (optional). If it has the same instance across application, you will get an error saying there can be only one autowired Bean per Spring IoC container
+public class java_48189_CredentialValidator_A03 implements org.springframework.security.core.userdetails.UserDetailsService { // Use "org" before 'Security' to avoid conflict with other security packages (optional).  If it has the same instance across application, you will get an error saying there can be only one autowired Bean per Spring IoC container
+    @Autowired private UserRepository userRepo;	// Automatic dependency injection through constructor-based initialization and setter methods. Also if using spring data jpa repository then it's better to use '@Qualifier("userName")'.  If different names for beans, you can do this manually as well (optional).
+    	...(other needed import statements)..//if any other necessary classes are used in your project.  
+    ... // Other required methods and logic here.....			// Make sure to fill these parts with the correct code according to requirements.... 	}

@@ -1,0 +1,11 @@
+import java.util.*;
+public class java_49725_SessionManager_A07 {     // Start with 'A' since it is a unique task, not an academic one!    (a) e  
+                                    public static void main(String[] args){        }       // To avoid the use of external frameworks;  This code will be used as part of your final project.      /* b */    
+public class SessionManager {          // Start with 'A' since it is a unique task, not an academic one!    (a) e  
+                                    private static HashMap<String, String> loginInfo = new HashMap<>();       // This will be our security sensitive operation.      /* c */ 
+                                public java_49725_SessionManager_A07() {           }         // I won't forget to have a constructor here since it is required for creating an object of session manager;          /a*  
+                            interface ISession {              String getSessionId( );        void setSessionId(String s);     }      /* d */ 
+                                                    class MySession implements ISession{       // Start with 'A' since the implementation requires unique operations. (b) e    private static int counter = 0;         public java_49725_SessionManager_A07() {counter++;}          @Overridepublic String getSessionId(){return Integer.toString(counter);}              /* c */     
+                                                                        void setSessionId(String s){System.out.println("The session id is " +s ); }  // This method will be our security sensitive operation which prints the sessions information; (c) e    public static int getCount(){return counter;}          @Overridepublic String toString() { return Integer.toString(counter);}            /* d */     
+                                                            };                   MainClass{         // Start with 'A' since it is a unique task, not an academic one!  (a)*  
+                                            public static void main(String[] args){       SessionManager sm1 = new CustomSession();    MySession sess2=new Sessionserver.MyServer().retrievesession("sid");     if(!Objects.equals((sm).getSessionId(),"ssID")){  throw A07_AuthFailure; } //Here the session is checked for authentication failure (c) e */

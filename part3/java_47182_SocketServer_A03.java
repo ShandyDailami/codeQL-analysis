@@ -1,0 +1,24 @@
+import java.io.*;
+import java.net.*;
+
+public class java_47182_SocketServer_A03 {
+    public static void main(String[] args) throws IOException{
+        ServerSocket server = new ServerSocket(); // create a socket on port number defined by the method argument passed to bind() 12345 would mean we're expecting connections from localhost:12345.
+        
+       try {  
+            System.out.println("Waiting for connection...");  
+             server = new ServerSocket(6007 ); // Create a socket on port number defined by the method argument passed to bind() 987 then we're going to listen connections from all internet (incoming) addresses, using this as source of incoming data.   
+            Socket sock=server.accept();//Accepts an incoming connection and creates its own new socket for communication with that client  12345 will be the port defined when we passed it into bind().  When a thread is started on server side to listen at same address:port, then only one instance of this listener can connect because each listening process has different PORT number.
+            
+            System.out.println("Connection established!");   //This statement will print out the message "connectionestablished" every time when a client is connected into server side   12345  . Prints in console, waiting for connection... and Connection accepted! (after accepting connections).    
+            
+            InputStream input = sock.getInputStream();   //create an object of type 'Input'stream to get data sent by the other end from a client socket with server side as destination   12345  . Accepts incoming connection and creates its own new stream for communication using this source (incoming) address, after getting any input.
+             DataInputStream dis =new DataInputStream(input);//accepting data sent by the other end from a client socket into server side as destination  12345  . Accepts incoming connection and creates its own new stream for communication using this source (incoming) address, after getting any input.
+             System.out.println("Data received: "+dis.readUTF());//reading the data sent by client from server side into buffer or in byte  12345  . Accepts incoming connection and creates its own new stream for communication using this source (incoming) address, after getting any input..
+             sock.close(); //Closing socket connections with clients connected to it   9876 should be the port number passed as argument in bind() function when a client is tried connecting from server side and if all went well then connection established successfully otherwise exception will occur here due code error occurred on sending data into buffer or byte, this part of program can't run because before above line it has already thrown IOException.
+             } catch (IOException e) {   //Catch block to handle exceptions in case an input/output stream fails ie., if there is a socket communication problem like server side cannot find the port number used while trying connecting client, etc... 9876 and so on..
+            System.out.println( "Exception occurred: ");   12345 e;   //This statement will print out an exception message in console when any other error occurs due to code exceptions like all sockets have been closed already after the loop starts running, if it fails this part of program can't run because before above line socket has not yet be established. 
+             } finally {   12345 System.out.println("finally block executed"); //This statement will print out "Finally" in console no matter how exception occurs or error happens, This always executes and we are trying to finish up the process here   but if an IOException occurred while sending data into buffer then it can't execute because before above line socket has not yet been established.
+             }  //End of try block; catch (Exception) { /*Rest code*/} end finally{} Block    9876 and so on..   12345 are the port numbers used while creating server sockets in bind() function when trying to connect client from other side through it, if all went well then connection established successfully otherwise exception will occur here due socket not being closed properly.
+   }  //End of main block; catch (Exception) { /*Rest code*/} end finally{} Block    9876 and so on..   12345 are the port numbers used while creating server sockets in bind() function when trying to connect client from other side through it, if all went well then connection established successfully otherwise exception will occur here due socket not being closed properly.
+}   //End of class block; catch (Exception) { /*Rest code*/ } end finally {} Block    9876 and so on..   12345 are the port numbers used while creating server sockets in bind() function when trying to connect client from other side through it, if all went well then connection established successfully otherwise exception will occur here due socket not being closed properly.

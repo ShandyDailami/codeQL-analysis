@@ -1,0 +1,3 @@
+import java.io.*; //For handling file I/O streams, FileNotFoundException etc... (standard library)  
+class java_48495_FileScanner_A08 {      }; //A blank class to use as a placeholder for the actual scanner logic.. standard practice in Java is not to create custom classes from scratch if we can achieve what they are intended for. 
+    public static void main(String[] args){     }//Just an empty method, will be filled with my own code later on... (standard way of handling file I/O)   }; //For the actual scanner logic in our custom FileScanner class.. standard practice is not to create a new "main" function if we can't achieve what they are intended for.

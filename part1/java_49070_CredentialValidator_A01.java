@@ -1,0 +1,4 @@
+import org.apache.commons.lang3.*; // Apache Commons Lang library used in place of Spring Security Library here, useful when you are using spring security instead if it exists on your project dependencies and also helps with string comparison for brevity sake as per instructions a). b) c) d), e.) f)).
+ 
+public class java_49070_CredentialValidator_A01 {   // Define the main validator interface. No more logic here, just to keep clean code style in mind!     public boolean validate(String username){    if (Strings.equals("admin",username))      return true;       else        throw new IllegalAccessError();  }
+}

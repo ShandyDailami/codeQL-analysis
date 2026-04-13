@@ -1,0 +1,9 @@
+import java.sql.*;   // Import Statements for JDBC 
+import javax.sql.DataSource;    // Java Database Connectivity (JDBC) API to connect with database, not specific driver like MySQL or Oracle which is built on top of JDBC itself so we just import it directly in our classpath as well  
+    
+public class java_46467_JDBCQueryHandler_A07 {  // Class name should be lower case and meaningful. It represents the main function/component here to run your code, otherwise known by Java compiler    // Start with public access modifier (like classes) so that other programs can use it too - hence 'Vanilla'
+    
+public static void main(String[] args){  // Main method of a class which will be executed when the program starts. It is used to call our functions or methods here, otherwise known by Java compiler    /* Start with public access modifier */   DataSource dataSource;      try{       String url = "jdbc:sqlserver://localhost;" +
+        // The above line of code includes URLs and database details for sql server. Please replace these values according to your actual setup    + ";database=dbname";  /* End the connection string */    Connection conn   = dataSource .getConnection("username", "password");      if(conn !=  null){         System.out.println ("Connected!");        }else{           //In case of error or fail, log an appropriate message
+          throw new SQLException (dataSource +"Unable to connect database server.");  /* End the connection string */   }}catch(SQLException e ) {e .printStackTrace();}}//Closes connections and releases resources if any exception occurs in try block.    } // Close bracket for main method
+}    ``

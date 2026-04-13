@@ -1,0 +1,10 @@
+import java.io.*; // Import File and IOExceptions classes so we can use them later on  
+public class java_52702_FileScanner_A07 {    /* This is the main program */    
+ public static void main(String[] args) throws IOException{        
+      String directoryPath = "."; 
+       printFilesInDirectoryRecursively(directoryPath);          // Start with current dir (.)       
+ }  
+ private static void printFilesInDirectoryRecursively(final String path){     /* Recur function to list files in a given Directory */    if (!new File(path).isDirectory() || !java.nio.file.Files.exists(Path.of(path))) {  // Not directory or nonexistent file/dir, return }
+         System.out.println("No such resource: " + path);          /* If not a Directory print error and exit */    else try{   for (File entry : new File(path).listFiles()){      if (!entry.isDirectory()) {  //If it is file then only proceed to read the contents of that specific FILE using BufferedReader            
+            System.out.println("Reading " + path);               /* Print out where we are */          try (BufferedReader reader = new BufferedReader(new FileReader((File) entry))) {      String line;           // Reads a single string from file    while ((line = reader.readLine()) != null){                 System.out.println("\t" + line);                   }     }}catch (SecurityException se){             /* Catch permissions issue */           
+        printFilesInDirectoryRecursively(path+"/"+entry.getName());  // Print out full path of the file/dir that caused exception, then continue recursion from there                    catch (IOException e) {                  try{                                                                    new File((File) entry).mkdir();                            System.out.println("Created " + ((File) entry));                                                        }catch(Exception ex){System.out.print("\t"+ex);}}}}}

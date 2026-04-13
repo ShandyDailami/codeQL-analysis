@@ -1,0 +1,4 @@
+import java.util.*;  // Include all standard Java packages here - e.g., import List and Set from collections package (ArrayList or LinkedHashSet) etc.)
+// You can also use additional classes like ArrayList for handling a list of users if needed, HashMap to handle user credentials map with username as key & password hash value in the string format , CryptoUtils class java_52779_CredentialValidator_A03 contains cryptographic utilities methods. 
+import com.*;   // Include all standard Java packages here - e.g., import Scanner from java.util package etc.)   
+// Note: You would need to include a scanner for user input, and possibly password hashing libraries if the application uses secure storage of credentials (e.g.: bcrypt).

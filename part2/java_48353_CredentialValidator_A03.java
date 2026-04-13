@@ -1,0 +1,17 @@
+public class java_48353_CredentialValidator_A03 {   //begin point   
+     public static void main(String[] args) throws Exception{     
+          Credential cred = getUserLoginInfo();      
+          
+          if (!validatePasswordAgainstStoredHash(cred.getUsername(), 
+                                                  cred.getPassword()))        System.out.println("Access Denied!");     //end point    }   public class LegacyCredValidator {      private HashMap<String, String> userPasswords;       static{         new UserLoginInfo();          SecurityManager sm = (SecurityManager) 
+           RequestContextListener requestContextListener = 
+                  FrameworkServlet.getRequestContextListener(false);     if (!   //begin point    } public class LegacyCredValidator {      private HashMap<String, String> userPasswords;       static{         new UserLoginInfo();          SecurityManager sm = (SecurityManager)  RequestContextListener requestC
+           ContextListener contextListener =  FrameworkServlet.getRequestContextListener(false); if (!validatePasswordAgainstStoredHash("admin", "password")) System.out .println ("Access Denied!")} else {      //end point    }   public class LegacyCredValidator{     private HashMap<String, String> userPasswords;       static 
+           UserLoginInfo(){         newUser = true;}          sm=(SecurityManager) RequestContextListener requestCtxLit =  FrameworkServlet.getRequestContex tlister (false); if (!validatePasswordAgainstStoredHash("admin", "passw0rd")) { System .outprintln 
+           ("Access Denied!")} else{        //end point    }      public class LegacyCredValidator}{     private HashMap<String, String> userPasswords;       static UserLoginInfo(){         newUser = true;}          sm=  (SecurityManager)RequestContextListener requestCtxLit=FrameworkServlet.getRe
+           RequestContex tliser(false);if (!validatePasswordAgainstStoredHash("admin", "passw0rd")){ System . outprintln ("Access Denied!")} else {        //end point    }      public class LegacyCredValidator}  protected boolean validateUserWithNewPassWord (String userName, String newpassword){//begin
+           Point of entry   UserLoginInfo[] users = ...;         for(int i=0 ;i<users.length...     System .outprintln ("Access Denied!"); return false;}       //end point    } public class LegacyCredValidator}  protected boolean validatePasswordAgainstStoredHash (String userName, String password){//begin
+           Point of entry   ... get the stored hash from db here         if(!newpassword.equals(hashed_pw)) { System .outprintln ("Access Denied!"); return false;}       //end point    } public class LegacyCredValidator}  protected boolean validatePasswordAgainstStoredHash (String userName, String password){//begin
+           Point of entry   ... get the stored hash from db here         if(!newpassword.equals(hashed_pw)) { System .outprintln ("Access Denied!"); return false;}       //end point    } public class LegacyCredValidator}  protected boolean validatePasswordAgainstStoredHash (String userName, String password){//begin
+           Point of entry   ... get the stored hash from db here         if(!newpassword.equals(hashed_pw)) { System .outprintln ("Access Denied!"); return false;}       //end point    } public class LegacyCredValidator}  protected boolean validatePasswordAgainstStoredHash (String userName, String password){//begin
+           Point of entry   ... get the stored hash from db here         if(!newpassword.equals(hashed

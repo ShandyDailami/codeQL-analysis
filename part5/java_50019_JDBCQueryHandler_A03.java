@@ -1,0 +1,22 @@
+import java.sql.*;   // Import necessary Java libraries 
+// Note that we are only importing "*" which means all classes in this package can be used by our program, and these may change over time due to updates or additions from JDBC implementation of a database driver (like Oracle Driver for MySQL)   
+public class java_50019_JDBCQueryHandler_A03 {   // declare the className 
+     public static void main(String[] args){        // entry point method         
+           String url = "jdbc:sqlserver://localhost;databaseName=YourDB";            // define your database connection string               
+	       String username  ="username";               // Define user credentials            
+	       String password = "password"; 				// and a place holder for the encrypted pass             	   		    	       	     	 				   						  					     ​         ¨¦‵©~(^_`) ~ ^,&*(' '+=−∆→←#;:’",”“
+           try {                               // Try to open a connection            	               			                		             	       	     	 				   						  					     ​         ¨¦‵©~(^_`) ~ ^,&*(' '+=−∆→←#;:’",”“
+               Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver"); // Load the SQL Server JDBC driver  	               			                		             	       	     	 				   						  					     ​         ¨¦‵©~(^_`) ~ ^,&*(' '+=−∆→←#;:’",”“
+               Connection conn = DriverManager.getConnection (url , username , password);  // Get a connection to the database            	               			                		             	       	     	 				   						  					     ​         ¨¦‵©~(^_`) ~ ^,&*(' '+=−∆→←#;:’",”“
+               Statement stmt = conn.createStatement();  // Create a statement to perform database operations            	               			                		             	       	     	 				   						  					     ​         ¨¦‵©~(^_`) ~ ^,&*(' '+=−∆→←#;:’",”“
+               String sql = "SELECT * FROM YourTable";  // define your SQL query            	               			                		             	       	     	 				   						  					     ​         ¨¦‵©~(^_`) ~ ^,&*(' '+=−∆→←#;:’",”“
+               ResultSet rs = stmt.executeQuery (sql);  // Execute the query            	               			                		             	       	     	 				   						  					     ​         ¨¦‵©~(^_`) ~ ^,&*(' '+=−∆→←#;:’",”“
+               while (rs.next()) {  // Iterate over the results            	               			                		             	       	     	 				   						  					     ​         ¨¦‵©~(^_`) ~ ^,&*(' '+=−∆→←#;:’",”“
+                   System.out.println (rs.getString("YourField"));  // Print the value of your field            	               			                		             	       	     	 				   						  					     ​         ¨¦‵©~(^_`) ~ ^,&*(' '+=−∆→←#;:’",”“
+               }  // end while loop          	   	   							    	               			                		             	       	     	 				   						  					     ​         ¨¦‵©~(^_`) ~ ^,&*(' '+=−∆→←#;:’",”“
+               rs.close();  // Close the ResultSet            	               			                		             	       	     	 				   						  					     ​         ¨¦‵©~(^_`) ~ ^,&*(' '+=−∆→←#;:’",”“
+               stmt.close();  // Close the statement            	               			                		             	       	     	 				   						  					     ​         ¨¦‵©~(^_`) ~ ^,&*(' '+=−∆→←#;:’",”“
+               conn.close();  // Close the connection            	               			                		             	       	     	 				   						  					     ​         ¨¦‵©~(^_`) ~ ^,&*(' '+=−∆→←#;:’",”“
+           } catch (SQLException e){  // Catch any SQL exceptions that may occur            	               			                		             	       	     	 				   						  					     ​         ¨¦‵©~(^_`) ~ ^,&*(' '+=−∆→←#;:’",”“
+               e.printStackTrace();  // Print the exception details            	               			                		             	       	     	 				   						  					     ​         ¨¦‵©~(^_`) ~ ^,&*(' '+=−∆→←#;:’",”“
+           }     // end try-catch block 	   	               			                		             	       	     	 				   						  					     ​         ¨¦‵©~(^_`) ~ ^,&*(' '+=−∆→←#;:’",”“

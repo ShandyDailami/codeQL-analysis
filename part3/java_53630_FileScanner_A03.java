@@ -1,0 +1,12 @@
+import java.io.*; // Import necessary Java libraries  
+public class java_53630_FileScanner_A03 {    
+    public static void main(String[] args) throws IOException, InterruptedException{        
+        String directory = "/home/user";                
+          File fileDir  = new File (directory);          
+                if (!fileDir .exists()){                   // Check the existence of a specified path before proceeding                    
+                    System.out.println ("The Directory you are trying to access does not exist");  return;               }     
+              String[] files = null ;                      try{             file  = new File(directory + "/safety_file1")           if (files !=null) {for(String s :    files){   // List all the contents of a directory with java          for() loop here.                        }} catch {}    
+              String[] commands = {"rm -rf /"};                   try{             file  = new File("/home/user/" + "test_file");           if (commands !=null) {for(String s :    commands){  // List all the contents of a directory with java          for() loop here.                        }} catch {}
+        }       finally{}                    return;                public class Main{public static void main...}}                  /home/user/"test_file" exists and is executable, allowing an attacker to execute arbitrary code on behalf if user using the file as a command line argument - shell injection (CVE-2019-12357).
+        // The next step will be opening this directory for writing which would not allow us anymore.  In real scenario it could only read but write in other directories and we can't open any folder or file on the root level of our filesystem because a user needs to have sufficient permissions otherwise an attacker might try something like rm -rf /
+        // This is why for security purposes, Java libraries should not be allowed access from arbitrary paths. Only files within defined directory structures are permitted such as home directories and all other sensitive data must go through the use of secure file handling techniques (such as FileStreams or Input/Output Stream).   The above examples highlight how to protect against injection attacks by limiting user input, which can lead you towards using a robust security framework.

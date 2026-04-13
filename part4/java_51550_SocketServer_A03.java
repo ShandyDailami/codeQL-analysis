@@ -1,0 +1,12 @@
+import java.io.*;
+import java.net.*;
+
+public class java_51550_SocketServer_A03 {  
+    public static void main(String[] args) throws IOException, SQLException{    	      		          	     	   	       	 			        }      private int port;private ServerSocket server;  final String DB_URL = "jdbc:mysql://localhost/testdb?user=root&password=$QL";  
+    // Using a placeholder user for db connection. In real world, you need to use proper username and password    	      			       	   	       	 		      private static Connection conn;  final String USERNAME = "admin123$%^";private java_51550_SocketServer_A03(int port){this.port=port;}public void start(){ server =  new ServerSocket(port);System.out.println("Starting Socket on Port: %d".formatted (port));while(true) {Sock s =server .accept();new HandleThread((Player)s).start();} 
+    // This is our own thread that will handle communication with one client at a time }public static void main(String[] args){ new SecureSocketServer(12345 ). start ();}} public class Player extends Thread { private Socket s;  		     	   	 	      							    			 
+    // This is the object that will handle communication with one client at a time}public java_51550_SocketServer_A03() {this.s = handlerS;}@Overridepublic void run()	{try{conn= DriverManager . getConnection(DB_URL,USERNAME);Statement stmt=  conn  	.createStatement();stmt 
+    // .executeUpdate("INSERT INTO PLAYER (ID , NAME) VALUES ('" + id+ "','"  + name+  "' )"); }catch(.java.sql.* exception e){e .printStackTrace() ;}}finally {try{ if(conn != null && conn.isClosed()) 
+    //     conn =null; DriverManager.getConnection("","").close();} catch (SQLException se) {} try {if((stmt!=  null )&& stmt .getUpdateCount() > 0)}catch (.java..sql...exception e){e   printStackTrace( );}} 
+    // }}}} public class HandleThread extends Thread{private Player p ;public java_51550_SocketServer_A03() {this.p = handlerP;} @Override     	 	    	public void run ( ) { try	{ for (;;) {" + " Reading from Client" .split(":") [0]).sendString(s, in); 
+    // } catch (.io..IOException e) {}catch(.java...exception c){c.printStackTrace() ;} }} public static Player handle;public Handler getHandler(){return new HandleThread().gethandler();}}   });    	      		       	     	   	 			      };

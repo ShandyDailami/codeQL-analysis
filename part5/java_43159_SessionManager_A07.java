@@ -1,0 +1,15 @@
+import sun.security.util.*;
+   import javax.crypto.Cipher;    //for encrypting data using AES algorithm, key must be generated separately for this encryption/decryption    
+class java_43159_SessionManager_A07 {        #the Manager class will handle all sessions and manage users's session ie., each user gets a unique id as the manager is also identified by an ID. 
+    private static final int USER_ID = 1;   //static variable to store User Id, could be passed around instead of being stored in every request (Session). It can only hold one value at any given time and it will not change over different requests/sessions for the same user so no need thread-local.
+     private static final int PASSWORD_LENGTH = 5; #password length 
+    class AuthenticationException extends Exception { }   //define exception to handle authentication failure case     
+       public String encryptData(String data) throws java.rmi.RemoteException{                   
+          byte[] key = getKey();                  #generate random AES-key for encryption and decryption, could be stored securely in a database or elsewhere (not shown here).  //TODO: Remove this line after testing is complete   return Base64.getEncoder().encodeToString(cipherData); }
+       private byte[] getKey() {                     #generate random AES-key for encryption and decryption, could be stored securely in a database or elsewhere (not shown here). //TODO: Remove this line after testing is complete  return new SecretKey();}                   
+          Cipher cipher = null;           
+           try{                                   
+              cipher=Cipher.getInstance("AES");    #create AES instance and set key to it, could be stored securely in a database or elsewhere (not shown here). //TODO: Remove this line after testing is complete   return new SecretKey();}                    public String decryptData(String encrypteddata){
+               cipher.init(Cipher.DECRYPT_MODE , key);  #decryption, could be stored securely in a database or elsewhere (not shown here). //TODO: Remove this line after testing is complete   return new SecretKey();}                    public void authenticateUser() {
+               if(!authenticated){                   try{                  throw new AuthenticationException("Authentication failed"); } catch(IOException e) {} }}      #end of class SessionManager, start here.  //TODO: Remove this line after testing is complete   return null;}}    public static void main (String[] args ) {
+               session =newSession();                 try{                  throw new AuthenticationException("Authentication failed"); } catch(IOException e) {} }}                #start of the program start here.  //TODO: Remove this line after testing is complete   return null;}}              protected SessionManager(){throw new IllegalStateException ("Cannot instantiate a utility class")}

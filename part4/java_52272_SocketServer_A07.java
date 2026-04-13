@@ -1,0 +1,8 @@
+import java.net.*;   //for DatagramSocket , InetAddress & Socket
+impoRt javaxCalss;// for classes like SSLServerSocket and ServerSocket   
+public class java_52272_SocketServer_A07 {     
+static void serve(int port) throws Exception{    
+        SSLEngine sslEngine = createSSLContext().createSSLEngine();   //step 2a.1b: Create a new engine, using our SSL context from step #5c    . ( )      
+         socket Socket=newSocket(port);//socket on which the server will listen for incoming requests;        DatagramSoCket sock = null ;          System.out "Server started";      //step 2a     - Starts up a new ServerSocke tt is listening at portno   
+}   }public static void main(String[] args){try{ serve (1098);}} catch { e . println("Caught ex: ",e)}finally {}//This step ensures that the server socket close connection and release resources it was using.        if(!Socket)System outprintln ("Closed down");    }    
+}   //End of class SecureSock  This is a simple implementation for SSL in Java Socket Server, with no user authentication or security measures applied due to lack requirements A07_AuthFailure as mentioned above - only basic socket programming using java standard libraries. It does not provide full functionalities like load balancing across multiple servers/clients and also it uses the default port 15649 for SSL communication rather than customizable one provided in args[] array, but this is a starting point to build more robust server with better features based on your needs .

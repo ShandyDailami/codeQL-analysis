@@ -1,0 +1,3 @@
+import org.xml.sax.*;   // Import SAX Parser interface from Java XML API(JAXP)
+import javax.xml.parsers.*;//Import parser utilities to read and parse xml documents in java   2014-July (Java SE7/8 update only), used for parsing of external, remote or proprietary data source by providing simple abstraction over the underlying XML format details 3rd
+import org.xml.sax.helpers.*; //Import SAX helper classes to enable reusable implementation code  2014-July (Java SE7/8 update only) for reading and parsing large xml documents, or handling any event in a way that is similar across different platforms 3rd

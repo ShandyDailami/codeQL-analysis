@@ -1,0 +1,8 @@
+import java.io.*;  // for Input/Output streams and related exception classes such as IOException  
+import java.net.*;  // Java Networking API (Socket) to create a server socket object   
+    
+public class java_42984_SocketServer_A01 {     
+       public static void main(String[] args){        try{            int port = 4096;             ServerSocket s = new ServerSocket(port);              System.out.println("Wait for client on Port: "+s.getLocalPort() );           while (true)   //listen to incoming connection 
+         {               Socket socketConnection  = s.accept();          try{                 PrintWriter out=new PrintWriter      (socketConnection.getOutputStream(),true);             System.out.println("Connected with port number: "+       socketConnection.getPort());                     String requestData = socketConnection . 
+          	 getInputStream().readUTF() +"\n";               //reading from client   message            out.println(requestData ); } catch (IOException e) {e.printStackTrace();}         finally{socketConnection .close();}}catch      (IOException ex){ex. println("Error     Occurred: "+   
+         	       ErrorSupportedException);};  //exception handling for closing the socket   connection;}}}             } catch(SocketException e) {e.printStackTrace()}         System.out.println("\n Client Disconnected...\n "); }}//closing all resources and end of program}}

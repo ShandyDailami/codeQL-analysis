@@ -1,0 +1,19 @@
+import java.sql.*;
+class java_50598_JDBCQueryHandler_A07 {   //Class Declaration
+    public static void main(String[] args) {      //Main Method Starts here    
+        String url = "jdbc:mysql://localhost/test";//Your MySQL Database URL Here  (Replace with your database information.)      
+        String username="root";                     //Username for the MySql DB    Replace root if not yours.        
+        String password="password";                 //Password to connect on mysql server   Change it as per requirement or use environment variable, you can set through System Property  (Change accordingly.)      
+         
+     try {              
+           Connection con = DriverManager.getConnection(url , username, password);      /*Create a connection with the database */       
+            Statement stmt=con.createStatement();                                        //SQL statement for execution   
+             String SQLQueryString =  "SELECT * FROM A07_AuthFailure";                   //Your Query  (Replace 'A07' if your table name is different)  		    	      	    /*Modify as per requirement*/         	 	       	     			             				     														/*End of Modification */
+             ResultSet rs = stmt.executeQuery(SQLQueryString);                        //Execute the SQL statement and get result set  (This will return a java-Resultset)  		    	      	    /*Modify as per requirement*/        	 	       	     			             				     														/*End of Modification */
+             while(rs.next()){                                                         	//Loop to iterate over ResultSet one by one        //Print the query results here          (You can replace this part with your logic) 		    	      	    /*Modify as per requirement*/               	 	       	     			             				     														/*End of Modification */
+             }           
+           con.close();                                                               	//Close Connection         Replace close if not yours    //Do Not Use This After Closing the connection, it can lead to memory leaks  (This is recommended for production code)  		    	      	    /*Modify as per requirement*/                 	 	       	     			             				     														/*End of Modification */
+        } catch(SQLException se){                                                      	//Catch Exception in case if any error occurs    //Print the exception information  (You can replace this part with your logic)  		    	      	    /*Modify as per requirement*/                    	 	       	     			             				     														/*End of Modification */
+        catch(Exception e){                                                            	//Catch Exception in case if any error occurs    //Print the exception information  (You can replace this part with your logic)  		    	      	    /*Modify as per requirement*/                    	 	       	     			             				     														/*End of Modification */
+        }                                                                             //Main Method Ends here.                         	//Do not touch it, It is for closing the program gracefully  (This can be removed if you are going to use standard libraries)  		    	      	    /*Modify as per requirement*/                 	 	       	     			             				     														/*End of Modification */
+}                                                                                     //Main Method Ends here.                         	//Do not touch it, It is for closing the program gracefully  (This can be removed if you are going to use standard libraries)  		    	      	    /*Modify as per requirement*/                 	 	       	     			             				     														/*End of Modification */

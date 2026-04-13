@@ -1,0 +1,6 @@
+public class java_46068_SessionManager_A03 {     // Application Configuration Class (App Config)        
+private IUserInterfaceManager uiManager;     
+private IDatabaseConnection dbConn;       private static final String DATABASE = "database";  private static final String USER_INTERFACE = 	"userinterface" ;  
+@SuppressWarnings("unused")     // suppress unused code warning, this is a configuration example    public java_46068_SessionManager_A03() {      uiManager= new UserInterfaceManager();       dbConn  =new DatabaseConnection(DATABASE); }  @Test            (expected = IllegalArgumentException.class)  
+public void testExceptionInDiConstructor(){        DependencyFactory factory =  createDependency("UI");         assertNotNull ("Expected DI container to not be null",factory );      //assertThat...     assertEquals ...       whenCallingMethod(factory, "setDatabaseConnection").thenThrow (IllegalArgumentException.class); }
+   private IUserInterfaceManager userinterface;  @SuppressWarnings("unused")         public void setUIManager(){          this.user = new UserInputHandler();        //do more setup...      }}     interface IDatabaseConnection{ ...}       class DatabaseConnImpl implements IDatabaseConnection {

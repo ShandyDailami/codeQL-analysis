@@ -1,0 +1,7 @@
+import java.sql.*; // We'll use JDBC for data access via SQL queries, Statement & PreparedStatement objects etc.,  
+                // and JavaSQlConnector/J to interact with the database server (MySQL in this case)   
+public class java_52833_JDBCQueryHandler_A07 { 
+     static final String DB_URL = "jdbc:mysql://localhost:3306/mydatabase";// replace these fields by your own MySQL details.   // Database URL, Username and password here are placeholders (you should add them to the db)    private Connection conn;      Statement stmt;    
+        public java_52833_JDBCQueryHandler_A07() {       try{           this.conn = DriverManager.getConnection(DB_URL,"username","password");            //replace these fields by your own MySQL details             }catch (SQLException se){              System.out.println("Error while connecting to the database "+se);       
+         }     finally  {               if(!this.stmt==null || !conn.isClosed() == false)          try{           this.stmt = conn.createStatement();      //try and catch block for SQLException}catch(SQLException se){              System.out.println("Error while executing the query "+se); }       }}
+     public void closeConnection(){         if(!this.conn==null || !conn.isClosed() == false) try{           this.stmt = conn.createStatement();      //try and catch block for SQLException}catch(SQLException se){              System.out.println("Error while executing the query "+se); }       }}

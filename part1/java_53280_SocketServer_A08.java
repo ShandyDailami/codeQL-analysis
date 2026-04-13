@@ -1,0 +1,9 @@
+import java.net.*; // Import socket network packages  
+import java.io.*;    // IO classes are included under the net package    
+implements Runnable { // Implementing runnable interface makes object thread-safe     
+private Socket sock;             // Declare a variable to hold connected client  'socket'           
+public void run()  	// Method implements Runnnalbe Interface, so we can use Thread.        
+{        try                   	 {      		   									         	 	   			     if ((sock = serverSocketInet.accept()) != null )             // Accept incoming connection  .          
+            {                  System.out.println("Connection Established with Client ");      }              catch (Exception e)                  	     	{        	   println(e);      	 	   					}     finally   		       			 try               					          close();                      	// Closing Connection                    // Close the connection after use
+             {  System.out.println("Connection closed by client");}                          else                                                     return;}}                 catch (Exception e)              		{         println(e);           	 	   					}     finally                  		    try               					          close();                      }      public static void main  			       	(String args[] )
+  { ServerSocket server = null, sock=null ; SocketAddress sa;       // Declare and initialize the socketServer.         int port = 8056 , clntPort;                  				    try               					          while(true)                            		    	 	server   = new ServerSocket("localhost", 1234);                     System .out     	.println ("Waiting for client on port" + Integer..                  Port number is the same as in Client side.               sock = server_.accept();                   println   					   ( "Connection accepted from : "+sock,         		    	 	 );                      }

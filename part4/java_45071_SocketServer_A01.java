@@ -1,0 +1,6 @@
+script    var fs = require('fs');     const path=require("path");      //importing the http module 
+       https://nodejs.org/api/https.html#class-https_1a3594b02d8bafe6fdbe7fbbcfaacfcff    var express = require('express')     const app=express()      // setting up a new Express application
+app .use(function (req, res) {   return 	res.send ('Hello World!'); })//setting the home page to send "hello world" when accessed using our server's ip and port in browser          var http = require('http')     const socketserver=require("socket.io")(.5 ) .listen(3001)   
+      //Setting up a new express application,  connecting with the Socket IOService   socketServer_ExpressApp =  https://nodejs.org/api/https.html#class-http_sslserver     socketserver._io =socketserverservicemixin .init(expressapp)   
+      //The server must be a secure one to handle HTTPS and TLS 12 features properly   var fs=require('fs');var path =  require ('path') ('./myPrivatekeyAndMyCerts'), function() {     return console.log ("Your node js SSL Server is up & running!")
+       });

@@ -1,0 +1,6 @@
+import java.util.*; // For ArrayList, LinkedList etc. used below  
+public class java_45456_CredentialValidator_A03 {   
+     public static boolean validate(String password) {         
+         if (password == null || password.length() < 5){  /*a*/            return false;              }           else{             System.out.println("Password is validated");return true;}                  //b        */                   }   CredentialValidator cv = new CredentialValidator();      
+     if (cv.validate(null)) {          System.out.print ("Null password not accepted: ");      print_hexadecimal ((byte)0x7F);  /*c*/         }} // Main method to test the code           public static void main (String args[]){ CredentialValidator cv = new CredentialValidator();       
+     System.out.println ("Result from validate: " +(cv.validate("123456789")));      } /*e*/  //end of Main method    private static void print_hexadecimal (byte b) {           for (int i=0;i<b.toString().length();){              System .out -print(Integer.) ;}}

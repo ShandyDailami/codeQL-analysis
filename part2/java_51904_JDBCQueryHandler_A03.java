@@ -1,0 +1,12 @@
+import java.sql.*;   // Importing required libraries from Java's standard library   
+public class java_51904_JDBCQueryHandler_A03 {     // Defining a public static method named 'JDBCQueryhandler'. This serves as our main handler thread of execution in the program, where all operations are performed     
+  private Connection connection;       // Declaring an instance variable for handling database connections.   It's type is java.sql.Connection   
+    
+// Constructor to establish a new Database Connectivity (connection) with MySQL server at 'localhost:3306/mydb'. The user name and password are used if different from the default credentials defined in my.cnf file or set environment variables 
+public java_51904_JDBCQueryHandler_A03() {      // Defining our constructor    This method will be called automatically when an object of this class is created    
+   try{          
+       Class.forName("com.mysql.cj.jdk.Connection4");          /* Locating MySQL Connector/J and its dependencies */ 
+        connection = DriverManager.getConnection( "jdbc:mysql://localhost:3306/mydb", "username","password" );   // Constructing the Connection object with a database URL, user name & password     }            catch (Exception e) {    System.out.println("Error while connecting to Database :\n");e.printStackTrace(); 
+      }}catch(SQLException se){        /*Handling SQL Exceptions */   //Catching the 'se' exception that will be thrown when there is any problem with MySQL database connection     }    catch (Exception e) { System.out.println("Error in establishing Connection :\n");e.printStackTrace(); 
+      }}catch(ClassNotFoundException ce){             /*Handling Class Not Found Exceptions */   //Catching the 'ce' exception that will be thrown when MySQL Connector/J driver is not available    System.out.println("MySQL JDBC Driver is not found."); }        return; 
+}     public void execute(String query){          /*Method to Execute Database Query*/   //Creates a PreparedStatement object and then executes the given SQL statement (query) against this connection      try {                    PreparedStatement pstmt =connection.prepareStatement(query);                pstmt.executeUpdate();        } catch (SQLException se){            System.out.println("Error in executing query :\n");se.printStackTrace();       }}

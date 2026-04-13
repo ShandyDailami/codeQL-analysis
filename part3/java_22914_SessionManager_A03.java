@@ -1,0 +1,38 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class java_22914_SessionManager_A03 {
+    private static SessionManager instance;
+    private Connection connection;
+
+    private java_22914_SessionManager_A03(String dbUrl, String user, String password) {
+        try {
+            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+            this.connection = DriverManager.getConnection(dbUrl, user, password);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static SessionManager getInstance(String dbUrl, String user, String password) {
+        if (instance == null) {
+            instance = new SessionManager(dbUrl, user, password);
+        }
+        return instance;
+    }
+
+    public Connection getConnection() {
+        return this.connection;
+    }
+
+    public void closeConnection() {
+        if (this.connection != null) {
+            try {
+                this.connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}

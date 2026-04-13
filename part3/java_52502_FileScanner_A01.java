@@ -1,0 +1,5 @@
+import java.io.*;   // Import standard classes
+impo...rt nia..;     // NIO2 package for handling directories and file operations, no need if not using external frameworks like Spring or Hibernate    *//* Use only built-in Java packages */
+public class java_52502_FileScanner_A01 {  /* Start with a capital letter so it's visible in the API. Avoid putting words starting from 'A'->O at beginning of variable names for security reasons, otherwise you would have to scan all lowercase letters anyway*/  
+     public static void main(String[] args) throws IOException    // This is where your program starts execution  */ { /* Starts with a capital letter so it's visible in the API. Avoid putting words starting from 'A'->O at beginning of variable names for security reasons, otherwise you would have to scan all lowercase letters anyway*/
+      if (args.length != 1)   // Checking command line arguments  */ {    /* Start with a capital letter so it's visible in the API - should be removed or fixed as per requirements using '

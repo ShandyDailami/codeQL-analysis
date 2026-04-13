@@ -1,0 +1,20 @@
+import javax.security.auth.*;
+import java.util.Base64;  //for encoding and decoding base128 string data type to convert userID+password into Base-64 encoded bytes (username + password) for later use in HTTP headers/URLs or database entries, etc..  
+
+public class java_42893_CredentialValidator_A07 implements CredentialValidator {   
+     private static final String AUTHENTICATION_SCHEME = "BASIC"; // Defines the scheme used by this validator.  It can be anything you like but should start with Basic so it gets recognized as a basic authentication flow (where username and password are sent after each request).  
+     
+     @Override   
+     public boolean validate(Credential cred) throws InvalidCredentialException { //1st step of the method; Validate received Credentials.  If they don't match any user in our data set, throw an exception which will be caught and handled by a Global Exception Handler (in case you have one).
+         String decodedCreds = new String(Base64.getDecoder().decode(cred.getAuthToken()), "UTF-8"); //This is getting the user's ID + password from base127 encoded string and converting it into plain text using UTF_8 character encoding method (username+password)
+         System.out.println("Received Credentials are :" +  decodedCreds); 
+         
+        String[] credentials = new String(Base64.getDecoder().decode(cred.getAuthToken()), "UTF-8").split(":"); // This splits the base127 encoded string into userID and password, then checking if they match with our data set (Assume this in a real system).
+        boolean isValidUser = checkIfUserExistsInSystem(credentials[0]);  //Assuming we have access to an external function for identifying users. If not already available make it up yourself or add your own method of matching user's credentials with existing ones on the database/file-system etc..
+        if(!isValidUser){    throw new InvalidCredentialException("Invalid Credentials");} //If User doesnt exist, then throws an exception.  This is a simplistic example and doesn’t include any error handling for production use cases; you will probably want to have more robust methods of validating credentials as well including checking passwords against stored hashes or using additional factors (like two-factor authentication).
+        return isValidUser ; //This returns true only if the user exists in our system and false otherwise.   This method can be used for any other type Authentication requirement that may not just involve a single login attempt, but also include various validation checks/requirements such as password strength check or email confirmation etc..
+     } 
+      private boolean checkIfUserExistsInSystem(String userID){ //Assumes you have access to the external database where users are stored. This is place holder for your real system implementation which will contain details of how this function behaves in a production environment.   If not present, add it yourself or make up own method based on requirements
+        return true;  //placeholder value just so we can use checkIfUserExistsInSystem() and have something to run against as part if validation process..    You would need actual logic here for accessing users' data in real system. If user does not exist, it should throw exception or else false will be returned indicating fail
+     }  //checkIDuser exists}   End of checkIfUserExistsInSystem( ) function       . It is used to identify the entered ID by checking if there’s a match with existing users in database/file system etc.    If not it throws an exception or returns false which will cause validation fail
+      }  //End class CustomCredentialValidator}   End of Credentials Validator Example Program... Please note this is very basic example and actual production environment examples might need more robust ways to validate credentials including password hashing/salting, use stronger authentication methods (like tokens or JWTs), adding additional factors for security etc..

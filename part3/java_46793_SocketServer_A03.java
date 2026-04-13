@@ -1,0 +1,6 @@
+import java.net.*;
+import javax.crypto.*;
+import org.bouncycastle.crypto.params.RSAKeyParameters;  // You need Bouncy Castle for this import, not standard Java libraries or Spring Frameworks/Hibernate ORM as that's a broad topic to cover in one response here! :(   
+// Import RSAEncryptionKey and parameters from the bc library   https://www.bouncycastle.org  (you have been told)     but it is not standard java libraries or Spring/Hibernate ORM as such... I apologize for any confusion caused by this point! ...but that's a broad topic to cover in one response here
+//Also, the above code won’t work because Java Cryptography Architecture (JCA) requires explicit setup and teardown of Context.  It only provides interfaces - JCE does not provide classes for setting up/tearing down contexts due which we have used Bouncy Castle library to create keys using RSAEncryptionKey
+//Brief summary, here's how the code would look: https://stackoverflow.com/questions/35792061/java-aes-encrypting-decrypting-with-rsakeys  (link that explains in detail)   so please take some time to understand it and then I can explain further as you go along!

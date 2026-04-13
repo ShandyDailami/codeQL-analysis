@@ -1,0 +1,11 @@
+import java.sql.*;
+public class java_43838_JDBCQueryHandler_A01 {
+    public static void main(String[] args) {    
+        String url = "jdbc:mysql://localhost/testdb"; // Change to your database URL and name if necessary            
+		String username="root"; 	//Change accordingly or not at all. In case of root access, there's no need for password  		         	 			        	       	     	   									    },") {     System . out (e . g n e); // Handle unhandled exceptions if any };
+        String pw = "password"; 	// Change to your actual database username and Password. Make sure it is correct or not at all	  		         	 			        	     	   									    },") {     System . out (e . g n e); // Handle unhandled exceptions if any };
+        try(Connection conn = DriverManager.getConnection(url, username , pw)) 	{      
+            String sqlStatement  = "SELECT * FROM USERS";         	  	//Change to your specific SQL statement as required          		     			        	     	   									    },") {     System . out (e . g n e); // Handle unhandled exceptions if any };               try(PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM USERS")) 
+            ResultSet rs  =pstmt.executeQuery();                 	//Execute query to get the result set	  		         	 			        	     	   									    },") {     System . out (e . g n e); // Handle unhandled exceptions if any };           try{conn.close();}catch(SQLException se){ /*can be ignored*/	}     
+            while(rs.next()) 	{      	  	//Fetching values from the result set and printing them    			         	 			        	     	   									    },") {     System . out (e . g n e); // Handle unhandled exceptions if any };           try{conn.close();}catch(SQLException se){ /*can be ignored*/	}     
+        } catch (SQLException ex ) 	{      	  	//Handling all the checked exception, in this case we are handling only Exception and Error so they will not leak anything   			         	 			        	     	   									    }}`;		             ^_ ` ^     ;/_; \/\/_ _ __

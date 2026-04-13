@@ -1,0 +1,11 @@
+import java.io.*; // Import necessary classes of the file I/O package
+        
+public class java_42323_FileScanner_A07 {    // Define a public static main method that will execute our program    
+   private final File rootDirectory;      // Declare an instance variable for storing directory to scan 
+       
+       /** Constructor */          /* Creates new object and initializes the file system path.*/        
+           SensitiveDataScanner(String dir){               this.rootDirectory = new File(dir);}     }    public static void main ( String [] args) {      // Define our code here   try{        runSafely("/home/user",new BufferedReader(            System.in),            
+           SensitiveDataScanner::readAndPrintFileNames,"A07_AuthFailure");  }} } catch (Exception e){                    printError("Read sensitive data from directory failed: " + dir,e);}}      //Catch and handle exceptions    private static void runSafely(String path, BufferedReader br , Runnable r) {                   try{ if (!new File(path).exists() || !((File)r.getClass().getMethod("run") 
+           .invoke(br)).equals("true")) throw new SecurityException();     Process p = new ProcessBuilder(                       String[]{"cmd", "/c","dir \"" + path+ "\""}).start(); } catch (Exception e){               printError ("Run process failed: " ,e);}} private static void readAndPrintFileNames 
+          (String directory, BufferedReader br) {                  try{ File[] files =           ((File)r.getClass().getMethod("listFiles") .invoke(rootDirectory)).         listFiles(); if      (files == null ) throw new SecurityException ("No such file or     folder"); for   
+          each   //Iterate over all the found Files  printFileName        } catch       Exception e){                  }} private static void            printError             (String message,           Exceptio n) { System.out .println(message + ": Error -         " +  ne);}}                                                                                 aaaaaaaa

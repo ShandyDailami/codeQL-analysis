@@ -1,0 +1,25 @@
+import java.io.*; // Importing the File class java_47767_FileScanner_A07 Java's built in package of files exist within directories on disk, including those using OS dependent separators such as / \ and Windows-style path names (C:\\).  
+               
+public class MinimalistFileScanner { 
+    public static void main(String[] args) throws IOException{ // Main method to start the program. We use try catch blocks for exception handling because we may not be able to access directories or files that do no exist, such as non-existing directory "/non/existent" in OS Windows (C:\\).
+        File file = new File("."); 
+         // Creates a root object which refers back to the current working director. The difference between '/' and '\' is how directories are handled on different operating systems, e.g., ".", "/", or even an arbitrary string depending upon OS for example /home/user etc. Here we use '.', indicating that it will be used as root directory from which all sub-files should also belong to us in this context (including the current one).
+        File[] files = file.listFiles();  // list() method is a synchronized operation, hence using 'file' instead of new Thread( ).  
+                                           /* This code lists down every single java source/class found within "." directory which can be further extended or used for other directories as well and also allows listing .java/. class files only by changing the File object to listFiles() function.*/ 
+        if (files != null) { // Checking whether we have any file available in our root location, no need of checking size because it will always be more than zero or else you can't get anything here;  
+            for(File f : files){    /* Iterating through every single Java class/source found within the directory.*/ 
+                if (f.isFile() && f.getName().endsWith(".class")) { // Checks whether we have a file, and then checks its name extension to confirm it is .java/.  
+                    BufferedReader reader = new BufferedReader(new FileReader(f)); /* Creates buffering character - readers for reading characters from the streams in which data can be read.*/ 
+                                                          // Including try-catch block because if file does not exist then exception may occur when we trying to open it, hence better handling with Try catch blocks or Exceptions and Errors here.  
+                    System.out.println("Reading contents of: " + f); /* Writing output string on console for every new found class/file*/ 
+                                                                // Including try-catch block because if there is any error while reading then exception may occur, better handling with Try catch blocks or Exceptions and Errors here..  
+                    String line;     /* For each loop to read the data of file. */   
+                                        /** We use a reader object (BufferedReader) that has methods for seeking beyond current cursor point in an InputStream - we can do it by reading from Buffered Reader which allows us only one character at time and not all characters then again stores into String variable line before printing or performing any operations. */  
+                    while ((line = reader.readLine()) != null) {  /* The read() method is a synchronized operation, hence using 'reader' instead of new Thread().*/    // Including try-catch block because if file content does not exist then exception may occur when we trying to write it into console or any other location in this case better handling with Try catch blocks.  
+                                System.out.println(line); /* Writing output string on the same line for every new found class/file*/  // Including try-catch block because if there is some error while printing then exception may occur, but still we can print without any exceptions and handle it accordingly with Try catch blocks or Exceptions Handling in Java.  
+                    }    /* Ends reading the contents of file */     reader.close();// Closing BufferedReader after use to free up resources using 'reader' object only then finally block will be executed whether exception occurs during read operation which would not have been handled by try-catch blocks above so it is a good practice always closing all open I/O streams in Java as best practices against resource leaks. 
+                }    // Ends checking file extension and name if condition, no need of looping for more operations due to size reduction here like reading the contents or handling exceptions etc...  
+            } /*End Iteration through each File */    
+        } else {             System.out.println("Directory does not exist");  // In case root directory has been given in wrong path, then it will print "No such file/directory" on console for user reference.. no need to handle exception here because we are only checking if the input provided is correct or not and hence can't get any error.
+    }   /* Ends check whether files exist */    
+} // Closes main method

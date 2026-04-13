@@ -1,0 +1,7 @@
+import java.util.*;   // Import necessary Java libraries   
+class java_52564_SessionManager_A01 {    
+// Declaring all data members and methods here... (Read & Write Operations)        private String sessionName;      public HashMap<String, Object> mapSessionVariables = new HashMap<>();  @BeforeClass(alwaysRun=true)public static void beforeAll() {}@AfterClass(alwaysRun=true )   public static SessionManager instance ;   
+private int countReads = 0 ,countWrites= 0;      private boolean readOnlyAccessible  = true, writeOperationPossible = false  @BeforeMethod     (runAfterClass=false)public void before() { this.readOnlyAccessible    =true;}@Test(dependsOnMethods={"methodToCall","another method to call"}) public  
+void testReadOperations () throws InterruptedException {}    private static int readOperationCount = 0; @BeforeMethod (runAfterClass = false)public void setup(){ this.mapSessionVariables  = new HashMap<>();  mapSessionVariables .put("a",1);}      // This will be the method to call that should cause a failure    
+@Test(dependsOnMethods={"methodToCall"}) public   void testWriteOperation() throws InterruptedException {}    private static int writeOperationsCount = 0;  @AfterMethod (runBeforeClass = false)public  void teardown(){ mapSessionVariables.clear(); }     
+}

@@ -1,0 +1,11 @@
+import java.io.*; // Import necessary classes for file handling and directory scanning in a filesystem-like manner  
+import javax.annotation.security.RunAs;   
+      @RunAs("admin")     private class java_53527_FileScanner_A01 { ... }        
+public static void main(String[] args) throws Exception 
+{       File dir = new File("/path/to/directory"); // Define the directory to scan in here           
+        Scanner s = new Scanner(System.in);      System.out.println("Enter something: ");             String input=s.nextLine();                  if (input .equals ("quit")) {  System.exit(0) ; }           FileFilter filter =  f ->   !f.isDirectory() &&    
+        ((File)f).getName().endsWith(".txt"); // Filter to find only text documents               try       with    Stream         Files      from (dir.listFiles((f )->  (!  F . is Directory () ? false :                         FileFilterPredicate   { @Override public boolean accept(java .io    
+        .File pathname)                   return !pathname                .isDirectory() &&           Paths                  .get              ((Path)       f).equals("C:\\Users") ; } )))   == null ? false :                                                        FileMatchingIterator   { @Override public boolean hasNext()            throws IOException                      
+        , SecurityException             return super.hasNext();                   };                         if ( !Files      .exists( Paths                 .get("/path/to/.txt"))) ; throw new IllegalArgumentException("File not found"); try       with    Stream          Files  from   ((dir              // List files in a directory and its subdirectories           
+        ).filter((f )->         (! f. is Directory() ? false : FileFilterPredicate { @Override public boolean accept(java .io     .....}}))              = null) throw new IllegalArgumentException("No text documents found"); } catch (Exception e){ System                    out          `println      ("An error occurred: " +
+        /*e*/       ) ; // handle exceptions here   };  }}

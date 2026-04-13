@@ -1,0 +1,11 @@
+public class java_47544_SessionManager_A07 {
+    private HashMap<String, String> userData = new HashMap<>(); // dummy data for simplicity. In reality should be stored securely using a database and hashed passwords would also exist here too if the system requires authentication against an actual Database or other external source. 
+    
+   public boolean login(String username, String attemptedPassword) {   
+        if (userData.containsKey(username)) { // check user exists in data store     
+            return HashPasswordHasher().hashMatch(attemptedPassword , userData.getOrDefault(username,""));  }     else{   System.out.println("User not found");}         
+       return false;    }}        class SessionStorageImpl implements ISessionStore {         private Map<String, String> store = new HashMap<>();      public void storeSessionId (String sessionid , User user)           //store the username and password of a logged in person to an encrypted token which can be used as sessions      
+{   this.store .put(sessionid,user+""); }  @Override     public String retrieveSessionID (User user){         return store.getOrDefault("",null);}}        class HashPasswordHasher {          private MessageDigest digest;    //to hash the passwords and compare with hashed versions stored in database      
+public byte[] hash(String input)  throws NoSuchAlgorithmException      { this.digest=java.security.MessageDigest.getInstance("SHA-1");     return this.digest.digest(input.getBytes()); }        public boolean   hashMatch ( String attempted ,   
+String stored){         //compare the given password and hashed version in database      byte[] bytes; try {  bytes=this.hash(attempted);} catch (NoSuchAlgorithmException e)       {e.printStackTrace(); return false;}        if (!new   Arrays.equals(bytes, stored))    //if it's not equal to the hashed version in database then they are different     
+{return 0; }     else          //are same so now we can conclude that person is authenticated       return true ; }}

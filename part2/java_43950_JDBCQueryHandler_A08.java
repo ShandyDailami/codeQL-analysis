@@ -1,0 +1,10 @@
+import java.sql.*;   // Import necessary Java libraries for database connection and operations 
+public class java_43950_JDBCQueryHandler_A08 {    // Define a public static method named "JDBCQuery" in order to use the code within this file only (to avoid duplication)    
+       private Connection conn = null;          
+        String url="jdbc:mysql://localhost/mydatabase";  
+         String userName="root";                 // replace with your username 
+          String password= "password1234567890..." ;    //replace the mentioned one by replacing '...' in this comment (don’t forget to encrypt it)     //you can leave blank if no encryption required   --> ''          
+       public java_43950_JDBCQueryHandler_A08() {              // Constructor for creating a connection.  It will only be executed when an instance of the object is created, and not on creation or initialization         conn = DriverManager.getConnection(url , userName, password);    }     @SuppressWarnings("finally")
+       public void closeConn() {          // Method to manually manage closing connections  (used finally so that if any exception occurs during connection operation it will be caught and then closed)         try{conn.close();}catch(SQLException ex){};    }     @SuppressWarnings("finally")
+       public int duplicateCheckUserNameInDB() {        // Method to perform integrity check with the database  (used finally so that if any exception occurs during operation it will be caught and then closed)         try{   String sql="SELECT COUNT(*) FROM user WHERE username ='testuser';";      PreparedStatement pstm  = conn.prepareStatement("select count(*) from users where email_id =  ?");
+        // set parameter value here ...    }catch (SQLException ex) {ex.printStackTrace();}return -1;   }}     public static void main(String args[]){         new JDBCQueryHandler().duplicateCheckUserNameInDB() ;}}       closeConn method will be called at the end of each operation to ensure that database connections are closed properly, preventing resource leaks.

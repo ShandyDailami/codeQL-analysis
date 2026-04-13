@@ -1,0 +1,11 @@
+import java.sql.*;   // Import necessary Java libraries for JDBC (Java Database Connectivity)   
+public class java_52718_JDBCQueryHandler_A03 {     // Define a public static method named 'VanillaJdbcQryHdlr'. 
+private Connection conn;       // Declare an instance of the connection. This will be used to interact with our database later on  
+// The constructor for this example assumes that we're using MySQL, change it if you are not (Or use another DB)   
+public java_52718_JDBCQueryHandler_A03() {     
+try{ 
+conn = DriverManager.getConnection("jdbc:mysql://localhost/mydatabase", "username","password");       // This will open a connection to our database with the specified credentials   }     catch(SQLException e){e.printStackTrace();}    }}        public void closeConn() {try{conn.close();}}catch (SQLException ex) {} 
+public ResultSet executeQueryNoParam(String sql, Object[] params ) throws SQLException {       // Method to run a query without any parameters   int index = 0;      String paramName = "";        try with resources Connection conn= DriverManager.getConnection("jdbc:mysql://localhost/mydatabase", "username","password"){
+			PreparedStatement stmt  =conn.prepareStatement(sql);     // Prepare the statement using a SQL query string   ResultSet rs =  null;      try {rs =stmt .executeQuery(); return  rs;} catch (SQLException ex) {} finally{}                     }    public List<Student> getAllstudents() throws Exception{        
+	try with resources Connection conn= DriverManager.getConnection("jdbc:mysql://localhost/mydatabase", "username","password") {     // Open a connection, if this fails then throw an exception      try  ResultSet rs =  stmt .executeQuery(sql);        List<Student> students = new ArrayList<>();          while (rs.next())  
+		{         Student student  =new Student() ;       /* Create objects of class 'student' for each row */     // Populate the list with data from DB    } return  null;} catch(SQLException ex){throw;}}      }}`This is a very simple example to show how you can prevent SQL Injections and other injection attacks. Please note that this solution does not include any exception handling or error checking for simplicity, in your actual implementation ensure these aspects are taken care of as well!

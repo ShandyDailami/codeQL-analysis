@@ -1,0 +1,13 @@
+import java.io.*;    // Import File, Files class java_43941_FileScanner_A08 package 'java.io'    
+ import static java.nio.file.FileVisitResult.CONTINUE;      /* For handling all types of file and directory: CONTINUE */          
+public class SecurityTest {  
+ public static void main(String[] args) throws IOException  {       //Main method        
+ File rootDirectory = new File("C:/YourFolder/");             /** Specify the folder path here***/         
+ printPermissionsAndFilesInDirRecursive(rootDirectory);                /* Calling function to display Permission & file names recursively */             
+ }              
+ private static void  printPermissionsAndFilesInDirRecursive (File dir) throws IOException {            // Recurssion method    **/        if (!dir.exists()) return;             /** check directory exists or not**/           File[] subFiles = dir .listFiles();              /* Get all file and Directory names */        
+ for(int i=0 ;i<subFiles?.length;) {                                                      // Loop through files & directories **/        if (subFiles[i].isFile())                    /** Check whether it is a File or not. If yes then print the Permissions**/                   PrintStream out = new PrintStream("C:/YourFolder/"+ subFiles [i .getName () +".txt"]);                      // Write permissions to file **/           
+ try {                                                                                 /* Try block for permission check */                          if (!subFiles[i].canRead()) throw  IllegalAccessException();     /** Check read accessibility**/                       out.println ("read:"+ subFiles [i .getName ()]);                             else                                                           PrintStream console = System.out;                                // If false then print to Console **/                                                                   
+ } catch (IllegalAccessException e) {                                        /* Catch block for permission denied exception */                  try{System.err.println ("Permission Denied");}catch(IOException ex){ex.printStackTrace();}}                         PrintStream err = new PrintStream("C:/YourFolder/"+ subFiles [i .getName () +".txt"]);              // Write errors to file **/           
+ out.println (subFiles[i].getAbsolutePath());                                           /** File path */                      console.println(e.getMessage() );                                                                          err.println ("Access denied");  /* If permission is not granted then print error message**/                       i++;                  }                    // End of recursion **/
+}

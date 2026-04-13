@@ -1,0 +1,11 @@
+import java.sql.*;   // Import Statements for JDBC (Java Database Connectivity) API   
+public class java_49120_JDBCQueryHandler_A01 {      // Define Class name    
+// Setup a connection to database using SQLite-JDBC driver and create statement object,  MySQL here is the example of non secure data base as per instructions. Modify accordingly if you want use other databse like Oracle or Mysql etc  
+public Connection connect() throws SQLException {    // Define Function for Connecting to database     
+return DriverManager.getConnection("jdbc:sqlite:/tmp/testdb","userName", "password");     // Return a connection object, you should replace the url and username with your own secure information  }   public void close(Statement stmt) throws SQLException {    if (stmt != null){          
+st.close();      }           
+}                  
+public ResultSet executeSelectQuery()throws ClassNotFoundException{          // Define Function for executing select Query     try (Connection con = connect())        {  Statement stm  =con .createStatement( );         String sql =  "select * from Employee";             System.out.println("SQL Select Synchronous :" +sql);          
+ResultSet rs=stm.executeQuery(sql))          // Execute the select SQL query and print out each row   {     while (rs .next()){            String name = rs.getString ("name");              int age  = rs.getInt("age") ;             System.out.println(name + " - Age :"+age); }         }} catch 
+ClassNotFoundException e)                    // Handle exception in case of a Class not found error     {   getClass().printStackTrace();}          return null;        } public static void main (String[] args){            try{               Example example = new Example() ;                if(example.connect() !=null ) 
+    System . out .println (" Connected.. ");           // Call the connection function and print a message, then call execute select query method       {         } catch        ...          }}   In this case we are not using any non-standard libraries in our program which is good for academic style. But remember if you were to use them later on your code might get more complex due to their complexity levels (like Spring/Hibernate).

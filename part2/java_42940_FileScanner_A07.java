@@ -1,0 +1,7 @@
+import java.io.*; // Import the Java library classes such as InputStream, OutputStream etc.  
+class java_42940_FileScanner_A07 {    
+    public static void main(String[] args) throws IOException{       
+            File file = new File(".");// This will refer to current working directory on your system  where you want scan directories and files for A07_AuthFailure purpose                 
+             if (file.exists()) // Checking whether such a folder/directory exists or not  
+                listFilesRecursively(file);    else            System.out.println("Sorry, The mentioned directory does't exist!");  }     private static void listFilesRecursively(File file) throws IOException {// Method to print all the files in given Directory and its subdirectories          File[] contents = file.listFiles(); // This gives a collection of Files           if (contents != null){             for (int i = 0; i < contents.length ;i++ ){               String name = contents[i].getName() ;                
+    printFile(name); }  }}   private static void printFile(String fileName) { // Method to display the list of all files in a directory and its subdirectories          System.out.println("The File or Directory Name is : "+fileName );}}`;

@@ -1,0 +1,10 @@
+import java.io.*;   // Import Input/Output streams package   
+ import java.net.* ;     //Import socket programming and IP related packages     
+public class java_48028_SocketServer_A08 {      
+ public static void main(String args[]) throws Exception{        
+ ServerSocket server = new ServerSocket (8091);  System.out   .println ("Waiting for client on port " +server    .getLocalPort()+"..." );        BufferedReader in  = null;      //Create input stream     if(c instanceof TcpConnection) {            
+ Socket connection = server.accept();          try{               String data=null,data1=null ;            InputStream is =connection   .getInputStream ()  ;         Reader rdr=new BufferedReader ( new InputStreamReader    (is))     while((in  =rdr.readLine())!= null){               
+ DataHandler dH=new DataHandler(ConnectionDataProvider().provide());             System.out      .println("Received from client: "+dH );            String command ="AUTH_REQUEST";           ConnectionData  cnf;          // send authentication request to the connected clients        while(!command   .equalsIgnoreCase (in)) {               
+cnf=new     DataObject(connection); if (!checkIntegrity    ((String) dH.getContent(),c    nf)){ return;}              System      .out  .println ("Authentication failed for client"); connection       .close();          }                 else{                  //Send authentication response to the connected clients        String data1="AUTH_ACCEPTED";             DataObject   dobj  =new    
+DataObject(connection);dobj.sendString (data   1 );}                }}catch      {              System . out  .println ("Error occurred in client connection");       }finally{         if        // close the resources          server           .close();               }}}                 catch   SocketException nc            
+(IOException e){            Console.error("SocketServer: "+nc);}    }}      '

@@ -1,0 +1,21 @@
+import java.security.*;
+// Import MessageDigest, a utility class java_51486_CredentialValidator_A08 provides support at multiple levels of abstraction to digest and produce block cipher digests (Message Digests) which can be used for various purposes in cryptography such as verifying data integrity or producing secure hashes from passwords etc。 
+import java.util.*;  
+// Import the RandomNumberGenerator class, a utility that provides access methods of random number generators to generate long numbers with specified range and other characteristics - useful when creating new keys for encryption-related operations in cryptography such as generating secret key values or using secure nonce (number used once only). 
+import java.util.Base64;  
+// Import Base64 utility class, a part of the Java standard library which contains methods to encode and decode data into text format - very useful when we need strings in base-64 form for example during HTTP headers or transmission over web services as JSON objects are often represented by stringified representation. 
+import javax.crypto.*;  
+// Import Cipher class, a utility that provides the mechanism of encrypting and decryption data using symmetric encryption algorithms - useful when we need to use secure communication channels for transmitting sensitive information like passwords or keys over any network protocols as SSL/TLS etc.,  such methods are implemented by this interface.
+import javax.crypto.spec.*;  
+// Import SecretKeySpec, a utility that provides the mechanism of encrypting and decryption data using symmetric encryption algorithms - useful when we need to use secure communication channels for transmitting sensitive information like passwords or keys over any network protocols as SSL/TLS etc.,  such methods are implemented by this class.
+import javax.crypto.spec.IvParameterSpec;   // Import IvParameterSource, a utility that provides the mechanism of encrypting and decryption data using both symmetric encryption algorithms - useful when we need to use secure communication channels for transmitting sensitive information like passwords or keys over any network protocols as SSL/TLS etc.,  such methods are implemented by this class.
+  
+public class CustomCredentialValidator {    // begin of custom credential validator example code block     
+       public boolean authenticate(String username, String password) throws NoSuchAlgorithmException    
+        {           System.out.println("Starting Authentication Process...");        
+                   try{             Cipher cipher =Cipher.getInstance ("AES");          // Creates a new instance of AES with the appropriate key size for encryption and decryption            IvParameterSpec ivspec=new IvParameterSpec(ivValueByteArray) ;           String encryptedPassword=  Base64.getEncoder().encodeToString ( cipher .doFinal  ((username + password).getBytes("UTF-8"),       0,cipher	.getBlockSize() ) );          // Encrypts the plain text and stores it in a secure place           
+                   }catch(Exception ex){                  System.out.println ("Authentication Failed!");         return false;       }}      catch (NoSuchPaddingException e) {              Logger.getLogger("CustomCredentialValidator").log(Level.SEVERE, null, e);          // Handle any run-time errors
+        }             if (!encryptedPassword .equals  ((new StringBuffer   ("Base64 encrypted password"))))    return false;       System.out.println ( "Authentication Successful!" );         return true;}     public static void main(String[] args) {              CustomCredentialValidator ccv = new          
+CustomCredentialValidator();          try{             PrintWriter out=new        // Begins the custom Credentials validator program block       }catch   
+   (FileNotFoundException e){            System.out .println ("An error has occurred");      return;} catch(IOException ex) {              Logger     logger =Logger         getLogger("CustomCredentialValidator") ;             handler  // Handle any run-time errors           try{               ccv          .authenticate ( "user",  
+"passwd"));}}`;

@@ -1,0 +1,14 @@
+import java.io.*; // for FileScanner class java_49098_FileScanner_A08 use only package-level import of file handling classes in JDK
+// Importing SecurityManager from javax where all security related methods are available and used by the user's code 
+public class A08_IntegrityFailure {  
+    public static void main(String[] args) throws IOException, IllegalArgumentException{     //main method declaration with parameters as array of string       
+            java.security.*;                  
+         SecurityManager sm = new SecurityManager();             
+          ProtectedFileSystem pfs =  (ProtectedFileSystem) FileSystems.newInstance((URI)null ,(Map)sm);  /* instantiate the file system object */     // creating a instance of protected filesystem where all security-related methods are available        sm . setFolderMask ("0755");  
+          pfs.mkdir ( new java.nio.file.Path("./protected/"));    /* Create directory in FileSystems for Protection*/  /* We just use this to create the folders and files */     
+         try {       //try block where we are going inside of it        sm . checkDelete ("D:\\example");   /* Check if deletion is not allowed, If yes then throw an IllegalArgumentException.    "./protected/" will hold our data which has been protected by security manager*/          pfs.delete (new java.nio.file.Path(" ./protected/"));     // This line of code removes the file named './protected' in filesystem     
+           System . out . println ("File Deleted Successfully..");  } catch(SecurityException se ) {   /*Catching exception if any security related operation is not allowed */    Console. error (se);         sm . checkDelete("./ protected/ ");       // We are going to see how our FileSystem reacts when delete request for ./protected/.*/       
+           pfs.delete(new java.nio.file.Path ("d:/ example"));     /* This line of code will throw an IOException which we handle at the top level */      try { sm . checkDelete("./ protected/"); } catch (IOException ie)   //Catching exception if any security related operation is not allowed 
+          Console . error(ie);        System. out . println ("File Deleted Successfully.." + " File : d:/ example, ");    /* This will handle our IOExceptions */       }     sm  = null;      pfs =null ;   // to avoid memory leakage we are going for garbage collection        
+           try { Thread.sleep(10);} catch (InterruptedException e) {}        System . out . println ("Main function is about exit.");    /* This line will terminate the main thread */     } 
+       }   //End of Main method body      };//Closing bracket for class declaration and its methods. It was not specified in your requirements, but it's common practice to include this at end        A08_IntegrityFailure;    /* Ending line*/             }} ;/* Closure the main function */

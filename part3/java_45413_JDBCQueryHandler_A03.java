@@ -1,0 +1,6 @@
+import java.sql.*;   // Import Statements for Java Database Connectivity 
+
+public class java_45413_JDBCQueryHandler_A03 {     // Start of Class Declaration   
+                                        public static void main(String[] args) throws SQLException{      // Beginning if block to handle exceptions        }      
+                                          @Test                    public ResultSet getUserData()throws Exception   {           User user=new User();              String query = "SELECT * FROM USERS WHERE id = 1";            Connection connection;             Statement statement    try  (connection  =DriverManager.getConnection(dbUrl,userName ,password);
+                                             PreparedStatement preparedstatement   =      connection .prepareStatement(query)) {        } catch   (SQLException e)       // Catching the exceptions     while executing above SQL statements it will throw an error message that includes exception class name and its corresponding stack trace.    return null;  }}           public static void main method

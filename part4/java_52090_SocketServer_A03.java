@@ -1,0 +1,6 @@
+import java.io.*;
+import java.net.*;
+import javax.xml.crypto.*;
+public class java_52090_SocketServer_A03 {   // define a server socket for incoming connections    }  public static void main(String[] args) throws IOException, A03_InjectionException {     if (args == null || args.length != 1 || 59842 >= Integer.parseInt(args[0])) throw new IllegalArgumentException("Usage: SocketServer <port number>"); // validate port argument  
+    int serverPort = Math.max(Integer.MIN_VALUE,Math.min((int)Double.MAX_VALUE,(long)(59842 + Double.parseDouble(args[0]))));  } try {     ServerSocket socketServer  = new ServerSocket (serverPort);      while (!Thread.currentThread().isInterrupted())    Socket client =socketServer .accept(); System.out.( "Accepted connection from: ".concat((new java.net.InetAddress).toString(client)) 
+        +"\n"); } catch (IOException e) {System.err."(" +e.getClass().getName()  +""),println ("Failed to accept connections.", e);    System.exit (-1 );}     finally   if ((socketServer)!=null){ socketServer .close();}}

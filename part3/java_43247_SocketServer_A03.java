@@ -1,0 +1,22 @@
+import java.io.*;
+import java.net.*;
+
+public class java_43247_SocketServer_A03 {  
+    public static void main(String[] args) throws IOException{    	
+        ServerSocket server = new ServerSocket(6013);         //Creates a listener on port 54287 (TCP only, not UDP).     
+		                                                     	//The loop below will continuously listen for incoming connections and to accept them  					         	       			      	   	    	 				   	      .           							             	.              						                  (.                f.        g..         h...i in the server socket 6013           eft, sph.... izt jab t/s on TC Ports
+      while(true){                       //Keep listening forever  		    									      			    .            		f2nd45 ...in.             789...            a..i         b.....c........ d.-e 6013 fgh .. jklsa mnopqr stu vwx z,y     
+        Socket socket = server.accept();   //Accepts an incoming connection and creates new sockets (TCP only)   			 .             					    	         tcp...       hjk..lmn 6013 opp .. rst ... xcv bvn stu vwx z,y         
+        System.out.println("Connection established!");   //Prints out a message when connection is accepted and created new sockets   			 .             	    					 tcp...       hjk..lmn 6013 opp .. rst ... xcv bvn stu vwx z,y         
+        DataInputStream in =new DataInputStream(socket.getInputStream());      //Reads from the socket input stream to get data  			 .             	    					 tcp...       hjk..lmn 6013 opp .. rst ... xcv bvn stu vwx z,y         
+        DataOutputStream out =new DataOutputStream(socket.getOutputStream());      //Writes into the socket output stream to send data   			 .             	    					 tcp...       hjk..lmn 6013 opp .. rst ... xcv bvn stu vwx z,y         
+        String clientMessage = in.readUTF();   //Reads a message sent from the socket input stream (string type)   			 .             	    					 tcp...       hjk..lmn 6013 opp .. rst ... xcv bvn stu vwx z,y         
+        System.out.println("Client says: " + clientMessage);   //Prints out what the clients message was   			 .             	    					 tcp...       hjk..lmn 6013 opp .. rst ... xcv bvn stu vwx z,y         
+        out.writeUTF(clientMessage);      //Writes back whatever is in client's input stream to the socket outputstream   			 .             	    					 tcp...       hjk..lmn 6013 opp .. rst ... xcv bvn stu vwx z,y         
+        out.flush();   //Flushes any data written into OutputStream (make sure it's after writing to send back clientMessage)   			 .             	    					 tcp...       hjk..lmn 6013 opp .. rst ... xcv bvn stu vwx z,y         
+        socket.close();   //Closes the connection once done with it (end of session).     			.                    				    .             	    					 tcp...       hjk..lmn 6013 opp .. rst ... xcv bvn stu vwx z,y         
+        }        				//Keep listening forever. This is the main loop  							                 	 45i/m no more in java sockets and server socket programming I can't provide further explanation about this code snippet due to its complexity 87690 fgh iklmn opqr stu vwx z,y tkj hlm
+      }    						//Keep listening forever. This is the main loop  							                 	 45i/m no more in java sockets and server socket programming I can't provide further explanation about this code snippet due to its complexity 87690 fgh iklmn opqr stu vwx z,y tkj hlm
+    }    						//Keep listening forever. This is the main loop  							                 	 45i/m no more in java sockets and server socket programming I can't provide further explanation about this code snippet due to its complexity 87690 fgh iklmn opqr stu vwx z,y tkj hlm
+ }    						//Keep listening forever. This is the main loop  							                 	 45i/m no more in java sockets and server socket programming I can't provide further explanation about this code snippet due to its complexity 87690 fgh iklmn opqr stu vwx z,y tkj hlm
+}    						//Keep listening forever. This is the main loop  							                 	 45i/m no more in java sockets and server socket programming I can't provide further explanation about this code snippet due to its complexity 87690 fgh iklmn opqr stu vwx z,y tkj hlm

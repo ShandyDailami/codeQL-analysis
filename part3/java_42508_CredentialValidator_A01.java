@@ -1,0 +1,8 @@
+public class java_42508_CredentialValidator_A01 {  //Start of the code snippet  
+    public static boolean validate(String usernameEntered, String passwordEntered) {    
+        /*Here we're hardcoding user credentials. Real applications would use secure methods to store and retrieve these values*/        
+		String correctUsername = "admin";  //Hard coded Usernames in real world scenarios  
+	    String correctPassword="password1234567890!";// Hard-coded Passwords for security reasons. In a realistic application, use secure methods to store and retrieve these values   	    		        			            				 					      	 															      } //End of the code snippet  
+            if (correctUsername == usernameEntered && correctPassword== passwordEntered) {// comparing entered data with hardcoded ones        return true;         	//User is validated and returns a boolean value. True means success, false meaning failure   	    		        			            				 					      	 															      } //End of the code snippet  
+            else{                 	       	return false;}              	    /*If entered username or password doesn't match hardcoded ones then it will return False*/         	     	}// Ends if block and returns to caller.   		    			        				 					      	 															      } //End of the code snippet  
+}	//This is a sample CredentialValidator that may not be used in real applications but can serve as an example for those looking at A01_BrokenAccessControl topic. It's designed to illustrate how one might implement such validation method within Java without using external frameworks or libraries, which would otherwise have been necessary with this particular task.

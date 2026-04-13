@@ -1,0 +1,7 @@
+import java.io.*; // Importing standard classes 
+class java_48775_FileScanner_A07 {   
+   public static boolean authenticate(String filePath, String expectedHash) throws IOException{    	        		
+	    BufferedReader br = null;            			      	 	       	     					     				       	} } catch (IOException e){ return false;} finally	{ if (br !=null ) try  { br.close();}catch (Exception ex){};}}    //Closing the reader   }}    	        		
+public static void main(String args[]) throws IOException{       FileAuthenticator().authenticate("/path/to/file", "expectedHash"); }      public String calculateMD5sumOfFileContentAndReturnIt() {// Calculating MD5 sum of file content.        try (InputStream is = new FileInputStream("filename")) 
+    // Creating a digest instance for MD5         MessageDigest md = MessageDigest.getInstance("MD5");          int byteArrayLength;     Charset charset=Charset.forName("UTF-8"):      while((byteArrayLength =is .read(byteBuffer))>0){          
+        // Updating our digest          md.update(Bytebuffer);}         return new BigInteger(1,md.digest()).toString();}}public static void main (String[] args) throws Exception  {// Main method to test the above methods      System . out . println (" MD5 : " + calculateMD5sumOfFileContentAndReturnIt()); }

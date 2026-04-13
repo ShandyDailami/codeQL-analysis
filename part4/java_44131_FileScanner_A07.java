@@ -1,0 +1,9 @@
+import java.io.*;  // Import necessary classes/libraries for handling File I/O, exceptions etc in this case  
+class java_44131_FileScanner_A07 {
+    public static void main(String[] args) throws IOException{    
+        String directoryPath = "/path_to_directory";      // Your target Directory Path Here; Replace it with actual path. 
+         BufferedReader reader =  new BufferedReader (new InputStreamReader(System.in));   // Create a buffered read from user input to quit the program after reading files content    
+        File dir =    new File(directoryPath);      /// The directory you want start search in this case we are assuming it exists and is accessible or not  .Replace "/path_to_dir" with your actual path.   // Your target Directory Path Here; Replace /target/with the real file
+        if (! dir.exists()) {       /* If no such folder then throw exception */     System.out.println("No Such Folder Exists");    return ; }      else{         File[] fList = dir .listFiles();   // Get all files and folders in this directory  for (File file :fList)       
+          if(null !=file){            /* If any of the above condition fails then throw exception */             System.out.println("No Such Folder Exists");     return;    }         else{              FileScanner scan = null ;      // Instantiate a new Scan class  for (File file :fList) {
+                    try   /* Create an instance of the scanning tool, which will read all files from directory and print their content if they contain specific string patterns */     catch(Exception ex){             System.out.println("Error: " +ex); }    return;}}}}}            // The ending brackets match for 'try' block to ensure it gets executed even in case of exceptions

@@ -1,0 +1,8 @@
+import java.io.*; // Import necessary classes for file I/O operations including FileNotFoundException and IOException  
+public class java_47450_FileScanner_A08 {   
+     public static void main(String[] args) throws Exception{     
+          String dir="C:\mydir";      
+           try (FileScanner scan = new FileFinder().scanDirRecursivelyAtPathsStartingWithFromDirectoryAndExcludingAllDirsBelowForFilesMatchingPattern("*.txt")) {   // Create a file finder to recursive search through the directory and all its subdirectories for text files matching ".*.txt" pattern   
+              System.out.println(scan);     }      catch (Exception e){System.err.printf("%s: %s\n",e, scan == null ? "" : “Error scanning file system” );} // Catch any exceptions that may occur while trying to access the FileFinder or Scan operation and print an error message if so  
+     }      private static class FileFinder extends RecursiveFileFilter {    @Override public boolean accept(Path p) throws IOException{return false;}        protected Iterable<? super Path> listFilesInDirToDescendantsOfHiddenOrSystemDirsThrownIntoInterrupt() 
+     // Throw exceptions into interruption, so this can be interrupted by the OS. This is a no-op in our case as we are scanning from inside Java app context and not running outside of it   }      static abstract class RecursiveFileFilter extends Filter {       @Override public boolean accept(final java.nio.file.Path p){return false;}}    }}

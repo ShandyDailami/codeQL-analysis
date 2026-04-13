@@ -1,0 +1,13 @@
+import javax.xml.parsers.*;  // Import the Java API parser classes (located in package dom) and XPathAPI interfaces  
+import org.w3c.dom.*;     // This is where all DOM Document related operations are performed, so we need to import this library as well   
+import java.io.*;          // Needed for FileInputStream 
+
+public class java_48884_XMLParser_A08 {        
+        public static void main(String[] args) throws ParserConfigurationException, IOException  
+	{             
+            String xmlFile = "/path/to/yourxmlfile";      // Specify the path of your XML file here.   
+	     parse(new FileInputStream (xmlFile));          // Parse with a Stream object from Disk 									          	   		                    			            	       	 	     	}       public static void parse(InputStream inputStream) throws SAXException, ParserConfigurationException   {        DOMParser parser = new DOMParser();        
+                parser.setProperty("Relaxing rules", "http://relaxng.org/ns/structure/1.0");      // We use relax-ng schema for validation 									          	   		                    			            	       	 	     	parser .parse(new InputSource(inputStream));          Document doc = parser.getDocument();       
+                NodeList nodes =  doc.getElementsByTagName("tagname") ;            int nodeCount=nodes.getLength()                 // Fetch the total count of 'tag'   									          	   		                    			            	       	 	   }     public static boolean integrityCheck(Node document) {        
+                NodeList nodes =document .getChildNodes();  for (int i = 0;i<nodeCount ; ++I){          if (!checkIntegrityFailureInCurrentContext() ){           return false;}            checkAgainstNextElementOrParentsIfNecessary(nodes.item(i))               }               
+return true                                                                                                              // If no integrity failure, then all nodes are successfully validated 									   	  	   		                    			            	       	 	} public static boolean checkIntegrityFailureInCurrentContext() {                 return false;}}                  	// This is a placeholder for the actual security sensitive operation related to A08_integritifailure. Replace this with your own operations if required 									          	  	   		                    			            	       	 	}

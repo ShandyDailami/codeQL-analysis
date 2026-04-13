@@ -1,0 +1,8 @@
+import java.io.*;  // Import socket and server classes: NEEDED for ServerSocket et al.   
+import java.net.*;  // For the Socket class, needed only in this case... NOTE THAT SOCKETS ARE DEPRECATED IN NEW STANDARDS - FOR EXAMPLE THE JAVA NIO CHANNEL AND BUFFER IS USED HERE  
+public final class java_52584_SocketServer_A03 {  // The 'final' keyword here is a good habit in Java... it means that this type cannot be subclassed, so all members (fields and methods) of the given Class must remain exactly as defined.   
+private static int portNumber = 1234;   // THE PORT NUMBER ON WHICH SERVER WILL LISTEN - NEEDS TO BE SECURED  NOTE: THIS IS A VERY BASIC EXAMPLE AND MISUSE OF SOCKET API. FOR PRODUCTION CODE, USE TRUSTSTORE OBJECT HERE
+private ServerSocket server;   // THE SERVER THAT WILL HOLD ON TO THERE'S NEW CLIENT CONNECTED  NOTE: THIS IS A VERY BASIC EXAMPLE AND MISUSE OF SOCKET API. FOR PRODUCTION CODE, USE TRUSTSTORE OBJECT HERE
+public VanillaSocketServer() {   // DEFAULT INITIALIZER - NEVER USED IF WE'VE OVERRIDE CONSTRUCTOR  NOTE: THIS IS A VERY BASIC EXAMPLE AND MISUSE OF SOCKET API. FOR PRODUCTION CODE, USE TRUSTSTORE OBJECT HERE
+server = new ServerSocket(portNumber);   // CREATE NEW SERVER SCOKET ON PORT NUMBER  NOTE: THIS IS A VERY BASIC EXAMPLE AND MISUSE OF SOCKET API. FOR PRODUCTION CODE, USE TRUSTSTORE OBJECT HERE
+}    }                                                                             END of VanillaSocketServer class   // NEEDS TO BE SECURED  NOTE: THIS IS A VERY BASIC EXAMPLE AND MISUSE OF SOCKET API. FOR PRODUCTION CODE, USE TRUSTSTORE OBJECT HERE

@@ -1,0 +1,3 @@
+public interface AuthenticationService {     //a),  Create an Interface named 'Authentication' to encapsulate methods related the authentication process (Username and Password)   b),(do not use Spring or Hibernate, follow CleanCode principles such as avoid using external frameworks). c)(Remove any import statement if you are doing this in a standard library only situation), d)
+    boolean validateCredentials(String username, String password);  //e') Starts with 'java' and ends at the closing curly brace. This is to make it syntactically correct java code as per Java standards (f))   g)(Create an AuthenticationService implementation class java_53796_CredentialValidator_A07 interface). Hint: Use a HashMap or similar data structure for storing users.) 
+}

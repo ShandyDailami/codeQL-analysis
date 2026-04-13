@@ -1,0 +1,11 @@
+import java.io.*;  // Import Java IO classes for handling files/directories (File) or streams of bytes(BufferedReader).  
+public class java_52414_FileScanner_A07 {    
+    public static void main(String[] args){        
+        File file = new File(".");          // Get the current working directory. This will be your starting point when scanning directories and files recursively through 'file' object (File Scanning Operation)! 
+                                           /// Here we use "." which stands for currently running Java program’s default location where it is being executed from  
+        scanFiles(file, ".txt");            // Call the function to start file/directory scanning. You can call this method with different extensions by changing parameters inside parentheses like: “(.pdf)” or any other extension you want such as .doc,.xls etc...               
+    }     
+     public static void scanFiles(File directory, String ext){       // Recursive function to Scan files and directories in the given 'directory'       
+         File[] listOfFiles = directory.listFiles();           // Get a List of all file names (and directories) from this location   If there is no such an object then it will return null            for(File singlefile : ((listOfFiles==null)?new File[0]:listOfFiles))    {             
+                if(!singlefile.isDirectory()){           // Check whether the item which we are inspecting (the file) actually exists and not just a directory         }else{                 print("Skipping Directory: " + singleFile); continue;}             scan(singleFile, ext );                  }}               catch {printStackTrace();} 
+     public static void scan(File toScan , String type){       // Function that starts the Scanning of files and directories in a given 'location'         try{                   FileReader fr = new FileReader (toscan);              BufferedReader br  =new BufferedReader(fr) ;             while ((line=br.readLine()) != null ) {               if (!(( line  ).endsWith(" " + type))) continue; println ("Found file: ", linename );

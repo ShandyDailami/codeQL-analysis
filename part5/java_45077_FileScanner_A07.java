@@ -1,0 +1,10 @@
+import java.io.*;
+import javax.security.auth.*;
+public class java_45077_FileScanner_A07 {  
+    public static void main(String[] args) throws IOException{ 
+        String dir = "/path/to/directory"; // replace with your directory path        
+    	File fileObj=new File (dir);         	// declaring and initializing the object of 'file' type.     		
+  	if (!fileObj.exists()) {                  				   			      	 								 					                throw new IllegalArgumentException(String .format("Invalid %s", dir));             // check if directory exists        	   	              }           	      FileScanner fileSc=null;        try{                  fileSc =new FilenameFilterImpl (fileObj);}catch(){                     System.out.println ("Error while creating filter");    }}
+   public static class  FilenameFilterImpl implements java.io.FilenameFilter {     @Override      	         			public boolean accept(File dir,String name){     			        try{             return ((java.nio .file `AccessDeniedException`)new File (dir + "/"+name).setReadable 
+    true   false)).equals("")) ;}catch(){ System..println ("Error while checking permissions"); }return fals     }}                    @Override       public String toString() { return this.getClass().getName();}};         Main obj=new main( );                 try{                  for (File file: dir .listFiles())      if (!file.isDirectory () &&  !"dirname".equals ("") )            System..println("Name : " +   name);}catch(){                          
+    println("\nError while printing in `Main`");}}}throw new IllegalArgumentException(String          (.format (     ...));}} }                // main method           }}                     };             try{                  fileSc.setIncludes  ((File)fileObj, false)};      catch {   System..println (" Error occurred ");}

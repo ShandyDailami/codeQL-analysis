@@ -1,0 +1,7 @@
+import java.io.*; // Import necessary classes needed for reading files and exceptions processing them in case of errors during IO operations    
+       import javax.sound.midi.*;// Needed if you want to use MidiFiles     
+public class java_51050_FileScanner_A08 {   public static void main(String[] args) 
+{        try         (FileScanner file_scan = new FileScanner()) // Scanning in current directory by default    
+    {             String dirpath="C:/Users/YourDirectoryPath";       if(!file_scan.getDir().exists()|| !file_scan.list(dirs ->   dfs((File)dfs))){         System.out.println("No such Directory exists"); }       
+    else           {          file_scan.begin(new FileFilter(){public boolean accept (File pathname)});  //Start Scanning from the given directory      while (!fileScanner.){   try            if (filesInDir != null)       for                    in filesInDirs){                  printFilesInfo                 ((File                ) df,int               depth                     );}           else     System.out.println("No such Directory exists");         }
+    catch(IOException e1              )\ {e24..printStackTrace();}}          finally   {} // Ensures that the scanner is closed after all operations are done      FileScanner f = new Fils...        try{if(!f.getDir().exists() || !file_scan ...){System.... }catch(IOException e3) {e4..printStackTrace();}}

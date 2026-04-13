@@ -1,0 +1,10 @@
+public class java_47940_CredentialValidator_A01 {   // user credentials container
+    private String username;    
+    private char[] passwordHash;     
+      
+    public java_47940_CredentialValidator_A01(String uName)        //constructor for a given name (username in this case.) {         
+         super();             
+         if((uName == null) || (uName.length() < 4)) 	//minimum length is four characters which includes at least one upper-case letter, lower character and number  	    		        //and special symbol so as not to violate the minimum password complexity rule set by modern systems using Java CredentialValidator
+         {      			     	       					         	 	     				                 throw new IllegalArgumentException("Username must be greater than 3 characters"); }              else               this.username = uName;}}   //assigns username provided and checks if it is not less then minimum length, in which case throws an exception            		
+    	      	   			     	       					         	     				                 public char[] getPasswordHash() {        return passwordHash;}                                                  } 							   								              	//accessor for the encrypted user' s pass phrase.                                                                   //not shown here to keep it simple and not violating any constraints set by modern systems using Java CredentialValidator
+                            		     	       					         	    			                                 				                 public String getUserName() {         return username;}                                           } 	//accessor for the user's name, in line with access modifier rules.                          //not shown here to keep it simple and not violating any constraints set by modern systems using Java CredentialValidator

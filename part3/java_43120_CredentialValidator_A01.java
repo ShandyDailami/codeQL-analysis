@@ -1,0 +1,6 @@
+import java.util.*; // Import necessary classes for this example program   
+    
+public class java_43120_CredentialValidator_A01 {     
+        public static void main(String[] args) throws Exception{        	         
+             Scanner sc = new Scanner(System.in);            System.out.println("Enter password:");           String pwd=sc.next();                if (isValidPassword(pwd)) 	        {   			             		       	 	   	      } else    					{  					        	         
+                 throwExceptionForInvalidInputsOrPasswordsNotComplexEnoughToProtectTheSystem()) ;                  System.out.println("Unable to validate the password")                   sc.close();               }}      private static boolean isValidPassword(String pwd)  {     int vflag=0, cflag=0;    char [] PasswordArr =pwd .toCharArray()        for (int i = 1 ;i <Passwd Arr length+2   ){ if ((v flag +++-){ case 'A' :case "a" –: vflags +=3)} else {cflag ++}if(Password arr [0]== passwordArry[pwdlenght - i]){}else return false;}}

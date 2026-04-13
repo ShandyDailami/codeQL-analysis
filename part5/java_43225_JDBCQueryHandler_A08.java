@@ -1,0 +1,6 @@
+import java.sql.*;  // Import Statements & Classes Java Database Connectivity API(JDBC)   
+    
+public class java_43225_JDBCQueryHandler_A08 {     
+         public static Connection getConnection() throws SQLException{        return DriverManager.getConnection("jdbc:mysql://localhost/testdb", "username","password"); }  //Establish the connection to database   };       void createTable(){          try (Connection con = getConnection()) {            String sql="CREATE TABLE employees (" +
+        	"id INT PRIMARY KEY,"+                        		    	             	   			     				   	 					       														 "name VARCHAR(50), salary DOUBLE)";  //Creating table   }; }       static void insertData(){          try (Connection con = getConnection()) {            String sql="INSERT INTO employees VALUES ('1','John Doe',234.67); INSERT...";
+        	System.out.println(sql);}}     public static void main(String[] args){ createTable();  //Calling the method to add table in database   insertData(); } };

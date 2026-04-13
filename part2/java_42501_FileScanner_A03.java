@@ -1,0 +1,7 @@
+import java.io.*; // Import Java's I/O package and create File object using 'new file'.  
+public class java_42501_FileScanner_A03 {   
+ public static void main(String[] args) throws IOException{     
+     Scanner userInput = new Scanner(System.in);       System.out.println("Enter a directory path: ");  // Getting the input from User          String dirPath=userInput .next();         File folder  =new    java.io.File (dirpath );        findTextFilesRecursively   (folder, ".txt");     }     
+ private static void findTextFilesRecursively(File root,String extension){  //Method for recursive file search          if (!root.exists()) {             System .outprintln("Directory " + dirPath  +   +" does not exist.");         return;       }}        File[] listOfFiles =   root     
+     .listFiles((dir, name) -> name           .endsWith(extension));  //List all files that end with specified extension. if (root is a directory){ findTextFileRecursively    } else { print file content}}             for       each          ( listOf Files         System   .outprintln     ("Finding txt        ..."))               ;
+} catch      any exception{              e  - Exception                    //Exception handling                  try,catch block            if(e is IOException)           throw new Error    "IOException" } finally {             println("Scanning Completed")}}}}}'   In this code 'printing content of the text file', it can be replaced with your own security-sensitive operations related to injection.

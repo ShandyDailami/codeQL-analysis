@@ -1,0 +1,10 @@
+import java.sql.*;   // Import the necessary Java packages from JDBC library
+public class java_44900_JDBCQueryHandler_A07 {     // Declare a new public static main(String[] args) method for starting execution of program   
+       private Connection conn = null;          // Initialize connection object as null 
+        String url="jdbc:mysql://localhost/test";   /* Database URL */     
+		String username= "root";                   /* Username to connect database*/    
+         String password=  "";                     /* Password for the user above provided in real world scenario we can also use environment variable or property file here depending on your setup  and it is recommended not using '' as a placeholder, replace with actual data */   
+		public java_44900_JDBCQueryHandler_A07() {   // Initializing an instance of this class. It will act like the constructor for our Connection object     
+		     try{                            /* Try block to establish connection*/        
+			 conn = DriverManager.getConnection(url ,username, password);  /* Connecting with database */      	             	    }catch (SQLException e) {e.printStackTrace();}                  	     	}          // End of constructor  									     		    public static void main(String[] args){ new VanillaJdbcQueryHandler().runExample() ;    
+public synchronized  void runExample(){        System.out.println("Connecting to database...");            try{             Connection con= conn; if (con != null) {   // Check connection is not empty                          PSTMT stmt = con .prepareStatement ("SELECT * FROM users WHERE name LIKE '%a%'");                            ResultSet rs = 	stmt.executeQuery(); while(rs.next()){ System.out.println("Found user: " + rs.getString('name'));  }    // End of query execution        }} catch (SQLException e) {e . print stack trace () ;}}

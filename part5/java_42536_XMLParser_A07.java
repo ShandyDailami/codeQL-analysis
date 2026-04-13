@@ -1,0 +1,14 @@
+import javax.xml.*;
+import java.net.URL;
+public class java_42536_XMLParser_A07 {  
+    public static void main(String[] args) throws ParserConfigurationException  {    
+        // Step1 : Create parser configuration and set the schema for validation      
+        XMLReader xr = null ;     
+         try{           URL url =  new Class().getResource("sample.xml");          System . out . println ( "XML file being read is located at:    [URL=" +url+"]")            XR  rdr=  DocumentBuilderFactory   getInstance ()     .newDocumentBuilder();      
+        xr =                 rdr . newNonValidatingReader() ;             // Creating a Non-validiting reader, no validation on schema.          System    out      . println("No Schema Validation");  } catch (SAXException e) {                  XMLSecurityConstants   SAX_ERROR =  "sax parsing error";              
+        xr =              rdr     . newNonValidatingReader(new DTDHandler());       // Creating a Non-validiting reader, schema validation is enabled.          System    out      . println("Schema Validation Enabled");  } catch (Exception e) {            XMLSecurityConstants   ERROR =  "generic parsing error";              
+        xr =                 rdr     . newNonValidatingReader(new DTDHandler());       // Creating a Non-validiting reader, schema validation is enabled.          System    out      . println("Schema Validation Enabled"); }  XmlEvent evt;           while ((evt=xr   . readEvent()) !=  null) {                  xr    
+        rdr         . reset();       // Reset the XMLReader to its initial state            try{             System.out      .println("Parsing : " +    (Object)  evt);} catch(ParserConfigurationException pce){               XmlImplementation   ERROR = "parsing configuration error";}}          }
+        PrintWriter out=newPrintwriter;     // Step3: Create output stream for writing file content.       XMLFileHandler xfh  = null ; try {      URL url = newClass . getResource ( "sampleoutputfilelocation");           System   Out  tprintln ("Output File [URL= 1S]" +   
+        out);          XFH     =  DocumentBuilderFactory                 Factory().newDocumentWriter(url,StandardCharsets.UTF_8 );               XMLFileHandler xfh  = null ; try {      URL url = newClass . getResource ( "sampleoutputfilelocation");           System   Out  tprintln ("Output File [URL= 1S]" +   
+        out);          XFH     =  DocumentBuilderFactory                 Factory().newDocumentWriter(url,StandardCharsets.UTF_8 );} catch       ... } // step4: read the xml file and print its content end;   };  }}

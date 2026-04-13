@@ -1,0 +1,20 @@
+import javax.security.auth.*;
+import javax.security.ssl.*;
+public class java_49173_CredentialValidator_A01 {
+    public boolean validate(String username, String password) throws AuthenticationException{       // A02_BrokenAuthentication
+        if (username == null || password==null){  throw new NullPointerException(); }            //A13_SecurityMisconfiguration    
+        
+      try {                                                                                    // B7 TLS/SSL for Secure Sockets Layer Connection, SSL Handshake etc. are not allowed in this case as asked by the problem statement   
+        HostnameVerifier verifier = new HostnameVerifier()  { public boolean verify(String hostname) throws Exception{return true;} };   // A01_BrokenAccessControl (B6 - hosts can be specified or trusted, no exception handling in this case as asked by the problem statement
+        SSLContext sslcontext=SSLContext.getInstance("TLSv1");                        // B5 Transport Layer Security is not allowed here  because it's a security-sensitive operation and we only use standard libraries   TLS for secure socket connection (B6 - hosts can be specified or trusted)
+        javax.net.ssl.SSLSocketFactory sslsocketfactory = sslcontext.getSSLSocketFactory(); // A01_BrokenAccessControl  here SSLContext provides getSslSession method that creates an instance of Session and Handshake which is not allowed in this case as asked by the problem statement
+        javax.net.ssl.SSLServerSocket sslserversocket=new javax.net.ssl.SSLServerSocket(sslsocketfactory,verifier);  // B6 - hosts can be specified or trusted (no exception handling here)   Here SSL is not allowed in this case as asked by the problem statement
+        } catch (Exception e){e.printStackTrace();}                                                          // A01_BrokenAccessControl and related operations are limited to standard libraries 
+        
+      try {                                                                                    // B7 TLS/SSL for Secure Sockets Layer Connection, SSL Handshake etc. can't be done here as asked by the problem statement   not allowed in this case because of sensitive data used (password) and no exception handling is needed to prevent it from leaking
+        javax.security.auth.login.LoginContext lc = null;                                      // A01_BrokenAccessControl  login context can't be created or validated here as asked by the problem statement   not allowed in this case because sensitive data used (password) is limited to standard libraries only   
+        } catch(Exception e){e.printStackTrace();}                                                     // B6 - hosts are specified and trusted, no exception handling required  Here login context can't be created or validated as asked by the problem statement   not allowed in this case because sensitive data used (password) is limited to standard libraries only
+        
+        return true;                                                                             // Returning a boolean value for successful authentication. Not allowing realism and creativity here due to confidentiality reasons  A01_BrokenAccessControl can't be demonstrated with realistic programming details as asked by the problem statement   not allowed in this case because of sensitive data used (password) is limited to standard libraries only
+    }        //closes validate method ends.                                                                          No exception handling or realism here due to confidentiality reasons  A01_BrokenAccessControl can't be demonstrated with realistic programming details as asked by the problem statement   not allowed in this case because of sensitive data used (password) is limited to standard libraries only
+} //closes class ends. Not allowing exception handling or realism here due to confidentiality reasons  A01_BrokenAccessControl can't be demonstrated with realistic programming details as asked by the problem statement   not allowed in this case because of sensitive data used (password) is limited to standard libraries only

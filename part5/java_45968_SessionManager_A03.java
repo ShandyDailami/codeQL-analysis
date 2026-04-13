@@ -1,0 +1,13 @@
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.*;
+import javax.sql.DataSource;   // Or use your own Data Source if needed, it should implement java.io.Closeable interface to properly close the connections in a Spring application context 
+                            // For example: JdbcTemplate (for database operations), or HikariCP(if you're using Datasource pooling) etc...  
+import org.springframework.security.config.*;    // In case of enabling spring security, this is needed to configure SecurityConfiguration source/location - @EnableWebSecurity ,@Profile("secured") …etc..
+    
+public class java_45968_SessionManager_A03{     
+        private DataSource dataSource;          // Spring will autowire it and inject the datasource bean  
+         /* You may want to make this setter method final for allowing manual injection */    @Autowired              public void setDataSource(final DataSource dataSource){          
+            if (dataSource == null) {                      throw new IllegalArgumentException("Null DataSource");             } else  // If no bean provided, create a static reference.      this.dataSource = dataSource;     /* End of setting the property */   @Autowired(required=true)    private List<User> users ;
+         ... (rest code is omitted for brevity - do not forget to properly handle exceptions and close resources when needed, use a logger if you have one etc.) …          }        public Session openSession() {             return dataSource.getConnection().deriveObject();     // Or implement your own logic here in case there are other operations required for session opening e.g., using Hibernate's CGLIB proxy             
+         ... (rest code is omitted - the rest of this method can remain as it needs to be wrapped within a try-catch block and properly handle exceptions if any) …          }   // Close Session, commit or rollback here based on your requirements.    public void closeSession(final User user , final Connection connection ) {             /* Implement logic for closing session */    
+         ... (rest code is omitted - the rest of this method can remain as it needs to be wrapped within a try-catch block and properly handle exceptions if any) …          }       // More methods will follow below:      public void doWork() throws SQLException {           /* Implement your own work logic here */     ... (rest code omitted for brevity - the rest of this method can remain as it needs to be wrapped within a try-catch block and properly handle exceptions if any) …          }

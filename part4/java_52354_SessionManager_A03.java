@@ -1,0 +1,8 @@
+public class java_52354_SessionManager_A03 {  //Class Definition without comment  
+     private static ThreadLocal<Session> sessionHolder = new ThreadLocal<>();   
+      public void openSession() throws Exception{                     
+         Class.forName("com.mysql.cj.jdbc.Driver");                 
+          try(Connection connection= DriverManager.getConnection ("dbUrl","username", "password")) {  //Database Connection with JDBC  
+              sessionHolder.set(connection.createSession());             }                       catch (Exception e) {}                           if (!sessionHolder.get().wasSuccessful()) throw new Exception("Failed to open the Session: ",e);}       public void close(){if(!sessionHolder.get().wasSuccessful()){try{  
+          sessionHolder.get().close();  System.out.println ("Session was closed"); }catch (Exception e) {}}    //Closing of a Successfully Opened Connection     if(isOpening())throw new IllegalStateException("Already Closed!");}      public boolean isOpening(){return sessionHolder.get() != null && (!sessionHolder.get().wasSuccessful());  }
+public Session getSession (){   return this.open();}} //Method Definition without comment    protected void finalize () { close(); }} This would be a Singleton in real scenarios, but I won't use it because the problem asked for creating an example of session manager with no dependencies on external libraries and not using JDBC or any other frameworks like Spring.

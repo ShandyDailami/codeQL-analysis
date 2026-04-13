@@ -1,0 +1,13 @@
+import java.util.*;   //for List, ArrayList etc
+public class java_48487_SessionManager_A03 {   
+     private Map<String, String> usersMap;//simple map to hold the user names and passwords in memory for security purpose      
+      public static final int USERNAME_MAXIMUM_LENGTH = 20 ; 
+   //a simple session manager has an array of active sessions. In real life scenario it is a database, which will handle concurrency issues here due to simplicity     just showing the way how one might structure such objects   
+      private List<String> userNamesActiveSessions;      
+        public java_48487_SessionManager_A03() {  //constructor   we are assuming that session manager holds only valid users and their passwords in memory.           
+          this.usersMap = new HashMap<>();            
+         /*this is a simple way to manage active sessions, for the real world application it should be an database*/           userNamesActiveSessions=new ArrayList<String>() ;   }    public void addUser( String username ,  String password) {       if (username.length() > USERNAME_MAXIMUM_LENGTH )throw new IllegalArgumentException("Username too long!");       
+         /*We're only adding valid users, no need to check for existing user*/           this .usersMap.put( username ,  password );              }    public String getPassword (String name) {     if (!this .usersMap.containsKey(name))throw new IllegalArgumentException("User not found!");       return  
+         */          //simple retrieval of a users's pass      this .userNamesActiveSessions.add(username );return  }            /*For the demonstration only, session manager should have an authentication method*/    public boolean authenticate (String name , String password ) {     if (!this .usersMap.containsKey(name))throw new IllegalArgumentException("User not found!");       return this
+         */          //simple pass check for a user      /*For the demonstration only, session manager should have an authentication method*/    }  public List<String> getActiveSessions() {   //for demonstrating purpose to see all active sessions.     return
+        /*this .userNamesActiveSession; For real world scenario it will be much more complex and interact with a database or cache system here */}      /*End of session manager functionalities*/ }  public class MainClass{    static SessionManager sessMan = new   //global reference to the sessionsmanager in main method

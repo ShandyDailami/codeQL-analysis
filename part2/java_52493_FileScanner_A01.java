@@ -1,0 +1,11 @@
+import java.io.*;  // Import the File class java_52493_FileScanner_A01 'file' package  
+public Class Main {   
+      public static void main(String args[]) throws IOException{    
+        String filePath = "C:/Users/username/.m2";//specify your local repo path here, adjust as needed for security-sensitive operations.  // Use absolute paths or relative to current working directory (i.e., '.').  
+         File dir = new File(filePath);     
+          if (!dir.exists()) {       
+                System.out.println("Directory does not exists: " + filePath );     return;    }  // Check whether the specified path actually exists or not (i.e., is valid)   try with resources will ensure that it gets closed after use by JVM, here we are using FileReader to read from a textfile in directory
+         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("C:/Users/username/.m2")));  // Create an object of the file reader and pass it with absolute path       try (FileReader fr= new FileReader ("path_to.txt");) {
+            int character;     while ((character = br.read()) !=  -1){      System .out..println(String c + " "); } // Print out each line of the file   if you want to save it into a variable use String storeLine=br.readline();  and print storedLIne,
+         }}// End Try block with resources    It is recommended not using traditional 'try-catch' as Java does automatic exception handling through try/finally or similar constructs which are typically used in production code      } catch (Exception e) { System .out.println("Error: " +e);} // Print the error message
+          });// Close main function  The entire program is wrapped within a Main class and methods can be accessed by 'static' keyword from another method as well, just note that static members are not instance-independent so they will remain intact throughout execution of your application. If you want to create an object or call other classes in this file then it should also start with capital letter i.e., Main and its methods can only be called by using the main() method

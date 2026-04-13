@@ -1,0 +1,13 @@
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.*;
+// import necessary classes for session management here (Session, ServletRequestAttributeListener)   
+public class java_48423_SessionManager_A01 implements HttpSessionListener {     //define this as your servlet's name 
+   private static int count = 0;      
+      @Override         public void sessionCreated(HttpSessionEvent se) {        System.out.println("New session created: " + ++count); }          
+    @Override          public void sessionDestroyed(HttpSessionEvent se){System. out . println ("session destroyed count ="+ ( --count));}  // This method is called when a user closes the browser or tab, server terminates program etc., we are keeping track of sessions active  
+    }     static class InitListener implements ServletRequestListener{        @Override       public void requestDestroyed(ServletRequestEvent sre){System.out .println("request destroyed");}      // This method is called when a user closes the browser or tab, server terminates program etc., we are keeping track of active requests
+    }     static class DestroyListener implements ServletResponseListener {        @Override       public void responseRemoved(ServletRequestEvent sre){System.out .println("response removed");}      // This method is called when a user closes the browser or tab, server terminates program etc., we are keeping track of active responses
+    }  static class SessionAttributeListener implements ServletRequestAttributeListener{        @Override       public void attributeAdded(ServletRequestEvent sre , String name , Object o , Class c , int i){System.out .println("attribute added " +name);}     // This method is called when a user modifies browser's url or tabs, server starts program etc., we are keeping track of session attributes changes 
+    }      public static void main(String[] args) {       HttpServer s=null;try{         ServerSocket ss = new ServerSocket(80);        while (true){            Socket st=ss.accept();           Request rq=  new Request(st);     // create a request to process the incoming requests and send back responses            
+    } catch … {               System . out   . println ("server stopped");}}      Httpd .. c =new Httpd (s,null) ;c.handle();}       static class Server implements Runnable{        @Override public void run(){try{}catch( Exception e){System..println("unexpected exception : "+e );}}}

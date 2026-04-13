@@ -1,0 +1,6 @@
+import java.net.*;   // Import socket classes 
+public class java_47518_SocketServer_A08 {   
+ public static void main(String args[]) throws Exception{    
+        ServerSocket s = new ServerSocket(5000);      DatagramSocket dg =  null;       Socket soc=null ;         try                while((soc=s.accept()) !=  null){             System.out.println("Got connection from "+soc.getRemoteSocketAddress());                     Thread t = new Thread(new ClientHandler(soc));                    // Starting a thread for handling clients                     
+t.start();         }          finally{if (dg  !=null) dg .close(); if( s !=  null )   s.close();}           System.out.println("Server Stopped");     }}    class ClientHandler implements Runnable {      Socket soc; public void run()       try            while((byte[] bytes =soc.getInputStream().readBytes()) > 0) 
+{                    // Writing the received data to standard output             } catch (IOException e){   System.out.println("Error: "+e);}        finally { if( soc != null )    soc .close(); }}

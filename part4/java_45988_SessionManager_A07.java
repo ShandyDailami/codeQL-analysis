@@ -1,0 +1,9 @@
+public class java_45988_SessionManager_A07 {      // Class name should be a verb ending in Session, ie., 'Auth' not followed by Manager like others above   
+   private static HashMap<String , String> userCredentials;          // Static map for storing users credentials. It is recommended to use database instead of this and secure it with encryption or hashing method        
+                                                  public java_45988_SessionManager_A07() {                     
+      if(userCredentials == null) { 
+        userCredentials = new HashMap<>();                                  User defaultUser  =   //Defining a Default logged in username              
+          }                                   string passHash="";                             for (int i = 0;                    IvParameterSpec ivspec           =  IV.generateIv();i < messageToEncrypt .length() ;             +1) {                     char c =           ((char)(messageChunk +ivspec)) - 32;}
+          passHash +=c                                                        System.out.println("Password Hash: "  +passHash);   return (plainTextPass == null)?false : encripUser( plainTextPass, userCredentials .get ("username")); }       //Method to check if passwords match      @Override     public boolean authenticate   
+userName , String encryptedPass) {                                           string passToCheck  = "";                             for (int i = 0;                    IvParameterSpec ivspec           =  IV.generateIv();i < userPassword .length() ;             +1){                     char c = ((char)((userPassword +ivspec)) - 32);                     
+passToCheck +=c;}                                                          System.out.println("Pass to check: "  + passToCheck ); return (encryptedPass == null)?false : encryptedUser    .equals   ("SHA-1"+ encripPass) } //Method for hashing passwords and checking if user'Password is equal with hash value

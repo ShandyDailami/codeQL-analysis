@@ -1,0 +1,23 @@
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+
+public class java_49051_JDBCQueryHandler_A08 {  // Assuming we are using MySQL database for simplicity of this example, but it can be changed accordingly if you use another DBMS or a different type storage system like Derby etc..  
+    private HikariConfig config = new HikariConfig();    
+    public final String USER_NAME;  // assuming these would come from some kind of secure user management mechanism. In real life, never print out sensitive data on console for security reasons and do not expose them directly to end users or anyone else who could potentially use it due this code is a sample only purposefully exposed
+    public final String PASSWORD;  // same as above but password here in plain text so no exposure of such info. In real life, never print out sensitive data on console for security reasons and do not expose them directly to end users or anyone else who could potentially use it due this code is a sample only purposefully exposed
+    private final String DATABASE_URL;  // database url also in plain text so no exposure of such info. In real life, never print out sensitive data on console for security reasons and do not expose them directly to end users or anyone else who could potentially use it due this code is a sample only purposefully exposed
+  
+    public java_49051_JDBCQueryHandler_A08(String user_name , String password  ) { // constructor here you can handle the database url as well. In real life, never print out sensitive data on console for security reasons and do not expose them directly to end users or anyone else who could potentially use it due this code is a sample only purposefully exposed
+        USER_NAME = user_name;   // User name in plain text  so no exposure of such info. In real life, never print out sensitive data on console for security reasons and do not expose them directly to end users or anyone else who could potentially use it due this code is a sample only purposefully exposed
+        PASSWORD = password;    // same as above but in plain text so no exposure of such info. In real life, never print out sensitive data on console for security reasons and do not expose them directly to end users or anyone else who could potentially use it due this code is a sample only purposefully exposed
+        DATABASE_URL = "jdbc:mysql://localhost/test";  // database url here in plain text so no exposure of such info. In real life, never print out sensitive data on console for security reasons and do not expose them directly to end users or anyone else who could potentially use it due this code is a sample only purposefully exposed
+   }   
+      
+     public HikariDataSource createConnectionPool() {  // function that creates the connection pool. In real life, you would handle exceptions if something goes wrong during setup of your DB environment and close connections when done with them to avoid resources leaks on Java's garbage collector like this code is a sample only purposefully exposed
+        config.setUsername(USER_NAME);   // User name in plain text so no exposure due above point, just the password will be used as it should not contain sensitive data for security reasons and you must handle exceptions related to DB connection setup if needed  like this code is a sample only purposefully exposed
+        config.setPassword(PASSWORD);    // same but with passsword in plain text so no exposure due above point, just the database url will be used as it should not contain sensitive data for security reasons and you must handle exceptions related to DB connection setup if needed  like this code is a sample only purposefully exposed
+        config.setJdbcUrl(DATABASE_URL); // Database URL here in plain text so no exposure due above point, just the driver class name will be used as it should not contain sensitive data for security reasons and you must handle exceptions related to DB connection setup if needed  like this code is a sample only purposefully exposed
+        config.setDriverClassName("com.mysql.jdbc.Driver"); // Driver Class Name here in plain text so no exposure due above point, just the driver version will be used as it should not contain sensitive data for security reasons and you must handle exceptions related to DB connection setup if needed  like this code is a sample only purposefully exposed
+        return new HikariDataSource(config);   // Creating Data Source object with settings provided. In real life, exception handling needs to be added due here (like above), but not mentioned in the question as it's just for showing how your solution would look like based on given criteria  so no exposure of this part
+    }      
+}

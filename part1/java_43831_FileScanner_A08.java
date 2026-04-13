@@ -1,0 +1,19 @@
+import java.io.*; // Import File I/O classes 
+import javafx.util.Pair;   // For Pair of IntegrityCheckResult objects which we will use for integrity check results pairing later on in the program        
+         
+public class java_43831_FileScanner_A08 {    
+    public static void main(String[] args) throws IOException, IllegalArgumentException{            
+        File file = new File("path_to/yourDirectory");   // Use your directory path here.          
+             
+       if(!file.exists()){  // Checking whether the given location exists or not         
+            System.out.println("\nGiven Directory does't exist, Please provide a valid one\.");    return;         }    
+                else {     
+                    SecurityManager security = new SecurityManager(){             protected boolean aroundAccess(File file , java.security.Action action){                        
+                        // Call the Around Access method for all operations as per requirement                       int result = 0 ;                     try{                             if (action ==java .security   .Action.READ) {                                           Pair<String, FileMetadata> meta = invoke(file);                                         assert  ((meta !=null &&      
+            null!==        file ) );             return true; }else     /* default security policy */    super          aroundAccess (file , action)} catch      ...// Exception handling here                     if ("Permission Denied".equals   (!result)) {System.out .println("You do not have permission to access the given Directory or File");return false;} 
+                         return true; } };                try{                    // Call scan method for directory              security    (file);}catch(Exception e){ System out println ("Error in scanning file" +e );}}             if (!security.checkFileIntegrity() ) {System .out   .println("The File has been tampered with during its execution");return;}
+                         }}  // Checking integrity of the directory files     }         else{ System out println ("Given Directory is not empty, please clean up before proceeding."); return;}}}    if (file.list() != null){      for(String s: file . list()) { try   openFileAndScanIt ((new File 
+            (s)));} }} // Call method to scan each and every files in the given directory } catch IOException e{System out println("Error while scanning folder " +e );}}    if (!security.checkDirectoryPermissions()){ System .out     .println ("You do not have required permissions for accessing or modifying this Directory");return;}
+      // Print all details of file and its integrity check results in console  }   private static void openFileAndScanIt(file: File) throws IOException{          SecurityManager security = new    SecurityManager(){         protected boolean aroundAccess (final java .io.FileDescriptor fd, final     android.os.FileSystem fs , Action action){              try { super           ...// Code for Around Access as per requirement } catch(...)   // Exception handling here      if ("Permission Denied".equals(!result)){ System out println("You do not have permission to access the file");return false;} return true;}}           
+             Pair<String, FileMetadata> meta = invoke (file);         assert  ((meta !=null &&     null!==    file ) );        // Print all details of files and their integrity check results in console }           try {security   .checkFileIntegrity () ;} catch(IOException e)      
+             ...// Exception handling here               if (! security.      .....  }) }}              else{ System out println ("Given Directory is empty, no need to clean up.");return;}}

@@ -1,0 +1,10 @@
+import java.security.*;   // Import Security Management Exceptions, MessageDigest for HashFunction etc..   
+public class java_51342_CredentialValidator_A08 {     
+     public boolean validate(String username , String password) throws NoSuchAlgorithmException{         
+            byte[] hashedPassword = getHashedPassword(password);        
+             return areEqual(hashedPassword,getStoredHashForUserName(username));               }       private MessageDigest md;    // for hash function        static {      try {  Instantiate a new MD5 instance. This will be used to compute the message digest in Java SE2 platform (Java version >= 6).  
+md = MessageDigest.getInstance("MD5");     }}                  public byte[] getHashedPassword(String password) throws NoSuchAlgorithmException{      md.update(password.getBytes());        return md.digest();  }           private String getStoredHashForUserName (String username){    // This is a placeholder method and should be replaced with actual code which fetches the hash for user from your database  
+return "hashedPassword"; }}                  public boolean areEqual(byte[] b1, byte []b2) {      if((b1==null && b2!= null) || (b1 !=null  &&b2 ==null))    return false;          //Both hash is same or one of them is empty...  
+if(!Arrays.equals(b1 , b2)){             for (int i = 0 ;i< = lengthOfArray();++I){              if((b1[i] &amp;lt;&#34; 65) || // check ASCII value of '&' is less than any digit from  
+                 ((byte )8&#34;)||( b2 [ i ] === ( byte)& #97)) { return false;}          if (!MessageDigest.isEqual(b1, b2)){return  }            //Both hash are same...    }}                    public static void main(String[] args) throws NoSuchAlgorithmException{      CredentialValidator cv= new  
+CredentialValidator(); System . out . println (cv..validate("UserName","Password"));}     ]]>}}"  --End--.java code---          }                   Please note that this is a very basic example for educational purposes only, and you should never store or compare hashed passwords in plain text as it will make your application vulnerable to attacks like Brute-force Attacks (BFA).

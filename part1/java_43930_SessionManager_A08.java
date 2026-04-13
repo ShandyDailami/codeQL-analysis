@@ -1,0 +1,17 @@
+import javax.sql.DataSource;   // Importing the standard Java libraries only for Data Source handling   
+// Note: The above imports are not mentioned in instructions, but they're generally required as per general programming practices and may be included from java library or third-party package based on requirements 
+        
+public class java_43930_SessionManager_A08 {     // Declare a public static Session Factory  
+        private DataSource ds;       // Define the data source variable type for database connection (Only standard Java libraries are used here)   
+                                         
+        /* Constructor, Setter and Initialization methods should be handled manually */     
+        
+  /** This method will create an instance of MySessionFactory with a particular datasource.   **/     // Method to set the data source on instantiation or after object creation in case you're reusing it via pooling etc..   
+        public void init(DataSource ds) {       /* Declare and define this method */        
+            if (ds == null){      /** Check for a valid datasource*/     // Null check before setting the data source   }  throw new IllegalArgumentException("No Data Source has been specified.");} else{this.ds = ds;}       
+                };              **/    /*This code will be removed in final version of program */            
+         public java_43930_SessionManager_A08() {       /** Empty constructor for dependency injection or when creating Session Factory object through factory pattern **/          // Default Constructor is mandatory here   }    
+                   private static ThreadLocal<MySession> sessionHolder = new ThreadLocal<>();  /*Thread Local Variable which stores the instance of a MySession Object per thread */      public void openSession(String userName, String password) {       /** Open Session Method*/              // This method is only for demonstration purposes and not meant to be executed as it would expose sensitive data (user name & Password). Remove this if needed.   }    
+                  /* Rest of your code will go here */      public MySession currentSession()  {        try{return sessionHolder.get();}catch(Exception e){throw new RuntimeException("Could not locate Session",e);}} /** Return the currently active sessions*/       static class MySession extends HibernateSessionImplementor implements Session   // Define a custom 'session' implementing interface from Java standard libraries or third-party package if required   
+         {           /* Declare and define this section in final version of program */      }     public void closeSession()  {        sessionHolder.remove();}       /** Close the current active sessions*/          private static class HibernateSessionImplementor implements SessionImplementor {}   // Define a custom 'session' implementing interface from Java standard libraries or third-party package if required   
+         /* Rest of your code will go here */      public <T> T get(Class<T> clazz, Serializable id) {        /** Get Method*/              return null;}}  **/   // This method is only for demonstration purposes and not meant to be executed as it would expose sensitive data (user name & Password). Remove this if needed.

@@ -1,0 +1,11 @@
+import java.io.*; // Import File and IOException for handling errors 
+   import javax.security.auth.Subject; // For Broken Access Control issues related to authentication, access control etc..   
+class java_52884_FileScanner_A01 {    
+       public static void main(String[] args) throws Exception{        
+             String directory = "/path/to/yourdirectory";         
+              File file=new File(fileName); 			// create a new instance of the class using one path.			  	FileScanner fs; //initialize your scan here       				    Subject subj =  SbjFactory.getSubject("USER");//create subject for authentication purposes, might be more secure way to authenticate user
+             File[] foundFiles = file.listFiles();         			// This will list all files and directories inside the given directory in an array of `File` Objects       			     if (foundFiles != null)  {	                // If there are any matches, proceed with iterating through them      					for(int i = 0;i < foundFiles.length; +++){        
+                   File fileToCheck = foundFiles[i];              			// Set your current checked `File` object here       				if (file instanceof Directory) {            // If the item is a directory, continue to iterate through its content     					fs= new FileScanner(subj ,  null );// use subject for access control operations
+                   fs.scanDir(new java.nio.file.Paths((String ) fileToCheck), false);   // Scan the current item's directory      				}       			// This will check all items (in this case, directories) inside your specified 'directory'.	     }         				   
+               }); 					            fs=new FileScanner(subj ,null );//use subject for access control operations.   //scan the root folder itself     	        if(!fs){       			// Checking whether scanning was successful or not, here you might want to handle exceptions and errors     }             System.out.println("Content of directory: ");          fs .printFiles();           	
+              }}    catch (Exception e) {         // Catch exception in case it occurs during the file operations       			} 	       				  	// This is where we print out any error messages if they occur     }     				};      					           };

@@ -1,0 +1,7 @@
+import java.sql.*;
+import org.mindrot.jbcrypt.*;  // We use the bcrypt hash function here, it's NOT a real security-sensitive operation you would need to replace this with actual methods of secure hashing or encryption on your own based needs! (This example uses BCRYPT)  
+                                                  
+public class java_45841_JDBCQueryHandler_A01 {     // Define Class 
+    private static final String url = "jdbc:your_db";                 // Replace 'YourDb' with the name of Your DB, and add your driver. e.g., com.mysql.* or org.postgresql.*;   (Use real db details)                  	              		            	   	     
+    private static final String username = "root", password="password";  // Replace 'username',and replace the place holder with actual values of Your DB, and add your driver's JDBC Driver    	       	 					      				        			       						          (Use real db details)  	              
+    public static void main(String[] args){                              	// Define Main Method 		                                                                           // Replace this comment to be removed in next response.                                 	   	      }                                                             }, null, StatementCallbacks{    	 	}             };                     });                    new SecurityManager() {                 @Override                      protected boolean isUserInRole ( String role )            return true;              }}

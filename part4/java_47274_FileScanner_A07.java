@@ -1,0 +1,14 @@
+import java.io.*; // Import required classes, including FileReader  
+            
+public class java_47274_FileScanner_A07 {    
+    public static void main(String[] args) throws IOException{          
+            String dirPath = "/path/to/your/directory";         
+                  if (args.length == 1){                  
+                          dirPath=args[0];               
+                      }        File directory = new File(dirPath);      // Declare and Initialize a file object      
+                             boolean[] childrensFilesAndDirs =  {true, true};     /* Set the type of files that you want to read.*/    if (childrensFilesAndDirs[0]){                     try{                  PrintWriter writer = new PrintWriter("logFileScan"+dirPath + ".txt", "UTF-8");                    FileReader filereader = null;                 //Declare a character array and assign it the size of 1 char buffer.         
+                            while ((filereader=new FileReader(directory)).read() !=  -1) {                  writer.write((char) filereader.read());                }                     if (childrensFilesAndDirs[0]){                    PrintWriter printwriter = new PrintWriter("logFileScan"+dirPath + ".txt", "UTF-8");                       FileReader reader=new 
+                            FileReader(directory);   while((filereader).read()!=  -1) {printwriter.write (Character.toString ((char)( filereader . read () ) ) );}                     }                   writer.close();                    printwriter.close();                  }} catch{                 PrintWriter errorlog = new 
+                            PrintWriter("errorLog"+dirPath + ".txt", "UTF-8");                FileReader reader=new   FileReader(directory);      while((filereader).read()!=  -1) {                     try               ((PrintStream)(writer)) .println (Character.toString        (.toCharArray 
+                            ((char) filereader . read () )[0]));} errorlog            .close();                   }catch (Exception e){ PrintWriter log = new     PrintWriter("errorLog"+dirPath + ".txt", "UTF-8");                  try                     {throw   exception;}}finally{    if((writer) != null &&(print writer)!= 
+                            -1 )                      close();                   }            // Close file readers        }} catch (Exception e){}             finally{}  I'm not sure about this code. It seems there is no 'catch-all', but some exception were handled by a corresponding   block if an Exception happened, and the program should continue even after catching such exceptions in any case - like here: }

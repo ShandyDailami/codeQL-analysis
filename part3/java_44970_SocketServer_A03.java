@@ -1,0 +1,10 @@
+import java.io.*;  // Import required classes from Java Framework  
+    import java.net.*;      // For InetAddress, ServerSocket and Socket    
+public class java_44970_SocketServer_A03 {      
+// Instance Variables for socket & port            
+private static int DEFAULT_PORT = 54321;         
+  private static ServerSocket serverSocket = null ;         public void start(int port) throws IOException{               if (port < 0 || port > 65535){                  throw new IllegalArgumentException("Invalid port number: " + port);             }              this.serverSocket  =new   ServerSocket(port,24 ); 
+    while((this.serverSocket = serverSocket).accept() != null ){           try {               Socket socket = (Socket) this.serverSocket .accept();                  handleClient(socket);          // Handle client request as thread            } catch (Exception e){         System.err.println("Error handling a Client: " +e );
+    break;     }}        @SuppressWarnings("finally")   public void close() throws IOException{  if ((serverSocket != null) && serverSocket .isClosed()) {synchronized (VanillaJavaServer.class){ try{ this._lock.wait(); } finally{}this_.notifyAll();}};
+    for(Thread thread = Thread.currentThread(); ;thread =  thread.getContextClassLoader().getParent().getThreadGroup().list()[0]) {   if (! ( thread instanceof ServerSocket)) {           Socket socket= serverSocket .accept();  //handle client request as a separate connection         try{ this._lock.wait(); } catch(Exception e){break;}finally{}this_.notifyAll();}}           
+try            `});    private static void handleClient(Socket socket) throws IOException, InterruptedException {   DataInputStream in = new DataInputStream (socket .getInputStream());       BufferedReader reader =  null;  try{reader=new      BufferedReader(new InputStreamReader     (socket.getInputStream()));

@@ -1,0 +1,3 @@
+import java.io.*; //FileReader used to read xml files in legacy style Java XMLParser example program without external frameworks like Spring or Hibernate 
+public class java_51146_XMLParser_A01 {  
+    public static void main(String[] args) throws IOException{    	      		        	 									     	     			         	       	    }           							       ​}               								                                                                                                                  »‿/`.

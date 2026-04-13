@@ -1,0 +1,4 @@
+'':
+
+Please note that the following is a very basic example, real world applications would require more robust security measures such as using secure hash functions for storing sensitive data (not included in this simplified version), and additional checks when reading users credentials to prevent brute force attacks. 
+In addition it does not use Spring or Hibernate libraries which are usually used with frameworks like these, but only standard Java packages/libraries that can be applied here: Arrays for storing the user inputs (not included in this simplified version), and a simple String class java_51247_CredentialValidator_A08 store credential data itself.

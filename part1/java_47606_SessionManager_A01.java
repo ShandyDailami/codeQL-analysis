@@ -1,0 +1,18 @@
+// Create a session object which wraps around the browser's cookies and provides functions to manipulate these using methods provided by Cookie API in JavaScript alone without relying on external libraries or frameworks like Spring Boot for CSRF protection. 
+class java_47606_SessionManager_A01 {    // Define class 'Session'.  
+     let cookie;        // Declare a variable of type string (cookies). Initially set to null because there is no valid session currently active, but will be assigned when the user logs in successfully with AuthService login method which uses JavaScript's Cookie API. 
+    static currentUser = {userId: '', loggedInStatus : false}; // Declare a variable of type User object (containing an id and whether they are signed-in) initialized to null initially, but will be assigned by the caller when calling login method which uses AuthService's methods. 
+     static isLoggedOut = true;    // Boolean that indicates if user has successfully logged out or not - Initialized as 'true'.   It would change after successful logout (logout() function).          
+      
+      constructor(userId) {        // Constructor method to create new session with a given ID.  If this is the first time creating an instance, set currentUser's id and loggedInStatus status as false; otherwise assign userID passed in parameter if it exists else keep previous assigned one (from Cookies).
+       document[`cookie: ${userId}=true] = { name : '', value : '' , expires ： new Date().getTime() + 60 *1000};   // Set the cookie with user's ID and set it as true for long time (to keep this session active until manually logout)
+       Session.currentUser={userId: '${userID}', loggedInStatus :true };    /Set current User object  to be used throughout class after login is successful/   // Update the user id and status of being signed-in in our global static variables, making it true for this session only
+       Session.isLoggedOut=false;     /* Set Logout Status as false which means we have successfully logged out from here onwards */  /Update log out状态为False，表示我们已经成功从这里退出。   // After the user is set to be signed-in, make it true and not active (since by default our global variables are marked with an expired date)
+      }    /* end of constructor function*/    
+       static login(userID){  / Method that will check if a given ID exists in cookies or local storage. If the user already signed up before, mark them as logged-in and stored session data into browser's cookie/localStorage */   // Declare this method to be used for logging users in
+        /* Here you would likely include some code which fetches from your server /API where it looks if a certain ID exists. If found then set 'userID', make loggedInStatus true and store the session data into browser's cookie/localStorage */  // Add this method here as per requirement with similar functionality
+      }    /* end of login function*/    
+       static logout(){   / Method that will destroy any sessions currently active by setting userId to empty string, loggedInStatus false and also set the session data in browser's cookie/localStorage */  // Declare this method as per requirement with similar functionality. This would be used for logging users out after they have been signed-in
+       /* Here you could add code which sets 'userID', makes it not active (by setting loggedInStatus to false), and destroy the session data in browser's cookie/localStorage */   // Add this method here as per requirement with similar functionality.  This would be used for logging users out after they have been signed-in
+      }    /* end of logout function*/    
+}// End Session class definition

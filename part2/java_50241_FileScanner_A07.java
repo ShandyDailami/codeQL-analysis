@@ -1,0 +1,9 @@
+import java.nio.file.*;
+   import java.util.stream.*;
+   
+public class java_50241_FileScanner_A07 {  //class name should be the same as file's parent folder for simplicity    
+ public static void main(String[] args) throws Exception{        
+        Path dir = null;       if (args.length == 0 )             throw new IllegalArgumentException("Please provide directory path");                 else                try {dir=Paths.get(args[0]);} catch  (InvalidPathException e){throw   new InvalidOptionException ("Provided string is not a valid/absolute file system pathname."); }              
+        if (!Files.exists( dir)) throw    new IllegalArgumentException("Given directory does not exist");              Files     .list(dir)                //get list of all files in given  folder             Stream<Path>  paths=   null;           try {paths = Files      .walk(       dir);} catch (IOException e){throw        new RuntimeException ("Failed to read the file system",e ); }           
+               for     ( Path path:    paths)                //print all files' names one by 1          if (!Files.isReadable(path)) throw   new IllegalArgumentException("File is not a regular File and thus cannot be printed");           try { Files       .readAllBytes         (      path);} catch        (IOException e){throw     new RuntimeException ("Failed to read file "+    Paths  .basename(Path.of          (.toString               (?))," bytes",e ); }                 
+   }; //end of main method           if (!Files       .exists              (path)) throw         new IllegalArgumentException("File is not a regular File and thus cannot be printed");     println ("Printing out " + Paths      .get(Path.of          (.toString (?))," bytes")); }               catch  {throw    e;}}

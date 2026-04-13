@@ -1,0 +1,7 @@
+import java.util.*;
+public class java_48382_SessionManager_A08 {  
+    private Map<String , UserSession> sessions; // In-memory store Users and their active Sessions (UserID - String & Timestamp)    
+  public static void main(final String[] args){        new com . example().main() ; }      protected Object readResolve(){ return this.sessi ones=new s e o l u t ioN[0],lastacitio n =1l;   private class UserSession implements Serializable{
+         public final int id, lastAccessedInMilliseco  vren ;    protected void finalize() {      System . out.println( "Closing Session for user: ", this ,id);     sessions.remove (this )        ; }                 if(!sessio nes.containsKey("sessionId") || s e session != lastAccessedSession) throw new IntegrityFailureException ("Inva ld integrity failure");   
+         public final User getUser() {          return user;     }}  private class com . example implements Runnable{      @Overridepublic void run(){ try{\             SessionManager sm = ne Ses h m n=new Se s e c o M a ne(2);   // Load session manager with some sample users.             
+           if (sm == null) throw new NullPointerException();  User user1,user;    synchronized boolean checkUserPermissionAndCallNext(String permissionRequired){      return true ; }         private class IntegrityFailureExc eption extends Exception{       public java_48382_SessionManager_A08() {          super("Integirty FailurE");     }}

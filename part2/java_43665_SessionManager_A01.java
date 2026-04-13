@@ -1,0 +1,10 @@
+public class java_43665_SessionManager_A01 {   // Representing a logged on users's Session information in Java Programming Language   
+     private String username;      // Field representing the name of current loged-in user      
+                                          
+     public void setUserName(String user)        {         this.username =user;}           
+                                                                                 @Override  
+  /*** This method verifies if a User is logged in or not ***/          protected boolean authenticateUser(){      // Authenticating the Session    String correct_pass="admin";     System.out.println("Enter password: ");       BufferedReader br = new        BufferedReader(new InputStreamReader (System.in)); 
+                                                                   try {String userInputPassword =  br.readLine(); if(!userInputPassword .equalsIgnoreCase         ("password")){return false;} else return true; }catch (IOException e){e.printStackTrace() ;          }}                 public String getUserName(){       // Returning the name of current logged-in User     
+  /* If not login, it returns a message "Not Logged In" */    if(username == null) {return           (" Not LoggedIn");}} else     return username;}        }            ** This class is for demonstrating only. Please do not use in production environment**   // Creating an instance of this UserSession Class         
+UserSession users = new       UserSession();      System.out.println("You are : " +users .getUserName());  if (users    != null &&     (!(users..authenticateuser())) {         thrownew SecurityException (" Unauthorized Access" );}else{           // If user is logged in, then only proceed further   System.out
+!println("Access granted");}} else        } catch      (.IOException e){e .printStackTrace(); }}  finally     {}`; **This block of code will be executed regardless if the try-catch         blocks have been reached or not**    // closing resource such as BufferedReader, and DBConnection here.

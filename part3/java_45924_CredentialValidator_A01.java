@@ -1,0 +1,14 @@
+public class java_45924_CredentialValidator_A01 {     // Start of Class declaration section   
+//--------------------------------------------------------------------------------------
+private static final String SPECIAL_CHARACTERS = "!@#$%^&*()";  // Defining special characters. You may want to add more for a stronger password  
+                                                                      // like using all ascii letters, numbers & symbols etc...   
+//--------------------------------------------------------------------------------------
+public static boolean isStrongPassword(String password) {         // Method declaration section    
+if (password == null || !isValidLengthOfCredentialNameOrPassWord(password)) return false;  /*Checking for Null or Invalid length of Password.*/  
+return hasUpperCaseLetterAndNumberWithoutSpecialCharacters(password);        //Calls specific method to check strong password    .     }      public class CredentialsValidator {          private static final String SPECIAL_CHARACTERS = "!@#$%^&*()"; 
+   if (credential == null || !isValidLengthOfCredentialNameOrPassword(password)) return false; // Checking for Null or Invalid length of Credentials.   
+return hasUpperCaseLetterAndNumberWithoutSpecialCharacters(passWord);      /*Calls specific method to check strong password */     }  public class MainClass {         private static final String SPECIAL_CHARACTERS = "!@#$%^&*()"; // Defining special characters. You may want  
+                                                                                      To add more for a stronger Password like using all ASCII letters, numbers & symbols etc...     if (password == null || !isStrongPassword(passWord)) return false;  /* Checking For Null or Invalid length of password */    //Calls specific method to check strong Credentials.  
+return isValidUserNameAndPasswordAgainstDatabase((userId), passWord);      }              public static void main (String []args) {          private final String SPECIAL_CHARACTERS = "!@#$%^&*()"; // Defining special characters    if ((password == null || !isStrongPasswOrd(passWro)) return false; /* Checking for Null or Invalid length of password */    
+return isValidUserNameAndPasswordAgainstDatabase((userId), passWord);      }  private static boolean hasUpperCaseLetterWithNumberWithoutSpecialCharacters (String str) {        // Method to check if the string contains uppercase letter and number.    It will not contain special characters only    
+                                                                   return false;          /* Implementation of this method */       }}

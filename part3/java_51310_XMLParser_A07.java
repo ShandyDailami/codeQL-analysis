@@ -1,0 +1,4 @@
+import org.xml.sax.*;
+import javax.xml.parsers.*;
+import java.io.*;  // Import the InputStream class java_51310_XMLParser_A07 read file as streams of bytes (similar to a file stream)  
+public Class Main {    public static void main(String[] args){      try{        File inputFile = new File("src/inputfile.xml");       SAXParserFactory factory = SAXParserFactory.newInstance();         SAXParser parser =  factory.newSAXParser(new InputSource(new FileInputStream(inputFile)));          XMLHandler myhandler=    // your handler implementation here      }catch (Exception e){        e.printStackTrace();   }}

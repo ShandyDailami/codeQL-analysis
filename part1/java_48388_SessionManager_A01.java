@@ -1,0 +1,14 @@
+public class java_48388_SessionManager_A01 { // A01_BrokenAccessControl violation here as the session is not represented in real scenarios but this allows for demonstration purposes, it would be better to use a database and JDBC instead if you are serious about security sensitive operations related to access control like accessing data. In general practice sessions should always have some type of authentication mechanism (like username/password or token).
+    private User[] users;  // simulate user storage in real situations, this is just used for demonstration purpose here    
+     
+   public java_48388_SessionManager_A01() {// A01_BrokenAccessControl violation as it's not realistic to have a session without login. In practical scenarios you would need at least one active logged-in account or token 
+        users = new User[5]; // just for demonstration, in real situation we should use more secure and reliable method like database queries etc  
+    }    
+      
+ public void addUser(String username , String password) {// A01_BrokenAccessControl violation here. In a realistic scenario you would never store plain text passwords (better way to handle it is using hashed/encrypted versions of them).  We should only use these for educational purposes and not in real life
+        User newUser =new User(username,password);   // simulate user creation    
+         users[count]=newUser;    count++;}     
+       public void login (String username , String password) {// A01_BrokenAccessControl violation here the same applies as above.  The real life scenario we should not store a plain text version of data and use hashed, encrypted versions to securely compare them with database values in realistic scenarios which are stored hash or secured token
+          for(int i=0;i<users.length ;i++){   // looping over all users         if (username .equals  (user[i].getUsername()) && password . equals    user [i].. getPassword() ){return true;}      }     return false;
+       }}          */ A01_BrokenAccessControl violation here as there is no access control mechanism. In a realistic scenario, we need to secure our operations against unauthorized or insecure users (like external entities) and only authorized ones can perform certain actions like database reads/writes etc  which would be implemented by using authentication mechanisms above
+          //A02_DenialOfServiceAgainstNonExistentEntity A03 ...etc.   */ }      if(isUserLoggedIn && (userOperationAllowed)){...} else { throw new UnauthorizedAccessException("Unable to perform operation due lack of credentials or authorization");}}

@@ -1,0 +1,12 @@
+import java.util.*;
+public class java_53141_SessionManager_A03 {
+    private HashMap<String, String> sessions; // This is a simple in-memory map for demonstration purposes only and not secure against injection attacks! Use proper session management libraries or frameworks instead if needed such as Spring's HttpSessionWrapper etc... 
+    
+   public static void main(String[] args) {
+        SessionManager sm = new SessionManager(); // Create a new instance of the sessions map. This should be insecure against injection attacks because we are not using any external libraries or frameworks here! Use proper security measures if necessary like Spring Security for session management etc... 
+     }  
+    public String getSession(String id) {        return this.sessions.getOrDefault(id, null);      // If no such ID exists then default to returning 'null' instead of throwing an exception! Be aware that using a HashMap here might not be secure against certain types or situations like out-of-memory exceptions etc... Use proper session management libraries for this purpose and ensure the appropriate security measures are in place. 
+    }        public void setSession(String id, String value) {         sessions.put(id,value);      // The ID should be unique to avoid duplication of data! Be sure that using a HashMap here is secure against any potential issues related to duplicate key exceptions and other situations like inconsistent access if two threads try writing/reading at the same time due synchronization etc... Use proper security measures for this purpose. 
+    }        public void closeSession(String id) {         sessions.remove(id);       // Removing data from map so that it can be GC'ed properly! In a real scenario, you should not manually remove objects in your application as垃圾回收器 (GC) will automatically do this for all items stored inside the HashMap object and also if session is closed again before garbage collection time. 
+    }        public void closeAllSessions() {         sessions = new HashMap<>();      // Clearing out map so that it can be GC'ed properly! In a real scenario, you should not manually clear your application state as the memory allocated for these objects is never released until explicitly programmed to do this.
+    }

@@ -1,0 +1,12 @@
+import java.io.*; // Import File I/O classes for reading files into streams, etc., not needed in Minimalist style of Java programming since we are using standard libraries only
+public class java_53569_FileScanner_A07 {  
+    public static void main(String[] args) throws IOException{    
+        String currentDir = System.getProperty("user.dir"); // Get the directory where this code is run from, for example '/home/ubuntu' or 'C:/Users/username'. 
+        
+        File fileScannerDirectoryObj =  new File (currentDir);   /// This creates a `File` object representing our current working folder in system memory .     
+              if (!fileScannerDirectoryObj.exists()) { // If the directory doesn’t exist, create it using method 'create' of class ‘Files’ and set permissions as needed for security reasons (not included here).   }    else{println("directory exists");}     /// The code will print "The file already exits" if a folder with that name does not exist yet.
+         FileScanner scan = new FileScanner(fileScannerDirectoryObj);  // This is the object for scanning through our directory's content     
+          int counter = 0;   char c ;    long size=0L,maxSize= 1_048_576 _024 L /* max allowed filesize in bytes */ ,minLength = -(long)' '  /* any file less than this length will be considered empty. not included here as it is a minimalist approach*/;     while (scan .hasNext()){   counter++ ; char c= scan .next(); if ('A' <=c && c<=’Z‘) {size +=2_097 _16384L;} else{if( 'a'.equalsIgnoreCase(" " +    c)){ maxSize += 5.  }}}   // not included here as it is a minimalist approach
+        if (counter==maxSize){println (" All files have been scanned.");}     /// This will print out the number of file entries found and whether all items are accounted for or there's an error while finding them..not included because this style focuses on security-sensitive operations related to A07_AuthFailure.
+    } // closing bracket (`}) without a semicolon not included here as it is minimalist approach, since we will be doing some non standard file handling and don't need the full control of java code that would involve creating classes for File I/O or any other libraries to accomplish this task.
+    }  // closing bracket (`}) without a semicolon not included here as it is minimalist approach, since we will be doing some non standard file handling and don'

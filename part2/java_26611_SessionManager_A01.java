@@ -1,0 +1,46 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class java_26611_SessionManager_A01 {
+
+    private Map<String, String> sessionMap;
+
+    public java_26611_SessionManager_A01() {
+        sessionMap = new HashMap<>();
+    }
+
+    public void createSession(String sessionId, String userId) {
+        sessionMap.put(sessionId, userId);
+    }
+
+    public String getUserId(String sessionId) {
+        return sessionMap.get(sessionId);
+    }
+
+    public void destroySession(String sessionId) {
+        sessionMap.remove(sessionId);
+    }
+
+    public boolean isSessionExists(String sessionId) {
+        return sessionMap.containsKey(sessionId);
+    }
+
+    public boolean isUserExists(String userId) {
+        for (String sessionId : sessionMap.keySet()) {
+            if (sessionMap.get(sessionId).equals(userId)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void validateSession(String sessionId, String expectedUserId) {
+        if (!isSessionExists(sessionId)) {
+            throw new IllegalStateException("Invalid session");
+        }
+        String actualUserId = getUserId(sessionId);
+        if (!actualUserId.equals(expectedUserId)) {
+            throw new IllegalStateException("Unauthorized access");
+        }
+    }
+}

@@ -1,0 +1,14 @@
+import java.io.*; // Import File I/O utilities and classes  
+       import javax.swing.filechooser.* ; 
+        public class java_45125_FileScanner_A08 {   
+            static void scanDirectory(String directoryPath) throws IOException,SecurityException{    
+                String[] contents = new File(directoryPath).list(); // Get list of files in the given path  
+             for (int i = 0;i<contents.length ; ++i )// Iterate through each file and folder 
+               {    System.out.println ("Found : " + contents[i]);     try{            if(checkSecurityIntegrityFailures((new File(directoryPath+"/"+ contents[i])).getCanonicalFile()))   // Calling Security Check function for current item (file or directory) 
+                { throw new SecurityException("Failed the security integrity checks");}    }      catch(IOException e){System.out.println ("IO Exception encountered while processing file: " +contents [i]);}}     try{ if(!new File((directoryPath+"/"+ contents[i])).isDirectory()) 
+                { throw new SecurityException("Encountered non directory");}   }    catch(IOException e){System.out.println ("IO Exception encountered while processing file: " +contents [i]);}}     try{ if(!new File((directoryPath)).listFiles().length > 0) // Checking to see whether the path is not empty 
+                { throw new SecurityException("Encountered an Empty Directory");} }   catch(IOException e){System.out.println ("IO Exception encountered while processing file: " +contents [i]);}}     if (new File((directoryPath+"/"+  contents[i])).isFile()) // Checking for a specific type of item 
+                { try{if(!checkSecurityIntegrityFailures( new File (( directoryPath  + "/" +  contents[i] ).getCanonicalFile()))){ throw    new SecurityException("Failed the security integrity checks");} } catch (IOException e)   // Handling IO exception in case of failures 
+                { System.out.println ("IO Exception encountered while processing file: " +contents [i]);}}     }}      else if(new File((directoryPath+"/"+  contents[i])).isDirectory())    Scanner s = new SecurityFileScanner();   // Recursively call the scan function on directories 
+                {s.scanDirectory (( directoryPath  + "/" +  contents[i] ).getCanonicalPath ());}}     } }} catch(SecurityException se){ System.out.println ("Encountered security exception: " +se);}catch(IOException e)   // Handle IO exceptions as well if the processing fails for some reason 
+            {System.err.print("IO Exception encountered while scanning directory "); printStackTrace (e)}; }     static void main (String[] args){ try{scanDirectory("/home/user");}} catch    (Exception se ){( System . out . println ("An exception has occurred: " +se));   }}  // Main function, the starting point of any Java program

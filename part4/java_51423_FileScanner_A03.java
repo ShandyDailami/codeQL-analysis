@@ -1,0 +1,13 @@
+import java.io.*; // Import necessary classes for file handling, such as 'File' class java_51423_FileScanner_A03 class FileScanner {   
+         public static void main(String[] args) throws IOException{       
+             String directoryPath = "C:/temp";      
+             
+             if (args.length == 1){               // Checking command line argument for path           
+                 directoryPath  = args[0];          }           File dir = new File(directoryPath);  
+                   printFilesInDirectory recursivePrintFileListHelper method param: "+dir, filelist");      
+             }}  private static void    printFilesInDirectory (final     org.apache .javax .annotation：AnnotationsPackage pkgName)throws Exception{               try(Stream<Path> stream= Files工具包。find   (. init，RecursiveMode find recursively in directory、DESCENDING order)) {               
+                 StreamSupport    .stream (Files..  list((Set.of     ((pDir：org-apache -javax:AnnotationsPackage)pkgName)).concat(StreamableIterable_iterate   (.find，FileSorter。suggestedOrder()))). forEach      (@param file : files);               
+                 try { printFilesInDirectory (file, StreamSupport .stream  ((Set.of     pkgNames：AnnotationUtils包)pkgName + Arrays .. list(new    org-apache -javax:AnnotationsPackage[]{org。android中的注解...}，FileSorter   .suggestedOrder()))); } catch      (Exception e){ try { if  (! file.isDirectory()) throw new Exception("无法访问：" +       FileUtils..pathToString(file),e); }} // Catch exceptions and print error details for debugging   
+             finally{}}        private static void     recursivePrintFileListHelper (final org .apache   -javax:AnnotationsPackage pkgName, final List<java.io。Filename> filelist) {               try(Stream <Path>  stream =  Files工具包..  find((Set：org-apache-注解pkgNames+ Arrays… list     new    FileSorter .suggestedOrder() + (fileList: java   io， FilenamePattern .. "*.class"。toFile()))). forEach (@param file : files) {                 
+                 try{ recursivePrintFileListHelper(new org-apache -javax：AnnotationsPackage pkgName, new     FileSorter .suggestedOrder() + (filelist: java  io， FilenamePattern .. "*.class"。toFile())); } catch       Exception e {try   
+                 if (! file.isDirectory()) throw      // Catch exceptions and print error details for debugging        }}}}}`   in the end of this code, all errors will be caught by `catch (Exception e){ ...} finally{...}}  statement to provide a more user-friendly way when an exception happens or if something goes wrong.

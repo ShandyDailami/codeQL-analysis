@@ -1,0 +1,14 @@
+public class java_51535_CredentialValidator_A01 {    
+    public boolean checkUser(String username, String password) throws Exception{        
+        // This method checks if the provided credentials are valid for a user. 
+		// Here we will simulate an external system that fetches users' data from some secure database or API and compares it with incoming ones  
+		    
+	    return false;     
+    }      
+}            
+public class CredentialValidator {            public boolean validate(String username, String password) throws Exception{        		// Main entry point for all validations.  It will call underlying checkUser method to perform the actual access control checks          	        BrokenCredentialsChecker brokenAccess = new BrokenCredentialsChecker();            
+    if (brokenAccess.checkUser(username,password)){                      System.out.println("Authentication Failed");                     return false;        		}else{                		        // If no exceptions were thrown from checkuser method then authentication was successful            }return true;}           public class Main {               	public static void main(String[] args) throws Exception	{            
+	        CredentialValidator cv = new CredentialValidator();                     System.out.println("Enter your username and password:");                  String userName="";         		String passWord;              Scanner scanInp  =new         Scanner (System .in);                   while (!(userName==scanInp).hasNext()){                	if(!((res)!!"").equalsIgnoreCase ((Scanne r)))){
+	        System.out :println ("Enter your username:");                      userNam e= scanIntrp  nput();                     }                    else{                         passWord = new         Scanner (System .in).nextLine () ;                 cv            if(cv   !! "").equalsIgnoreCase ((Scanne r))){
+	        System.out :println ("Invalid Credentials, Please try again!");                continue;                  }}              		if (!((res)="userName and password:"), scanInp .hasNext()) {                			cv              if (cv !! "").equalsIgnoreCase ((Scanne r))){                     System.out :println ("Invalid Credentials, Please try again!");                continue; }       		if( c v  equals userNam e ){
+	        passWord = scanInp .nextLine();                  			cv             if (cv   !! "").equalsIgnoreCase ((Scanne r))){                    System.out :println ("Invalid Credentials, Please try again!");                continue; }}}}}}`    Note: This example is a simple simulation and doesn't represent the actual use of real-world credentials in an application like traditional web applications which involve additional security measures such as encryption or hashing to store passwords.

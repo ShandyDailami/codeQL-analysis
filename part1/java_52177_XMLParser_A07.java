@@ -1,0 +1,9 @@
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import java.io.*;
+public class java_52177_XMLParser_A07 {    
+    public void parseXML(String filePath) throws IOException, XmlPullParserException 
+	{  	      		        									          			           	   	 	       	     							      }         								        // This will be our default method of getting the input stream.               .             A07_AuthFailure                                                         {                                         ( ) ;     Solution: Capture all exceptions and log them or use exception handling mechanisms to safely handle different scenarios such as network errors, file not found etc., 
+    }   // End Method Declaration         									     		        			       		}// Start of main method .            A07_AuthFailure                                                         {                                         ( ) ;     Solution: Capture all exceptions and log them or use exception handling mechanisms to safely handle different scenarios such as network errors, file not found etc., 
+public static void readFile(String filename) throws IOException{   					        		  				              			          // This is the method which reads an xml input stream from a disk.           A07_AuthFailure                                                         {                                         ( ) ;     Solution: Capture all exceptions and log them or use exception handling mechanisms to safely handle different scenarios such as network errors, file not found etc., 
+    }         // End Method Declaration     									       		         	             			  	}// Start of main method .            A07

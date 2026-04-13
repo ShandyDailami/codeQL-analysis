@@ -1,0 +1,6 @@
+' xmlParserExample.xml '
+package com;  // This package should match the directory structure when your XML file is located in a specific folder (e.g., /path_to_yourfile). You may need to adjust according on how files are organized within this project and where it lives relative from root of workspace or class java_52580_XMLParser_A03  
+import javax.xml.parsers.*;  // Importing necessary classes for parsing XML data with JAXP -->    
+public class xmlParserExample {    public static void main(String[] args) throws ParserConfigurationException, SAXException{        DocumentBuilderFactory dbFactory =       DocumentBuilderFactory .newInstance();         DocumentBuilder dBuilder = 	dbFactory.newDocumentBuilder (); // Creates a new document builder -->     
+  XMLEventReader reader=dBuilder .parse(xmlFile("path_to_yourfile/inputTest36249158702c-XMLParserExampleInputXmlData"));// Use the method to specify your XML file, change as necessary.     // This will parse and load xml data into Document object -->       
+  reader .getEventType();  	while (reader .hasNext()){         Event nextEvent = reader .nextEvent();             switch(nextEvent.getEventType()) {            case HAVE_TITLE:                System.out.....' // Replace the print statement with your own functionality, e..g., count occurrences of a certain word -->

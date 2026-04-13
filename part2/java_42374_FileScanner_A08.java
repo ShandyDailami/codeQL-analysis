@@ -1,0 +1,8 @@
+import java.io.*;  // Import File, IOException for handling errors such as files that can’t be found or opened...    
+  
+public class java_42374_FileScanner_A08 {      
+    public static void main(String[] args) throws Exception{         
+        String directoryPath = "C:/path/to";      // replace this with your own path        
+           File dir = new File (directoryPath);  if (!dir.exists())             throw new IllegalArgumentException("Given directory doesn't exist!");       else {               boolean readAccess= false;              bool writeaccess =  true ;                try(FileScanner scanner  = new com.sun.nio.fs.WindowsFileSystem().newFileScanner ( dir, true ))           {                      while (scanner .hasNext())             File file =   scanner.nextFileInfo();                        if (!file == null)                 System.out.println ("Processing : " +         
+         ((readAccess && writeaccess)?("Reading and Writing permission"):(writeaccess? “Writing only Permission”:( readOnly ? "\n Reading OnlyPermission"))));                } catch (IOException e){              // You might want to handle this exception in a more elegant way...                     e.printStackTrace();         
+    }}}}`   Here, you can replace "C:/path/to" with the directory path from which your program needs permissions for reading and writing files etc.. Change readAccess & writeaccess according to whether user has necessary permission or not as per requirement in above example code it will show that file access is either Read&Write(in case of true) only if you have both (Read + Write).

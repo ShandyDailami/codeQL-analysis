@@ -1,0 +1,3 @@
+import java.io.*; // for Java I/O classes - see section below (file handling) and above
+import javax.crypto.*; // for AEAD mode with authenticated encryption, also includes the MessageDigest source API on top of it that is used here to generate file hashes later in this example 
+// Cryptography utilities are available via Java's built-in cryptographic APIs and third party libraries such as Bouncy Castle for additional stronger security measures if needed.   // (i.e., AEAD mode with authenticated encryption)

@@ -1,0 +1,3 @@
+public class java_47381_CredentialValidator_A01 {  // Define the Class in CamelCase convention (Camel case is preferred for Java)  
+    public boolean validate(String username, String password){     // Method to define a method. Always start name from 'validate' followed by something that describes it e.g., ValidateUserCredentials     
+        if((username != null && "admin".equalsIgnoreCase(username))  ){   // condition for validating admin user and return true or false as per requirement       {          new PasswordValidator().isValidPassword("newPass",12);     }           else         {                  throw new InvalidCredentialsException();      }}

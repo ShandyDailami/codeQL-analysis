@@ -1,0 +1,14 @@
+import java.io.*; // Import necessary classes 
+// import other needed libraries if any  
+public class java_53518_XMLParser_A08 {    
+    public static void main(String[] args) throws Exception{            
+        File inputFile = new File("inputfile1028965347-Copy1_AclFailure.xml");        
+	    XMLReader xr=null;           // Declare a variable of type xmlreader  
+	     try {                    	// Open an existing file in read mode 			   		     	 	       					        } catch (Exception e) {}				       finally{try{}catch(Throwable t){}}//Close the Connection if not yet closed.if (!fileExists("inputfile1028965347-Copy1_AclFailure"))throw new ExceptionInInitializerError(); 
+            xr = XMLReaderFactory.createXMLReader();          // Create an xmlreader object	  		   				// Declare a variable of type Xml reader for reading the inputfile        try{xr=new BufferedInputStream(Files.newBufferedInputStream (inputFile .toPath()));} catch (Exception e){throw new ExceptionInInitializerError() ; }
+            // Call xr's methods to parse this file 		   				// This is used for parsing the xml into a document, here we are calling method read () of Xmlreader class  	try{xr.setFeature(“http://xml.org/sax/features/external-parametrized-entity” , true);} catch (Exception e){throw new ExceptionInInitializerError() ; }
+            // Read the xml file until it is complete 		   				// This method reads and parses each XML entity starting from first character to last.  	try {xr .read(inputFile );	}catch (Exception E) {}finally{if (!fileExists("xmlreader") ) throw new ExceptionInInitializerError();}
+            // Print the parsed xml 		   				// This method prints out each element in an XML file on console or screen.  	try {System .out .println ("Element:" + xr);	}catch (Exception E) {}finally{if (!fileExists("main")) throw new ExceptionInInitializerError();}
+            // Close the xml reader 		   				// This method is used to close any open resources before program ends.  	try {xr .close() ; } catch(Throwable t){}}//Close all connections if not yet closed; finally{if (!fileExists("XMLReader")) throw new ExceptionInInitializerError();}
+        // System out the line and column for every element in XML file 		   				// This method prints information about each attribute.  	try {for(int i=0 ;i<xr .getLength()；++){SystemOutprintln (“Line:” + xr_.getEndElement ()。getName());}} catch{Exception e) {}finally{(if (!fileExists("XMLReader")) throw new ExceptionInInitializerError();}
+            } 			   		// Close the statement. If not closed, it will cause a SecurityFailure at exit if used as is because of unclosed statements in this case	}catch (Throwable t){}} // Ends cleanly with an error message .t(e); System out ("Security Failure."); }}//Catch any exception that might occur

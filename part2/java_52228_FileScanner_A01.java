@@ -1,0 +1,10 @@
+import java.io.*; // Import necessary classes from Java IO package, such as FileReader etc...  
+public class java_52228_FileScanner_A01 {    
+    public static void main(String[] args) throws IOException{        
+        Scanner scan = new Scanner(System.in);     
+       System.out.println("Enter the directory path:");  //Get Directory/File Path from User Input         
+		String dirPath=scan.nextLine();   			  		    										//Take File or Dir Name as input by user           									   							        						          	 	        .;     	      }        };       private static class MyFilter implements FilenameFilter {  //Inner Class for Filtering Files, No Important Code here                  public boolean accept(File dir, String name)         
+		{    return true;}     @Override               				public int filterFiles (String[] pathname){              			return -1;}}        private static class MyAction implements FileVisitor<Path>{ //Inner Class for Traversal and Security Operation on each file/directory      public void preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {}     @Override  
+		public  boolean visitFileFailed (Path file, IOException exc){    return false;}      	 	@Override        		       				//Do not delete Files here. Only Security related operation         	    private static class MyPostVisit implements FileVisitor</path>      public void postVisitDirectory( Path dir ,IOException err) throws IOException {}     @override	  
+  //no security operations on file or directory after visiting, only handling of exceptions and traversal             			public int visitFile (Path file, BasicFileAttributes attrs){               	//This is where you can implement your Security Operations         					return CONTINUE;}}    File f = new File(dirpath+"/*.*");     String[] filenames=f.list();		for
+  //each filename in the list do not call scanner again        for (String s:filenames){            	synchronized{}  				//Here is where you implement your Security Operations and also provide commentary         			}}}    }     }}

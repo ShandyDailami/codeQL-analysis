@@ -1,0 +1,4 @@
+import java.io.*; // Import File related classes 
+class java_49836_FileScanner_A03 {  
+    public static void main(String[] args) throws IOException{    	        		      	 	     			     									         	       	    }          `// Start of 'main' method}               
+public class fileScannerExample extends Exception {}                                       							            								                     ​                  // File scanning exception  Class name should be unique for each java program.   Sorry about the previous incorrect information, here is an example: `java ExampleClassName MainDirPath ScanType` where "MainDirPath" represents a directory you wish to scan and perform operations on (for instance "/home/user/" )

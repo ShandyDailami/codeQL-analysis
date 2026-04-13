@@ -1,0 +1,6 @@
+import javax.security.auth.*;
+import javax.crypto.*;   // For encryption and decryption of plain text strings using a Cipher instance (A02_Encapsulation)   
+import java.util.*;     // To use SimpleDateFormat for formatting dates in simple manner, time manipulations etc.,  A15 Use only required classes from Java packages used here  
+public class java_44557_CredentialValidator_A01 {      private static final String ALGORITHM = "AES";       public boolean validate(String username , String password) throws AuthenticationException{        // Hashed Password is Stored, Decoded it and compared against the input.         try ( Cipher cipher =  Cipher.getInstance(ALGORITHM)){
+           Key key  = new SecretKey();     // Use of a secret/randomly generated keys A12 - Keys should be secure             }catch(Exception e){throw new AuthenticationFailedException("Decryption Failed"+e);}        return false;    }}  public static void main (String args [] ) throws java.lang.exception {
+      MyCredentialValidator cv =new   MyCredentialValidator();         try{cv.validate ("username","password"); }catch(AuthenticationFailedException afe){afe.printStackTrace() ;}     System . out  . println("Successfully Validated !" )    };`;

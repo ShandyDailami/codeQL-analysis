@@ -1,0 +1,4 @@
+import javax.xml.parsers.*;
+// Importing required classes and interfaces are done here due to the constraints in this problem statement, you may not be allowed from using external libraries or frameworks for security-sensitive operations related to A01_BrokenAccessControl like Spring or Hibernate – but we do follow best coding practices.
+import org.xml.sax.*; //SAX parser interface and classes used in the example are due here because of constraints given by problem statement. You may not be allowed from using external libraries for SAX parsing related to A01_BrokenAccessControl – but we do follow best coding practices as per requirements below
+import org.xml.sax.helpers.*; //SAX helper classes are done here due to the constraints in this problem statement, you may not be allowed from using external libraries for SAX parsing related A01

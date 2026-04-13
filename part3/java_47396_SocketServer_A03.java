@@ -1,0 +1,8 @@
+import java.io.*;  // Import BufferedReader, PrintWriter classes and InputStream class java_47396_SocketServer_A03 java.net.*;  // For ServerSocket Class in Java Networking
+    
+public class SocketServer {   
+       public static void main(String[] args) throws Exception{     
+             int port = 6012;// specify the desired local_port number which is already used or available, it can be any unused pno. you may set your own no  here like '8753'        ServerSocket server = new ServerSocket(port);       System.out.println("Server Started at port: " + port );
+         while (true) {   // This will allow the connection for all clients     Socket socket=server.accept();    PrintWriter out=  new PrintWriter  (socket.getOutputStream(), true);      BufferedReader in =new BufferedReader(new InputStreamReader(socket.getInputStream()));       String clientinput;
+           while ((clientinput=in .readLine()) != null){         System.out.println("Client says : " + clientinput );          out.println ("Server Says: Hello Client, You've Connected to the Server."); }   if (socket !=  null) socket.close(); server.close(); 
+           // this will keep your program running and listening for connections forever in case any clients are not connected properly       System.exit(0);     }}    catch (Exception e){System.out.println("Error: "+e ); }      setDefaultClockTimesZoneId, Timezone Id is the default time zone of java platform

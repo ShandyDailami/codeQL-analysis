@@ -1,0 +1,12 @@
+import java.sql.*;   // Import Statements for Java Database Access   
+    
+public class java_47063_JDBCQueryHandler_A07 {      // Main Class of Program      
+           public static void main(String[] args)         
+        {            System.out.println("Connecting to a selected database...");  try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/orcl", "username","password");      // SQL Query          
+         Statement stmt = conn.createStatement())          {            System.out.println("\nUpdating Records in the database...\n");              String sql;    if (conn != null)     { 
+                sql  ="UPDATE EMPLOYEE SET AGE = 30 WHERE NAME = 'John'";        stmt.executeUpdate(sql);          System.out.println("Updated Record successfully..." + "\n\n");            } else           {             printSQLException(st);         }} catch (SQLException sqlEx)    
+{              // Exception Handling block here...  },      try   // SQL Query Block        for    ((ResultSet rs = stmt.executeQuery("SELECT * FROM Employee"));)       if (!rs.next())           {             printSQLException(st);         } else            System.out.println("\nSelecting a record..." + "\n\n");
+              // Query the database and get all records from EMPLOYEE table        for (int i = 1;i <= 50 ;i++)          try  {             sql  = "INSERT INTO Employee(ID,NAME,AGE)"+" VALUES("  +     Rows.currentRow() +   ", 'John'," + 32   
+              +  ")"; stmt.executeUpdate(sql);           } catch (SQLException sqlex){ printSQLException(st) ;}  finally      {         // Close all non JDBC resources          try             ...     if            (!conn .isClosed() && conn != null ){  
+               System.out.println("closing connection");              conn.close();           }                }} catch (SQLException ex){                  printSQLException(ex);         }, // Catch block for handling SQL exceptions  );      try {             String sql ="SELECT * FROM Employee WHERE NAME='John';";         
+               Statement stmtSelect =conn .createStatement())       ResultSet rs  =stmt.executeQuery(sql) ;           while (rs.next()){              System.out.println("Name: " +     rs.getString('NAME'));             }                    //End of Program  };      }}

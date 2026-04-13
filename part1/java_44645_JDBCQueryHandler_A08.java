@@ -1,0 +1,13 @@
+import java.sql.*;   // Importing necessary classes from Java's Standard Library (JDBC)    
+      
+public class java_44645_JDBCQueryHandler_A08 {    // Declaring Class Name as 'Jdbcexample'.  It is a standard practice in programming to name the main method "main". If you change it, make sure that your program starts at this location. For example: public static void main(String[] args).  
+    
+public static Connection createConnection() throws SQLException {    // Creates and returns an instance of 'java.sql' connection object if successfully connected to the database else throw exception  . It contains error messages (SQLExceptions) that needs handling in your method calls when calling this function by using try-catch blocks or throwing them at appropriate places where they are expected such as finally block, etc..
+       return DriverManager.getConnection("jdbc:sqlite:/home/username/.sample_database");    // Adding the database file path you want to connect with SQL Server DB . Replace /path of your db here  and change it according by yourself or create a new one in sql server management system as per requirement..
+   }     // Creates connection. If not exist, then creates otherwise opens existing connections if possible    Connection conn = DriverManager.getConnection(“jdbc:sqlite:/dbname”);} catch (SQLException e) {e.printStackTrace();}}  and in the end close it using -conn .close()
+    
+public static void main(String[] args){   // Declaring a Main Method    ResultSet rs; Query qry ;Connection conn = null;}
+      try{       Connection conn= createConnection ();        Statement stmt   = conn.createStatement();// Creates an instance of the 'java' statement object for executing SQL commands on connection . If not connected, then throws exception  // Throws error messages in catch block or you can use it as a finally to close resources and handle exceptions..
+      String sql = "SELECT rowid, name FROM sqlite_master WHERE type='table';";     Query qry  = conn.createQuery(sql);   rs    =qry .executeQuery(); // Execute SQL query (selecting all table names).  If not connected or selected rows then throws exception..
+      while (rs.next()) {    System.out.println("ID = " + rs.getInt("rowid"));     System.out.println("Name = " + rs.getString("name"));} } catch(SQLException e){e.printStackTrace();}}   finally{conn!=null? conn.close(): null;}
+      // Here is a way to create database and table using JDBC in Java without any external frameworks.. However, this would require an understanding of SQL queries which are quite complex tasks as well...    }  Note: You should replace the sqlite_master SELECT query with your own security-sensitive operations.

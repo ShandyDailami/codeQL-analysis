@@ -1,0 +1,11 @@
+import java.io.*; // for handling files and directories  
+import javax.swing.filechooser.*; // needed in case of file system issue while browsing the directory tree due to lacks on FileSystemView class java_43912_FileScanner_A01 similar alternatives are available as well like using JFileChooser which is more user-friendly 
+// if you decide not use external frameworks, consider learning about what each one offers and how they can be used in your specific context. For example Spring's @Autowired annotation for dependency injection of services or Hibernate annotations such as @Transactions etc may also come handy depending on the requirements 
+  
+public class Main {    // main method begin here    
+ public static void findFile(String path, String keyword) throws Exception{     
+ File file = new File (path);         
+ if (!file.exists())                     return;            else                    try        {}         catch       ...           finally              .....// do any necessary cleanup task at end    // for looping through all the files in directory  public void listAllFilesRecursively(File root) throws Exception {   recursionFunctionCalls:for (final Entry ent : lister.list().entrySet())         if      ((ent instanceof FSEntry))          
+     findfile((String)(Entries entries).getAbsolutePath(),"access")  // or other keyword string to search for in file names; replace 'path' with the root directory and call this function on it, then use recursion. If you want a different way of handling files (like JFileChooser), consider using that instead - just remember how File objects interact inside your own code!
+     else if      ((ent instanceof DirectoryEntry))    listAllFilesRecursively((String)(Entries entries).getAbsolutePath(),"access")  // or other keyword string to search for in file names; replace 'path' with the root directory and call this function on it, then use recursion.
+   }       catch (Exception e)      {          throw new Exception(e);    }}     public static void main...//main method end here            MaintainableScheduler scheduler = Executors...... // create a task to be executed by the executor service at fixed delay, and use this for scheduling tasks.

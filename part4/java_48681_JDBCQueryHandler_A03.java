@@ -1,0 +1,6 @@
+import java.sql.*;  // Import Statement, PreparedStatement and CallableStatement interfaces  
+public class java_48681_JDBCQueryHandler_A03 {   
+private Connection connection;      private static final String DB_URL = "jdbc:postgresql://localhost/test";     private static final String USER ="username1234567890";  //Database User, Replace with your real user.  
+private static final String PASSWORD="?password?";      public java_48681_JDBCQueryHandler_A03() {    connection =  DriverManager.getConnection(DB_URL ,USER,"PASSWORD"); }     private void closeConnections(){ if (connection != null) try{  connection .close();} catch (SQLException ex){ /*NOP*/}}
+public static void main(String[] args ) throws Exception {    JDBCQueryHandler jdbc = new JDBCQueryHandler() ;      //Run your queries here.     String sql  ="insert into users values ()";       PreparedStatement pstmt =  connection .prepareStatement("INSERT INTO USERS (ID ,NAME, AGE) VALUES(?, ?,?)"); 
+pstmt.setInt   (1,23);    pstmt.setString (2,"testName", );      //...and so on for multiple set values ...     jdbc.closeConnections(); }}};

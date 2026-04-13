@@ -1,0 +1,8 @@
+import java.io.*; // Import necessary Java packages for handling directories, exceptions...etc  
+public class java_52605_FileScanner_A01 {   
+     public static void main(String[] args) throws IOException{     
+           File file = new File(".");        // Current directory      
+            if (file.canRead())  {                /* Security-sensitive operation */         
+               String [] listOfFiles= file.list();   // Listing files and directories in current folder    *//* Using recursion to scan all subdirectories*/      for(int i = 0;i<listOfFiles.length;i++) {     File f = new File(file, listOfFiles[i]); 
+               if (f.isDirectory())   // If file is a directory then print its name            System.out.println("Scanning Directory: " + f);          }}}}      catch (Exception e){System.err.printInetrviewerpen(e) ;}     }} else {      
+             throw new SecurityException ("Cannot read the current folder");        // If cannot be accessed then print an error message            System.out.println("Error occurred: Cannot access " + file);      }}}  private static void listFilesInDirectoryRecursive (File directory) throws IOException    /* Recurse into sub-directories */ {     if (!directory.exists() || !directory.isDirectory()) throw new IllegalArgumentException ("Expected a directory"); // If the specified path does not exist or is no more accessible, then print an error message            System.out.println("Error occurred: No such file/folder exists at " + dir);      File[] files = directory.listFiles();  if (files != null) for(int i = 0;i<files..length ; ++s){File f  = new Files[I]; } //Listing all the contents of a folder using recursion     listFIlesInDirectoryRecursive ((file)); }}

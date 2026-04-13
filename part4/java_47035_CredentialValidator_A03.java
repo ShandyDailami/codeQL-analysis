@@ -1,0 +1,7 @@
+import org.springframework.security.authentication.*;
+import org.springframework.security.core.*;
+import java.util.*;
+public class java_47035_CredentialValidator_A03 implements AuthenticationProvider { //Authentication provider interface used by Spring Security 5+, should be the same as a custom `UserDetailsService` in earlier versions of spring security  
+    @Override public Authentication authenticate(Authentication authentication) throws AuthenticationException {    	        
+        String name = authentication.getName();      		            		String credentials = (String)authentication.getCredentials();     					// extracting username and password from the provided details         				if("admin".equals(name) && "password1234567890xyzXYZ.".equals(credentials)){					        	return new UsernamePasswordAuthenticationToken( name, credentials , AuthorityUtils.createAuthorityList("ROLE_ADMIN"));    		        }else if ("user".equals(name) && "password1234567890xyzXYZ.".equals(credentials)){					        	return new UsernamePasswordAuthenticationToken( name, credentials , AuthorityUtils.createAuthorityList("ROLE_USER"));	               	}       				// return null if username/ password does not match any in our DB 		            // this way Spring Security will automatically reject the authentication request and fail with a meaningful message (e.g., "Bad credentials")  
+	        }         @Override public boolean supports(Class<?> arg0) {    		return true; }}`

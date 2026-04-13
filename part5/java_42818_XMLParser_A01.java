@@ -1,0 +1,20 @@
+import org.xml.sax.*;
+import org.xml.sax.helpers.DefaultHandler;
+
+public class java_42818_XMLParser_A01 {
+    public static void main(String[] args) throws ParserConfigurationException, SAXException{
+        String url = "file:///C:/Users/your_directory"; // replace with your xml file path 
+        
+		// create an instance of the XMLReader interface and pass a default handler to it. This object will process events (like startElement or endDocument) that occur in our document, allowing us to do custom processing for each event as required by problem statement A01_BrokenAccessControl  
+        SAXParserFactory saxpf = SAXParserFactory.newInstance();  // create a factory of Sax Parser interface   	    		     									      			        	   	     	 	       														            }              , String encoding) throws ParserConfigurationException { return new DefaultHandler() };  
+        XMLReader xr;             XmlFileLoader loader = null          SAXPullParserFactory spf  = (SAXPullParserFactory )saxpf.newInstance();    		     	 	      			   	   	       	     				  PullParser pp ;         defaulthandler hdl= new DefaultHandler() {
+        public void startDocument(){ // This method is called when the document starts to be read and it provides a reader (source of xml content)   }                   xr = spf.newSAXParser().getXMLReader(); 		     	 	     	       	    	    pp   =x r .createPullParser() ;
+        public void endDocument(){ // This method is called when the document ends and it provides a reader (source of xml content)   }                   xr = spf.newSAXParser().getXMLReader(); 		     	 	     	       	    	    pp   =x r .createPullParser() ;
+        public void startElement(String namespaceURI, String localName, String qName , Attributes atts){// This method is called when an element starts and it provides the name of a tag   }                   xr = spf.newSAXParser().getXMLReader(); 		     	 	     	       	    	    pp   =x r .createPullParser() ;
+        public void endElement(String namespaceURI, String localName , String qname){// This method is called when an element ends   }                   xr = spf.newSAXParser().getXMLReader(); 		     	 	     	       	    	    pp   =x r .createPullParser() ;
+        public void characters(char[] ch, int start,int length ){ //This Method provides a character stream that the parser can process   }                   xr = spf.newSAXParser().getXMLReader(); 		     	 	     	       	    	    pp   =x r .createPullParser() ;
+        public void fatalError(String error){// This method is called when there's a parsing problem and an exception occurs   }                   xr = spf.newSAXParser().getXMLReader(); 		     	 	     	       	    	    pp   =x r .createPullParser() ;
+        public void warning(Warning w){ //This Method provides information about warnings in the document during parsing   	}                    };        			       }});                  xr = spf.newSAXParser().getXMLReader(); 		     	 	     	       	    	    pp   =x r .createPullParser() ;
+        while (xr instanceof SAXSource && ((SAXSource)xs).setInput(url)){ // read from the XML source and feed it to our parser for processing   }          xr.parse(new InputSource(){// Parse is a method which reads input, parses each of its tokens in sequence according provided xml reader;
+            @Override public Reader getCharacterStream() { return null;}  };		     	 	      			   	   	       	     				     if (pp .getCurrentEvent ()== PullParser.START_DOCUMENT){ // This method is called when the document starts   } xr = spf.newSAXParser().setInput(url).parse();
+        }}  };}}; });});}}} while(!xr);} catch {//catch any exception here and do something about it, e g handle exceptions correctly}}{{ end of code block A01_BrokenAccessControl};   a more secure program would involve the use of JAXP (Java Archive XML Processor) or DOM/SAX parsers.

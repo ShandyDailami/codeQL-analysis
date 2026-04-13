@@ -1,0 +1,19 @@
+import org.xml.sax.SAXException;   // Import SAX exception handling 
+import org.xml.sax.XMLReader;    // XML Reader interface for reading an xml document (like file or stream) with the help of W3C's own API, which is part of Java Standard Edition library by default    
+import javax.xml.parsers.*;      // Import SAX parser  and corresponding classes  
+ import java.io.*;                // For InputStreamReader Class   
+public class java_52964_XMLParser_A03 {                    
+ public static void main(String[] args) throws IOException, SAXException       /* Main method */        
+        {            
+            FileInputStream fstream = new FileInputStream("inputfileName.xml");   // Create a file stream to read the xml input from an external XML source or local text    
+                        Reader oreader=new InputStreamReader(fstream,"UTF-8");  /* create reader for handling UTF encoding */                  
+             SAXParser saxp =SAXParser.getInstance("com.sun.org.apache.xerces.internal.parsers.SAXParserImpl") ;    // Create a new XMLReader instance                 
+                      org.xml.sax.InputSource is=new org.xml.sax.InputSource(oreader);     /* Input source for the SAX parser */        
+             saxp .setFeature("http://apache.org/xml/features/nonvalidating/load-dtd",false);  // Disable DTD validation in a non valid XML document, to prevent potential XSD parsing   
+                      org.xml.sax.XMLReader xreader=saxp.getXMLReader();     /* Create an instance of the SAX parser for handling xml */              
+             parse(xreader ,is);   // Parse Method is called with XML reader and input source  as parameters           
+        }    else {                System .out .println ( " error: file not found!" );}          return;                     /* End if no argument given in the command line, then print a suitable message */     case :         String st = new char [1024]; int c ; while ((c=is.read()) != - 1 ) {st .append (Character. toString(c)); }         
+                                                                                        // Print out parsed data on the console       return;                                                      /* End of Main method */   private static void parse(XMLReader xreader , InputSource is) throws SAXException        *//* Method for parsing XML file using a provided input source and xml reader.*/  { if (!xreader .getFeature ("http://xml.apache.org/xml-sa/namespace-prefixes"))             // If feature not available, we declare it ourselves          xreader .setFeature("http://xml.apache.org/xml-sa/namespace-prefixes", true);        
+                     System.out.println ( "Parsing XML Document... Please wait" );  int event; while ((event =xreader .getEvent()) != null ){ switch(event) { case HREADING_STARTED:             // Beginning of parsing a document, start message */       
+                     System.out.println ("Started Parsing Document"); break ;          /* If the XML input is from file or network then you might not want to display this output on console too because it will be displayed again and repeatedly after every read action by .getEvent() method in case of stream scenario */          
+                     default : xreader.next();  // Call next event             break;}}          /* End parsing if end tag encountered, otherwise call the appropriate handler for start/end tags etc..*/         }                                                                                             try {xreader.close();} catch (IOException e) {}      return;}       };

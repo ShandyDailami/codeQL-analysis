@@ -1,0 +1,15 @@
+import java.sql.*;   // We need these to use Statement and Connection objects 
+// Importing only required classes for simplicity of example code here we are not using all possible JDBC class java_52581_JDBCQueryHandler_A03 but they can be used as per requirement in actual project   
+public void run(String url, String userName , String password) throws SQLException {   // PreparedStatements with parameterized input  to prevent Injection attacks. The parameters provide a clear way for the calling code (like method invocation or an application setting change). This approach is safer as compared to using placeholders which could lead into injection attempts if maliciously crafted inputs are used
+{   // Start of run() function, PreparedStatements and ResultSet will be stored in this scope. They'll remain available until the method ends 
+    Connection conn = null;     // Define a connection object (conn) to hold our database connections that we use for all operations     
+         try {                  // Try block where everything inside is performed, if any operation fails it automatically goes into catch and rest of code within will not be executed. This makes the program safe from unexpected errors 
+           conn = DriverManager.getConnection(url , userName , password);    // Get a connection object using given URL with provided credentials     
+         }   catch (SQLException sqle) {        /* Catch block for when an SQL Exception occurs */               System.out.println("Error in establishing the database Connection: " +sqle );       return;     }  finally{          conn = null;} // Close connection even if it fails, preventing memory leaks
+         Statement stmt=null;      // Define a statement object (stmt) to hold our SQL commands that we use for all operations  
+    try {                          /* Try block where everything inside is performed */       
+       String queryString = "{ call MY_PROCEDURE() }";  /// Use stored procedure, replace 'MY_PROCEDURE' with the actual name of your Stored Procedure. Be careful not to include any user inputs in this string because it can open up SQL Injection attacks if you pass an input as a part of queryString  
+       stmt = conn.createStatement(); // Create statement object  using our connection     
+         } catch (SQLException sqle) {        /* Catch block for when the creation procedure fails */               System.out.println("Error in creating Statement: " +sqle ); return;    }   finally{stmt=null;}             /// Always close statements even if they fail, prevent memory leaks 
+         try (ResultSet rs = stmt.executeQuery(queryString)) { // Use execute query to call stored procedure and get result set     
+           while(rs.next())     /* For each row */    System.out.println("Rows: " + rs.getString('ColumnName'));   /// Here replace 'ColumnName' with actual column name in your ResultSet from the database, same as you used for storing data inside statement  } catch (SQLException sqle) {        // Catch block to handle SQL Exceptions      System.out.println("Error executing query: " +sqle ); return;    }}

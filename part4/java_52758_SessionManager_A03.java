@@ -1,0 +1,10 @@
+import java.util.*;   // for HashMap, Map interface and its utilities List接口，ArrayList类等。   
+public class java_52758_SessionManager_A03 {    
+private static Hashtable<Integer , String> sessionDB =  new Hashtable<>();  /* this is our database */             
+                                                                                 private int count=0;   // to assign unique ids for each user.          
+ public boolean createSession(String username)        {    System.out.println("Creating Session " +username);         if (sessionDB.containsKey(username))          return false ;      else            sessionDB.put((++count),  username );             // a new one is created and assigned an id      
+return true;           }                    public boolean endSession(String pname)     {   System.out.println("Ending Session of " +pname);    if (sessionDB==null || ! sessionDB .containsKey((username)))          return false ;        else            // a existing one is being closed      
+return true;           }                       public String getUserName(int sid)     {   System.out.println("Fetching User for Session ID: " +sid);      if (sessionDB==null || ! sessionDB .containsKey((Integer ) sessions id))          return null ;        else            // a existing one is being fetched      
+return  ""+ sesson DB;           }              public static void main(String[] args) {                 SessionManager sm = new SessionManager();               sm.createSession("John");                System .out .println (sm getUserNameByID (" ++ count));          // getting session id after creating one           
+System  out - println "Ending of John" + endsessionbyid(++count);                  }              public boolean isValiduserNmaeInDB() {     if ((username)==null || (!"John").equals((String ) username)) return false ;       else             // a valid one in the database          
+return true;               }}  /* End of SessionManager Class */

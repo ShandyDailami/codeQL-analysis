@@ -1,0 +1,11 @@
+import java.util.*;   // for ArrayList, HashMap etc 
+public class java_53418_CredentialValidator_A03 {    
+    public static boolean validatePassword(String password) throws Exception{        
+            if (password == null || !isValidLength(password))             throw new IllegalArgumentException("Invalid Password");         
+                return true;       }   // end of method              
+        private static final ArrayList<Character> validChars = getAllPossibleCharacters();  HashMap map  =new HashMap<> ();              public boolean validateUserNameOrID(String userInput) throws Exception {           if (!isValidUsernameAndId((userInput))) throw new IllegalArgumentException("Invalid Username or ID");          return true; }  
+       private static final ArrayList<Character> validChars2 = getAllPossibleCharacters();              public boolean validateCardNumber(String cardNo) throws Exception {           if (!isValidCreditCardNumericOnly((cardNo))) throw new IllegalArgumentException("Invalid Card Number");          return true; }  
+       private static final ArrayList<Character> validChars3 = getAllPossibleCharacters();              public boolean validateCVV(String cvv) throws Exception {           if (!isValidCvv((cvv))) throw new IllegalArgumentException ("Invalid CVV/Card Verification Value");          return true; }  
+       private static final ArrayList<Character> validChars4 = getAllPossibleCharacters();              public boolean validateExpiryDate(String expire) throws Exception {           if (!isValidExipiryMonthAndYear((expire))) throw new IllegalArgumentException ("Invalid Expiration Date");          return true; } 
+       //... continue with all the other validations.   };     private static final HashMap<Character, Character> characters = initCharacters();    public boolean validate(String userNameOrId) { if (userInput == null || !isValidUsernameAndID((HashMap), "Invalid Username or ID")) return false;  //... continue with all the validations. }  
+}

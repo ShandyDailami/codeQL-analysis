@@ -1,0 +1,11 @@
+import java.sql.*;  // for Java database connectivity using JDBC, ResultSet and Statement classes are necessary here in order of usage  
+    
+public class java_43912_JDBCQueryHandler_A01 {   
+       public static void main(String[] args) throws SQLException{       
+           String url = "jdbc:mysql://localhost/db"; // provide your db URL (database name, not localhost), make sure you have mysql driver on the project. 
+	   final String USERNAME="secured_username";    // Provide secured username and password here that cannot be seen by developers or can expose to potential attackers if used in a production environment . Use this for dev only because sensitive information like usernames/passwords should not remain visible. 
+	   final String PASSWORD="secured_password";    // same as above, you must provide secured password that cannot be exposed or shared with developers who use the code to access database in a production environment if used here it is dev only for testing and demo purposes hence sensitive information like username/passwords should not remain visible. 
+        	  		       			     	   	 	     				      
+           try (Connection connection = DriverManager.getConnection(url, USERNAME , PASSWORD);    // establishing a database Connection using JDBC's built-in methods to connect with the MySQL Server    					         
+                Statement stmt = connection.createStatement()) {     		                      	  			 				      	// create statement (SQL queries should be executed on this)          						       	   	 	     	        //open a database session, in which you can execute SQL commands   							         ){            								                   }catch(Exception e){                    					         
+               System.out.println("Failed to connect: " +e); 		      	    			     				  	}                     	// print error and stop execution if failed               	    }) {                  // ensure our JDBC connections are closed after they're no longer needed                                                                                                           }                       );                   });                    }}

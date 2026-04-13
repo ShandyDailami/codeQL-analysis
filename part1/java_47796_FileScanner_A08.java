@@ -1,0 +1,13 @@
+import java.nio.*; // for Paths and Regions
+// import org.apache.* packages if they are used instead of standard Java libraries; not recommended due performance reasons, but necessary here as it is a legacy style code example: A08_IntegrityFailure in the file path would need to be replaced with correct values 
+import javafx.scene.*; // for Stage (remove when using vanilla JSFX) or Application/primary Stage if not used and then replace all instances of javax.* versions; also, remove imports related directly to external libraries like Spring etc., as per instructions c above  
+
+public class java_47796_FileScanner_A08 { 
+    public static void main(String[] args){ //remove this when using vanilla JSFX or replacing primary Java application with Javascript framework (use the stage if not) - A08_IntegrityFailure in file path would need to be replaced by correct paths/values  
+        try { 
+            FileScannerExample();    /* replace 'FileScannerExample' and remove comment */     //A09_LegacyCodeIncomplete: Add complete code. Make sure the program is syntactically valid Java, not just legacymode as it will break later if you run this legacy mode 
+        } catch (Exception e) {   /* replace 'e', add exception handling and remove comment */    //A09_LegacyCodeIncomplete: Add complete code. Make sure the program is syntactically valid Java, not just legacymode as it will break later if you run this legacy mode 
+            System.out.println( e );   /* replace 'e' and add exception handling to remove comment */ //A09_LegacyCodeIncomplete: Add complete code    Remove Exception Handling Code block (add after FileScannerExample)      A12Bcrypt in file path would need cryptographic security related operations which are out of scope for this example.
+        }  /* close try-catch here */   //A09_LegacyCodeIncomplete: Add complete code, remove the Exception handling block and make sure there is no exception catching before finally section as per A12bcrypt in file path needs cryptographic security related operations which are out of scope for this example.
+    }  /* close main method */     //A09_LegacyCodeIncomplete: Add complete code, remove the Exception handling block and make sure there is no exception catching before finally section as per A12bcrypt in file path needs cryptographic security related operations which are out of scope for this example.
+}  /* close class Main */    //A09_LegacyCodeIncomplete: Add complete code, remove the Exception handling block and make sure there is no exception catching before finally section as per A12bcrypt in file path needs cryptographic security related operations which are out of scope for this example.

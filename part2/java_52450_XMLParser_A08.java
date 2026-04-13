@@ -1,0 +1,15 @@
+import org.xml.sax.*;
+import org.xml.sax.helpers.DefaultHandler;
+
+public class java_52450_XMLParser_A08 {  
+    public static void main(String[] args) throws ParserConfigurationException, SAXException{    	        
+	        // Parse the xml file using sax parser with default handler            
+            String url = "file:///path_toyourxml"; 	// replace this by your real path to .XML or XML document  				         		   			     	   	     	 					      						              ^!*&%@#$%%	     (enter the full URL of actual file)	        }
+            SAXParserFactory saxPFactory = SAXParserFactory.newInstance();  // create a new instance for factory             
+             XMLReader xreader;                      // declare an object                 		     			   	   	     	 					      						              ^!*&%@#$%%	     (enter the full URL of actual file)	        }  				           									}];           ParserConfigurationException, SAX Exception.  Incorrect path will cause application to break
+             xreader = saxPFactory .newSAXParser( new InputSource(url));              // create a parser instance                					         		   	     	 	       (enter the full URL of actual file)	        }  				           									}];           ParserConfigurationException, SAX Exception.  Incorrect path will cause application to break
+             xreader .setContentHandler((SAXHandler) );                      // create a parser instance                					         		   	     	 	       (enter the full URL of actual file}	        }  				           									}];           ParserConfigurationException, SAX Exception.  Incorrect path will cause application to break
+        xreader .parse(new InputSource(url));                             // parse xml document using parser instance                    					         		   	     	 	       (enter the full URL of actual file)	        }  				           									}];           ParserConfigurationException, SAX Exception.  Incorrect path will cause application to break
+}             xreader .parse(new InputSource(url));                    // parse xml document using parser instance                    					         		   	     	 	       (enter the full URL of actual file)	        }  				           									}];           ParserConfigurationException, SAX Exception.  Incorrect path will cause application to break
+        xreader .parse(new InputSource(url));                             // parse xml document using parser instance                    					         		   	     	 	       (enter the full URL of actual file)	        }  				           									}];           ParserConfigurationException, SAX Exception.  Incorrect path will cause application to break
+        xreader .parse(new InputSource(url));                             // parse xml document using parser instance                    					         		   	     	 	       (enter the full URL of actual file)	        }  				           									}];           ParserConfigurationException, SAX Exception.  Incorrect path will cause application to break

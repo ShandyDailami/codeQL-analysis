@@ -1,0 +1,5 @@
+import java.io.*;  // Input/Output Streams for reading and writing data over the socket channels (IOStream)  
+import java.net.*;  // ServerSocket Class to create a server on specific port number   
+public class java_52029_SocketServer_A03 {    
+      public static void main(String[] args){          new Thread(() -> start(8096)).start(); }         private static void sendMessageToAllClients (PrintWriter out, String message)                  for (ClientHandler ch : ClientHandler.listOfChannels ){  if (!ch.equals(out)) {                   PrintStream ps = new PrintStream(new BufferedOutputStream(
+      SocketChannel dstSocket=null;Sock addr: null));                     try             // Send Message to all clients                  out .println (message);               } catch            error           ((NIOException e)              if (!ch.equals((out))){                   Logger logger = ... }}   private static void start(int portNumber ){        ServerSocket server;try {         server=newServerSocket();server..accept())}          while      true  {}catch (IOException ex}{ex.printStackTrace}}

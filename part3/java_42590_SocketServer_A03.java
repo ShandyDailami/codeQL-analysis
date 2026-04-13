@@ -1,0 +1,9 @@
+import java.io.*;
+import java.net.*;
+import javax.sql.DataSource; // assuming we're using an ORM like Hibernate or JPA with a Data Source (DS) object to handle our database operations, not Spring Framework 5+ directly for simplicity sake and as it doesn’t provide any way of preventing SQL Injection attacks
+
+public class java_42590_SocketServer_A03 {   // This is your server-side code. It listens on port 12346 (default HTTP ports). For a real web application, you would use `SocketServer socket = new ServerSocket(port);` instead and not the default http Port: '80'
+    DataSource ds;   // declare data source object here for SQL Injection prevention. You must provide it via dependency injection in your server class when using ORM/JPA or manually create one by yourself if you don’t use any framework (Spring, Hibernate etc).  It should contain connection pool parameters
+    public java_42590_SocketServer_A03(int port) throws IOException {   // Constructor. Start the socket listener on provided port and ignore all incoming connections for now until we implement exception handling & security measures in server-side code below this line: `serverSocket = new ServerSocket(port);` 
+        System.out.println("Starting SocketServer with listening Port : " + port );   // Print out message to console, so developers know what’s happening - you can remove these lines if not needed for your application (it'll be handy when debugging)    }      public void start() throws IOException {    
+        while(true){  System.out.println("Waiting connection");   // Main loop: accept connections and do something with them, e.g.: read incoming data from a connected socket - it will contain all user input before sanitization against SQL Injection attacks as described above in `sendData` method call    }

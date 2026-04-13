@@ -1,0 +1,10 @@
+import java.io.*; // Import necessary classes: BufferedReader, InputStreamReader etc..  
+public class java_46148_FileScanner_A08 {   
+     public static void main(String[] args) throws IOException{         
+         String directory = "path_to/your/" ;      /// Specify your own path here          
+         File dir = new File (directory);                // Get a file object           
+        if (!dir.exists() || !dir.isDirectory()) {                     /* Check the Directory exists or not */ 
+             System.out.println("Invalid directory");                          /** Print an error message and exit program*/    return; }                  try(FileScanner fsc = new FileWalkExceptionFilterReader (new java.io.PrintWriter(System.out)))            {              /* Create a file scan object for reading files in our project */    
+             // We use this filter to ignore certain exceptions                      .accept("A08_IntegrityFailure")  }               catch (SecurityException ex)                 System.err.println ("Skipping directory or read error: " + dir); return;                           /* Print an Error message and exit Program*/                          try {                   
+             for(File file : dir.listFiles())                       // Reads all files in the specified directories           if(!file.getName().endsWith(".txt"))  continue;}              FileReader fr = new FileReader (file) ;                                  BufferedReader br =  null;                  while ((br=fsc.read(fr)) !=  -1){                           String line     // Reads file content                             try {                                            
+                     System.out.println ("Read Line "+line); }                    catch  {}                              finally{ if (null!= fr) closeableStatement .close() ;}           }}                   fsc.close();}}}

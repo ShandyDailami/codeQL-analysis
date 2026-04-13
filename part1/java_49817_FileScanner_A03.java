@@ -1,0 +1,6 @@
+import java.io.*; // Import necessary classes    
+      
+public class java_49817_FileScanner_A03 {     
+          static void listFilesRecursive(File dir) throws IOException        {           System.out.println("\n" + "Directory: '"+dir.getAbsolutePath()+"'");            String[] children = dir.list();             for (String s : children){               File f = new File(dir,s);                 if (f.isFile())       //print only .java files                { System.out.println("   " + f.getName());}           else                    listFilesRecursive(f);}} 
+              public static void main() throws IOException        {               String dirPath = "/path/to/" ;     File directory = new File (dirPath) ;         if (!directory.exists())       // Directory does not exist, do nothing and exit program      return; listFilesRecursive(directory);}} 
+                  public static void main() throws IOException        {               String dirPath="/path/to/"              try{FileScanner fs = new FileScanner();fs.listDirectory("+dirPath))){   System.out.println("\n" + "Starting at: '" + path+  "'");            //print the full file system hierarchy to console for security purposes only (no content)}catch(InvalidParameterException e)    {System..

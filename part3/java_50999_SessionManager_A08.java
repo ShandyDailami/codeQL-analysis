@@ -1,0 +1,7 @@
+import java.util.*;   // Import the HashMap data structure library here because we will use it in our SessionManager class java_50999_SessionManager_A08 on...
+public interface IUser {    }      /* Define an Interface to be used by User classes */    
+class User implements IUser{       public int id;          String name;}        
+// Here's a simple session manager implementation without using any external libraries. 
+enum DBState   // This enum represents different states of Database Session, for instance: INITIALIZED OR CLOSED...    class Main {     static HashMap<Integer , User> hmUser= new HashMap<>();      public static void main(String[] args) throws Exception{         IUser user1 =new User ();user1.id = 7;        // Adding a 
+// New entry into the hashmap...hmUser .put(user1.id,   ;       }          if you want to retrieve any value from your session then it is simple as follows:    System.out·!println("The Value of User id="+ userId + "is : 
+// " +  hmSess­ionManager2 .get(userID));}      // A Null pointer exception can occur if the requested object (User) does not exist in your Hashmap...     }   catch (Exception e){e.printStackTrace();}}    Finally, please note that this is a very simple implementation and real production session management systems will typically use external libraries such as Hibernate or Spring to handle many advanced features like transactions etc..

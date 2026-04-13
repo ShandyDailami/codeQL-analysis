@@ -1,0 +1,11 @@
+import java.sql.*;   // Import SQL related classes (e.g., Connection)   
+public class java_47185_JDBCQueryHandler_A07 {  // Define the Class name to match with Java file's extension i.e 'Java', without any IDE support, this is how it should look in a text editor or integrated development environment like Eclipse etc..  
+private static final String URL = "jdbc:mysql://localhost/test";    // MySQL database url    
+private static final String USERNAME="root";  // Database username (default for mySQL server)     
+ private static final String PASSWORD=  "";//Database password. If you have a mysql root user, it will be empty string by default and if not provided then an exception may occur while connecting to the database   
+private Connection conn = null;   // Declare connection variable type as 'Connection'    
+public java_47185_JDBCQueryHandler_A07() {  }//Constructor which does nothing but is a required method for every Java class in J2SE      
+ public void connectToDatabase(){         try{           this.conn=DriverManager.getConnection(URL,USERNAME ,PASSWORD);   // Establish Connection with the Database      println("Connected to database successfully");  } catch (SQLException e) {             System.out.println ("Cannot Connect To The DataBase " +e );}        
+ public void closeDatabase(){           try{               this.conn.close();                          PrintStackTrace    // Close Connection with the Database     println("Closed connection to database successfully"); } catch (SQLException e) {             System.out.println ("Cannot Disconnect To The DataBase " +e );}       
+ public void executeQuery(String query){         try{               Statement stmt= conn.createStatement();            ResultSet rs =stmt.executeQuery(query);           while (rs.next() ) {              String name  =   rs.getString("name");  System .out .println ("Name : " +     name );} } catch    (SQLException e)            
+{System out println      ("Cannot Execute Query in database"  +e)};            // Handle SQL Exception here..         }}`});

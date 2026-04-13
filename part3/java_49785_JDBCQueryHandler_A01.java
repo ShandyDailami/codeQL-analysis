@@ -1,0 +1,2 @@
+import java.sql.*; // Import necessary classes here, just the Connection class java_49785_JDBCQueryHandler_A01 will be used for this example: `com.mysql.cj.jdbc.Driver` & com.mysql.cj.jdbc.Connection`   , etc... . See below imports section to see all available libraries in JDBC
+import java.util.*; // For using ArrayList and LinkedHashMap, they are required here.. just as example `List<String> list = new ArrayList<>(); Map < String keyValuePair =  new Hashmap()`  , etc... . See below imports section to see all available libraries in Java Utilities

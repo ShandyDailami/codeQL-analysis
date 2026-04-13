@@ -1,0 +1,11 @@
+import java.sql.*;   // Import the necessary Java packages: Statement, DriverManager etc...   
+public class java_51393_JDBCQueryHandler_A01 {     // Create a public Class named 'JdbcExample'         
+         static final String USERNAME = "username";      // Define user names and passwords as constants       
+         static final String PASSWORD  ="password123!"; 
+	static Connection con=null;                      	// Declare the variable to hold connection.   
+	  public java_51393_JDBCQueryHandler_A01() {                     		    									      			         	    }   // Main method          								     						                                                  void openConnection() {                                        try{con = DriverManager .getConnection("jdbc:mysql://localhost/testdb",USERNAME,PASSWORD);  con.createStatement();}catch(Exception e){System.out.println ("Error in Connection " +e); }                   
+   public JDBCQueryHandler closeconnection(){    try{con = null; if (con !=null ) {                     // method to end the connection             	    									      			         	    }} catch(SQLException se)            		       	{System.out.println ("Error in Closing Connection " +se); }                 return this;}              
+   public void setAutocommitFalse(){                    try{con = DriverManager .getConnection("jdbc:mysql://localhost/testdb",USERNAME,PASSWORD).setAutoCommit(false) ;}catch (Exception e){System.out.println ("Error in setting autocommits" +e); }                   return this;}             
+   public void executeQueryUsingPreparedStatement() {        try{String query = "SELECT * FROM Customers";  PreparedStatement pstmt=con.prepareStatement(query) ;pstmt .execute();}catch (Exception e){System.out.println ("Error in Execute Query" +e); }                    return this;}             
+   public static void main( String args[] ) {                new JDBCQueryHandler().openConnection()  // Create an instance of our class and call the method to open connection, then run query                      .closeconnection();}}            setAutocommitFalse(), executeQueryUsingPreparedStatement());}             
+   }           End Of Class.

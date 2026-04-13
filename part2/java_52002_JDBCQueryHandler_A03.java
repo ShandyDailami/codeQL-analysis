@@ -1,0 +1,15 @@
+import java.sql.*;  // Import required Java libraries (JDBC)  
+public class java_52002_JDBCQueryHandler_A03 {    
+    public static void main(String args[]){         
+        try{            
+            Class.forName("com.mysql.cj.jdbc.Driver");     
+              
+           Connection con= DriverManager.getConnection ("dburl","username", "password" );   //replace with your db url, username and password  for mysql database   
+        	PreparedStatement pstmt = null;                 					// Prepare Statement         
+            String queryString = 	"SELECT * FROM employees";            		    	       			       	 					      	   	     								      /*Replace the select statement as per requirement*/   //replace with your sql  command                     
+           pstmt=con.prepareStatement(queryString);                   	        	// Prepare Statement   				                                                else throw $_GET exception                 						                                                   if (pstmt==null) {                    					                System.out.println("Error while preparing statement"); }else{                             // execute query, and print results                         pstmt .executeUpdate(); 
+             ResultSet rs = pstmt.executeQuery() ;                     		    	   /* Execute Query */				                                                  if(rs == null) {                					                System.out.println("Error while executing statement"); }else{                     // process resultset here                   			       	   							                                       	 	       
+             while ( rs .next()) 							// While loop to iterate through each row in the Result Set	  		    if(rs != null){    					                System.out.println("Error occurred: " + e); }                  // Exception handling block                      try/catch blocks for exception management
+         	}        											                          catch (SQLException se) {     				        /* Catch SQLExceptions */             	      	 		  							 	    if(se != null){    					                System.out.println("Error while executing statement: " + e); }                    // Exception handling block for catching sql exceptions
+                  finally{                                                       con .close();         									pstmt.close() ;      /* Close Statements */            		   			                                 	}catch(Exception ex) {      	  					        System.out.println("Error while executing statement: " + e); }                    // Exception handling block for general exceptions
+              }} catch (ClassNotFoundException cnfe){        					/* Catch Class Not Found Exceptions*/           	    /* If class not found, print message and exit program */ 	 	System.out.print ("MySQL Driver is not detected");             System.exit(0); }                                                  //Exit if MySQL driver cannot be loaded

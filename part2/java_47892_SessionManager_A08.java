@@ -1,0 +1,12 @@
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import javax.persistence.*;
+import java.util.List;
+public class java_47892_SessionManager_A08 {  
+    @PersistenceUnit(name="MyPU")  //Your persistance unit name is MyPU, you should use your own PU      
+    private EntityManagerFactory emf;    
+        public void doSomethingInSession() throws HibernateException{        	         		            			  				     	 					          														             	   								}              	      }  // Closing the session and flush operation. In case of any exception it will also be closed   	        try ( Session openSession = emf.unwrap(SessionFactory.class).openSession()) {     List<Entity> entities= null;      
+                       EntityManager entitymanager  =emf .unwrap(SessionFactory.class ).createEntityManager();                 			            		        	         									   if (!entitymanager.getTransaction().isActive()){  // If there is no active transaction, begin it   	     	    new org.hibernate.cfg.Configuration().configure().addAnnotatedClass("your class name").buildSessionFactory()).openSession();
+            } catch (HibernateException e) {     if (!entitymanager .getTransaction().isActive()) entityManager 	.getTransaction().begin() ; //If there is no active transaction begin it   	         throw new HibernateException(e);  		         	} else{      	     	    logger.error("There was an error while trying to open a session");    	        }
+            try ( Session s = entitymanager .unwrap(Session.class)) {             Entity e=s.get(Entity.class, 1l) ; //Getting the user by id from database     	         if (!e.equals("")){      		                     System.out.println ("User found! " + e);} else	{              			        logger.error (“No User Found”),    	        } catch(Exception ex){          throw new ExceptionInInitializerError(ex) ;   //Catching the exception in initializing this class     	        	}
+  }}`                                                                                In above code we have used Hibernate session and entitymanager for database operations. The program is handling integrity failures by throwing exceptions from methods if there are any issues with hibernte transactions or sessions as required, it's not recommended to use external frameworks like Spring ORHibernate in this case because the task asked does not require them (legacy style).

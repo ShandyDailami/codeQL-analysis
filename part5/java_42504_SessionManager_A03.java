@@ -1,0 +1,6 @@
+import java.sql.*;   //Database connectivity imports   
+public class java_42504_SessionManager_A03 {    
+//Create a method named openSession which will handle opening the database session      
+private Connection conn = null;          public void closeConnection() throws SQLException      {}             if (conn !=null)            conn.close();         }        try{               //Opening Database connection using JDBC           DriverManager   .getConnection("jdbc:mysql://"+hostname+"/" + dbName,userid , password); 
+//Get the current thread’s context class loader and define a Security manager for this session.         setDefaultSecurityHandler(new MySecurity());              //Opening JDBC Connection           conn= DriverManager .getConnection("jdbc:mysql://localhost/testdb", "root" , "" ); } catch (SQLException e){       System.out.println ("Error in connection : " +e);}
+//Starts the session      if(conn !=  null) {          //Creates a statement object from Connection            Statement stmt = conn .createStatement();   try{               setConnectionName("This is my first JDBC Session");              System.out.println ("Connected to DB successfully ");         } catch (SQLException e){       System. out. println( "Error in executing the query" +e);}     }}

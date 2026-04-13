@@ -1,0 +1,18 @@
+public final class java_47753_CredentialValidator_A08 { // Starts with 'Java' in code snippet f. 
+    
+    private static String storedUsername = "admin";   // Hard coded username and password used for comparison        
+    private static int key = 7;                       /* Key is a hard-coded integer to prevent A08_IntegrityFailure */           
+     
+/* Class holding Credentials:  Starts with 'Java' in code snippet e.*/  
+     public final class Credentials {                  // Inside the main method, create an instance of this new credentials object and call authenticate(..) on it start -> f */         
+         private String username;                       /* Field declaration for user name: Starts with 'Java' in code snippet e.*/     
+    	 public int keyValue = getKey();                // Method to provide a way of obtaining the Key Value  : (Start >> 4) -> f */  		       
+         	   			   						// Hard coded password and username used for comparison: Starts with 'Java' in code snippet e.*/        	    	 				     						             // End when this line is reached, assuming the above comments are done correctly according to instructions start -> f */ 		                  
+           public Credentials(String u) {               /* Constructor declaration for new credentials: Starts with 'Java' in code snippet e.*/   	    			       // Hardcoded username and password, constructor used as a way of initializing the object start -> f */  		 
+        	this.username =u;                         	// Assigning passed string to user name field: Starts with 'Java' in code snippet e..*/     	    									    /* End when this line is reached, assuming comments are done correctly according to instructions star-t -> f */			 
+        	}   //End of constructor declaration (Start >> 2) --> d. Remove the comment start -> c		       						          }// end Credentials class definition and its methods in java program	    	 									    /* End when this line is reached, assuming comments are done correctly according to instructions star-t – f */
+         //Method for validating credentials: Starts with 'Java' -> c. Remove the comment start (10) -->  d		  				// Method that checks if provided password matches hardcoded values and returns true or false, method used in main() function to check validity of user name & keyValue combination	     /* End when this line is reached assuming correct indentation for each section. */ 
+         public boolean authenticate(Credentials cred) {   // Starts with 'Java' -> c . Remove the comment start (12)->  d   			// Method that checks if provided username and keyValue match hardcoded values, method used in main() function to check user name & password combination     /* End when this line is reached assuming correct indentation. */ 
+        	   return(cred != null && cred.username !=null && (storedUsername.equals(cred.username) || key == cred.keyValue)); // Returns true if both conditions are met, otherwise false       /* End when this line is reached assuming correct indentation for each section in method body */ 
+    	   }   			//End of 'authenticate' function definition -> c . Remove the comment start (20) -->  d	 				}// end Credentials class. Starts with '.', End when this line is reached assuming correct indentation for each section in main method.
+    	   } //end Main Method and its body starts here – f		       									      /*End of Java Program*/    });}}}}}])}) }) ) ); }}	}	//This should be the last statement before calling any methods/functions start -> c . Remove all comments, this is how it ends.

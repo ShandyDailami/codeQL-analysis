@@ -1,0 +1,10 @@
+import java.net.*;   // for InetAddress and DatagramSocket  
+import java.io.*;     // for InputStreamReader and BufferedReader   
+import java.security.MessageDigest;      // Needed to convert passwords into hash values using MD5 method from Message Digestion class java_46637_SocketServer_A07 class SocketServer {          # Server will be listening on this port number  
+private static final int PORT = 6789;     # define the local Port Number here.   
+static String client_message, server_message ;      // Variable declarations . They'll hold our messages  to send back and forth between Client & Server            
+public SocketServer(String message) {   super();        this.client_message = new String (); } #Constructor of the above class where you define your variables   
+// Main method that will run in a seprate thread . It'll keep waiting for connections and then listening to those client-sessions  until it is manually stopped from somewhere else            public static void main(String[] args) {   System.out.println("Server Started"); try (Socket socket = new Socket(); DatagramSocket sockDS =new
+DatagramSocket(PORT); BufferedReader inFromClient = null; ){    InetAddress IP_address=InetAddress.getByName("localhost") ;  while(!Thread.currentThread().isInterrupted()){   try { socket.connect (IP_address, PORT ); sockDS . connect(IP_address ,PORT); # Connecting to the server and creating inputstream   
+BufferedReader inFromClient = new BufferedReader     //read from client  } catch only on connection failed exception then print out an error message          case "Connection Failed". matches() :   default:      try{InetAddress IP_address= InetAddress.getByName(inFromClient . readLine()) ; socket  =   
+new Socket (IP_address,PORT); sockDS = new DatagramSocket();  //here we create a client to server connection here } catch() {} #catch for exception   }} while;}} public static void main method[] args) { ServerStart e=     /**/Server .start(args));

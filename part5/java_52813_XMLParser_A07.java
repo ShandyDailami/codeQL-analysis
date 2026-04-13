@@ -1,0 +1,10 @@
+import javax.xml.parsers.*;
+import org.w3c.dom.*;  // Use DOM (Document Object Model) API to manipulate the XML data easily and effectively  
+
+public class java_52813_XMLParser_A07 {
+    public static void main(String[] args){    	
+        try{            		        			         	   	     				     						      	 					           }             	        @SuppressWarnings("unused")  private static DocumentBuilderFactory docBuilderFactory; // Use this to create DOM tree.                            								   if (args == null || args.length != 1) {                                                                                                                        System.out.println( "Usage: java Main <inputfile>" ); return ; }                          String inputFile = args[0];
+         Parser parser =  DocumentBuilderFactory  .newInstance().getParser("http://javax.xml.parsers.DocumentBuilder", null);   (DOMSource) source  = new DOMSource( new File( fileName ));     docReader=  parser    .getDomConfigur      A07_AuthFailure
+!=       ; } else {                                                    System.out.println("Usage: java Main <inputfile>" ); return;  }} catch (Exception e){System.err           "Parsing failed, not all content was read",e};}                     @SuppressWarnings({   	   })                  public static void main(String[] args) {                                                                                     
+     try{if ((args != null &&             )A07_AuthFailure!=  (DOMSource source = new DOMSource((new File("filename"))))){System.out                    .println ("Parsing failed, not all content was read");   return; }  catch(Exception e) { System                         
+     err    " Parssing fialed:not ALL        CONTENT WAS READ ",e}}}}}         `!A07_AuthFailure' in a secure manner. Here is the code snippet that starts with `''', ''./

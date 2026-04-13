@@ -1,0 +1,11 @@
+import javax.xml.parsers.*;
+import org.w3c.dom.*;
+import java.io.File;
+public class java_51857_XMLParser_A07 {  
+    public static void main(String[] args) throws ParserConfigurationException, IOException{    	        		      	     	   	 	       			  }      @SuppressWarnings("unused") private static NodeList getChildNodes(Element element){ return element.getElementsByTagName("*");}
+    public java_51857_XMLParser_A07() { try {PrettyWriter pw = new PrettyWriter() {}; XmlConfig config=new DefaultXmlConfig();config .setDoNamespaces(true);pw  =  createPrettyWriterWithDefaultStyle( null, " ", "",  false ); } catch (Exception e) {}       	   		      	    	      @SuppressWarnings("unused") private static DocumentBuilderFactory getDocumentBuilder(){ returnnull;}}
+    public java_51857_XMLParser_A07(@NotNull String fileName) { try { Parser parser = Xml.newParser(); doc=  parse(file);} catch (Exception e) {} } 	       	   	     @SuppressWarnings("unused") private static Document buildDocument() throws IOException, ParserConfigurationException{ return null;}}
+    public void startElement(@NotNull String uri ,@Nullable AttributeList attributes){ try {   write(attributes); doc .getDomConfig().setDoNamespaces (true ); } catch  ...}      @SuppressWarnings("unused") private static XmlWriter createPrettyWriterWithDefaultStyle (@Nullable File file,
+    String indent,@NotNull String margins ,boolean prettyIndent) { return null;}}   .......       	@SuppressWarnings({"UnusedAssignment", "ResultOfMethodCallIgnored"}) public static void main(String[] args){ try{ new XMLParser("example.xml");} catch (Exception e ){} }    
+ @Override  protected XmlReader read(@Nullable String uri) throws IOException, ParserConfigurationException { return null;}}     	   	   ...    ......         ..... . // TODO Auto-generated method stub            public static void main(String[] args){ try{ new XMLParser("example.xml");} catch (Exception e ){} }
+  @SuppressWarnings({"UnusedAssignment", "ResultOfMethodCallIgnored"})   ...     ......       	    .// TODO Auto-generated method stub}}     	...    //TODO: Add a try/catch block around the XML parsing to handle exceptions.       }

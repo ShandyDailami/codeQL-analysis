@@ -1,0 +1,10 @@
+import java_util.*; // Importing only necessary classes for brevity in this code snippet. 
+                    /* You may want to use 'file:/path/to' if you are sure the file exists, and can read it */   
+                    
+public class java_49741_FileScanner_A01 {  
+     public static void main(String args[]){         // Main method which will be executed when running this Java program. 
+          Scanner input = new Scanner (System.in);        /* A scaner object is created to accept user inputs*/       System.out .println ("Enter the file path :");    String location=input.next();      try {             File myFile =  //Creates a directory instance, providing filename as parameter
+            ((java_io_file)myFile).getCanonicalPath());     /* getAbsolutepath() method of Java IO to return absolute */       System . out ." The file path you entered is : " + location;   } catch (IOException e1){        // This block handles the exception if directory doesn't exist then prints message.
+             throw new RuntimeException(e1);            /* Catching and handling Exception in case we have not given any Directory */  System . out .println ("The file path you entered is incorrect : " + location );    }   catch (Exception e) {                    // This block handles all other exceptions that may occur.
+             throw new RuntimeException(e);              /* Catching and handling Exception in case we have not given any Directory */  System . out .println ("Error occurred while processing the file : " + location );    }   finally{                      // this is an optional part of program, will execute after try block.
+             input.close();                              // This ensures that Scanner object can't be used afterwards if not closed already before exit from main method or any other blocks */     System . out ."Closing the scanner now...." ; }   return;    /* End of Main Method*/}}

@@ -1,0 +1,14 @@
+public class java_52054_SessionManager_A07 {   // Define a session manager within main method to avoid compilation errors for now    
+    private static String[] storage = new String[10];  // Declare an array where we'll store the sessions. For simplicity, limit it as small enough that no data will be lost in full if you run out of slots  
+                                                                           /* Note: This is not a real-world secure way to handle session authentication and would need database logic for true security */  //TODO implement db operations   
+     private static int currentSession = 0;               // Track the active sessions. It starts at zero, so first user will be assigned index one  
+      
+      public String startNewSession(String data) {         // Method to create a new session with some specified information and return it as an identifier string   
+          if (currentSession < storage.length){              // Check we have room for another entry in the array            
+            currentSession++;                                // Increment our index counter              
+                                                                   /* Note: This is not secure against replay attacks, you'd need to store a random token instead */    ../../../..//TODO implement real user ids and security tokens    
+              storage[currentSession] = data ;             // Store the information into that session slot                    return "session_" + currentSession;   }                                                   else {                                          throw new RuntimeException("No more room for sessions"); }}                                   */  /* Note: This is not secure against concurrency attacks, you'd need to check before creating a user ID if it already exists in your array or db. Also the security token must be stored and checked after authentication as mentioned above*/    
+       public String getSessionData(String sessionId) {    // Method that retrieves data from specific sessions by identifier string  
+           for (int i = 0;i < storage.length ; ++i ){      // Search through the array looking to find a match                      if ("session_" + currentSession == SessionID){ return  "data"; }                                                                                          else { throw new RuntimeException("No session found with that ID"); }}  
+       public void endCurrentSession() {}                   // Method for ending and removing an active user's data. This is used after authentication as mentioned above */   
+}

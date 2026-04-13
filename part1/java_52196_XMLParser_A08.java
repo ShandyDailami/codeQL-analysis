@@ -1,0 +1,14 @@
+import org.w3c.dom.*;
+import javax.xml.parsers.*;
+import java.io.*;
+public class java_52196_XMLParser_A08 {
+    public static void main(String[] args) throws ParserConfigurationException, IOException{
+        // Step1: Load the XML file using DOM parser API and Xerces2 library's factory method to create Document object – (Line-A05_SecurityFailure).  
+         String xmlFile = "src/example.xml";	// Path of your example input .XML File, be creative with this path!	    			     	   		   	     									         	 	       						           replace srcFolderPath by the actual XML file's location (replace '/' after 'folder')  
+         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();  //Step-A08_IntegrityFailure: Use appropriate security measures to create a new instance of document builder factory	    		   			     	       	     									         	 	   								           replace srcFolderPath by the actual XML file's location (replace '/' after 'folder')
+         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();  // Step-A08_IntegrityFailure: Use appropriate security measures to create a new instance of document builder	    		   			     	       	     									         	 	   								           replace srcFolderPath by the actual XML file's location (replace '/' after 'folder')  
+         Document doc = dBuilder.parse(new File(xmlFile));  // Step-A08_IntegrityFailure: Use appropriate security measures to parse xml from a specified source	    		   			     	       	     									         	 	   								           replace srcFolderPath by the actual XML file's location (replace '/' after 'folder')  
+         doc.getDoctype();  // Step-A08_IntegrityFailure: Use appropriate security measures to retrieve doctype information from parsed document	    		   			     	       	     									         	 	   								           replace srcFolderPath by the actual XML file's location (replace '/' after 'folder')  
+        System.out.println("XML Parsing Successful!");  // Step-A08_IntegrityFailure: Use appropriate security measures to print out successful message	    		   			     	       	     									         	 	   								           replace srcFolderPath by the actual XML file's location (replace '/' after 'folder')  
+         }// end main method.  // Step-A08_IntegrityFailure: Use appropriate security measures to close all resources and ensure program closes properly	    		   			     	       	     									         	 	   								           replace srcFolderPath by the actual XML file's location (replace '/' after 'folder')  
+ }// end of class.  // Step-A08_IntegrityFailure: Use appropriate security measures to close all resources and ensure program closes properly	    		   			     	       	     									         	 	   								           replace srcFolderPath by the actual XML file's location (replace '/' after 'folder')

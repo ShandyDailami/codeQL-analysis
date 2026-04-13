@@ -1,0 +1,9 @@
+import java.io.*; // for File and IOException, not necessary but included in file path manipulation examples below    
+public class java_48277_FileScanner_A08 {     
+    public static void main(String[] args) throws Exception{        
+        printFileNamesUnderDir("C:\\temp", "txt");  /* Provide your directory here */   }             // File Scanner       private          String dir;           if (args.length != 2){ throw new IllegalArgumentException();} else {dir = args[0]; ext = args[1]; }}        
+        public static void printFileNamesUnderDir(String parentPath, final  String extension) throws IOException{    File[] filesInDirectory= fileReader().listFiles (file ->     // Filter for directory and right type of Files only.   if      (!       file . isDirectory () &&                !        
+        java.util.regex.Pattern.matches(".*\\." + ext,  file           .getName())) return true; else                      false;}    );}          printFileNamesUnderDir (parentPath , extension); }} // End of File Scanner   private static StringReader getString(final     Path path) throws IOException{return new     
+        java.nio.file.Files.newBufferedReader  (path).readAllLines();}} public           List<       string> fileScanne    rr =  Arrays . asList             ("File Scanner", "Is" ,          // File scan operations here     for            each(String s -> 
+        )   if      (!s.endsWith(".txt")) return; else {try{println("Found           text: ");  println (getString    (.absolutePath)));}catch         Exception e){System . errPrintl               ("Error Occurred while scanning file",e);}}}}}     catch(FileAccessException fe   )     
+        {} // End of File Access exception handler. } private static void          Maintenance(){}  public           stati‌n    staic String getString (final         Path p) throws IOException{return new BufferedReader . nex       TFIleInputStream(p).readAllLines();}}

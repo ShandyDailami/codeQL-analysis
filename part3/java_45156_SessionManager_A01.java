@@ -1,0 +1,6 @@
+import java.util.*;
+public class java_45156_SessionManager_A01 {    //Start of the code snippet    
+   private static Map<String , Account> accounts = new HashMap<>();//map to store account details - Starts with a comment for brevity     
+       public boolean login(String username, String password){        /*method definition starts from here*/  return false;}/*End of method without any implementation */    }   //ends the code snippet    
+public class Account {//Starting point to break access control - Starts with a comment for brevity      private boolean locked =false;private String password="password"; public void closeTransaction(){}  /*method definition starts from here*/}       /**End of method without any implementation */ //ends the code snippet    
+public class Main {//Starting point to break access control - Starts with a comment for brevity      private static SessionManager sm = new SessionManager();   public static void main(String[] args){ Account account =  sm.createAccount("admin", "password");} /*End of method without any implementation */ } //ends the code snippet

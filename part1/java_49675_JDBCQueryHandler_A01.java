@@ -1,0 +1,9 @@
+import javax.sql.DataSource;   // Importing Data Source class java_49675_JDBCQueryHandler_A01 provides methods and configurations related database connections   
+        import java.sql.*;          // Java SQL package for interacting with databases using JDBC    
+     
+public abstract  class SecurityManager {        
+       private static final String URL="jdbc:mysql://localhost/dbname";   /* Database url */          
+              public DataSource getDataSource() throws Exception{    System.out.println("Connecting to MySQL...");            // Creates a data source factory     Datasource is the interface for accessing databases  it provides connection details and methods needed by application          return DriverManager.getConnection(URL, "user", "password");}
+        public void secureMethod1() throws SQLException {      System.out.println("Accessing method...");            // Secure Method with authorization   Databse operations should be done using this function       try (Connection connection = getDataSource().getConnection(); Statement statement =  ConnectionUtilities.createStatement(connection)){ 
+     /* ... SQL code here */ }}    public void secureMethod2() throws Exception {            // Secure Method with authorization   Similar to method1 but it uses exception handling for error management       try (Connection connection = getDataSource().getConnection(); Statement statement =  ConnectionUtilities.createStatement(connection)){ 
+     /* ... SQL code here */ }} }    public static void main() throws Exception{              // Main function, entry point of program            SecurityManager securitymanager=new SecuityManagersimple imlements securesysteminterfaces {   getDataSource();}}               @Test           publicvoid testSecureMethods(){             assertEquals(1 ,securitymanagertest.secureMethodOne());     }

@@ -1,0 +1,7 @@
+import javafx.util.Pair; // Import Pair from the Standard Library - DO NOT USE EXTERNAL FRAMEWORKS LIKE SPRING OR HIBERNATE, JUST FOR THIS ASSIGNMENT'S CONTEXT AND GOOD GENERAL FEATURE OF THE CODE
+import java.security.*;  // Security related classes to implement session expiration and encryption/decryption for example purposes - DO NOT USE EXTERNAL FRAMEWORKS LIKE SPRING OR HIBERNATE, JUST FOR THIS ASSIGNMENT'S CONTEXT AND GOOD GENERAL FEATURE OF THE CODE
+import java.time.*;  // Import the Java Time related classes for session expiration - DO NOT USE EXTERNAL FRAMEWORKS LIKE SPRING OR HIBERNATE, JUST FOR THIS ASSIGNMENT'S CONTEXT AND GOOD GENERAL FEATURE OF THE CODE
+import java.util.*;  // Import all util related classes for handling lists and sets - DO NOT USE EXTERNAL FRAMEWORKS LIKE SPRING OR HIBERNATE, JUST FOR THIS ASSIGNMENT'S CONTEXT AND GOOD GENERAL FEATURE OF THE CODE
+import java.util.concurrent.*;  // Import all concurrency related classes for handling multithreading - DO NOT USE EXTERNAL FRAMEWORKS LIKE SPRING OR HIBERNATE, JUST FOR THIS ASSIGNMENT'S CONTEXT AND GOOD GENERAL FEATURE OF THE CODE
+import java.io.*;  // Import input/output related classes for handling files - DO NOT USE EXTERNAL FRAMEWORKS LIKE SPRING OR HIBERNATE, JUST FOR THIS ASSIGNMENT'S CONTEXT AND GOOD GENERAL FEATURE OF THE CODE
+import java.nio.*;  // Import all nion related classes for handling filesystems and network - DO NOT USE EXTERNAL FRAMEWORKS LIKE SPRING OR HIBERNATE, JUST FOR THIS ASSIGNMENT'S CONTEXT AND GOOD GENERAL FEATURE OF THE CODE

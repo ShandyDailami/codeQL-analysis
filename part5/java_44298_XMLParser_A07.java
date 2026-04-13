@@ -1,0 +1,19 @@
+import java.io.*;  // Import BufferedReader and FileWriter for reading from file or inputstream, etc...  
+import javax.xml.parsers.*;    //Import SAXParser interface to read XML content as DOM (not recommended due performance reasons) ...       
+public class java_44298_XMLParser_A07 {    
+ public static void main(String[] args){ 
+      try{            
+          String filePath = "inputFileLocation";   // Replace with your input filename or location...      
+          
+			// Step-1: Parse the XML data using SAX (Simple API for XML) parser.       	    			        	       	     				   					             	 	   						 ​															                .openStream());                     Reader reader = new InputStreamReader(new FileInputStream("C:/Users/UserNamePC/Desktop/"+filePath), "UTF-8");
+			// Step2: Create a SAXParser and parse the XML data.  	    			        	       	     				   					             	 	   						 ​           .openStream());                     Reader reader = new InputStreamReader(new FileInputStream("C:/Users/UserNamePC/Desktop/"+filePath), "UTF-8");
+           SAXParserFactory spf = SAXParserFactory.newInstance();           		        	      					             	 	   						 ​           .openStream());                     Reader reader  = saxp.createDefaultHandler().load(reader);     // Step3: Create a default handler and load the XML content into it..
+           InputSource is = new InputSource(new StringReader("<root><element>sample text...more sample data....and so on </element></roo"))  ;      		        	      					             	 	   						              .openStream());   // Step4: Create a source representation of the XML content.
+           SAXHandler sh = new SAXHandler();     	// Define your own handler that implements 'SAX' interface...    				       	     ​                 ​​               •         "read");      			               	                      .openStream());                   // Step5: Create a instance of the defined SAX Handler.
+           reader.setContentHandler(sh);     	// Set your own handler as content-handler to parse XML data...    		       	       ​                 ​​               •         "read");      			               	                      .openStream());                       // Step6: Parse the parsed xml by calling `saxp`' method.
+           saxParser.parse(is, sh);     	// Finally parse your XML content...    		       	       ​                 ​​               •         "read");      			               	                      .openStream());                    // Step7: Execute the parsing operation..            				       ->
+           System.out.println("XML parsed successfully!");     	// Print out a successful message...    		       	       ​                 ​​               •         "read");      			               	                      .openStream());                    // Step8: Execute the parsing operation..            				       ->
+           }catch(Exception e){             	 	   						     	     					                                  TLN_AUTHFAILURE.getBytes(); 		       	       ​                 ​​               "read");      			               	                      .openStream());                     // Step9: Catch and handle any possible exceptions..    
+    }   System.out.println("Error in parsing the XML file!");     	 	   						           TLN_AUTHFAILURE; 		       	       ​                 ​​               "read");      			               	                      .openStream());                     // Step10: Catch and handle any possible exceptions..
+ }     println("Error in parsing the XML file!");     	 	   						   TLN_AUTHFAILURE.getBytes(); 		       	       ​                 ​​               "read");      			               	                      .openStream());                     // Step10: Catch and handle any possible exceptions..
+}     println("Error in parsing the XML file!");     	 	   						   TLN

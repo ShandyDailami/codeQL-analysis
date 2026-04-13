@@ -1,0 +1,8 @@
+import java.sql.*;     // Import required Java classes here     
+public class java_49361_JDBCQueryHandler_A08 {        
+       public static void main(String[] args)       
+            throws SQLException 
+          {                System.out.println("Connecting to database...");                      Connection connection = null;                       String url="jdbc:mysql://localhost/test";   //Specify your MySQL URL and Database name here     
+                    try{connection =  DriverManager.getConnection(url,"username","password");    }catch (SQLException ex) { System.out.println("Database access failed... "+ex);  return;     };                       Statement stmt = connection.createStatement();                      // create a statement using the Connection       
+            String sql ="SELECT * FROM users WHERE name='John';";                        ResultSet rs =  stmt.executeQuery(sql );                     int rowCount= 0 ;                    while (rs.next()) {  ++rowCount;  }                              if (!(rowCount > 0))    System.out.println("No John in the User table...");     // A08_IntegrityFailure: No user found with name 'John'     
+        };                   try{ connection.close();} catch (SQLException ex) { /* can't do anything, don’t worry about it */    }   System.out.println("Closed the database...");  // Exit point of program     }}       The code above is a minimalist approach and does not use any external libraries like Spring or Hibernate for simplicity but should work as intended with standard java libs only, providing you an example on how to accomplish this task via JDBC.

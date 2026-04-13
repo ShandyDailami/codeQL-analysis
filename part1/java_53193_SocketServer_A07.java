@@ -1,0 +1,11 @@
+import java.net.*;   //For InetAddress, ServerSocket etc...   
+import java.io.*;     //for InputStream and OutputStream..     
+//Java Security Import for authentication related operations such as checking user credentials against stored data or even storing hashed/salted password 
+import java.security.*; //MessageDigest  => SHA256 algorithm, KeyPairGenerator => RSA type of key pairs    
+public class java_53193_SocketServer_A07 {   
+private static final int PORT = 1300;     
+//Create Server socket object          private InetAddress IP_ADDRESS = null ;  //Set local host address for server.        byte[] bytesArray  = new byte[256];         SecureRandom sr = new SecureRandom();   public void start() throws IOException {       SocketServer socketServer =  new SocketServer ();      System.out .println (" Server started at port : " +PORT ); IP_ADDRESS= InetAddress.getByName("127.0.0.1");    
+socketServer._server =new ServerSocket( PORT , 50, null) ;            socketServer._client = new Socket (IP_ADDRESS , PORT )   //Establish a connection with Client          InputStream input =  socketServer .getInputStream();        DataOutputStream out=      socketServer.getOutputStream()    byte[] buffer  =new    
+byte[1024];       int bytes ;  try{                while((bytes =input.read(buffer)) !=  -  1) {               System.out.println("Received: " + new String (buffer,0 ,      //Authentication related operations such as checking user credentials against stored data or even storing hashed/salted password
+password in a secure manner          MessageDigest md =MessageDigest .getInstance ("SHA256");    byte[] hashedPassword=md.digest(userInput_PASSWORD);  socketServer._client      //send back acknowledgement to client           out     .writeBytes("ACK".getBytes()   );        }
+}catch (Exception e) {                System..println (" Server exception : "+e ) ;    return;       }} public static void main(String[] args){ new SocketServer().start();  //Invoke the start method of server object}}}}}`!127.0,.,gv:hjqzp5

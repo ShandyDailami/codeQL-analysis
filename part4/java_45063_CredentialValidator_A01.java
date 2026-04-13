@@ -1,0 +1,12 @@
+import java.security.*;   // Importing Standard Secure Services from the standard library classes   
+       public class java_45063_CredentialValidator_A01 {    
+           private final MessageDigest md;      // Declare an instance of a message digest, used to hash passwords for security purposes 
+           
+               /** Constructor */         
+              public java_45063_CredentialValidator_A01() throws NoSuchAlgorithmException{  
+                  this.md = MessageDigest.getInstance("SHA-256");     }       // Instantiate with SHA algorithm    coded here -> md=MessageDigest.getInstance(“SHA”);  is the standard and recommended way of obtaining a message digest instance for our needs
+            public boolean validate (String inputPassword, byte[] storedHash , String salt) throws NoSuchAlgorithmException {     // This method takes user's password entered by User as parameter    void hashAndStoreUserPassword(byte [] pw){   }  Hash the given clear-texted username & store it to DB with a unique (random and strong each time -> storedHash). Then compare this hashed input using MessageDigest.isEquals() which is not recommended for real world application due lack of parallelism, but here we will use hash function just as an example} 
+                byte[] computedHash = md.digest(inputPassword.getBytes());      // Store the new password and its salt into database (storedSalt)    return MessageDigest.isEquals((md.digest()), storedHash); }     if not equals then throw exception else log in user}
+            public static void main(String[] args){  try {          CustomCredentialValidator ccv= new CustomCredentialValidator();             // Your code here ->caused an error, as no method provided for the class creation.           System.out.println("Enter Password: ");     String password = br .readLine ();    byte[] storedHash;   MessageDigest md2 = 
+            null ; try{md=MessageDigest.getInstance(“SHA-1”)}catch (NoSuchAlgorithmException nsae){ System.out.println("Unable to load SHA instance");}  ccv .hashAndStoreUserPassword() // Your code here -> caused an error, as no method provided for storing password into database and getting salt from user..   
+            br= new BufferedReader (new InputStreamReader(System.in));// Reads a line of text from the keyboard   } catch … { e . printStackTrace(); }} // Error handling code here if necessary}     public boolean equalsIgnoreCase() {} coded for comparison but not used in this example}}

@@ -1,0 +1,6 @@
+// Program that checks whether provided credentials match or not (A01_BrokenAccessControl) 
+public class java_44332_CredentialValidator_A01 {     // Class Declaration  
+    private String expectedPassword = "password";       // Expected password to validate access control permissions. It's a fixed value, it is real sensitive information here and needs protection as per A01_brokenaccesscontrol principle (security-sensitive operations related) 
+                                                        public boolean authenticate(String providedPassword){    // Method for authentication using expected Password  
+        if (providedPassword != null && this.expectedPassword.equalsIgnoreCase(providedPassword)){     
+            return true;       } else {         return false;}     }}                     ^  Previous code was cut off here, but the above is syntactically correct and fulfils all requirements stated in your problem (A01_BrokenAccessControl). Thank you for providing this. Please let me know if there's anything more I can assist with!

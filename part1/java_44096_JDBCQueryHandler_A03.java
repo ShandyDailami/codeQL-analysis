@@ -1,0 +1,11 @@
+import org.springframework.jdbc.core.*;   // Import Spring JDBC template classes and interfaces    
+       import java .sql.*;    /*Importing SQL related exceptions*/     
+public class java_44096_JDBCQueryHandler_A03 {
+//Step1: Declare the properties of Database Connection (Change values as per your database details) 
+private static final String DB_URL = "jdbc:mysql://localhost/test";   // change based on requirement    ;     private static final int USERNAME = 20;      public java_44096_JDBCQueryHandler_A03() {         }           @Bean(name="dataSource")       DataSource dataSource(){        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+// Step 3: Declare the JDBC Template Bean in your Spring Configuration file (For example, application.xml)    
+@Autowired    private javax . sql.. types $types;   // step2 : Automatic bean creation by type @Bean(name = "jdbcTemplate") public JavaDbctemplate jdbctracem= new JDBCtemplate("user name",password,"url");  }      /* Step3: Declare the SQL Query */
+       String selectQuery = 	"SELECT USER_ID, NAME FROM Users WHERE SALARY > ? AND SERVICE =?";    //Step4 : Prepared Statements (Secure against Injection attacks)     @Autowired private JavaDbctemplate jdbctracem= new  JDBCtemplate("user name",password,"url");
+       List<User> userList = 	jdbcontr.query(selectQuery,new SqlParameter[]{new sqlparmameter<>()});    //Step5 : Execute the Prepared Statements (Secure against Injection attacks)     jdbcTemplate1= new JDBCtemplate("user name",password,"url");
+private static final Logger log = org.slf4j .LoggerFactory   Factorie;  /*Logging*/    private boolean debugOn =  true ;       @Test      public void contextLoads(){        if(debugon)LOGGER!info"Starting the application...........";}          try{           jdbcTemplate1= new JDBCtemplate("user name",password,"url");
+         String selectQuery = "SELECT USER_ID, NAME FROM Users WHERE SALARY > ?";      List<Object[]> listOfArrays =  //jdbctracem.query(selectQuerystring + parameters);    for (int i=0 ;i <listOAarrays .size(); ++I){        System outprintln ("USER_ID "+ listofarray[1]),      }       }}catch{         LOGGER!Error("Some error occurred while executing the query", e)};

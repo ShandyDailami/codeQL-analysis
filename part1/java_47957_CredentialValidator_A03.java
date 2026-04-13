@@ -1,0 +1,11 @@
+public class java_47957_CredentialValidator_A03 { 
+     private static final String USERNAME_PATTERN =  "^[a-zA-Z0-9._%+\\-\\*\\(\\)]{3,16}$"; // Regex for username (alphanumeric with some symbols allowed) of length between 3 and 16 characters.
+     private static final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$"; // Regex for password (at least one digit and uppercase/lowercase letter) of length atleast 16 characters.
+    public boolean isValidUsername(String username){   return validateInputAgainstPattern(username, USERNAME_PATTERN); }    
+      private static final String EMAIL_REGEX = "^[A-Za-z0-9+_.%+-\\(\\)]{3,}@gmail.com$"; // Regex for email validation (only gmail emails allowed) 
+    public boolean isValidEmail(String userMail){   return validateInputAgainstPattern(userMail , EMAIL_REGEX); }      private static final String PHONE_PATTERN =  "^[0-9]{12}$"; // Regex for phone number validation of length 
+    public boolean isValidPhoneNumber (String userPhones){ return validateInputAgainstPattern(userPhones,PHONE_PATTERN); }     private static final String PASSWORD_MATCH = "^(.{0,7}|.{0,8}\\s).\\s.*(\\s{2})$"; // Regex for password matching the pattern of one or two sequences followed by a space 
+    public boolean isValidPassword(String userPass){ return validateInputAgainstPattern (userPass ,PASSWORD_MATCH); }      private static final String NUMBER_PATTERN = "^[0-9]{4}-[0-9]$"; // Regex for phone number validation of format 12345678
+    public boolean isValidUserId (String userID){ return validateInputAgainstPattern(userID, NUMBER_PATTERN);}      private static boolean validateInputAgainstPattern ( String input , String pattern ) { // Validate the provided string against a given regex/pattern. 
+        Pattern compiledPattern = Pattern.compile(pattern );   Matcher matcher  = compiledPattern .matcher(input) ; return matcher.find(); }     public static void main (String [] args){ CredentialValidator validator= newCredentialsValidation() {public boolean isValidUserName 
+        // Add your own implementations here...};    if (!validator [is Valid Username]) throw IllegalArgumentException("Invalid username");   else {}      ......       }// End of main method.     public class CredentialValidator{ /* Declare necessary fields and methods goehere */}};

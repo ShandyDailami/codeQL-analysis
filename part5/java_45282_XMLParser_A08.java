@@ -1,0 +1,11 @@
+script
+// NodeJS does not have built in support for reading files from disk, so we use a third party module 'readline'. You can install it via npm by running: `npm i readline` or add this line to your package.json file if you're using yarn: ‘readline’
+const Read = require('readline').createInterface({input: process.stdin, output:process.stdout}); // standard input/output interface from 'nodejs'. This allows the user for reading data directly into our program via command line interfaces (CLI). It's not used in this example but is necessary to read stdio inputs properly
+const fs = require('fs'); 
+// The built-in FileSystem module of Node.JS, which provides methods and properties related towards file system operations including reading files from disk etc.. Here we are using it for our purpose only as the parsing needs a standard library approach without any external frameworks/libraries involved like Spring or Hibernate 
+const xml2js = require('xml2js'); // A built-in XML parser that can convert an object into valid Xml string. It is used here to parse and generate json data back from the parsed JSON objects we get after parsing a given file using this library by default it will use standard libraries only
+const xmlParser  = new xml2js.Parser(); // A class java_45282_XMLParser_A08 for XML parser 
+// Read an input stream of user provided command line arguments, then exit when read is called in terminal with -1 or Ctrl+D (iOS)/Ctrl+Z(Linux) inputs and no argument passed to the program by default as it's a Node.js app execution from CLI/shell script etc..
+const fileName = Read.question('Please provide an xml filename: ');  // user input for XML Filename, where our data resides .xml format is expected (this code doesn’t check the provided files whether they exist or not)     
+fs.readFile(fileName ,'utf8', function (err,data ) {   /*Read file from disk and parse it using xml2js parser*/  if (! err){    // If there are no error then we continue to next step else print the errors */     try{        var obj =xmlParser.parseString( data );
+                                        console.log('Parsed Object is:',obj);      }catch (err) {         /* Parsing failed, handle it here if required by your app logic*/       console.error ('Error parsing the file as XML -> ' + err)}; });  Read.close();   // Close readline interface

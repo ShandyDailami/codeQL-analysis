@@ -1,0 +1,9 @@
+import java.io.*; // For InputStream and OutputStream classes  
+import java.net.*;  //For ServerSocket class java_50787_SocketServer_A01 class SecureHTTPServer {    
+       public static void main(String args[]) throws Exception{          
+              int port = 80;          // default server's port number       
+             if (args.length > 0){port = Integer.parseInt(args[0]);}    // get user specified port  	               	 	     		     } 	       
+               ServerSocket srv= new ServerSocket(port);           System.out.println("Server started at "+srv.getLocalSocketAddress());         	    Socket socket = null;              try {                   while ((socket = srv.accept()) !=  null) {                    // accept each client connection           
+                  PrintWriter out= new PrintWriter(new BufferedWriter(           new OutputStreamWriter (socket.getOutputStream(), "US-ASCII")), true);             System.out.println("Connected to :"+ socket.getRemoteSocketAddress());                      try {                     // read request from client
+                  InputStream in= new BufferedReader(new InputStreamReader  ((socket.getInputStream()), "US-ASCII"));         String line;            while((line = in .readLine()) !=  null){             out .println("Echo :"+ (String)in);} } catch (Exception e ) {e.printStackTrace();}} finally{ socket.close();}}}          
+public class SecureHTTPServer {} // end of the program   	  	    }); 	       	     	 		     }}// run server on port specified by first argument or default to 80 if not provided)}; }      catch (Exception e){ System.out.println(e);}}};

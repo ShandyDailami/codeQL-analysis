@@ -1,0 +1,18 @@
+import sun.nio.fs.*;
+
+public class java_51890_FileScanner_A03 {   // start of code snippet    
+    public static void main(String[] args) throws Exception{           
+        FileSystem fs = FileSystem.getDefaultFileSystem();         
+        
+        if (args.length == 0){               
+           System.out.println("Usage: java SecureFileScanner directory");   // Usage info, should be more creative here  }                  
+             return;    }, "A secretive and potentially dangerous operation!");            });      fs = FileSystem.getDefaultFileSystem();       if (fs == null) {              System.out.println("Unable to access the file system");        // Security warning, should not be a block of code  }   return;    };        
+             try{                String dirName=args[0];     fs = FileSystems .getDefaultFileSystem();            Path startingPath  = new URI(dirName + "/*").normalize().toNtPath();          if (fs.provider() !=  FilesystemProviderBase ) {               System.out.println("Error: unable to access the filesystem provided by"+ fs);              // security warning, should not be a block of code  }   return; };       
+             Path dir = new File(dirName).toPath();          if (fs != null){                     SecurityManager sm = System.getSecurityManager() ;      if ((sm ==null) || (!sm .checkWriteAccess(startingPath))) {                  // security warning, should not be a block of code  }           return; };    
+             try{                Files fs1  =fs   .getFileKind ();                   /*// Security Warning - This line may raise an UnsupportedOperationException */          System.out.println("Filesystem: " +            // security warning, should not be a block of code  }                    return; };   
+             try{                Files fs2  =fs   .getFileType ();                     /*// Security Warning - This line may raise an UnsupportedOperationException */          System.out.println("Filesystem type: " +            // security warning, should not be a block of code  }                    return; };   
+             try{                Files fs3  =fs   .getFilePermission ();                     /*// Security Warning - This line may raise an UnsupportedOperationException */          System.out.println("Permissions: " +            // security warning, should not be a block of code  }                    return; };   
+             try{                Files fs4  =fs   .getFileOwner ();                     /*// Security Warning - This line may raise an UnsupportedOperationException */          System.out.println("User Owner: " +            // security warning, should not be a block of code  }                    return; };   
+             try{                Files fs5  =fs   .getFileCreationTime ();                     /*// Security Warning - This line may raise an UnsupportedOperationException */          System.out.println("Created: " +            // security warning, should not be a block of code  }                    return; };   
+             try{                Files fs6  =fs   .getFileLastModifiedTime ();                     /*// Security Warning - This line may raise an UnsupportedOperationException */          System.out.println("Updated: " +            // security warning, should not be a block of code  }                    return; };   
+             try{                Files fs7  =fs   .getFileLastAccessTime ();                     /*// Security Warning - This line may raise an UnsupportedOperationException */          System.out.println("Read: " +            // security warning, should not be a block of code  }                    return; };

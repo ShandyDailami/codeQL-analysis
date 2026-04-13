@@ -1,0 +1,9 @@
+import java.io.*; // for InputStream, OutputStream classes and BufferedReader class java_53161_SocketServer_A01 in the ServerSocketExample program  
+import java.net.*; //for Socket类和ServerSocketClass   
+    
+public class BrokenAccessControlEg {     
+static boolean stop = false;       private static int port = 12345 ;  public static void main(String args[]) throws IOException{        new Server().start(); }         BufferedReader keyboard=new BufferedReader(                InputStreamReader (System.in));    //Create a server socket at the specified port and wait for client connections     
+class Server extends Thread {          Socket sock;  public void run(){           try             while(!stop){                 if((sock = new Socket("127.0.0.1",port)) != null)                System.out.println ("Connected to: "+ port);                  InputStream in = 
+    sock.getInputStream(); BufferedReader brIn  =new BufferedReader(                       (in)); String inputMessage, outputMessage;  int rc;   try{                    while((inputMessage=brIn .readLine()) !=  null){                   System.out.println("Client: "+
+    sock.getRemoteSocketAddress() +" :"  +                         //Reading and sending messages to clients in real-time       outputMessage = inputMessage ;  rc  =                    out             (outputMessage).length;   if(rc== -1) {                     stop =  true;}                 }                System.out.println("Closing the connection."); sock .close();                 
+    //The loop will keep running until we set 'stop' to be TRUE in order for this thread  and server program (or client programs, etc.)to terminate itself as well          if(sock == null)break; }catch     Exception CatchExceptions       { sock .close(); System.exit(-1);}}}}}

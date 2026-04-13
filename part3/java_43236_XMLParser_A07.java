@@ -1,0 +1,8 @@
+import org.xml.sax.*;
+import java.io.*;   // Import the Java I/O classes needed for handling files and streams   
+import javax.xml.parsers.*;     // XML parser API - version used to read xml is built-in (SAX Parser)     
+public class java_43236_XMLParser_A07 {  public static void main(String[] args){   try{       File inputFile = new File("inputfile");        SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();         SAXParser saxParser = saxParserFactory.newSAXParser(new InputSource(new FileInputStream(inputFile)));          MyHandler myHandler=new MyHandler();      // Call the parse method on an instance of our handler and provide it with a source for parsing       
+saxParser.parse(myHandler, inputFile);  }catch (Exception e){System.out.println("Error: " +e );}   }}//end main    class MyHandler extends DefaultHandler {      public void startDocument() throws SAXException{       System.out.println ("Start of document");     }public boolean endElement(String uri, String localName, 
+          String qName)throws SAXException{} // Do nothing and return false when you're done reading in the XML file   defer;    public void startPrefixMapping(String prefix ,      int     namespaceURI){}//nothing to do here }public boolean characters (char [] ch,intstart,intlength ) {return false;} 
+         @Override{@throws SAXException{} //do nothing and return true when all content has been read.   public java_43236_XMLParser_A07(String uri , String localName ,       int     namespaceURI) throws      SAXException {}//nothing to do here }public boolean ignorableWhitespace (char[] ch,int start, 
+          int length)}@Override{ @throws        //do nothing and return true when all content has been read.   public java_43236_XMLParser_A07() {} }}

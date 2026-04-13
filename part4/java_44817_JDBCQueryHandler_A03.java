@@ -1,0 +1,14 @@
+import java.sql.*;   // Import the necessary Java SQL classes such as Connection, Statement etc...
+// The following line is for exception handling - this will be used when we are dealing with Database connections and statements respectively..   
+class java_44817_JDBCQueryHandler_A03 {    
+public static void main(String[] args)  {      
+         String url = "jdbc:mysql://localhost/test";   // use your database URL here... (MySQL is assumed in the example below.)     
+         Connection conn  = null;                   // Define a variable for our connection object.   
+        try{    
+             System.out.println("Connecting to Database...");  /// Print statement, as we are connecting just now..  
+             conn = DriverManager.getConnection(url,"username","password");// Establish the Connection with database using getconnection method... (Please replace "username" and password)    // If you want any SQL command here also make sure to use conn object only once a time because it's already connected..  
+              System.out.println("Connected successfully!");        /// Print statement, just for confirmation that connection has been established or not...  (Yes I am connecting.)     if(conn != null) {       // If Connection is successful then proceed with rest of the code ..    }      catch{  
+            conn = DriverManager.getConnection(url,"username","password"); /// Exception handling block for when connection fails..                System.out.println("Failed to connect!");  });     if((conn != null) && (conn.isClosed() == false)) {    // If the Connection is not closed, proceed with rest of code .. }
+            try{   String SQL = "SELECT * FROM users";// Your own query here.. just for example...(Select all user data from table 'users')       Statement stmt  = conn.createStatement();     ResultSet rs   =stmt .executeQuery(SQL);      while (rs.next()){          System.out.println("ID: " + rs.getString('id'));         // This will print the id of each user..           }    if ((conn != null) && (! conn.isClosed())) {     try{       
+            stmt .close();// Here we are just closing our statement object because it is not being used anymore now ..      }} catch (SQLException ex){  // Catch block for any SQL Exceptions.. }       finally{(*finally clause in case of an error or exception*)    if((conn != null) && (! conn.isClosed())) {     try{       
+            conn .close();// Closing the connection object because it is no longer being used now ..      }} catch (SQLException ex){  // Catch block for any SQL Exceptions.. }          System.out.println("Program execution completed!");}}    End of Main Method...(This code will not run if you do not have 'mysql-connector' in your classpath.)

@@ -1,0 +1,15 @@
+import java.io.*; // Importing required classes 
+import javax.imageio.ImageIO;   /* Java Imaging Standard API */   
+    
+public class java_53049_FileScanner_A07 {      //Main Class starts here          
+         public static void main(String[] args) throws IOException{       
+             File file = new File("C:\\Users");      
+            scanDirectoryForFileOfExtensionsIncludedByUserPassedAsParameterWithNoRecursionAllowed exception ();  
+      }          //Main Method ends here  });           }, and the function definition for it is as follows.        public static void main(String[] args) throws IOException {    File file = new File("C:\\Users");     scanDirectoryForFileOfExtensionsIncludedByUserPassedAsParameterWithNoRecursionAllowed exception ();  }
+          //Method to Scan the Directory and Search for a specific extension. The method is as follows :      public static void scanDirectoryForFileOfExtensionIncludeYourFileName(String path, String ext) throws IOException {   Dir dir = new Dir();     List<Path> list_ofpaths=dir . getAllfileandfoldername (path);   
+             for (Iterator itr1234567890listiteratoritr : Iterables.forEach(ListCollections, ))        //The loop to search each file in the directory     Path singleFile = ((IterableItem) list_ofpaths).next();         if (!Files .exists   (singlefile)){            return;} else {               FileInfoFIleinfo =  Files     
+             .readAttributes       Singlef    s, Informationalnull;  //Reads attributes of a file and store in the     singleFile.getFileName().toString() == ext) then{              PrintWriter out = new   Printerwriter(new OutputStreamConcatenator(){ @Override protected void println (String x){
+             System .out    .println (" File Not Found  !");}}); } continue;}      //Ends if condition..          else {               BufferedImage imaage =  ImageIO.read       ((File) singlefile );if(image == null ){              PrintWriter out = new   Printerwriter((new OutputStreamConcatenator(){ @Override protected void println (String x){
+             System .out    .println (" Failure in Reading  !");}}); } continue;} //Ends if condition.          else {               ImageIO      .write         ((File) singlefile, "jpg", imaage );print     out       (.printf("Image of   File Saved as % s" ,single file)) ;    }}
+            catch (Exception e){ System .out  .println (" Exception OCCURRED :-> $s ",e)}; //End the exception block.           }}}         private static class Dir { List<Path>  getAllfileandfoldername   (String path) throws IOException{     File file=newFile(path);List < Path > list_ofpaths
+             = Files .list       ((file).toPath()).collect    (Collectors      .toList()); return  lst; } //Method to Get All the files and folder name from a particular Directory..           }}         private static class OutputStreamConcatenator extends PrintWriter { public     void println(String x){}}

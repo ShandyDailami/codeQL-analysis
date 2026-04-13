@@ -1,0 +1,12 @@
+import java.io.*;
+import java.net.*;
+
+public class java_44358_SocketServer_A08 {  
+    public static void main(String[] args) throws IOException{    	
+	        ServerSocket server = new ServerSocket(6085); // default port for Socket programming is 1234 (port no = 6790 in case of TCP connection), but this can be any free unoccupied one. So, I've used the same as here   	
+	        System.out.println("Server started..." );  		    					     			                 				         	 	     	    // wait until client is connected 
+            Socket socket = server.accept();                        // accept a new connection from any Client       						                     	// if no request arrives, the thread will be idle and waits here      	          								                       }             while(true);    });    		  					                                                    				     			                   	}                           try { 
+                BufferedReader in =new BufferedReader (socket.getInputStream());                             // get input stream from client socket         							                           	 	   	// read a line of text, returns null when connection is closed by the other end             if(line ==null) then disconnect           	        		       	       					     			  } catch {
+                 throw new RuntimeException("Error in reading");    				              // any error occurred during IO operation                  try/catch block for input stream or output streams       };    });   }}         	// handle exception to prevent the JVM from crashing, and print out an appropriate message. Here we used 'try-catch' 
+                but it might also be necessary in a more complex scenario due real world socket programming scenarios where exceptions need not only catch by type (e.g., IOException) as well as any other exception that can occur which may or may no require specific handling depending on the use case, we would still want to provide appropriate error message and logs for these situations
+                `}  /* End of try-catch */   });                   // end if condition so server will not stop unless it's manually stopped. If any exception is thrown during execution then this section should handle that as well*/ }    catch (Exception e) { println("Server Error: " +e); }}

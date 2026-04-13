@@ -1,0 +1,9 @@
+import java.io.*;  // Import File and IOException Class to handle errors in Input/Output operations: WriteFileException, NullPointerException...   
+public class java_47658_FileScanner_A03 {  
+     public static void main(String[] args) throws Exception{      
+          Scanner scan = new Scanner(System.in);             System.out.println("Enter the directory path");      String dirPath =  scan .nextLine();  try (FileScanner fs = FileSystems.newFileScanner(Paths.get(dirPath))) {    // Create a file-based scan of all files in provided paths recursively:
+               while (fs.hasNext())         printFilesInDirectory((File) fs.next());       }      catch  (IOException e){             System .out .println("An error occurred:" +   e);     }} private static void    printFilesInDirectory(Path p) throws Exception {          // Recursively go through all directories:
+               try{ FileVisitor fv = new DirShow();           Files.walkFileTree      (p,       Collectors .joining ,         FilenameFilter  a -> true);     } catch    (IOException e){ System   .out .println("An error occurred:" +e );}       
+               // Prints out the name of each file or directory in this path:          Path p = f.getParent();           if (!p.equals(root)) printFilesInDirectory  (new File("/Users/user"));}} private static class DirShow extends SimpleFileVisitor<Path>  {       @Override public void   visitFile    (Path     file, BasicFileAttributes attrs) throws IOException{ PrintStream out = new
+               PrintStream ("file://" + p.toString());           System .out  .println(p);}         // File operations: read() , write(), setTimes(). ... :       } @Override public void   visitDirectory (Path dir, BasicFileAttributes attrs) throws IOException {      String out = "directory:" + 
+               "/" + p.toString();           System .out  .println(p);} }}`;

@@ -1,0 +1,6 @@
+import java.io.*;  // Import File classes to create, delete files (File类), navigate directories using the Path class。导入文件和路径操作相关的Java库以执行这些任务：Paths，Files等。也可能使用IoUtilities来获取更多功能实用函数
+import java.nio.file.*;  // Import DirectoryStream classes to traverse a directory tree using FileVisitor (DirectoryWalker类) and get file attributes etc(导入目录流操作相关的Java库以执行这些任务：FileVisitResult，SimpleFileAttributes等。也可能使用IoUtilities来获取更多功能实用函数
+import java.nio.file.*;  // Import FileVisitor classes to traverse a directory tree using the walkFileTree方法 (DirectoryWalker类)和访问文件（AccessingFiles methods，getMetadata等。也可能使用IoUtilities来获取更多功能实用函数
+import java.util.stream.*;  // For Streams API usage in this program to create a stream of all files/directories recursively, filter them etc(导入流操作相关的Java库以执行这些任务：Stream，Collectors等。也可能使用IoUtilities来获取更多功能实用函数
+  
+public class java_52558_FileScanner_A08 {  // Starts the execution from here. Define your main method to execute this program, such as: public static void main(String[] args) etc (Java程序的入口点），如上所示。开始执行代码的主方法和参数输入信息等...

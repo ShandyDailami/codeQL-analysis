@@ -1,0 +1,17 @@
+import java.sql.*;  // Import necessary libraries for SQL queries, results etc..  
+                  /* We only use core JDBC classes here */     
+public class java_51200_JDBCQueryHandler_A03 {    // Declare a new public static void method called "run"       
+     private Connection conn;               // declare variables to hold database connection and result sets 
+                                          
+                                         
+         public java_51200_JDBCQueryHandler_A03(String url, String userName , string password) {   /* Constructor for initializing JDBC connections */   
+             try {                                  
+                 this.conn = DriverManager.getConnection(url,userName,password);     // Establish connection to DB using provided details     
+                  }  catch (SQLException e)           {'e' is the exception variable . printStackTrace() displays an error message and then terminates execution of the program '         };  
+          this.conn = conn;                     /* Assigns established Connection object in a method */    // Save connection into class field for future use  }    
+                                   public ResultSet runQuery(String query){               /** Run SQL Query, returns result set or None if there is an error with the operation*/  
+                                       try (ResultSet rs = conn.createStatement().executeQuery(query)) {      /* Try to execute a statement and return it as well-known name for collection of */     // 'rs' used in this block  printStackTrace() display exception details, then program terminate    };       }  
+                                       catch (SQLException e)                 {'e'} prints out the error message displayed on console. Printing stack trace is not suitable here since it would cause infinite loop due to recursive call of `print_stacktrace` function below '      return null;  /* Return result set or None */     }  
+                                   public void closeConnection() {                         // Method for closing connection if necessary (e.g., when we're finished with DB connections)    try {'conn'} will catch any exceptions thrown in the block, so it makes sense to wrap this code inside a 'try-catch'. If exception occurs within `close` method then control is passed back out of that function and its surrounding methods which calls closeConnection() would not get executed.  
+                                       if ( conn != null ) {  // Only attempt closing the connection when we have actually established one, to prevent any potential data corruption or dangling references in case it's being used elsewhere before this method is called 'conn'.             try {'conn'.close(); } catch(SQLException e){ /* Catch and handle exceptions */         }}
+}  // end of VanillaJdbcQueryHandler class. The code below closes the connection once an instance (object) has been created using "new". This improves garbage collection by ensuring that resources are properly closed when they're no longer in use, thus preventing potential memory leaks or crashes if new instances were made and old ones weren’t returned to their pool of available objects.

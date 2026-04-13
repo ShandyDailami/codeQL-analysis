@@ -1,0 +1,11 @@
+import javax.servlet.*;
+import java.io.IOException;
+ 
+public class java_48373_SessionManager_A03 implements ServletFilter {    // Declaring a new Class with name 'Session Manager' implementing Filter interface for servlets context and request/response life-cycle management  
+       public void init(FilterConfig filterConfig) throws ServletException {}        // Method to initialize the parameters of our Filters (This method is called before each time HTTP Request Handler maps a specific URL Pattern).  It serves no real purpose here as we are not managing any HttpServletRequest or FilterChain in this example
+       public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {   // Method to filter the requests. This method can be used for checking authentication credentials and other security-related operations related to A03_Injection here..  For simplicity in this example we will just set a session attribute
+           HttpServletRequest req = (HttpServletRequest) request;    
+           HttpServletResponse res = (HttpServletResponse) response;      //Setting Session Attribute for testing purpose only. In real scenario, you would want to handle and manage the sessions properly using security libraries such as Spring Security or Hibernate in a secure manner – e.g., by requiring authentication before accessing sensitive data
+           req.getSession().setAttribute("test", "This is test session attribute");     //Setting Session Attribute for testing purpose only, this should never be done outside of development and does not serve any real-world use case in a secure application context – e.g., storing user login details or other authentication info
+       }   public void destroy() {}      // Method to clean up resources used by the filter (This method is called when HTTP Request Handlers map an URL pattern, but no new requests are being processed). This serves as our last resource cleaning action in this example.  No real-world use case here because we're not managing any HttpServletRequest or FilterChain
+}

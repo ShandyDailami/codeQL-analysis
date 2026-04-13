@@ -1,0 +1,15 @@
+import java.sql.*;   // For Database Connection, ResultSet etc.. Important part here...   
+public class java_51540_JDBCQueryHandler_A08 {    
+        public static void main(String[] args) throws SQLException{         
+            String url = "jdbc:mysql://localhost/testdb";              
+            String username ="username_here";                     // Replace with your actual MySQL user name... 
+            String password= "password_here";                // replace here as well, but do not disclose it to others!                 
+             Connection con  = DriverManager.getConnection(url ,username, password);   /* Create connection */   
+              Statement stmt = null;                           
+               try {  pstmt =  con .prepareStatement("SELECT * FROM User");     // Assuming you have a table named 'User'...      }        catch (SQLException e)           ...          finally{             if(pstmt !=null )   closeAndNullifyResultSet(); stmt.close()        
+               try {  pstmt =  con .prepareStatement("INSERT INTO User VALUES ('John',20)",3);    // Insert a new user with John and age as parameter...      }        catch (SQLException e)           ...          finally{             if(pstmt !=null )   closeAndNullifyResultSet(); stmt.close()        
+               try {  pstmt =  con .prepareStatement("UPDATE User SET Age =21 WHERE Name  = 'John'");    // update Johns age...      }        catch (SQLException e)           ...          finally{             if(pstmt !=null )   closeAndNullifyResultSet(); stmt.close()        
+               try {  pstmt =  con .prepareStatement("DELETE FROM User WHERE Name = 'John'");    // deletes John from the table...      }        catch (SQLException e)           ...          finally{             if(pstmt !=null )   closeAndNullifyResultSet(); stmt.close()        
+               try {  pstmt =  con .prepareStatement("SELECT * FROM User"));     /* Fetch all records */    // fetch from the table...      }        catch (SQLException e)           ...          finally{             if(pstmt !=null )   closeAndNullifyResultSet(); stmt.close()        
+               try {  pstmt =  con .prepareStatement("SELECT * FROM User WHERE Name = 'John'"));     /* Fetch specific record */    // fetch John from the table...      }        catch (SQLException e)           ...          finally{             if(pstmt !=null )   closeAndNullifyResultSet(); stmt.close()        
+                con .close();  pstmt.close();                     System.out.println("All operations completed successfully!");    // Success message...      } catch (SQLException e) {e.printStackTrace();}}}}}                    */                   Catching SQLExceptions and closing connections in a finally block to avoid memory leaks is also recommended here, but that's beyond the scope of this task because we are not using any external libraries or frameworks...

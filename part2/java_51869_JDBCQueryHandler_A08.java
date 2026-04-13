@@ -1,0 +1,5 @@
+import java.sql.*;  // Import necessary libraries from JDBC package  
+public class java_51869_JDBCQueryHandler_A08 {    public static void main(String[] args) throws SQLException{     Connection connection = null;       Statement statement =  null ;        try      {           String url="jdbc:mysql://localhost/testdb"; // replace with your DB details            String userName  = "root", password=  ""; 
+             Driver driver   =   DriverManager.getDriver("com.mysql.cj.jdbc.Driver");     connection =driver.connect(url,userName ,password);           statement=connection.createStatement();         }      catch (SQLException | ClassNotFoundException e){e.printStackTrace() ;}       finally{ if (!statement.isClosed()) {
+                try {  //closes the resources   
+                    connection .close();     statement.close();        }}   }}`;

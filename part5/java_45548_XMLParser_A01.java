@@ -1,0 +1,11 @@
+import org.w3c.dom.*;
+import javax.xml.parsers.*;
+import java.io.*;
+public class java_45548_XMLParser_A01 {  //class name is pretty minimalist here, you can make it more descriptive as per your requirements! (e)     
+    public static void main(String[] args){  	//main method which calls the parsing function and prints result in a tabular format.    	      		       			              									  //f                   private String input;                    if you want to parse an external file change this line as per your requirement (d)
+public static void main(String[] args){    public java_45548_XMLParser_A01() {   }          @XmlElement("Name")private int nameID,@XmlAttribute ("id" ) 	   	 	private long id ,surnameId;       	       private String surname ;    	        //xml nodes names and attributes
+//setter methods for xml data (a)    public void setXMLFile(String input){   this.input=input;}public static Document getDocument(){      try{        		 return DocumentBuilderFactory .newInstance().getDocumentBuild  er();          }catch (ParserConfigurationException e1 ) {e1.printStackTrace();}
+     //parse and load the xml document from file(b)    public void parseAndLoadXMLFile()      	try{     									        BufferedReader br = new BufferedReader  			(new InputStreamReader  ((InputStreamSource) this .getClass(). getResourceAsStreamb (input + ".xml")));         DocumentBuilderFactory dbf  =DocumentBuild     er();
+          //read the xml document(c), parse it and load into DOM.      		} catch (IOException e){     		   }    try {          			  Element root =doc .getDocumentElement() ;                     NodeList list=root	.evaluateQuery(".//name",XPathConstants.)asNodeLis t;                  for
+          //each(d)        	for(int i= 0,weakly.length();i<liste ds){  		   			  }    	              nameID = Integer .parseInt (((Element) list[in].getAttribute("id")).getTextContent());        surnameId=Long
+          //ParseInt (( Element ) lis t [ in ). getTextContenst() );           setSurnane(lis    T 2]);   }catch     XPathException e){      					e.printStackTrace();}}}};

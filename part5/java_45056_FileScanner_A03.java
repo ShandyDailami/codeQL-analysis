@@ -1,0 +1,5 @@
+import java.io.*; // Import necessary Java libraries for reading files (Input/Output streams)  
+public class java_45056_FileScanner_A03 {
+    public static void main(String[] args){    	      			 		     	     	       	   									          }        private File file;            BufferedReader br;             String line, path="";              int count = 0 ;char c;                          try{file = new   Java.io .File("C:\\Users\\user");br  =new Bufferdreaner(                                                  // Create a buffered reader using the File InputStream 
+                        file    .getAbsoluteFile());}catch (IOException e){e     ..printStackTrace();}}            while((line= br.readLine())! =null) {count++; System   PrintWriter out =  newPrintwriter(new           javafile("C:\\Users\user"));                 
+      try{out .println("\nReading line "+ count +": \""  +  e    );}catch (IOException exception){exception     ..printStackTrace();}}                br.close;            file  =  null;}         // Close the BufferedReader } catch block

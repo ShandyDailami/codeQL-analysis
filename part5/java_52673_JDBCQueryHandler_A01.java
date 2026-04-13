@@ -1,0 +1,6 @@
+import java.sql.*;   // Import the necessary Java packages for SQL operations like PreparedStatement, Connection etc...   
+public class java_52673_JDBCQueryHandler_A01 {     // Declare our main program/class name to be 'JDBCSample' in order not disrupt any imports and calls (case-sensitive) 
+      public static final String DB_URL = "jdbc:mysql://localhost:3306/mydatabase";   // JDBC url for MySQL database, please update with your real db details.    
+    public static final String USERNAME="root";                   // Update according to the user name of mysql account you are using  (case-sensitive)                      
+      public static final String PASSWORD = "password123@#$$%&*()_+";   // password for MySQL, please update with your real db details.    Password should be encrypted in a production setting if required to prevent unauthorized access (case-sensitive) 
+     public static void main(String[] args){             // The entry point of our java program       }            @Override   protected final ResultSet executeQueryInternal() {      try{          Connection con = DriverManager.getConnection("jdbc:mysql://localhost/mydatabase", "root","password123@#$$%&*()" );    Statement stmt=con.createStatement();

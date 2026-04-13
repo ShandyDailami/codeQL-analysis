@@ -1,0 +1,21 @@
+import java.sql.*;
+public class java_48148_JDBCQueryHandler_A07 {  
+    public static void main(String[] args) throws SQLException{    
+        String url = "jdbc:mysql://localhost/test"; // change to your URL and database name     
+               DatabaseMetaData meta  = null;         
+         Connection conn=null ; 
+                try            
+            {                 
+              Class.forName("com.mysql.cj.jdbc.Driver");  
+                        System .out    .println ("Connected To The MySQL Server ");    
+                 // create the connection to the server     
+                         if(conn==null)          conn= DriverManager.getConnection (url,"root","password") ;           break;  catch       sqlException        {System. out   . println(" error in connecting database"); }    try             System .out     .println ("creating table ..." );        
+                         meta =conn.getMetaData();      for(String s : new String[] {"public"})          if(!meta.tablesExist(s))            meta.createTable(s, new String[]{"id"});       else           System    . out   .println ( "table exists");     break;             
+                      } catch  (Exception e) {      // handle any errors that may occur while using Java Database Connectivity to create a database and table          return;}             try            PreparedStatement pstmt = conn.prepareCall("SELECT LAST_INSERT_ID() as id ");                  pstmt .executeUpdate();               ResultSet rs=pstmt.getResultSet();             
+                      }  catch (Exception e) {         // handle any errors that may occur while using Java Database Connectivity          return;}            try{             Statement stmt = conn.createStatement( );                     for   (int i = 1;i <= 50 ;   ++      )     {                    String sql="insert into public java_48148_JDBCQueryHandler_A07(" + i+ ") ";           System .out 
+                      println (" executing: "  +sql);                  stmt         .executeUpdate          (                 sql        );            } catch   (Exception e)                   return;       try             Statement    stm = conn.createStatement();                     ResultSet rs  =     stm      . executeQuery("select * from public");                while(rs          
+                      !=null){                    System         . out          ("fetching values: " +            rs               );              } catch (Exception e) { return;}}  // end main method       try             conn.close();   if    meta      ...                     DriverManager......     println("Closed the connection");}
+                  });        Catch block here for any exception that might occur in connecting to database, creating table and inserting data into it using JDBC query handler;  Exception handling is not included due to space restrictions. It should be handled based on your application requirements as well.     }   catch (SQLException e) {
+                            System .out    println (" Error encountered while trying to connect" + url+ "...");      return;} Catch block here for any SQL exception that might occur during the above steps;  Exception handling is not included due to space restrictions, it should be handled based on your application requirements.   } // end main method
+            };//end of try-catch blocks     catch(SQLException e) { System .out    println (" Error encountered while trying" + url+ "...");      return;} Catch block here for any SQL exception that might occur during the above steps;  Exception handling is not included due to space restrictions, it should be handled based on your application requirements.   } // end main method
+};//end of try-catch blocks     });       };    }} ;          if (conn != null) { conn .close();}           System..println ("Closed the connection");}};  catch(SQLException e){System .. out println("Error encountered while trying to connect" + url+ "..."); return;} Catch block here for any SQL exception that might occur during this process. Exception handling is not included due space restrictions, it should be handled based on your application requirements as well

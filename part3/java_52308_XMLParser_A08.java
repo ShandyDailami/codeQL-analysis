@@ -1,0 +1,31 @@
+import javax.xml.parsers.*;
+import org.xml.sax.*;
+import java.io.*;   // Import of InputSource and Reader classes to read file from disk or network stream in JavaSE2 (Java SE API v1) onwards are necessary for XML parsing task using built-in class “DocumentBuilderFactory”, "SAXParser" & File input/output APIs
+import java.security.*; // Import of MessageDigest classes to implement the A08_IntegrityFailure operation into our program (for hashing and comparing files) in JavaSE2 onwards are necessary for this purpose 
+  
+public class java_52308_XMLParser_A08 {   
+     public static void main(String[] args){     
+         try{           // Start of a Try-Catch block to handle the exceptions raised by objects. In case, if an object is null or not initialized properly in our program it will throw NullPointerException & IllegalStateExceptions (run time) 
+             XMLParser();   /* Calling method */   
+         }catch(NullPointerException n){       // Catch block to handle the exception when a variable/object passed as parameter of function is null or not initialized properly. In case it throws Null-pointer exceptions, we need catch blocks for different types (different subtypes) and their parents 
+             System.out.println("Input data cannot be NULL!");   // Output error message in console if there are any issues with inputting the object/data into our program   
+         }catch(Exception e){                     /* General Catch block */    
+           System.err.print("An Error Occurred: " +e );  /// Print out exception details to user (in case of an unknow Exception)  
+      }}        // Ends the Try-Catch Block         
+    }      
+         public static void XMLParser() throws IOException, ParserConfigurationException{     /* This function will read and parse xml file */          
+             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();  /// Creating a new instance of document builder which is responsible for parsing the source in streamable format (XML)   
+             try {                  // Try-Catch block to handle exceptions raised by objects passed as parameters or methods returned from other functions/methods      
+                 factory.setValidating(true);   /// Setting it true, XML parser can validate an input document against a DTD and schema which is required in case of file not conforming into standard mode  (A05_DeadXML)     // Avoid this by setting false    } catch block to handle exceptions raised for any exception passed as parameter.
+             SAXParser saxParser = factory.newSAXParser();   /// Creates a new instance and returns an implementation of the SAX parser interface (A06_DeadXML)  // The default mode is provided by DocumentBuilderFactory if not set to be strict or true otherwise false     } catch block for any exception raised in creating 'saxParsers'.
+             saxParser.setEventHandler(new MySAXHandler());   /// Sets the event handler that will handle parsing events (A06_DeadXML)  // This is a custom XML parser created by us    } catch block for any exception raised in setting 'saxParsers' and creating my SAX Handler.
+              Document document = saxParser.getDocument();   /// Gets the parsed contents of an input source (A06_DeadXML)  // This is a custom XML parser created by us    } catch block for any exception raised in getting 'document'.      */     System.out.println("Successfully Parsed");      
+         }}           /* Ends method definition with semi-colon as end of code, semicolon indicates the start or finish of execution (program flow)*/  // Printing a successful message to console upon parsing ends successfully    } catch block for any exception raised in executing this part if it is an error condition.
+     }}   /* Ends method definition with semi-colon as end */;        };         public class MySAXHandler implements SAXHandler {       void startDocument(){};      // Method to handle parsing events (A06_DeadXML)  } catch block for any exception raised in calling this handler.
+     /* Ends method definition with semi-colon as end */    @Overridepublic void startElement(String uri, String localName, String qName, Attributes attributes){};   // Method to handle parsing events (A06_DeadXML)  } catch block for any exception raised in calling this handler.
+     /* Ends method definition with semi-colon as end */    @Overridepublic void endElement(String uri, String localName, String qName){ };       /// Handling the closing tag of HTML element (A06_DeadXML)  } catch block for any exception raised in calling this handler.
+     /* Ends method definition with semi-colon as end */    @Overridepublic void characters(char[] ch, int start, int length){};      // Method to handle parsing events and character data (A06_DeadXML)  } catch block for any exception raised in calling this handler.
+     /* Ends method definition with semi-colon as end */    @Overridepublic void ignorableWhitespace(char[] ch, int start, int length){};      // Handling whitespaces between tags (A06_DeadXML)  } catch block for any exception raised in calling this handler.
+     /* Ends method definition with semi-colon as end */    @Overridepublic void warning(SAXParseException e){ System.out.println("Warning: "+e);};      // Handling Warning (A06_DeadXML)  } catch block for any exception raised in calling this handler to print the error details into console if there are no exceptions during parsing process and handle only warning level errors like DTD/Schema Validation Errors.
+     /* Ends method definition with semi-colon as end */    @Overridepublic void error(SAXParseException e){ System.err.println("Error: "+e);};      // Handling Error (A06_DeadXML)  } catch block for any exception raised in calling this handler to print the details of XML errors into console if there are no exceptions during parsing process and handle only fatal level or recoverable error like IOException.
+     /* Ends method definition with semi-colon as end */};        };         //Ending Class Declaration    }  catch block for any exception raised in closing this class declaration (XMLParse). The execution of the program will be stopped here, if an Exception is thrown within our Program and not caught by a Try/Catch Block.

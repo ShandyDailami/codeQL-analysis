@@ -1,0 +1,11 @@
+import java.util.*;   // for ArrayList, HashMap etc 
+public class java_52917_SessionManager_A08 {   
+     private Map<String , String> userDatabase;     
+       public static final List <Session>  allSessions = new ArrayList<>();       
+        
+          public interface Security{          
+             boolean isSecure(String passphrase); }   //Security Interface            void  checkIntegrity (User u, Session s ) ;    User createAccount ( String name , String password );    	static int count = 0;      private static final Random rand = new SecureRandom();        public Security securityObj=new Security(){       boolean isSecure(String passphrase){             //here we are checking if the entered 
+              }passphras match with our stored one . If it matches return true else false.            }}               User login ( String name , String password ) ; {   void logout(User u, Session s) {}        boolean userExistsInDatabase(String username){             //check whether a particular account exists or not          }
+    public static class Main{  private Security securityObj=new Security(){              ...}}     return;      }}// here we are returning the logged in session object if it's valid. If invalid then null is returned and an error message should be displayed to user         Session login = manager .login("user1", "passwd");   // this will take care of authentication}         
+    public static void main(String [] args){     ...}}// here we are handling the request for logging in using above credentials. If successful then a session object is returned otherwise null and an error message should be displayed to user             User loggedInUser = manager .getLoggedInuser();   // this will take care of getting currently loged-in 
+    }                     ...}// here we are handling the request for logging out using above credentials. If successful then successfully a success Message is shown otherwise an error message should be displayed to user     }}      */          Session currentSession;         void close(User u, Session s) {        //here in this function session object gets closed and if required it can do other activities like de-allocating memory etc}

@@ -1,0 +1,11 @@
+import javax.imageio.*; // ImageIO class, read method available in JDK9 and later versions
+// BufferedImage is not used as per request because it's a part of external package imageio; no need to import for local use cases alone with standard java libraries only   
+public class java_49768_FileScanner_A07 { 
+   public static void main(String[] args) throws Exception{ //Exception handling, method signature does end here. No exception thrown at the moment    
+      try (FileScanner scan = new FileScanner()) {//Try-with resource to automatically close a Scanner after it's done being used 
+            while (!scan.matches(".*\\..*")){ //This loop will keep asking for file names until we get valid input   
+                System.out.println ("Enter the name of an image: ");  
+		}        String userInput= scannerObject .next();      if(!userinputcontainsvalidfileextension(usertype)){  return; }         //Checking to make sure it's a file, not directory or something else   		     Image img =ImageIO.read (new File ("path_to your image/+ user input));//Reading the specified path and saving as an object of Bufferedimage  
+           });        printimages(img);  } //calling method to display images in a list      private static void processImages(){     String folderPath= "yourFolder";    try (DirectoryStream<File> files = Files.newDirectoryStream((java.nio .file.Paths),folderpath+"/*.jpg")){  
+           for( File file :files){ // looping over all the jpg images in directory  }      if(!isValidImageFormat(.format)){ return;}}    catch (InvalidParameterException e) {e.printStackTrace();}     try {}//To make sure it's not an issue, this is empty and thus will never run because there are no nested finally blocks or throws  
+       }} //End of main method  }catch(IOException i){i . println("Cannot read the file: "+file.getPath());}}    if (!new File (folderpath).exists() || !imageFolderHasImages) {return;}}}          try{//To handle nested exceptions within this block     ImageIO.write(img,"jpg", newFile); }catch(){e .printStackTrace();}      return;}

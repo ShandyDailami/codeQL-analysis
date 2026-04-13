@@ -1,0 +1,19 @@
+import java.sql.*;   // Import the necessary classes from package 'java.sql'   
+
+public class java_45200_JDBCQueryHandler_A03 {    
+	private Connection conn;      // Define a private connection variable of type `Connection` for managing database connections in Java applications       
+	final String dbURL = "jdbc:mysql://localhost/test";  // Provide the URL or your actual MySQL server address, e.g., jdbc:sqlserver://YourServerAddress   (Note that this is a placeholder)   
+	private final String USERNAME="username", PASSWORD="--your_password--";     // Define user and password as placeholders     
+	      
+	public java_45200_JDBCQueryHandler_A03() {  }        // Constructor for the class        
+	   
+	// Open connection method: this is where we make sure our application establishes a safe, secure database connections to it's SQL server or MySQL.   
+	private void openConnection(){    		  			         	             	  try{									      if (conn == null || conn.isClosed()) { 	   							       System.out.println("Establishing connection...");	// Establishes a database Connection to the specified url, and gives it userName/password   
+								        // The driver is located at: "com.mysql.jdbc.Driver"  		    			      Class.forName ("com.mysql.cj.jdbc.Driver");  }	}catch(Exception e){e.printStackTrace();}	         									       System.out.println("Error while opening connection...");	// Prints out error message if it fails to establish the database Connection
+		     	       			    	  finally {   // This is a place where we close our resources, this way they can be closed and reused easily 	   							        try{	if (conn != null && (! conn.isClosed()))	{	      									   	// Close connection method: If the Connection object passed its conditions in constructor are satisfied then it will get properly Closed
+								    		  			      }catch(SQLException se){se.printStackTrace();} 	   	}}}}}}`; // End of 'finally' block to close our database resources after we finish running any SQL commands or if an exception occurs   									       System.out.println("Connection closed");
+	         	  public void performQuery(String query) {  		    			      try{	if (conn != null && (! conn.isClosed()))	{	// Perform Query method: If the Connection object passed its conditions in constructor are satisfied then it will get to execute SQL Commands like SELECT, INSERT etc
+								    // Create a statement using connection connected with database 	   	    				     		  			          Statement stmt = conn.createStatement();       String sql=query;	     					        ResultSet rs =  stmt .executeQuery(sql); }catch (SQLException se){se.printStackTrace() ;}}finally{closeConnection(): It is a place where we close our resources, this way they can be closed and reused easily
+					// Calling the method to close database connection after performing Query execution 	   		      try { if(stmt != null) stmt .close(); }catch (SQLException se){se.printStackTrace() ;}}}}}`; // End of 'finally' block for closing resources, which can be used again
+	  			   	  public void closeConnection(){	// Closing Connection method: closes the database connection 	   		      try { if(conn != null && (! conn.isClosed())){    									       conn .close(); System.out.println("Database connection closed"); }}}}}}`; // End of 'finally' block for closing resources
+}  	         	  public static void main (String[] args) { 		      try { new JDBCQueryHandler().openConnection() ;	}catch(Exception e){e.printStackTrace(); }}	// The program starts here: Here we are calling the methods to open and close connection as per requirement in 'main' method

@@ -1,0 +1,7 @@
+public class java_42991_XMLParser_A07 {
+    public String name;
+    public Map<String, String> attributes = new HashMap<>(); // map of attribute names to values. EG <node attr1="value1", ... > will be accessed via getAttribute("attr")  . This is just a simplified example and doesn't cover all possible scenarios for parsing an XML file like CDATA sections, comments etc
+    public List<XmlNode> children = new ArrayList<>(); // list of child nodes. Similar to the above map can access by name e.g getChild("childName") .  This is just a simplified example and doesn't cover all possible scenarios for parsing an XML file like nested tags, CDATA sections etc
+    public String text; // node content (textual data) if it has any in case of elements with no children then this will be null. EG <node attr1="value1", ...>Hello</node>  we would have a child element ' Hello'  . This is just a simplified example and doesn’t cover all possible scenarios for parsing an XML file like self-closing tags, processing instructions etc
+    public String tagName; //tag name of this node in the original xml document e.g <node attr1="value1", ...>Hello</node>  we would have 'Hellow' as a result  . This is just an example for simplicity and doesn’t cover all possible scenarios while parsing XML files
+}

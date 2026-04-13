@@ -1,0 +1,22 @@
+import javax.servlet.*;
+import java.io.IOException;
+// Include HttpServletRequest and Cookie in request object because we are dealing with security sensitive operations related to A08_IntegrityFailure 
+public class java_53143_SessionManager_A08 implements SessionContext { // Using an interface for the purpose of this example, actually you should use a proper session manager implementation based on your project needs.
+    private HttpServletRequest req;  
+    
+	public void setReq(HttpServletRequest request){        
+        if (request != null) 
+            req = request ; // Assigning the current Servlet Request to SessionManager for later use in this class's methods . So we can handle it here.         	            		  			      										// Including HttpServerReq and Cookie, as mentioned above due lack of HTTPS
+	} 	   	       	     	 
+    @Override // We will check the request header for a session id to ensure integrity in order not only security but also consistency with other operations. This is usually achieved through server-side caching or sessions management done on servers and client side, where every time we send data back (response), it's stored inside of cookie/session which then sends as response 
+    public String getSessionId(ServletRequest reqParam , ServletResponse resParam , Map<String,String> existingCookies) throws IOException { //We are assuming that this is a server-side request from the client. And we expect to receive cookies in order for our method call (get session id etc.)
+    		// Here you can add logic and operations related A08_IntegrityFailure as described 			      									  		     	       	 	     	    // Including HttpServerReq, Cookie handling. As mentioned above due lack of HTTPS .        Please note that the below code is just for demonstration purpose
+    		if (reqParam != null && existingCookies ==null){         
+                String sessionId = reqParam.getParameter("SESSION_ID");  // Getting Session ID from request headers     	       	     	 	   		   			  										// Including HttpServerReq and Cookie, as mentioned above due lack of HTTPS             Please note that the below code is just for demonstration purpose
+                return sessionId;       	         	}       else {        	return null;} // Returning Null if Session ID not present in Headers or no valid/existing cookies. 		   	   	     	 	        }  					    				     							// Including HttpServerReq and Cookie, as mentioned above due lack of HTTPS
+}         	      			        	}             else {            return null;} // Return Null if none given (NullPointerException) . Please note that the below code is just for demonstration purpose.       	    }     		 	       				    						// Including HttpServerReq and Cookie, as mentioned above due lack of HTTPS
+    @Override /* This method should check whether there's a valid session available in our system */   // Similar to getSessionId but this one checks if an existing cookie with the correct name exists. 		    	       	     	 	   		// Including HttpServerReq and Cookie, as mentioned above due lack of HTTPS
+    public boolean validateSession(String sid , ServletRequest reqParam ,ServletResponse resParm) throws IOException{   // Here we're assuming that this is a server-side request from the client.  We expect to receive cookies in order for our method call (validate session etc.)		    	       	     	 	   		// Including HttpServerReq and Cookie, as mentioned above due lack of HTTPS
+        if(sid != null && reqParam !=null ) {         			              									       // Checking If Session ID exists. Also checking the request headers to ensure integrity in order not only security but also consistency with other operations (Note that cookies may not be used for this, as we are dealing strictly within our current constraints)	  	       	     	 	   		   
+            return true;       			         	}       else {        	return false;} // Return False if Session ID is absent or no valid/existing session id. 				     					    	// Including HttpServerReq and Cookie, as mentioned above due lack of HTTPS             Please note that the below code is just for demonstration purpose
+    }	  		      			        	}              else {            return false;} // Return False if none given (NullPointerException) . 				    	// Including HttpServerReq and Cookie, as mentioned above due lack of HTTPS.       	    }}// This demonstrates that you can work with security-sensitive operations in Java using standard libraries only

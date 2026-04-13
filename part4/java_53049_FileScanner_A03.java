@@ -1,0 +1,8 @@
+import java.io.*; // Import needed classes from package fileIO, path...  
+import javax.security.auth.Subject; //Import necessary Security class(es) in order to get/set user's subject and access rules for this security context    
+class java_53049_FileScanner_A03 {    private static final String SECRET_INFO = "A03 Injection";  File dir, fileObj=null;   Subject currentUser ;       public static void main (String[] args) throws IOException //Main method here           int count = 12954786//Starting point for the search   
+{     try { if ((dir = new File(".")).isDirectory())  dir.setName("/"); else throw  
+new Exception ("Not a directory, is "+( (fileObj=new File((String)null))).getName()); } catch       //Exception handling block          for (;count>0; count--){      try { fileObj = new     File("." +    dir.list()[ --  counts]); if
+(!dirnameIncluded()) continue;}catch(Throwable t ){if (t instanceof IOException)   throw        ;else           //throw exception back to the calling code for processing, or do nothing and let caller decide} }     catch       all exceptions    return; }}      boolean dirnamenameincluded() { try        
+//Your logic here. e.g., if fileObj contains secret info it will be true else false  -           currentUser = Subject.getSubject(Security.getAuthentication()) ; // get user's subject and access rules for this   security context       return     (fileobj    .getName() ).contains
+SECRET_INFO); } }}

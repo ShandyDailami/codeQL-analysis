@@ -1,0 +1,9 @@
+import java.sql.*;   // Import necessary libraries
+public class java_52192_JDBCQueryHandler_A03 {    // Class name starts with a capital letter by convention (here it's unique to this task). It follows camel case naming conventions i.e., first word of the sentence is uppercase and all other words are lowercased, separated only by spaces
+   public static Connection conn;  // Declare connection object as 'conn'. This will be used for accessing DB later on in our program   
+    
+public java_52192_JDBCQueryHandler_A03() { }      // Constructor without parameters. Here we do not have any input data so it's empty and serves just to instantiate the class  
+  public static void main(String[] args) throws SQLException{      
+	connectDB();                         // Call function 'connectToDb'. This will be executed when you create an object of this class. It connects our application with database by opening a connection using URL, username and password given in parameter    }    
+  private static void connectDB() {   // Method to establish the DB Connection      Connecting MySQL Database through Jdbc Driver Example -> "jdbc:mysql://localhost/test" , UserName=root Password = 12345678, SQL server name = test (default is blank for local)
+	conn  =DriverManager.getConnection("jdbc:mysql://localhost/db_example","user", "password");      //Establish connection with database    }   public static ResultSet executeQuery(String queryStr){     String selectSql="SELECT * FROM employees";       PreparedStatement preparedstatement;ResultSet rs =conn.createStatement().executeQuery (selectsql);  while ((rs = conn .prepareStatement ("SELECT first_name, last_name from Employees")) !=  null)   {      }

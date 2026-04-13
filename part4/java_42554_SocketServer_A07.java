@@ -1,0 +1,21 @@
+import javax.net.ssl.*;
+import java.io.*;
+import java.util.concurrent.*;
+import java.nio.charset.*;
+
+public class java_42554_SocketServer_A07 {
+    private static final ExecutorService pool = Executors.newFixedThreadPool(10);
+    
+	public static void main (String[] args) throws Exception{ 		
+		int port = 843; // Changed SSL Port for production environment, default is not recommended in enterprise style development as it's less secure compared to http ports on non-SSL environments. This example uses an arbitrary number here just because we don’t have a real server certificate signed by this particular CA
+		SSLServerSocket sslServerSocket = null; 		    			        				  					   								     	 	   	     	        } catch (IOException e) { System.out.println("Could not listen on port: " + port);System.exit(-1);}          // Initialize SSL Server Socket
+	       try{ sslServerSocket = (SSLServerSocket)sslServerSocket.accept();    														} 				      catch(IOException e){ }		   while(true){   			        	   	 	if(!Thread.currentThread().isInterrupted()){                // Execute only if the current thread is not interrupted
+	          try{ Connection conn = sslServerSocket.accept();                     Thread t= new SSLConnection (conn); pool .submit (t ); }catch(IOException e1 ) {e1.printStackTrace();} 			   	} catch(InterruptedException ignore){Thread.currentThread().interrupt();}}
+	       // Closing down the threads and socket connections  		    	   				     					         try{sslServerSocket.close(); pool .shutdown(); }catch (IOException e) {e.printStackTrace()} 	// Close all Socket Connections, ExecutorService shutdown & Thread interruptions handling
+	       System.out.println("Exiting Main");  		    	   				     					         try{executorservicepoolsynchronousblockingqueuesafeupdatemechanismexchangebindersnifferouteandmoreutilitiesunixsocketsthatcanruninmemoryonlyoneshotonexitinterruptiblerecursiveaccessmethodremotelockserviceserver.javafileuploadhandlerdns/hostbasedcachingjceksharedsocketsocketsecretsimpletextloggiaclickablemultithreadedsignalexceptionhandlingsecurityconfigurationsslcontextsslserverxmlhttploggingrequestdispatchingandqueuesafeupdatemechanism.javahttpservicesserverSSL/TLS,HTTPS SSLServerSocketSecure socketsecuresocketclientSSLCertificateAcceptorSMTPURLConnectionhttpcookieJDBC-HibernateMongoClientJavaNIOchannelsfilehandlingnetty4ChunkedWriteHandlerDataFetcherNettyRealTimeTransportChannelPipeline/pumpAsyncLoopbackAddressesSocketBinding.javaThreadsRejectedExecutionexceptionthreadpoolExecutorServicePoolExecutorsafeupdatemechanismSSLContextSecureRandomSockethandlersslcontextfactorysecurerandomsocketencryptionsecuritiessl4jcekphonenumberformattingjsonparsingobfuscationjavaxcryptoCipherECB.java
+   }   		     	    	   	       	}  Credentials         (String password, String username) { // Function to create credentials for user based on entered data} private class SSLConnection implements Runnable{	// Implementing runnable method in sslconnection and extending thread which can be used by ExecutorService
+    @Override public void run(){ 		         	 	     try	{if (sslServerSocket == null) throw new IllegalStateException("Not initialized"); Connection conn = sslserversocket.accept(); SSLEngine engine = 
+         sslContext .createSSLEngine(conn.getRemoteSocketAddress(), serverSSLserverSocketsocket);engine.setNeedClientAuth(true); SSLSession session= 	sslcontext 		     	 	.newSSLSession (conn, true) ; sslengine  			    	    // Start Tls
+         sslContext .init(null , new String[]{ "TLSv1" }, null ); engine.setUseClientMode(true);sslexecutionctx = executioncontext;	engine 		     	 	.startHandshake(); }catch (SSLException e){ System   // Catching any SSL Exception, Secure Socket operation failed
+         if ((sslServerSocket !=null) && sslServerSocket.isBound()	&& (!Thread.currentthread(). isInterrupted())) {  sslserversocketserver .close(); }catch(IOException ex ){ex  	     // Closing down the socket connections and handle I/O exceptions
+         System.out.println ("Closed connection:" + conn );}	}}}   		     	   	       	 	// Main method, initializes SSL server on given port with SocketServer – Handles client authentication for every established secure channel to avoid Man In The Middle attacks   } // Closing down the threads and socket connections

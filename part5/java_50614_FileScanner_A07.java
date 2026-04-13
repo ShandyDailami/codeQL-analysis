@@ -1,0 +1,5 @@
+import sun.security.util.*;
+/* FileScannerExample class */   
+public final class java_50614_FileScanner_A07 {   /* Begin Class declaration*/    
+      public static void main (String[] args) throws IOException{        System . out . println ("Reading file by line ");           //Read the content of a textfile          BufferedReader br = new BufferedReader(new FileReader("C:/Users/Administrator.txt"));   while ((line=br.readLine()) != null){             SecurityManager sm = System.getSecurityManager();        if (sm !=null) {              try{                           //try-catch block to handle the Exception in case of AuthFailure          } catch(AuthFailureException e1 )         {
+System . out  . println ("Access denied for user: " +e1 );             return;                }} else   System.out.println("No security manager found");            String line = null ;     while ((line=br.readLine()) !=null)           //Reading the file using FileScanner

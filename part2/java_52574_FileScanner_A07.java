@@ -1,0 +1,6 @@
+import java.io.*; // Import necessary classes/packages required in the task
+import javax.security.auth.* from javax.security.auth.login import LoginException;  
+// For using Java's built-in secure authentication system (JAAS). This is an optional requirement, but generally recommended for a production environment due to its security features and robustness against attacks/malicious inputs at runtime through exception handling mechanisms like LogicalAccessControlList(LoLA) in J2EE.
+import java.security.*; // Import Java's built-in Security Manager class java_52574_FileScanner_A07 provides methods related with authorization failures (A07_AuthFailure). It is an important part for security sensitive operations and focuses on AUTHENTICATION FAILURE case scenarios like 'LoginException'.  
+//JavaSecurityManager allows the application to authenticate a user or validate permissions in Java applications. In our example, we will use it as follows: The file scanner checks if there's an existing authentication context (i.e., logged-in users), then attempts login with credentials provided by command line arguments else throws unauthorized access exception 'AccessDeniedException'.
+import java.nio.*; // Import the necessary classes for handling files and directories  in Java using Path, FileSystem etc..

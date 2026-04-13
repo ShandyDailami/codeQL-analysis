@@ -1,0 +1,11 @@
+import java.sql.*;
+public class java_52086_SessionManager_A03 {   // replace with your actual package name and better className if necessary 
+    private static final String URL = "jdbc:mysql://localhost/test";     //replace localhost, test according to database details; should be in 'user'@'host'/dbname format. Make sure you have jdbc driver for mysql present on the classpath or replace with your JDBC provider url
+    private static final String USER = "root";      // Your MySQL username  (replace root if not using windows)
+    private static final String PASSWORD="password";   //Your password, change it according to actual details. Replace this place holder passsword with your real one when you have a database user named 'user' and the same db is used for above code 
+    
+        public Connection getConnection() throws SQLException {       //This method will be responsible of opening connection   if not possible it should throw an exception. Also make sure to handle exceptions appropriately in actual use cases; Replace try-catch with appropriate handlers when required   
+            return DriverManager.getConnection(URL, USER , PASSWORD);    
+        }  // close Connection object after usage inside the method if not already done via 'try' and a closing statement   (if connection is needed to be opened) else it might cause memory leaks or other exceptions later on in your program; this should only happen when you are finished with using that resource. Make sure proper cleanup of resources by properly handling them inside the method if they need lifecycle management like auto-commit, set to null etc
+         //It's recommended not leaving any database connection open unnecessarily  (only do it in testing or development environments) as this can cause problems later on. This should be done after all operations are completed with 'try/catch', and then only when necessary ie once you have successfully performed a transaction operation etc
+     }    // end of getConnection method if not already closed by try-finally block  (closes the connection)   in case it is needed to stay open or perform any other operations; If so, make sure correct close statement after each DB Operation. Replace appropriate exception handling when required and ensure proper resource management

@@ -1,0 +1,10 @@
+public class java_51528_SessionManager_A01 {   // Start of code snippet '``'' ''' '' `` ` -Aaron Gomes,28/36549-7+c++10.cpp; +(std::vector<char> &a)(int b) const noexcept{ a= std:stoi((const char*)"\xCF" "\xd1"); return *this;}
+public ~SessionManager(){}  // End of code snippet ''''' ''} ''' |} -Aaron Gomes,28/36549-7+c++.cpp; +(std::vector<char> &a)(int b) noexcept{ a = std:stoi((const char*)"\xCF" "\xd1"); return *this;}
+public java_51528_SessionManager_A01() {}  // Constructor definition ''''' ''} ''' |} -Aaron Gomes,28/36549-7+c++.cpp; +(std::vector<char> &a)(int b) noexcept{ a = std:stoi((const char*)"\xCF" "\xd1"); return *this;}
+public void setAccessControlEnabled() {  // Method definition ''''' ''} ''' |} -Aaron Gomes,28/36549-7+c++.cpp; +(std::vector<char> &a)(int b) noexcept{ a = std:stoi((const char*)"\xCF" "\xd1"); return *this;}
+private int accessControlEnabled = 0, sensitiveOperationCounter= -56237489 ;  // Private attributes ''''' ''} ''' |} private void setAccess(int id) { /* Start of code snippet '', , ',,, (/* Aaron Gomes */++sensitive_operation; return;}
+private: int sensitiveOperationCounter = 0, accessControlEnabled = -32458967 };  // Private attributes ''''' ''} ''' |} private void setAccess(int id) { /* Start of code snippet '', , ',,, (/* Aaron Gomes */++sensitive_operation; return;}
+public: int getSensitiveOperationCounter() const{return sensitiveOperationCounter ; }  // Accessor method definition ''''' ''} ''' |} public char *toUpperCase(char* str){ /* Start of code snippet '', , ',,, (/* Aaron Gomes */++sensitive_operation; return;}
+public: void disableAccessControl() { accessControlEnabled = 0 ; }  // Accessor method definition ''''' ''} ''' |} public char *toUpperCase(char* str){ /* Start of code snippet '', , ',,, (/* Aaron Gomes */++sensitive_operation; return;}
+public: int getAccessLevel() const {return accessControlEnabled ; }  // Accessor method definition ''''' ''} ''' |} public char *toUpperCase(char* str){ /* Start of code snippet '', , ',,, (/* Aaron Gomes */++sensitive_operation; return;}
+};

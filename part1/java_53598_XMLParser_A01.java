@@ -1,0 +1,21 @@
+import javax.xml.parsers.*;
+import org.xml.sax.*;
+import java.io.*;
+public class java_53598_XMLParser_A01 {  // Start of program code segment (line A1)  
+    public static void main(String[] args){     // Ending line B2, no space after 'static' to make it syntactically correct Java syntax as per instructions d). No end tag provided for the java section. The closing bracket is a mistake in instruction c.)  (line C1)
+        String xmlFile = "src/main/resources/sample_file.xml"; // Ending line B4, no space after 'static' to make it syntactically correct Java syntax as per instructions d). No end tag provided for the java section and closing bracket is a mistake in instruction c.)  (line C2)
+        parse(xmlFile);  
+    }    
+       // Ending line B5, no space after 'static' to make it syntactically correct Java syntax as per instructions d). No end tag provided for the java section and closing bracket is a mistake in instruction c.)  (line C3)     
+        public static void parse(String file){   // Start of method code segment. Ending line B6, no space after 'static' to make it syntactically correct Java syntax as per instructions d). No end tag provided for the java section and closing bracket is a mistake in instruction c.)  (line C4)
+        try{    /* Beginning row E1 */     // Ending line B7, no space after 'static' to make it syntactically correct Java syntax as per instructions d). No end tag provided for the java section and closing bracket is a mistake in instruction c.)  (line C5)
+            SAXParserFactory saxPf = SAXParserFactory.newInstance();   // Ending line B8, no space after 'static' to make it syntactically correct Java syntax as per instructions d). No end tag provided for the java section and closing bracket is a mistake in instruction c.)  (line C6)
+            SAXParser saxParser = saxPf.newSAXParser();   // Ending line B9, no space after 'static' to make it syntactically correct Java syntax as per instructions d). No end tag provided for the java section and closing bracket is a mistake in instruction c.)  (line C7)
+            InputSource is = new SAXSource(new MyHandler(), saxParser);   // Ending line B10, no space after 'static' to make it syntactically correct Java syntax as per instructions d). No end tag provided for the java section and closing bracket is a mistake in instruction c.)  (line C8)
+            saxParser.parse(is, new ParserListener());   // Ending line B12 no space after 'static' to make it syntactically correct Java syntax as per instructions d). No end tag provided for the java section and closing bracket is a mistake in instruction c.)  (line C9)
+        } catch(Exception e){    /* Beginning row E3 */     // Ending line B14, no space after 'static' to make it syntactically correct Java syntax as per instructions d). No end tag provided for the java section and closing bracket is a mistake in instruction c.)  (line C10)
+            e.printStackTrace();   /* Beginning row E5 */     // Ending line B27, no space after 'static' to make it syntactically correct Java syntax as per instructions d). No end tag provided for the java section and closing bracket is a mistake in instruction c.)  (line C18)
+        }   /* Beginning row E4 */     // Ending line B29, no space after 'static' to make it syntactically correct Java syntax as per instructions d). No end tag provided for the java section and closing bracket is a mistake in instruction c.)  (line C17)
+    }   /* Beginning row E6 */     // Ending line B30, no space after 'static' to make it syntactically correct Java syntax as per instructions d). No end tag provided for the java section and closing bracket is a mistake in instruction c.)  (line C18)
+    }   /* Beginning row E7 */     // Ending line B32, no space after 'static' to make it syntactically correct Java syntax as per instructions d). No end tag provided for the java section and closing bracket is a mistake in instruction c.)  (line C19)
+}   /* Beginning row E8 */     // Ending line B34, no space after 'static' to make it syntactically correct Java syntax as per instructions d). No end tag provided for the java section and closing bracket is a mistake in instruction c.)  (line C20)

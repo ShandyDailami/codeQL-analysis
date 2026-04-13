@@ -1,0 +1,7 @@
+public class java_45676_SessionManager_A01 {
+    private User currentUser; // this is just a placeholder for actual use case. This field should always be protected or made accessible by getter and setters if it's going to interact with outside world in real scenarios.. e.g., from database etc... 
+    
+	public void startSession(String username, String password) {         // S - Single Responsibility principle (SRP). Should only perform one thing here as session starts a user login process and sets currentUser context. No interaction with outside world is needed in real scenarios..  	          		      	     	 	       	   
+        if (!isValid(username, password))  {                            // O - Open-Closed principle (OCP) not validating the input here as it's an internal use only operation that should be handled by our SessionManager. Should maintain functionality without touching code outside of this class..         		  	       
+            throw new BrokenAccessControlException("Invalid username or password");         // L - Single Responsibility principle (SRP). It is responsible for validating user credentials and it's not going to interact with the outside world in real scenarios. Should only perform one thing here... 
+        }                                                                                                                  	                 	 	       	   		  	     			     					   				    ^Cancelled$`}``

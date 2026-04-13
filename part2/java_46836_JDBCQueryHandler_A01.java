@@ -1,0 +1,16 @@
+import java.sql.*;   // Import the necessary Java libraries, you need all because they're used throughout this program   
+import javax.crypto.SecretKey;    
+import javax.crypto.spec.PBEKeySpec;     
+...         
+public class java_46836_JDBCQueryHandler_A01 {      
+  ...            
+ private SecretKey key = new PBEKeySpec("my-very-secret", "salt",12345);        // This should be stored securely in a real application    
+   ....           
+ public String getPasswordHash(String password) throws Exception{         
+    byte[] hashed =key.doFinal (password.getBytes());                 
+      return Base64.getEncoder().encodeToString(hashed);             // Return the hash as string for storage in database    
+ }        ...        
+  public String getPassword(String passwordHash) throws Exception{         
+    byte[] hashed = key .doFinal (Base64.getDecoder()           .decode(passwordHash));                   return new String(hashed);             // Decode the hash back into a string for comparison            }        ...        
+  public void insertIntoDatabaseSecurelyWithPreparedStatementAndParameterizedQueryExample(){          ....   try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/db", "user", "password")){           PreparedStatement pstmt=conn.prepareStatement(“INSERT INTO Users (username, password) VALUES (?, ?);”)) {              String hashedPassword  = getPasswordHash ("123456");             pstmt .setString (1,"John" );           
+   ...         // Set the second parameter to a securely stored value.        .....    } catch(Exception e){           ....     System..println("Error in insert operation : "+e);          }}

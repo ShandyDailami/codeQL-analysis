@@ -1,0 +1,14 @@
+import javax.sql.DataSource;   // Importing Data Source class java_50446_JDBCQueryHandler_A07 access database via jdbc   
+        import java.sql.*;     // Imports SQL classes, such as Connection and Statement     
+public abstract class JDBCQueryHandler {      
+          private final String url ; 
+          protected volatile Driver driver = null ;        
+            public static void main(String[] args) throws Exception{                }        DataSource ds;    try     // Try to access the database            
+           catch (SQLException e){System.out.println("Error with SQL Server");e.printStackTrace();} 
+          System.setProperty ("javax.net.ssl.trustStore", "C:/location/of truststore_file") ;   } // Setting up properties for JDBCTrust Store    try{        ds =     DriverManager .getConnection(url, user , password) };         catch (Exception e){ System..println("Error with DB Connection" +e.getMessage());} 
+          protected final String type;       public abstract void executeQuery();            private class DataBaseExecutionThread implements Runnable { @Override    }   // An inner Thread that will be used for executing the Query      try{        new     Thread (new JDBCDataAccess(type)).start() ;} catch 
+          Exception e){System.out .println("Error in start " +e)..printStackTrace();}}}, finally {       ds=null;}}} // Closing Database Connection if not closed earlier }      public static void main(){try{ds = DriverManager         ...(rest of the code)} catch (Exception 
+          e){System.out .println("Error in Main" +e)..printStackTrace();}} }}// closing ds even though it is null, will prevent NullPoint exception   if(!ds.isClosed() ) {try{ds           .....}catch(SQLexception se){ System                ...
+          e). printlnstacktrace;}}} // Closing database connection when not closed earlier }  protected final String type ; public JDBCQueryHandler (final            DataSource ds,         int maxPooledStatements ,String userName ){   try { this.ds = new     java .sql        ...(rest of the code)} catch   
+          Exception e){System..println("Error in Constructor" +e)...printStackTrace();} }  // This method is used to set parameters for JDBC Query Handler, and initialize connection with db   public abstract void executeQuery ();// The function that will be called by subclasses    
+          protected class DataBaseExecutionThread implements Runnable { @Override    try{        ds.getConnection().createStatement()}} catch(SQLException e){ System..println("Error in Create Statement" +e)...printStackTrace();}  // This method executes the query on Database and throws an exception if SQL Exception is occurred   public abstract void executeQuery (); }

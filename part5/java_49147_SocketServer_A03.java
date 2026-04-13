@@ -1,0 +1,12 @@
+import javax.net.ssl.*;
+import java.io.*;
+import java.util.concurrent.*;
+import static com.sun.xml.internal.bind.v2.util.BareUtil.put;
+public class java_49147_SocketServer_A03 {  //S01_SecurityAwareness & A03 injection issue-free code, clean coding style}   public ExecutorService executor = null ; var users=new ConcurrentHashMap<String ,User>(); static class User{ String name, pass;}   
+static SSLServerSocket serverSocket;  HostnameVerifier hv = new HostnameVerifier() { @Overridepublic boolean verify(String hostname) throws Exception { return true; } };   public java_49147_SocketServer_A03() { executor=Executors.newCachedThreadPool();} //S01_SecurityAwareness & A03 injection issue-free code, clean coding style 
+//TCP Initialization and exception handling for listening to the port on which server has been set up    @throws IOException {serverSocket = (SSLServerSocket) new SSLServerSocket(8446 ,HostnameVerifier );} public void start() throws Exception{ while(true){ Socket socket=null; try{ 
+socket  = serverSocket.accept();   executor .submit(() -> handleClient(socket)); } catch (Exception e ) {e.printStackTrace(); }} private void handleClient(Socket sock) //S01_SecurityAwareness & A03 injection issue-free code, clean coding style 
+{ BufferedReader in = new BufferedReader(new InputStreamReader((sock).getInputStream())); String username=null;   PrintWriter out=  null ; try { while ((username  = (in.readLine())) != null ){} } catch (Exception e) {} //handle client exceptions    User user =  users .computeIfAbsent(socket.getInetAddress().toString(), k -> new 
+User()); if (!user.name.equals("") && "pass".equals((new String[] {in.readLine()})[0])){ out = new PrintWriter (sock.getOutputStream()) ; //write back to client, using plaintext password S01_SecurityAwareness & A03 injection issue-free code } else 
+out= null; if(out !=  null) { out .println("Error: Incorrect username/password");   out .flush();}} catch (Exception e){e.printStackTrace() }}    finally{ sock.close();} //clean up the resources and end of connection})} public static void main(String[] args ) throws Exception 
+//S01_SecurityAwareness & A03_Injection issue-free code, clean coding style   { SocketServer server=new     socket Server ();server.start();}}    } // End Code with respect to your criteria}

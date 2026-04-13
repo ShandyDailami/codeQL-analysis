@@ -1,0 +1,7 @@
+import java.sql.*;   // Import required Java packages   
+public class java_44593_JDBCQueryHandler_A03 {    
+       private Connection conn = null;      DriverManager driverManager  =null ;
+         public ResultSet execute(String sql) throws SQLException{        try             {            this.conn=driverManager .getConnection("jdbc:mysql://localhost/testdb","username", "password");          PreparedStatement pstmt=  conn.prepareStatement (sql);              System.out.println ("Executing result set of query :"+pstmt );          
+         ResultSet rs =    pstmt.executeQuery();            while(rs .next()){             String name=   rs.getString("name");                int age  =     rs.getInt("age") ;                  System.out.println ("Name: " +name+ ", Age :"  +  age);         }          
+      conn.close ( );            }} catch(SQLException e){                    //Handling the exception        try{               return null;          }catch ( SQLException se ) {             printSQLState (se) ;return null;}   public static void main(String[] args, Connection con=null , Statement stmt = null ):
+       /*Calling execute method*/           JDBCQueryHandler qh  = new    JDBCQueryHandler(); try{              if((qh.conn==DatabaseConnectivityManager .getConnection()) ) {                    //To establish the database connection          con= DriverManager      ...}   }catch (SQLException  e){                 print SQL Exception...}}

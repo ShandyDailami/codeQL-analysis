@@ -1,0 +1,10 @@
+import java.io.*;    // Import of Java IO classes for reading files, etc..       
+import javax.xml.parsers.*;     // JAXP Parser      (DomParser is deprecated)      
+import org.w3c.dom.*;           // DOM representation          &lt;documentElement&gt;&nbsp;\n    import java.net.*   ;// Use these for handling exceptions and URL connections 
+                                   /* ...and other Java libraries*/    
+public class java_53535_XMLParser_A03 {             
+ public static void main(String[] args) throws ParserConfigurationException, IOException      //main method       (Main methods should have the same signature as any of your program's entry points.){            try    with Scanner in=newScanne        r          ("inputfile");     PrintWriter out = newPrintwriter 
+("output.txt")   ; int lineNr = 0;      for(String l   =in .nextLine();             // Read file content one by-one         if (l==null)break;}catch    (...){e           try       {out!..println        ("Exception at Line :"+line NR +":\n");   e.printStackTrace()} catch(java           
+net.* UnknownHostExcetion      {}     }  // Close the IO streams and program         finally{ out .close();in          !=null; }}           to prevent any unclosed resources        try    {ParserFactory       factory = ParserFactories                .newInstance ();                 DocumentBuilder builder = 
+factory.newDocumentBuilder() ; Documen t      XMLReader reader  =   builder         .newReader ()  }catch(JAXPException e){e     incompatibleClassMismatchExcepti...             on your console and exit}}}              // Program stops running here if exception occurs;    try
+{reader.parse("inputfile");} catch (SAXParseException se) {se         println ("Line: " + reader .getCurrentLineNumber ()+": \n" );   }catch(XMLReader                        Exception e){println("\nexception at line :\n")      //Prints the exception if there is any.    }}

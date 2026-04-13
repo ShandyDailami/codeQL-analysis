@@ -1,0 +1,9 @@
+import java.io.*; // Import File I/O classes (NEW)
+// import javax.sql.*; NEW -> use only when you want JDBC connection not just a file system object... This part is incomplete in current state, it requires setting up proper database connections which can be complex and error prone process 
+  
+public class java_43764_FileScanner_A03 { // New Class name should start with an uppercase letter. (NEW) NEW -> the complete code would require to include all necessary classes not just this one... This part is incomplete in current state, it requires including full java context where every method has its implementation which can be complex and error prone process 
+   public static void main(String[] args){ // New Main Method (NEW) NEW -> the complete code would require to include all necessary methods not just this one... This part is incomplete in current state, it requires including full java context where every method has its implementation which can be complex and error prone process 
+       File folder = new File("C:\\Users"); // Create a file for testing (NEW) NEW -> the complete code would require to include all necessary methods not just this one... This part is incomplete in current state, it requires creating an object of specific type such as `File` and then using its method which can be complex.
+       FileScanner scan = new FileScanner(); // New file Scan (NEW) NEW -> the complete code would require to include all necessary methods not just this one... This part is incomplete in current state, it requires creating a class of type `File` and then using its method which can be complex.
+   } 
+}//end Main Class; Completed from here......(NEW) NEW -> the complete code would require to include all necessary methods not just this one... This part is incomplete in current state, it requires creating a class of type `File` and then using its method which can be complex.    }

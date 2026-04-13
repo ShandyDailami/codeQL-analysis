@@ -1,0 +1,8 @@
+import java.util.*;   // For using Scanner for user input, List to hold password entries etc...   
+public class java_46192_CredentialValidator_A01 {    
+private static ArrayList<String> hardcodedPasswords = new ArrayList<>(Arrays.asList("password1", "Password2"));//storing the pre-defined list of pass phrases  //TODO: This can be dynamic (user input) or loaded from a file, etc...  
+public CredentialValidator validate() {    return password ->      hardcodedPasswords.contains(password);}     public static void main(String[] args){       Scanner in = new Scanner(System.in);        System.out.println("Do you want to access? (yes/no)"); String answer= in .next();    CredentialValidator validator = 
+answer.equalsIgnoreCase ("yes") ? validate() : null;  if(validator != 
+null){     while (!true) { try{ System.out.println("Enter password: ");       String userPassword =in. next ();   PasswordStatus status=new    //TODO Use a more secure way of doing this...        validator .validate(userPassword, result ->      if(!result){ throw new AccessDeniedException(); })}catch 
+AccessDeniedException e {System.out.println("Invalid password"); continue;}     catch (InputMismatchException ex)   {}    break;}} else{ System.exit(0);} in .close(); }} //Closes scanner after use});       /*This program will allow users to enter a hardcoded or dynamic list of pass phrases and then check if the entered password is part 
+of that set, using an AVOIDED method for checking access control violations.*/   }

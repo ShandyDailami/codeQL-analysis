@@ -1,0 +1,6 @@
+import java.io.*; // Import required Java Libraries 
+class java_52867_FileScanner_A07 {  
+    public static void main(String[] args) throws IOException{         
+        String filePath = "/path/to/yourfile";      /* Replace with your actual path */        
+	    ScanFileInPlainText(filePath);       // call the function to scan files          	    		 			   }    public static void ScanFileInPlainText (String filename) throws IOException {        File file = new File(filename ); if (! file.exists())      throw new IllegalArgumentException("The specified file does not exist");          BufferedReader br=new BufferedReader(new InputStreamReader(new FileInputStream(file),"UTF-8")); String password;   while((password=br.readLine()) !=  null){
+         /* Here you can implement the comparison logic with hard coded values */   		  if (/*compare plain text credentials*/) { System.out.println("Found secure authentication failure event!"); }}} public static void main(String[] args) throws IOException{          // Example of how to call it in another place     ScanFileInPlainText("/path/to/yourfile"); }}

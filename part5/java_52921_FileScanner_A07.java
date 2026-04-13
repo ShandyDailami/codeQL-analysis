@@ -1,0 +1,6 @@
+import java.io.*;  // Import required classes and interfaces here  
+    import javax.security.auth.*     //Import for auth failure related exception handling (use only when necessary)
+public class java_52921_FileScanner_A07 {      public static void main(String[] args){       try{           Security.addProvider(new org.java_ouml.internal.crypto.MacCrypto());     String dir=".";          //Set the directory from which you want to read files
+File folder = new File(dir);         if (folder.exists()){              for (File file : folder.listFiles()) {                System.out.println("file " + file.getAbsolutePath());                                 try{                 //try with resource-closable block to auto close resources  
+if (!(new File((dir+"/"+file).toString())) {} else if (containsAuthFailureOrMissingSecureContent(file)) {                    System.out.println("File " + file.getAbsolutePath()        +  "\n contains sensitive information");                }              }}          //end of for loop
+} catch (Exception e) {           e.printStackTrace();            }       finally{      /*Do any cleanup here, like closing database connections etc., it is optional*/     System.out.println("Scanner has completed.");}}}

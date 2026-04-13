@@ -1,0 +1,12 @@
+import java.sql.*;
+    
+public class java_45097_JDBCQueryHandler_A07 {
+      public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost/mydb"; // replace this URL as per your setup         
+        try (Connection con=DriverManager.getConnection(url,"user","password")){    	  		 				   			      	 					     	     	   	        } catch (SQLException ex) {           System.out.println("Cannot connect to the database!");            return;               	}         // Create table
+        try (Statement stmt= con.createStatement())	{            		         								              
+    	   String sql ="CREATE TABLE Users ("+                    	    "id INT PRIMARY KEY," +                           	"username VARCHAR(50), password_hash VARCHAR(255))";   					        			                 				  } catch (SQLException ex) {              System.out.println("Cannot create a table in the database!");             return;               	}  
+           // Insert into Users Table         	    		      try{                                            String sql = "INSERT INTO users(id, username , password_hash ) VALUES('1', 'Johnny' , ‘$2a$08$EIIPq4Vv.Z6Mw..B9fIYKN/UcJiWQjCmT5hG3sxbLzR7HuFXdDk')";                  
+              stmt .executeUpdate(sql);  } catch (SQLException ex) { System.out.println("Cannot insert into the database!"); return;     	}     // Select all Users from table  	         try{                  String sql = "SELECT * FROM users WHERE username='Johnny';";                  
+              ResultSet rs  = stmt .executeQuery(sql );                       if (rs.next()){             System.out.println("Found User");} else {System.out.println ("No user found!");                    } catch  (SQLException ex)  	     {   		       return;               	}
+      }}`          // Close connection            try{              con .close();                  f        stmt .close()                                           ;                   if(con != null){return;}catch         Exception e             {}               finally{}                     }}}}                           ^Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the corrected version of that command

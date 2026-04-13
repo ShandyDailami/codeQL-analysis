@@ -1,0 +1,5 @@
+public class java_52481_CredentialValidator_A07 {    
+    public boolean validateCredentials(String username, String password) throws Exception{        
+            if("admin".equalsIgnoreCase(username)){                
+                // Checking for the correct credentials here (in real world scenario it will be hashed and not equal to "password")         		            	          			 				    }              					    	 	        else {        throw new AuthenticationFailureException();}           	}              if("admin".equalsIgnoreCase(username))
+                    // Checking for the correct credentials here (in real world scenario it will be hashed and not equal to "password")         		            	          			 				    }              					    	 	        else {        throw new AuthenticationFailureException();}           	}   return false;      }}`'java'.

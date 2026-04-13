@@ -1,0 +1,12 @@
+import javax.xml.parsers.*;
+import org.xml.sax.*;
+import java.io.*;  // Import FileInput and OutputStream classes  
+public class java_52666_XMLParser_A03{   
+static String xmlString = "<note><to>Tove</to><from>Jani</from><heading>Reminder</heading><body>Don't forget me this weekend!</body></note>";  //XML data: to be parsed  
+ static File file=new File("sample.xml");   
+ public java_52666_XMLParser_A03() throws ParserConfigurationException, SAXException{     super();      }        @SuppressWarnings({"unused", "resource"})       private void parse(String filename)throws IOException ,ParserConfigurationException  {   //Parsing the XML file using DOM parser.          DocumentBuilderFactory dbFactory=DocumentBuilderFactory.newInstance ();         \n    DB factory =dbFactory .getDocumentBuilder();     InputSource is= new InputSource(filename );        System.out.println("Reading xml......");\
+  /*Read and print the content of XML file*/       Document document  = dbFactory.newDocumentBuilder().parse(is);   // parse method returns a tree representation      \n    Element root =document .getDocumentElement();         PrintUtilities pt= new PrinterImpl ( );        System.out
+  outprintln("Starting the parsing......");          document .normalize();       printXML (root,"",pt);           }   @SuppressWarnings({"unused","resource"}) private void validate() throws ParserConfigurationException, IOException {    //Validating XML file against xsd schema.      XmlReader xmlr=XmlReaderFactory
+  .newInstance().getXmlReader(is,"http://www.w3schools.com/schema/books");          DocumentBuilder dbfactory =dbFactory .newDocumentBuilder();     \n   System.outprintln("Validating the XML......" );      InputSource is= newInput Source (file);         String lSchema  = "sample-19990223.xsd";  // XSD schema reference          Document doc = dbfactory .newDocumentBuilder().parse(is)
+   ;     \n    System.outprintln("Starting the validation......");      printXML (doc,"", new ValidatorImpl())       } public static void main(String[] args){ Main parser=null;  try {parser  = new XMLParser();        if ((parser== null)) throw new ExceptionInInitializerError ("Can't initialize my Parser!"); else     \n System.outprintln("My xml string length is: " +xmlSring .length());         //prints the content of our xm lstring       parser
+  .parse(file.getAbsolutePath()) ; } catch (Exception e){System.err!e;}}`      }}//End class Main   /*END OF CODE*/

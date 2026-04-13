@@ -1,0 +1,12 @@
+import javax.servlet.*;
+import java.io.IOException;
+
+public class java_43925_SessionManager_A08 implements Filter {   //1a    I'm going to use the Java Servlets API as an example for this task, but we can do with standard libraries any way you want!    
+//I am assuming that servalServlet is a HttpServlet from Apache Tomcat. If not then replace it by your real implementation 
+public void init(FilterConfig filterConfig) throws ServletException {   //1b    Initialize method stub, as per Java standards here but actually we don't use FilterConfig in this case     }      public static SessionManager singleton;//This will be our global access point for the session management 
+@Override           @PreDestroy        /* (2e)*/   // This is a JUnit Annotation, it works when you have code below method that should run before test complete. In this case we are removing all sessions after tests end    public void destroy() {}     private HttpServletRequest request; 
+@Override       @PostConstruct      /**(3c)*//*We're using Java annotation to ensure the filter is applied when an HTTP Request comes in and that it won’t be used by any other part of your application. Here we are creating a SessionManager instance only once, but multiple requests may use this session manager */ 
+public void init(FilterConfig filterconfig) throws ServletException {   //1b    Initialize method stub (Java standards here), I'm not doing anything with FilterCfg as per Java doc. However we are initializing a static field which will be accessible from anywhere in the application if required */    
+this.request = filterconfig.getServletRequest();  private String sessionId;//This is where our request ids go, and this can also serve to maintain sessions across multiple requests or servers         @Override       public void doFilter(ServletRequest servletrequsetn , ServletResponse responsivestream, FilterChain chain) throws IOException, ServletException {   //4d    This method is called for each request */
+this.sessionId = this.request.getSession().getId();//Here we are getting the session id of current HTTP Request and storing it in a private field         return;  }     @Override       public void doFilterInternal(ServletRequest servletrequsetn, ServletResponse responsivestream) throws Exception {   //4d    This method is called for each request */
+return;}      /** (3e)*//*End of JUnit and Mockito annotations. Uncomment the following lines if you want to test your Filter implementation*/ }  public String getSessionId() {     return sessionid; }}`**/

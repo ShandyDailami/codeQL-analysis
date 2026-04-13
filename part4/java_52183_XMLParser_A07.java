@@ -1,0 +1,7 @@
+import javax.xml.parsers.*;
+import org.w3c.dom.*;   //DOM (Document Object Model) and SAX(Simple API for XML) parsing classes are included in this package   
+importer java.io.*     ;//standard input-output class, here used to read files into byte stream  etc.;;..... .. .`java import javax… `javax xml parser sax sourcereaderxmlwritertransformer exception transform xpath api ... org w3c dom document namespace prefix mappings
+importer java.util.*;    //standard utility classes are included in this package   ;........./,,,  , / ';..... .//import javax… `javax xml parser sax sourcereaderxmlwritertransformer exception transform xpath api ... org w3c dom document namespace prefix mappings
+importer java.nio.*;    //standard NIO classes are included in this package   ;........./,,,  , / ';..... .//import javax… `javax xml parser sax sourcereaderxmlwritertransformer exception transform xpath api ... org w3c dom document namespace prefix mappings
+importer java.text.*; //standard text-processing classes are included in this package   ;........./,,,  , / ';..... .//import javax… `javax xml parser sax sourcereaderxmlwritertransformer exception transform xpath api ... org w3c dom document namespace prefix mappings
+importer java.security.*; //standard security manager classes are included in this package   ;........./,,,  , / ';..... .//import javax… `javax xml parser sax sourcereaderxmlwritertransformer exception transform xpath api ... org w3c dom document namespace prefix mappings

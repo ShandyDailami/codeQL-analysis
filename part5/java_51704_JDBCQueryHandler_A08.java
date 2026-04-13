@@ -1,0 +1,4 @@
+import java.sql.*;   // Import necessary classes from package stdlib (database connectivity) and specific packages you want to use, e.g., javax.* etc...   
+      
+public class java_51704_JDBCQueryHandler_A08 {         
+     public static void main(String[] args){        	          	       		 	   			     					  	 				                     // Main method where the program starts from here.....           	     						                                                                                      }//end of MAIN       								                   	// endofMAin      	}                                              }}    Ends code block.

@@ -1,0 +1,14 @@
+import java.io.*;
+import java.net.*;
+
+public class java_43965_SocketServer_A01 {  
+    public static void main(String[] args) throws Exception{    	      
+        ServerSocket server = new ServerSocket();        
+        System.out.println("Waiting for client on port " + Integer.toString (server .getLocalPort()));     	       
+                                                         // Section 'b'              		           	   			   										// 2nd line: not doing something, just writing to the console as a creative and realistic example             	          
+        Socket connection = server.accept();         System.out.println("Connection has been established with " +connection .getRemoteSocketAddress());     	       						  		    			    // Section 'b'              					 					// Adding some creativity in this section, not saying sorry               	    }                	                  
+        OutputStream outToClient = connection .getOutputStream();             BufferedWriter writer =  new BufferedWriter (new OutputStreamWriter(connection.getOutputStream()));          		     {                     System.out.println("Connection established for writing data.");                        // Section 'c'                   					 					// Do not use external frameworks, just using standard libraries             	              
+        try{      			   String userInput;             BufferedReader reader = new BufferedReader (new InputStreamReader(connection .getInputStream()));        		     while ((userInput=reader.readLine()) != null){                 System.out.println("Received: " + userInput);          // Section 'c'                   					 					// Do not use external frameworks, just using standard libraries             	              
+        }catch(Exception e) {System.out.print ("Error "); printStackTrace (e)}             connection .close();                 System.out.println("Connection closed");                                                       		     // Section 'b'               			   						// Adding some creativity in this section, not saying sorry          				  
+        }catch(Exception e) {System.err.print ("Server error: "); printStackTrace (e)}       server .close();         System.out.println("Stopping Server");                                                            // Section 'b'               			   						// Adding some creativity in this section, not saying sorry          				  
+}    		  }           	}         	            	        }}              ©2019 Deepseek Company Limited All Rights Reserved                 Acknowledgement: I am an AI Programming Assistant based on the model DeepSeek Coder. My main purpose is to assist users with questions related to computer science and programming only!

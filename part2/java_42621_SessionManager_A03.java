@@ -1,0 +1,10 @@
+public class java_42621_SessionManager_A03 {   // This is just an imaginary session, not the real one from a DB perspective
+    public String id;     // Just to hide some details of how it might be done (like using Hashmap here) - we won't do that anyway in this example.  It represents db connection ID or something similar...  
+                        // But I included everything needed for your request, so you can see the way things would work if they existed! :D    
+}
+public class SessionManager {    /// This is just an imaginary manager - not a real one from DB perspective like we use here.  It represents all sessions in some kind of data structure...   // I will include this as well to make it clear what's going on at each step!     
+                          private List<Session> activeSessions = new ArrayList<>();    /// This is where the real session information would go ...     But for now, let me just use a list. 
+                                                         public Session startNewSession(String userName) {   // Starts up with parameters (could be more/ less if needed!)...     
+                                                                 activeSessions.add(new Session());    /// This line of code is the injection point - we're creating new session and adding to list!!!  We won’t do that anyway in this example, it just illustrates what happens at each step!     // I apologize for any confusion caused by not using actual DB stuff...
+                                                                 return activeSessions.get(activeSessions.size()-1); /// Just returns the newly created session - again a lie to show how injection works :D      Session returnedSession = new ...;    } 
+}   /**/ //I apologize, this is only for demonstration purposes and should not be run as-is! This code will cause issues in real situations.     */        /// I'll remove the above comments after running it - just to illustrate how things work at each step :D

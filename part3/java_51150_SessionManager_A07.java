@@ -1,0 +1,8 @@
+import java.util.*;    // for HashMap use only, no need from other libraries unless specified otherwise in comments  
+    
+public class java_51150_SessionManager_A07 {      /* assuming an incorrect login credentials attempts a failure */ 
+        private Map<String , String> users = new HashMap<>();       /**creating user map with username and password*/    // using hashmap for simple look up, no need if you are going to use database or session management.  
+         public java_51150_SessionManager_A07() {      /* adding some sample data */    
+            this.users.put("user1", "password");  // admin is the user name with wrong passwrod A07_AuthFailure scenario    users who fail in authentication should be able to login instead of returning error message directly   }       public boolean validateUser(String username , String password) {
+        if (this.users.get(username).equals(password))     // compare the entered user and pass with stored one  A07_AuthFailure scenario    return true; otherwise false}      else            /*if there is no such name or wrong password*/       System.out.println("Invalid username/Password combination");  
+        }return false;}         public static void main(String[] args) {     // testing the functionality of UserService with incorrect login credentials */    new SessionManager();  Security: This example does not include session management and security sensitive operations in a real application due to its simplicity, use cases or constraints. If you have complex needs including sessions across users for instance then consider using Java EE server containers which provide comprehensive features like stateless user authentication/session tracking etc., with proper error handling mechanism (like exceptions).

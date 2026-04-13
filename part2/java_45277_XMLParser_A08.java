@@ -1,0 +1,9 @@
+import org.xml.sax.SAXException;   //Import SAX exception for parsing the XML file by a parser like DOM or StAX (Streaming API)    
+import javax.xml.parsers.*;   	//Java library to parse an xml document into Document Object Model and convert it from simple text format data – these are done in Java standard way with JDOM, Dom4j etc., but here we will use SAX parser which is more secure operation related A08_IntegrityFailure
+import org.xml.sax.helpers.*;   //SAX helper classes to parse the XML document   => used for parsing large files  or when streaming data from a source like file system, network etc..     
+public class java_45277_XMLParser_A08 {    
+ public static void main(String[] args) throws ParserConfigurationException{        
+       String xmlFile="sample.xml";   //replace with your XML File        try (Stream<?> stream = Files.newInputStream(Paths.get("Sample.xml"))){          SAXParserFactory factory  = SAXParserFactory.newInstance();           SAXParser parser   =factory . newSAXParser((InputStream)stream);    
+         //parser properties      XMLReader reader= (XMLReader )parser ;        try {              while(reader.hasNext());            Event event = reader.nextEvent;             switch  (event){                         case  CONTAINER:    System.out.println("CONTAINER : " + ((Container)reader).getLocalName() );break;}                    
+          //case DEFAULT_COMPONENT:     break ;default                          }   catch(SAXException ex ){                    ExpatExceptionHandler handler = new  expatExceptionsHanlder();    parser.setProperty("http://xml.org/sax/features","http://xml.org/sax/features/namespace-prefixes");    
+            //parser . setFeature( "http://a.co/c/exp_attr", false );  ex   catch (Exception e){                   System.out.println("Error parsing the xml document: " +e);}      }      `}}} end of code `

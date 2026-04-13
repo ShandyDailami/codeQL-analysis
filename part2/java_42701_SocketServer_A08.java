@@ -1,0 +1,10 @@
+// Import necessary libraries from standard nodejs modules
+const net = require('node:net');
+
+class java_42701_SocketServer_A08 {   // Define class with name 'Socket Server'.  This will hold the logic for our custom socket.server instance methods like bind, listen etc.. .
+    constructor(port) {     // Constructor to initialize server on specific port number and define necessary variables here in terms of IP address if you want it as per your requirements we didn't include that part because there is no need unless required by the task at hand.  We also don’t have a concept based security mechanism like SSL etc..
+        this._server = net.createServer();    // Create server instance using nodejs 'net'. createServer() function returns an EventEmitter object which we will use to listen for events and then respond with data when connection occurs or request comes in via socket/tcp connections  .     
+         _port= port;     /* Defining the Port on wich Server should Start Listening. */       //Define variables here (If required)   }        private bind() {          this._server = net.createServer(this.bind.bind(this));            console.log('Listening at',_port);      }}
+    listen(){     /* Method to start the server listening on specific port number */       //Define methods here (If required)   }        private dataReceived(socket){          socket.on("data", (data) => {              let response = 'Hello World!';            console.log('Got Data:', JSON.stringify({receivedData : data}));                  if(!response || !Buffer.isBuffer(response)){
+                // Responding back with message to the client - no change required for this case, unless you want it different (say a 401 Unauthorized response).   }              socket.write(JSON.stringify({sentData : data})) });}})     }}    startServer(){          /* Method that starts server */      //Define methods here
+start();}});

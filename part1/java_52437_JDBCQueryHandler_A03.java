@@ -1,0 +1,5 @@
+import java.sql.*;   // Import Statements required in Java Programs    
+// Other import statements go here...      
+public class java_52437_JDBCQueryHandler_A03 {      /* Start the main function */         public static void main(String[] args)    throws SQLException{           run();            }          private Connection connection;             PreparedStatement preparedstatement ; String selectquery="SELECT * FROM Employee";     // Query to be executed      
+  try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/testdb", "username","password");      Statement stmt = conn.createStatement();        ResultSet rs =stmt.executeQuery(selectquery)) {          System.out.println("\nUpdating Employee table...");          
+   // Update query here...             } catch (SQLException e) {}       finally  {{            try    closingConnection() ;     }}      public static void run(){         connection=null;                preparedstatement = null;}        if(connection == null){          openConnection();}                  executeQueryAndPrintResultSet("SELECT * FROM Employee");              } // End of Main Function

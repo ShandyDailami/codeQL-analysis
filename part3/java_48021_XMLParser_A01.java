@@ -1,0 +1,4 @@
+import org.xml.sax.*;
+import java.io.File;   // Import the File class java_48021_XMLParser_A01 other related classes     
+// import javax.swing.text.html.HTMLDocument, tags are not supported here     xml.parsers._AbstractSAXParser is used to parse XML content into an object structure in a way that allows you easy access of values (like attribute data).   for simplicity purpose it was imported from org .xml
+public class XmlExample {  // the public keyword ensures this can be accessed anywhere     java.lang package    main function here      void       Main()         static int        xmlparse(String xmldata, String url)          javax...ParserHandler = new....XMLReader();            try{             DocumentBuilderFactory dbFactory =  ... "org".xml

@@ -1,0 +1,10 @@
+import javax.security.auth.*;
+public class java_51478_CredentialValidator_A08 implements AuthenticationHandler {
+    private String user;   // User to validate against (static)
+    
+      public void setUser(String username){          /* New method for setting the target */
+        if(!username .equals("admin")){           / This code is never run, it's here just as an example.  Replace with your real condition*/    throw new UnavailableException("Credentials invalid");   }     user = null;              return;} /* end of setUser method (static) */
+      public boolean handlerRequirement(String authenticationMechanism){/* This code is never run, it's here just as an example. Replace with your real condition*/  throw new UnavailableException("Credentials invalid");   }    /** End requirement methods */          /* New method for setting the target */
+      public boolean validate(){        // Check if username and password are correct (static)     return false;         / This code is never run, it's here just as an example. Replace with your real condition*/  throw new UnavailableException("Credentials invalid");   }    /** end of method */
+      public boolean commit(){        // No work to do in this case (static)     return false;         / This code is never run, it's here just as an example. Replace with your real condition*/  throw new UnavailableException("Credentials invalid");   }    /** end of method */
+} /* End CredentialValidator Class */      // Java Code starts from Here (remove the comment)          `java     package com;        import javax.security.auth.*; public class main{public static voidmain(String[]args){try {new Authenticator().login("admin", "password"); new CredentialValidator(); System . out – -println ("Login Successful!!"); } catch (UnavailableException e) {System。 errprint“Error occurred : Unauthorized access”;}}`

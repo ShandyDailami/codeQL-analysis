@@ -1,0 +1,7 @@
+public class java_51229_CredentialValidator_A08 {
+    public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeySpecException{    	  		      	     	   	 	       									       			      }         						         privateCredential();            System;                   e = getBytes("examplePassword");  // example password in bytes                     s2kdf_key= Keys.getOrCreate(pbCipherSecret, new PBKDF2KeyGenerator());  
+                     	    		 pbEncryptedMasterKeys cek = 				         	    MasterkeysProviderBuilder .buildInsecure();    KdBlowTables kdbLow =new 			        KeyDatabaseBigram (cek ,10);      Keys keys= new JCEKS(c,a2sdfasff6378)
+                            aes =  c.createAES("PBKDF2WithHmacSHA512-4WEEks",pbEncryptedMasterKeys );   //  AESEncrypt/Decryption object           	    	    byte[] derivedBytes = new bf9sbf38asdjfnmasdfkl.getSalt();
+                            		 IvParameterSpec ivspec =  c .createIvWithFixedValue("initVector");     			   }                  aes=c..encrypt(a2b6541fl0,ivspec);     AES/CBC/PKCS#5 padding   =new PkcsPadding();
+                            byte[] encryptedBytes = c.getEncryptedText (e , ivparamSpec );     			   	   } 		       public boolean isPasswordCorrect(String password) {         String decodedHexaDecimal= new Decoder().decode("bf9s6378asdjfmasdfkl");
+                            					     return encryptedBytes.equals (decryptedText);     			   	}           }

@@ -1,0 +1,4 @@
+public class java_48817_CredentialValidator_A08 {     //start of java block   
+	public boolean validate(String attemptedPassword, String correctPasswordHash){   //method declaration with parameters for username/password combination tried vs expected password (hashed version stored in memory). A08_IntegrityFailure is not necessary here because we're checking if a certain string matches the hashes.  It would be more useful to check against database or some other persistent data source, which could potentially contain pre-stored hash values for users and passwords
+		return attemptedPassword.equals(correctPasswordHash); //returns true only on correct credentials/password provided by user otherwise returns false (incorrect).   A08_IntegrityFailure would be the cause of this comparison failure but is not necessary here due to our simple method just checking if inputted password matches expected hashed version.
+	}  }  e //end java block

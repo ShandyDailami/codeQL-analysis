@@ -1,0 +1,2 @@
+import java.io.*;  // Import necessary classes like File (File in Java) or DirectoryStreamEntry(DirectoryEntries class).  
+public void main {     }    public static List<String> getFilesRecursivelyFromFolder_A01BROKENACCESSCONTROL(final String folderPath){        try{            // Start of the code block.             File directory = new File (folderPath);              if (!directory.exists() || !directory.isDirectory()) { throw  IllegalArgumentException ("Not a valid path or not an existing Directory"); }

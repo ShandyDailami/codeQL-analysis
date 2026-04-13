@@ -1,0 +1,9 @@
+(code snippet)   
+import java.security.*;
+/* Import required libraries */    
+XMLParser parser = XML.parser(); /* Initialize new Xml Parser Object */       
+SecurityManager smgr=new SecurityManager() {             public boolean checkRead(Permission perm, ObservedObject obj){return true;}              protected  void checkConnect(String host,int port) throws IllegalArgumentException{System.out.println("Calling SM's Check Connect...");}};   /* Initialize new security manager */
+SecurityManager smgr1=new SecurityManager() { public boolean checkWriteAccess (Member member ,Object obj){return true;} protected void  enforce(String operation, Object name)throws AccessControlException{} } ;/* initialize the second SM and set up methods that allow or disallow access.*/     /* Set security manager for xml parser */     
+SecurityManager smgr2=new SecurityManager() {public boolean checkMember(Principal member ,Object obj){return true;} protected void  enforce (String operation, Member memb) throws AccessControlException {} } ;/* initialize the third SM and set up methods that allow or disallow access.*/   /* Set security manager for xml parser */
+parser .setSecurityManager (smgr);        ParserConfig conf = new ParserConfig("org.xmlpull.v1.parser", smgr2) { public void verify(String filename,InputStream inStream ) throws IOException{System.out.println ("Calling SM's Verify..." );}}; /* Create a parser configuration with the SecurityManager */
+/* Load XML data to be parsed from inputstream*/  InputStream is= new FileInputStream("/path/to/xmlfile");      Object obj =parser .parse(is, conf , "org.expat.ns.itemNamespaces",null);    /* Parse xml and provide configuration details as well */

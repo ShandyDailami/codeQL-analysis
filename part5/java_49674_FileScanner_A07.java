@@ -1,0 +1,6 @@
+import java.nio.*;
+import java.security.MessageDigest;   // for hashing contents of files 
+...                   // other necessary imports, etc..       
+public class java_49674_FileScanner_A07 {     ... }       .// the main authorization check function      ..             ....          }, FileVisitResult -> {}            e) throws IOException         => {},    try (Stream<Path> list = Files.newDirectoryStream(directory))  // for processing each file in directory
+        where we walk through all files and directories one by on ..., if the contents of a file are A07_AuthFailure related then print out or hash it else just skip them */   .....          } catch (InvalidPathException e1) {e.printStackTrace();}  // error handling for invalid paths
+    }}catch(NoSuchAlgorithmException | NoSuchProviderException n){n.getMessage()};     ...      });        if you want to add more functionality like hash the file contents etc, replace '...' with your own logic inside try-catch block } catch (IOException e) {e..}  // general exception handling for IOException

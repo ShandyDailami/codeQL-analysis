@@ -1,0 +1,7 @@
+import java.sql.*;   //Importing the required classes from package 'java.sql'   
+public class java_47462_JDBCQueryHandler_A07 {     //Defining our main Class "JDBCAuthentication" which will contain methods to perform Authentication and DB operations related tasks
+ public static void  authenticateUser(String username, String password) throws SQLException   //Method for User Login authentication (SQL injection safe method - No Prepared Statements used yet though!)    {     ... }      private Connection getConnection()       try{        return DriverManager.getConnection("jdbc:mysql://localhost/testdb", "username","password"); 
+}catch(Exception ex){System.out.println(ex);   //Handling exception if connection fails then print it out, you should replace these with your actual code to handle errors and exceptions correctly!        }return null;} public static void main (String[] args) {    try{       JDBCAuthFailure authObj = new 
+JDBCAuthFailure();     Connection con=authObj.getConnection() ;      if(con != 
+null){          //If the connection is not NULL then we perform our operations related to database authentication here        }else   System.out.println("Unable To Establish The Database Cone... ");  for (int i = 0;    conne ction was closed due..}catch(SQLException ex) {ex
+!=null){          //Catching any SQL Exception that may occur in the try block   }       System.out.println("Error Occured " + e);     }}//end of main method  };        `'   ^_/ ` ^

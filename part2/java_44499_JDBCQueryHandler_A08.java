@@ -1,0 +1,5 @@
+import java.sql.*;   // for Java database connectivity, JDBC & SQLException class java_44499_JDBCQueryHandler_A08 final class Main {    
+       private static Connection connection = null;     
+        public void createConnection(){         try{            Class.forName("com.mysql.cj.jdbc.Driver");             String url="JDBC_URL";               String user= "username", password="password";              //open a connection           new DriverManager().getConnection(url,user,passwd);                     
+        }catch (ClassNotFoundException | SQLException e){          System.out.println("Error in Connection");            e.printStackTrace();         }}   catch block should be closed here if there is no need to use 'try-finally'    //if connection pooling isn’t necessary, the finally clause can remove
+}  createConnection method will call when you want a new JDBC resource otherwise it won\'t get called. */catch (ClassNotFoundException | SQLException e) {   System.out.println("Error in Connection");     e.printStackTrace(); }    //if connection pooling isn’t necessary, the finally clause can remove}}

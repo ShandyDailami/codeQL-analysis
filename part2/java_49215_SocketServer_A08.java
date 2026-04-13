@@ -1,0 +1,10 @@
+import java.io.*;
+import java.net.*;
+
+public class java_49215_SocketServer_A08 {
+    public static void main(String[] args) throws Exception{    	  		         	 			          	      //create a server socket at port number and wait for client connection request      	        }      private ServerSocket ss;  Socket sock = null, newSock=null ; int count = 0; boolean errorFlag  = false
+        public java_49215_SocketServer_A08() { try {ss=  new   ServerSocket(81);} catch (IOException e) {}     //create a server socket at port number and wait for client connection request      	        } 	   	            System.out .println ("Server is listening on localhost: " + ss.getLocalPort()+"..." );
+        public void run(){    try {sock =   ss.accept();                    PrintWriter out  = newPrintWriter( sock .getOutputStream ());              BufferedReader in=newBufferedReader ​         ​​           ((InputStreamReader) socket_. getInputStream());     System..println("Just connected to: " +                 
+    }      //create buffer for incoming client requests and handle the communication between server &client.            while (!errorFlag){ try {out .print ("\n HTTP/1.1 200 OK \n\n"+in   ) ; out..flush (); System ..println("Just connected to: " + sock_.getInetAddress().toString() );} catch(IOException e)         
+    }catch...//do not forget the closing brackets and brace in your try-catches        //close all connection.  if this is a new socket, close it; otherwise just inform user of an exception         println("Exception caught!!!" +   Exception);      sock .close();}           
+public static void main(String args[]){new SecureHTTPServer().run() ; }       //call the run method for server starting.  This is to make sure it can be called from a standalone application as well          println("Running... ");         try { newSecureHttpsServer();} catch (IOException e) {}//start your own secureHTTPServer, with port number passed in constructor       //do not forget the brackets around catching exceptions           if (!errorFlag){println ("Exception caught!!!" +   Exception);sock .close()}}}

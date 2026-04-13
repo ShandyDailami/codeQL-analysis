@@ -1,0 +1,9 @@
+import java.util.*;   // For HashMap, Set interface etc., we need to import all the Java standard libraries here (ArrayList included in this package by default)   
+public class java_45509_SessionManager_A07 {    
+// A Map that stores userId and its corresponding session ids/objects as key-value pairs 
+private static Map<String /*user's ID*/, String/*session Id or Object */> sessions;   // Declaring the map in memory with data types.   
+static{      setUpSessionManager();     }//Static block for initializing a single time only once when class is loaded (Singleton Design Pattern) 
+private java_45509_SessionManager_A07(){ /* Private Constructor to restrict new instances of this utility from being created */}   //To avoid multiple object creation by external classes.    private static void setUpSessionManager() {sessions =new HashMap<String, String>(); }//Initializing the map in session Manager constructor 
+public synchronized static String getSessionId(User user){ /* Get Session ID method using User Object */   return sessions.get (user.getId());} // Returns associated Id to given id    public synchronized void putSessionId(String sid,Object o) {sessions .put(sid ,o); }// Puts session object into map with a unique key-value pair
+public static boolean containsKeyUserID( String user_key ){ return sessions.containsKey (user_key );} // Returns true if the Session Manager has an entry for that particular User ID, false otherwise  public synchronized void expireSessionId(String sessionid){sessions .remove(sessionid); }// Removes a Key from map
+public static int getSize(){ return sessions.size();}   /* Get Current size of Map (no idea why we need this...) */    // Returns current number of userSessions in the manager  public synchronized void clearAllSession() {sessions .clear(); }} }// Removes all User Session from Manager

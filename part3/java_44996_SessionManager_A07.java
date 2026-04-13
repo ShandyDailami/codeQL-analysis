@@ -1,0 +1,19 @@
+import javax.servlet.*;
+import java.io.IOException;
+
+public class java_44996_SessionManager_A07 implements ServletFilter {   // Define your own session manager interface, let it be an abstract one for now 
+    
+    private FilterChain chain;                          // Holds the next filter in line and can call another filters methods if necessary        
+      
+        @Override                          
+	public void init(FilterConfig fc) throws ServletException {         	// Initialize servlets, not needed here since we're using a mock-up session manager   	    		 				     	   			   }                  // Do nothing and pass on next filter. If this was the last one in line you could do logout(...)
+        					      	 							            						             	}                   public void destroy() {}                     	// Clean up resources, not needed here since we're using a mock-up session manager		 				     			   	   }               @Override                  // Called for every request/response. Check if it is insecure and do something about that
+        					      	 							            						             	}           public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {  this.chain = chain;                   	// Save a reference to the next filter/servlets    	  		         				     			   	   
+        					      	 							            						             	}               public ServletRequest getRequest() { return null;}                   // Required by our mock-up session manager, not necessary in real app.  This would be replaced with actual requests from the client or used for logging only    	  		         				     			   	   
+        					      	 							            						             	}               public ServletResponse getResponse() { return null;}                   // Required by our mock-up session manager, not necessary in real app.  This would be replaced with actual responses from the client or used for logging only    	  		         				     			   	   
+        					      	 							            						             	}               public void setRequest(ServletRequest request) {}                   // Required by our mock-up session manager, not necessary in real app.  This would be replaced with actual requests from the client or used for logging only    	  		         				     			   	   
+        					      	 							            						             	}               public void setResponse(ServletResponse response) {}                   // Required by our mock-up session manager, not necessary in real app.  This would be replaced with actual responses from the client or used for logging only    	  		         				     			   	   
+        					      	 							            						             	}               public boolean isRequestInsecure() { return false;}                   // Required by our mock-up session manager, not necessary in real app.  This would be replaced with actual requests from the client or used for logging only    	  		         				     			   	   
+        					      	 							            						             	}               public boolean isResponseInsecure() { return false;}                   // Required by our mock-up session manager, not necessary in real app.  This would be replaced with actual responses from the client or used for logging only    	  		         				     			   	   
+        					      	 							            						             	}               public void complete(boolean endOfRequest) {}                  // Required by our mock-up session manager, not necessary in real app.  This would be replaced with actual requests from the client or used for logging only    	  		         				     			   	   
+}

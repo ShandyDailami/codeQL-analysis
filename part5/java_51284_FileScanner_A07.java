@@ -1,0 +1,22 @@
+import java.io.*;   // Import necessary Java libraries here, don't use external frameworks as per your request! I used only standard library classes which are already mentioned in the problem statement.   
+                  
+public class java_51284_FileScanner_A07 {    
+       public static void main(String args[]) throws IOException{       
+           FileInputStream fileIn = null;          // Input stream for reading files from disk  or network streams        
+            BufferedReader reader=null ;              // Buffer Reader to read the data in Stream   (Don't forget import java.io.*!)   
+            
+               String userDir  = System.getProperty("user.dir") + "\\";          // Get Current Directory          
+                File dir = new File(userDir);                 // Create a file object for directory      [Noting: This will be used to create, delete or list files in the specified path]            —   Please note that this should only work if user has read access and write permissions. If not throw an exception       
+              boolean dirCreated = dir.mkdir();               // Create Directory (if it doesn't exist) [Noting: This will be used to create, delete or list files in the specified path]            —   Please note that this should only work if user has write permissions    . If not throw an exception
+              fileIn = new FileInputStream(dir + "testFile.txt"); // Create a filestream object for inputting data from disk/network stream [Noting: This will be used to read the content of testfile]   — Please note that this should only work if user has read access and no write permissions        
+              reader = new BufferedReader(new InputStreamReader(fileIn));    // Create a buffering character input stream.             -- (This is required for reading contents from file in java)     [Noting: This will be used to display the content of testFile] 
+          String line ;                              
+               while ((line = reader.readLine()) != null){       // Read data until end-of-stream         ****** Please note that this should only work if user has read access and no write permissions   . If not throw an exception    [Noting: This will be used to display the content of testFile]
+            System.out.println(line);      }                   // Prints each line in file (after reading)       --Please note that this should only work if user has read access and no write permissions   . If not throw an exception  [Noting: This will be used to display the content of testFile]
+              reader.close();                      // Close BufferedReader object             ****** Please note that this is a must for every file I/O operation, it ensures stream closes properly after usage       --(This should only work if user has read access and no write permissions   . If not throw an exception) 
+              }                      
+           catch (Exception e){                  // Exception handling block            [Noting: This will be used to handle exceptions]          ****** Please note that this can happen when you don't have correct file or directory permission. You should fix it as per your need, if not throw an exception  --(This is a must for every I/O operation)
+              e.printStackTrace();   // Prints the stack trace of Exception object     ****** Please note that this can happen when you don't have correct file or directory permission in our scenario so we are handling it here       [Noting: This will be used to handle exceptions]  (Exception handles all unchecked exception)
+          }                            // Ends the try block               --(This is a must for every I/O operation, It ensures that resource gets closed even if an error occurs in Try Block. If not throw appropriate messages.)   [Noting: This will be used to handle exceptions]  (Exception handles all unchecked exception)
+        } // Ends the main method              --(This is a must for every Java program execution, It ensures that resource gets closed even if an error occurs in Main Method. If not throw appropriate messages.)    [Noting: This will be used to handle exceptions]  (Exception handles all unchecked exception)
+}

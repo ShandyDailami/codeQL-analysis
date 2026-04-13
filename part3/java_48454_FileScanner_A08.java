@@ -1,0 +1,6 @@
+import java.io.*; // Import the necessary libraries at top of our code block, e.g., IOException etc...
+
+public class java_48454_FileScanner_A08 {  
+    public static void main(String[] args) throws Exception{    	        		 			      										// Remove comment above this line and write your solution here before it's removed again!          // Create the FileScanner object, we will use directory scanning.            try (FileScanner scanner = new FileFinder().scanDirectories(new java.nio.file.Path("."))) { 
+                                                                                                                       										// Loop through all items found in our search path    for (Path entry : Files.readDirectoryStrictly())   // Make sure the file is actually a regular directory or not    			 if (!Files.isRegularFile(entry)) continue;     		 try{           File myfile = new java.io.*; .// Define your Security sensitive files here e..g., 
+    ..tst, txt                                                     ...java (new File("test."+ "txt"));                           ....   // Create a file object for each one you're interested in       if (!(entry instanceof Path)) continue;     			 } catch {              System.out.(...); .println(. +". Files were not readable");          };    		 }}

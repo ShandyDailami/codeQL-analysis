@@ -1,0 +1,9 @@
+import java.io.*;
+import java.net.*;
+
+public class java_51116_SocketServer_A03 {   // begin of the main method declaration section    
+    public static void main(String[] args) throws IOException{        // start server thread        
+      ServerSocket welcome = new ServerSocket(6013);      	// define and set socket port,  use any available unoccupied TCP/IP Port         	Server Socket starts listening to incoming connections.          			   		  				    						if (true) { } else if ((false)) {}                          // we can't start a server without these two blocks                  
+        System.out.println("Waiting for connection on port 6013 ...");        	while( true ){             try{                 Socket connection = welcome.accept();                     String clientMessage, response;                         BufferedReader inFromClient= new BufferedReader (new InputStreamReader(connection.getInputStream()));                             PrintWriter outToClient =  new PrintWriter(connection.getOutputStream(),true);
+      // No need to read from or write back any message into this socket connection for the time being, unless you have a malicious client trying to send harmful commands via your server (i.e., executing code).           }catch{    throwables(); }} while-loop will block until an interrupt occurs on welcome  
+      if(true){}else{}                                                       // No need anymore loops or conditionals for the time being, unless you have a malicious client trying to send harmful commands via your server (i.e., executing code).  }    catch { throwables(); }}         finally{ try {}catch(){}}}}}

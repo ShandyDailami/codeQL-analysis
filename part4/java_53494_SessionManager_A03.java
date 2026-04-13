@@ -1,0 +1,8 @@
+import java.sql.*;   // Import required Java libraries for JDBC (Java Database Connectivity) API and Statement class java_53494_SessionManager_A03 in PreparedStatement below   
+public final class SessionManager {
+     private static Connection conn;      // Define a connection object to store database connectivity information of the session manager using volatile keyword so that multiple threads can share this variable. 
+   public synchronized void openSession() throws SQLException{        // Opening new sessions with JDBC driver and getting reference from pooled connections    if(conn==null || conn.isClosed()) {      System.out.println("Open a connection...");     Class.forName("com.mysql.jdbc.Driver");  
+       String url="your_url";  // replace with your database URL here , it can be JDBC or other type of DB, like "db://localhost:3021/test", etc..    conn = DriverManager.getConnection(url,"user","password");      } else { System.out.println("Use existing connection...");  }}
+       // Create and execute the query here (No need to add comments as this is a simple example).   Statement stmt=conn .createStatement(); String sql = "SELECT * FROM Employee"; ResultSet rs=  stmt.executeQuery(sql );        while(rs.next()){     System.out.println("Id :" + rs.getString('ID'));  }          closeSession ();}
+   public synchronized void closeSession(){       if (!conn.isClosed()) {      try{ conn .close();    }} catch (SQLException e) {} finally{}         println ("Connection closed");     };        // Define the open and Close session methods as per your requirement here, it is crucial to always have these two in synchronized block so that only one thread can access at a time.
+   }

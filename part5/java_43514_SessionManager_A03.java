@@ -1,0 +1,6 @@
+import org.hibernate.cfg.Configuration; // Import Configuration class java_43514_SessionManager_A03 hibernete to provide configurations for session factory 
+   import org.hibernate.SessionFactory;    // Define Session Factory Class    
+public final class SecuritySensitiveOperationsExample {     
+       private static volatile boolean initialized = false;        
+        public synchronized static void init() throws Exception{            if (!initialized){             Synchronized (SecuritySensitiveOperationsExample.class) {                 Configuration configuration= new Configuration();               // Add Hibernate config file .hibernate-config in root of your project                configuration.configure("src/main//resources");                        SessionFactory sessionfactory =              configuration.buildSessionFactory(new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build());             initialized = true;            } 
+        }}   // End init method     public static final SecuritySensitiveOperationsExample instance= newSecurity Sensitive Ops Example();               @Override protected Session openSession() {                 return sessionfactory .openSession ();           }}         `//end of class security sensitive operations example's code.         }}}

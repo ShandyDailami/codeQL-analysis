@@ -1,0 +1,5 @@
+import java.sql.*;   // Import necessary classes for handling SQL related tasks such as connection establishment and statement execution in a JDBC way   
+ 
+public class java_48010_JDBCQueryHandler_A01 {     // Defining the handler's name to be unique, meaningful and descriptive of its functionality/purpose     
+       public Connection establishConnection(String urlStr) throws SQLException{   // Establish connection with database         return DriverManager.getConnection(urlStr);  }    void closeConnentions(){}     private boolean validateUserAndReturnStatus(){return false;}// Returning a meaningful result based on user validation}
+        public ResultSet executeQueryHandler (String query) throws SQLException {   // Execute the Query Handler to fetch data from database and return it in form of `Resultset`.          PreparedStatement pstmt=null;       try{pstmt = connnection().prepareStatement(query);   	pstmt.executeUpdate();}catch  (SQLExeception e){System,outprintln("Error executing the query"+ee)}finally {if(pstmnt !=  null)   pstmt .close()};return rs;}}

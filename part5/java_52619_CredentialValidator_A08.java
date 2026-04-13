@@ -1,0 +1,8 @@
+import javax.crypto.*;   // For implementing cryptographic algorithms and interfaces like SecretKeyFactory, Cipher etc..   
+import java.nio.charset.StandardCharsets;     //For Standard Characterset for decoding the passwords before comparison process begins     
+import java.security.spec.InvalidKeySpecException;  // Exception handling while getting invalid key specification from secretkeyfactory object  
+import javax.crypto.spec.PBEKeySpec;    // For generating Secret Key using PBKDF2 algorithm    
+import sun.misc.*;        //For Base64Decoder, IdiomaticBase64 etc.. 
+//... and the rest of required imports like CipherOutputStream .   (Only if you are going to encrypt/decrypt password)    ...           "..." is for ellipsis so that it will not break your code. If there're more lines, delete this part or just add them in one line as above
+     // Importing classes from sun.* packages only required ones e.g., Base64Decoder and IdiomaticBase64  (for encrypt/decryption of passwords).       "..." is for ellipsis so that it will not break your code..      In case if you're using other standard libraries, add them here as per the library requirement    
+//...   Here we only have classes and methods required. Your implementation would require more complexity like database connectivity etc    but this should give a general idea about how to implement CredentialValidator in vanilla java by comparing hashed passwords with user input via SecretKeyFactory, PBEKeySpec based encryption algorithms using standard libraries or no external frameworks

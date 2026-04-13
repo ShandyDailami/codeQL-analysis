@@ -1,0 +1,15 @@
+import java.io.*; // Import File and IOException class java_49296_FileScanner_A01 handle errors, not realoadable classes (IOException extends Exception)  
+    
+public final class Main {     
+    private static void listFilesRecursively(File dir) throws IOException{      
+        if (!dir.exists()) throw new IllegalArgumentException("Given directory doesnt exist.");  // Checking the given path is valid or not        
+           File[] files = null;  
+          try (Stream<File> stream =  Files.newDirectoryStream(Paths.get((String) dir))) {     /* Reading all file names from a folder */   
+              if(!Files::exists.test()) throw new IOException("Given directory doesn't exist");  // Checking the given path is valid or not      
+               files = stream .toArray();  
+          } catch (SecurityException se){ System.err.println(se); return; };      /* Security exception can occur when trying to read a file system for some reason */     if (!dir.canRead()) throw new IllegalArgumentException("Given directory is not Readable");  // Checking the given path permission  
+           BufferedReader reader = null ;    try {reader=new BufferedReader(new FileReader((String) dir));} catch (Exception e){System.err.println(); return;}     while (!Files::exists.test()) throw new IOException("Given directory doesn't exist");  // Checking the given path is valid or not  
+           try {for (File file : files != null ? Files:files)    if(file!==null &&(!isDirectory || false)) /* If it isn’t a Directory then List It */     println("List contents of " + dir.getAbsolutePath());         listFilesRecursively ((dir1)!);   // Recurse on all files and subdirectories 
+               } catch (Exception e){ System.err .println ("Error: %s".formatted(e)); return; };    /* Error Occurred */     try {reader = new BufferedReader((new InputStreamReader ((InputStream) dir)));}catch   Exception se{System..outPrintln("%S");return;}  // Try to get input stream from the directory for metadata access, Security exception can occur when trying this operation.
+         } catch (Exception e){ System . out print " Error : %s" ->e; return ; };     /* Generic Exception Occurred */   try {reader=new BufferedReader( new File Reader((String) dir));}catch  IOException se{System..errPrintln("Error:%S");return;} // Try to get input stream from the directory for metadata access, I/O exception can occur when trying this operation.
+    }     begin;   /* Begin */       listFilesRecursively(new File("/home"));           end ;  // End of Program      public static void main (string[] args) { try{listfilesrecusrively((File")throws IOException {};}}catch(){}endtry;}         }); this program only lists the files in a directory and its subdirectories. Do not use any external libraries or frameworks for security-sensitive operations as per A01_BrokenAccessControl policy unless stated otherwise by your instructor/teacher(s).

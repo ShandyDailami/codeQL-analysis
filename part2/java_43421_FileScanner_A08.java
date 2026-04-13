@@ -1,0 +1,10 @@
+import java.io.*; // For InputStreamReader & Buffered Reader and FileInputStream    
+import java.util.*; // for properties file reader -> Properties  
+public class java_43421_FileScanner_A08 {   
+private static final String INTEGRITYCHECK = "C:\\temp\\filecheck";  // specify the location of integrity check script (e.g., C:\ )     
+/**     * Main Method */       public static void main(String[] args)   throws IOException, InterruptedException           {              System.out.println("Integrity Check");         File file = new        java.io.File ("C:\\windows \\explorer.exe ");          long length=file .length();      byte [] b=new  byte[1024];int bytesread;long checksum = 0L, sumbytes= 0L ;   
+try (InputStreamReader isr = new InputStreamReader(     // For reading the file's contents into a buffer.              BufferedReader br    =   new         BufferedReader((new FileReader ("C:\\temp \\filecheck")));      Properties prop=System .getProperties();           String userDir= 
+prop .getProperty("user.dir");    long checksum =    0L;sumbytes = 0 ; bytesread –-;) {              br	.lines().forEach(line ->   // While there are still lines to read...          byte [] buf= line. getBytes();           for (int x= 
+buf .length, sumx  => 1 + sumx )     if ((checksum & bitmask) !== 0L); {            throw new Exception ("Integrity check failed");        }              br	.lines().forEach(line ->   // Continue reading the file's content.          byte [] buf= line .getBytes();           for (int x= 
+buf .length, sumx  => 1 +sumx ) if ((checksum & bitmask) !== 0L); {            throw new Exception ("Integrity check failed");        }              System    .exit(256 );   // Exit program in the end.           }} catch (Exception e){System    
+..println("File integrity error : "+e.getMessage());}}         **End of Main Method**  };      '

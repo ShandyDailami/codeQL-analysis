@@ -1,0 +1,4 @@
+import org.apache.commons.dbcp2.BasicDataSource;     // import this package for DBCP (Database Connection Pool) and Hikari CP as Data source     
+        
+public class java_52883_JDBCQueryHandler_A03 {        public static void main(String[] args){          BasicDataSource dataSource = new BasicDataSource();           try{              String url="jdbc:mysql://localhost/testdb";               // Set Database URL here.            	String userName =  "root";               	// User Name of MySQL database   
+                             	  		 			    	 				     	   					      	"password".getBytes());            dataSource.setDriverClass("com.mysql.jdbc.Driver");           // JDBC Driver Class name and Database URL in the setDataSources method            	        }catch(Exception e){          System.out.println("\nDatabase Connection Failed: " +e);        }}

@@ -1,0 +1,6 @@
+import org.springframework.security.authentication.*;
+import java.util.*;  // for ArrayList and HashMap imports, you can use collections from Java's standard library as well...  
+// or implement your own if needed..
+public class java_51494_CredentialValidator_A03 implements CredentialValidator {    // extends AuthenticationProvider {} because we are extending it not overriding method loadUsersByUsername()  and validate().    
+                                                            public boolean supports(Class<?> authentication) {           return true; }       @Override         protected List < ? super UserDetails > doValidate (Authentication auth ) throws AuthenticationException{    // create a list to hold user details   ArrayList users = new ArrayList<>();      for each loop over data source of the table...
+                            if(user.getPassword().equals("" + password)){     return Collections .singletonList ((UserDetails)  i);}        }          throw new InsufficientAuthenticationException ("Insufficent authentication");    }}

@@ -1,0 +1,11 @@
+import java.util.*;   // for List, ArrayList 
+    import javax.servlet.*;     //for HttpServletRequest object        
+public class java_52550_SessionManager_A08 {      
+          private static final Set<String> BLOCKED_IPS =  new HashSet<>(Arrays.asList("192.0.43.6", "578.43.5"));  /*add more IPs if needed*/   //Adding some test ips for testing
+          private static final List<String> ALLOWED_IPS = new ArrayList<>(Arrays.asList("192.0.43.6", "578.43.5"));  /*add more IPs if needed*/   //Adding some test ips for testing
+    
+          public static void processRequest (HttpServletRequest request) {      private String clientIp;    try{       super(request);         HttpSession session = getSession();        RequestDispatcher rd  = null ; 
+           System.out.println("Insecure Session Manager called..." + "IP Address: ");     //Getting the IP of User's machine where request came from   clientIp=getClientIPAddress(request);    if (isBlockedRequestFromThisDevice(clientIp)) {        rd = getContext().getNamedDispatcher("REQUEST_DISPATCHER");        
+          System.out.println ("The IP Address: " + clientIp+" is blocked!" );           //Checking and Block the Device  if yes then throw exception   } else{    for(int i = 0;i < ALLOWED_IPS .size();++) {      session.setAttribute("allow",ALLOWED_IPS);       System.out.println ("The IP Address: " + clientIp+" is allowed!" );     }} catch (Exception e){         
+           // handle exception   }}}  public static void main(String[] args ){    new InsecureSessionManager().processRequest((HttpServletRequest) request);} private String getClientIPAddress ( HttpServletRequest request ) {      return request.getRemoteAddr(); };     boolean isBlockedRequestFromThisDevice(final String ip){         if(!BLOCKED_IPS .contains(ip)){             BLOCKED_IPS .add(ip );            System.out.println ("The IP Address: " + clientIp+" has been added to blocked list!");    return false; }else{         
+           // The device is already in the blocklist         println("Device Already Blocked");   BLOCKED_IPS .remove(ip );     System.out.println ("The IP Address: " + clientIp+" has been removed from blocked list!");    return true;  }}`

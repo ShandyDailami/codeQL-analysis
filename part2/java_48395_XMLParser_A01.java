@@ -1,0 +1,20 @@
+public class java_48395_XMLParser_A01 {
+    public static void main(String[] args) throws Exception{
+        String xml = "<person><name>John Doe</name><age>25</age><city>New York</city></person>"; // example XML string.  Real-life input would come from a file or network stream in real world scenario, not hardcoded here
+        parseXML(xml);    
+    }  
+      
+      private static void parseXML(String xml) {            
+          try (InputStream is = new ByteArrayInputStream((xml + "\0").getBytes())){                      // Adding an end of string to the input stream, because XMLs are usually closed with a special character.  Real-life scenario would have its own methods for parsing and dealing with streams in this case
+              SAXParserFactory factory = SAXParserFactory.newInstance();                             // Creates new instance/thread that will read from is (instead of reading from filename)         real world example, you'd get an XMLStreamer or use a library such as JDOM instead to handle the parsing and then send it out on its own    
+              SAXParser saxp = factory.newSAXParser(is);                                        // Creates new instance of parser    Real-life scenario would deal with streams differently, for example by setting handlers or writing them in a custom class  
+              
+              MyHandler handler= new MyHandler();                                             //Creating your own Handler and tell SAxP to use this as the content HANDLER  real world case you'd add more methods that will call/manage these events here.         Real-life scenario would be a separate class like in above example
+              saxp.setContentHandler(handler);                                           //Real life is different, for handling event we have to set content Handler and then SAXP parses the document one element at time with our handlers implemented  real world case you'd add methods that handle each kind of XML tag parsed
+              
+              saxp.parse(new InputSource(is));                                                // Parses through all tags (and attributes) in xml file            Real-life scenario would be different, for handling the whole document parsing and then send it out on its own    
+          } catch (ParserConfigurationException | SAXException e){                             // Exception handled             real world case you'd add more exceptions like IOException etc.   For example if we throw exception while reading from file or network stream is will handle in this block            Real-life scenario would be different, for handling errors and logs there are dedicated areas to implement it
+              System.out.println(e);                                                              // Logging error/exception here      real world case you'd log the exceptions using logging libraries like SLF4J etc  Replace with your own logger method if necessary    Real-life scenario would be different, for handling errors and logs there are dedicated areas to implement it
+          }  
+     }                    //End of parseXML function. Again in real life situation you'd call this from main or another class as per requirement             realm world case we use try/catch block with resources here       Real-life scenario would be different, for handling close streams and connections if required  In such cases resource management is done automatically by Java API
+}                         //End of Main Class                real life situation you'd have main function in this class. If not there then create one as per requirement    This case demonstrates how to parse XML with SAX parsing method which does streaming (in a way like reading through the file). It is really simple, but secure and minimalistic approach for BAC breach

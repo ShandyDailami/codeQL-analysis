@@ -1,0 +1,16 @@
+import java.io.*; // Import necessary classes, e.g., FileInputStream etc...
+import static java.nio.file.StandardWatchEventKinds.* ;   
+// We need this kind of import for WatchService to work properly and is from the standard library in Java (not a framework). 
+  
+public class java_52707_FileScanner_A07 {     // Define Class with appropriate name according your project's naming convention. Here I named it as 'A07_AuthFailure'.
+    private WatchService watchableDirectory;      // Declare the variable to store directory for which we will monitor changes – aka "watch service". It can be replaced by any watched file or folder in our case..   (You may replace this line with Paths.get(filePath) if you want).
+    private FileWatcher watcher;     // Declare the variable to handle WatchEvents on directory/folder – aka "watchers". It can be replaced by any object of type 'FileWatchEvent' in our case..   (You may replace this line with new A07_AuthFailureScanner()).
+     
+    public void startMonitoring(String dirPath) throws IOException {     // Define the method to Start Monitorings. This will listen for changes on specified directory/folder – aka "watch service". It can be replaced by any methods that call WatchService's 'pollEvents()'. (You may replace this line with ...).
+        watchableDirectory = FileSystems.getDefault().newWatchService(); // Create the default Java file system Wathc Service to monitor changes in directory/folder – aka "watch service". It can be replaced by any methods that call 'FileSystems' or similar classes from standard library and provide path of watchable directories (like Paths.get(dirPath)).
+        watcher = new FileWatcher();     // Create the object to handle WatchEvents on directory/folder – aka "watchers". It can be replaced by any methods that call 'watch' or similar functions from standard library and provide an implementation of WatchedEvent listener. (You may replace this line with ...).
+          watcher = new FileWatcher() {      // Define the inner class for handling WatchEvents on directory/folder – aka "watchers". It can be replaced by any methods that call 'watch' or similar functions from standard library and provide an implementation of WatchedEvent listener. (You may replace this line with ...).
+          };  
+        Path dir = Files.getFileSystem(dirPath);     // Create the variable to store directory for which we will monitor changes – aka "Watch Service". It can be replaced by any methods that call File's 'walk()', or equivalent function from standard library and provide path of watchable directories (like Path).
+        dir.getFileSystem().register(watchableDirectory, CLEAN_AND_READY);   // Register directory/folder – aka "Watch Service" to WatchService for the Directory Access Permissions changes - this is done by calling 'watcher's watch()'. It can be replaced with ...
+          } catch (InterruptedException | IOException ex) {     // Catch exception and print Stacktrace. This will handle exceptions that may occur during execution of method/code block – aka "exception handling".   Can replace this line by PrintStackTrace or similar methods from standard library to provide error messages when thrown Exception occurs, e.. (You might want if you are not sure what kind exception is going on).

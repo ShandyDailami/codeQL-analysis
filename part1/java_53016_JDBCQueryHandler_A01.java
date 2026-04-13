@@ -1,0 +1,4 @@
+import java.sql.*;  // Import the required Java packages from SQL libraries
+class java_53016_JDBCQueryHandler_A01 {  	// Define class name for this handler object and its methods: initialize, execute queries etc..   
+	Connection conn = null;       		    	  // database connection will be stored here      	   	      Connection con=null;)         
+	public void dbConnect() throws SQLException{             	       				     					  ConnString url =  "jdbc:sqlite:" + DB_NAME;}   int a= 10, b = 20; System.out​ out​​ .println(a+b); return conn}     public ResultSet executeQuery(){        //TODO : implement this method to get the result set from executing your SQL query    Connection con = dbConnect(); if (conn != null){…  }else {System..print("Error");}}

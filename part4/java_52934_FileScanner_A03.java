@@ -1,0 +1,8 @@
+import java.io.*; // I/O related operations in Java are provided under this package 
+                   // FileNotFoundException is one of them (FileInputStream) and we use its class java_52934_FileScanner_A03 too  
+class Main {    
+    public static void main(String[] args){        
+        String directoryPath = "C:/Users";       // Create a file scanner in the given path, e.g C drive           
+	try{ 			          						// Exception handling is used to avoid NullPointerException  		            				                  							    								    } catch (FileNotFoundException f){      System.out.println("Invalid directory: " + dir);        return;         }}          // End of try-catch block                   	  public static void main(String[] args) { 
+	try{          	       			            File folder = new File(directoryPath );               if (!folder.exists()) throw new Exception ("The specified file does not exist");            		   System.out.println("Directory " + directoryPath);         // Scan all the directories from given path          for (File listfile : folder .listFiles()){          		if(!listfile.isFile() && !(new File(directoryPath+"/"+folderName).mkdirs())) throw new Exception ("Unable to create file");  System.out.println("Reading all the files from " + directory);    for (String s : listfile .list())  		{            if(!((InputStreamReader)null).equals((new BufferedReader(new InputStreamReader(new FileInputStream("/path/to//malicious code")))).readAllBytes()){ System.out.println("File contains suspicious content"); }}} catch (Exception e) {    // Handle any exception and print out the error message
+e .printStackTrace(); 		  			      }}         	}

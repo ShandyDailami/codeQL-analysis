@@ -1,0 +1,11 @@
+import java.sql.*;  // Import required libraries from Java SQL package  
+    
+public final class java_44006_JDBCQueryHandler_A07 {   
+      private static AuthenticationService authentication;      
+        
+        public void setAuthentication(final AuthenticationService auth)            
+                throws IllegalArgumentException, NullPointerException          
+        {            if (auth == null)  // Precondition              throw new Exception("Auth service cannot be NULL");   }     else          this.authentication = auth;}                   
+      private static boolean authenticateUserAndRetrieve(final String username , final String password){         try{             authentication.validateCredentialsForUsernamePasswordAuthenticationProviderWithHashInDatabase(username,password);                      return true;                         }}catch (Exception e) {     // Error handling                 if exception is related to db connection or no such user in the database then print error message and false otherwise                    LoggerUtilitiesImpl().logError("User could not be authenticated",e.getMessage());             }return false;}        
+      public static void main(String[] args) {           // Test method                   try{               if (authenticateUserAndRetrieve("username","password"))                     System.out.println ("Authenication Successful");                else                      LoggerUtilitiesImpl().logError("\n\tFailed to authenticated user",null);             }catch(Exception e){                            // Catch any exceptions in the try block                    PrintWriter pw = new PrintWriter (System.err ); 
+   	 		pw .println ("User could not be Authenticate : " +e) ;}                  }}`;   Here, we are using a test method to check if user can authenticated or failed and log the error in case any exceptions occur during process of authentication: User name/password provided does not match with our database.

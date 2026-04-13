@@ -1,0 +1,7 @@
+import java.io.*;  // Import required classes  
+import java.net.*;    // For ServerSocket and Socket class java_52499_SocketServer_A03 class TCPServer {     
+// Constructor to create a server socket at port number p      
+private int port;          private static final String SERVER_SOCKET = "Server";  public BufferedReader in =  new BufferedReader(new InputStreamReader (socket.getInputStream()));    // Server Socket     Reader is used for reading the client input, not writing to server socket   InetAddress ip=InetAddress.getByName("localhost");         
+public static void main(String args[]) throws Exception {  new TCPServer(); }      public boolean StartServer()            { try{Socket connection =new Socket (ip ,port); // Create a communication point to connect with client       while ((data=in.readLine()) !=  null){          System .out .println ("Client :" + data ); 
+    String reply;           if("exit".equals(data)) break ;              BufferedWriter out = new BufferedWriter (new OutputStreamWriter   (connection.getOutputStream()));//Send message to connected client       }catch{System.err... //Closing the connection         socket .close();ConnectionTimeoutException           
+        return false;  }} public static void main(String args[]) { System ..println ("Starting Server.."); new TCPServer (). StartServer () ;     }      private   TCPserver(){}              Socket sock=null,socket = null;}          @Overridepublic finalize(){ socket.close();}

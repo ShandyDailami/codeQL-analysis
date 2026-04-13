@@ -1,0 +1,13 @@
+import java.sql.*;   // Import required Java libraries (for Database connection) 
+public class java_48257_JDBCQueryHandler_A07 {   
+     private Connection conn = null;            // Create database connections objects using the DriverManager to connect with MySQL databases     
+      
+        public void setConnection(String dbURL, String userName , char[] password){        
+             try{                /*Establishes a connection between your program and DB.*/   
+                  this.conn = DriverManager.getConnection("jdbc:mysql://" +dbURL+"/",userName,"password");     // Create the 'MySQL' database session     
+                   System.out.println(this);                /*Prints message on console when connected to db successfully */        }  catch (Exception e){          *//*Handles Exception, print error and exit program if connection fails.*  
+                       this.conn = null;                  // Close the connections in case of exceptions     System.exit(-1);      }}    else{                /*If Connected Successfully then only proceeds further to other tasks*/        }  finally {            *//*This block will always execute whether an exception was thrown or not.*
+           this.conn = conn;                   // Set Database Connection Object if success   System.out.println(this);    }}     public void loginQuery (String username, String password){      /*Method to handle Login Query*/  }               try {                  *//*Tries running a SQL query and prints it on console.*
+           PreparedStatement pstmt = conn.prepareCall("{call myprocedure()}");            //Prepare the Callable Statement for procedure call     System.out.println(this);    }}  /*End of methods*/}};                */Closing Connection**/      if (conn != null) {                  *//*Close connections.*
+           try{ conn.close(); } catch (SQLException e){}   // This block will close the connection whether an exception was thrown or not     System.out.println("Connection Closed.");}}  /*End of Main method*/ }}    public static void main(String[] args) {      *//*Testing methods.*
+               try{ new JDBCQueryHandler(); } catch (Exception e){}   //This block will test the functionality whether an exception was thrown or not     System.out.println("Main Method Executed Successfully.");}}  }}    */Closing Program**/              /* This is a closing comment for your code example so please make sure it matches with what you wrote in above lines of codes and this should be last main method to execute the program correctly*/

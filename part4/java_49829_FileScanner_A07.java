@@ -1,0 +1,9 @@
+import java.io.*;  // Import File I/O classes necessary for file operations: InputStream, OutputStream etc...  
+class java_49829_FileScanner_A07 {   
+     public static void main(String args[]) throws IOException{       
+         String directoryPath = "/path_to_directory";      
+           ScanDirectoryRecursively (new File(directoryPath));      }  // Calling the method to start recursive scan.   },            new HashSet<>());    }}          private static void ScanDirectoryRecursively(File folder) {         try{             for (final File file : folder.listFiles())              if ("".equalsIgnoreCase(file.getName())) continue;               // Eliminate hidden folders and files (. .git/, etc..).          
+                                                                     } catch (Exception e){  System.out.println("An error occurred while scanning the directory: " + folder);      return;}             File[] listFiles = file.listFiles();         for(int i = 0;i < listFiles.length-1 ; ++) {            if(!canAccessFileSecurely((new java.io.File (folder+ "/" + 
+          filename)) )){ System.out.println ("Security failure in " + folder+  "; file: ");} else   println(file);}}           private static boolean canAccessFileSecurely (java . io . File f){         try {     //Check if a certain operation is allowed on the files, such as read or write access for example.
+              new java.io.RandomAccessFile  (. file , "rw").getChannel().tryLock(); return true;   } catch(SecurityException se ){ System . out . println (f +" has security restrictions.");     //Handle exception if a certain operation is not allowed here, such as no read or write access for example.
+          }}

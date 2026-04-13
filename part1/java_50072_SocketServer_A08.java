@@ -1,0 +1,15 @@
+import java.io.*;
+import java.net.*;
+
+public class java_50072_SocketServer_A08 {  
+    public static void main(String[] args) throws Exception{    	
+        ServerSocket server = new ServerSocket();         // Create the socket for listening to client requests		         
+	    Socket connection;                 						// The port number is passed when instantiating a Connection object.			 	 				          
+      while (true){                      							    /*Infinite loop which makes sure that our program will run until manually terminated*/      	            	       
+         try{                                                            // Try to accept the socket from client  		         					                   	   
+            connection = server.accept();             	// Accept a request and listen for data coming in on this port              			     	 				          	     								   							     }  catch (IOException e) { /* If something goes wrong with communication, handle it here */      	            	        break; }} // Close the resources if an exception is thrown.
+         PrintWriter out = new PrintWriter(connection.getOutputStream(), true);  	// Get a stream to write data from client		         			     				 	   					   	 								     } catch (IOException e) { /* If something goes wrong with communication, handle it here */}                                                                                                                  // Close the resources if an exception is thrown                    
+         BufferedReader in = new BufferedReader(new InputStreamReader((connection.getInputStream())));     	            	       			         				 		    } catch (IOException e) { /* If something goes wrong with communication, handle it here */}        }} // Close the resources if an exception is thrown                    
+         PrintWriter outgoing = new PrintWriter(clientSocket.getOutputStream(), true);  					      						     try{     	            	       			         				 		    } catch (IOException e) { /* If something goes wrong with communication, handle it here */}        }} // Close the resources if an exception is thrown                    
+         BufferedReader incomming = new BufferedReader(new InputStreamReader((clientSocket.getInputStream())));  	            	       			         				 		    } catch (IOException e) { /* If something goes wrong with communication, handle it here */}        }} // Close the resources if an exception is thrown                    
+         System.out.println("Client Connected");                  						// Print out message when client connected                     	 								  	                             });    				 			     		    } catch (IOException e) { /* If something goes wrong with communication, handle it here */}                                  }} // Close the resources if an exception is thrown

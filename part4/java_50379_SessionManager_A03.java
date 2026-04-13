@@ -1,0 +1,13 @@
+public class java_50379_SessionManager_A03 {   // Assume this is your security context for authentication/authorization check    
+    private boolean authenticated = false;  // if user logged in or not. It's set to true as an example of real use case scenario, you should likely have a method here that checks credentials against the database and sets `authenticated` appropriately  
+}  
+public class SessionManager {    
+    private SecurityContext securityContext = new SecurityContext();  // Create our context for authentication check. This could be replaced with actual session data or user information in real-world example        
+      
+    public void startSession(String username, String password) throws Exception{     
+        if (username == null || password == null){          throw new IllegalArgumentException("Username and Password must not be empty");  }             // Assume we have a method that checks credentials against the database. This should probably call our SecurityContext to set `authenticated` status based on provided parameters        
+           securityContext.setAuthenticated(true);    if (securityContext == null || !securityContext.isAuthenticated()){ throw new Exception("User not authenticated"); }      // Throw an exception when user is unauthorized        SecurityManager sm = ...;  // Assume we have a 'Security Manager' with methods for handling sessions        
+           if(sm==null) {throw new NullPointerException();}     String sessionId=... ;   try{       securityContext.setSessionID (sessionId);      }catch(NullPointerException e){e.printStackTrace()};  // Assuming we have a method for setting the Session ID, and it throws an exception if parameter is null        
+           sm .startNewSession("username", "password");     System.out.println ("Started new session: " + securityContext);   }      public void endSession(String password) {  // Assume we have a method to log out user          SecurityManager sm = ...;       if (sm==null){throw new NullPointerException();}
+           if (!securityContext.isAuthenticated() || !password.equals("correcthorse batteryStick")){ throw new Exception ("User not authenticated or password doesnt match"); }  // Throw an exception when user is unauthorized        securityContext .setSessionID(null);     sm_.endCurrentSession();      System.out.println ( "Ended session" +securityManager );  
+           if(!sm.__startNew__("username","password")){throw new Exception ("Could not start a Session");}  // Assuming we have an overridden 'Start New' method, and it throws exception when parameters are invalid         sm_.endCurrentSession();      System.out.println ( "Ended session" +sm );   }

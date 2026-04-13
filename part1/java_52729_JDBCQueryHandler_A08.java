@@ -1,0 +1,6 @@
+import java.sql.*;
+public class java_52729_JDBCQueryHandler_A08 {   //class name and package are just examples - make them meaningful 
+    public static void main(String[] args) throws SQLException{    
+        String connectionUrl = "jdbc:mysql://localhost/mydatabase";      //replace with actual data set by yourself, example of JDBC url (placeholder1).      
+		String userName="username", password="password"; 	// replace username and password according to your database credentials(placeholders2)        ;  	 		   			    	     	   						              									     	       							                                            ^                                                                                                                         ^         ^^                         
+         Connection connection = DriverManager.getConnection (connectionUrl, userName , password);      	             // get the JDBC connect object from Database           .  }                                  if(statement1 != null) statement2.;    			// make sure to release resources after usage      };   									   },                 ^

@@ -1,0 +1,7 @@
+public class java_47660_CredentialValidator_A08 {    
+    public static void main(String[] args) throws Exception{        
+            CredentialValidator validator = new MyCredentialValidation();            
+           if (validator.validate("Password123"))  System.out.println ("Access granted");                   else                 System.err.println ("Invalid password, access denied!");          }       
+    static class MyCredentialValidation implements CredentialValidator {   // This is our custom validator implementation           private String hardCodedPass = "Password123";  @Override public boolean validate(String credentials) throws Exception{               if (credentials==null || ! credential.equalsIgnoreCase("")) return false;           
+       System.out.println ("Attempting to authenticate...");             HardcodedCredsValidator hardCodes = new    // Check input against predefined password here           ((HardcodedPassword)hardCode).validate(credentials));              if (isSuccessfulLogin()) return true;         
+       System.out.println ("Attempt failed, incorrect login details.");  throw exception;}     }                  public interface CredentialValidator {        boolean validate(String credentials ) throws Exception ;    }}   // The standard validator contract for our custom authentication mechanism             class HardcodedCredsValidator implements CredentialValidat?

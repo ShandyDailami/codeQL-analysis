@@ -1,0 +1,5 @@
+import java.security.*;   // Import the cryptography tools we'll need    
+public class java_53029_CredentialValidator_A08 {    // Start of our program, define a new Java Class named 'CredentialValidator'.      
+      public static void main(String[] args) throws NoSuchAlgorithmException  {        System.out.println("Input Password for verification: ");         MessageDigest md = MessageDigest.getInstance("SHA-256");     // Create a new instance of the SHA algorithm to use         
+       String inputPassword=new Scanner(System.in).next();      byte[] hashOfinputpassword=  md.digest(inputPassword .getBytes());    }         System.out.println("Verification Password: ");  MessageDigest md =MessageDigest.getInstance ("SHA-256");         
+       String inputPasswordToVerify= new Scanner (System.in).next(); byte[] hashOfInputpasswordtoverify = 	md .digest(inputPasswordToVerify .getBytes());     // Verification step        if (Arrays.equals(hashOfinputpassword,    hashing   function of password to verify))  { System.out

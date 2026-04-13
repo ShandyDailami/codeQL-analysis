@@ -1,0 +1,21 @@
+import javax.net.ssl.*;
+import java.io.*;
+import java.util.stream.Stream;
+
+public class java_52166_SocketServer_A01 {  //e.g., "Socket Server" might be misunderstood as a socket server or just 'server' which is not correct in this context!
+    private final SSLServerSocket sslServerSocket;//SSL/HTTPS communication over TCP port onwards -> only when using HTTPS protocol (A01_BrokenAccessControl) 
+                                             //also note that, if we use 'server' it would not be a server anymore and the task is to accept connections via sockets or ports which are otherwise insecure. We must always ensure secure communication here! Otherwise client-side can become an attack target for man-in-the-middle attacks (A02_BrokenAccessControl). 
+    private SSLContext context;                     //HTTPS requires a cryptographic context to establish the connection between server and clients/clients. This is where we load our certificate -> always use secure methods here! A lot of frameworks do not provide this directly (A03_BrokenAccessControl) 
+    private int clientNo = 1;                        //client number for logging purposes when multiple users connected at the same time and want to identify which one. Can also be used as a user id, but it can't guarantee uniqueness in all cases unless you use some external authentication mechanism (A04_BrokenAccessControl).
+   public java_52166_SocketServer_A01(int port) throws IOException {  //constructor that sets up the server with given secure socket and context. A lot of 'new'-like constructors should be removed here, replace them manually if necessary! This is an example for a constructor insecure as it's not intended to use this class directly (A05_BrokenAccessControl).
+        sslServerSocket = new SSLServerSocket(port);  //creating the server socket with given port. A lot of 'new'-like constructors should be removed here, replace them manually if necessary! This is an example for a constructor insecure as it's not intended to use this class directly (A06_BrokenAccessControl).
+        context = SSLContext.getInstance("SSL");  //get the crypto graph on which our server and clients will work -> all connections are going through ssl here, so always ensure secure communication in these contexts! A lot of frameworks do not provide this directly (A07_BrokenAccessControl).
+        context.init(null , new TrustManager[]{new X509TrustManager()}, null); //always use the correct methods to load certificates and manage trust on clients here, because ssl/tls handshake is required for this setup (A12_BrokenAccessControl).
+    } 
+   public void startServer(Runnable tasks) throws IOException {     //method that will run forever in a new thread to listen at the port and accept connections. A lot of 'new'-like constructors should be removed here, replace them manually if necessary! This is an example for adding threads safely (A08_BrokenAccessControl).
+        while(true){ 
+            SSLSocket client = sslServerSocket.accept(); //listen to the socket at given port and accept a connection -> required in HTTPS protocol here, A lot of 'new'-like constructors should be removed here (A09_BrokenAccessControl). This will block if no connections are made on that side yet...
+            new Handler(client , tasks ).start();  //each client/connection gets a handler and starts handling it. Required in HTTPS protocol for each request, A lot of 'new'-like constructors should be removed here (A10_BrokenAccessControl). This will block if no requests are made on that side yet...
+        }   
+   }  //end startServer method with Runnable tasks. In this case all client/connection handlers run within the same process, which is a good place to put our security checks (A12_BrokenAccessControl). This allows us not only secure communication but also manage users and their requests in an easy way because we are always connected as long as required or until explicitly closed by clients.
+}  //end of SocketServer class with Runnable tasks parameter for handling client/connection handlers (A13_BrokenAccessControl). This allows us not only secure communication but also manage users and their requests in an easy way because we are always connected as long as required or until explicitly closed by clients.

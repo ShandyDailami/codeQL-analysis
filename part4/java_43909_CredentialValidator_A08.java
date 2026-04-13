@@ -1,0 +1,12 @@
+import java.util.*; // Import ArrayList if needed (comment out once done)  
+public class java_43909_CredentialValidator_A08 { 
+    private List<Credentials> credentialsList;// = new ArrayList<>(); Should be filled with real data here, not shown in this code example for simplicity purposes only      
+     public boolean validate(String username, String password){ //username and pass are strings. Returns true if validated correctly otherwise false  
+            /* This is a placeholder list of known user names/passwords  */   
+           Credentials testCreds = new Credentials("test", "password");// Replace with real data here    
+          return (credentialsList.contains(new Credentials(username, password))); // Check if the input credentials are in our list of known good ones   }  /* End placeholder comment */   
+      public class Main {      
+           private static String username;        Private static Scanner scan = new ScannedInput().NextLine()!=null?new SScanne‌.();// Create a user prompt to get input from the users if they wish         // Call your CredentialValidator and obtain credentials    }  /* End placeholder comment */
+       public class Main {      private static String password;        Private Scanner scan = new ScannedInput().NextLine()!=null?new SScanne‌.();// Create a user prompt to get input from the users if they wish         // Call your CredentialValidator and obtain credentials    } /* End placeholder comment */
+}  Here is where you would replace "Credentials" with real data, not shown in this example for simplicity purposes only   Replace password checking inside method as follows:/* Start of Commented out code above the class declaration*/ boolean verifyPassword(String enteredPass){ if (enteredPass.equals("password")){return true; }else { return false;}// Checking whether or not inputted pass is correct/ If yes, then continue otherwise end program */
+    /* End commented section of CredentialValidator Class Definition and the methods inside it*/  }} // Close class definition here   To create a new Java project in Eclipse you can import "File -> New Project" from within your workspace. Rename or select package according to need, then click Finish when done;

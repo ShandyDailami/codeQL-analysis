@@ -1,0 +1,7 @@
+import java.io.*; // Import necessary classes needed in this task such as FileReader, BufferedWriter and PrintStream used for file operations etc..  
+public class java_50975_FileScanner_A01 {   
+      public static void main(String[] args) throws Exception  /* Avoiding IOException since we do not use exception handling */{       
+          String directory = "/path/to/yourdirectory"; // Update this with the actual path to your directories.           FileReader, BufferedWriter and PrintStream used for file operations etc..  
+             try (FileScanner scanner =  new  javafx.scene.control.filescanner.Filescanned(new FilenameFilter() {            public boolean accept(Dir dir, String name)          @Override      /* Returning true so that the directory is included in list and false means it's excluded */         return (name.endsWith(".txt")) ;}); ) 
+           //Call to init method of file scanner will be used here as per requirement             }) {            case -1: throw new Exception("Unable to initialize FileScan"); default : /* Calling the next() and getPathName methods for each path returned */         if(scanner.next())    System .out 
+           .println (directory + scanner.getPathname()); } catch   // Catch block is added so that an exception can be caught during execution of this code                 e) { throw new Exception("Error occurred while processing the files",e); }}               if(!scanner.find())        System..println( "No text file found in :" + directory );}}

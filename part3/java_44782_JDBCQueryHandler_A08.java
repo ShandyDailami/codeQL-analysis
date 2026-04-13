@@ -1,0 +1,11 @@
+import java.sql.*;   // Import the necessary classes from database package   
+public class java_44782_JDBCQueryHandler_A08 {     // Define a public static main method, it's an entry point to any application
+      private Connection conn = null;         
+       String dbURL="jdbc:mysql://localhost/test";        
+        String username= "root";  
+        String password=  ""; 
+    /*Establish the connection with database*/     public java_44782_JDBCQueryHandler_A08() {             try{              this.conn =  DriverManager.getConnection(dbURL,username,password);          }catch (SQLException e){         // Catch exception in case of any error   System.out.println("Error Occured: "+e)}; 
+    }            public void executeQuery(){     try{              Statement stmt = conn.createStatement();             String sql="SELECT * FROM Employee";                              ResultSet rs =  stmt.executeQuery(sql);                             while (rs.next()){                               System.out.println("ID: " + rs.getString('id'));                         }                       }}        
+public static void main(String[] args) {      // Main method, starting point for any application   JDBCQueryHandler jdbc = new JDBCQueryHandler();        try{                                          jdbc .executeQuery ();                                                               System.out.println("Execution successful");                          }catch (SQLException e){                                         System.err.print ("Error Occured: " +e)};
+    }}   // Close the connection in finally block to ensure that any resources are properly closed if there is an error during execution     try { conn.close();} catch(SQLException ex) {}       }});  });                  Connection close exception.");}}                System.out.println("Closing connections");               finish: return;
+    }} // Close the connection in finally block to ensure that any resources are properly closed if there is an error during execution     try { conn .close();} catch(SQLException ex){ }       end of program});  });      Connection close exception.");}}                System.out.println("Closing connections");}}}

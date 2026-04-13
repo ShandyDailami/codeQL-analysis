@@ -1,0 +1,6 @@
+import java.security.*;   // Import Java Security features   
+import javax.crypto.*;   // For the Cipher and Mac classes which perform encryption     operations using symmetric keys     
+public class java_48662_CredentialValidator_A07 {      
+private static final String ALGORITHM = "AES";        private Key key;  public boolean validate(String passwordAttempt, byte[] salt) throws NoSuchAlgorithmException         // Constructs a new Cipher object with the given secret key and   cipher algorithm     (in this case AES).         
+public java_48662_CredentialValidator_A07() {                  try{this.key = KeyGenerator.getInstance("AES").generateKey();}catch(java.security.NoSuchAlgorithmException e){e.printStackTrace();}}    public byte[] getSalt(){return Cipher.getRandomIV(); }     
+public boolean validatePassword (String passwordAttempt, String storedHashedPassword ,byte [] salt) throws NoSuchPaddingException, NoSuchAlgorithmException {          // This method verifies whether the supplied attempts match with our hashed     data       byte[] decrypted=cipher.doFinal(encodedBytes); return    Arrays.equals (decrypted   passwordAttempt bytes_of  storedHashedPassword );}}

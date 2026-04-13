@@ -1,0 +1,8 @@
+import java.sql.*;   // Import required Java packages/libraries   
+public class java_46458_JDBCQueryHandler_A03 {    
+      public Connection connectToDatabase() throws ClassNotFoundException, SQLException{      
+        String url = "jdbc:mysql://localhost:3306/mydatabase"; 
+        String username="root", password="password12345!";   // Hardcoded for simplicity's sake. Realistically you should not store this in your code, use environment variables or some form of secure storage      
+           Class.forName("com.mysql.jdbc.Driver");    
+        return DriverManager.getConnection(url, username, password);   // Return Connection object      }    void main (String args[] )throws Exception{  try {         connectToDatabase();          System.out.println ("Connected successfully!");       }} catch (Exception e) {            e . printStackTrace ( );}          
+     public ResultSet executeQuery(Connection connection, String queryStr){        // Use prepared statements for security sensitive operations      if (connection == null ) return ull;         PreparedStatement stmt =   connection.prepareStatement(queryStr);    try{             ResultSet rs=stmt .executeQuery();          while ((rs !=  null) && (rs.next())) {               // Printing each row of the query result       System.out.print ("ID : " + rs.getString("id"));      }     return ull;} catch(Exception e){             e   printStackTrace() ;}         try{           closeConnection();        }}

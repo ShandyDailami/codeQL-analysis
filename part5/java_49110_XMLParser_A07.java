@@ -1,0 +1,8 @@
+import javax.xml.parsers.*;  // Standard XML parser interface only, no external framework required (except String)  
+    import org.w3c.dom.*;     // DOM standard library which can be used with any xml data source and not an XmlPullParser but it'll do for a simple task in this example due to its simplicity 
+import java.io.*;              
+public class java_49110_XMLParser_A07 {  
+    public static void main(String[] args) throws ParserConfigurationException, IOException{       // Main method that will contain our XML parser    
+        parseXml("authFailuresResponse_sample.xml");      }                             // Pass the xml file path to this function 
+                                                              private java_49110_XMLParser_A07() {}   public static void checkAuthServer(String serverURL) {    XmlParserFactory factory = null;                   if (factory == null){synchronized ((XmlParserFactory)factory)     try{       XMLReader reader=null;}catch}{           for (;;)      }
+                                                               catch{}            private boolean isValidResponseBody() throws IOException  // Security-sensitive operation related to A07_AuthFailure, we'll check if the response body contains a specific keyword or not.        {...}   public static void main(String[] args)throws ParserConfigurationException{parseXml("authFailuresSample2.xml");}}

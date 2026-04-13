@@ -1,0 +1,13 @@
+import java.io.*;
+import java.net.*;
+
+public class java_43998_SocketServer_A08 {  
+    public static void main(String[] args) throws Exception{    	
+            ServerSocket server = new ServerSocket(1234);//create a server socket and bind it to port 80       		      				     			         	  }                         					 //accept connection request from client side. It returns Socket object that is connected with the given inputstream    if (connection != null) {
+  		//write message on this stream -> outputStream = new PrintWriter(socket .getOutputStream(), true);  server accepts a TCP connections and it's socket will be created to handle communication protocol between client & Server.										socketAccepted(socket ); }    if (connection != null) {  
+       // read data from inputstream -> BufferedReader in = new Buffered Reader is used for reading the received text message back on server side			         		     String str;  while ((str  = in .readLine())!=null ){ System.out.println("Received Client :" +  
+       		//received string from client through socket connection, print out to console and then close this connections (not really needed here)										} } serverSocket is closed once all clients disconnects 		      			    catch(IOException e){e .printStackTrace();}} public void SocketAccepted(Socket socket ){ try {
+        // write message on the outputstream -> PrintWriter out = new printer writer used for sending text from Server to Client.  									     	 BufferedReader in  =new  Buffered Reader (InputStreamReader is read client's input, here we assume that all data received are strings only and not binary format .
+        //for this example send back the same string as receive message then close connection } catch(IOException e){e.printStackTrace();}}  						} public class SocketServer {  static int count = 0;//add unique id to socket accept , make it work with multiple clients, because they are not only one client connected at a time
+        //this will also serve as an identifier for the particular thread (one per connection) if you want. this is optional and can be removed }}}  in java we do use threads but here our case does require us to handle each new socket request individually, so using multi-threading won’t work out well with a single server instance which will not scale very much as more clients connect or disconnects (it would start slow).
+        //We are going through network programming in detail. So it'll be great if you provide the link of this article: https://www.baeldung.com/a-guide-to-java-sockets for better understanding and implementation details – Maximilian Meissner (Creator Of Java’tutorials)

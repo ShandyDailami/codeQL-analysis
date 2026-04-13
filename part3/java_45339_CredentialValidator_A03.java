@@ -1,0 +1,15 @@
+import java.security.*;
+// Importing the MessageDigest class java_45339_CredentialValidator_A03 Standard Java library which is used for hashing of a string in order generate unique tokens during registration process i.e, passwords should not be stored or retrieved after authentication due to security reasons (A03_Injection) 
+public class CustomCredentialValidator implements CredentialValidator {  
+    private MessageDigest md; // Instance for hashing a string using SHA-256 algorithm    
+      
+    public String generateUniqueHash(String passwordToHash){     
+        try{            
+            byte[] bytesOfMessage = passwordToHash.getBytes("UTF-8"); 
+              this .md =  MessageDigest.getInstance ("SHA-256");          //Creating instance of the hashing algorithm, SHA - Secure Hash Algorithm  
+           return new String(this. md.digest (bytesOfMessage));    }      catch (NoSuchAlgorithmException e){            System .out .println("Error in generating unique hash : " +e);         throw  new RuntimeException();}       finally {               this .md = null;   }} // Returning the hashed password
+     public boolean validate(String enteredPassword, String storedHash)    throws NoSuchAlgorithmException{      try {          MessageDigest md=MessageDigest.getInstance("SHA-256");  byte [] hashInBytes=md.digest(enteredPassword.getBytes("UTF-8"));     String generatedpassword  = new BigInteger(1,hashInBytes).toString(16);    return (generatedpassword .equals( storedHash));}      catch (NoSuchAlgorithmException e){ System.out.println ("Error in password validation : " +e ); throw  new RuntimeException(); }       finally { md=null; }} // Validating the enteredPassword with hashed version of it, if they match then valid else not
+     public boolean authenticate(String userID , String inputpassword) throws NoSuchAlgorithmException{    try   {        return (this.validate((generateUniqueHash(inputpassword)),useridtohashmap .get(userId)));  }catch Exception e )      System.outprintln ("Error in Authentication : " +e );throw new RuntimeException();}
+     //Adding userID and it's corresponding password to a hash map for easy access later on as well because you can call the validate method with just username from database or any other source of information  }    public boolean isvalid(String Userid){         return (userIdtohashmap.containsKey("User_Name"));}
+      // Adding userID to a hash map for easy access later on as well because you can call the authenticate method with just username from database or any other source of information  }     public static void main(String args[]){           CustomCredentialValidator cv=newCustom Credential Validator();            System.outprintln ("Is valid user: "+cv .isvalid("User1"));         
+      //System. outprint (“Enter password :”); String pass = new Scanner inpt (.nextline).getcharactors ’());         cv..authenticate(pass, User_Name );}}    } catch block should be added to handle possible exceptions as per your requirement and provide more meaningful error messages.

@@ -1,0 +1,11 @@
+import java.sql.*;
+public class java_44063_JDBCQueryHandler_A07 {  //replace with your package name and main method's className, e.g., public static void main(String[] args) etc...   
+     private Connection conn = null;  
+         try{       
+             Class.forName("com.mysql.cj.jdbc.Driver");      // Load MySQL Driver      
+           String url="jdbc:mysql://localhost/test";          // Your database URL and name               
+            this.conn  = DriverManager.getConnection(url,"root","password_of__databaseuser1@#$%^&*()____+_-?>");   //replace with your username, password    });  }        catch (Exception e) {         System.out.println("Error while connecting to MySQL " + e);     }}
+          finally{           if(conn != null){               conn.close();                 try             {                PreparedStatement pstmt = conn.prepareStatement ("select password from user where username = ?" );              ResultSet rs  = pstmt .executeQuery())            while (rs.next() )                  String db_password  =  rs.getString("password");
+                                                                                                                    if(checkPasswordHash(db_password, "inputpass")){           System.out.println ("Welcome user!");          }else {             System.out.println ("Wrong password or User does not exist.");         }}catch (SQLException e){                 // handle any SQL exception here    
+                                                                                                                        e.printStackTrace();}}}                  catch(Exception $e)   {                    $conn .close()    ;              echo "Error:".$e->getMessage().'<br/>';}}},"});  }catch (SQLException  $se){             //Handle the exception here    
+                                                                                                                           console.log("Database error:"+$serronrace);} });};   catch(exception $ex) {      echo "Error:".$exe-messge."<br/>";}};    }});  })

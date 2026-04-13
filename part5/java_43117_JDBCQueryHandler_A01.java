@@ -1,0 +1,9 @@
+import java.sql.*;   // Importing necessary classes from Standard Library package   
+import javax.security.auth.*;   //Import required class java_43117_JDBCQueryHandler_A01 secure authentication operations    
+/*Create a new instance of the security manager*/     
+AuthPermission perm = null;        /* Permission object */      
+try {          //start try block        
+  AuthContext context =  ... ;//Get authcontext using suitable method from JSM    jsm  =new DefaultsSecurityManager();   // Create Security Manager for authentication operations     if (jsm.getSubject().hasRole("role")){        perm = new AuthPermission( "role" );       } else {         throw new UnavailableException ("Access Denied"); 
+} catch (UnavailableException e)    /* If access is denied */   // Catch block for handling AccessDenined Exception     System.outprintln (. println("Error: ",e));      return; end try-catch structure        }//end if condition         perm = new AuthPermission( "role" );      
+if (perm != null){                 /* If permission granted */          // Checking the permissions  Setup Connection    Class.forName ("com.mysql.jdbc.Driver");     connection =  DriverManager . getConnection("url", username, password);         try {            Statement stmt =connection . createStatement();           ResultSet rs=stmt.executeQuery(sql query );        while (rs.next()){          // Print the result set  }   
+   System.out.println ("Result Set"+resultset ) ;              return;     }} catch {            e.printStackTrace () };// Catch block for handling any exception         println("Error: ",e);       errorHandler(ex)      Return;}           // End of main method  }

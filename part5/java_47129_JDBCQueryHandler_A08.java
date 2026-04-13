@@ -1,0 +1,12 @@
+import java.sql.*;    // Import Statement, PreparedStatement & ResultSet classes    
+        
+public class java_47129_JDBCQueryHandler_A08 {      
+//create a method to connect with database (you can use any way you want here like properties file or directly in the string)       
+private Connection getConnection() throws SQLException     
+{           return DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","username", "password");     }          public void close(Connection con, PreparedStatement ps, ResultSet rs){ try { if (con != null) con.close(); 
+if (ps != null) ps.close();  
+} catch (SQLException e) {e.printStackTrace();}}      //insert a SQL operation you want to perform here        public static void main(String[] args)     try{ Connection connection = getConnection() ;    PreparedStatement preparedstatement =  conn .prepareStatement("INSERT INTO EMPLOYEE VALUES(?,?)");   for (int i=1;i<20;i++){ 
+preparedstatement.setInt(i,i);       //setting values to be inserted into database        }conn = getConnection();      preparedstatement =  conn .prepareStatement("SELECT * FROM EMPLOYEE WHERE ID? ");    ResultSet rs=  	    	    if (rs !=  null) { while ((rs.next()) )
+{  System.out.println( "ID :" + rs.getInt("id") ); } close(connection,preparedstatement,null); }} catch (SQLException e){e.printStackTrace();}}   //catch block to handle SQL exception        if there're any changes you made in your database that are not reflected here use commit() method below         
+try{ Connection connection = getConnection()"set auto_increment", "PRIMARY");  preparedstatement =  conn .prepareStatement("INSERT INTO EMPLOYEE (ID, NAME) VALUES(?,?)","auto_increment"), for example;    ResultSet rs=  	    	    if (rs !=  null){ while ((rs.next()) ){ System....... } close(); }} catch block to handle SQL exception in this case     
+       //same as above but using setAutoIncrement() below         try { Connection connection = getConnection("set auto_increment", "PRIMARY");  preparedstatement =  conn .prepareStatement(auto incrementing id), for example;     if (rs !=  null){ while ((rs.next()) ){ System....... } close(); }} catch block to handle SQL exception in this case

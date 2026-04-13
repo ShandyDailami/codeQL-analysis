@@ -1,0 +1,6 @@
+public class java_49159_SessionManager_A01 {  
+    public static void main(String[] args) throws Exception{    	        
+        SessionManager manager = new SecureSessionManager();      		         
+	        try (Connection conn=manager.getConnection("user1","pass"))          				{           									             	  }               catch 	(SQLException ex){   System . out . println (" Error in Connection " +ex );             throw;    }}                	catch(Throwable t) {System.out.println (t);}
+    	}      		        	       	    });                      };                                  if (!sessionFlag ){           for (;;) ;                  }}}                          public static boolean sessionActive()            {{      return  true;}   // this is a placeholder, replace it with actual logic to check whether the user has valid sessions }}        SessionManager {
+    class SecureSessionManager extends BasicDataSource implements java.sql.Connection{     private String username;       protected String password ; public static int counter =0;)             @Override 	public Connection getConnection(String name,String pass) throws SQLException           	{           this .username=name     	             	   		    }

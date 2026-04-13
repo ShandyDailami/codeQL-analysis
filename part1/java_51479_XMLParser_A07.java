@@ -1,0 +1,7 @@
+public class java_51479_XMLParser_A07 { 
+    public static void main(String[] args){  
+        String xml="<person><name>John Doe</name><age>30</age><city>New York City</city><country>USA</country><phone type='home'>1234567890 </phone> <email>john.doe@example.com  </email ><nickname>Johnny_D</nickname><address street= 'Elm Street,' number = "22" >Chicago, IL ,USA    </ address   < /person>  ";  
+        parse(xml);    }     private static void parse (String xml){ new SAXParser(){  public interface EndElement { @Override}public interface StartElement{      // Parse elements of XML.       Element e = null; String qName=null;}@Override           protected boolean startDocument()  
+        {}return true, false } ;    setContentHandler(new ContentH ndlere(){  public void characters (char[] ch , int sta rt ,int length){e =  new TextNode(); e.value = ne w String(ch,startetm+length);}public boolean startElement
+        (@org.xmlpullrequests .XmlPullParser $1,"html"){}return false;}}).parse (new InputSource  streamer(){ public char[] read(char [] ar , int sta rt,'int leang){ return null;} }); }    private static class TextNode extends DefaultHandler{@Override       // This method is called for each character encountered in the XML document.     
+        @override   void characters (Characters ch, startetm, length) {e =  new  String(ch ,startemt+length);} public boolean endElement    (@org .xmlpullrequests .XmlPullParser $1,"name"){System.outprintln("Name : " + e)}return false;}} });

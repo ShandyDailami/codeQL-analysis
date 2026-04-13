@@ -1,0 +1,11 @@
+import java.io.*;
+import java.net.*;
+
+public class java_44018_SocketServer_A08 {
+    private static final int DEFAULT_PORT = 8081; // default port for the server 
+    
+	public static void main(String[] args) throws IOException{	
+	    ServerSocket socket = new ServerSocket(DEFAULT_PORT);	// Create a 'listening' (non-blocking, non-reusable) listening Socket with specified address and bound to DEFAULT PORT.		  			   				 	 					     								      	      }							     ) { // create server
+            System.out.println("Server started on port: " + socket.getLocalPort());		// Indicate that the Server has been initiated successfully, along with it's own assigned Port number (locally)		  			   				 	 					     								      	      }							     ) { // create server
+         while(true){                                                                           if((socket = socket.accept()) != null)                             	   	          SocketChannel channel =  socket .accept();                                       	        try{                                                          PrintWriter out  = new PrintWriter (channel.socket().getOutputStream(), true);                           BufferedReader in  =  new  BufferedReader(new InputStreamReader(channel.socket().getInputStream()));                               String inputLine;                                                                                                             while((inputline =   	in .readLine()) != null){                                                  out .println("Echoing: " +    									           
+                    ); } channel	.close();} catch (IOException ex) {                     System.err   .println(ex);  socket =  null;}                           	        }}                             });                          // main method end here                                                                            			   	               	 	}//main Method Ends Here                                                 		      };                                       	// Main class ends and starts the application

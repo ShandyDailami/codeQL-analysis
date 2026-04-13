@@ -1,0 +1,8 @@
+public class java_46692_CredentialValidator_A03 {     // Start with a capitalized word since it is the main entry point of any java application  
+    public static void validateCredentials(String username, String password) throws Exception{       // Declare method signature to accept both arguments as string types. 
+        if (username == null || password ==null){                                           // Check for empty inputs or 'null' values in the input fields     
+            throw new IllegalArgumentException("Username and Password must not be Null!");    // Throw exception, error handling necessary when receiving unprocessed data    
+         }  else if (username.length() < 5) {                                               // Check length of username string  
+             System.out.println( "Error: Usernames should have at least five characters" );       // Print a meaningful message for the user     
+        return;                                                                                // Exit function after printing error or validation is already done  } else if (password contains 'pass') { ...}   
+         */else{   /* In reality, passwords would be hashed and compared using some kind of cryptographic method. This example doesn't include that part*/     return;                                                                      // Continue with the code without further actions on successful validation  }}})}           Close curly brackets at end for class definition

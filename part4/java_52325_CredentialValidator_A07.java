@@ -1,0 +1,12 @@
+import javax.security.auth.*;
+import java.util.*;
+public class java_52325_CredentialValidator_A07 extends Authenticator {
+    private HashMap<String, String> credentials = new HashMap<>();  // hard coded username and passwords in this example; you should use real data source for a robust implementation  
+       public boolean validate(AuthToken target) throws NotAuthorizedException{    
+           UsernamePasswordToken token= (UsernamePasswordToken)target ;   
+               if(!credentials.containsKey(token.getUserName())) {  // user not in the map, return false; you should handle this scenario as per your requirements   }            else if (!credentials.get(token.getUserName()).equals(new String (token.getPassword())))   
+               {         throw new NotAuthorizedException("Invalid Credential");  // wrong password or username     }          return true;      }}                   public static void main(String[] args) throws Exception{        AuthPermission perm = null ;       System.out.println("\n\tTesting credentials:\n" );   
+             credentialValidator=new java.security.PrivilegedAction(){public Object run() { return new CredentialValidator();}};          if (perm ==null) throw new RuntimeException("Can't do it!");  perm =(AuthPermission[])(new AccessControlContext(perm).getPermissions());       
+             PermissionChecker pc=    // check the privilege of permission in PrivilegedAction...      return;}}}}}   }     public static void main (String args []) throws Exception{CredentialValidator cv = new CredentialValidator(); System.out .println("Enter User Name: "); 
+           Scanner scn=new scanner(System.in); String userName =  // take the username as input from command line.....          CharArrayReader reader in;      try {reader=  (Char Array Reader)sc n ;   if (! cv.validate((AuthToken ) new UsernamePasswordtoken))  System . out . println (" Access denied");    else      
+           printf("Access Granted") // ... and continue...}}}}}     }                                                                                       }}`java' is the end of your program! Please replace '//..' with actual code. Let me know if you need help in this task or any other tasks I can assist你 better:)

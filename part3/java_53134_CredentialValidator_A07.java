@@ -1,0 +1,6 @@
+import java.util.*;   // for ArrayList, HashMap...etc..   
+public class java_53134_CredentialValidator_A07 {    
+	private Map<String , String> users;          /*users database*/     
+	                                                   		       
+	public void init()	{					//Initialize user credentials - This is a mock-up and should be replaced with real implementation.  	   			 	 	       	     					    }       public boolean validate(final UserCredential cred) {     if (cred == null){           throw new IllegalArgumentException("User Credentials can not NULL");      //check for empty user credentials        return false;}}          Users database is a HashMap object to mimic users DB, Key=Username and value = Password. 
+	                                                   		                        private class UserCredential {     String username , password ;    public java_53134_CredentialValidator_A07(String u , String p)       this .username =  u      //Constructor   }              if (users == null ) {          throw new IllegalArgumentException("User database can not NULL");}        return users.get(cred.username).equals( cred.password);}}

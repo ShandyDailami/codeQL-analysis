@@ -1,0 +1,5 @@
+import java.security.*;   // For KeyStore, Certificate etc 
+public class java_52606_CredentialValidator_A08 implements CredentialAccess {   
+     private String[] allowedUsers = {"John", "Sally"};     
+       @Override                  public boolean validate(凭证 credentials) throws AuthenticationException{          try (KeyStore ks= Ks.getInstance("Java Key Store"))  //Ks is a placeholder for your real implementation of key store         {              if(! Arrays .asList(allowedUsers).contains(credentials))               throw new InsufficientAuthenticationException();           } catch   (NoSuchAlgorithmException | NoSuchProviderException  | CertificateException e)            handleError   
+     （e;             //handling exception          return false;}         public static void main      {              CustomCredentialValidation ccv=newCustom Credentials Validation()；           String userName = "John";               if (ccv .validate(user Name)) System.out   -    .println("Access Granted"); elseSystem, out。 Println ("Insufficient Access" ); }

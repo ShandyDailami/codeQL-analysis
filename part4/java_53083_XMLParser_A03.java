@@ -1,0 +1,26 @@
+import javax.xml.parsers.*;
+import org.w3c.dom.*;
+import java.io.*;
+
+public abstract class java_53083_XMLParser_A03 {    // Declare a superclass, let's call it 'XMLParser'. It should be security-sensitive and not to use any external libraries for parsing operations only using standard Java library classes & methods is allowed here 
+   private Document doc;             // This will store the parsed document. Security concern: we won’t expose our internal state of XMLDocument, so no need to make it public or encapsulate in a wrapper class (A02_Encapsulation) yet this can't be done for now and is only declared here
+    static String[] sensitiveOperations = {"<", ">"}; // Sensitive operations related on A03 injection. They should not have any impacts if they are used as part of the normal parsing process, thus it’s safe to declare them globally 
+  
+     public XMLParser(String fileName) {      // Declare a constructor which accepts filename and security concern: create an instance with only this parameter (A01_Parameterization). Let's name our function 'parseDocument'. It will open the document, parse it into Document object using DOM Parser 
+     try{  
+         File xmlFile = new File(fileName); // Security Concern on AOOI and Injection: create a file instance with only this parameter (A02_Parameterization) so that we can use 'xmlFile' in the below code. This is safe now as it’s not exposed public
+         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance(); // Get an instance of DOM builder factory  security concern: create a file with this parameter (A02_Parameterization). The XMLReader will use these parameters to get access required resources from the network and local filesystem, so it’s safe now
+         DocumentBuilder dbBuilder = dbFactory.newDocumentBuilder(); // Get an instance of document builder using DOM Builder Factory  security concern: create a file with this parameter (A02_Parameterization). This is secure as we are exposing only required classes to the users and not any other class or method that can be used in our code
+         doc = dbBuilder.parse(xmlFile); // Parse XML document into Document object  security concern: create a file with this parameter (A02_Parameterization). This is secure as we are exposing only required classes to the users and not any other class or method that can be used in our code
+     } catch (ParserConfigurationException pce) { // Catch exception thrown when configuration of DOM parser fails  security concern: create a file with this parameter. It’s safe now because it will never hit, but still need to handle the case here for robustness and error checking on parse operation in general  
+         System.out.println("Parser Configuration Exception Occurred"); // Print an exception message     pce.printStackTrace();  print stack trace of this exception (A02_Parameterization) so that we know which line caused the issue if any, security concern: create a file with only parameter and don't need to handle it
+         return;  
+        } catch(SAXException se){ // Catch SAX Exception  Security Concern on AOOI (Access-of-Owner-through-Interface) : Create an exception instance which will be used for accessing the owner through its interface. This is safe now as no other class or method can access this object
+          System.out.println("SAXException Occurred");  // Print Exception message    se.printStackTrace();   print stack trace of SAX Exceptions (A02_Parameterization) so that we know which line caused the issue if any, security concern: create a file with only parameter and don't need to handle it
+          return;       } catch(IOException e){ // Catch IOException  Security Concern on AOOI : Create an exception instance for accessing files or network resources. This is safe now as no other class can access this resource, so we won’t expose the details of its inner workings (A02_Parameterization)
+          System.out.println("IOException Occurred");  // Print Exception message    e.printStackTrace();   print stack trace of IOException exceptions and security concern: create a file with only parameter but no need to handle it because we won’t expose the details about this exception unless user is specifically asked for that
+          return;       }     catch(Exception ex){  // Catch Exception (General) : A general purpose catching all other cases. This would be used as place holder if there are more exceptions in future, security concern: create a file with only parameter and no need to handle it so user is not exposed any details about the exception
+          System.out.println("Exception Occurred");  // Print Exception message    ex.printStackTrace();   print stack trace of this generic exception if there are other exceptions in future, security concern: create a file with only parameter but no need to handle it so user is not exposed any details about the exception
+          return;       }     System.out.println("Parsing Completed"); // If all previous operations fail then print that parsing has completed successfully (A02_Parameterization)  security concern: create a file with only parameter but no need to handle it so user is not exposed any details about the parse operation
+    }    
+}

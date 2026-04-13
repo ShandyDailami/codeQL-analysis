@@ -1,0 +1,11 @@
+import java.io.*; // Import necessary Java packages needed by the task, like FileOutputStream or PrintWriter etc..  
+public class java_47213_FileScanner_A08 {   
+ public static void main(String[] args) throws Exception{     
+     String path = "/Users/username";      
+     if (new File("/path").exists()){          System.out.println("File exists");         } else  return;           // Checking file is exist or not, based on your requirement        for example purpose I am checking whether a directory has been created by the user before creating it again      try(DirectoryStream<Path> dirs = Files.newDirectoryStream(Paths.get("/dir"))) {         
+            System.out.println("Existing directories:");           // Iterating over all files and sub-directories under given directory using Directory Stream        for (Path p : dirs){              if (!Files.isWritable(p)) throw new SecurityException();System. out . println ("File or folder named ' " +         P 
+           + "' is not accessible due to insufficient permissions."); } return;     // Throwing an exception when file access permission isn't sufficient    }}       catch (SecurityException e){ System.out.println(e);}      finally {          try{FileWriter myObj = new FileWriter("/example/myOtherObject");          
+            PrintWriter myObjOut  =new  printwriterfile("filename",true)};     // Writing into a file using the specified path if not exists then create it         System.out .println( "Successfully wrote to the file."); }else {             new File ("/example/myOtherObject").createNewFile();
+            myObjOut =new PrintWriter("/fileExample",true);   /* This is for example only, you can use any path */  // creating a writer object with true parameter if this method call has not been called before then create the file.         System . out .println( "Successfully wrote to the new created/example"); }
+        }}     catch (Exception e){          LoggerUtils log =new   loggerutils("ErrorLogger",e);log..errorLog();}      finally {  // No need for a try-finally block in this case as we are not writing into any file.         if(! new File("/example/myOtherObject").exists())
+           System .outprintln( "File does now exist");}}          return;   }// the end of main method             }}

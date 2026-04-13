@@ -1,0 +1,8 @@
+import java.sql.*;   // Import necessary Java libraries (JDBC) for Database Connection, Statement & ResultSet handling etc.,   
+    
+public class java_51309_JDBCQueryHandler_A07 {   // Class name should be same as file/classname 
+// Declare the connection variable here and try to create a databaseConnection object once at startup. Make sure you're wrapping your SQL commands within this 'try-catch'. In case of failure, print out an error message in catch block for troubleshooting purpose   // Assuming username & password as hardcoded values
+    private Connection connection;  public java_51309_JDBCQueryHandler_A07() { try{ Class.forName("com.mysql.jdbc.Driver");     this.connection = DriverManager.getConnection( "jdbc:mysql://localhost/testdb", "root","password" ); }catch (ClassNotFoundException e){System.out.println ("driver not found ");} catch (SQLException se) { System.out.println("Error in Connection : " +se); }}
+     public void performQuery(String query, Statement stmt ){ try  // Assume you are sending PreparedStatement here which has been prepared with a parameterized SQL string  
+    ResultSet rs =stmt .executeQuery(); while (rs.next()) { System.out.println("Result : " + rs); } catch(SQLException se)     {System.out.println ("Error in executing query" );}  // Assume all the queries are either select or insert update delete etc
+    finally{stmt .close();}} connection	.close() ;// This will be called at end of function   }} if you don't want your code to close after use, make sure not used inside a try block like this. It would cause an exception as it tries closing the statement before any data has been fetched/executed in previous operations

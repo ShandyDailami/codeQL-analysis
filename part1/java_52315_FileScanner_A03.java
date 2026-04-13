@@ -1,0 +1,14 @@
+import java.io.*; // Import FileNotFoundException to catch when file does not exist  
+class java_52315_FileScanner_A03 {    
+    public static void main(String[] args) throws IOException{         
+            ScanDir("C:/PathToDirectory/");        
+        }          
+       private static boolean isValidFileName (final String filename){             // Function to check if the file name contains some dangerous characters. This function will return false in a real scenario where it should be true and vice versa             
+                final char[] bannedChars = {'<', '>', ':', '/', '\\', '|' , '\0','u128s'};             // Characters that are not allowed            for (char c : filename.toCharArray()){                 if(containsAny(bannedChars,c)){return false;} } return true ;}
+               private static boolean containsAny(final char[] array , final  Character character ){           while ((array != null) &&   (character !=  null)) {             for (Character b : array){                     if((int)(b.charValue()) == (int)character .charValue()){return true;} } return false;}}
+        public static void ScanDir(String pathToScan ) throws IOException{                      // Recursive function to scan a directory               File[] files = null ;              try {             files =  ((FileManager)(new java.io.File(".").listFiles()) ).findAllfiles (path + "/"+ file , “ .”, true); if(file !=null) for (int i= 0;i<files!! ){ File f =  
+            try {      BufferedReader br =  new java.io.BufferedReader((new InputStreamReader ((FileManager)(f).getInputStream())) ); String sCurrentLine ;  while ((sCurrentLine  =br .readLine()) != null)    if(!isValidFileName(sCurrentLine)){ File fileToDelete =  
+                (new     java.io.File(path + "/"  + sCurrentLine));             try{fileDeletionChecker((java.io.FileManager)(file      toDelete).delete());} catch  Exception e {e .printStackTrace();}} else if(!sCurrentline      +".txt/.log”    == f  
+            && !f isDirectory())    File fileToMove = (new java.io.File(path + "/"  + sCurr...           [208m]//C:\Program Files\Java for Windows 64-5_1\_jre/bin/.DS_Store, C:\\Path to Directory     
+         if(!sCurrentLine+".txt”== f && !f isDirectory()) {File fileToMove = (new java
+!.io File(path + "/"  + sCurr... [208m]//C:\Program Files\Java for Windows 64-5_1\_jre/bin/.DSStore, C:\\Path to Directory        if(!sCurrentLine+".txt”== f && !f isDirectory()) {File fileToMove = (new java.io File(path + "/"  + sCurr... [208m]//C:\Program Files\Java for Windows 64-5_1\_jre/bin/.DSStore, C:\\Path to Directory

@@ -1,0 +1,18 @@
+import java.security.*;
+   import javax.servlet.*;
+   import org.apache.catalina.*;
+    public class java_51997_SessionManager_A07 extends SecurityManager {     
+        private static final String USER_ROLE = "user";       // user role in the application 
+        
+          @Override    
+           public boolean checkRole(ContainerRequestContext requestCont, SecureRandom random, Authentication auth) throws ServletException    {                  return true; }   /* always grant access */     
+             
+        /** Called when a login is attempted but failed. **/ 
+         // Here we just simply deny the authentication and throw an exception in order to handle it by SecurityManager or higher layers as necessary (like showing error message) - A07_AuthFailure    public void unsuccessfulAuthentication(ServletRequest request, ServletResponse response, AuthenticationException auth) throws ServletException { 
+          //throw new AuthenticationFailedException("AUTHENTICATION FAILED"); } /* this is not recommended for production use */   protected static final Logger logger = Logger.getLogger ("CustomSecurityManager");      private void accessDenied(ServletRequest request, ServletResponse response) throws IOException { 
+           //print out a message and throw an exception so that the caller can handle it - A07_AuthFailure    }   public Authentication getAuthentication()     return null; /* not used in this example */      @Override          protected AccessControlException accessDenied(ContainerRequest request, java.lang.reflect.Method actualMethod, Object namespace) throws AccessDeniedException {        
+           //access denied - we always allow here since A07_AuthFailure  private boolean isPermittedOrInRole()     return false; /* not used in this example */ }      @Override          protected AuthenticationInfo getAuthenticationInfo(Subject subjectId, Object objectIdentity, ReflectedRequestAccessor accessor) throws InsufficientAuthenticationException {        
+           //return null because we don't have a real user database - A07_AuthFailure  private boolean isUserInRole()     return false; /* not used in this example */ }      @Override          protected AccessControlException unknownAccount(String accountIdentifier, Object objectIdentity) throws InsufficientAuthenticationException {        
+           //unknown credentials exception handler    public static final String USER = "user";   /** Default user role. **/  private boolean isUserInRole()     return false; /* not used in this example */ }      @Override          protected AccessControlException accessDeniedUI(String deniedURL, RequestContext requestContext) throws Exception {        
+           //access denial UI handler    public static final String USER = "user";   /** Default user role. **/  private boolean isUserInRole()     return false; /* not used in this example */ }      @Override          protected AuthenticationInfo getAuthenticationInfo(Subject subjectId, Object objectIdentity) throws InsufficientAuthenticationException {        
+           //return null because we don't have a real user database - A07_AuthFailure  private boolean isPermittedOrInRole()     return false; /* not used in this example */ }   public static void main(String[] args){      SecurityManager security = new CustomSecurityManager();    setSecurityManager (security); // use the custom manager}

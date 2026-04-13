@@ -1,0 +1,15 @@
+public class java_44853_CredentialValidator_A08 implements AuthenticationProvider {
+    private HashMap<String, String> credentials = new HashMap<>(); // store user names/passwords in a map (this is not recommended but for simplicity)
+    
+    public void addUser(String username, String password){ 
+        this.credentials.put(username,password);  	
+    }
+     
+@Override        	// This method will be called by AuthenticationManager to authenticate the user given his/her credentials (in our case just a simple string)      		    			            	       				         	 	   	      . ​getAuthenticationProvider().authenticate(new UsernamePasswordAuthenticationToken("user", "pass"));
+    @Override        	//This is where we perform authentication. Here I am checking if the provided username and passwords are correct or not, in a simple way (not recommended). A real world application would use more secure methods for authenticating users like using bcrypt hashed/encrypted values 		    			            	       				         	   		.
+    public Authentication authenticate(Authentication authentication) {   //authenticates the user. If successful, return a fully authenicated user detail (UsernamePasswordAuthenticationToken). Else it returns null which will result in an unauthorized error later on 		    			            	       				         	   		.
+        String name = authentication.getName();   	//grabs username from the Authentication object passed into authenticate()  	  .      ​getCredentials()); //Grab credentials (which are not needed here, they're just used to get a hold of user details) 		    			            	       				         	   		.
+        String password = authentication.getCredentials().toString();	//grabs the plain text version and does necessary conversion for security if required   	  .     ​credentials.get(name));   //This line will fail due to a simple key-value pair, should use secure method like bcrypt or similar 		    			            	       				         	   		.
+        return new UsernamePasswordAuthenticationToken ( name , password );	//Returns an authentication object if user credentials are valid and successful. Else returns null .  	  This line will fail due to a simple key-value pair, should use secure method like bcrypt or similar 		    			            	       				         	   		.
+    }       //End of authenticate()        End of CustomCredentials class	}​      Please note that this is not recommended for production as it lacks security features and insecure. It only serves the purpose to showcase how an example can be written with minimalist style while avoiding external frameworks or dependencies like Spring/Hibernate etc
+    .   Use a real world application instead of creating your own credentials validator using bcrypt, hibernate entity for authentication user validation and JWT (JSON web tokens) if you want to make it more secure. But that goes beyond the scope here.  This example is minimalist but does serve as an exemplary solution in demonstrating how CredentialValidators can be implemented with standard Java libraries only

@@ -1,0 +1,9 @@
+import javax.xml.parsers.*;
+//Import XML Parser classes for parsing the xml document to be read by a SAX parser or DOM parser according your need, e.g., DefaultHandler etc.. Importing these can help in implementing custom handling of different parts of an XML Document and makes it more maintainable than other methods we often use like using external libraries (Spring/Hibernate).
+import org.xml.sax.*; //SAX parser for reading large files, SAX is a simple event driven approach to parse xml file while parsing the document in chunks or stream based manner rather then all at once and it'll be faster than DOMParser when dealing with larger documents due its single threaded model
+// Importing classes which implements interfaces such as IElementListener for handling XML tags etc. 
+import org.xml.sax.helpers.*; //SAX helper is a collection of SAX parsing tools (like the default handler) that can be used to parse large documents in chunks or stream based manner, not all at once and it'll provide faster performance than DOMParser when dealing with larger files
+// Importing java classes for handling IO Exceptions. 
+import java.io.*; //IOException is a checked exception which indicates problems arising from input/output operations on an I/O device (like file system or network)   e,g., FileNotFoundException etc..    You can import these as per your project requirement using Java’s standard IOException classes such that it makes code clearer.
+// Importing java utilities for handling strings and other datatypes in the program 
+import java.util.*; //For example List to handle different types of data, StringTokenizer if needed etc..   You can import these as per your project requirement using Java’s standard utility classes such that it makes code clearer      e.,g,, Set or Map for handling unique values and pairs in the xml file

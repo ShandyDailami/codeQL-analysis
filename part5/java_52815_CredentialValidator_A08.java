@@ -1,0 +1,14 @@
+import javax.security.auth.*;
+import java.sql.*;   //database connectivity package; replace with appropriate DB connector you use, e.g., MySQL jdbc driver for mysql connection etc..   
+                   //if using different database system then import that respective libraries (JDBC)  and create corresponding methods accordingly ie ConnectionProvider/ConnectionPoolingManager / JNDI Provider ...etc...  
+public class java_52815_CredentialValidator_A08 {    
+static boolean authenticate(String username, String password){      
+    // Step1: Create a connection object to the database.     
+	try{        Connect con = DriverManager.getConnection("DB_URL", "USERNAME","PASSWORD"); }  catch (SQLException ex)  
+	{System.out.println ("Error in SQL Connection :" +ex);}     //Replace with appropriate driver method for Database connectivity ie Jdbc, Ojdbc etc..       return false;    }}     
+	catch(ClassNotFoundException e){ System . out . println ( "Driver class not found ！ "); }   catch (SQLException ex) {System.out.println ("Error in SQL Connection :" +ex);}          //Replace with appropriate driver method for Database connectivity ie Jdbc, Ojdbc etc..     return false; }}       
+    try{      Statement stmt = con . createStatement();       String sqlQuery  = "select password from Users where username='"+username+"' ";  ResultSet rs    =stmt.executeQuery(sqlQuery);   //replace with select query in your DB for checking User Password ie SELECT PASSWORD FROM USERS WHERE UNAME = .....     while (rs . next()) { String db_password =  rs . getString("PASSWORD");  if (checkPassword(db_password, password)) return true; }    }} catch (SQLException ex)  
+	{System.out.println ("Error in SQL Execution :" +ex);}     //Replace with appropriate exception handling mechanism for Database connectivity ie try/catch etc..         return false;}  finally {try{con . close();}}      except(SQLException e){ System. out . println("Closing Connection error: "+ e ); }
+return false; }}         
+public static boolean checkPassword (String hash, String passwordToCheck)    //replace this with a method which can handle the hashing process in database ie BcryptHash etc..     {...} return true;}  public   void main(String[] args){      System.out . println("Credential Validation: "+ CredentialValidator.authenticate ("USERNAME",   
+"PASSWORD")); }} //Replace with appropriate test cases and values for username,password etc..}};     }}}}` in your code editor if you are using this as a template or starting point...   It's always best to stick closely on the database schema while writing queries.  I used placeholder SQL statements here just so we have an example of how it might be written from scratch for real world scenarios with more complex requirements, such like encryption handling etc..

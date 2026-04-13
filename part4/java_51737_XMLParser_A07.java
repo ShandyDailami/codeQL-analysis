@@ -1,0 +1,13 @@
+import java.io.*;   // Import the necessary classes: File, InputStream and PrintWriter   
+// import org.xml.sax.*;     -- (optional) Use this if you are using SAX parsing instead of DOM parser for large files or streaming data like in web services 
+
+public class java_51737_XMLParser_A07 {     
+   public static void main(String[] args){         // The entry point to the program         
+       try{            
+           File xmlFile = new File("sample.xml");     // Create a file object and assign it with your XML source             
+	   InputStream inStr; 	// Assuming security-sensitive operations related XSS attacks are performed, we can't use input stream directly to read from the disk       		   	   			           	     	 	        .read(inBytes); // Create an array of bytes and assign it with file content     
+	   if ((inStr = new FileInputStream (xmlFile).getChannel()) != null) {    	// Open a channel through which you can retrieve information about the stream. This is useful in terms data streaming, etc 		   	   			           	     	 	        .read(buffer); // Read from file into buffer  
+           parseXMLDocumentContentInChunks (inStr ,xmlFile );     	             /* Parsing process here */        										// Add parsing logic to the code block above.        }catch{}  finally {}     catch() {closeResources();}}   		      	}              // End of main method
+   public void parseXMLDocumentContentInChunks (InputStream inStr , File xmlFile ){      try(inStr){	               	       	   			           	     	  /* Write your logic here */               }catch(){};  finally{}     catch() {closeResources();}}   		      	}              // End of method
+   public void closeReources () {}                 	// This function will be responsible for closing the resources if necessary (like file streams and channels). It can't do any work unless it is explicitly called. The code block below does nothing to fulfill this requirement in a realistic way         		   			           	     	  /* Write your logic here */              }finally {}     catch() {closeResources();}} 
+   public void closeReources (){}		// This function will be responsible for closing the resources if necessary (like file streams and channels). It can't do any work unless it is explicitly called. The code block below does nothing to fulfill this requirement in a realistic way         		   			           	     	  /* Write your logic here */              }finally {}     catch() {closeResources();}}

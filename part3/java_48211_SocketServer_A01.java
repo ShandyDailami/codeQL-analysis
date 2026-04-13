@@ -1,0 +1,8 @@
+import java.io.*;   // Input/Output Stream Package, needed in socket programming    
+import java.net.*;    // InetAddress used for IP address resolution (for TCP connections), required by the sockets package	
+public class java_48211_SocketServer_A01 {     
+private static int PORT = 5068; 	// define a port to use as part of local host communication  			    		      	   					       				   	 							        	       								           }.getBytes(); // convert string into bytes using getbytes method and then send it back via socket connection	         
+private static Socket sock = null ;//declaration for the server-side socket  object             };                  public class ServerThread implements Runnable{ @Override        private void run(){ try {sock=new      java.net.Socket( IPAddress,PORT); PrintWriter out=  new       java     .io   1   //Printwriter is used to send data on the network stream (outputstream) 
+          sock.getOutputStream().write((“I'm a broken access server and I can echo back what you say"+ "\n"). getBytes());                     }catch(Exception e){System      .out   1("IOException occurred: " +e);}finally{if (sock!=null)try { s     ock.close();   //closes the socket connection 
+          }}              public static void main(){ try             new ServerThread().run() ;//starting point of server, run our thread to start accepting client requests at port PORT }catch(IOException e){System      .out   1("IOExceptio noccurred: " +e);}           
+   }}  // closes the main method and class     */}))}}}))))) }) ;//closing curly braces}}} to avoid any compilation error in java. This is a simple echo server that can read from an input stream, write back data received through its outputstream (and vice versa)

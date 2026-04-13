@@ -1,0 +1,28 @@
+import java.io.*;
+import java.net.*;
+import javax.crypto.*;
+
+public class java_51195_SocketServer_A08 {   // begin of the code snippet 
+    private static final String KEY = "A08_IntegrityFailure";     // Key for encryption, this should be securely stored and not hard coded as in real world applications!  (a) b). d. e.) f..g.). Hint: use a SecretKey with Cipher#init
+    private static final String ALGORITHM = "AES";       // The symmetric algorithm to encrypt/decrypt data, AES is used here as it's the most secure (a) b). d. e.) f..g.). Hint: use javax crypto library for more options
+    private static Cipher cipher;      // This will hold reference of our EncryptionCipher instance 
+  
+     public java_51195_SocketServer_A08(int port) throws IOException {        // Constructor to initialize the server (a. d.) e..f)) and key initialization with given secretKey, algorithm etc . Hints: use KeyGenerator for generating keys in real world applications which are not shown here due to space constraints  this will be called when a connection is established
+      SecretKey key = KeyGenerator.getInstance(ALGORITHM).generateKey();     // generate the security key (a) b.) e..f)) Hint: use Cipher#init with given secretkey, algorithm etc in real world applications which are not shown here due to space constraints  this will be called when a connection is established
+      cipher = Cipher.getInstance(ALGORITHM);    // get the initialization vector (iv), then setup an AES cipher for encryption and decryption of data, using our key as IVs need use KeyGenerator#generateKey() to create it in real world applications which are not shown here due space constraints
+      cipher.init(Cipher.ENCRYPT_MODE,key);    // init the Cipher with mode (a) b.) e..f)) and our key  this will be called when a connection is established   Hint: use SecretKey#encrypt() to encrpyt data in real world applications which are not shown here due space constraints
+      
+      ServerSocket server = new ServerSocket(port);    // Initialize the socket (a) b.) e..f))  and listen on that port for client connections.   Hint: use accept(). this will block until a connection is accepted in real world applications which are not shown here due space constraints, but these examples won't run without modifications
+      Socket socket = server.accept();    // Accepts an incoming network request (a) b.) e..f))   Hint: use getInputStream() and similar to read data from the client in real world applications which are not shown here due space constraints, but these examples won't run without modifications
+      BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));    // Reads a line of text (a) b.) e..f))  from the socket input stream   Hint: use readLine() in real world applications which are not shown here due space constraints, but these examples won't run without modifications
+      DataOutputStream out = new DataOutputStream(socket.getOutputStream());    // Writes a line of text (a) b.) e..f))  to the socket output stream   Hint: use write() in real world applications which are not shown here due space constraints, but these examples won't run without modifications
+      
+      String message;     // The data received from client and then sent back. This is read using a BufferedReader (a) b.) e..f))  Hint: use it as line by calling reader.readLine() in real world applications which are not shown here due space constraints, but these examples won't run without modifications
+      cipher.update(message.getBytes());    // Encrypts the message before sending back to client (a) b.) e..f))   Hint: use Cipher#update() and encrpyt/decript data in real world applications which are not shown here due space constraints, but these examples won't run without modifications
+      out.write(cipher.doFinal());    // Writes the encrypted message (a) b.) e..f))  to client socket output stream   Hint: use write() and encrpyt/decript data in real world applications which are not shown here due space constraints, but these examples won't run without modifications
+      out.close();    // Closes the DataOutputStream (a) b.) e..f))  this will ensure that all resources used by writer is closed promptly and cleanly   Hint: use close() in real world applications which are not shown here due space constraints, but these examples won't run without modifications
+      reader.close();    // Closes the BufferedReader (a) b.) e..f))  this will ensure that all resources used by readline is closed promptly and cleanly   Hint: use close() in real world applications which are not shown here due space constraints, but these examples won't run without modifications
+      socket.close();    // Closes the Socket (a) b.) e..f))  this will ensure that all resources used by client is closed promptly and cleanly   Hint: use close() in real world applications which are not shown here due space constraints, but these examples won't run without modifications
+      server.close();    // Closes the ServerSocket (a) b.) e..f))  this will ensure that all resources used by socket is closed promptly and cleanly   Hint: use close() in real world applications which are not shown here due space constraints, but these examples won't run without modifications
+     }// end of SocketServer class.    (a) b.) e..f))  c ) d .e fg hi j k l m n o p q r s t u v w x y z A B C D E F G H I J K L M N O P Q R W U V X Y Z
+} // end of code snippet. a) b.) e..f)) c ) d .e fg hi j k l m n o p q r s t u v w x y z A B C D E F G H I J K L M N O P Q R W U V X Y Z

@@ -1,0 +1,7 @@
+import org.xml.sax.*;
+import javax.xml.parsers.*;
+public class java_44123_XMLParser_A03 {  
+    public static void main(String args[]) throws ParserConfigurationException, SAXException{    	      		        	     				     			       	 					         	} 	    if (args.length != 1){ System . out . println ("Usage : java XmlParsing fileName"); exit(-1); }
+    public java_44123_XMLParser_A03() { super();}   private String xmlFile;private DocumentBuilderFactory dbFactory;     SAXParserFactory spFactory ;  @SuppressWarnings("unchecked") void parseXMLDocument(String xfile) throws ParserConfigurationException, SAXException{       				xmlFile =xfile;}       public static boolean validateXMLSchema( File schema , String fileName){ System.out.println("\n   VERIFYING THE XML FILE WITH SCHEMA...\n");     SchemaFactory sf1 =  SchemaFactory.newInstance (TypeConstants.W3C_XML_SCHEMA_NS_URI);        XmlSchema schemaTemp =s f1 . createSchema( new Source 	("http://www" + "."+
+    ..... rest of the code ...     // Parse file to DOM       DocumentBuilderFactory factory =  DTDProcessor.newInstance();         String PORT = Integer..toString (Integer );      System out println ("Listening on port: ");          ServerSocket serverSocket= newServer Socket(PORT);  
+    ..... rest of the code ... } // Close socket and exit program}  public static void main .java.net XmlParser,args) throws ParserConfigurationException SAXParseExcetion{     parseXMLDocument("samplefile..xml");}}     `

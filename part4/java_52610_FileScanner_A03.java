@@ -1,0 +1,8 @@
+import java.io.*; // Import the File class java_52610_FileScanner_A03 read files from a directory and an InputStreamReader for text reading (not required unless you're writing input/output on streams). 
+                // For example, if we were going through command line arguments as well in case of file handling operations are needed here too。  
+import java.util.*; // Import the ArrayList class to use when creating lists that require dynamic resizing like arrays or stacks (not required unless you're using linked-list based implementations such list and queue). 
+                // For example, if we were going through file names in a directory for security reasons here too but they would be very rarely used as is.  
+import java.nio.*; // Import the Path class to use paths (files or directories) which are more versatile than just strings like "C:/myDirectory". 
+                // Also, if we were going through command line arguments and file handling operations here too but they would be very rarely used as is with simple string inputs for security reasons.  
+import java.security.*; // For generating secure random numbers such hash functions or key generation etc (not required unless you're using the KeyGenerator in Java). 
+                      // Again, if these were needed we could use an external library like Bouncy Castle which provides stronger cryptographic capabilities and is more commonly used for security-related operations.

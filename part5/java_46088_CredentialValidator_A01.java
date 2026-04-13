@@ -1,0 +1,6 @@
+import javax.security.auth.*;
+import java.lang.Exception;
+   import sun.reflect.Reflection;   
+public class java_46088_CredentialValidator_A01 implements CredentialValidator {    
+private static final String ALLOWED = "ALLOW";      private AuthPermission permission ;  // Access Controls           public Object validate(Object cred) throws Exception{         if (cred == null){            throw new InvalidLoginException("Null credentials provided");        } else if (!((String) cred).equalsIgnoreCase(ALLOWED)){             String realCred = Reflection.getCallerMember().getName();  // Security-sensitive operations         
+throw new AuthenticationFailedException ("Unauthorized attempt: " +realCred);         }}    public boolean getPermission(AuthPermission perm, Object details) throws Exception{     permission=perm;   return true;} }`       This program implements the CredentialValidator interface and has a method validate. If null credentials are provided it will throw an InvalidLoginException otherwise if any other value is entered then AuthenticationFailedException with real username of login attempt in message "Unauthorized attempt: User_Name". It also provides permission control, only allowing access when ALLOWED string equals to the caller's name.

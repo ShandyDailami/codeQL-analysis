@@ -1,0 +1,8 @@
+import java.util.*;   // for List and ArrayList class java_50673_CredentialValidator_A01 
+import javax.security.auth.*;    // for UnauthorizedException, LoginException & CallbackHandler interface classes    
+import org.springframework.context.ApplicationContext;      /* if using spring */       
+public abstract class CredentialValidator {       /**/   public static final List<String> AUTHORIZED_USERS = new ArrayList<>();    private ApplicationContext context =  null ;  // for Spring Context         @Autowired     setSpringApplication(final Application application)      this.context=application;
+protected LoginContext loginCtx  =null   /**/public CredentialValidator (){ AUTHORIZED_USERS .add ("user1")    AUTHORIZED_USERS  . add("User2"); } public boolean validate( final AuthenticationCallback callback )throws java.security.* {
+try{ // create a login context      LoginContext lc = new        PasswordAuthenticationToken (null, "password".toCharArray());     org.springframework.security   ... @Autowired  private UserDetailsService userDetailServ;       Set<GrantedAuthority> grantAuths=new HashSet<>();          // create granted auth for the login context...
+add(grantAuth);      lc = new        PasswordAuthenticationToken (user, password.toCharArray());         callback . done (lc , granteauth );  return true; }catch    java.lang.*||  javax..security     |LoginException e) { throw     e;} catch   ...
+} // end CredentialValidator Class... /* The code below is not syntactically correct Java and should be removed */          if(username==null||password=nu ll){ return false; }if(!AUTHORIZED_USERS.contains (user)){  throw new    UnauthorizedException ("User "+ user +"is unknown");}return true;} // end of remove comment section

@@ -1,0 +1,12 @@
+import java.io.*;   // Import Input/Output streams and Serialization API   
+import java.net.*;  // For ServerSocket, Socket class java_43353_SocketServer_A03 class SecureTcpServer {  
+      
+        private static final int port = 6001;          // Define the Port Number on which server is going to run     
+                                                                               
+            public static void main(String[] args) throws IOException  {    System.out .println("Securing TCP Server...");     Socket socket = null ;  
+             try{           BufferedReader reader =  new BufferedReader (new InputStreamReader(System.in)); // Read input from the user        Dialog dialog=null;         String str=""; int ch= 0;            while((ch=reader.read())!=-1){                         if('n'==ch)break;}                 System .exit 
+             (0);                                                                                    } catch(IOException ex){System.out.println("Error occurred: " +ex );}    //catch exception and print error message   finally{if((socket)!=null ) socket.close();}}     public static void main(){        SecurityManager sm = System .getSecurityManager (); if 
+         (!sm .checkConnection ("fromClient")) {throw new SecurityException("Lost connection");} Socket sock=  null; try    //Create a server at specified port using socket          ServerSocket servsoc=newServerSockets(port );System.out   (.println("\nWaiting for client on port " +serv soc .getLocalPort()+" ...\n")); 
+         while (true) { sock = servsoc.accept();      System . out    ("Connection accepted from : " +  sock     . getRemoteSocketAddress());                     try{ BufferedReader in =  newBuffered Reader(new InputStreamreader   (socket         1402)); PrintWriter 
+         out=  newPrintwriter                   (( socket           ));            String message, reply;             while((message =in.readline() != null)) {                System .out    ("Received: " +     messag e );                 Reply =  (   messsage) ;                                Out      
+         println("Sent :  ->"  + replies);}} catch(IOException ex){System . outprintln(". Error in communication... ");}finally {if((socket)!=null ) socket.close(); if ((dialog !=  null)) dialog    . close ()} }      }}        // end of main method

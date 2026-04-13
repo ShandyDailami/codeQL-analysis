@@ -1,0 +1,9 @@
+import java.util.*;  // for ArrayList and HashMap data structures respectively  
+public class java_48965_SessionManager_A07 {   
+     private Map<String /*session id*/ , String/* user name */> mapLoggedInUsers;     
+       public void start() throws Exception{        
+           this .mapLoggedInUsers = new Hashtable<>();        // Create a session manager by using java.util's HashTable  because it provides O(1) time complexity for get and put operation   }          @Override    protected Session doStartSession (Serializable arg0, TransactionCoordinatorSupport support){
+           String id = UUID .randomUUID () .toString();       // Generate a unique session ID by using java.util's randomuuid() function  when new user logs in        return createNewUserSession(id); }      protected Session doCreateSession (Serializable arg0, TransactionCoordinatorSupport support){
+           String id = UUID .randomUUID () .toString();       // Generate a unique session ID by using java.util's randomuuid() function  when new user logs in        return createNewUserSession(id); }      private Session createNewUserSession (String arg0) {         mapLoggedInUsers.put ((arg0), null /* User name */ );         
+           // Create a session by using HashTable which provides O(1) time complexity for get and put operation  return this;   }}       @Override protected void doEndSession (Serializable id, TransactionCoordinatorSupport support){    mapLoggedInUsers.remove ((id), null); }         
+           // Create a session by using HashTable which provides O(1) time complexity for get and put operation  return this;   }}       @Override protected Session doInstancePerRequestSessionCreation (Serializable arg0, TransactionCoordinatorSupport support){      String id = UUID .randomUUID () .toString(); // Generate a unique session ID by using java.util's randomuuid() function when new user logs in     return createNewUserSession(id); }}

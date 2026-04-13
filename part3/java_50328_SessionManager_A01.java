@@ -1,0 +1,8 @@
+import java.util.*;
+public class java_50328_SessionManager_A01 {   // Session Manager Class Name should be more descriptive like 'SessionService' instead of "SessionalManager" for better understanding and readability purpose     
+    private Map<String, String> map;     // HashMap to store session ids as keys.  We can replace this with DB or any other persistent data storage  
+      
+                                   public java_50328_SessionManager_A01() {       
+                                         map = new HashMap<>();           }          void createSession(String userId)      {         String sid=UUID.randomUUID().toString();     System.out.println("Your Session Id: " +sid);  //store session id in the hashmap//                 this.map .put (userID,session ID ) ;              }         
+                                             public void getSession(String userId)      {         String sess = map.getOrDefault(UserName,"Not Found");     System.out.println("Your Session is: " +sid);   //retrieve session id from the hashmap//                 return this .session;              }       
+                                           public void closeSession (String userId)      {         String sess = map.getOrDefault(UserName,"Not Found");     System.out.println("Your Session is: " +sid);   //close session id from the hashmap//                 this .session=null;              }

@@ -1,0 +1,88 @@
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+import java.io.File;
+
+public class java_34232_XMLParser_A08 {
+
+    public static void main(String[] args) {
+        File xmlFile = new File("path_to_your_file.xml");
+        parseXML(xmlFile);
+    }
+
+    private static void parseXML(File xmlFile) {
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+        try {
+            SAXParser parser = factory.newSAXParser(null, new MyHandler());
+            parser.parse(xmlFile, new SAXHandlerImpl());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+class SAXHandlerImpl extends DefaultHandler {
+
+    private boolean bName = false;
+    private boolean bAge = false;
+
+    @Override
+    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+        if (qName.equalsIgnoreCase("student")) {
+            bName = true;
+            bAge = true;
+        }
+        if (qName.equalsIgnoreCase("name")) {
+            bName = true;
+        }
+        if (qName.equalsIgnoreCase("age")) {
+            bAge = true;
+        }
+    }
+
+    @Override
+    public void endElement(String uri, String localName, String qName) throws SAXException {
+        if (qName.equalsIgnoreCase("student")) {
+            bName = false;
+            bAge = false;
+        }
+    }
+
+    @Override
+    public void characters(char[] ch, int start, int length) throws SAXException {
+        if (bName) {
+            System.out.println("Name: " + new String(ch, start, length));
+        }
+        if (bAge) {
+            System.out.println("Age: " + new String(ch, start, length));
+        }
+    }
+}
+
+class MyHandler extends DefaultHandler {
+
+    private boolean bStudent = false;
+
+    @Override
+    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+        if (qName.equalsIgnoreCase("student")) {
+            bStudent = true;
+        }
+    }
+
+    @Override
+    public void endElement(String uri, String localName, String qName) throws SAXException {
+        if (qName.equalsIgnoreCase("student")) {
+            bStudent = false;
+        }
+    }
+
+    @Override
+    public void characters(char[] ch, int start, int length) throws SAXException {
+        if (bStudent) {
+            System.out.println("Student Data: " + new String(ch, start, length));
+        }
+    }
+}

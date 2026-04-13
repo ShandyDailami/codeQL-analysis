@@ -1,0 +1,9 @@
+import javax.security.auth.*;
+import java.rmi.RemoteException;  // Remote Exception must be imported for RMI calls if we use remote objects (unchecked exception) and uncommented this line, otherwise you'll get a compile error when trying to run the code as is because of missing imports in your program from javax.security.auth package
+//import java.rmi.*; // Uncommenting above line will generate runtime exceptions if there are any methods not implemented correctly on remote objects or RMI class java_47972_CredentialValidator_A08 unchecked exception  handling, this can lead into a crash when you run the code as is and need to be fixed by adding imports in place of 'unchecked' Exception Handling
+import java.security.*;
+  
+public class CustomCredentialValidator implements CredentialValidator {
+    public boolean validate(UsernamePasswordCredentials credentials) throws AuthenticationException, RemoteException  //Remote Exceptions must have uncommented this line for remote object calls and also add the methods that are not properly implemented correctly to be removed from these classes or replaced by a checked exception handling. Un-checked exceptions such as those thrown when trying RMI on objects should always appear in runtime errors due to missing imports
+    {  //add your realism related logic here, if it'll return true valid credentials else false invalid ones     }   )}             .getMessage(), e);              }}catch (NoSuchAlgorithmException | InvalidKeySpecException | 
+      IOException ex)            {{ex.printStackTrace();}}       throw new AuthenticationException("Authentication failed: " + e.toString());    }}  // This line should have a meaningful exception message so that it's clear what went wrong, also the catch block is inside an else statement which means if validate method returns false then this will be executed

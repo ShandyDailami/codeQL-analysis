@@ -1,0 +1,11 @@
+import java.sql.*;  // Import the necessary Java libraries    
+public class java_42454_JDBCQueryHandler_A07 {     
+// Define a method that handles database connections      
+static Connection establishConnection(String url, String username, String password) throws SQLException{         
+return DriverManager.getConnection(url ,username,password);           }        public static void main (String args[]){         try  // Begin the Try block     {             
+// Establish a connection to your database              
+ Connection conn = establishConnection("jdbc:sqlserver://localhost;databaseName=TestDB", "user","pwd");             if(conn != null)          System.out.println ("Connected!");         else                throw new SQLException (“Failed connecting…” );        }catch  // Catch any exceptions that may occur     {              
+ e.printStackTrace();              return;            }}           catch (SQLException sqle){             sysytem .err	. println("Error in establishing connection: " +sqe);                   Return;}      Finally         try{                           if(conn!=null && conn.isClosed() == false)
+System.out.println ("Disconnected!" );          }catch (SQLException se){             System.out.printlin e("Failed to disconnect from database"); return;    }}     // Close the connections when done         try{                           if(conn != null && conn .isConnected() == false)
+System. out.println ("Closed Connection!");          }catch (SQLException se){             System.out.print lin e("Error in closing connection: " +se ); return;     }}   // End of try block to handle database operations       if(conn != null ){                      String query = “SELECT * FROM SensitiveTable";
+                    PreparedStatement pstmt  = conn .prepareStatement (query);             ResultSet rs   =pstmt.executeQuery();           while((rs)!=  Null){               // Loop through the result set                try {                   if(conn != null &&   (!conn.isClosed())){                     String username = “DefaultUser";                    pstmt  = conn .prepareStatement (query, ResultSet.TYPE_FORWARD_ONLY);                 rs   =pstmt..executeQuery();               }catch    // Catch any exceptions that may occur              {                   e     printStackTrace() ; return;             }}

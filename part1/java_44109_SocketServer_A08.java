@@ -1,0 +1,17 @@
+import java.io.*;  // for BufferedReader/Writer classes  
+import java.net.*;  //for ServerSocket class java_44109_SocketServer_A08 others   
+        import javax.net.ssl.*;     //SSLServerSocket, SSLContext etc..     
+        
+public class SecureTelnet {      
+private static final String CLIENT_IDENTIFIER = "Client-Identifier";   // for handshake purpose 
+               private BufferedReader in;            
+              Socket socket=null;          ServerSocket serverSock= null ;     boolean secureServer = false, clientConnected = true , startSSL  =false    SecurityManager security_manager =  new  java.security.AllPermission()   // for SSL Handshake and certificate verification purpose      
+public SecureTelnet(int port) throws IOException{        serverSock=new ServerSocket(port);     setUpSSLSocket(); }      private void setUpSSLSocket(){ secureServer = true; try { socket  =serverSock.accept();   SSLServerSocket srvSck =  (SSLServerSocket )socket .getSocket(); 
+setUpOutAndInChannelsForCertificates(srvSck,CLIENT_IDENTIFIER); startHandshakeWithClientSideBIOUIStateManagerNewSessionContextOrNull((sslserverconnection) ); } catch (IOException e){ clientConnected = false; throw new IOException("Error during SSL HandShaking",e ) ;} 
+    // call the function to read and write for a single user session.   if(clientconnected=false):     closeConnection(); else: pass      SecureTelnetSecuredConversationManager (conn); } private void setUpOutAndInChannelsForCertificates(){ try { in =new BufferedReader((InputStreamReader)(socket .getInputStream())); out=  new PrintWriter ((OutputStream ) socket.getOutputStream(),true ); 
+//here I am assuming the server is using certificate for handshake purpose and handling request-responses with this code snippet      } catch (IOException e){ clientConnected = false; throw   IOException("Error during reading from/writing to",e);}}     private void SecureTelnetSecuredConversationManager(SSLServerConnection conn ){ //here I am assuming server is using SSL and handling request-responses with this code snippet try {   
+// Here, you will read the data received on socket channel (Client)  .   If client disconnects or if handshake doesn't succeed then close connection.      } catch(SSLException e){       // Close Connection          ClientSideBIOUIStateManager ui = new     StateMachine();         conn=conn;ui -> processInputFromSocketChannel(&socket,    in);closeConnection() ; 
+//throw Exception("Error while processing input",e)   , if(!clientConnected || !startSSL ) close Connection      } catch (Exception e){ // here I am assuming server is handling exceptions with this code snippet     throw new IOException( "An unexpected exception was thrown.",    e);} 
+//finally {if (!socket.isClosed()) try{ socket .close();   in != null; out! =null;} catch (IOException ioe){}} } private void closeConnection() throws Exception {} //Here I am assuming server is using this method to handle exception and finally block for clean up purpose     
+}  public static void main(String[] args) { try{ new SecureTelnet(5672);   while(!Thread.currentThread().isInterrupted())    Thread.sleep(10*1000L)); } catch (Exception e){ System . errprintln("Failed: " +e ) ; 
+System.exit(-1) }}

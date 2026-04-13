@@ -1,0 +1,11 @@
+import javax.servlet.*;  //for servlets we only use this library here, other parts of your project can depend on these standard java libraries and not others  
+public class java_43176_SessionManager_A07 implements SessionContext {   
+      private static HashMap<String , String> userDB = new HashMap<>();     /* database */      
+                                                                         //userID - passwordHash  (stored for security)          
+ public void createContext(String sid, ServletRequest servletRequest, ServletResponse servletResponse){  
+          System.out.println("Creating session with ID: " +sid);    /* log message here */       String pass = UUID.randomUUID().toString();     //generate random password (security sensitive)          
+                                                                         userDB.put(sid,pass );  }      public void deleteContext(String sid){   System.out.println("Deleting session with ID: " + sid);    /* log message here */       userDB.remove(sid);     }}        class Main {         
+public static void main (final String[] args) throws Exception  {      Servlet serv = new MyServlet();   //create a generic server, not necessarily related to security but could be more in the future if you want!    /* create and configure your own custom webserver */     Server server =  new Server(serv);         
+                                                                         Listener http_listener=new HttpConnectionListener (server );//HTTP listener for incoming requests.        //only HTTP is used here, no HTTPS or other types are necessary   }      private static class MyServlet extends DefaultServlet {       @Override public void doGet(HttpServletRequest request , ServletResponse response) throws IOException 
+     =>{System.out . Println("Received an insecure GET Request: " +request); //log message here, only for testing (security sensitive).             String sid = request.getSession().getId();         /* get session id */   AuthSessionManager manager =  new AuthSessionManager( );   
+                                                                              if(!manager .userDB.containsKey((sid))) {throw 403; } else{System..println("Authorized user");}} //only authorized users can access the resource (security sensitive)     }}

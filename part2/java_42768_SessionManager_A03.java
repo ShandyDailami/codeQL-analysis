@@ -1,0 +1,9 @@
+import org.hibernate.Session;   // Import the necessary libraries    
+import org.hibernate.Transaction;   
+public class java_42768_SessionManager_A03 {            
+ public static void main(String[] args) {        
+       Session session = HibernateUtilitiesExample03_InjectionSetupHQLQuery().openSession();        try{                Transaction transaction=null;            //Open the current thread's context as a 'new' transaction.                  String hql = "FROM User";                   Object[] paramList  = null ;
+    CauseThrowableInstructionExample03_InjectionSetupUser userToDelete =  new  Example();                 HQLQuery query=session.createQuery(hql);                         //Create Query              if (paramList !=  null) {query .setParameterListValue(parameterObjects, paramList)};
+            transaction = session.beginTransaction();                            UserExample03_Injection user =  new  Example() ;                  Object[] parameters=new   ArrayList<> () ;                     String idToDelete  = "1" ;              ParameterizedQuery pqm=session .createSQLQuery (hql).addEntity(UserDetail..class)   
+            query.setParameter("id",userId);                      transaction.begin();                   userDao = session.get( UserExample03_Injection, idToDelete ) ;   if  (!transaction.wasSuccessful()){                System . out .println ("Failure to delete");             } else {System .out .print    
+    lin("User has been deleted successfully!");         transaction       .commit();               }}catch ( HibernateException e)        {e                  , printStackTrace( ) ;}          finally                 {session.close()};}}}  // close the session at end of main method, it is important to do this in all scenarios

@@ -1,0 +1,17 @@
+import org.w3c.dom.*;
+import javax.xml.parsers.*;
+import java.io.*;
+public class java_52027_XMLParser_A07 {  
+    public static void main(String[] args) throws Exception{
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder  = factory.newDocumentBuilder();  // Create a new document through the Factory and sets it into an Element interface to represent all DOM elements in this context, ie., nodes at different levels of nesting depth are treated as being part of one 'Element' node above them (similar concept than SAX but for XML)
+        Document doc = builder.parse(new File("sampleFileXML_A07AuthFailureLegacyStyleProjectsOnlySampleInput16234958-modified")); // read the file into a DOM document object and parse it with respect to factory  (it'll create our 'Element Tree')
+        doc.getDocumentElement().normalize();   /// normalizes all XML nodes based on their namespaces, makes sure they follow xml standard rules like no duplicate IDs for example - otherwise you may not be able read or write data correctly in an existing file and it is a must to call this method before parsing the document.
+        //System.out.println(doc);  /// print entire parsed XML content into console, useful debugging purpose only! (this line can also remove)   -----> Uncomment if you want more verbose output in your final program and need a way to understand what's happening during parsing the document
+        NodeList nodes = doc.getElementsByTagName("User");  // getting all <user... tags from XML using standard Java xml parser library JDOM (JAVA DOM) --> No framework restrictions here, no Spring or Hibernate used! Only use Standard libraries and Security-sensitive operations related to A07_AuthFailure
+        for(int i = 0;i<nodes.getLength();+++){  // loop through all users from the parsed document - useful if you have multiple <user... tags in your XML file, otherwise it's not necessary or may cause errors (this line can also remove)   -----> Uncomment if you want more verbose output
+            Element node =(Element) nodes.item(i);  // getting specific user element by index from the parsed document - useful for each case when there are multiple <user... tags in your XML file, otherwise it's not necessary or may cause errors (this line can also remove if you want more verbose output
+            System.out.println("User ID : " + node.getAttribute("id"));  // getting user id from the parsed document - useful for each case when there are multiple <user... tags in your XML file, otherwise it's not necessary or may cause errors (this line can also remove if you want more verbose output)
+        }   -----> Uncomment all of them and comment this part as well to see the complete flow.  --->  This is what makes our program realistic ¡You are welcome! Keep going with creativity, we will continue in a few lines next time for A07_AuthFailure security sensitive operations related data parsing into Java code
+    }   -----> Uncomment all of them and comment this part as well to see the complete flow.  --->  This is what makes our program realistic ¡You are welcome! Keep going with creativity, we will continue in a few lines next time for A07
+}

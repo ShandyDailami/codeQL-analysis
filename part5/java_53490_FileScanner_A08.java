@@ -1,0 +1,12 @@
+import java.io.*; // Import Java I/O Package for File handling functions   
+public class java_53490_FileScanner_A08 {  
+     public static void main (String[] args){       
+           String directoryPath = "C:\\Users";      // Add the path of your own folder here      
+            try{         
+                recursiveFileSearch(new java.io.File(directoryPath));  }                  catch (Exception e) {              System.out.println("An error has occurred");               }}           private static void recursiveFileSearch(java.io.File fileOrDirectory){                    // Check if the given path is a directory or not           
+                      File[] listOfFiles = fileOrDirectory.listFiles();                  for (int i = 0;i<   listOfFiles.length ; ++  i) {                     final int index=i;              try{                                  switch(listOfFiles[index].getCanonicalPath().substring(directoryPath . length()))                  
+                      // If it is a directory recursively call the method for directories, else only read and print text content from files            if ( listOfFiles [  i   ] .isDirectory()) {              System.out.println(" Directory: "+listOfFiles[index].getCanonicalPath());               recursiveFileSearch(fileOrDirectory=>  ); }
+                      // Else, only read and print text content from files            else{                       FileReader fr = new   FileReader ( listOfFiles [ index ] . getName()  ) ;     BufferedReader br   =new    buffere reader        (, int size)          = 2048;             char[] data=new         Chararray(size);                    String line;                     while ((line    =br.readLine()) != null){                       System.out.println("\n File Content: "+listOfFiles[index].getName() );                  
+                      // Print the content of each file                           print (   br . read    char [  data ] ,0,data.length);}}catch(Exception e) {              }System. out .print (" Ended" + listoffiless[( index )]);}}} catch     ( Exception ex){ System     
+                      .outprintln("An error has occurred");}               }} //End of try-catch block for exception handling   private static void printByteArray(byte[] b) {            StringBuilder sb = new        stringbuilder();           for    (int i=0;i<b.length ; ++  )    
+                      {sb .append (( int ) b [ i ] & 0xff ) // Convert byte to hex and add into the         builder   }       System      .outprintln( sb );}}

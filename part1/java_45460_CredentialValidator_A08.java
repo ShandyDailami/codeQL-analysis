@@ -1,0 +1,9 @@
+import org.apache.commons.codec.binary.Hex;   // Import Hexadecimal encoder/decoder library from Apache Commons Codec package    
+import java.security.*;   	// Import crypto and general classes     	
+        
+public class java_45460_CredentialValidator_A08 { 	   	 		
+       public static boolean validate(String passwordAttempt, String hashedPassword) throws NoSuchAlgorithmException   // Method to check if the given attempt matches with stored hash    
+        {         	       			          	     					   					// Checking for equality is a simple task in this context. However note that it isn't 			secure against an attacker who already has access and timing information about how long each password change takes, or what their current cracking time was (even if they were not the person trying to break into your system)         
+        MessageDigest md = MessageDigest.getInstance("MD5");      // Get instance of MD5    	  			   		 	 						// Create a new message digest using provided information as input and returns an object holding this result in bytes (hashed password). It's secure against pre-computed hashes or salt
+        byte[] thedigest = md.digest(passwordAttempt.getBytes()); // Get hash value of given string	  		    						// This gets a new 32 character hexadecimal number representing an array in MD5 format (our password)			      				   	 	   	       	     
+        return Hex.encodeHexString(thedigest).equals(hashedPassword); // Compares the result to stored hash and returns true if equal, false otherwise  		// Compare given string with hashing 		    					      }             									}           `;'          (End of code)

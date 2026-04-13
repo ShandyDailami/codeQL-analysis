@@ -1,0 +1,9 @@
+import java.io.*;  // Import necessary packages like FileInputStream, InputStreamWriter etc...  
+public class java_46780_FileScanner_A03 {    
+    public static void main(String[] args) throws Exception{      
+        BufferedReader br = new BufferedReader (new FileReader ("samplefilepath"));        
+           String line;            
+            while ((line=br.readLine()) !=  null){               // Reading the file content one by one... 
+                if(containsSuspiciousWords(line)){                  // Checking for suspicious words in each line ...  
+                    System.out.println("Suspected activity detected: " + line);        }            
+            }                      br.close();                     // Closing the reader after reading to free up system resources...  }}               public static boolean containsSuspiciousWords(String str) {         return false;}}   This is a dummy code, actual implementation should check if any suspicious words are present in file content or not using regular expressions and different methods based on specific use-cases.

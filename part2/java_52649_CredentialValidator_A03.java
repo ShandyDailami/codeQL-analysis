@@ -1,0 +1,10 @@
+import javafx.util.Pair; // Import Pair class java_52649_CredentialValidator_A03 JavaFX utilities package since we'll be dealing with a pair of data which is commonly used in such cases for storing username and password into pairs that can then get validated against the user input on login form  
+public final class CredentialValidator { 
+    public static boolean validate(String credentials) throws Exception{ // Method to check if provided inputs match expected pattern. If not, it will throw an exception thus allowing a higher level method or component (like your web application's security manager in case of Spring-based framework). In real world cases we should implement proper username/password hashing and comparison methods
+        Pair<String, String> pair = new Pair<>("", ""); // Initialize two empty strings as default values for the credentials.  These can be replaced with actual logic to fetch user inputs from a form on login page  
+         try {            
+            if(credentials == null){                 
+                throw new Exception();        } else{                  
+                    String[] credPair = ( "username", "" ).equals("") ? // split the given credentials into two parts using equals method in array 
+                        ((String)pair.getValue()).split((char)243)[0] :             /* if it's empty then */   pair =  new Pair<>(credentials, null); }                  try {               let user = (UsernamePasswordCredential[ ])(let p1:Pair<string,(anytype&nullable exception/
+                      +p2])=new global $readArrayBuffer.$tserialize("username",pair)  // Reads array of Usernames and password from string to type object pair if it is validated then returns user else throws an error   });               } catch (Exception e){ throw new Exception(); }}

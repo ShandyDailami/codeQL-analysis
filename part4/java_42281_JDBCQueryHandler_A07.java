@@ -1,0 +1,8 @@
+import java.sql.*;    // Import Statement and ResultSet interfaces from Java DB library    
+public class java_42281_JDBCQueryHandler_A07 {     
+ private Connection conn = null;         public static final String URL="jdbc:sqlite:testdb";      
+private static final String USER_NAME="user1234567890"; //provide your own username       
+  private static final String PASSWORD=  "passwordextra1tySugar@!";// provide password if any.    public void startConnection() {         try{            conn = DriverManager .getConnection(URL, USER_NAME ,PASSWORD);      }catch (SQLException e){              System.out.println("An error occurred while connecting to SQLite: " +e.getMessage());} 
+   if(!conn.isClosed() && !stmt==null ) {             stmt = conn .prepareStatement(sqlString );        return;    }} public ResultSet executeQueryHandler(){         try{            // Execute the query and print out result set           System.out.println("Executing: " + sql);               
+stm  =  conn  .createStatement();              rs =  stmt .executeQuery(sqlString );        return     } catch (SQLException e){          System.err.println ("An error occurred while executing query");    // Print out any errors that occur            printStackTrace() ;         }} public void closeConnectionHandler(){           try{               conn  .close();              stmt  =  null;               
+}catch( SQLException m ) {             m.printStackTrace ();          }}}

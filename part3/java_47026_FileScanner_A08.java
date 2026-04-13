@@ -1,0 +1,8 @@
+import java.io.*; // Import BufferedReader and File classes needed at top level  
+// ... rest will depend on context (maintenance vs rapid development) – not shown here...     
+     public class java_47026_FileScanner_A08 {    private static final String PATH = "path/to/directory";       
+         /** This function reads file from a given path. */       @NonNull BufferedReader read(@NonNull File directory,   // Call this with your own parameters and see what it does! 
+          int bufferSize) throws IOException {      return new BufferedReader(new InputStreamReader ( Files . newInputStream( Paths . getFileSystem().getPath("directory", "filename") , StandardCharsets.UTF_8)));   }    public static void main(@NonNull String[] args){     try (@NonNull FileScanner scan = scanners ; // Call this with your own parameters and see what it does!
+         Files . walkFileTree (...);  /* This code is commented out because of its simplicity for now. */      while(scan_.hasNext()) {    String line;        BufferedReader reader=read("path",1024 );   // Call this with your own parameters and see what it does!
+         if((line = scanner .nextLine() ) !=  null) println (reader.readDataBuffers(scan));  }     catch (@NonNull PathNotfoundException e){       logError("File not found: " + path,e);   }}catch(@SuppressWarnings({"PMD.AvoidUsingReadableStreams",...})) {      // This is a suppress for PMD's warning on using read/write streams in finally block
+             }finally{        ...}}  /* No code to remove here, but the closing brackets are important */}

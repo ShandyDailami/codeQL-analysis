@@ -1,0 +1,7 @@
+import java.sql.*;   // Import necessary classes for SQL communication   
+public class java_44491_JDBCQueryHandler_A03 {    
+      private static final String url = "jdbc:mysql://localhost/test";      
+      private static final String username="root";       
+      private static final String password="password123$%^&*()_+`~|}{[]?><';,./-=""' ";    // Change this to your actual database credentials    
+   public Connection con;  try {         Con = DriverManager.getConnection(url ,username , password);          } catch (SQLException e) {}           System .out .println ("Connected");      String sql  = "SELECT * FROM Employees";                 PreparedStatement pstm=null ;     ResultSet rs   = null;            try {            
+        // Execute a statement using the Connection object.    Con = DriverManager..getConnection(url ,username, password);  if (Con != null)   System .out ..println ("Connected");      String sql  = "SELECT * FROM Employees";                 PreparedStatement pstm=  con.prepareStatement("select id from employees where name like '%" + username+ "%' and role ='"  +role+  "' ");  rs =  pstm.executeQuery();    while (rs .next()) {       String empId   =   rs     .getString(1);          System..println ("ID : " +  emempName ); }           con.close() ;         }} catch {}

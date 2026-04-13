@@ -1,0 +1,10 @@
+import java.sql.*;   // import the necessary Java packages   
+public class java_44122_JDBCQueryHandler_A08 {    
+// Main method where execution of program starts     
+ public static void main(String args[]) throws SQLException      
+{        System.out.println("Starting DB operations....");         Connection con = null;          Statement stmt=null;   // create a variable to hold database connection           try {               String url =  "jdbc:mysql://localhost/test";            Properties info  = new Properties();              Class.forName ("com.mysql.cj.jdbc.Driver");             System.out.println("Connecting Database.....");                 con = DriverManager .getConnection(url,info);                stmt   =con.createStatement ( );   // create a variable to hold database statements           try {               String SQL= "SELECT * FROM Employees WHERE ID<0";                             ResultSet rs  =stmt.executeQuery 
+(SQL) ;                 System.out.println("Selecting records from table EMPLOYEE using Sql Query.... ");              while (rs.next())       //Fetch rows from result set      {                   String name =   rs.getString ("NAME");               int id  =    rs.getInt 
+( "ID" );             System . out .println("id :" +id+ ", Name:" + 
+name);                 }           con.close ( ) ;              stmt.close(); // close connection and statement after use      }} catch {                ClassNotFoundException e){               throw   new    SQLExcepti 
+on(e) {};             System . out .println ("Error in establishing the Connection" + "....."); }     finally          {}           if ( con != null )       try{                  //Close connection            con.close();}catch(SQLException e){               throw   new    SQLExcepti 
+on(e) {};             System out .println("Error in Closing the Connection" + ".....");}}                   }                       catch          {}                    println ("Ending DB operations...");                     }} // end of main method     Catch block is not mandatory for this program but it's a good practice.

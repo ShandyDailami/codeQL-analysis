@@ -1,0 +1,10 @@
+import java.sql.*;   // import necessary Java packages for JDBC operations   
+public class java_46490_JDBCQueryHandler_A01 {  public static void main(String[] args)    
+{       String url = "jdbc:mysql://localhost/test";        // specify database URL     
+         Connection conn=null;               try            // establish a connection to the MySQL server.         
+   {          
+    conn =  DriverManager.getConnection (url, "username", "password");     if (!conn.isClosed())  System . out . println ("Successfully Connected!");       else         throw new SQLException("Failed connecting Database"+ url );      } catch(SQLException ex) {                
+   // handle the exception here and do not say sorry          return;                  try        /* open a statement for database update ( INSERT, UPDATE ...etc.) */                   Statement stmt = conn.createStatement();       String SQL= "SELECT * FROM Employee";           ResultSet rs  =stmt.executeQuery(SQL);             while 
+   ((rs) !=  null )          {               //loop through the result set and print each row in a table format                try                    /* open an update statement */                   PreparedStatement pstm = conn .prepareStatement("UPDATE EMPLOYEE SET AGE=? WHERE ID=?");    
+    rs.next();              String id =  rs.getString(1) ;   int age= 25;             // set the new value for Age            try                    /* execute update statement */                   pstm .setInt (3,age );          pstm .setString  ((4),id);                 
+         } catch (SQLException e){e.printStackTrace();} finally {               if(conn!=null) conn.close() ;                 System out . println ("Database connection closed.")；return;}} // this line is just for flow control, it will not be executed when catching exception          return;}

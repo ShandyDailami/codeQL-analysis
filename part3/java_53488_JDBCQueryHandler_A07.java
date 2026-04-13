@@ -1,0 +1,13 @@
+import java.sql.*;
+import com.zaxxer.hikari.HikariDataSource;
+//... imports for security sensitive operations related to A07_AuthFailure goes here..
+
+public class java_53488_JDBCQueryHandler_A07 {
+    private HikariDataSource dataSource; // Create a Data Source object using the 'pool' configuration in your hikaricp-config.xml file (ensure this is included) 
+    
+   public void setup() throws Exception{       		// Set up connection pooling here... example below with MySQL as driver and HikariCP used for it..   		     	   			                 	       	     					         	 				       }                                                    dataSource = new com.zaxxer.hikari.HikariDataSource();
+                                                                                       // ... setup the configuration details such as db url, user name & password etc here... (ensure these are included) 	dataSource .setJdbcUrl("jdbc:mysql://localhost/test");	// Set JDBC URL of your database..  		     	   			                 	       	     					         	 				       dataSource.setUsername( "root" );
+                                                                                       // ... set the username and password here... (ensure these are included) 	dataSource .setPassword("password123");	// Set Password for MySQL User..... 	                                                    }                             	   		     	       	     					         	 				       public Connection getConnection() throws SQLException{    			                 	return dataSource.getConnection();	}
+                                                                                       //... create a method to close the connections..  (ensure this is included)  		public void close(Connection conn){	if(conn != null ) {		     	   	       					         	 				       try	{        	     	   	// Close Connection if not closed already ....             dataSource.closeConnection(conn); }
+                                                                                       //... catch block for exception..  (ensure this is included)   		}catch(SQLException e){e.printStackTrace();}}		     	   	       					         	 				       public void main(String[] args) {    			                 	// TODO Auto-generated method stub         try{  
+                                                                                       //... Here we are just testing our connection setup..  (ensure this is included)} catch block for exception as well. }catch()   	}}                                                     dataSource .shutdown(); }}

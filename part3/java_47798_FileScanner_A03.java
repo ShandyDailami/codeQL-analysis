@@ -1,0 +1,2 @@
+import java.io.*;  // Import File class java_47798_FileScanner_A03 read files and directories, etc.*    *******************************************************************************************/
+public class Main {   public static void main(String[] args) throws IOException{     try (DirectoryStream<Path> dirs = Files.newDirectoryStream(         Paths.get("/path_to_your_directory"), "glob:*.txt")) {       for (Path path : dirs){            System.out.println("File name is =>"+((Object) ((Files.isSameFile(dir, d)) ? "" +d:"..\\"+df)));          }     }}

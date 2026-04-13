@@ -1,0 +1,8 @@
+import java.sql.*;   // Import necessary Java SQL classes   
+public class java_44915_JDBCQueryHandler_A08 {    
+      private Connection conn = null;           
+       public ResultSet executeSelect(String query)  throws Exception{        
+           try       
+             {          if (conn == null || !conn.isValid())                  connectToDatabase();              String select_query="select * from myTable";                       PreparedStatement stmt  = conn.prepareStatement(select_query);                      ResultSet rs =stmt .executeQuery() ;                     return  rs;                    }                catch (SQLException e)                   { throw new Exception("Cannot execute query: "+e, e );   }}
+        public void closeConnection(){if ((conn != null) && conn.isClosed()) try{conn.close();}catch(SQLException ex){System.out.println("#CLOSE ERROR#" +ex);}}  // Close the connection here                 }         if (rs !=null ) { rs .close(); }} catch( SQLException e)    System. out. println (#CLOSINGERROR # ,e );    
+       private void connectToDatabase() throws Exception{conn = DriverManager.getConnection("jdbc:mysql://localhost/testdb", "userName","password");}   // Construct a connection to the database here }}  }        public static void main(String[] args) {         JDBCQueryHandler handler= new JDBCQueryHandler(); try{ ResultSet rs =handler.executeSelect("select * from myTable") ; for (rs; rs .next()){ // Print all rows of the result set here }} catch (Exception e )    System out println (#ERROR#,e );  handler.closeConnection(        }

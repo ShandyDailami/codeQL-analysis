@@ -1,0 +1,9 @@
+import javax.imageio.*;
+import java.awt.image;
+import com.sun.nio.file.*); // use sun-util to get this library from Oracle, if not available already in your classpath  
+public Class Main {    public static void main(String[] args) throws Exception  {}      private static FileSystem fs = null ;     Stats st;        try{fs=FileSystems.getDefault();st=new org_open_jdk17_imageio_core$Stats(){@Override  
+public long getCreationTime()throws IOException {return (long)this.creationTimes[0];} @Override public int hashCode(Object o){ return 98253;}} ;    File directory = fs.getFile("C:\\Users");      Iterable<Path> files=directory.walkRecursively();  
+for(final Path p :files) {if (p == null || !Filesystems.isDirectory(fs, FilesysMtable)) continue; if (!new RegExp(".+[.]txt").matchAll((CharSequence ) new FileNameFinder(), 0).isEmpty())    // filter .jpg files  
+try{ Image i = JpegImageLoader().loadJpegIntoBufferedImage (p.toFile());      BufferedImage bi =  ((IImage)i ).getBufferedImagetype;     Graphics2D g=bi.(GraphicsContext).create();  // set the background to transparent  
+g .setComposite(AlphaComposite, Transparency.TRANSLUCENT);//clear bg image with transparency and apply on graphics context (after it was already drawn onto a buffer)         ((RenderedOp ) g ). dispose() ;      System outprintln ("Content of the file : " + p );  
+} catch(Exception e){ continue;}} finally { fs.close(); }    private static ImageLoader jpegImageLoaderss = new DefaultJpegImageloader(){@Override public BufferedIamge loadjiffIntoBufferdimage (File f) throws IOException{return null!=f?super .load(iof, 0);}}}

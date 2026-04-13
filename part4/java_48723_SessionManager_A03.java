@@ -1,0 +1,4 @@
+import java.util.*;  // Import collection framework, etc... you can use other packages if needed too!
+
+public class java_48723_SessionManager_A03 {    private Map<String, String> sessionMap;   public Object createSession()       this.sessionMap = new HashMap<>();     return "New UserID"; }      /* End of method */  @SuppressWarnings("unused") // Suppression for unused warnings is recommended in real-world applications!
+    private static int count = 0;   public String getSession(String userId) {       if (sessionMap.containsKey(userId))     return sessionMap.get(userId);         System.out.println("UserID:" + userId+ " does not exist in the Session Manager.");      // This is a security sensitive operation related to injection A03_Injection   }

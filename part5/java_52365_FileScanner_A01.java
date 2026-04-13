@@ -1,0 +1,6 @@
+import java.io.*; // Import the necessary Java libraries   
+class java_52365_FileScanner_A01 {     
+static void listFilesRec(File directory) throws IOException{       // Define a recursive function to traverse through directories and files       
+BufferedReader br = new BufferedReader (new InputStreamReader  (System.in));    
+for (File file : directory.listFiles())                          // List all the Files in current Directory        
+    {                   if(file != null && file.isDirectory()){             // If it is a subdirectory, recursively call function       listFilesRec();}                 else{                       System.out.println ("Reading: " + file.getAbsolutePath());  }     }}   public static void main (String args[]) throws IOException {      File dir = new         java.io.File(".");    // Define your directory path here        if(dir == null || !dir.exists()){          System.out.println ("Directory not found: " +           d); return;}     listFilesRec(dir); }

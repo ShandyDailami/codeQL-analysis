@@ -1,0 +1,15 @@
+import java.io.*; // Import the necessary classes 
+class java_46293_FileScanner_A07 {  
+    static void fileSearch(String path) throws IOException{    
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));     
+         System.out.println("Enter directory or filename to search: ");            
+          String userInput=br.readLine();              // Read the User input 
+           File fileObj1  =   new    java.io.File (userInput);     # Create a File instance for given path name     
+        if(fileObj1 .exists()) {       System.out.println("Found: " + userInput );          return; } // If the entered input is exact match with any file in directory then only display this message otherwise do nothing         else           throw new IllegalArgumentException ("No such File or Directory exists");    
+        if (fileObj1 .isDirectory()) {      System.out.println("Is a folder: " + userInput );              // If the entered input is exactly match with any file in directory then only display this message otherwise do nothing         } else           throw new IllegalArgumentException ("Given Input should be File or Directory");
+        if(fileObj1 .isFile()) {      System.out.println("Found: " + userInput );          return;       // If the entered input is exactly match with any file in directory then only display this message otherwise do nothing }     else           throw new IllegalArgumentException ("No such File or Directory exists"); 
+         PrintWriter out =new PrintWriter(System.out);             System.out.println("Enter next path: ");          String sCurrentDir=fileObj1 .getAbsolutePath();      // Get the absolute Path of Current directory and print it to console    while(!sCurrentDir.equals("/")) {       File filelist[] =   fileObj1 
+         .listFiles() ;                 for (int i = 0;i <          filelist.length;+++ )     if(filelist[            ]!=null)           out.println("Directory: " +             ); else               throw new NullPointerException ("Nullpointer exception");      sCurrentDir =   
+         fileObj1  .getParent(); }                   // Get the Parent of Current directory and print it to console   if(sNextPath== null ) break;          return;}       catch (SecurityException se) {            System.out.println("Access denied: " + userInput);      throw new SecurityException ("Permission Denied"); 
+        else           FileSearch(fileObj1 .getAbsolutePath());     } // Calling the function recursively till current directory has no more child directories       catch (IOException e) {              System.out.println("Error: " + userInput);      throw new IOException   ("Read Error ");}}; 
+        public static void main(String[] args){            try{ FileScanner .fileSearch("/");     }catch    (Exception ex )         {System.err.println("\nCaught exception... \nexiting main() : " +ex);      System.exit(-1)}   }}`;

@@ -1,0 +1,5 @@
+const { createServer } = require('net'); // Import 'createServer from NodeJS standard library.' 
+const fs = require ('fs') ;//Import file system operations for reading and writing data to files via the built-in filesystem module in nodejs's core modules .  
+let server; /// Declare a variable of type Server. (This is used later on.)     
+class java_52909_SocketServer_A03 {  //Create class named 'SocketServer'.    PLEASE DO NOT USE SPACE BETWEEN CLASS AND BEGIN NOW OR YOUR ASSISTANT WILL TAKE CARE OF IT!   }     End Class Here; .        Begin Function Below.          public start(port) {       server = createServer (); // Start a new TCP Server on the specified port and call back function when connection is established or closed, passed to 'connection' method   
+                console.log ('Starting Socket at Port:', 6987 );     return   server .listen(port || 50342 ,() => {console.log('Listening on : ',server.address().port)}); } private handleConnection (socket) {}          public stop ()

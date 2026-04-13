@@ -1,0 +1,9 @@
+import java.io.*;  // for Input/Output Streams, Buffered Reader & Writers  
+import java.net.*;    // For Server Socket Class    
+public class java_48790_SocketServer_A03 {     
+private static String CLIENT_MESSAGE;       private static DataInputStream DIS;         private static DataOutputStream OSA;       
+ public static void main(String[] args) throws IOException{  BufferedReader BR=new BufferedReader ( new InputStreamReader ((System.in)));          PrintWriter PW =null ;    Socket SOCKET =  null, CLIENT_SOCKET  =   null;         try {      SERVER_SOCKET=  new ServerSocket(9071);     System.out .println("Server is listening at port 4568");             while (true)         
+{                // wait for client socket connection               Socket CLIENT=null, SOUND = null;         try {            Client_socket =  SERVER_.accept();           DIS=  new DataInputStream(CLIENT.getInputStream());                   OSA  =   new  DataOutputStream((Client_Socket). getOutputStream ());
+System . out .println("Connected to client");                     CLIENT_MESSAGE =DIS.readUTF() ;     PW=new PrintWriter (OSA, true);                  System.out .print ("Enter your message: ");                String MESSEG =  BR. readLine();   if(MESSEG ==null)break;
+System  out..println("Server received the following from client :"+CLIENT_MESSAGE );                     PW ..println ( CLIENT_Message);                      }     catch {         SERVER_.close () ; System .out.print ("Closed down connection");    }}              finally          if(SOCKET !=null)  SOCKET. close();       
+if ((CLIENT _socket)!=  null )   // Closing the socket             CLIENT_Socket. Close ();     }      catch {         System . out. print ("Closed down connection");    }}                     });

@@ -1,0 +1,7 @@
+import javax.security.auth.*;
+public class java_51832_CredentialValidator_A03 implements CredentialValidator {  
+    public boolean validate(final AuthenticationRequest authrequest) throws IOException, InvalidAuthenticationException{     //a method to check user credentials        
+        String username = (String)(authrequest).getID();       //extract the name from request           if length of entered password is less than 5 then return false else true         
+        char[] pwd=(char[]) authrequest.getPassword();   	// extract characters in a character array     	  		    				if (pwd == null || pwd.length < 6 ) {         //Check if the user has entered anything and also make sure it is more than 5 chars
+            return false;      										}         																return true;}   	// If all conditions are satisfied, then we have validated successfully     	   }     public CredentialValidationResult validate(AuthenticationRequest authrequest) {		        // Returning the validation result as a simple boolean         if (authrequest.getID() == null || ((char[])(authrequest).length < 6)) 
+    return new CredentialValidationResult("Unknown user", "No Privilege Here","Fatal Error"); }  	// If all conditions are satisfied, then we have validated successfully     		}         		     // This program is simple and does not do much but serves as an example of how to implement a credential validation in java.

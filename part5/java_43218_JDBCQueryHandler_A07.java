@@ -1,0 +1,16 @@
+import java.sql.*; // Import necessary classes such as Connection and Statement, etc...
+// In a real application you would likely use an ORM library to connect with your database (Hibernate for example) instead of directly writing SQL queries here ...  
+public class java_43218_JDBCQueryHandler_A07 { 
+    public static void main(String[] args){     
+        String url = "jdbc:mysql://localhost/test"; // Your DB URL, username and password should be inserted in real applications...      
+         try (Connection conn =  DriverManager.getConnection(url,"username","password");  
+              Statement stmt  =conn.createStatement()) { 
+            String sql = "SELECT * FROM users WHERE name='testuser' AND pwd='testpass';"; // Your SQL Query, username and password should be inserted in real applications...    
+             ResultSet rs =  stmt.executeQuery(sql);    /* Execute the query */      
+            while (rs.next()) {  /** Fetch data from result set **/          
+                System.out.println("Found user " + rs.getString("name"));          //Printing username...    
+             }     
+        } catch(SQLException e) {    /* Catch any SQL Exceptions */        
+            System.out.println ("Error in accessing the database");      
+            e.printStackTrace();  /** Print stack trace for debugging purposes **/             
+          //You should handle this exception according to your application's needs...   }           catch (Exception $e) {            $e->getMessage());      }}             finally{     System.out("End of program");    try/finally block is used so that the end statement will always be executed no matter what caused it to exit

@@ -1,0 +1,9 @@
+import javax.crypto.*;   // Importing built in cryptographic classes for password encryption and hashing, such as MessageDigest (for SHA hash), SecretKeyFactory(to create keys) etc...   
+import java.security.spec.*;   // For specifying key length requirements    
+// imports you need  ... . e ....      Importing all the required libraries for this program to run perfectly ....          
+public class java_43830_CredentialValidator_A07 {         /* Creates a new Java Class */       public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeyException        //Creates object of Secret key     SecureRandom sr = new … . (creating instance for secret random number generator).
+    byte[] salt="ThisIsASalt".getBytes();   ByteArrayOutputStream baos  =new      .....(messageDigest)......;         KeyKeyParamSpec paramSpec =  new       KekyKind‌​s     Param … . (Creating instance of the parameter specification).
+    SecretKey secretkey =SecretKey.getInstance("AES", "CBC/PKCS5Padding");   Cipher cipheriv=      .....(paramSpec,baos);        // Creates a new AES-based encrypts and decrypted instance with the above parameters 
+    KeyGenerator kg =  KeyGen.getInstance("AES", "CBC/PKCS5Padding");         ...// This is just for creating an object of keygen but you can use it to generate keys as well ....      SecureRandom sr = new     .....(secure random number generator).
+    Key   k=kg .generateKey();  // Generate a Secretkey.        Cipher cipheriv   =Ciph‌.. (Creates instance of the encrypts and decrypted method with above parameters)       .........;             /* Encryption */      baos = new     ByteArrayOutputStream( );
+    ...//Encryptions... // Decription.... ........   } catch {/* exception handling code here, like print stacktrace for debugging..*/}         };        }}

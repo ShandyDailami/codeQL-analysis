@@ -1,0 +1,15 @@
+import javax.security.auth.Subject;     // For CredentialValidationResult, Authenticator and Principal objects... (A03_Injectable)
+public class java_52153_CredentialValidator_A03 {     
+  public static final String SALT = "Salt";       /* A random string used as a 'salt' for each user */  
+    private boolean allowUnencryptedLogins;     // Flag to determine whether un-authenticated log in is allowed (for testing)...(A03_Injectable ) 
+     
+ public CredentialValidationResult validate(Subject subject, Object credentials){       /* A method for validating the user and password */  
+    String inputPassword = ((char[])credentials)[4] + "" ;     //Assuming we are taking a char array as our creds (password in most cases).       
+     
+  if(!inputPassword.equals(SALT)){       /* Checking whether the entered credentials match with expected password */  
+          return null;         // If not, returning nothing i.e., no error...A03_Injectable    }     else {            String realm="Unknown";           try{Realm r = new MyRealm();             CredentialValidationResult cvr=  ((MyAuthenticator)r).validate(subject,(Object)credentials);               if (cvr==null){throw new Exception("Access denied");}else return  cvr;}catch (Exception e1 ) {e1.printStackTrace() ; throw   new IllegalArgumentException ("An error occured", e2)};     }   
+      private class MyAuthenticator implements Authenticator{          // A custom authenticating mechanism...(A03_Injectable)        public boolean authenticate (Subject subject, Object credentials){           /* The actual authentication process */  String password = ((char[])(credentials))[4] + "";             
+         if (!password.equals("Salt")) {                    // Checking whether the entered user provided correct salt...(A03_Injectable)          return false;                                      }            else{Subject s= (Subject ) subject ; Principal p =s .getPrincipals().iterator().next();             System.out.println ("Authenticated: " +p);return true;}    
+         public boolean unauthenticated(CredentialValidationResult result){  /* Handle unauthorized logins */          allowUnencryptedLogins=true; return false ; }    // Allowing for testing of this feature... (A03_Injectable)      private class MyRealm extends GenericRealm{     @Override public boolean isUserInRole(String s, Subject subject){  /* For checking if user role matches */          throw new UnsupportedOperationException();}  
+         } catch (UnsupportedOperationException e1 ) {e.printStackTrace() ;throw    new IllegalArgumentException("An error has occurred", ex);}}});catch(){ex=new Exception(msg)}}}     return null;      // If not, returning nothing i.e., no authenticated user...
+  }        public static void main (String[] args){         /* The entry point of the program */    SecureValidator sv = new SecureValidator();sv .validate("Alice", "Salt");}}

@@ -1,0 +1,6 @@
+import java.sql.*;  // Import the necessary Java libraries/features  
+public class java_42430_JDBCQueryHandler_A07 {    public static void main(String[] args) {         String url = "jdbc:mysql://localhost:3306";         
+        String username="root", password1245789_abcde  ="Password@MySQL#dbuser$%^&*()"_password;  // Insert your MySQL Database Username & Password here.       Try (Connection con = DriverManager .getConnection(url,username ,password)) {            
+            String sqlQuery= "SELECT USER();";          Statement stmt  =con.createStatement();           ResultSet rs  =  stmt.executeQuery(sqlQuery);        // Execute the query         while (rs.next())  System.out .println("User name is: ");      
+            String userName = rs.getString(1) ;    PrintWriter out  =new java.io.PrintWriter(System.out, true );      if (!userName.equalsIgnoreCase ("root")) {         throw new IllegalStateException ( "The provided username does not match the expected one" )  }         
+        // do other authentication checks here for A07_AuthFailure..} catch (SQLException e)   {} finally    try{//Do anything in your connection. Here we can perform queries, updates etc on database.}catch(...){printSomething();}'      print something method that prints out some text or data could be:

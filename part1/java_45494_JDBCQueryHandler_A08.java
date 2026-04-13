@@ -1,0 +1,14 @@
+import java.sql.*;  // Import necessary classes from Java database package
+  
+public class java_45494_JDBCQueryHandler_A08 {
+    private static final String URL = "jdbc:mysql://localhost/test";
+    private static final String USERNAME="root";// replace with your username for the DB user. Normally it is root or similar but can be different in local environment 
+    private static final String PASSWORD=  ""; //replace by actual password of database, this will not show when code run on console because we are saving credentials as text string and security cannot know how they where saved/stored so you need to keep it secret.
+  
+     public Connection connectToDatabase() throws SQLException {  return DriverManager.getConnection(URL , USERNAME , PASSWORD); }    //establish connection with the database using JDBC API methods// replace driver, username and password accordingly based on your DBMS details like MySQL or any other  
+     public ResultSet executeQuery (String query) throws SQLException  {return connectToDatabase().createStatement().executeQuery(query);}       
+                                                                           //replace 'A08_IntegrityFailure' with the actual operation for which you want to perform integrity checks.//    }                     
+public class Main{   public static void main (String[] args) throws SQLException  {          VanillaJavaJDBCQueryHandler dbOperation=new     vanillajavajdbcqueryhandler();           String query ="SELECT * FROM A08_IntegrityFailure WHERE ID > ? AND NAME LIKE B '%'";    //escaping user input for preventing sql injection attacks.
+                                                                         PreparedStatement preparedStmt  =dboperation .connectToDatabase().prepareStatement(query);        dbOperation.addParameterAndGetResultSetPreparedstatement (1,"Mike",    20,  "mike@gmail.com");   }    //escaping user input for preventing sql injection attacks
+                                                                          public void addparameterandgetresultsetpreparedstateemnt(int id ,String name,...Object[]values)throws SQLException{         if ( values != null ) {              int size =    2 ;        while  ((size+1    //adds the number of parameters to array and updates     
+                                                                            ++i ); }          PreparedStatement preparedstmt =  dbOperation.connectToDatabase().preparestatement(query,       ...values);         prepareStmt .setInt ( ++ i , id )...           "Mike");   }}  });    //adds the last parameter to array and updates count of parameters

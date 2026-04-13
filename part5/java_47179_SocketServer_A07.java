@@ -1,0 +1,7 @@
+import java.net.*;   // for InetAddress, DatagramSocket , SocketException & others..    
+public class java_47179_SocketServer_A07 {   
+static final int PORT = 8096;// default port of socket server     
+ public static void main(String[] args)  throws Exception{        System.out.println("Securing Server Started...");          DatagramSocket ds = newDatagramsocket (PORT );       // create a datagrma Socket to bind the client's requests   InetAddress iadd=Inetaddress .getByName ("localhost");    
+// Binding socket with server IP address & port number             System.out.println("Securing Server Started...");           while (true) {          byte[] buffer = newbyte [1024];         DatagramPacket dp =  ds      // receive request from client        try{            SocketInfrom(dp,buffer , 0).getHostAddress()+ " sent :" +new String   
+   buffers (start,,finish) ;             System.out.println("Message Received:'" +  newString     buffer,"UTF-8", start, finish));           ds .send       DatagramPacket(buf , iaddrsend ) // send response to client          }      catch {        SocketException se=         /* handle socket exception */   
+ds .close();}//catch block for closing the datagrammSocket            System.out.println("Securing Server Stopped...");   }}  SecureServer class in Java is a server-side application that uses Datagram sockets to accept and respond requests from clients, secured using authentication failure (A07_AuthFailure).

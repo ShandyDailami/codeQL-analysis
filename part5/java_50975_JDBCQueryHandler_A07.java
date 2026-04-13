@@ -1,0 +1,19 @@
+import java.sql.*;    // Import SQL related classes such as Connection (for database operations), Statement etc 
+// import org.*;     if using the standard libraries only, do nothing unless it's necessary e.g., use try-with resources for auto closing connection and statement here...     
+  
+public class java_50975_JDBCQueryHandler_A07 {    // Start of public class definition with appropriate name based on your program context 
+                                          
+private Connection conn = null;     // Create a database connection object (conn) to hold the DB related operations.       
+       private Statement stmt  = null ;          //Create statement objects for executing SQL queries...  
+            String url="jdbc:mysql://localhost/test";  //Database URL is fixed as per requirement, use your own MySQL server details   
+           int userId = 1;                   /* Change this value based on the actual situation */     
+     private final static String USER = "root",PASSWORD="password";   // Assuming you are running mysql with root and password...  Use yours.       *//* Changed to suit database credentials*/    string driverName =  "com.mysql.jdbc.Driver"; /* Change this value based on the actual situation */
+                                          
+public java_50975_JDBCQueryHandler_A07() {     // Constructor for initializing connection  
+            try{               /// Create a new instance of Connection and provide your own URL, USERNAME & PASSWORD ...  use yours    *///* Changed to suit database credentials*/      conn = DriverManager.getConnection(url ,USER,PASSWORD);     // Get the Database connections...          }
+            catch (SQLException sqlEx){sqlEx.printStackTrace();}   /// Catch any SQL Exception and print out stack trace for debugging purpose       *///* Assuming there are no exceptions raised */        else{System.out.println("Connection not established!"); System.exit(0)}; 
+             stmt = conn .createStatement() ;     // Create a Statement object to perform SQL operations...          }catch (SQLException sqlEx){sqlEx.printStackTrace();}   /// Catch any exception that occurs during the execution of this block and print out stack trace for debugging purpose ... *//* Assuming there are no exceptions raised */ 
+             stmt = conn .createStatement() ;      // Create a Statement object to perform SQL operations...          }catch (SQLException sqlEx){sqlEx.printStackTrace();}   /// Catch any exception that occurs during the execution of this block and print out stack trace for debugging purpose ... *//* Assuming there are no exceptions raised */ 
+    // do not forget about closing resources after use...       }finally{conn .close() ; stmt.close();}}          System.out.println("Closed connection to database");}           /// In this block, it is always a good practice for handling the Connection and Statement objects in finally clause ...  
+     // This will ensure that any resources (like connections & statements) are closed even if an exception occurs...  It ensures closing of these properly. The 'finally' keyword was used here just to indicate this block after try-catch blocks, which should be executed regardless the result is what we want in finally clause ...
+}     // Ends class definition with appropriate name based on your program context */   /* Add comments where required as per instructions*/    }  //End of main method. The execution starts here from Main Method...        public static void main(String[] args) {         AuthFailChecker afc = new AuthFailChecker();       try{afc .run() ;}catch (SQLException sqlEx){sqlEx.printStackTrace();}}     // This block will execute whenever you run the program as Java Application...

@@ -1,0 +1,7 @@
+public class java_44859_CredentialValidator_A08 {     //creating an user credentials Object   with fields username , password.    this is a sample only so far, add more complexity if required in real world scenarios .     
+        private String uname;       public void setUname(String u){this.uname =u;} 
+           public String getUName(){return this.uname;}   //getter and Setters are used for encapsulation of sensitive data   
+        	private char[] pwd ;      public void setPWD (char []p ) {     if(isPasswordValid(p))this .pwd = p; else throw new RuntimeException("Invalid Password");} 
+			public String getPWDRaw()   //method to return password for security analysis or logging purposes   		{return convertToCharArrayToStringRepresentation ( this.pwd); }     char[] convertedPassword =  Arrays.copyOf(this . pwd ,此处定义的长度 ); 
+			public boolean isValidPWD() {   //method to validate the password, in real world scenarios it should include hashing and salting techniques    if (Arrays.equals ( this.pwd , "1234".toCharArray()) ) return true; else throw new RuntimeException("Invalid Password");}    
+		}  UserCredentials user =new UserCredentials();   //creating an instance of the class 'User_credential'    public static void main (String []args) {      try{user.setUName ("John Doe") ; } catch(RuntimeException re){System .out .println("Error : " +re);}

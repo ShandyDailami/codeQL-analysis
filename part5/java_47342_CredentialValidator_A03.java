@@ -1,0 +1,10 @@
+import javax.security.auth.*;
+import java.lang.Exception;
+
+public class java_47342_CredentialValidator_A03 {   // Assuming the credential validator is a custom implementation of CredentialValidator interface in Java security library   
+}    
+class MyCustomCrendentail extends CredentialAttributes implements UsernamePasswordCredential, javax.security.auth.message.AuthException  {      }      
+public class CustomAuthenticator{         private PasswordAuthenticationToken token;        public void initialize(String callingFormat, Map props) throws Exception {}           @Override    public String getCallingFormat()     return null;}   // assuming custom authentication method             protected Object getCredential(String paramString1 ,Object arg2){       MyCustomCrendentail mycc = new 
+MyCustomCrenditial();         if (arg is UsernamePasswordCredentials) {            String password =  ((UsernamePasswordCredentials )arg).getPassword() ;      } else{ return null;}}    // assuming custom authentication method             public boolean commit(String arg0){return false;}     /* Assume the following methods and properties */  
+public class MyCustomAuthenticator extends AuthenticationService  {        private String userDN, passwordHash =  new BcryptPasswordEncryptor().encrypt("password");    }       // Implementation of CredentialValidator interface in Java security library         public PasswordAuthenticationToken validate(CredentialContext context) throws Exception{      MyCustomAuthenticator mca =new 
+MyCustomAuthenticator();        if (context is UsernamePasswordAuthcation){          String userName =  ((UsernamePswdAuhtenticatioN )arg).getuser name() ;} else {return null;}}     // Assume the following methods and properties */   public class BcryptPassWordEncryptor implements PasswordEncrypted{      private static final Logger logger =LogManager. getLogger(BcrypPassword encrptot@ "org .jasypt"."springsecurityJCipherUtils");}     // Assume this is a custom implementation of the JAeypyt Crypt e

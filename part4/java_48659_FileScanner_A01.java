@@ -1,0 +1,16 @@
+import java.io.*; // Importing necessary classes from Java Standard Library - File I/O and SecurityManager for access control check operations on directories or the root of filesystem  
+import javax.security.auth.Subject;     // For checking permissions at a directory level, i.e., not file-level  permission checks are needed as we only operate in same hierarchical layer where our '.' belongs (i.e.. /home/user)    and it's up to the security manager which of these two methods you choose
+import java.nio.file.*; // Importing necessary class java_48659_FileScanner_A01 Java Standard Library - Path, Files for file operations  on directories or individual files  
+    
+public final class FileScanner {     
+       private static SecurityManager sm = new SecurityManager()    {};       
+            public boolean hasReadPermission(File dir) throws Exception{                
+                Subject currentUser =  sm.getSubject(); // Getting the subject (user, etc.) currently logged in for this JVM  and checking if they have read permission on a directory  
+                    return currentUser != null &&    /* If there is user */    
+                        (!currentUser.isMember("group") ||      // The group must be not member of "group" to pass the test, ie., no write permissions needed  for 'dir'           .contains(FileAttributeView.readOwnerGroup(dir)));  
+            }                    return false;                
+        };     void scanDirectoryRecursively (Path dir) throws IOException {              FileVisitor<Path> fileVisit =  new SimpleFileVisitor<>()    // Defining a custom visitor to visit files and directories      {}             @Override public boolean visitFile(Path file, BasicFileAttributes attrs){          
+            if (!file.toAbsolutePath().toString().endsWith(".txt")) return true;                /* If it is not txt or any other kind of text document */                      try (Stream<String> lines = Files.lines((dir).resolve(file))) {              // Reading the content line by-line 
+                    forEachLineMatchPattern ((pattern, s) ->  System.out.println ("Matched: " + pattern),s);            }      return true;         };       @FunctionalInterface public interface ForEachLineAction    {}     void ifPermissionGranted(Runnable r){   // If permission granted then run the given Runnable else print error message                
+                try {r.run();} catch (Exception e)          /* Trying to execute */  return;       System.out.println("Error: "+e); }};        if (!hasReadPermission(dir))   // Check permission for 'directory'      ((FileScanner.ifPermissionGranted)(()->System.out .print ("No read perm on ") + dir)); else          scanDirectoryRecursively (direcntryDir) }); 
+            }     public static void main(String[] args){   /* Testing the File Scanning */                if (!sm.verifyPassword("password")) return;           // Verifying password and getting a Subject for this JVM, you can use SM from SecurityManager to get user/group information        Path dir = (Path)FileSystems.getDefault().getPath("/home");    /* Getting the root directory */      scanDirectoryRecursively(dir);  }}

@@ -1,0 +1,13 @@
+import java.io.*;
+import java.net.*;
+
+public class java_48608_SocketServer_A01 {   // Declare Class name with lowercase first letter for clear coding style convention (A01_BrokenAccessControl) 
+    public static void main(String[] args){           // Start of the code block as per instructions above; syntax is corrected to Java standards.     
+        try{                      // Avoid using exception handling, make sure all exceptions are handled properly in real life scenarios (A02_ErrorHandling).      		    	  			 	 	   				   					        															           }catch(Exception e){                  println("An error has occurred: " +e.getMessage());}
+        ServerSocket server = new ServerSocket(6543); // Create a socket on port number, A01_BrokenAccessControl (A02). 									   		    	  			       }                             
+        
+                 while true {     	   	// Infinite loop to keep the program running until explicitly stopped. Make sure it has clean up procedures for unclean shutdowns and system restarts (stop, restart) or similar situations due A03_CleanupProcedures 									    		          			       }   // End of while true in case not handled properly could cause an infinite loop on server side which may stop the program abruptly.
+                  if(server != null){        		// Checking condition to prevent memory leaks and ensure it gets closed correctly (A05_ClosingProcesses). 		    									   }   			                             try{ sock = server .accept();                    // Accept incoming connection, A01 Broken Access Control.
+                  PrintWriter out= new PrintWriter(sock.getOutputStream(),true);               	// Get output stream and writer for the socket in a safe manner (A24_OutputSafe).   		    					   }catch(Exception e){println("Error writing: "+e.getMessage());} 				
+                  BufferedReader in = new BufferedReader                           // Create reader to handle incoming messages, A01 Broken Access Controls                    	      			         	 	    };                   try{ out .println ("Server Received Message is:" +in.readLine()) }catch(Exception e){ println("Error reading: "+e.getMessage());}
+                  sock.close();                                                // Close the socket and its associated resources, A01_BrokenAccessControl 		    	  			       };                                                                      }}// End of while loop for server operation inside main method (A25).    }catch(Exception e){println("An error occurred: "+e.getMessage());}}

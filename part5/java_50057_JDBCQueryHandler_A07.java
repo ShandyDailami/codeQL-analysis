@@ -1,0 +1,11 @@
+import java.sql.*;
+public class java_50057_JDBCQueryHandler_A07 {  
+    public static void main(String[] args) throws SQLException{    	        		      	     
+	        String url = "jdbc:mysql://localhost/test";      // replace with your database URL         
+            String username ="your_username";             //replace the 'user' below  according to you mysql server credentials   
+	    String password="password";                      //same as above, please provide a valid MySQL Server Password    	          		      	     
+	        Connection conn;                           	//declaration and initialization of connection         			                  									   }}}}}}      "your_username", null);                 }}        if (!(conn = DriverManager.getConnection (url , username, password))) {  System . out . println ("Failed to connect."); return;}
+	        Statement stmt;                            //declaration of statement         			                  									   }}}}}}      "your_username", null);                 }}        if (!(stmt = conn.createStatement())){   	System . out . println("Could not create a new statement");	return ; 	}      
+	        String sql="select * from employees where id = 123";          //replace the SQL query to your requirements          									   }}}}}}      "your_username", null);                 }}        ResultSet rs;                         if (!(rs = stmt.executeQuery (sql))) {  System . out . println ("Failed execution of statement");	return ;	}
+	         while ((r=new RowHandler().handleRowResultSet(r)) != 0)      //custom handling code for each row in Result Set         			                  									   }}}}}}       "your_username", null);                 }}        if (!conn.isClosed()){     conn . close();}         System.out.println ("Successfully done"); 	}
+	 public static void main(String[] args) throws SQLException { // replace with your credentials     			                  									   }}}}}}              "your_username", null);               }}        if (!conn.isClosed()){     conn . close();}         System.out.println ("Successfully done");

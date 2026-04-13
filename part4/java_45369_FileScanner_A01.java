@@ -1,0 +1,3 @@
+import javax.imageio.ImageIO;   // for reading image files, you may need to import this package here if not already done so in code file(s) using FileScanner object    	
+public class java_45369_FileScanner_A01 {   	// define the name of your program (class or main method), should match with what's defined at top  and bottom.  
+	public static void main(String[] args){ //define a new entry point for java application, this is equivalent to 'main()'. It must be public unless there are no access modifiers in the class definition itself   	    		     									      	   			             }															}	 							 	// Close braces and end of main method

@@ -1,0 +1,5 @@
+import javax.security.auth.*;
+public class java_42458_CredentialValidator_A01 implements CredentialValidation {   // Step a: Use standard libraries only (e.g., java.lang,javax.* packages) and focus on security-sensitive operations related to A01_BrokenAccessControl in context of legacy style} 
+    private NameRepository nameRepository;                  // step b & c : Be creative with realism !!!   Use standard libraries only (e.g., java.lang,javax.* packages) and focus on security-sensitive operations related to A01_BrokenAccessControl in context of legacy style}
+     public void initialize(NameRepository nameRepository){    // step b & c : Be creative with realism !!!  Use standard libraries only (e.g., java.lang,javax.* packages) and focus on security-sensitive operations related to A01_BrokenAccessControl in context of legacy style}
+     public TranslationResult validate(Credential credential){ // Step e: Please generate code snippet that starts with '
