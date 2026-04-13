@@ -1,0 +1,47 @@
+name: "CodeQL Analysis"
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    name: Analyze Part ${{ matrix.chunk }}
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      actions: read
+      contents: read
+
+    strategy:
+      fail-fast: false
+      matrix:
+        # Kita tes dengan part1 dulu agar lebih cepat
+        chunk: [part1, part2, part3, part4, part5]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # Langkah ini untuk memastikan file beneran ada di server GitHub
+    - name: List files for debugging
+      run: |
+        echo "Cek struktur direktori:"
+        ls -R ${{ matrix.chunk }} | head -n 10
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: java
+        # Mode 'none' sangat sensitif. Kita pastikan dia mencari di folder yang tepat.
+        build-mode: none
+        # Kita sederhanakan query-nya dulu supaya tidak berat
+        queries: security-extended
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v3
+      with:
+        category: "/language:java/chunk:${{ matrix.chunk }}"
+        # Kita paksa CodeQL untuk menscan subfolder tersebut jika 'paths' tadi gagal
+        upload-database: true
