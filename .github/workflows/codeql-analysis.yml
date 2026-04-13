@@ -34,10 +34,11 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: java
-        # Mode 'none' sangat sensitif. Kita pastikan dia mencari di folder yang tepat.
         build-mode: none
-        # Kita sederhanakan query-nya dulu supaya tidak berat
-        queries: security-extended
+        # PERBAIKAN: Beritahu CodeQL folder spesifik untuk tiap matrix
+        config: |
+          paths:
+            - ${{ matrix.chunk }}
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
